@@ -1,0 +1,33 @@
+id: pedersen-commitment
+name: Pedersen Commitment
+category: commitment
+level: structured-primitive
+short_intuition: A commitment scheme that hides a value while preserving additive structure.
+security_goals:
+  - hiding
+  - binding
+assumptions:
+  - discrete-logarithm-hardness
+  - independent-generators
+  - secure-randomness
+requires_trusted_setup: false
+post_quantum: false
+typical_uses:
+  - confidential-transactions
+  - range-proofs
+  - private-tallying
+does_not_provide:
+  - authentication
+  - validity-of-committed-value
+  - protection-against-bad-randomness
+composition_risks:
+  - If the randomness is revealed, the committed value may be exposed.
+  - If the discrete logarithm relation between generators is known, binding can fail.
+  - Homomorphic structure can allow invalid values unless range constraints are added.
+maturity: mature
+related:
+  - commitments
+  - homomorphic-commitments
+  - range-proofs
+references:
+  - TODO

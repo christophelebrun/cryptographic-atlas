@@ -1,0 +1,18 @@
+Creative Commons Attribution-ShareAlike 4.0 International
+
+The educational book content in this repository is licensed under the
+Creative Commons Attribution-ShareAlike 4.0 International Public License
+(CC BY-SA 4.0).
+
+You are free to share and adapt the content, provided you give appropriate
+credit, indicate if changes were made, and distribute adaptations under the
+same license.
+
+License text:
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Website source code, including React components and configuration files, is
+intended to be licensed under the MIT License unless otherwise specified.
+
+TODO: Split content and website-code licensing into separate license files if
+the project grows beyond this initial repository structure.

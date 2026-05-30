@@ -1,0 +1,84 @@
+---
+title: Mixnets
+type: protocol
+level: protocol
+status: draft
+last_reviewed: 2026-05-30
+difficulty: intermediate
+maturity: mature
+tags:
+  - mixnets
+  - anonymity
+---
+
+# Mixnets
+
+## Goal
+
+A mixnet breaks the link between message senders and outputs by batching, re-encrypting or transforming, and shuffling messages through one or more mix servers.
+
+## Participants
+
+- Senders.
+- Mix servers.
+- Recipients or bulletin board.
+
+## Inputs and outputs
+
+Senders submit messages. The mixnet outputs the same logical messages in a shuffled form.
+
+## Building blocks
+
+- Public-key encryption.
+- Verifiable shuffles.
+- Commitments and proofs.
+
+## Security goals
+
+- Sender-message unlinkability within an anonymity set.
+- Verifiable correct shuffling in some designs.
+
+## Non-goals
+
+- Perfect anonymity against global traffic analysis without batching assumptions.
+- Protection if all mix servers collude.
+- Coercion resistance by itself.
+
+## Threat model
+
+The model must state how many mix servers may be corrupt and what the adversary observes about timing and network traffic.
+
+## Protocol sketch
+
+Messages are collected into a batch, passed through mixes that transform and shuffle them, and then published or delivered.
+
+## Trust assumptions
+
+Privacy often relies on at least one honest mix server and adequate batching.
+
+## Metadata leaks
+
+Batch size, timing, message size, and participation patterns can reveal users.
+
+## Failure modes
+
+- Small batches.
+- All mixes collude.
+- Malformed shuffles.
+- Side-channel leakage through message formats.
+
+## Variants
+
+- Chaumian mixnets.
+- Verifiable mixnets.
+- Decryption mixnets.
+
+## Where it is used
+
+- Electronic voting.
+- Anonymous messaging.
+- Privacy-preserving publication systems.
+
+## Further reading
+
+- TODO: Add verified references for mixnet designs and verifiable shuffles.

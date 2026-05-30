@@ -1,0 +1,34 @@
+---
+title: Security Goals
+type: taxonomy
+level: security-goal
+status: draft
+last_reviewed: 2026-05-30
+difficulty: beginner
+maturity: not-applicable
+tags:
+  - security-goals
+---
+
+# Security Goals
+
+Security goals are the properties a system is trying to achieve. They should be stated before choosing primitives.
+
+## Common goals
+
+| Goal | Meaning | Common confusion |
+| --- | --- | --- |
+| Confidentiality | Data is not disclosed to unauthorized parties | Not the same as anonymity |
+| Integrity | Data cannot be modified undetectably | Not the same as authenticity |
+| Authenticity | A message or action is tied to an authorized actor | Not the same as privacy |
+| Anonymity | A subject is hidden within a set | Depends heavily on the size and behavior of the set |
+| Unlinkability | Two actions cannot be linked to the same actor | Does not remove all metadata |
+| Receipt-freeness | A user cannot prove how they acted | Stronger than ballot secrecy |
+
+## Why precision matters
+
+Saying "private" is usually too vague. A system may hide values but expose identities, or hide identities but reveal timing. State the goal and the leak separately.
+
+## Further reading
+
+- TODO: Add verified references for security goal definitions.

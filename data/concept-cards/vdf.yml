@@ -1,0 +1,32 @@
+id: vdf
+name: Verifiable Delay Function
+category: delay
+level: structured-primitive
+short_intuition: A function that takes sequential time to compute but is fast to verify.
+security_goals:
+  - sequential-delay
+  - public-verifiability
+assumptions:
+  - construction-specific-hardness-assumptions
+  - bounded-hardware-advantage
+  - correct-parameter-selection
+requires_trusted_setup: varies
+post_quantum: varies
+typical_uses:
+  - randomness-beacons
+  - delayed-reveal
+  - leader-election
+does_not_provide:
+  - confidentiality
+  - trusted-wall-clock-time
+  - availability
+composition_risks:
+  - Specialized hardware can change delay assumptions.
+  - Delay does not prevent denial of service.
+  - Verification only checks the computation, not the surrounding protocol goal.
+maturity: emerging
+related:
+  - timelock-and-vdfs
+  - delayed-reveal
+references:
+  - TODO

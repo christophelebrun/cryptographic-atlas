@@ -1,0 +1,33 @@
+id: homomorphic-encryption
+name: Homomorphic Encryption
+category: encryption
+level: structured-primitive
+short_intuition: Encryption that supports computation over ciphertexts.
+security_goals:
+  - confidentiality
+  - encrypted-computation
+assumptions:
+  - scheme-specific-hardness-assumptions
+  - correct-parameter-selection
+  - secure-key-management
+requires_trusted_setup: varies
+post_quantum: varies
+typical_uses:
+  - private-tallying
+  - confidential-analytics
+  - encrypted-computation
+does_not_provide:
+  - input-validity
+  - metadata-privacy
+  - protection-against-revealing-outputs
+composition_risks:
+  - Outputs can reveal sensitive input information.
+  - Malicious inputs may require zero-knowledge validity proofs.
+  - Incorrect parameters can break correctness or security.
+maturity: emerging
+related:
+  - private-aggregation
+  - reveal-only-a-function
+  - secure-aggregation
+references:
+  - TODO

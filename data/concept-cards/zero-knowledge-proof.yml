@@ -1,0 +1,36 @@
+id: zero-knowledge-proof
+name: Zero-Knowledge Proof
+category: proof-system
+level: proof-system
+short_intuition: A proof that a statement is true without revealing the private witness.
+security_goals:
+  - completeness
+  - soundness
+  - zero-knowledge
+assumptions:
+  - proof-system-specific-assumptions
+  - correct-statement-design
+  - secure-implementation
+requires_trusted_setup: varies
+post_quantum: varies
+typical_uses:
+  - membership-proofs
+  - valid-private-transactions
+  - range-proofs
+  - private-voting
+does_not_provide:
+  - encryption
+  - network-anonymity
+  - metadata-privacy
+  - correctness-of-the-intended-system-goal
+composition_risks:
+  - A proof can be valid for a statement that is too weak for the protocol.
+  - Public inputs can reveal identity or linkage.
+  - Setup assumptions vary significantly across proof systems.
+maturity: mature
+related:
+  - snarks-starks-bulletproofs
+  - range-proofs
+  - membership-proofs
+references:
+  - TODO

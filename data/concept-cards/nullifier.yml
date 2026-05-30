@@ -1,0 +1,34 @@
+id: nullifier
+name: Nullifier
+category: anti-double-use
+level: protocol
+short_intuition: A context-specific public tag that prevents repeated anonymous actions.
+security_goals:
+  - double-use-prevention
+  - limited-linkability
+  - anonymous-rate-limiting
+assumptions:
+  - domain-separated-contexts
+  - high-entropy-secret
+  - public-spent-nullifier-registry
+requires_trusted_setup: varies
+post_quantum: varies
+typical_uses:
+  - private-voting
+  - anonymous-airdrops
+  - anonymous-signaling
+does_not_provide:
+  - eligibility
+  - network-anonymity
+  - coercion-resistance
+composition_risks:
+  - Reusing contexts can link actions.
+  - Nullifiers must be paired with eligibility proofs.
+  - Timing and transaction metadata can deanonymize users.
+maturity: emerging
+related:
+  - anonymous-membership
+  - anti-double-use-nullifiers
+  - zero-knowledge-proof
+references:
+  - TODO

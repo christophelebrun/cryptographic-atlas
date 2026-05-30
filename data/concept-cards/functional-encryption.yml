@@ -1,0 +1,34 @@
+id: functional-encryption
+name: Functional Encryption
+category: encryption
+level: structured-primitive
+short_intuition: Encryption where specialized keys reveal only approved functions of plaintext data.
+security_goals:
+  - controlled-disclosure
+  - confidentiality
+  - least-privilege-decryption
+assumptions:
+  - scheme-specific-hardness-assumptions
+  - trusted-key-authority-or-setup
+  - function-leakage-analysis
+requires_trusted_setup: varies
+post_quantum: varies
+typical_uses:
+  - restricted-analytics
+  - private-classification
+  - reveal-only-a-function
+does_not_provide:
+  - general-practicality
+  - protection-against-revealing-functions
+  - access-control-governance
+composition_risks:
+  - The allowed function output may reveal more than intended.
+  - Repeated function queries can leak inputs.
+  - Key authority trust can dominate the privacy model.
+maturity: research
+related:
+  - homomorphic-encryption
+  - reveal-only-a-function
+  - private-aggregation
+references:
+  - TODO

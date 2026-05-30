@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">The Cryptographic Atlas logo placeholder</title>
+  <desc id="desc">A square compass-like mark with the letters CA.</desc>
+  <rect width="128" height="128" fill="#f8fbfb"/>
+  <rect x="18" y="18" width="92" height="92" fill="none" stroke="#0f766e" stroke-width="6"/>
+  <path d="M64 28 L76 64 L64 100 L52 64 Z" fill="#0f766e"/>
+  <circle cx="64" cy="64" r="9" fill="#ffffff"/>
+  <text x="64" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#152024">CA</text>
+</svg>

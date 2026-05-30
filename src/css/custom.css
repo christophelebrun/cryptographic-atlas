@@ -1,0 +1,176 @@
+:root {
+  --ifm-color-primary: #0f766e;
+  --ifm-color-primary-dark: #115e59;
+  --ifm-color-primary-darker: #134e4a;
+  --ifm-color-primary-darkest: #0f3f3c;
+  --ifm-color-primary-light: #0d9488;
+  --ifm-color-primary-lighter: #14b8a6;
+  --ifm-color-primary-lightest: #5eead4;
+  --ifm-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --atlas-ink: #152024;
+  --atlas-muted: #526166;
+  --atlas-line: #d9e1e2;
+  --atlas-warn-bg: #fff7ed;
+  --atlas-warn-border: #ea580c;
+}
+
+html[data-theme='dark'] {
+  --atlas-ink: #edf7f5;
+  --atlas-muted: #afc2c0;
+  --atlas-line: #2d3d40;
+  --atlas-warn-bg: #2b2118;
+  --atlas-warn-border: #fb923c;
+}
+
+.atlasHero {
+  background:
+    linear-gradient(90deg, rgba(15, 118, 110, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(15, 118, 110, 0.08) 1px, transparent 1px),
+    #f8fbfb;
+  background-size: 32px 32px;
+  border-bottom: 1px solid var(--atlas-line);
+  color: var(--atlas-ink);
+  padding: 5rem 0 4rem;
+}
+
+html[data-theme='dark'] .atlasHero {
+  background:
+    linear-gradient(90deg, rgba(20, 184, 166, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(20, 184, 166, 0.12) 1px, transparent 1px),
+    #121b1d;
+}
+
+.atlasHero__mark {
+  align-items: center;
+  border: 2px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary-dark);
+  display: flex;
+  font-weight: 800;
+  height: 64px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  width: 64px;
+}
+
+html[data-theme='dark'] .atlasHero__mark {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.atlasHero__title {
+  font-size: 3.25rem;
+  letter-spacing: 0;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  max-width: 760px;
+}
+
+.atlasHero__subtitle {
+  color: var(--atlas-muted);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  max-width: 780px;
+}
+
+.atlasHero__mission {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-top: 1.5rem;
+  max-width: 760px;
+}
+
+.atlasHero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.atlasNotice {
+  border-bottom: 1px solid var(--atlas-line);
+  color: var(--atlas-muted);
+  padding: 1rem 0;
+}
+
+.conceptCard {
+  border: 1px solid var(--atlas-line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.conceptCard__header {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.conceptCard__header h3,
+.conceptCard__header p {
+  margin: 0;
+}
+
+.conceptCard__header p {
+  color: var(--atlas-muted);
+  font-size: 0.9rem;
+}
+
+.conceptCard__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.maturityBadge {
+  border: 1px solid var(--atlas-line);
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  white-space: nowrap;
+}
+
+.maturityBadge--deployed,
+.maturityBadge--mature {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.maturityBadge--emerging {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.maturityBadge--research,
+.maturityBadge--theoretical {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.maturityBadge--not-applicable {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.warningBox {
+  background: var(--atlas-warn-bg);
+  border-left: 4px solid var(--atlas-warn-border);
+  border-radius: 4px;
+  margin: 1.25rem 0;
+  padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .atlasHero {
+    padding: 3rem 0;
+  }
+
+  .atlasHero__title {
+    font-size: 2.2rem;
+  }
+
+  .atlasHero__subtitle {
+    font-size: 1.1rem;
+  }
+}
