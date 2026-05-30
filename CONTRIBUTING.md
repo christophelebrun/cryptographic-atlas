@@ -13,11 +13,12 @@ The Cryptographic Atlas welcomes careful educational contributions.
 
 ## New concept pages
 
-Use the templates in `AGENTS.md`. Major concepts should also receive a YAML concept card in `data/concept-cards/`.
+Use the templates in `AGENTS.md`. Major concepts should also receive a YAML concept card in `book/data/concept-cards/`.
 
 ## Local checks
 
 ```bash
+cd book
 npm install
 npm run build
 ```

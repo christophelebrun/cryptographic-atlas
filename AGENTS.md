@@ -279,7 +279,7 @@ tags:
 
 ## Concept card schema
 
-When adding a major concept, also create a YAML card in `/data/concept-cards`.
+When adding a major concept, also create a YAML card in `/book/data/concept-cards`.
 
 Required fields:
 

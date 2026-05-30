@@ -36,11 +36,19 @@ The commitment mixes the message with a private random mask. Observers see a gro
 
 A common notation is:
 
-```text
+$$
 C = g^m h^r
-```
+$$
 
 Here `m` is the message, `r` is randomness, and `g` and `h` are group generators. The opening is `m, r`.
+
+The additive structure appears when two commitments are combined:
+
+$$
+C_1 \cdot C_2 = g^{m_1 + m_2}h^{r_1 + r_2}
+$$
+
+Inline notation also works: $C = g^m h^r$.
 
 ## Security properties
 

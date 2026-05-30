@@ -33,15 +33,41 @@ The book organizes concepts across eight levels:
 
 ## Repository structure
 
-The Docusaurus book lives in `docs/`. Reusable concept metadata lives in `data/concept-cards/`. Website components live in `src/components/`.
+The Docusaurus book app lives in `book/`. Book pages live in `book/docs/`, reusable concept metadata lives in `book/data/concept-cards/`, and website components live in `book/src/components/`.
+
+Repository-level planning and maintenance files can stay outside the book app. For example, the initialization prompt remains at the repository root.
 
 ## Local development
 
 ```bash
+cd book
 npm install
 npm run start
 npm run build
 ```
+
+For local search testing, use the production build:
+
+```bash
+cd book
+npm run build
+npm run serve
+```
+
+## Math and search
+
+The book supports inline and block math through KaTeX:
+
+```markdown
+Inline: $C = g^m h^r$
+
+Block:
+$$
+C = g^m h^r
+$$
+```
+
+The site also includes a local search index. Search works in the statically built site, so use `npm run build` followed by `npm run serve` when testing search locally.
 
 ## Contributing
 
