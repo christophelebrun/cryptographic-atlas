@@ -36,6 +36,14 @@ Public-key encryption lets anyone encrypt to a public key while only the private
 - Encrypted ballots.
 - Key exchange support, depending on the protocol.
 
+## Post-quantum posture
+
+Depends on the scheme. RSA and elliptic-curve public-key encryption or key agreement are quantum-vulnerable. Post-quantum key encapsulation mechanisms such as ML-KEM are designed for migration, but protocol integration still matters.
+
+## Confidence model
+
+Confidence comes from key authenticity, correct encryption or encapsulation, secure private-key handling, and the recipient's ability to decrypt. If the public key is bound to the wrong party, confidentiality can fail even when the encryption algorithm is sound.
+
 ## Failure modes
 
 - Using raw textbook encryption instead of authenticated, padded, or hybrid constructions.

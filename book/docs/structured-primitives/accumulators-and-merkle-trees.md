@@ -30,6 +30,14 @@ Accumulators and Merkle trees commit to a collection while supporting compact me
 - Freshness unless updates are authenticated.
 - Protection against metadata leaks.
 
+## Post-quantum posture
+
+Depends on the accumulator. Merkle trees built from appropriate hash functions are plausibly post-quantum. RSA accumulators and elliptic-curve accumulators are quantum-vulnerable.
+
+## Confidence model
+
+Confidence comes from the authenticated set root, update rules, and membership proof verification. Dynamic accumulators also need a freshness model so verifiers know which root is current.
+
 ## Failure modes
 
 - Ambiguous tree encoding.

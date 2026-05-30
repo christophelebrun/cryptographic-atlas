@@ -32,6 +32,14 @@ $$
 C = \operatorname{Commit}(m; r)
 $$
 
+## Post-quantum posture
+
+Depends on the proof system and commitment scheme. Bulletproof-style range proofs are usually discrete-logarithm based and quantum-vulnerable; hash-based or STARK-style approaches may be plausibly post-quantum if the full construction supports the required statement.
+
+## Confidence model
+
+Confidence comes from public verification of the range statement, the soundness of the proof system, and correct binding to the commitment or ciphertext being constrained.
+
 ## What it does not provide
 
 - Authentication.

@@ -13,6 +13,16 @@ assumptions:
   - secure-implementation
 requires_trusted_setup: varies
 post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: not-applicable
+  breaks_if:
+    - proof-system-assumptions-fail
+    - trusted-setup-toxic-waste-exists
+    - statement-does-not-match-the-system-goal
+  setup:
+    - transparent-or-trusted-setup-depending-on-proof-system
 typical_uses:
   - membership-proofs
   - valid-private-transactions

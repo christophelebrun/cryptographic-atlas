@@ -35,6 +35,14 @@ A cryptographic hash function maps data to a fixed-length digest in a way that s
 - Content addressing.
 - Transcript binding in protocols.
 
+## Post-quantum posture
+
+Plausible with appropriate output lengths and parameters. Hash functions are often used as post-quantum building blocks, but the security target must account for quantum search speedups.
+
+## Confidence model
+
+Confidence comes from public algorithm scrutiny, parameter choice, domain separation, and correct use. Hashing a low-entropy secret is not enough to make it hidden.
+
 ## Failure modes
 
 - Hashing passwords without a password-hashing scheme.

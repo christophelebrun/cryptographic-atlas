@@ -79,6 +79,14 @@ The system assumes adversaries may observe public nullifiers and try to link the
 
 Trust assumptions depend on the issuer, eligibility registry, proof system, and public registry. If the issuer can deanonymize credentials or the registry censors submissions, privacy and availability may fail.
 
+## Post-quantum posture
+
+Depends on the surrounding stack. A hash-derived nullifier can be plausibly post-quantum if the hash function and parameters are appropriate, but eligibility proofs, credential signatures, and membership proofs may rely on quantum-vulnerable assumptions.
+
+## Confidence model
+
+Confidence comes from the holder secret, domain-separated context, public spent-nullifier registry, and a proof that the nullifier was derived from an eligible secret. The nullifier alone only supports non-reuse; it does not establish eligibility.
+
 ## Metadata leaks
 
 Nullifiers can still be linked through timing, network address, account funding, transaction fees, wallet behavior, or reused contexts.

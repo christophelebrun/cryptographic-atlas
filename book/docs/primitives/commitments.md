@@ -73,6 +73,14 @@ Some schemes are computationally hiding or binding; others are perfectly hiding 
 
 Hash commitments usually rely on properties of the hash function and sufficient randomness. Pedersen commitments rely on group assumptions and generator choices.
 
+## Post-quantum posture
+
+Depends on the construction. Hash-based commitments can be plausibly post-quantum with appropriate hash choices and parameters. Pedersen commitments and other discrete-logarithm-based commitments are quantum-vulnerable.
+
+## Confidence model
+
+Confidence comes from the hiding and binding assumptions of the concrete commitment scheme, plus correct randomness and unambiguous opening rules. A commitment does not identify the committer unless authentication is added.
+
 ## Common constructions
 
 - Hash-based commitments.

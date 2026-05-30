@@ -30,6 +30,14 @@ Threshold cryptography distributes a cryptographic power across several parties 
 - Simple operations or recovery.
 - Metadata privacy by itself.
 
+## Post-quantum posture
+
+Depends on the underlying primitive. Threshold ECDSA or threshold Schnorr is quantum-vulnerable. Threshold versions of post-quantum signatures, encryption, or key encapsulation need separate analysis and are not automatically available just because a single-party primitive exists.
+
+## Confidence model
+
+Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for privacy or key misuse resistance, and at least `t` parties are available for liveness. Distributed key generation, share custody, and recovery policy are part of the model.
+
 ## Failure modes
 
 - Bad distributed key generation.

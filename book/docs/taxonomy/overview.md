@@ -33,6 +33,13 @@ This ordering prevents a common mistake: starting with a fashionable tool before
 | System or application | What user-facing application combines many tools? | e-voting, private DAO voting, anonymous airdrop |
 | Design pattern | What reusable composition pattern appears across systems? | anonymous membership, delayed reveal, anti-double-use nullifiers |
 
+## Cross-cutting classifications
+
+Two classifications cut across the taxonomy:
+
+- [Post-quantum posture](/docs/appendices/post-quantum-posture): whether a construction is vulnerable, plausibly post-quantum, dependent on instantiation, unknown, or not applicable.
+- [Confidence models](/docs/appendices/confidence-models): where confidence comes from, such as public verification, one honest party, `t-of-n` threshold assumptions, honest majority, non-collusion, or a trusted issuer.
+
 ## Why the levels matter
 
 Each level has different failure modes. A primitive can be mathematically sound and still be used in a protocol that leaks metadata. A protocol can satisfy a narrow model and still fail inside a product because enrollment, timing, recovery, or coercion was ignored.

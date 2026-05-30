@@ -32,6 +32,14 @@ It aims to make decryption rights more precise. A party might learn an aggregate
 
 Functional encryption remains largely research-stage for many general forms. Specialized forms may be more practical.
 
+## Post-quantum posture
+
+Depends on the concrete construction. Functional encryption is a broad research area; posture should be classified per scheme and parameter set, not for the category as a whole.
+
+## Confidence model
+
+Confidence often depends on a key authority or setup process that issues function keys. Even if the cryptography works, the allowed function can leak sensitive information, and repeated function outputs can become an inference channel.
+
 ## Further reading
 
 - TODO: Add verified references for functional encryption definitions and practical schemes.

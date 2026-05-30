@@ -12,6 +12,16 @@ assumptions:
   - secure-key-management
 requires_trusted_setup: varies
 post_quantum: varies
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - scheme-specific-hardness-assumption-fails
+    - parameters-are-incorrect
+    - decryption-keys-are-compromised
+  setup:
+    - public-parameters-and-key-generation
 typical_uses:
   - private-tallying
   - confidential-analytics

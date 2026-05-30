@@ -29,6 +29,14 @@ A homomorphic commitment lets commitments be combined in ways that correspond to
 - Authentication.
 - Protection against maliciously crafted commitments without additional checks.
 
+## Post-quantum posture
+
+Depends on the construction. Pedersen-style homomorphic commitments are quantum-vulnerable because they rely on discrete logarithms. Other commitment families need separate classification.
+
+## Confidence model
+
+Confidence comes from the commitment binding and hiding assumptions plus explicit constraints on the hidden arithmetic domain. Homomorphic structure is useful only when invalid values are ruled out elsewhere.
+
 ## Failure modes
 
 Homomorphism can let invalid values cancel or wrap unless the protocol adds range proofs and clear arithmetic domains.

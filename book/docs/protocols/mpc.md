@@ -55,6 +55,14 @@ Parties encode or share inputs, evaluate a circuit or arithmetic computation col
 
 Assumptions include corruption thresholds, network model, setup, and whether preprocessing is trusted or verifiable.
 
+## Post-quantum posture
+
+Depends on the protocol and its building blocks. Information-theoretic MPC variants can avoid public-key assumptions in some settings, while many practical protocols rely on signatures, oblivious transfer, commitments, or channels whose posture must be checked separately.
+
+## Confidence model
+
+Confidence is model-specific: honest-majority, dishonest-majority, threshold, semi-honest, or malicious. The page for a concrete MPC protocol should state the maximum corrupt set it tolerates and what happens on abort.
+
 ## Metadata leaks
 
 Participation, timing, circuit shape, aborts, and output values can leak information.

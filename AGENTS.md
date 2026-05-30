@@ -115,6 +115,14 @@ List common misconceptions and missing guarantees.
 
 List cryptographic, setup, network, timing, or trust assumptions.
 
+## Post-quantum posture
+
+Classify as vulnerable, plausible, depends, unknown, or not-applicable. Explain what concrete assumptions determine the label.
+
+## Confidence model
+
+State who or what must remain honest, independent, hard, available, or publicly verifiable. Use terms such as mathematical-assumption, public-verifiability, trusted-setup, trusted-issuer, one-honest-party, t-of-n-threshold, honest-majority, non-collusion, client-side-secret, or external-timing.
+
 ## Common constructions
 
 Mention well-known constructions or families.
@@ -172,6 +180,10 @@ Each protocol page must include:
 ## Protocol sketch
 
 ## Trust assumptions
+
+## Post-quantum posture
+
+## Confidence model
 
 ## Metadata leaks
 
@@ -274,6 +286,9 @@ difficulty: beginner | intermediate | advanced
 maturity: deployed | mature | emerging | research | theoretical | not-applicable
 tags:
   -
+post_quantum_posture: vulnerable | plausible | depends | unknown | not-applicable
+confidence_model:
+  type:
 ---
 ```
 
@@ -293,6 +308,12 @@ security_goals:
 assumptions:
 requires_trusted_setup:
 post_quantum:
+post_quantum_posture:
+confidence_model:
+  type:
+  threshold:
+  breaks_if:
+  setup:
 typical_uses:
 does_not_provide:
 composition_risks:
@@ -308,6 +329,8 @@ Before committing, verify:
 - The concept is classified at the correct taxonomy level.
 - The page states what the primitive/protocol does not provide.
 - Trust assumptions are explicit.
+- Post-quantum posture is explicit for major cryptographic concepts.
+- The confidence model states who or what must remain honest, independent, hard, or verifiable.
 - Failure modes are included.
 - Related concepts are linked.
 - Terminology is consistent.

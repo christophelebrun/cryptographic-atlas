@@ -13,6 +13,17 @@ assumptions:
   - public-spent-nullifier-registry
 requires_trusted_setup: varies
 post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: client-side-secret
+  threshold: not-applicable
+  breaks_if:
+    - user-secret-is-compromised
+    - context-domain-separation-fails
+    - eligibility-proof-is-missing-or-incorrect
+  setup:
+    - public-spent-nullifier-registry
+    - surrounding-credential-or-membership-system
 typical_uses:
   - private-voting
   - anonymous-airdrops

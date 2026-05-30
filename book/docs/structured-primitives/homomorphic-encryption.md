@@ -42,6 +42,14 @@ $$
 \operatorname{Dec}_{sk}(c_1 \oplus c_2) = m_1 + m_2
 $$
 
+## Post-quantum posture
+
+Plausible for many lattice-based homomorphic encryption families, assuming appropriate parameters and implementations. The posture still depends on the concrete scheme, security level, and whether surrounding signatures, proofs, or key-management layers are post-quantum.
+
+## Confidence model
+
+Confidence usually comes from a scheme-specific hardness assumption, correct parameter selection, secure key generation, and protection of decryption keys. In threshold or multi-key settings, the confidence model also includes the trustee or participant threshold.
+
 ## What it does not provide
 
 - Automatic input validity.

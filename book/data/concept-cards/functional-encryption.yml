@@ -13,6 +13,16 @@ assumptions:
   - function-leakage-analysis
 requires_trusted_setup: varies
 post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-issuer
+  threshold: not-applicable
+  breaks_if:
+    - key-authority-misissues-function-keys
+    - allowed-functions-leak-sensitive-information
+    - scheme-specific-assumptions-fail
+  setup:
+    - function-key-authority-or-setup
 typical_uses:
   - restricted-analytics
   - private-classification

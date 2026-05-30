@@ -12,6 +12,16 @@ assumptions:
   - correct-parameter-selection
 requires_trusted_setup: varies
 post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: external-timing
+  threshold: not-applicable
+  breaks_if:
+    - sequential-delay-assumption-fails
+    - specialized-hardware-advantage-is-underestimated
+    - setup-assumption-fails
+  setup:
+    - construction-specific-public-parameters
 typical_uses:
   - randomness-beacons
   - delayed-reveal

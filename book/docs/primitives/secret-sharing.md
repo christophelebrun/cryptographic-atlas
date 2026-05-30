@@ -40,6 +40,14 @@ $$
 - Confidentiality against parties below the reconstruction threshold.
 - Availability when enough shares survive.
 
+## Post-quantum posture
+
+Plausible for the information-theoretic core of schemes such as Shamir secret sharing. The full system may still depend on quantum-vulnerable authentication, transport encryption, signatures, or storage controls.
+
+## Confidence model
+
+Confidence is threshold-based. Fewer than `t` shares should not reveal the secret; at least `t` valid shares can reconstruct it. Availability fails if too many shares are lost, and confidentiality fails if enough shareholders collude.
+
 ## What it does not provide
 
 - Authentication of shares unless added.

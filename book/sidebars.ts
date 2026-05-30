@@ -99,6 +99,8 @@ const sidebars: SidebarsConfig = {
         'appendices/reading-list',
         'appendices/notation',
         'appendices/maturity-scale',
+        'appendices/post-quantum-posture',
+        'appendices/confidence-models',
       ],
     },
   ],

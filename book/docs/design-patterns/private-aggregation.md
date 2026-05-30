@@ -71,6 +71,14 @@ The privacy goal is to reveal $T$ without revealing the individual values $x_1, 
 
 Assumptions vary by construction: encryption keys, threshold decryption, honest-majority assumptions, dropout handling, authenticated participants, and zero-knowledge proofs for input validity may all be required.
 
+## Post-quantum posture
+
+Not applicable to the pattern by itself. The posture is inherited from the aggregation mechanism, authentication, proof system, transport, and key-management layers.
+
+## Confidence model
+
+Confidence may come from threshold decryption, non-colluding helper servers, honest-majority MPC, or public verification of encrypted inputs. The page for a concrete design should state which model is being used.
+
 ## Use cases
 
 - Voting and polling.

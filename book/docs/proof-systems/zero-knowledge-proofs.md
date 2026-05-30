@@ -83,6 +83,14 @@ Examples:
 
 Assumptions vary by proof system. Some systems require trusted setup, some rely on hash functions, some rely on elliptic curve assumptions, and some are designed around transparent setup.
 
+## Post-quantum posture
+
+Depends on the proof system. Hash-based transparent systems such as many STARK-style systems are commonly treated as plausibly post-quantum, while many pairing-based SNARKs and discrete-logarithm-based range proofs are quantum-vulnerable.
+
+## Confidence model
+
+Confidence comes from three layers: the proof-system assumptions, the correctness of the statement being proven, and the setup model. A proof can verify correctly while still proving the wrong statement for the application.
+
 ## Failure modes and anti-patterns
 
 - Proving a weak statement that does not match the system's real security goal.

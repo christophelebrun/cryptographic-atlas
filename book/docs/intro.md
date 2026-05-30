@@ -45,6 +45,7 @@ Start with the taxonomy, then move from goals to building blocks:
 3. Pick the primitive, proof system, protocol, or pattern being discussed.
 4. Check what it does not provide.
 5. Look for failure modes and composition risks.
+6. Check its post-quantum posture and confidence model.
 
 ## Core taxonomy
 
@@ -75,6 +76,14 @@ For example:
 - coercion resistance requires protocol and user-experience properties beyond ballot secrecy.
 
 The central lesson is composability: each tool contributes a narrow guarantee, and the system must make the gaps explicit.
+
+## Cross-cutting questions
+
+For every major concept, ask:
+
+- Is the construction quantum-vulnerable, plausibly post-quantum, or dependent on instantiation?
+- Does confidence come from a mathematical assumption, public verification, one honest party, a `t-of-n` threshold, an honest majority, non-collusion, or a trusted issuer?
+- Which part of the system has the weakest posture or most centralized confidence model?
 
 ## Safety note
 

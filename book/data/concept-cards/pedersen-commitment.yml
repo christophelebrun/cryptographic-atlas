@@ -12,6 +12,16 @@ assumptions:
   - secure-randomness
 requires_trusted_setup: false
 post_quantum: false
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - discrete-logarithm-becomes-easy
+    - generator-relation-is-known
+    - randomness-is-reused-or-revealed
+  setup:
+    - independent-public-generators
 typical_uses:
   - confidential-transactions
   - range-proofs

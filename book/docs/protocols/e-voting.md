@@ -60,6 +60,14 @@ Eligible voters cast protected ballots. Ballots are checked for validity, anonym
 
 Assumptions may include trustee honesty thresholds, device integrity, public bulletin boards, and audit processes.
 
+## Post-quantum posture
+
+Depends on the election cryptography: voter authentication, ballot encryption, proofs, signatures, mixnets, and trustee key management may each have different posture. A voting system should not receive a single post-quantum label unless every relevant layer is classified.
+
+## Confidence model
+
+Confidence usually comes from threshold trustees, public verifiability, eligibility authorities, client-device assumptions, and audit procedures. Ballot secrecy may be `t-of-n`, while integrity may come from public verification and challenge processes.
+
 ## Metadata leaks
 
 Timing, voter check-in, device identifiers, and small precinct totals can leak information.

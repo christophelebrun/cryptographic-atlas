@@ -61,6 +61,14 @@ The model must specify how many clients or servers may collude, whether clients 
 
 Assumptions depend on the number of clients, dropout thresholds, authentication, and helper-server model.
 
+## Post-quantum posture
+
+Depends on the transport, authentication, key agreement, and masking primitives. The aggregation pattern can be made from post-quantum components, but many deployed channels and signatures may not be post-quantum today.
+
+## Confidence model
+
+Confidence comes from the collusion threshold, dropout model, authentication, and whether helper servers are assumed not to collude. Small cohorts can defeat privacy even if the protocol messages are cryptographically protected.
+
 ## Metadata leaks
 
 The server may learn which clients participated, when they connected, and the aggregate for small cohorts.

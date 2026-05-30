@@ -62,6 +62,14 @@ This case study sketches a private DAO voting system as a composition exercise. 
 - Reused contexts or poor domain separation can link votes across elections.
 - Public discussion, delegation, or governance forums can leak intent.
 
+## Post-quantum posture
+
+Depends on every selected building block: credential signatures, membership proofs, nullifiers, ballot encryption, validity proofs, and tallying. A DAO voting design should be treated as post-quantum only if each layer has been classified.
+
+## Confidence model
+
+A typical design combines several confidence models: trusted or semi-trusted eligibility source, holder secrets for anonymous voting, public nullifier registry for non-reuse, proof-system soundness for ballot validity, and threshold trustees or MPC participants for tally privacy.
+
 ## Coercion limitations
 
 Ballot secrecy is not the same as coercion resistance. A voter may be pressured to reveal credentials, prove how they voted, vote under observation, or sell access to a voting key. Coercion-resistant voting needs additional protocol and operational design.

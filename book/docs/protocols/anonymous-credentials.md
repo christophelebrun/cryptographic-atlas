@@ -60,6 +60,14 @@ Designs must consider issuer-verifier collusion, verifier tracking, credential s
 
 The issuer may be trusted to issue correctly. Some systems require non-collusion or privacy-preserving revocation infrastructure.
 
+## Post-quantum posture
+
+Depends on the credential signature scheme, presentation proof, accumulator, and revocation mechanism. The anonymous-credential pattern itself is not enough to determine post-quantum posture.
+
+## Confidence model
+
+Confidence usually depends on a trusted issuer, holder-controlled secrets, verifier-side checks, and revocation infrastructure. Some designs also require non-collusion between issuer and verifier to preserve privacy.
+
 ## Metadata leaks
 
 Timing, verifier identity, IP addresses, rare attributes, and revocation checks can identify the holder.

@@ -39,6 +39,8 @@ The Docusaurus book app lives in `book/`. Book pages live in `book/docs/`, reusa
 
 Repository-level planning and maintenance files can stay outside the book app. For example, the initialization prompt remains at the repository root.
 
+Concept cards are YAML metadata files in `book/data/concept-cards/`. They are intended to support future badges, comparison tables, and machine-readable concept summaries.
+
 ## Local development
 
 ```bash
@@ -71,6 +73,20 @@ $$
 
 The site also includes a local search index. Search works in the statically built site, so use `npm run build` followed by `npm run serve` when testing search locally.
 
+## Surfaced properties
+
+Major concept pages and concept cards should surface:
+
+- post-quantum posture;
+- confidence model or trust distribution;
+- maturity;
+- assumptions;
+- setup requirements;
+- composition risks;
+- what the concept does not provide.
+
+Other useful properties to add next include implementation risk, metadata leakage, auditability, parameter sensitivity, revocation/update story, and operational failure modes.
+
 ## Contributing
 
 Contributions should improve conceptual clarity, threat-model precision, assumptions, failure modes, examples, diagrams, or references. See `CONTRIBUTING.md` and `AGENTS.md` before adding new concept pages.
@@ -94,3 +110,4 @@ Cryptographic systems fail when guarantees are overstated, assumptions are hidde
 - Add more case studies.
 - Add comparison matrices.
 - Add glossary backlinks.
+- Add implementation-risk, auditability, and metadata-leakage fields to concept cards.

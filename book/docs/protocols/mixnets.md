@@ -56,6 +56,14 @@ Messages are collected into a batch, passed through mixes that transform and shu
 
 Privacy often relies on at least one honest mix server and adequate batching.
 
+## Post-quantum posture
+
+Depends on the encryption, signatures, and shuffle proofs used by the mixnet. A mixnet can have a one-honest-server privacy model while still relying on quantum-vulnerable public-key primitives.
+
+## Confidence model
+
+The common confidence model is one-honest-party plus batching: privacy can hold if at least one mix server honestly shuffles and enough messages are mixed together. Verifiable mixnets add public verification for correct shuffling.
+
 ## Metadata leaks
 
 Batch size, timing, message size, and participation patterns can reveal users.

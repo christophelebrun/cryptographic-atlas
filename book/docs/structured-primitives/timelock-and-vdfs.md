@@ -34,6 +34,14 @@ $$
 - A result that is slow to compute.
 - A proof that is fast to verify, depending on the construction.
 
+## Post-quantum posture
+
+Depends on the construction. Some VDF and timelock designs rely on assumptions whose post-quantum status is not the same as hash-based or lattice-based primitives. Treat each construction separately.
+
+## Confidence model
+
+Confidence comes from the sequential-delay assumption, the verification equation, parameter selection, and any setup process. The model is not "trusted time"; it is an assumption about how much sequential work an adversary can complete.
+
 ## What they do not provide
 
 - Wall-clock fairness in every network setting.

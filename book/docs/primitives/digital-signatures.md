@@ -37,6 +37,14 @@ A digital signature lets a private key holder authorize a message so anyone with
 - Credential issuance.
 - Protocol transcript authentication.
 
+## Post-quantum posture
+
+Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable, while standardized post-quantum signature families such as ML-DSA and SLH-DSA are designed for post-quantum migration.
+
+## Confidence model
+
+Confidence comes from the signer controlling the private key, verifiers binding the public key to the right identity and context, and the signature scheme resisting forgery.
+
 ## Failure modes
 
 - Signing ambiguous encodings.
