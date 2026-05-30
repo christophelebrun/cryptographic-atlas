@@ -9,10 +9,9 @@ const config: Config = {
     'A practical map of modern cryptographic primitives, protocols, guarantees, and design patterns.',
   favicon: 'img/logo-placeholder.svg',
 
-  // TODO: Replace USERNAME before publishing to GitHub Pages.
-  url: 'https://USERNAME.github.io',
+  url: 'https://christophelebrun.github.io',
   baseUrl: '/cryptographic-atlas/',
-  organizationName: 'USERNAME',
+  organizationName: 'christophelebrun',
   projectName: 'cryptographic-atlas',
   deploymentBranch: 'gh-pages',
 
@@ -81,7 +80,7 @@ const config: Config = {
           label: 'Book',
         },
         {
-          href: 'https://github.com/USERNAME/cryptographic-atlas',
+          href: 'https://github.com/christophelebrun/cryptographic-atlas',
           label: 'GitHub',
           position: 'right',
         },
@@ -112,11 +111,11 @@ const config: Config = {
           items: [
             {
               label: 'Contributing',
-              href: 'https://github.com/USERNAME/cryptographic-atlas/blob/main/CONTRIBUTING.md',
+              href: 'https://github.com/christophelebrun/cryptographic-atlas/blob/main/CONTRIBUTING.md',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/USERNAME/cryptographic-atlas',
+              href: 'https://github.com/christophelebrun/cryptographic-atlas',
             },
           ],
         },

@@ -2,6 +2,8 @@
 
 A practical map of modern cryptographic primitives, protocols, guarantees, and design patterns.
 
+Website target: https://christophelebrun.github.io/cryptographic-atlas/
+
 ## What this project is
 
 The Cryptographic Atlas is a living online book for technically literate readers who want to understand modern cryptographic building blocks and how they relate to systems.
