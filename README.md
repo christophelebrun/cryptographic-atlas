@@ -115,9 +115,7 @@ Cryptographic systems fail when guarantees are overstated, assumptions are hidde
 
 ## Next steps
 
-- Add diagrams for the taxonomy.
-- Add French translation.
 - Add more case studies.
-- Add glossary backlinks.
-- Expand assumption/substrate pages.
-- Expand comparison matrices beyond proof-system families.
+- Add deeper assumption/substrate pages for newer or specialized assumptions.
+- Add generated rendering for comparison-matrix YAML.
+- Add more case studies and system walkthroughs.

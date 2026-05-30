@@ -1,10 +1,7 @@
 # Maintenance Backlog
 
 - Add verified citations.
-- Add diagrams for the taxonomy.
-- Add French translation.
 - Add more case studies.
-- Add glossary backlinks.
-- Expand assumption/substrate pages.
-- Expand comparison matrices beyond proof-system families.
-- Add concept cards for every non-overview major concept page.
+- Add generated rendering for comparison-matrix YAML.
+- Add deeper assumption/substrate pages for newer or specialized assumptions.
+- Add more system walkthroughs.

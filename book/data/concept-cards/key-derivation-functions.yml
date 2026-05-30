@@ -1,0 +1,54 @@
+id: key-derivation-functions
+name: Key Derivation Functions
+category: key-management
+level: basic-primitive
+short_intuition: A KDF turns shared secret material into context-specific keys.
+security_goals:
+  - key-separation
+  - pseudorandom-derived-keys
+assumptions:
+  - input-secret-entropy
+  - domain-separated-labels
+  - correct-salt-and-context-use
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: client-side-secret
+  threshold: not-applicable
+  breaks_if:
+    - input-secret-is-weak
+    - labels-are-ambiguous
+    - derived-key-is-reused-for-multiple-roles
+  setup:
+    - shared-secret-material
+typical_uses:
+  - session-key-schedules
+  - hybrid-encryption
+  - context-separated-keys
+does_not_provide:
+  - entropy-creation
+  - password-hardening-unless-designed-for-it
+  - key-authentication
+composition_risks:
+  - KDF context must bind protocol transcripts and algorithm choices.
+  - Passwords need password-hashing schemes, not only fast KDFs.
+metadata_leaks:
+  - public-salt
+  - context-labels
+implementation_risk: medium
+auditability: locally-verifiable
+parameter_sensitivity: medium
+revocation_story: Revocation requires rotating the input secret or derivation context.
+operational_failure_modes:
+  - missing-context-binding
+  - low-entropy-input
+  - key-reuse
+maturity: deployed
+related:
+  - symmetric-encryption
+  - key-encapsulation-and-exchange
+  - message-authentication-codes
+references:
+  - boneh-shoup-applied-cryptography
+  - katz-lindell-modern-cryptography

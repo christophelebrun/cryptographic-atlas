@@ -1,0 +1,56 @@
+id: make-receipts-useless
+name: Make Receipts Useless
+category: design-pattern
+level: design-pattern
+short_intuition: Prevent users from producing convincing evidence of how they acted.
+security_goals:
+  - receipt-freeness
+  - coercion-resistance
+  - deniability
+assumptions:
+  - precise-coercion-model
+  - controlled-public-evidence
+  - usable-recovery-or-revoting
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: construction-specific
+  breaks_if:
+    - user-interface-creates-receipts
+    - credentials-can-be-sold
+    - small-groups-reveal-choices
+  setup:
+    - system-specific
+typical_uses:
+  - coercion-resistant-voting
+  - private-signaling
+  - sensitive-choice-systems
+does_not_provide:
+  - protection-from-all-coercion
+  - device-integrity
+  - simple-add-on-privacy
+composition_risks:
+  - Receipt-freeness must include operational artifacts such as logs and screenshots.
+  - Ballot secrecy alone is weaker than coercion resistance.
+metadata_leaks:
+  - timing
+  - group-size
+  - recovery-events
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Recovery, re-voting, and credential replacement are central to the pattern.
+operational_failure_modes:
+  - interface-receipts
+  - forced-credential-transfer
+  - small-group-inference
+maturity: emerging
+related:
+  - coercion-resistant-voting
+  - e-voting
+  - mixnet
+references:
+  - benaloh-secret-ballot
+  - chaum-mixnets

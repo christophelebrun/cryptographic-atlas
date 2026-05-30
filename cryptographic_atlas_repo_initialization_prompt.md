@@ -60,7 +60,7 @@ Reasons:
 - good documentation experience;
 - easy GitHub Pages deployment;
 - React components can be added later;
-- supports versioning, sidebars, tags, and i18n;
+- supports versioning, sidebars, and tags;
 - appropriate for a living, web-first book.
 
 Use TypeScript where configuration requires JavaScript/TypeScript.
@@ -327,13 +327,7 @@ The target audience includes software engineers, blockchain builders, security a
 
 Primary language: English.
 
-Optional translation target: French.
-
-Use standard English cryptographic terminology. When writing French translations, keep the English term on first use when it is the dominant technical term.
-
-Example:
-
-“preuve à divulgation nulle de connaissance (zero-knowledge proof, ZKP)”.
+Use standard English cryptographic terminology.
 
 ## Reader level
 
@@ -971,7 +965,6 @@ Create a `TODO.md` or a section in the README with next steps:
 - Add verified citations.
 - Add diagrams for the taxonomy.
 - Add concept-card rendering from YAML.
-- Add French translation.
 - Add more case studies.
 - Add comparison matrices.
 - Add glossary backlinks.
@@ -1002,4 +995,3 @@ When finished, summarize:
 - known TODOs and limitations.
 
 Do not overclaim completeness. This is version 0.1 of a living book.
-

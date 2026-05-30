@@ -1,0 +1,58 @@
+id: anonymous-airdrop
+name: Anonymous Airdrop
+category: system
+level: system
+short_intuition: Eligible users claim once without publicly linking the claim to their original identity.
+security_goals:
+  - anonymous-eligibility
+  - one-claim-per-user
+  - public-auditability
+assumptions:
+  - eligibility-set-correctness
+  - nullifier-domain-separation
+  - funding-privacy
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: system-specific
+  breaks_if:
+    - eligibility-set-has-duplicates
+    - funding-links-claim-wallets
+    - nullifiers-link-campaigns
+  setup:
+    - eligibility-set
+    - claim-context
+    - public-nullifier-registry
+typical_uses:
+  - private-token-claims
+  - anonymous-rewards
+  - eligibility-based-distribution
+does_not_provide:
+  - sybil-resistance-beyond-eligibility-source
+  - network-anonymity
+  - protection-from-wallet-linkage
+composition_risks:
+  - Blockchain funding metadata can deanonymize claimants.
+  - Nullifiers require eligibility proofs and domain separation.
+metadata_leaks:
+  - gas-funding
+  - claim-timing
+  - withdrawal-patterns
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Eligibility corrections and duplicate handling require campaign-level dispute rules.
+operational_failure_modes:
+  - duplicate-eligibility
+  - wallet-reuse
+  - context-reuse
+maturity: emerging
+related:
+  - nullifier
+  - anonymous-membership
+  - membership-proofs
+references:
+  - camenisch-lysyanskaya-credentials
+  - goldwasser-micali-rackoff-zk

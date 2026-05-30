@@ -16,6 +16,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Assumptions and Substrates',
+      items: [
+        'assumptions/discrete-logarithm',
+        'assumptions/factoring-rsa',
+        'assumptions/pairings',
+        'assumptions/lattices',
+        'assumptions/random-oracle-model',
+        'assumptions/trusted-setup',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Basic Primitives',
       items: [
         'primitives/overview',
@@ -104,6 +116,7 @@ const sidebars: SidebarsConfig = {
         'appendices/reading-list',
         'appendices/notation',
         'appendices/maturity-scale',
+        'appendices/comparison-matrices',
         'appendices/post-quantum-posture',
         'appendices/confidence-models',
         'appendices/metadata-leakage',

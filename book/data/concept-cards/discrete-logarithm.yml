@@ -1,0 +1,55 @@
+id: discrete-logarithm
+name: Discrete Logarithm
+category: mathematical-assumption
+level: mathematical-assumption
+short_intuition: Exponentiation in selected groups is easy, but recovering the exponent should be hard.
+security_goals:
+  - one-wayness
+  - public-verifiability-depending-on-scheme
+assumptions:
+  - hard-discrete-logarithm-problem
+  - safe-group-selection
+  - subgroup-validation
+requires_trusted_setup: false
+post_quantum: false
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - discrete-logarithm-becomes-easy
+    - group-parameters-are-weak
+    - nonces-or-secrets-leak
+  setup:
+    - public-group-parameters
+typical_uses:
+  - key-exchange
+  - digital-signatures
+  - pedersen-commitments
+does_not_provide:
+  - post-quantum-security
+  - safety-in-arbitrary-groups
+  - metadata-privacy
+composition_risks:
+  - Discrete-logarithm systems need group validation and domain separation.
+  - Nonce misuse can expose private keys in signature schemes.
+metadata_leaks:
+  - public-keys
+  - group-parameters
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Revocation is handled by the schemes built on the assumption, not by the assumption itself.
+operational_failure_modes:
+  - weak-parameters
+  - missing-subgroup-checks
+  - nonce-reuse
+maturity: mature
+related:
+  - digital-signature
+  - pedersen-commitment
+  - pairings
+references:
+  - diffie-hellman-new-directions
+  - shor-quantum-factoring
+  - boneh-shoup-applied-cryptography

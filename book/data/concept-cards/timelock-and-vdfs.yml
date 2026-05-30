@@ -1,0 +1,55 @@
+id: timelock-and-vdfs
+name: Timelock and VDFs
+category: delay
+level: structured-primitive
+short_intuition: Outputs depend on sequential computation time and can often be verified quickly.
+security_goals:
+  - sequential-delay
+  - public-verifiability
+assumptions:
+  - sequential-work-hardness
+  - bounded-hardware-advantage
+  - setup-model
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: external-timing
+  threshold: not-applicable
+  breaks_if:
+    - hardware-advantage-is-underestimated
+    - setup-assumption-fails
+    - availability-fails
+  setup:
+    - construction-specific-public-parameters
+typical_uses:
+  - randomness-beacons
+  - delayed-reveal
+  - leader-election
+does_not_provide:
+  - trusted-wall-clock-time
+  - confidentiality-by-itself
+  - availability
+composition_risks:
+  - Delay assumptions must match real adversary hardware.
+  - Verification does not prove the surrounding protocol goal.
+metadata_leaks:
+  - start-time
+  - output-time
+  - participant-availability
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Protocols need replacement, abort, or challenge rules for missed or disputed outputs.
+operational_failure_modes:
+  - denial-of-service
+  - underestimated-hardware
+  - setup-failure
+maturity: emerging
+related:
+  - vdf
+  - delayed-reveal
+  - trusted-setup
+references:
+  - boneh-vdf
+  - wesolowski-vdf

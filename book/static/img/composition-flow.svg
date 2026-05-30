@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Composition flow for private voting</title>
+  <desc id="desc">A diagram showing how eligibility, nullifiers, encrypted ballots, proofs, tallying, and metadata analysis compose in a private voting design.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2f4a4f" />
+    </marker>
+    <style>
+      .box { fill: #f8fbfb; stroke: #9fb3b6; stroke-width: 2; rx: 8; }
+      .warn { fill: #fff7ed; stroke: #fb923c; }
+      .label { font: 600 16px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #152024; }
+      .small { font: 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #526166; }
+      .line { stroke: #2f4a4f; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="960" height="520" fill="#ffffff" />
+  <text x="48" y="44" class="label">Composition flow: private voting</text>
+  <text x="48" y="68" class="small">Each component contributes a narrow guarantee and inherits assumptions from its layer.</text>
+  <rect x="54" y="118" width="220" height="74" class="box" />
+  <text x="76" y="148" class="label">Eligibility source</text>
+  <text x="76" y="172" class="small">issuer, set, credential, registry</text>
+  <rect x="54" y="266" width="220" height="74" class="box" />
+  <text x="76" y="296" class="label">Voter secret</text>
+  <text x="76" y="320" class="small">credential, key, randomness</text>
+  <rect x="354" y="118" width="240" height="74" class="box" />
+  <text x="376" y="148" class="label">Membership proof</text>
+  <text x="376" y="172" class="small">eligible without revealing member</text>
+  <rect x="354" y="266" width="240" height="74" class="box" />
+  <text x="376" y="296" class="label">Context nullifier</text>
+  <text x="376" y="320" class="small">reject duplicate action</text>
+  <rect x="354" y="392" width="240" height="74" class="box" />
+  <text x="376" y="422" class="label">Encrypted ballot</text>
+  <text x="376" y="446" class="small">hide vote value, prove validity</text>
+  <rect x="674" y="180" width="230" height="74" class="box" />
+  <text x="696" y="210" class="label">Accept or reject</text>
+  <text x="696" y="234" class="small">verify proof, check nullifier</text>
+  <rect x="674" y="332" width="230" height="74" class="box" />
+  <text x="696" y="362" class="label">Private tally</text>
+  <text x="696" y="386" class="small">aggregate, decrypt, audit</text>
+  <rect x="674" y="442" width="230" height="54" class="box warn" />
+  <text x="696" y="468" class="label">Metadata review</text>
+  <text x="696" y="488" class="small">timing, fees, groups, devices</text>
+  <path d="M274 155 H354" class="line" />
+  <path d="M274 303 H354" class="line" />
+  <path d="M594 155 C640 160 640 202 674 217" class="line" />
+  <path d="M594 303 C640 296 640 236 674 217" class="line" />
+  <path d="M594 429 C640 424 640 378 674 369" class="line" />
+  <path d="M789 254 V332" class="line" />
+  <path d="M789 406 V442" class="line" />
+</svg>

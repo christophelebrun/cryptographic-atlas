@@ -1,0 +1,56 @@
+id: anti-double-use-nullifiers
+name: Anti-Double-Use Nullifiers
+category: design-pattern
+level: design-pattern
+short_intuition: A public context-specific tag lets a system reject repeated anonymous actions.
+security_goals:
+  - double-use-prevention
+  - limited-linkability
+  - anonymous-rate-limiting
+assumptions:
+  - high-entropy-user-secret
+  - domain-separated-context
+  - public-duplicate-checking
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: not-applicable
+  breaks_if:
+    - context-is-reused
+    - eligibility-proof-is-missing
+    - secret-is-compromised
+  setup:
+    - public-spent-nullifier-registry
+typical_uses:
+  - private-voting
+  - anonymous-airdrops
+  - anonymous-signaling
+does_not_provide:
+  - eligibility-by-itself
+  - network-anonymity
+  - coercion-resistance
+composition_risks:
+  - The nullifier must be bound to an eligibility proof.
+  - Context reuse can link actions across systems.
+metadata_leaks:
+  - action-timing
+  - registry-order
+  - context-identifier
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: medium
+revocation_story: Nullifiers prevent reuse; revocation must come from the credential or membership layer.
+operational_failure_modes:
+  - context-reuse
+  - weak-secret
+  - registry-censorship
+maturity: emerging
+related:
+  - nullifier
+  - anonymous-membership
+  - zero-knowledge-proof
+references:
+  - camenisch-lysyanskaya-credentials
+  - goldwasser-micali-rackoff-zk

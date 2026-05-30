@@ -1,0 +1,56 @@
+id: anonymous-membership
+name: Anonymous Membership
+category: design-pattern
+level: design-pattern
+short_intuition: Prove group membership without revealing which member you are.
+security_goals:
+  - anonymity
+  - eligibility
+  - unlinkability-depending-on-context
+assumptions:
+  - authentic-membership-set
+  - sufficient-anonymity-set
+  - unlinkable-presentation
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: not-applicable
+  breaks_if:
+    - anonymity-set-is-too-small
+    - membership-data-is-stale
+    - presentations-are-linkable
+  setup:
+    - membership-source
+typical_uses:
+  - eligibility-proofs
+  - private-access-control
+  - private-voting
+does_not_provide:
+  - anti-double-use
+  - network-anonymity
+  - coercion-resistance
+composition_risks:
+  - Nullifiers or rate limits are needed to prevent repeated use.
+  - Rare attributes or small groups can deanonymize members.
+metadata_leaks:
+  - group-size
+  - presentation-timing
+  - verifier-context
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: scheme-dependent
+revocation_story: Revocation requires set updates, accumulators, or credential-status mechanisms.
+operational_failure_modes:
+  - small-anonymity-set
+  - stale-membership
+  - verifier-tracking
+maturity: emerging
+related:
+  - anonymous-credential
+  - membership-proofs
+  - nullifier
+references:
+  - camenisch-lysyanskaya-credentials
+  - goldwasser-micali-rackoff-zk

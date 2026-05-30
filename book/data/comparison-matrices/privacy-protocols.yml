@@ -1,0 +1,45 @@
+id: privacy-protocols
+title: Privacy protocol comparison
+description: Comparison of common privacy protocols and their metadata boundaries.
+columns:
+  - main_privacy_goal
+  - confidence_model
+  - metadata_leaks
+  - common_failure
+  - maturity
+rows:
+  - concept: Anonymous credentials
+    values:
+      main_privacy_goal: selective disclosure or unlinkable authorization
+      confidence_model: trusted issuer plus holder secret
+      metadata_leaks: issuer-verifier collusion, rare attributes, revocation checks
+      common_failure: revocation or verifier context tracks users
+      maturity: emerging
+  - concept: Nullifiers
+    values:
+      main_privacy_goal: one anonymous action per context
+      confidence_model: holder secret plus public duplicate registry
+      metadata_leaks: timing, transaction fees, reused contexts
+      common_failure: nullifier accepted without eligibility proof
+      maturity: emerging
+  - concept: Secure aggregation
+    values:
+      main_privacy_goal: aggregate-only disclosure
+      confidence_model: honest-majority or non-collusion depending on protocol
+      metadata_leaks: participation, dropout, cohort size
+      common_failure: small cohorts or repeated queries reveal individuals
+      maturity: mature
+  - concept: MPC
+    values:
+      main_privacy_goal: joint computation without revealing inputs
+      confidence_model: adversary threshold and abort model
+      metadata_leaks: participant set, circuit shape, aborts
+      common_failure: output or abort pattern leaks inputs
+      maturity: mature
+  - concept: Mixnets
+    values:
+      main_privacy_goal: sender-recipient unlinkability through shuffling
+      confidence_model: at least one honest mix
+      metadata_leaks: timing, batch membership, message size
+      common_failure: small batches or all mixes collude
+      maturity: mature

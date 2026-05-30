@@ -1,0 +1,57 @@
+id: mpc
+name: Multi-Party Computation
+category: protocol
+level: protocol
+short_intuition: Several parties compute a function together without revealing their private inputs beyond the output.
+security_goals:
+  - input-privacy
+  - correct-computation
+  - distributed-trust
+assumptions:
+  - adversary-threshold
+  - authenticated-channels
+  - protocol-specific-abort-model
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: protocol-specific
+  breaks_if:
+    - too-many-parties-collude
+    - abort-model-is-ignored
+    - output-itself-leaks-inputs
+  setup:
+    - participant-authentication
+    - protocol-specific-preprocessing
+typical_uses:
+  - private-analytics
+  - threshold-key-generation
+  - joint-computation
+does_not_provide:
+  - output-privacy
+  - metadata-privacy
+  - availability-against-aborts
+composition_risks:
+  - The function output can reveal private inputs.
+  - Participation and abort metadata can be sensitive.
+metadata_leaks:
+  - participant-set
+  - circuit-shape
+  - aborts
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Participant removal, key refresh, and preprocessing invalidation are protocol-level concerns.
+operational_failure_modes:
+  - collusion-threshold-exceeded
+  - aborts
+  - malicious-inputs
+maturity: mature
+related:
+  - secure-aggregation
+  - private-aggregation
+  - reveal-only-a-function
+references:
+  - canetti-uc
+  - boneh-shoup-applied-cryptography

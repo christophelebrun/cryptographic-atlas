@@ -25,13 +25,7 @@ The target audience includes software engineers, blockchain builders, security a
 
 Primary language: English.
 
-Optional translation target: French.
-
-Use standard English cryptographic terminology. When writing French translations, keep the English term on first use when it is the dominant technical term.
-
-Example:
-
-“preuve à divulgation nulle de connaissance (zero-knowledge proof, ZKP)”.
+Use standard English cryptographic terminology.
 
 ## Reader level
 

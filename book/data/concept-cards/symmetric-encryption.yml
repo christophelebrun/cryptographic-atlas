@@ -1,0 +1,55 @@
+id: symmetric-encryption
+name: Symmetric Encryption
+category: encryption
+level: basic-primitive
+short_intuition: One shared secret key encrypts and decrypts data.
+security_goals:
+  - confidentiality
+  - bulk-data-protection
+assumptions:
+  - secret-key-control
+  - correct-mode-selection
+  - nonce-discipline
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: client-side-secret
+  threshold: not-applicable
+  breaks_if:
+    - key-is-compromised
+    - nonce-reuse-breaks-mode
+    - encryption-is-used-without-authentication
+  setup:
+    - shared-secret-key
+typical_uses:
+  - bulk-data-encryption
+  - encrypted-backups
+  - hybrid-encryption
+does_not_provide:
+  - key-distribution
+  - authentication-without-a-mac-or-aead
+  - metadata-privacy
+composition_risks:
+  - Symmetric encryption often needs authenticated encryption.
+  - Key establishment must be handled separately.
+metadata_leaks:
+  - ciphertext-size
+  - access-patterns
+  - timing
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: medium
+revocation_story: Revocation requires key rotation and re-encryption policy.
+operational_failure_modes:
+  - key-loss
+  - nonce-reuse
+  - unauthenticated-ciphertexts
+maturity: deployed
+related:
+  - message-authentication-codes
+  - key-derivation-functions
+  - public-key-encryption
+references:
+  - boneh-shoup-applied-cryptography
+  - katz-lindell-modern-cryptography

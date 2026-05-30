@@ -1,0 +1,58 @@
+id: e-voting
+name: Electronic Voting
+category: system
+level: system
+short_intuition: Electronic voting systems collect, protect, tally, and audit votes under privacy and integrity constraints.
+security_goals:
+  - eligibility
+  - ballot-secrecy
+  - verifiability
+assumptions:
+  - trusted-election-process
+  - threshold-trustees-or-auditors
+  - usable-client-side-security
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: system-specific
+  breaks_if:
+    - trustees-collude
+    - devices-are-compromised
+    - audit-process-is-not-credible
+  setup:
+    - election-parameters
+    - public-bulletin-board
+typical_uses:
+  - organization-voting
+  - governance-voting
+  - limited-public-election-settings
+does_not_provide:
+  - safety-from-all-coercion
+  - device-integrity
+  - legal-compliance-by-itself
+composition_risks:
+  - Voting combines eligibility, privacy, tallying, usability, and auditability.
+  - Ballot secrecy is not the same as receipt-freeness.
+metadata_leaks:
+  - check-in-time
+  - device-identifiers
+  - small-precinct-tallies
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Election rules must define replacement ballots, revoting, spoiled ballots, and trustee recovery.
+operational_failure_modes:
+  - malware
+  - trustee-collusion
+  - receipt-creation
+maturity: emerging
+related:
+  - mixnet
+  - threshold-cryptography
+  - make-receipts-useless
+references:
+  - benaloh-secret-ballot
+  - chaum-mixnets
+  - canetti-uc

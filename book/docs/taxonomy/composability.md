@@ -19,6 +19,8 @@ confidence_model:
 
 Cryptographic tools do not compose automatically. Each primitive or protocol comes with a specific interface, adversary model, setup assumption, and leakage profile.
 
+![Composition flow for private voting](/img/composition-flow.svg)
+
 ## One-sentence intuition
 
 A component can keep its promise and still leave the larger system insecure if the system needs a different promise.

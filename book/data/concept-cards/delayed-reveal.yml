@@ -1,0 +1,55 @@
+id: delayed-reveal
+name: Delayed Reveal
+category: design-pattern
+level: design-pattern
+short_intuition: Fix information now and disclose it later.
+security_goals:
+  - temporal-binding
+  - delayed-disclosure
+assumptions:
+  - binding-commitment-or-delay
+  - unambiguous-opening-rules
+  - abort-handling
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: not-applicable
+  breaks_if:
+    - commitment-binding-fails
+    - openings-are-ambiguous
+    - aborts-have-no-policy
+  setup:
+    - commitment-or-delay-mechanism
+typical_uses:
+  - commit-reveal
+  - randomness-beacons
+  - sealed-bid-processes
+does_not_provide:
+  - fairness-without-abort-rules
+  - confidentiality-after-opening
+  - authentication
+composition_risks:
+  - Delayed reveal needs deadlines and penalties.
+  - VDFs and timelocks add timing assumptions, not trusted wall-clock time.
+metadata_leaks:
+  - commitment-time
+  - reveal-time
+  - participant-identity
+implementation_risk: medium
+auditability: publicly-verifiable
+parameter_sensitivity: scheme-dependent
+revocation_story: Missed or disputed reveals require protocol-level challenge and fallback rules.
+operational_failure_modes:
+  - selective-abort
+  - missed-deadline
+  - weak-randomness
+maturity: mature
+related:
+  - commitments
+  - timelock-and-vdfs
+  - vdf
+references:
+  - boneh-shoup-applied-cryptography
+  - boneh-vdf

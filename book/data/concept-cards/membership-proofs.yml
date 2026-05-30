@@ -1,0 +1,56 @@
+id: membership-proofs
+name: Membership Proofs
+category: proof-system
+level: proof-system
+short_intuition: A proof that an item belongs to a committed set.
+security_goals:
+  - set-membership
+  - public-verifiability
+  - privacy-depending-on-construction
+assumptions:
+  - authentic-set-root
+  - unambiguous-leaf-encoding
+  - current-state-selection
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: public-verifiability
+  threshold: not-applicable
+  breaks_if:
+    - set-root-is-stale
+    - leaf-encoding-is-ambiguous
+    - accumulator-assumption-fails
+  setup:
+    - authenticated-set-commitment
+typical_uses:
+  - eligibility-proofs
+  - merkle-inclusion
+  - anonymous-membership
+does_not_provide:
+  - authorization-policy
+  - freshness-without-root-governance
+  - privacy-without-zero-knowledge
+composition_risks:
+  - Membership must be bound to the correct policy context.
+  - Proof paths or public inputs can reveal the member.
+metadata_leaks:
+  - set-root
+  - proof-path-shape
+  - query-timing
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: scheme-dependent
+revocation_story: Revocation requires updating the set or accumulator and making freshness verifiable.
+operational_failure_modes:
+  - stale-roots
+  - ambiguous-leaves
+  - metadata-deanonymization
+maturity: mature
+related:
+  - accumulators-and-merkle-trees
+  - anonymous-membership
+  - zero-knowledge-proof
+references:
+  - merkle-signatures
+  - boneh-shoup-applied-cryptography

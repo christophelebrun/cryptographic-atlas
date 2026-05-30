@@ -1,0 +1,55 @@
+id: commitments
+name: Commitments
+category: primitive
+level: basic-primitive
+short_intuition: A commitment locks in a hidden value so it can be opened later.
+security_goals:
+  - hiding
+  - binding
+assumptions:
+  - scheme-specific-hardness
+  - secure-randomness
+  - unambiguous-opening-rules
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - randomness-is-weak
+    - binding-assumption-fails
+    - opening-format-is-ambiguous
+  setup:
+    - scheme-specific-public-parameters
+typical_uses:
+  - commit-reveal
+  - range-proofs
+  - private-voting
+does_not_provide:
+  - authentication
+  - value-validity
+  - confidentiality-after-opening
+composition_risks:
+  - Commitments need authentication when the committer identity matters.
+  - Hidden values often need validity proofs before use.
+metadata_leaks:
+  - commitment-time
+  - opening-time
+  - public-context
+implementation_risk: medium
+auditability: publicly-verifiable
+parameter_sensitivity: scheme-dependent
+revocation_story: Commitment schemes do not revoke; protocols need opening deadlines, abort rules, and dispute handling.
+operational_failure_modes:
+  - weak-randomness
+  - missing-authentication
+  - selective-abort
+maturity: mature
+related:
+  - pedersen-commitment
+  - zero-knowledge-proof
+  - delayed-reveal
+references:
+  - boneh-shoup-applied-cryptography
+  - pedersen-commitments

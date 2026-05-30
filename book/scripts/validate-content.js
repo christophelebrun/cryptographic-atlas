@@ -24,6 +24,19 @@ const validators = {
   comparisonMatrix: ajv.compile(loadJson(path.join(schemasDir, 'comparison-matrix.schema.json'))),
 };
 
+const conceptCardAliases = {
+  'anonymous-credentials': 'anonymous-credential',
+  'digital-signatures': 'digital-signature',
+  'hash-functions': 'hash-function',
+  mixnets: 'mixnet',
+  nullifiers: 'nullifier',
+  'pedersen-commitments': 'pedersen-commitment',
+  'range-proofs': 'range-proof',
+  'secure-aggregation': 'secure-aggregation',
+  'secret-sharing': 'secret-sharing',
+  'zero-knowledge-proofs': 'zero-knowledge-proof',
+};
+
 const conceptSections = [
   'One-sentence intuition',
   ['What it does not provide', 'What ZKPs do not provide'],
@@ -123,6 +136,7 @@ function formatAjvErrors(validate) {
 
 const errors = [];
 const warnings = [];
+const majorDocCardIds = new Set();
 
 function validateObject(file, data, validate) {
   if (!validate(data)) {
@@ -141,6 +155,10 @@ for (const file of walk(docsDir, (item) => item.endsWith('.md') || item.endsWith
 
   const pageHeadings = headings(parsed.body);
   const template = parsed.frontmatter.template;
+  if (['concept', 'protocol', 'case-study'].includes(template)) {
+    const slug = path.basename(file, path.extname(file));
+    majorDocCardIds.add(conceptCardAliases[slug] || slug);
+  }
   const required =
     template === 'concept'
       ? conceptSections
@@ -161,15 +179,29 @@ for (const file of walk(docsDir, (item) => item.endsWith('.md') || item.endsWith
   }
 }
 
+const conceptCardIds = new Set();
+const conceptCardReferences = [];
 for (const file of walk(path.join(dataDir, 'concept-cards'), (item) => item.endsWith('.yml'))) {
   const card = parseYaml(file);
   validateObject(file, card, validators.conceptCard);
+  if (conceptCardIds.has(card.id)) errors.push(`${relative(file)}: duplicate concept card id "${card.id}"`);
+  conceptCardIds.add(card.id);
+  for (const reference of card.references || []) {
+    conceptCardReferences.push({file, reference});
+  }
   if ((card.references || []).includes('TODO')) {
     errors.push(`${relative(file)}: concept card references must use reference IDs, not TODO`);
   }
 }
 
+for (const requiredCardId of majorDocCardIds) {
+  if (!conceptCardIds.has(requiredCardId)) {
+    errors.push(`data/concept-cards: missing concept card for major page id "${requiredCardId}"`);
+  }
+}
+
 const referencesFile = path.join(dataDir, 'references.yml');
+let referenceIds = new Set();
 if (fs.existsSync(referencesFile)) {
   const references = parseYaml(referencesFile);
   validateObject(referencesFile, references, validators.references);
@@ -178,8 +210,15 @@ if (fs.existsSync(referencesFile)) {
     if (ids.has(reference.id)) errors.push(`${relative(referencesFile)}: duplicate reference id "${reference.id}"`);
     ids.add(reference.id);
   }
+  referenceIds = ids;
 } else {
   errors.push('data/references.yml: missing references registry');
+}
+
+for (const {file, reference} of conceptCardReferences) {
+  if (!referenceIds.has(reference)) {
+    errors.push(`${relative(file)}: unknown reference id "${reference}"`);
+  }
 }
 
 const relationshipsFile = path.join(dataDir, 'relationships.yml');

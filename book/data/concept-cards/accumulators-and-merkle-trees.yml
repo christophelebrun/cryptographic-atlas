@@ -1,0 +1,56 @@
+id: accumulators-and-merkle-trees
+name: Accumulators and Merkle Trees
+category: authenticated-data-structure
+level: structured-primitive
+short_intuition: A compact commitment to a collection supports membership and sometimes non-membership proofs.
+security_goals:
+  - set-commitment
+  - membership-verification
+  - compact-proofs
+assumptions:
+  - collision-resistance-or-accumulator-hardness
+  - canonical-encoding
+  - authenticated-root
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: public-verifiability
+  threshold: not-applicable
+  breaks_if:
+    - root-is-not-authentic
+    - encoding-is-ambiguous
+    - accumulator-assumption-fails
+  setup:
+    - set-root-or-accumulator-parameters
+typical_uses:
+  - certificate-transparency
+  - blockchains
+  - eligibility-sets
+does_not_provide:
+  - set-privacy
+  - freshness-without-governance
+  - authorization-by-itself
+composition_risks:
+  - Set membership is not the same as eligibility policy.
+  - Dynamic updates need a freshness story.
+metadata_leaks:
+  - set-size
+  - root-history
+  - proof-path
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: scheme-dependent
+revocation_story: Revocation requires authenticated updates and verifier agreement on the current root.
+operational_failure_modes:
+  - stale-root
+  - ambiguous-encoding
+  - missing-domain-separation
+maturity: deployed
+related:
+  - membership-proofs
+  - hash-function
+  - anonymous-membership
+references:
+  - merkle-signatures
+  - boneh-shoup-applied-cryptography

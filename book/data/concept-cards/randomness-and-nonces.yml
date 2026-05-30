@@ -1,0 +1,54 @@
+id: randomness-and-nonces
+name: Randomness and Nonces
+category: implementation-substrate
+level: basic-primitive
+short_intuition: Fresh random or unique values keep many schemes from repeating dangerous internal state.
+security_goals:
+  - unpredictability
+  - uniqueness
+assumptions:
+  - reliable-random-number-generation
+  - scheme-specific-nonce-rules
+  - monitoring-for-reuse
+requires_trusted_setup: false
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: client-side-secret
+  threshold: not-applicable
+  breaks_if:
+    - randomness-is-predictable
+    - nonce-is-reused
+    - deterministic-derivation-is-misbound
+  setup:
+    - local-entropy-source
+typical_uses:
+  - signature-nonces
+  - encryption-nonces
+  - commitment-randomness
+does_not_provide:
+  - encryption
+  - authentication
+  - domain-separation
+composition_risks:
+  - Nonce rules differ by scheme and cannot be guessed.
+  - Randomness failures can break otherwise sound primitives.
+metadata_leaks:
+  - nonce-values
+  - generation-context
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Bad randomness usually requires key rotation, invalidation, and incident response.
+operational_failure_modes:
+  - repeated-nonces
+  - weak-entropy-source
+  - predictable-identifiers
+maturity: deployed
+related:
+  - digital-signature
+  - commitments
+  - symmetric-encryption
+references:
+  - boneh-shoup-applied-cryptography
+  - katz-lindell-modern-cryptography

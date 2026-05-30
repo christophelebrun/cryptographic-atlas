@@ -1,0 +1,55 @@
+id: pairings
+name: Pairings
+category: mathematical-substrate
+level: mathematical-assumption
+short_intuition: Pairings make selected exponent relationships publicly checkable across algebraic groups.
+security_goals:
+  - compact-verification
+  - algebraic-relation-checking
+assumptions:
+  - pairing-specific-hardness-assumptions
+  - secure-curve-selection
+  - subgroup-validation
+requires_trusted_setup: varies
+post_quantum: false
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - elliptic-curve-discrete-logarithm-is-broken
+    - subgroup-checks-are-missing
+    - setup-trapdoor-is-retained
+  setup:
+    - pairing-curve-parameters
+typical_uses:
+  - pairing-based-snarks
+  - bls-style-signatures
+  - anonymous-credentials
+does_not_provide:
+  - post-quantum-security
+  - general-privacy
+  - setup-safety-by-itself
+composition_risks:
+  - Pairing systems often inherit trusted setup and curve-selection risk.
+  - Succinctness can hide a complex confidence model.
+metadata_leaks:
+  - public-parameters
+  - proof-system-family
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation belongs to the concrete credential, signature, or proof system.
+operational_failure_modes:
+  - weak-curve-choice
+  - missing-subgroup-checks
+  - hidden-setup-assumption
+maturity: mature
+related:
+  - snarks-starks-bulletproofs
+  - trusted-setup
+  - anonymous-credential
+references:
+  - boneh-franklin-pairings
+  - groth16
+  - shor-quantum-factoring

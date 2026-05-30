@@ -5,6 +5,58 @@ import type {ConceptCardData} from '../components/ConceptCard';
 
 const conceptCards: ConceptCardData[] = [
   {
+    "id": "accumulators-and-merkle-trees",
+    "name": "Accumulators and Merkle Trees",
+    "category": "authenticated-data-structure",
+    "level": "structured-primitive",
+    "shortIntuition": "A compact commitment to a collection supports membership and sometimes non-membership proofs.",
+    "maturity": "deployed",
+    "securityGoals": [
+      "set-commitment",
+      "membership-verification",
+      "compact-proofs"
+    ],
+    "doesNotProvide": [
+      "set-privacy",
+      "freshness-without-governance",
+      "authorization-by-itself"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "public-verifiability",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "set-size",
+      "root-history",
+      "proof-path"
+    ]
+  },
+  {
+    "id": "anonymous-airdrop",
+    "name": "Anonymous Airdrop",
+    "category": "system",
+    "level": "system",
+    "shortIntuition": "Eligible users claim once without publicly linking the claim to their original identity.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "anonymous-eligibility",
+      "one-claim-per-user",
+      "public-auditability"
+    ],
+    "doesNotProvide": [
+      "sybil-resistance-beyond-eligibility-source",
+      "network-anonymity",
+      "protection-from-wallet-linkage"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mixed",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "gas-funding",
+      "claim-timing",
+      "withdrawal-patterns"
+    ]
+  },
+  {
     "id": "anonymous-credential",
     "name": "Anonymous Credential",
     "category": "protocol",
@@ -31,6 +83,134 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "anonymous-membership",
+    "name": "Anonymous Membership",
+    "category": "design-pattern",
+    "level": "design-pattern",
+    "shortIntuition": "Prove group membership without revealing which member you are.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "anonymity",
+      "eligibility",
+      "unlinkability-depending-on-context"
+    ],
+    "doesNotProvide": [
+      "anti-double-use",
+      "network-anonymity",
+      "coercion-resistance"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "depends",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "group-size",
+      "presentation-timing",
+      "verifier-context"
+    ]
+  },
+  {
+    "id": "anti-double-use-nullifiers",
+    "name": "Anti-Double-Use Nullifiers",
+    "category": "design-pattern",
+    "level": "design-pattern",
+    "shortIntuition": "A public context-specific tag lets a system reject repeated anonymous actions.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "double-use-prevention",
+      "limited-linkability",
+      "anonymous-rate-limiting"
+    ],
+    "doesNotProvide": [
+      "eligibility-by-itself",
+      "network-anonymity",
+      "coercion-resistance"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "depends",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "action-timing",
+      "registry-order",
+      "context-identifier"
+    ]
+  },
+  {
+    "id": "coercion-resistant-voting",
+    "name": "Coercion-Resistant Voting",
+    "category": "system",
+    "level": "system",
+    "shortIntuition": "A voting design tries to prevent voters from proving how they voted to a coercer.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "ballot-secrecy",
+      "receipt-freeness",
+      "coercion-resistance"
+    ],
+    "doesNotProvide": [
+      "protection-from-all-physical-coercion",
+      "simple-deployment",
+      "compromised-device-security"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mixed",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "timing",
+      "recovery-events",
+      "small-group-results"
+    ]
+  },
+  {
+    "id": "commitments",
+    "name": "Commitments",
+    "category": "primitive",
+    "level": "basic-primitive",
+    "shortIntuition": "A commitment locks in a hidden value so it can be opened later.",
+    "maturity": "mature",
+    "securityGoals": [
+      "hiding",
+      "binding"
+    ],
+    "doesNotProvide": [
+      "authentication",
+      "value-validity",
+      "confidentiality-after-opening"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "medium",
+    "metadataLeaks": [
+      "commitment-time",
+      "opening-time",
+      "public-context"
+    ]
+  },
+  {
+    "id": "delayed-reveal",
+    "name": "Delayed Reveal",
+    "category": "design-pattern",
+    "level": "design-pattern",
+    "shortIntuition": "Fix information now and disclose it later.",
+    "maturity": "mature",
+    "securityGoals": [
+      "temporal-binding",
+      "delayed-disclosure"
+    ],
+    "doesNotProvide": [
+      "fairness-without-abort-rules",
+      "confidentiality-after-opening",
+      "authentication"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "depends",
+    "implementationRisk": "medium",
+    "metadataLeaks": [
+      "commitment-time",
+      "reveal-time",
+      "participant-identity"
+    ]
+  },
+  {
     "id": "digital-signature",
     "name": "Digital Signature",
     "category": "authentication",
@@ -54,6 +234,80 @@ const conceptCards: ConceptCardData[] = [
       "signer-public-key",
       "signing-time",
       "message-context"
+    ]
+  },
+  {
+    "id": "discrete-logarithm",
+    "name": "Discrete Logarithm",
+    "category": "mathematical-assumption",
+    "level": "mathematical-assumption",
+    "shortIntuition": "Exponentiation in selected groups is easy, but recovering the exponent should be hard.",
+    "maturity": "mature",
+    "securityGoals": [
+      "one-wayness",
+      "public-verifiability-depending-on-scheme"
+    ],
+    "doesNotProvide": [
+      "post-quantum-security",
+      "safety-in-arbitrary-groups",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "vulnerable",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "public-keys",
+      "group-parameters"
+    ]
+  },
+  {
+    "id": "e-voting",
+    "name": "Electronic Voting",
+    "category": "system",
+    "level": "system",
+    "shortIntuition": "Electronic voting systems collect, protect, tally, and audit votes under privacy and integrity constraints.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "eligibility",
+      "ballot-secrecy",
+      "verifiability"
+    ],
+    "doesNotProvide": [
+      "safety-from-all-coercion",
+      "device-integrity",
+      "legal-compliance-by-itself"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mixed",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "check-in-time",
+      "device-identifiers",
+      "small-precinct-tallies"
+    ]
+  },
+  {
+    "id": "factoring-rsa",
+    "name": "Factoring and RSA",
+    "category": "mathematical-assumption",
+    "level": "mathematical-assumption",
+    "shortIntuition": "RSA-style systems use arithmetic modulo a composite number whose factors are secret.",
+    "maturity": "mature",
+    "securityGoals": [
+      "trapdoor-one-wayness",
+      "public-key-functionality"
+    ],
+    "doesNotProvide": [
+      "post-quantum-security",
+      "safe-textbook-encryption",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "vulnerable",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "public-modulus",
+      "key-identity"
     ]
   },
   {
@@ -108,6 +362,31 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "homomorphic-commitments",
+    "name": "Homomorphic Commitments",
+    "category": "commitment",
+    "level": "structured-primitive",
+    "shortIntuition": "Commitments can be combined so their hidden values combine in a matching way.",
+    "maturity": "mature",
+    "securityGoals": [
+      "hiding",
+      "binding",
+      "additive-structure"
+    ],
+    "doesNotProvide": [
+      "value-validity",
+      "authentication",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "operation-context",
+      "opening-patterns"
+    ]
+  },
+  {
     "id": "homomorphic-encryption",
     "name": "Homomorphic Encryption",
     "category": "encryption",
@@ -130,6 +409,157 @@ const conceptCards: ConceptCardData[] = [
       "access-patterns",
       "output-values",
       "participant-timing"
+    ]
+  },
+  {
+    "id": "key-derivation-functions",
+    "name": "Key Derivation Functions",
+    "category": "key-management",
+    "level": "basic-primitive",
+    "shortIntuition": "A KDF turns shared secret material into context-specific keys.",
+    "maturity": "deployed",
+    "securityGoals": [
+      "key-separation",
+      "pseudorandom-derived-keys"
+    ],
+    "doesNotProvide": [
+      "entropy-creation",
+      "password-hardening-unless-designed-for-it",
+      "key-authentication"
+    ],
+    "postQuantumPosture": "plausible",
+    "confidenceModelType": "client-side-secret",
+    "implementationRisk": "medium",
+    "metadataLeaks": [
+      "public-salt",
+      "context-labels"
+    ]
+  },
+  {
+    "id": "key-encapsulation-and-exchange",
+    "name": "Key Encapsulation and Exchange",
+    "category": "key-management",
+    "level": "basic-primitive",
+    "shortIntuition": "Parties establish shared secret material over an insecure channel.",
+    "maturity": "deployed",
+    "securityGoals": [
+      "shared-secret-establishment",
+      "forward-secrecy-depending-on-protocol",
+      "authenticated-key-exchange-when-composed"
+    ],
+    "doesNotProvide": [
+      "entity-authentication-by-itself",
+      "application-data-encryption",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "peer-identities",
+      "handshake-timing",
+      "algorithm-choices"
+    ]
+  },
+  {
+    "id": "lattices",
+    "name": "Lattices",
+    "category": "mathematical-substrate",
+    "level": "mathematical-assumption",
+    "shortIntuition": "Lattice cryptography uses hard problems over high-dimensional noisy grids.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "post-quantum-hardness",
+      "encrypted-computation-depending-on-scheme"
+    ],
+    "doesNotProvide": [
+      "automatic-security-for-all-parameters",
+      "simple-implementation",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "plausible",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "public-parameters",
+      "ciphertext-size"
+    ]
+  },
+  {
+    "id": "make-receipts-useless",
+    "name": "Make Receipts Useless",
+    "category": "design-pattern",
+    "level": "design-pattern",
+    "shortIntuition": "Prevent users from producing convincing evidence of how they acted.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "receipt-freeness",
+      "coercion-resistance",
+      "deniability"
+    ],
+    "doesNotProvide": [
+      "protection-from-all-coercion",
+      "device-integrity",
+      "simple-add-on-privacy"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "depends",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "timing",
+      "group-size",
+      "recovery-events"
+    ]
+  },
+  {
+    "id": "membership-proofs",
+    "name": "Membership Proofs",
+    "category": "proof-system",
+    "level": "proof-system",
+    "shortIntuition": "A proof that an item belongs to a committed set.",
+    "maturity": "mature",
+    "securityGoals": [
+      "set-membership",
+      "public-verifiability",
+      "privacy-depending-on-construction"
+    ],
+    "doesNotProvide": [
+      "authorization-policy",
+      "freshness-without-root-governance",
+      "privacy-without-zero-knowledge"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "public-verifiability",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "set-root",
+      "proof-path-shape",
+      "query-timing"
+    ]
+  },
+  {
+    "id": "message-authentication-codes",
+    "name": "Message Authentication Codes",
+    "category": "authentication",
+    "level": "basic-primitive",
+    "shortIntuition": "A shared secret key lets parties detect forged or modified messages.",
+    "maturity": "deployed",
+    "securityGoals": [
+      "integrity",
+      "symmetric-authenticity",
+      "unforgeability"
+    ],
+    "doesNotProvide": [
+      "public-verifiability",
+      "non-repudiation",
+      "confidentiality"
+    ],
+    "postQuantumPosture": "plausible",
+    "confidenceModelType": "client-side-secret",
+    "implementationRisk": "medium",
+    "metadataLeaks": [
+      "message-size",
+      "sender-context"
     ]
   },
   {
@@ -156,6 +586,32 @@ const conceptCards: ConceptCardData[] = [
       "timing",
       "message-size",
       "batch-membership"
+    ]
+  },
+  {
+    "id": "mpc",
+    "name": "Multi-Party Computation",
+    "category": "protocol",
+    "level": "protocol",
+    "shortIntuition": "Several parties compute a function together without revealing their private inputs beyond the output.",
+    "maturity": "mature",
+    "securityGoals": [
+      "input-privacy",
+      "correct-computation",
+      "distributed-trust"
+    ],
+    "doesNotProvide": [
+      "output-privacy",
+      "metadata-privacy",
+      "availability-against-aborts"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mixed",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "participant-set",
+      "circuit-shape",
+      "aborts"
     ]
   },
   {
@@ -186,6 +642,30 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "pairings",
+    "name": "Pairings",
+    "category": "mathematical-substrate",
+    "level": "mathematical-assumption",
+    "shortIntuition": "Pairings make selected exponent relationships publicly checkable across algebraic groups.",
+    "maturity": "mature",
+    "securityGoals": [
+      "compact-verification",
+      "algebraic-relation-checking"
+    ],
+    "doesNotProvide": [
+      "post-quantum-security",
+      "general-privacy",
+      "setup-safety-by-itself"
+    ],
+    "postQuantumPosture": "vulnerable",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "public-parameters",
+      "proof-system-family"
+    ]
+  },
+  {
     "id": "pedersen-commitment",
     "name": "Pedersen Commitment",
     "category": "commitment",
@@ -208,6 +688,58 @@ const conceptCards: ConceptCardData[] = [
       "opening-timing",
       "public-context",
       "reused-randomness"
+    ]
+  },
+  {
+    "id": "private-aggregation",
+    "name": "Private Aggregation",
+    "category": "design-pattern",
+    "level": "design-pattern",
+    "shortIntuition": "Reveal a combined result while keeping individual inputs hidden.",
+    "maturity": "mature",
+    "securityGoals": [
+      "aggregate-disclosure",
+      "input-privacy",
+      "limited-output-leakage"
+    ],
+    "doesNotProvide": [
+      "privacy-for-small-groups",
+      "protection-from-differencing",
+      "input-validity-without-proofs"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "depends",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "participation",
+      "cohort-size",
+      "output-value"
+    ]
+  },
+  {
+    "id": "private-dao-voting",
+    "name": "Private DAO Voting",
+    "category": "system",
+    "level": "system",
+    "shortIntuition": "A governance vote combines anonymous eligibility, ballot secrecy, anti-double-vote checks, and verifiable tallying.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "anonymous-eligibility",
+      "ballot-secrecy",
+      "verifiable-tally"
+    ],
+    "doesNotProvide": [
+      "full-coercion-resistance",
+      "traffic-analysis-protection",
+      "production-deployment-guidance"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "mixed",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "wallet-funding",
+      "vote-timing",
+      "small-voter-groups"
     ]
   },
   {
@@ -236,6 +768,54 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "random-oracle-model",
+    "name": "Random Oracle Model",
+    "category": "proof-model",
+    "level": "mathematical-assumption",
+    "shortIntuition": "A security proof model that treats a hash function as an ideal public random function.",
+    "maturity": "mature",
+    "securityGoals": [
+      "idealized-hash-modeling",
+      "proof-simplification"
+    ],
+    "doesNotProvide": [
+      "proof-for-every-concrete-hash",
+      "implementation-correctness",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "mathematical-assumption",
+    "implementationRisk": "medium",
+    "metadataLeaks": [
+      "public-inputs",
+      "query-context"
+    ]
+  },
+  {
+    "id": "randomness-and-nonces",
+    "name": "Randomness and Nonces",
+    "category": "implementation-substrate",
+    "level": "basic-primitive",
+    "shortIntuition": "Fresh random or unique values keep many schemes from repeating dangerous internal state.",
+    "maturity": "deployed",
+    "securityGoals": [
+      "unpredictability",
+      "uniqueness"
+    ],
+    "doesNotProvide": [
+      "encryption",
+      "authentication",
+      "domain-separation"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "client-side-secret",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "nonce-values",
+      "generation-context"
+    ]
+  },
+  {
     "id": "range-proof",
     "name": "Range Proof",
     "category": "proof-system",
@@ -259,6 +839,32 @@ const conceptCards: ConceptCardData[] = [
       "public-bound",
       "proof-context",
       "submission-timing"
+    ]
+  },
+  {
+    "id": "reveal-only-a-function",
+    "name": "Reveal Only a Function",
+    "category": "design-pattern",
+    "level": "design-pattern",
+    "shortIntuition": "Expose a computed result while hiding the underlying inputs.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "controlled-disclosure",
+      "input-privacy",
+      "least-information-release"
+    ],
+    "doesNotProvide": [
+      "protection-from-revealing-functions",
+      "unlimited-query-privacy",
+      "access-control-by-itself"
+    ],
+    "postQuantumPosture": "not-applicable",
+    "confidenceModelType": "depends",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "queried-function",
+      "output-value",
+      "query-timing"
     ]
   },
   {
@@ -309,6 +915,132 @@ const conceptCards: ConceptCardData[] = [
       "participation",
       "dropout-events",
       "timing"
+    ]
+  },
+  {
+    "id": "snarks-starks-bulletproofs",
+    "name": "SNARKs, STARKs, and Bulletproofs",
+    "category": "proof-system-family",
+    "level": "proof-system",
+    "shortIntuition": "Proof-system families that trade setup, proof size, verifier cost, and assumptions differently.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "succinct-verification",
+      "soundness",
+      "zero-knowledge-depending-on-mode"
+    ],
+    "doesNotProvide": [
+      "correct-application-statement",
+      "metadata-privacy",
+      "implementation-safety"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "depends",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "public-inputs",
+      "proof-size",
+      "verification-context"
+    ]
+  },
+  {
+    "id": "symmetric-encryption",
+    "name": "Symmetric Encryption",
+    "category": "encryption",
+    "level": "basic-primitive",
+    "shortIntuition": "One shared secret key encrypts and decrypts data.",
+    "maturity": "deployed",
+    "securityGoals": [
+      "confidentiality",
+      "bulk-data-protection"
+    ],
+    "doesNotProvide": [
+      "key-distribution",
+      "authentication-without-a-mac-or-aead",
+      "metadata-privacy"
+    ],
+    "postQuantumPosture": "plausible",
+    "confidenceModelType": "client-side-secret",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      "ciphertext-size",
+      "access-patterns",
+      "timing"
+    ]
+  },
+  {
+    "id": "threshold-cryptography",
+    "name": "Threshold Cryptography",
+    "category": "threshold",
+    "level": "structured-primitive",
+    "shortIntuition": "A cryptographic power is split so a quorum is required to act.",
+    "maturity": "mature",
+    "securityGoals": [
+      "distributed-control",
+      "compromise-resilience",
+      "availability-at-threshold"
+    ],
+    "doesNotProvide": [
+      "trustlessness",
+      "metadata-privacy",
+      "simple-governance"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "t-of-n-threshold",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "signer-or-trustee-set",
+      "quorum-events",
+      "recovery-events"
+    ]
+  },
+  {
+    "id": "timelock-and-vdfs",
+    "name": "Timelock and VDFs",
+    "category": "delay",
+    "level": "structured-primitive",
+    "shortIntuition": "Outputs depend on sequential computation time and can often be verified quickly.",
+    "maturity": "emerging",
+    "securityGoals": [
+      "sequential-delay",
+      "public-verifiability"
+    ],
+    "doesNotProvide": [
+      "trusted-wall-clock-time",
+      "confidentiality-by-itself",
+      "availability"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "external-timing",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "start-time",
+      "output-time",
+      "participant-availability"
+    ]
+  },
+  {
+    "id": "trusted-setup",
+    "name": "Trusted Setup",
+    "category": "setup-assumption",
+    "level": "mathematical-assumption",
+    "shortIntuition": "Public parameters are generated in a process whose hidden trapdoor must not survive.",
+    "maturity": "mature",
+    "securityGoals": [
+      "efficient-public-verification",
+      "structured-parameter-generation"
+    ],
+    "doesNotProvide": [
+      "trustlessness",
+      "statement-correctness",
+      "post-quantum-security"
+    ],
+    "postQuantumPosture": "depends",
+    "confidenceModelType": "trusted-setup",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      "setup-participants",
+      "parameter-scope"
     ]
   },
   {

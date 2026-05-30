@@ -1,0 +1,55 @@
+id: factoring-rsa
+name: Factoring and RSA
+category: mathematical-assumption
+level: mathematical-assumption
+short_intuition: RSA-style systems use arithmetic modulo a composite number whose factors are secret.
+security_goals:
+  - trapdoor-one-wayness
+  - public-key-functionality
+assumptions:
+  - hard-integer-factoring
+  - correct-prime-generation
+  - safe-padding-or-scheme-design
+requires_trusted_setup: varies
+post_quantum: false
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - modulus-is-factored
+    - primes-are-weak-or-reused
+    - textbook-rsa-is-used
+  setup:
+    - rsa-modulus-generation
+typical_uses:
+  - public-key-encryption
+  - digital-signatures
+  - rsa-accumulators
+does_not_provide:
+  - post-quantum-security
+  - safe-textbook-encryption
+  - metadata-privacy
+composition_risks:
+  - RSA security depends heavily on padding and scheme design.
+  - Accumulator and VDF uses rely on additional assumptions.
+metadata_leaks:
+  - public-modulus
+  - key-identity
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Key revocation and modulus replacement are system-level responsibilities.
+operational_failure_modes:
+  - weak-prime-generation
+  - private-key-compromise
+  - unsafe-padding
+maturity: mature
+related:
+  - public-key-encryption
+  - digital-signature
+  - accumulators-and-merkle-trees
+references:
+  - rsa-original
+  - shor-quantum-factoring
+  - boneh-shoup-applied-cryptography

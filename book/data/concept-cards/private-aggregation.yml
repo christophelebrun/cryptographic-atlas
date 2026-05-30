@@ -1,0 +1,56 @@
+id: private-aggregation
+name: Private Aggregation
+category: design-pattern
+level: design-pattern
+short_intuition: Reveal a combined result while keeping individual inputs hidden.
+security_goals:
+  - aggregate-disclosure
+  - input-privacy
+  - limited-output-leakage
+assumptions:
+  - aggregation-mechanism-security
+  - adequate-cohort-size
+  - input-validity-checks
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: construction-specific
+  breaks_if:
+    - cohort-is-too-small
+    - repeated-queries-enable-differencing
+    - inputs-are-invalid
+  setup:
+    - construction-specific
+typical_uses:
+  - private-telemetry
+  - private-tallying
+  - federated-analytics
+does_not_provide:
+  - privacy-for-small-groups
+  - protection-from-differencing
+  - input-validity-without-proofs
+composition_risks:
+  - Aggregates can leak individuals through repeated releases.
+  - Validity proofs or range checks may be required.
+metadata_leaks:
+  - participation
+  - cohort-size
+  - output-value
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Revocation is usually participant or key-management policy, not part of the pattern.
+operational_failure_modes:
+  - tiny-cohorts
+  - differencing-attacks
+  - malicious-inputs
+maturity: mature
+related:
+  - secure-aggregation
+  - homomorphic-encryption
+  - mpc
+references:
+  - bonawitz-secure-aggregation
+  - gentry-fhe

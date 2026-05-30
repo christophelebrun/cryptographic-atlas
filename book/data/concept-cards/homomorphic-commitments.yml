@@ -1,0 +1,55 @@
+id: homomorphic-commitments
+name: Homomorphic Commitments
+category: commitment
+level: structured-primitive
+short_intuition: Commitments can be combined so their hidden values combine in a matching way.
+security_goals:
+  - hiding
+  - binding
+  - additive-structure
+assumptions:
+  - commitment-scheme-hardness
+  - valid-arithmetic-domain
+  - secure-randomness
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - binding-assumption-fails
+    - invalid-values-are-not-constrained
+    - randomness-leaks
+  setup:
+    - scheme-specific-public-parameters
+typical_uses:
+  - confidential-sums
+  - private-tallying
+  - range-proofs
+does_not_provide:
+  - value-validity
+  - authentication
+  - metadata-privacy
+composition_risks:
+  - Homomorphic arithmetic can wrap or cancel invalid values.
+  - Range proofs or validity proofs are usually needed.
+metadata_leaks:
+  - operation-context
+  - opening-patterns
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Revocation and dispute handling are protocol-level concerns.
+operational_failure_modes:
+  - missing-range-proof
+  - arithmetic-domain-mismatch
+  - malicious-commitments
+maturity: mature
+related:
+  - pedersen-commitment
+  - commitments
+  - private-aggregation
+references:
+  - pedersen-commitments
+  - bulletproofs

@@ -1,0 +1,57 @@
+id: snarks-starks-bulletproofs
+name: SNARKs, STARKs, and Bulletproofs
+category: proof-system-family
+level: proof-system
+short_intuition: Proof-system families that trade setup, proof size, verifier cost, and assumptions differently.
+security_goals:
+  - succinct-verification
+  - soundness
+  - zero-knowledge-depending-on-mode
+assumptions:
+  - proof-family-specific-hardness
+  - setup-model
+  - correct-statement-design
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: not-applicable
+  breaks_if:
+    - setup-assumption-fails
+    - statement-is-wrong
+    - proof-family-assumption-fails
+  setup:
+    - transparent-or-trusted-setup-depending-on-family
+typical_uses:
+  - zk-rollups
+  - private-transactions
+  - verifiable-computation
+does_not_provide:
+  - correct-application-statement
+  - metadata-privacy
+  - implementation-safety
+composition_risks:
+  - Proof-family choice changes the whole confidence model.
+  - Public inputs can reveal identity or linkage.
+metadata_leaks:
+  - public-inputs
+  - proof-size
+  - verification-context
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Proof systems do not revoke; bad circuits, setup, or keys require migration and rejection policy.
+operational_failure_modes:
+  - toxic-waste
+  - wrong-circuit
+  - parameter-mismatch
+maturity: emerging
+related:
+  - zero-knowledge-proof
+  - range-proof
+  - trusted-setup
+references:
+  - stark-integrity
+  - bulletproofs
+  - groth16

@@ -1,0 +1,52 @@
+id: primitives
+title: Basic primitive comparison
+description: Comparison of common primitive roles, non-goals, and implementation risks.
+columns:
+  - primary_goal
+  - does_not_provide
+  - common_risk
+  - post_quantum_posture
+  - implementation_risk
+rows:
+  - concept: Hash functions
+    values:
+      primary_goal: fixed-length digest with preimage and collision resistance
+      does_not_provide: encryption, authentication, or hiding for low-entropy secrets
+      common_risk: missing domain separation or obsolete algorithms
+      post_quantum_posture: plausible with adequate output length
+      implementation_risk: medium
+  - concept: Symmetric encryption
+    values:
+      primary_goal: confidentiality under a shared secret key
+      does_not_provide: key distribution or authentication by itself
+      common_risk: nonce misuse or unauthenticated ciphertexts
+      post_quantum_posture: plausible with conservative key sizes
+      implementation_risk: high
+  - concept: MACs
+    values:
+      primary_goal: shared-key integrity and authenticity
+      does_not_provide: public verifiability or confidentiality
+      common_risk: replay, key reuse, or timing-leaky comparisons
+      post_quantum_posture: plausible
+      implementation_risk: medium
+  - concept: Digital signatures
+    values:
+      primary_goal: public verifiability of message origin and integrity
+      does_not_provide: confidentiality or signer understanding
+      common_risk: ambiguous signing contexts or nonce reuse
+      post_quantum_posture: depends on scheme
+      implementation_risk: high
+  - concept: Public-key encryption
+    values:
+      primary_goal: recipient-controlled confidentiality
+      does_not_provide: sender authentication or metadata privacy
+      common_risk: key misbinding or unsafe raw encryption
+      post_quantum_posture: depends on scheme
+      implementation_risk: high
+  - concept: Secret sharing
+    values:
+      primary_goal: threshold reconstruction and confidentiality below threshold
+      does_not_provide: share authentication or governance
+      common_risk: correlated share custody or unclear recovery rules
+      post_quantum_posture: plausible for the information-theoretic core
+      implementation_risk: medium

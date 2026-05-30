@@ -5,8 +5,24 @@ relationships:
     notes: ZK proofs often prove statements about committed values without opening them.
   - source: pedersen-commitment
     relation: requires
-    target: discrete-logarithm-hardness
+    target: discrete-logarithm
     notes: Binding depends on the infeasibility of finding the generator relation.
+  - source: digital-signature
+    relation: inherits-risk-from
+    target: discrete-logarithm
+    notes: ECDSA, EdDSA, and Schnorr-style signatures inherit discrete-logarithm quantum vulnerability.
+  - source: public-key-encryption
+    relation: inherits-risk-from
+    target: factoring-rsa
+    notes: RSA-based encryption inherits factoring and padding assumptions.
+  - source: homomorphic-encryption
+    relation: inherits-risk-from
+    target: lattices
+    notes: Many modern FHE families rely on lattice assumptions and parameter selection.
+  - source: snarks-starks-bulletproofs
+    relation: inherits-risk-from
+    target: pairings
+    notes: Pairing-based SNARKs inherit pairing and elliptic-curve assumptions.
   - source: range-proofs
     relation: requires
     target: commitments
@@ -47,3 +63,7 @@ relationships:
     relation: inherits-risk-from
     target: trusted-setup
     notes: Some proof systems require setup ceremonies or structured reference strings.
+  - source: zero-knowledge-proof
+    relation: inherits-risk-from
+    target: random-oracle-model
+    notes: Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning.

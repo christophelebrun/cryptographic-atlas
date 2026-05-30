@@ -34,10 +34,21 @@ All three commands pass. The production build still prints Docusaurus' update-ch
 
 Rendered homepage verification was also performed against the built site at `http://127.0.0.1:3000/cryptographic-atlas/`; the generated concept-card gallery rendered six cards from the YAML-derived TypeScript data.
 
-## Remaining Backlog
+## Continuation - 2026-05-30
 
-- Add dedicated assumption/substrate pages for discrete logarithms, factoring/RSA, pairings, lattices, random-oracle model, and trusted setup.
-- Add concept cards for every remaining non-overview major concept page.
-- Add more comparison matrices for primitives, privacy protocols, and system patterns.
-- Add diagrams for taxonomy and composition flows.
-- Add glossary backlinks and French translation support.
+The remaining backlog was completed in the follow-up pass:
+
+- Added dedicated assumption/substrate pages for discrete logarithms, factoring/RSA, pairings, lattices, random-oracle model, and trusted setup.
+- Added concept cards for every non-overview major concept page and made validation enforce that coverage.
+- Added comparison matrices for primitives, privacy protocols, and system patterns.
+- Added visible taxonomy and composition-flow diagrams.
+- Expanded the glossary with backlinks to relevant concept pages.
+- Removed deprecated translation-support references from project documentation.
+
+Follow-up render verification checked that the taxonomy page loads its diagram, the comparison-matrix page renders the new tables, and glossary entries include related-page backlinks.
+
+## Remaining Maintenance
+
+- Add generated rendering for comparison-matrix YAML.
+- Add deeper pages for newer or specialized assumptions as the atlas expands.
+- Add more case studies and system walkthroughs.

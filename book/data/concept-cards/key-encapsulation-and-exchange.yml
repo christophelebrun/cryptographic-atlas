@@ -1,0 +1,56 @@
+id: key-encapsulation-and-exchange
+name: Key Encapsulation and Exchange
+category: key-management
+level: basic-primitive
+short_intuition: Parties establish shared secret material over an insecure channel.
+security_goals:
+  - shared-secret-establishment
+  - forward-secrecy-depending-on-protocol
+  - authenticated-key-exchange-when-composed
+assumptions:
+  - scheme-specific-hardness
+  - public-key-authentication
+  - transcript-binding
+requires_trusted_setup: false
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - peer-identity-is-not-authenticated
+    - ephemeral-secrets-are-reused
+    - transcript-is-not-bound
+  setup:
+    - peer-public-keys-or-certificates
+typical_uses:
+  - transport-handshakes
+  - secure-messaging
+  - hybrid-encryption
+does_not_provide:
+  - entity-authentication-by-itself
+  - application-data-encryption
+  - metadata-privacy
+composition_risks:
+  - Key exchange must feed a KDF and authenticated transcript.
+  - Hybrid post-quantum migration must define combiner behavior.
+metadata_leaks:
+  - peer-identities
+  - handshake-timing
+  - algorithm-choices
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation depends on public-key infrastructure, certificates, or application identity policy.
+operational_failure_modes:
+  - man-in-the-middle
+  - stale-public-keys
+  - ephemeral-secret-reuse
+maturity: deployed
+related:
+  - public-key-encryption
+  - key-derivation-functions
+  - lattices
+references:
+  - diffie-hellman-new-directions
+  - nist-fips-203

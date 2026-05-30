@@ -49,6 +49,15 @@ See [Confidence Models](/docs/appendices/confidence-models).
 - What metadata remains public?
 - Which assumptions are mature and which are research-stage?
 
+## Assumption pages
+
+- [Discrete logarithm](/docs/assumptions/discrete-logarithm)
+- [Factoring and RSA](/docs/assumptions/factoring-rsa)
+- [Pairings](/docs/assumptions/pairings)
+- [Lattices](/docs/assumptions/lattices)
+- [Random oracle model](/docs/assumptions/random-oracle-model)
+- [Trusted setup](/docs/assumptions/trusted-setup)
+
 ## Further reading
 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."

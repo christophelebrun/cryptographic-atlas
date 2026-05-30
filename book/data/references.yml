@@ -12,6 +12,32 @@ references:
       - primitives
       - proof-systems
       - structured-primitives
+      - assumptions
+  - id: diffie-hellman-new-directions
+    title: New Directions in Cryptography
+    authors:
+      - Whitfield Diffie
+      - Martin E. Hellman
+    year: 1976
+    source_type: paper
+    url: https://doi.org/10.1109/TIT.1976.1055638
+    doi: 10.1109/TIT.1976.1055638
+    used_by:
+      - discrete-logarithm
+      - key-encapsulation-and-exchange
+  - id: rsa-original
+    title: A Method for Obtaining Digital Signatures and Public-Key Cryptosystems
+    authors:
+      - Ronald L. Rivest
+      - Adi Shamir
+      - Leonard Adleman
+    year: 1978
+    source_type: paper
+    url: https://doi.org/10.1145/359340.359342
+    doi: 10.1145/359340.359342
+    used_by:
+      - factoring-rsa
+      - public-key-encryption
   - id: katz-lindell-modern-cryptography
     title: Introduction to Modern Cryptography
     authors:
@@ -48,6 +74,17 @@ references:
     used_by:
       - pedersen-commitment
       - homomorphic-commitments
+  - id: bellare-rogaway-random-oracle
+    title: Random Oracles are Practical; A Paradigm for Designing Efficient Protocols
+    authors:
+      - Mihir Bellare
+      - Phillip Rogaway
+    year: 1993
+    source_type: paper
+    url: https://www.cs.ucdavis.edu/~rogaway/papers/ro-abstract.html
+    used_by:
+      - random-oracle-model
+      - fiat-shamir-style-proofs
   - id: shamir-secret-sharing
     title: How to Share a Secret
     authors:
@@ -111,6 +148,18 @@ references:
     used_by:
       - homomorphic-encryption
       - reveal-only-a-function
+      - lattices
+  - id: regev-lwe
+    title: On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
+    authors:
+      - Oded Regev
+    year: 2005
+    source_type: paper
+    url: https://doi.org/10.1145/1060590.1060603
+    doi: 10.1145/1060590.1060603
+    used_by:
+      - lattices
+      - post-quantum-posture
   - id: boneh-sahai-waters-functional-encryption
     title: Functional Encryption; Definitions and Challenges
     authors:
@@ -173,6 +222,8 @@ references:
       - post-quantum-posture
       - digital-signatures
       - public-key-encryption
+      - discrete-logarithm
+      - factoring-rsa
   - id: grover-quantum-search
     title: A Fast Quantum Mechanical Algorithm for Database Search
     authors:
@@ -240,6 +291,41 @@ references:
     used_by:
       - vdf
       - timelock-and-vdfs
+  - id: boneh-franklin-pairings
+    title: Identity-Based Encryption from the Weil Pairing
+    authors:
+      - Dan Boneh
+      - Matthew Franklin
+    year: 2001
+    source_type: paper
+    url: https://doi.org/10.1007/3-540-44647-8_13
+    doi: 10.1007/3-540-44647-8_13
+    used_by:
+      - pairings
+      - anonymous-credentials
+  - id: groth16
+    title: On the Size of Pairing-Based Non-interactive Arguments
+    authors:
+      - Jens Groth
+    year: 2016
+    source_type: paper
+    url: https://www.iacr.org/archive/eurocrypt2016/96650272/96650272.pdf
+    used_by:
+      - trusted-setup
+      - snarks-starks-bulletproofs
+      - pairings
+  - id: bowe-setup-mpc
+    title: Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model
+    authors:
+      - Sean Bowe
+      - Ariel Gabizon
+      - Ian Miers
+    year: 2017
+    source_type: preprint
+    url: https://eprint.iacr.org/2017/1050
+    used_by:
+      - trusted-setup
+      - snarks-starks-bulletproofs
   - id: wesolowski-vdf
     title: Efficient Verifiable Delay Functions
     authors:

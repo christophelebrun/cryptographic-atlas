@@ -22,6 +22,8 @@ The atlas organizes cryptographic ideas from desired outcomes to system patterns
 Security goals -> assumptions -> primitives -> structured primitives -> proof systems -> protocols -> systems -> design patterns
 ```
 
+![Taxonomy flow](/img/taxonomy-flow.svg)
+
 This ordering prevents a common mistake: starting with a fashionable tool before stating the problem, the adversary, and the assumptions.
 
 ## Taxonomy table

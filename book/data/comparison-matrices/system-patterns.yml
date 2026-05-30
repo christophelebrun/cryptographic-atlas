@@ -1,0 +1,45 @@
+id: system-patterns
+title: System and pattern comparison
+description: Comparison of design patterns and system-level privacy compositions.
+columns:
+  - level
+  - primary_goal
+  - inherited_risk
+  - metadata_boundary
+  - deployment_caution
+rows:
+  - concept: Anonymous membership
+    values:
+      level: design pattern
+      primary_goal: prove eligibility without revealing member identity
+      inherited_risk: issuer, set, proof system, and anonymity set
+      metadata_boundary: timing, verifier identity, group size
+      deployment_caution: needs anti-double-use or rate-limit design when repeated action matters
+  - concept: Private aggregation
+    values:
+      level: design pattern
+      primary_goal: reveal aggregate rather than individual inputs
+      inherited_risk: aggregation mechanism, cohort size, validity checks
+      metadata_boundary: participation, output value, repeated releases
+      deployment_caution: small groups and differencing attacks dominate many failures
+  - concept: Delayed reveal
+    values:
+      level: design pattern
+      primary_goal: commit now and open later
+      inherited_risk: commitment binding, timing, abort policy
+      metadata_boundary: commitment and reveal times
+      deployment_caution: define deadlines, challenges, and abort handling
+  - concept: Private DAO voting
+    values:
+      level: system
+      primary_goal: private eligible voting with public tally confidence
+      inherited_risk: credentials, nullifiers, ballot encryption, proofs, tallying
+      metadata_boundary: wallet funding, submission timing, public discussion
+      deployment_caution: not coercion-resistant by default
+  - concept: Anonymous airdrop
+    values:
+      level: system
+      primary_goal: one private claim per eligible user
+      inherited_risk: eligibility source, nullifiers, wallet funding, withdrawal privacy
+      metadata_boundary: claim timing, fees, exchange flows
+      deployment_caution: public ledger metadata can defeat cryptographic anonymity

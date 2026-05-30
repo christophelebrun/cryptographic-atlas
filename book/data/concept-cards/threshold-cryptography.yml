@@ -1,0 +1,56 @@
+id: threshold-cryptography
+name: Threshold Cryptography
+category: threshold
+level: structured-primitive
+short_intuition: A cryptographic power is split so a quorum is required to act.
+security_goals:
+  - distributed-control
+  - compromise-resilience
+  - availability-at-threshold
+assumptions:
+  - threshold-non-collusion
+  - share-custody
+  - participant-authentication
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: t-of-n-threshold
+  threshold: t-of-n
+  breaks_if:
+    - threshold-colludes
+    - too-many-parties-are-offline
+    - distributed-key-generation-fails
+  setup:
+    - distributed-key-generation-or-share-dealing
+typical_uses:
+  - threshold-signatures
+  - threshold-decryption
+  - trustee-based-voting
+does_not_provide:
+  - trustlessness
+  - metadata-privacy
+  - simple-governance
+composition_risks:
+  - Threshold cryptography shifts trust into custody and governance.
+  - Liveness and confidentiality thresholds may differ.
+metadata_leaks:
+  - signer-or-trustee-set
+  - quorum-events
+  - recovery-events
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Share refresh, rotation, participant replacement, and disaster recovery must be explicit.
+operational_failure_modes:
+  - share-loss
+  - collusion
+  - unclear-quorum-policy
+maturity: mature
+related:
+  - secret-sharing
+  - e-voting
+  - public-key-encryption
+references:
+  - shamir-secret-sharing
+  - boneh-shoup-applied-cryptography

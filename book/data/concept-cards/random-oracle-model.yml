@@ -1,0 +1,54 @@
+id: random-oracle-model
+name: Random Oracle Model
+category: proof-model
+level: mathematical-assumption
+short_intuition: A security proof model that treats a hash function as an ideal public random function.
+security_goals:
+  - idealized-hash-modeling
+  - proof-simplification
+assumptions:
+  - ideal-random-oracle-behavior
+  - safe-concrete-hash-instantiation
+  - domain-separation
+requires_trusted_setup: false
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - concrete-hash-does-not-match-model
+    - encodings-are-ambiguous
+    - domain-separation-fails
+  setup:
+    - public-hash-function-choice
+typical_uses:
+  - fiat-shamir-transforms
+  - transcript-binding
+  - hash-based-commitments
+does_not_provide:
+  - proof-for-every-concrete-hash
+  - implementation-correctness
+  - metadata-privacy
+composition_risks:
+  - Random-oracle-model proofs remain idealized.
+  - Reusing the same hash role without labels can break assumptions.
+metadata_leaks:
+  - public-inputs
+  - query-context
+implementation_risk: medium
+auditability: requires-expert-review
+parameter_sensitivity: medium
+revocation_story: Not applicable; the model has no revocation mechanism.
+operational_failure_modes:
+  - missing-domain-separation
+  - ambiguous-transcript-encoding
+  - overclaiming-model-results
+maturity: mature
+related:
+  - hash-function
+  - zero-knowledge-proof
+  - commitments
+references:
+  - bellare-rogaway-random-oracle
+  - boneh-shoup-applied-cryptography

@@ -1,0 +1,56 @@
+id: coercion-resistant-voting
+name: Coercion-Resistant Voting
+category: system
+level: system
+short_intuition: A voting design tries to prevent voters from proving how they voted to a coercer.
+security_goals:
+  - ballot-secrecy
+  - receipt-freeness
+  - coercion-resistance
+assumptions:
+  - precise-coercion-model
+  - voter-recovery-or-revoting
+  - credible-audit-process
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: system-specific
+  breaks_if:
+    - device-is-compromised
+    - interface-creates-receipts
+    - coercer-controls-credential-use
+  setup:
+    - election-process
+    - credential-or-revoting-model
+typical_uses:
+  - high-stakes-private-voting
+  - governance-with-coercion-risk
+does_not_provide:
+  - protection-from-all-physical-coercion
+  - simple-deployment
+  - compromised-device-security
+composition_risks:
+  - Coercion resistance is a whole-system property.
+  - Small groups and public discussion can reveal intent.
+metadata_leaks:
+  - timing
+  - recovery-events
+  - small-group-results
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Credential recovery, re-voting, and ballot replacement rules are central to the model.
+operational_failure_modes:
+  - receipt-leakage
+  - forced-abstention
+  - unusable-recovery
+maturity: emerging
+related:
+  - e-voting
+  - make-receipts-useless
+  - mixnet
+references:
+  - benaloh-secret-ballot
+  - chaum-mixnets

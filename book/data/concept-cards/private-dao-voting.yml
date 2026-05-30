@@ -1,0 +1,59 @@
+id: private-dao-voting
+name: Private DAO Voting
+category: system
+level: system
+short_intuition: A governance vote combines anonymous eligibility, ballot secrecy, anti-double-vote checks, and verifiable tallying.
+security_goals:
+  - anonymous-eligibility
+  - ballot-secrecy
+  - verifiable-tally
+assumptions:
+  - eligibility-source-integrity
+  - nullifier-domain-separation
+  - tally-threshold-or-aggregation-model
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: system-specific
+  breaks_if:
+    - eligibility-source-is-manipulated
+    - nullifiers-link-elections
+    - tally-authorities-collude
+  setup:
+    - election-context
+    - eligibility-set
+    - tally-parameters
+typical_uses:
+  - dao-governance
+  - token-holder-polls
+  - private-member-voting
+does_not_provide:
+  - full-coercion-resistance
+  - traffic-analysis-protection
+  - production-deployment-guidance
+composition_risks:
+  - Public ledger metadata can defeat cryptographic privacy.
+  - Governance incentives and coercion can dominate cryptographic design.
+metadata_leaks:
+  - wallet-funding
+  - vote-timing
+  - small-voter-groups
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Eligibility updates, delegation, replacement votes, and disputed tallies must be governance-defined.
+operational_failure_modes:
+  - wallet-linkage
+  - invalid-ballot-proof
+  - trustee-key-loss
+maturity: emerging
+related:
+  - anonymous-membership
+  - nullifier
+  - private-aggregation
+references:
+  - benaloh-secret-ballot
+  - goldwasser-micali-rackoff-zk
+  - bonawitz-secure-aggregation

@@ -1,0 +1,55 @@
+id: message-authentication-codes
+name: Message Authentication Codes
+category: authentication
+level: basic-primitive
+short_intuition: A shared secret key lets parties detect forged or modified messages.
+security_goals:
+  - integrity
+  - symmetric-authenticity
+  - unforgeability
+assumptions:
+  - shared-key-secrecy
+  - unambiguous-message-encoding
+  - replay-policy
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: client-side-secret
+  threshold: not-applicable
+  breaks_if:
+    - mac-key-is-compromised
+    - tags-are-truncated-too-far
+    - replay-is-not-handled
+  setup:
+    - shared-secret-key
+typical_uses:
+  - protocol-authentication
+  - api-authentication
+  - authenticated-encryption
+does_not_provide:
+  - public-verifiability
+  - non-repudiation
+  - confidentiality
+composition_risks:
+  - MAC keys should be separated by role and protocol.
+  - A MAC is not a digital signature.
+metadata_leaks:
+  - message-size
+  - sender-context
+implementation_risk: medium
+auditability: locally-verifiable
+parameter_sensitivity: medium
+revocation_story: Revocation requires shared-key rotation and replay-window management.
+operational_failure_modes:
+  - key-reuse-across-protocols
+  - timing-leaky-tag-comparison
+  - missing-replay-protection
+maturity: deployed
+related:
+  - symmetric-encryption
+  - key-derivation-functions
+  - digital-signature
+references:
+  - boneh-shoup-applied-cryptography
+  - katz-lindell-modern-cryptography

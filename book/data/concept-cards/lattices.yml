@@ -1,0 +1,55 @@
+id: lattices
+name: Lattices
+category: mathematical-substrate
+level: mathematical-assumption
+short_intuition: Lattice cryptography uses hard problems over high-dimensional noisy grids.
+security_goals:
+  - post-quantum-hardness
+  - encrypted-computation-depending-on-scheme
+assumptions:
+  - lattice-problem-hardness
+  - correct-parameter-selection
+  - side-channel-resistant-implementation
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - parameters-are-too-small
+    - noise-distribution-is-wrong
+    - implementation-leaks-secrets
+  setup:
+    - public-parameters
+typical_uses:
+  - post-quantum-kem
+  - post-quantum-signatures
+  - homomorphic-encryption
+does_not_provide:
+  - automatic-security-for-all-parameters
+  - simple-implementation
+  - metadata-privacy
+composition_risks:
+  - Lattice schemes have parameter and failure-mode details that protocols must preserve.
+  - Migration designs still need authentication and transcript binding.
+metadata_leaks:
+  - public-parameters
+  - ciphertext-size
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation is handled by the concrete scheme and key-management layer.
+operational_failure_modes:
+  - parameter-mismatch
+  - decryption-failure-leakage
+  - side-channel-leakage
+maturity: emerging
+related:
+  - homomorphic-encryption
+  - key-encapsulation-and-exchange
+  - post-quantum-posture
+references:
+  - regev-lwe
+  - nist-fips-203
+  - gentry-fhe

@@ -1,0 +1,56 @@
+id: reveal-only-a-function
+name: Reveal Only a Function
+category: design-pattern
+level: design-pattern
+short_intuition: Expose a computed result while hiding the underlying inputs.
+security_goals:
+  - controlled-disclosure
+  - input-privacy
+  - least-information-release
+assumptions:
+  - function-leakage-analysis
+  - query-control
+  - correct-computation
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: construction-specific
+  breaks_if:
+    - function-output-is-too-revealing
+    - repeated-queries-leak-inputs
+    - computation-is-not-verified
+  setup:
+    - construction-specific
+typical_uses:
+  - restricted-analytics
+  - private-classification
+  - private-tallying
+does_not_provide:
+  - protection-from-revealing-functions
+  - unlimited-query-privacy
+  - access-control-by-itself
+composition_risks:
+  - Repeated function outputs can reconstruct inputs.
+  - Access control must govern who can ask which function.
+metadata_leaks:
+  - queried-function
+  - output-value
+  - query-timing
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: scheme-dependent
+revocation_story: Function-key revocation and query permissions are system-level responsibilities.
+operational_failure_modes:
+  - differencing-attacks
+  - overbroad-function-keys
+  - missing-access-control
+maturity: emerging
+related:
+  - functional-encryption
+  - homomorphic-encryption
+  - mpc
+references:
+  - boneh-sahai-waters-functional-encryption
+  - gentry-fhe

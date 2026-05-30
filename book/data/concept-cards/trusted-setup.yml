@@ -1,0 +1,55 @@
+id: trusted-setup
+name: Trusted Setup
+category: setup-assumption
+level: mathematical-assumption
+short_intuition: Public parameters are generated in a process whose hidden trapdoor must not survive.
+security_goals:
+  - efficient-public-verification
+  - structured-parameter-generation
+assumptions:
+  - toxic-waste-destruction
+  - ceremony-integrity
+  - transcript-auditability
+requires_trusted_setup: true
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-setup
+  threshold: one-honest-party-in-some-ceremonies
+  breaks_if:
+    - trapdoor-is-retained
+    - ceremony-software-is-compromised
+    - parameters-are-used-outside-scope
+  setup:
+    - setup-ceremony
+    - public-parameter-transcript
+typical_uses:
+  - pairing-based-snarks
+  - polynomial-commitments
+  - some-anonymous-credential-systems
+does_not_provide:
+  - trustlessness
+  - statement-correctness
+  - post-quantum-security
+composition_risks:
+  - Setup assumptions can dominate the whole proof-system confidence model.
+  - Universal and circuit-specific setup have different reuse risks.
+metadata_leaks:
+  - setup-participants
+  - parameter-scope
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Compromised setup generally requires parameter replacement and migration to a new ceremony or transparent construction.
+operational_failure_modes:
+  - lost-transcripts
+  - compromised-ceremony-software
+  - hidden-toxic-waste
+maturity: mature
+related:
+  - snarks-starks-bulletproofs
+  - pairings
+  - confidence-models
+references:
+  - groth16
+  - bowe-setup-mpc
