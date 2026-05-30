@@ -17,6 +17,18 @@ tags:
 
 Timelock tools and verifiable delay functions (VDFs) make information or outputs depend on the passage of sequential computation time.
 
+A VDF can be read as a function that takes an input `x`, requires about `T` sequential steps to compute, and returns a result plus a proof:
+
+$$
+(y, \pi) \leftarrow \operatorname{Eval}(x, T)
+$$
+
+Verification should be much faster than evaluation:
+
+$$
+\operatorname{Verify}(x, y, \pi) = 1
+$$
+
 ## What VDFs provide
 
 - A result that is slow to compute.

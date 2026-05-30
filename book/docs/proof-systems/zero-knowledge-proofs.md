@@ -31,6 +31,14 @@ Zero-knowledge proofs (ZKPs) are useful when a verifier needs confidence in a cl
 
 The statement is the public claim being proven. The witness is the private information that makes the statement true.
 
+Many proof systems can be read as proving that there exists a private witness `w` such that a public relation accepts the public statement `x`:
+
+$$
+\exists w : R(x, w) = 1
+$$
+
+The verifier should learn that this relation is satisfied, not the witness itself.
+
 Examples:
 
 | Statement | Witness |

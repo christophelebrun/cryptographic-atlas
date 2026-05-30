@@ -36,12 +36,23 @@ Think of placing a message in a locked box and publishing the box. Later, the se
 
 A simple hash commitment can look like:
 
-```text
-commitment = Hash(message, randomness)
-opening = message, randomness
-```
+$$
+c = H(m \,\|\, r)
+$$
+
+The opening is the pair $(m, r)$.
 
 The verifier recomputes the hash during opening and checks that it matches the published commitment.
+
+More abstractly, a commitment scheme has two operations:
+
+$$
+c \leftarrow \operatorname{Commit}(m; r)
+$$
+
+$$
+\operatorname{Open}(c, m, r) \in \{\mathsf{accept}, \mathsf{reject}\}
+$$
 
 ## Security properties
 

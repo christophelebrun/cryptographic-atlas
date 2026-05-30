@@ -36,6 +36,14 @@ Participants place values into sealed envelopes that can be combined. The system
 
 In a private poll, each voter submits an encrypted vote. The system combines encrypted votes and decrypts only the final tally.
 
+If participant `i` holds a private value $x_i$, the system may reveal only the aggregate:
+
+$$
+T = \sum_{i=1}^{n} x_i
+$$
+
+The privacy goal is to reveal $T$ without revealing the individual values $x_1, \ldots, x_n$.
+
 ## Approaches
 
 | Approach | Useful when | Main risk |
@@ -82,6 +90,14 @@ Private aggregation is often combined with range proofs, membership proofs, rate
 - Malicious users submit invalid or extreme values.
 - A decryptor quorum can collude or lose keys.
 - Metadata reveals who participated and when.
+
+A differencing attack appears when two aggregates differ by one participant:
+
+$$
+x_j = T(S \cup \{j\}) - T(S)
+$$
+
+This is why query design, cohort size, and repeated releases matter.
 
 ## Maturity and deployment
 

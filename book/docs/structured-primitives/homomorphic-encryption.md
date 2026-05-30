@@ -17,11 +17,30 @@ tags:
 
 Homomorphic encryption allows computation on ciphertexts so that decrypting the result reveals the result of a computation on the plaintexts.
 
+At a high level, evaluation over ciphertexts should agree with evaluating the function over plaintexts:
+
+$$
+\operatorname{Dec}_{sk}(\operatorname{Eval}(f, c_1, \ldots, c_n))
+= f(m_1, \ldots, m_n)
+$$
+
+where each ciphertext hides a message:
+
+$$
+c_i = \operatorname{Enc}_{pk}(m_i)
+$$
+
 ## Types
 
 - Partially homomorphic encryption supports limited operations.
 - Somewhat homomorphic encryption supports bounded computations.
 - Fully homomorphic encryption (FHE) supports general computation in principle.
+
+For an additive homomorphic scheme, the useful shape is:
+
+$$
+\operatorname{Dec}_{sk}(c_1 \oplus c_2) = m_1 + m_2
+$$
 
 ## What it does not provide
 

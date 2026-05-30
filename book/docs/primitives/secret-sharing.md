@@ -17,6 +17,24 @@ tags:
 
 Secret sharing splits a secret into shares so that only an authorized subset can reconstruct it.
 
+In a threshold scheme, a secret can be split so that any `t` shares reconstruct it, while fewer than `t` shares should reveal nothing useful:
+
+$$
+\text{threshold} = t \quad\text{out of}\quad n
+$$
+
+For Shamir-style secret sharing, the dealer can choose a random polynomial whose constant term is the secret:
+
+$$
+f(z) = s + a_1 z + \cdots + a_{t-1} z^{t-1}
+$$
+
+Each participant receives one point on that polynomial:
+
+$$
+\mathsf{share}_i = (i, f(i))
+$$
+
 ## Security properties
 
 - Confidentiality against parties below the reconstruction threshold.

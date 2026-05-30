@@ -31,9 +31,15 @@ A nullifier helps enforce one-person-one-action, or one-secret-one-action, witho
 
 A common mental model is:
 
-```text
-nullifier = Hash(secret, context)
-```
+$$
+N = H(\mathsf{secret} \,\|\, \mathsf{context})
+$$
+
+For the same secret, changing the context should change the nullifier:
+
+$$
+H(s \,\|\, c_1) \neq H(s \,\|\, c_2)
+$$
 
 Real systems normally derive nullifiers inside a larger protocol and may prove correctness with a zero-knowledge proof.
 

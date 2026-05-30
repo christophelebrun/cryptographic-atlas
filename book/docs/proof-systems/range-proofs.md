@@ -20,6 +20,18 @@ A range proof shows that a hidden value lies within an allowed interval.
 
 Hidden values can be invalid. In private payments, a value may need to be non-negative. In voting, a ballot may need to be one of a small set of choices.
 
+The typical statement is that a hidden value lies in a public interval:
+
+$$
+m \in [0, 2^k - 1]
+$$
+
+When the value is inside a commitment, the proof should be bound to that exact commitment:
+
+$$
+C = \operatorname{Commit}(m; r)
+$$
+
 ## What it does not provide
 
 - Authentication.
