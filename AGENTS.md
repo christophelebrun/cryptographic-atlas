@@ -278,8 +278,9 @@ Each page should start with:
 ```yaml
 ---
 title:
-type: primitive | protocol | pattern | system | glossary | appendix | taxonomy
+type: assumption | primitive | protocol | pattern | system | glossary | appendix | taxonomy
 level:
+template: concept | protocol | case-study | overview | reference | glossary
 status: draft
 last_reviewed:
 difficulty: beginner | intermediate | advanced
@@ -317,6 +318,12 @@ confidence_model:
 typical_uses:
 does_not_provide:
 composition_risks:
+metadata_leaks:
+implementation_risk: low | medium | high | expert-only | not-applicable
+auditability: publicly-verifiable | locally-verifiable | requires-expert-review | requires-operational-audit | not-applicable
+parameter_sensitivity: low | medium | high | scheme-dependent | not-applicable
+revocation_story:
+operational_failure_modes:
 maturity:
 related:
 references:
@@ -337,6 +344,7 @@ Before committing, verify:
 - No production deployment advice is given without caveats.
 - Sources are included for nontrivial claims.
 - The page can be understood by a technical non-cryptographer.
+- `npm run validate:content` passes from the `book/` directory.
 
 ## Agent workflow
 

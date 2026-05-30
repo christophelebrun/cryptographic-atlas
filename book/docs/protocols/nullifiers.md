@@ -2,14 +2,18 @@
 title: Nullifiers
 type: protocol
 level: protocol
+template: protocol
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - nullifiers
   - anonymity
   - anti-double-use
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Nullifiers
@@ -115,4 +119,5 @@ Nullifiers can still be linked through timing, network address, account funding,
 
 ## Further reading
 
-- TODO: Add verified references for nullifiers in anonymous credential and privacy-protocol systems.
+- Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation."
+- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."

@@ -34,10 +34,22 @@ composition_risks:
   - If the randomness is revealed, the committed value may be exposed.
   - If the discrete logarithm relation between generators is known, binding can fail.
   - Homomorphic structure can allow invalid values unless range constraints are added.
+metadata_leaks:
+  - opening-timing
+  - public-context
+  - reused-randomness
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Commitments do not have revocation; systems must define deadlines, openings, and dispute handling separately.
+operational_failure_modes:
+  - generator-relation-known
+  - randomness-reuse
+  - missing-range-proof
 maturity: mature
 related:
   - commitments
   - homomorphic-commitments
   - range-proofs
 references:
-  - TODO
+  - pedersen-commitments

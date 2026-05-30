@@ -2,13 +2,17 @@
 title: Mixnets
 type: protocol
 level: protocol
+template: protocol
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - mixnets
   - anonymity
+post_quantum_posture: depends
+confidence_model:
+  type: one-honest-party
 ---
 
 # Mixnets
@@ -89,4 +93,5 @@ Batch size, timing, message size, and participation patterns can reveal users.
 
 ## Further reading
 
-- TODO: Add verified references for mixnet designs and verifiable shuffles.
+- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
+- Benaloh, "Verifiable Secret-Ballot Elections."

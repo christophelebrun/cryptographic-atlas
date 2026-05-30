@@ -2,13 +2,17 @@
 title: Secure Aggregation
 type: protocol
 level: protocol
+template: protocol
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - secure-aggregation
   - privacy
+post_quantum_posture: depends
+confidence_model:
+  type: honest-majority
 ---
 
 # Secure Aggregation
@@ -94,4 +98,5 @@ The server may learn which clients participated, when they connected, and the ag
 
 ## Further reading
 
-- TODO: Add verified references for secure aggregation protocols.
+- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
+- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."

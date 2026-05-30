@@ -34,9 +34,22 @@ composition_risks:
   - Specialized hardware can change delay assumptions.
   - Delay does not prevent denial of service.
   - Verification only checks the computation, not the surrounding protocol goal.
+metadata_leaks:
+  - start-time
+  - output-publication-time
+  - participant-availability
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: VDF outputs are not revocable; protocols need abort, replacement, or challenge rules for missed or disputed outputs.
+operational_failure_modes:
+  - underestimated-hardware-advantage
+  - setup-assumption-failure
+  - denial-of-service
 maturity: emerging
 related:
   - timelock-and-vdfs
   - delayed-reveal
 references:
-  - TODO
+  - boneh-vdf
+  - wesolowski-vdf

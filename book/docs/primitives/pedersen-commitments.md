@@ -2,14 +2,18 @@
 title: Pedersen Commitments
 type: primitive
 level: structured-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - commitments
   - homomorphic-commitments
   - discrete-logarithm
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
 ---
 
 # Pedersen Commitments
@@ -109,4 +113,5 @@ Pedersen commitments are mature but should be used through well-reviewed librari
 
 ## Further reading
 
-- TODO: Add verified references for Pedersen commitments and confidential transaction usage.
+- Pedersen, "Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing."
+- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."

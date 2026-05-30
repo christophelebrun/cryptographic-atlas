@@ -2,12 +2,16 @@
 title: Proof Systems Overview
 type: primitive
 level: proof-system
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - proof-systems
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Proof Systems Overview

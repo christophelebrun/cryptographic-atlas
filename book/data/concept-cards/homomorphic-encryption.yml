@@ -34,10 +34,23 @@ composition_risks:
   - Outputs can reveal sensitive input information.
   - Malicious inputs may require zero-knowledge validity proofs.
   - Incorrect parameters can break correctness or security.
+metadata_leaks:
+  - access-patterns
+  - output-values
+  - participant-timing
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation is not native to homomorphic encryption; key rotation, access control, and re-encryption must be handled by the surrounding system.
+operational_failure_modes:
+  - parameters-do-not-meet-security-target
+  - noise-budget-exhaustion
+  - decryption-key-compromise
 maturity: emerging
 related:
   - private-aggregation
   - reveal-only-a-function
   - secure-aggregation
 references:
-  - TODO
+  - gentry-fhe
+  - boneh-shoup-applied-cryptography

@@ -1,0 +1,55 @@
+id: hash-function
+name: Hash Function
+category: primitive
+level: basic-primitive
+short_intuition: A deterministic digest function designed to resist reversal and collisions.
+security_goals:
+  - preimage-resistance
+  - second-preimage-resistance
+  - collision-resistance
+assumptions:
+  - public-scrutiny
+  - adequate-output-length
+  - domain-separation
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - collisions-are-practical
+    - output-length-is-too-short
+    - domain-separation-fails
+  setup:
+    - standardized-public-algorithm
+typical_uses:
+  - commitments
+  - merkle-trees
+  - transcript-binding
+does_not_provide:
+  - encryption
+  - authentication-without-a-key
+  - hiding-for-low-entropy-secrets
+composition_risks:
+  - Hashes of small secrets can be brute-forced.
+  - Reusing the same hash input format across contexts can create ambiguity.
+metadata_leaks:
+  - input-length
+  - public-context
+implementation_risk: medium
+auditability: publicly-verifiable
+parameter_sensitivity: medium
+revocation_story: Hash outputs are not revocable; systems must rotate commitments, salts, or context identifiers externally.
+operational_failure_modes:
+  - obsolete-hash-function
+  - missing-domain-separation
+  - password-hashing-confusion
+maturity: deployed
+related:
+  - commitments
+  - accumulators-and-merkle-trees
+  - nullifier
+references:
+  - boneh-shoup-applied-cryptography
+  - grover-quantum-search

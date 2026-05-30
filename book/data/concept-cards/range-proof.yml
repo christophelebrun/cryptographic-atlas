@@ -1,0 +1,56 @@
+id: range-proof
+name: Range Proof
+category: proof-system
+level: proof-system
+short_intuition: A proof that a hidden value lies inside a public interval.
+security_goals:
+  - value-validity
+  - soundness
+  - zero-knowledge-depending-on-construction
+assumptions:
+  - proof-system-soundness
+  - correct-binding-to-hidden-value
+  - unambiguous-range-encoding
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: not-applicable
+  breaks_if:
+    - proof-is-bound-to-wrong-commitment
+    - field-wraparound-is-ignored
+    - proof-system-assumption-fails
+  setup:
+    - construction-specific-setup
+typical_uses:
+  - confidential-transactions
+  - private-voting
+  - rate-limits
+does_not_provide:
+  - authentication
+  - metadata-privacy
+  - policy-correctness
+composition_risks:
+  - The proved interval must match the application policy.
+  - Arithmetic domains and overflows must be explicit.
+metadata_leaks:
+  - public-bound
+  - proof-context
+  - submission-timing
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Range proofs do not revoke invalid state; systems must reject or challenge invalid submissions at the protocol layer.
+operational_failure_modes:
+  - wrong-range
+  - missing-domain-binding
+  - overflow-or-wraparound
+maturity: mature
+related:
+  - pedersen-commitment
+  - zero-knowledge-proof
+  - snarks-starks-bulletproofs
+references:
+  - bulletproofs
+  - boudot-range-proof

@@ -2,14 +2,18 @@
 title: Private Aggregation
 type: pattern
 level: design-pattern
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - aggregation
   - privacy
   - voting
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
 ---
 
 # Private Aggregation
@@ -119,4 +123,6 @@ The pattern is mature, but concrete systems range from well deployed to experime
 
 ## Further reading
 
-- TODO: Add verified references for secure aggregation, private tallying, and differential privacy.
+- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
+- Gentry, "Fully Homomorphic Encryption Using Ideal Lattices."
+- Benaloh, "Verifiable Secret-Ballot Elections."

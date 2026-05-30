@@ -2,14 +2,18 @@
 title: Confidence Models
 type: appendix
 level: not-applicable
+template: reference
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: not-applicable
 tags:
   - confidence-models
   - trust-assumptions
   - composability
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Confidence Models
@@ -62,6 +66,6 @@ Avoid vague statements:
 
 ## Further reading
 
-- TODO: Add references on universal composability and simulation-based security.
-- TODO: Add references on threshold cryptography and distributed key generation.
-- TODO: Add references on end-to-end verifiable voting trust models.
+- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Shamir, "How to Share a Secret."
+- Benaloh, "Verifiable Secret-Ballot Elections."

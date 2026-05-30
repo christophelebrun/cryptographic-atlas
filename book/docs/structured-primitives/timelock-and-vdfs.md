@@ -2,13 +2,17 @@
 title: Timelock and VDFs
 type: primitive
 level: structured-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - timelock
   - vdf
+post_quantum_posture: depends
+confidence_model:
+  type: external-timing
 ---
 
 # Timelock and VDFs
@@ -42,11 +46,15 @@ Depends on the construction. Some VDF and timelock designs rely on assumptions w
 
 Confidence comes from the sequential-delay assumption, the verification equation, parameter selection, and any setup process. The model is not "trusted time"; it is an assumption about how much sequential work an adversary can complete.
 
-## What they do not provide
+## What it does not provide
 
 - Wall-clock fairness in every network setting.
 - Protection against specialized hardware unless modeled.
 - Confidentiality by themselves.
+
+## Assumptions
+
+The delay parameter must reflect realistic sequential computation, the setup model must be sound for the chosen construction, and the protocol must account for network delay, denial of service, and hardware advantage.
 
 ## Use cases
 
@@ -54,7 +62,7 @@ Confidence comes from the sequential-delay assumption, the verification equation
 - Delayed reveal.
 - Leader election protocols.
 
-## Failure modes
+## Failure modes and anti-patterns
 
 - Underestimating hardware advantage.
 - Confusing sequential work with trusted time.
@@ -62,4 +70,5 @@ Confidence comes from the sequential-delay assumption, the verification equation
 
 ## Further reading
 
-- TODO: Add verified references for VDF constructions and timelock encryption.
+- Boneh et al., "Verifiable Delay Functions."
+- Wesolowski, "Efficient Verifiable Delay Functions."

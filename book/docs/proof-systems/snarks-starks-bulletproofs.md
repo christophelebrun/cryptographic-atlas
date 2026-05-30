@@ -2,14 +2,18 @@
 title: SNARKs, STARKs, and Bulletproofs
 type: primitive
 level: proof-system
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - snarks
   - starks
   - bulletproofs
+post_quantum_posture: depends
+confidence_model:
+  type: depends
 ---
 
 # SNARKs, STARKs, and Bulletproofs
@@ -34,13 +38,26 @@ Depends on the family and construction. Many deployed pairing-based SNARKs are q
 
 Confidence comes from the proof-system assumptions, setup model, and statement design. Pairing-based SNARKs may require trusted or universal setup. STARK-style systems are usually transparent. Bulletproof-style systems avoid trusted setup but still rely on discrete-logarithm assumptions.
 
-## What they do not provide
+## What it does not provide
 
 - A correct statement automatically.
 - Metadata privacy.
 - Protection against implementation bugs.
 - A complete protocol.
 
+## Assumptions
+
+Assumptions are family-specific: pairing-based SNARKs often depend on elliptic-curve and setup assumptions, STARK-style systems typically depend on hash choices and transparent protocols, and Bulletproof-style systems usually depend on discrete-logarithm assumptions.
+
+## Failure modes and anti-patterns
+
+- Choosing a proof family based only on proof size.
+- Treating trusted setup, transparent setup, and universal setup as interchangeable.
+- Proving a statement that omits important public inputs.
+- Ignoring prover cost, verification cost, and implementation maturity.
+
 ## Further reading
 
-- TODO: Add verified references for each proof-system family.
+- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity."
+- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
+- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."

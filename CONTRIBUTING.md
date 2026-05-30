@@ -20,6 +20,7 @@ Use the templates in `AGENTS.md`. Major concepts should also receive a YAML conc
 ```bash
 cd book
 npm install
+npm run validate:content
 npm run build
 ```
 

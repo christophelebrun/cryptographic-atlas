@@ -2,13 +2,17 @@
 title: Anonymous Credentials
 type: protocol
 level: protocol
+template: protocol
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - anonymous-credentials
   - privacy
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-issuer
 ---
 
 # Anonymous Credentials
@@ -93,4 +97,5 @@ Timing, verifier identity, IP addresses, rare attributes, and revocation checks 
 
 ## Further reading
 
-- TODO: Add verified references for anonymous credential systems.
+- Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation."
+- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."

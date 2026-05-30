@@ -100,6 +100,30 @@ html[data-theme='dark'] .atlasHero__mark {
   padding: 1rem;
 }
 
+.conceptGallery {
+  padding: 3rem 0;
+}
+
+.conceptGallery__header {
+  margin-bottom: 1.5rem;
+  max-width: 760px;
+}
+
+.conceptGallery__header h2 {
+  font-size: 1.75rem;
+  letter-spacing: 0;
+}
+
+.conceptGallery__header p {
+  color: var(--atlas-muted);
+}
+
+.conceptGallery__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 .conceptCard__header {
   align-items: flex-start;
   display: flex;
@@ -121,6 +145,33 @@ html[data-theme='dark'] .atlasHero__mark {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.conceptCard__metadata {
+  border-bottom: 1px solid var(--atlas-line);
+  border-top: 1px solid var(--atlas-line);
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin: 1rem 0;
+  padding: 0.75rem 0;
+}
+
+.conceptCard__metadata div {
+  min-width: 0;
+}
+
+.conceptCard__metadata dt {
+  color: var(--atlas-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.conceptCard__metadata dd {
+  font-size: 0.85rem;
+  margin: 0.15rem 0 0;
+  overflow-wrap: anywhere;
 }
 
 .maturityBadge {

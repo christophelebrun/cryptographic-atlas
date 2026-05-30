@@ -2,12 +2,16 @@
 title: Maturity Scale
 type: appendix
 level: not-applicable
+template: reference
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - maturity
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Maturity Scale

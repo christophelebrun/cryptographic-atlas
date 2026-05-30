@@ -2,12 +2,16 @@
 title: Multi-Party Computation
 type: protocol
 level: protocol
+template: protocol
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - mpc
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Multi-Party Computation
@@ -90,4 +94,5 @@ Participation, timing, circuit shape, aborts, and output values can leak informa
 
 ## Further reading
 
-- TODO: Add verified references for MPC models and constructions.
+- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."

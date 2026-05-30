@@ -2,13 +2,17 @@
 title: Homomorphic Encryption
 type: primitive
 level: structured-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - homomorphic-encryption
   - encryption
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
 ---
 
 # Homomorphic Encryption
@@ -57,13 +61,17 @@ Confidence usually comes from a scheme-specific hardness assumption, correct par
 - Metadata privacy.
 - Practical efficiency for every workload.
 
+## Assumptions
+
+The scheme-specific hardness assumption, parameter set, noise budget, key-management model, and implementation side-channel posture must all match the workload and threat model.
+
 ## Use cases
 
 - Private tallying.
 - Confidential analytics.
 - Encrypted computation services.
 
-## Failure modes
+## Failure modes and anti-patterns
 
 - Choosing parameters that do not meet the security or correctness target.
 - Ignoring noise growth or implementation limits.
@@ -71,4 +79,5 @@ Confidence usually comes from a scheme-specific hardness assumption, correct par
 
 ## Further reading
 
-- TODO: Add verified references for homomorphic encryption families.
+- Craig Gentry, "Fully Homomorphic Encryption Using Ideal Lattices."
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."

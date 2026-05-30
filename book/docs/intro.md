@@ -2,13 +2,17 @@
 title: Welcome to The Cryptographic Atlas
 type: taxonomy
 level: not-applicable
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - introduction
   - taxonomy
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Welcome to The Cryptographic Atlas
@@ -91,4 +95,5 @@ Cryptography is easy to misuse because guarantees are precise and conditional. T
 
 ## Further reading
 
-- TODO: Add verified introductory sources.
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Katz and Lindell, "Introduction to Modern Cryptography."

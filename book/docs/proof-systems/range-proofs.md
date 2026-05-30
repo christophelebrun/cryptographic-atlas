@@ -2,12 +2,16 @@
 title: Range Proofs
 type: primitive
 level: proof-system
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - range-proofs
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Range Proofs
@@ -47,6 +51,10 @@ Confidence comes from public verification of the range statement, the soundness 
 - Protection against metadata leaks.
 - A guarantee that the range was the right policy choice.
 
+## Assumptions
+
+The proof system must be sound, the proof must be bound to the exact commitment or ciphertext, and the range must be encoded without field wraparound or overflow ambiguity.
+
 ## Use cases
 
 - Confidential transactions.
@@ -54,7 +62,7 @@ Confidence comes from public verification of the range statement, the soundness 
 - Rate limits.
 - Private statistics.
 
-## Failure modes
+## Failure modes and anti-patterns
 
 - Proving the wrong bound.
 - Ignoring overflow or field wraparound.
@@ -62,4 +70,5 @@ Confidence comes from public verification of the range statement, the soundness 
 
 ## Further reading
 
-- TODO: Add verified references for range proof constructions.
+- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
+- Boudot, "Efficient Proofs that a Committed Number Lies in an Interval."

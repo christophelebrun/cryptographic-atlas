@@ -1,0 +1,273 @@
+references:
+  - id: boneh-shoup-applied-cryptography
+    title: A Graduate Course in Applied Cryptography
+    authors:
+      - Dan Boneh
+      - Victor Shoup
+    year: 2023
+    source_type: textbook
+    url: https://toc.cryptobook.us/
+    used_by:
+      - taxonomy
+      - primitives
+      - proof-systems
+      - structured-primitives
+  - id: katz-lindell-modern-cryptography
+    title: Introduction to Modern Cryptography
+    authors:
+      - Jonathan Katz
+      - Yehuda Lindell
+    year: 2020
+    source_type: textbook
+    url: https://www.routledge.com/Introduction-to-Modern-Cryptography/Katz-Lindell/p/book/9780815354369
+    used_by:
+      - taxonomy
+      - primitives
+      - protocols
+  - id: goldwasser-micali-rackoff-zk
+    title: The Knowledge Complexity of Interactive Proof Systems
+    authors:
+      - Shafi Goldwasser
+      - Silvio Micali
+      - Charles Rackoff
+    year: 1989
+    source_type: paper
+    url: https://doi.org/10.1137/0218012
+    doi: 10.1137/0218012
+    used_by:
+      - zero-knowledge-proof
+      - proof-systems
+  - id: pedersen-commitments
+    title: Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing
+    authors:
+      - Torben Pryds Pedersen
+    year: 1991
+    source_type: paper
+    url: https://doi.org/10.1007/3-540-46766-1_9
+    doi: 10.1007/3-540-46766-1_9
+    used_by:
+      - pedersen-commitment
+      - homomorphic-commitments
+  - id: shamir-secret-sharing
+    title: How to Share a Secret
+    authors:
+      - Adi Shamir
+    year: 1979
+    source_type: paper
+    url: https://doi.org/10.1145/359168.359176
+    doi: 10.1145/359168.359176
+    used_by:
+      - secret-sharing
+      - threshold-cryptography
+  - id: chaum-mixnets
+    title: Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms
+    authors:
+      - David Chaum
+    year: 1981
+    source_type: paper
+    url: https://doi.org/10.1145/358549.358563
+    doi: 10.1145/358549.358563
+    used_by:
+      - mixnets
+      - anonymous-credentials
+  - id: camenisch-lysyanskaya-credentials
+    title: An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation
+    authors:
+      - Jan Camenisch
+      - Anna Lysyanskaya
+    year: 2001
+    source_type: paper
+    url: https://doi.org/10.1007/3-540-44987-6_7
+    doi: 10.1007/3-540-44987-6_7
+    used_by:
+      - anonymous-credentials
+      - anonymous-membership
+  - id: bonawitz-secure-aggregation
+    title: Practical Secure Aggregation for Privacy-Preserving Machine Learning
+    authors:
+      - Keith Bonawitz
+      - Vladimir Ivanov
+      - Ben Kreuter
+      - Antonio Marcedone
+      - H. Brendan McMahan
+      - Sarvar Patel
+      - Daniel Ramage
+      - Aaron Segal
+      - Karn Seth
+    year: 2017
+    source_type: paper
+    url: https://eprint.iacr.org/2017/281
+    used_by:
+      - secure-aggregation
+      - private-aggregation
+  - id: gentry-fhe
+    title: Fully Homomorphic Encryption Using Ideal Lattices
+    authors:
+      - Craig Gentry
+    year: 2009
+    source_type: paper
+    url: https://doi.org/10.1145/1536414.1536440
+    doi: 10.1145/1536414.1536440
+    used_by:
+      - homomorphic-encryption
+      - reveal-only-a-function
+  - id: boneh-sahai-waters-functional-encryption
+    title: Functional Encryption; Definitions and Challenges
+    authors:
+      - Dan Boneh
+      - Amit Sahai
+      - Brent Waters
+    year: 2011
+    source_type: paper
+    url: https://eprint.iacr.org/2010/543
+    used_by:
+      - functional-encryption
+      - reveal-only-a-function
+  - id: bulletproofs
+    title: Bulletproofs; Short Proofs for Confidential Transactions and More
+    authors:
+      - Benedikt Bünz
+      - Jonathan Bootle
+      - Dan Boneh
+      - Andrew Poelstra
+      - Pieter Wuille
+      - Greg Maxwell
+    year: 2017
+    source_type: preprint
+    url: https://eprint.iacr.org/2017/1066
+    used_by:
+      - range-proofs
+      - proof-systems
+  - id: stark-integrity
+    title: Scalable, transparent, and post-quantum secure computational integrity
+    authors:
+      - Eli Ben-Sasson
+      - Iddo Bentov
+      - Yinon Horesh
+      - Michael Riabzev
+    year: 2018
+    source_type: preprint
+    url: https://eprint.iacr.org/2018/046
+    used_by:
+      - proof-systems
+      - zero-knowledge-proof
+  - id: boudot-range-proof
+    title: Efficient Proofs that a Committed Number Lies in an Interval
+    authors:
+      - Fabrice Boudot
+    year: 2000
+    source_type: paper
+    url: https://doi.org/10.1007/3-540-45472-1_12
+    doi: 10.1007/3-540-45472-1_12
+    used_by:
+      - range-proofs
+  - id: shor-quantum-factoring
+    title: Algorithms for Quantum Computation; Discrete Logarithms and Factoring
+    authors:
+      - Peter W. Shor
+    year: 1994
+    source_type: paper
+    url: https://doi.org/10.1109/SFCS.1994.365700
+    doi: 10.1109/SFCS.1994.365700
+    used_by:
+      - post-quantum-posture
+      - digital-signatures
+      - public-key-encryption
+  - id: grover-quantum-search
+    title: A Fast Quantum Mechanical Algorithm for Database Search
+    authors:
+      - Lov K. Grover
+    year: 1996
+    source_type: paper
+    url: https://doi.org/10.1145/237814.237866
+    doi: 10.1145/237814.237866
+    used_by:
+      - post-quantum-posture
+      - hash-functions
+  - id: nist-fips-203
+    title: Module-Lattice-Based Key-Encapsulation Mechanism Standard
+    authors:
+      - National Institute of Standards and Technology
+    year: 2024
+    source_type: standard
+    url: https://doi.org/10.6028/NIST.FIPS.203
+    doi: 10.6028/NIST.FIPS.203
+    used_by:
+      - public-key-encryption
+      - post-quantum-posture
+  - id: nist-fips-204
+    title: Module-Lattice-Based Digital Signature Standard
+    authors:
+      - National Institute of Standards and Technology
+    year: 2024
+    source_type: standard
+    url: https://doi.org/10.6028/NIST.FIPS.204
+    doi: 10.6028/NIST.FIPS.204
+    used_by:
+      - digital-signatures
+      - post-quantum-posture
+  - id: nist-fips-205
+    title: Stateless Hash-Based Digital Signature Standard
+    authors:
+      - National Institute of Standards and Technology
+    year: 2024
+    source_type: standard
+    url: https://doi.org/10.6028/NIST.FIPS.205
+    doi: 10.6028/NIST.FIPS.205
+    used_by:
+      - digital-signatures
+      - post-quantum-posture
+  - id: canetti-uc
+    title: Universally Composable Security; A New Paradigm for Cryptographic Protocols
+    authors:
+      - Ran Canetti
+    year: 2001
+    source_type: preprint
+    url: https://eprint.iacr.org/2000/067
+    used_by:
+      - composability
+      - confidence-models
+  - id: boneh-vdf
+    title: Verifiable Delay Functions
+    authors:
+      - Dan Boneh
+      - Joseph Bonneau
+      - Benedikt Bünz
+      - Ben Fisch
+    year: 2018
+    source_type: preprint
+    url: https://eprint.iacr.org/2018/601
+    used_by:
+      - vdf
+      - timelock-and-vdfs
+  - id: wesolowski-vdf
+    title: Efficient Verifiable Delay Functions
+    authors:
+      - Benjamin Wesolowski
+    year: 2018
+    source_type: preprint
+    url: https://eprint.iacr.org/2018/623
+    used_by:
+      - vdf
+      - timelock-and-vdfs
+  - id: merkle-signatures
+    title: A Digital Signature Based on a Conventional Encryption Function
+    authors:
+      - Ralph C. Merkle
+    year: 1988
+    source_type: paper
+    url: https://doi.org/10.1007/3-540-48184-2_32
+    doi: 10.1007/3-540-48184-2_32
+    used_by:
+      - membership-proofs
+      - accumulators-and-merkle-trees
+  - id: benaloh-secret-ballot
+    title: Verifiable Secret-Ballot Elections
+    authors:
+      - Josh Benaloh
+    year: 1996
+    source_type: paper
+    url: https://www.usenix.org/legacy/publications/library/proceedings/sec94/full_papers/benaloh.txt
+    used_by:
+      - e-voting
+      - coercion-resistant-voting

@@ -1,0 +1,57 @@
+id: digital-signature
+name: Digital Signature
+category: authentication
+level: basic-primitive
+short_intuition: A private key holder signs a message so verifiers can check its origin and integrity.
+security_goals:
+  - authenticity
+  - integrity
+  - unforgeability
+assumptions:
+  - private-key-control
+  - public-key-binding
+  - scheme-specific-hardness-assumptions
+requires_trusted_setup: false
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - private-key-is-compromised
+    - public-key-is-misbound
+    - nonce-reuse-breaks-the-scheme
+  setup:
+    - authentic-public-key-distribution
+typical_uses:
+  - software-updates
+  - blockchain-transactions
+  - credential-issuance
+does_not_provide:
+  - confidentiality
+  - anonymity
+  - proof-of-human-understanding
+composition_risks:
+  - Signatures must bind protocol, domain, and message encoding.
+  - Legal non-repudiation depends on operational key control.
+metadata_leaks:
+  - signer-public-key
+  - signing-time
+  - message-context
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Key revocation and rotation are external public-key infrastructure or application-layer responsibilities.
+operational_failure_modes:
+  - ambiguous-encoding
+  - nonce-reuse
+  - key-compromise
+maturity: deployed
+related:
+  - anonymous-credentials
+  - threshold-cryptography
+  - public-key-encryption
+references:
+  - boneh-shoup-applied-cryptography
+  - nist-fips-204
+  - nist-fips-205

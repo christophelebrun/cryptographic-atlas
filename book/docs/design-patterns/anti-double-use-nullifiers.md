@@ -2,13 +2,17 @@
 title: Anti-Double-Use Nullifiers
 type: pattern
 level: design-pattern
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - nullifiers
   - rate-limiting
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
 ---
 
 # Anti-Double-Use Nullifiers
@@ -31,6 +35,18 @@ Anti-double-use nullifiers let a system reject repeated anonymous actions in the
 - Privacy if contexts are reused badly.
 - Coercion resistance.
 
+## Assumptions
+
+The private secret must have enough entropy, the context must be domain-separated, and the system must check a public spent-nullifier set before accepting an action.
+
+## Post-quantum posture
+
+Not applicable to the pattern by itself. A concrete nullifier design inherits posture from the hash function, proof system, credential scheme, and public registry mechanism.
+
+## Confidence model
+
+Confidence comes from client-side secret control, deterministic context binding, public duplicate detection, and a proof that the nullifier is derived from an eligible secret.
+
 ## Failure modes
 
 - Reusing the same context links actions.
@@ -44,4 +60,5 @@ Anti-double-use nullifiers let a system reject repeated anonymous actions in the
 
 ## Further reading
 
-- TODO: Add verified references for nullifier patterns.
+- [Nullifiers](/docs/protocols/nullifiers)
+- [Anonymous membership](/docs/design-patterns/anonymous-membership)

@@ -35,10 +35,22 @@ composition_risks:
   - The allowed function output may reveal more than intended.
   - Repeated function queries can leak inputs.
   - Key authority trust can dominate the privacy model.
+metadata_leaks:
+  - function-outputs
+  - query-patterns
+  - key-issuance-events
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: scheme-dependent
+revocation_story: Revoking function keys is a system-level access-control problem and is not automatically solved by the encryption scheme.
+operational_failure_modes:
+  - key-authority-misissuance
+  - repeated-query-leakage
+  - functions-encode-sensitive-values
 maturity: research
 related:
   - homomorphic-encryption
   - reveal-only-a-function
   - private-aggregation
 references:
-  - TODO
+  - boneh-sahai-waters-functional-encryption

@@ -2,12 +2,16 @@
 title: Glossary
 type: glossary
 level: not-applicable
+template: glossary
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - glossary
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Glossary

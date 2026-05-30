@@ -37,10 +37,24 @@ composition_risks:
   - A proof can be valid for a statement that is too weak for the protocol.
   - Public inputs can reveal identity or linkage.
   - Setup assumptions vary significantly across proof systems.
+metadata_leaks:
+  - public-inputs
+  - proof-timing
+  - network-metadata
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: ZKPs do not provide revocation; revocation must be modeled in the statement or handled by the credential, accumulator, or registry layer.
+operational_failure_modes:
+  - wrong-statement-proven
+  - toxic-waste-from-trusted-setup
+  - witness-compromise
 maturity: mature
 related:
   - snarks-starks-bulletproofs
   - range-proofs
   - membership-proofs
 references:
-  - TODO
+  - goldwasser-micali-rackoff-zk
+  - stark-integrity
+  - bulletproofs

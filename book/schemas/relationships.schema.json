@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptographic-atlas.local/schemas/relationships.schema.json",
+  "title": "Cryptographic Atlas concept relationships",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["relationships"],
+  "properties": {
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "relation", "target"],
+        "properties": {
+          "source": {"type": "string", "minLength": 1},
+          "relation": {
+            "type": "string",
+            "enum": [
+              "requires",
+              "composes-with",
+              "contrasts-with",
+              "used-in",
+              "inherits-risk-from",
+              "implements-pattern",
+              "strengthens",
+              "weakens-if"
+            ]
+          },
+          "target": {"type": "string", "minLength": 1},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

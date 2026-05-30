@@ -1,0 +1,31 @@
+id: proof-systems
+title: Proof-system family comparison
+description: High-level comparison for selecting which proof-system page to read next.
+columns:
+  - setup
+  - common_strength
+  - common_risk
+  - post_quantum_posture
+  - maturity
+rows:
+  - concept: SNARKs
+    values:
+      setup: varies; many deployed families use trusted or universal setup
+      common_strength: very small proofs and fast verification
+      common_risk: setup and pairing assumptions can dominate the confidence model
+      post_quantum_posture: often vulnerable for pairing-based systems
+      maturity: deployed to emerging by family
+  - concept: STARKs
+    values:
+      setup: transparent in common families
+      common_strength: hash-based transparency and scalable proving
+      common_risk: larger proofs and careful parameter choices
+      post_quantum_posture: plausible when hash choices and parameters are appropriate
+      maturity: emerging
+  - concept: Bulletproofs
+    values:
+      setup: no trusted setup
+      common_strength: compact range proofs
+      common_risk: discrete-logarithm assumptions and heavier verification for large statements
+      post_quantum_posture: vulnerable in common discrete-logarithm constructions
+      maturity: mature

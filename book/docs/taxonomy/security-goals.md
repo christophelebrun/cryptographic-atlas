@@ -2,12 +2,16 @@
 title: Security Goals
 type: taxonomy
 level: security-goal
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - security-goals
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Security Goals
@@ -31,4 +35,5 @@ Saying "private" is usually too vague. A system may hide values but expose ident
 
 ## Further reading
 
-- TODO: Add verified references for security goal definitions.
+- Katz and Lindell, "Introduction to Modern Cryptography."
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."

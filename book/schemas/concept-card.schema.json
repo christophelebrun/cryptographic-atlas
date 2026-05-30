@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptographic-atlas.local/schemas/concept-card.schema.json",
+  "title": "Cryptographic Atlas concept card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "category",
+    "level",
+    "short_intuition",
+    "security_goals",
+    "assumptions",
+    "requires_trusted_setup",
+    "post_quantum",
+    "post_quantum_posture",
+    "confidence_model",
+    "typical_uses",
+    "does_not_provide",
+    "composition_risks",
+    "metadata_leaks",
+    "implementation_risk",
+    "auditability",
+    "parameter_sensitivity",
+    "revocation_story",
+    "operational_failure_modes",
+    "maturity",
+    "related",
+    "references"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "name": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "minLength": 1},
+    "level": {"type": "string", "minLength": 1},
+    "short_intuition": {"type": "string", "minLength": 1},
+    "security_goals": {"$ref": "#/$defs/stringList"},
+    "assumptions": {"$ref": "#/$defs/stringList"},
+    "requires_trusted_setup": {
+      "anyOf": [
+        {"type": "boolean"},
+        {"type": "string", "enum": ["varies", "depends", "not-applicable"]}
+      ]
+    },
+    "post_quantum": {
+      "anyOf": [
+        {"type": "boolean"},
+        {"type": "string", "enum": ["varies", "depends", "not-applicable"]}
+      ]
+    },
+    "post_quantum_posture": {
+      "type": "string",
+      "enum": ["vulnerable", "plausible", "depends", "unknown", "not-applicable"]
+    },
+    "confidence_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "threshold", "breaks_if", "setup"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "threshold": {"type": ["string", "number", "null"]},
+        "breaks_if": {"$ref": "#/$defs/stringList"},
+        "setup": {"$ref": "#/$defs/stringList"}
+      }
+    },
+    "typical_uses": {"$ref": "#/$defs/stringList"},
+    "does_not_provide": {"$ref": "#/$defs/stringList"},
+    "composition_risks": {"$ref": "#/$defs/stringList"},
+    "metadata_leaks": {"$ref": "#/$defs/stringList"},
+    "implementation_risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "expert-only", "not-applicable"]
+    },
+    "auditability": {
+      "type": "string",
+      "enum": ["publicly-verifiable", "locally-verifiable", "requires-expert-review", "requires-operational-audit", "not-applicable"]
+    },
+    "parameter_sensitivity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "scheme-dependent", "not-applicable"]
+    },
+    "revocation_story": {"type": "string", "minLength": 1},
+    "operational_failure_modes": {"$ref": "#/$defs/stringList"},
+    "maturity": {
+      "type": "string",
+      "enum": ["deployed", "mature", "emerging", "research", "theoretical", "not-applicable"]
+    },
+    "related": {"$ref": "#/$defs/stringList"},
+    "references": {"$ref": "#/$defs/stringList"}
+  },
+  "$defs": {
+    "stringList": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1
+    }
+  }
+}

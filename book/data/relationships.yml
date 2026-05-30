@@ -1,0 +1,49 @@
+relationships:
+  - source: commitments
+    relation: composes-with
+    target: zero-knowledge-proof
+    notes: ZK proofs often prove statements about committed values without opening them.
+  - source: pedersen-commitment
+    relation: requires
+    target: discrete-logarithm-hardness
+    notes: Binding depends on the infeasibility of finding the generator relation.
+  - source: range-proofs
+    relation: requires
+    target: commitments
+    notes: Range proofs usually constrain a hidden value inside a commitment or ciphertext.
+  - source: nullifier
+    relation: implements-pattern
+    target: anti-double-use-nullifiers
+    notes: Nullifiers are the public duplicate-detection tag used by the pattern.
+  - source: anonymous-airdrop
+    relation: composes-with
+    target: nullifier
+    notes: Airdrops use nullifiers to reject duplicate claims.
+  - source: private-dao-voting
+    relation: composes-with
+    target: anonymous-membership
+    notes: Voters may prove eligibility without revealing which member they are.
+  - source: private-dao-voting
+    relation: composes-with
+    target: private-aggregation
+    notes: The tally should reveal an aggregate rather than individual ballots.
+  - source: homomorphic-encryption
+    relation: used-in
+    target: private-aggregation
+    notes: Additive homomorphic encryption is a common private tallying mechanism.
+  - source: secure-aggregation
+    relation: implements-pattern
+    target: private-aggregation
+    notes: Secure aggregation is a protocol family for aggregating many client inputs.
+  - source: mixnets
+    relation: used-in
+    target: e-voting
+    notes: Mixnets can break the link between submitted encrypted ballots and decrypted ballots.
+  - source: make-receipts-useless
+    relation: strengthens
+    target: e-voting
+    notes: Receipt-freeness and coercion resistance are stronger than ballot secrecy.
+  - source: snarks-starks-bulletproofs
+    relation: inherits-risk-from
+    target: trusted-setup
+    notes: Some proof systems require setup ceremonies or structured reference strings.

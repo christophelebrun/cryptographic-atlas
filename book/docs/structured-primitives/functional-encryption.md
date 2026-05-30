@@ -2,13 +2,17 @@
 title: Functional Encryption
 type: primitive
 level: structured-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: advanced
 maturity: research
 tags:
   - functional-encryption
   - encryption
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-issuer
 ---
 
 # Functional Encryption
@@ -28,6 +32,10 @@ It aims to make decryption rights more precise. A party might learn an aggregate
 - Protection against outputs that are themselves revealing.
 - A substitute for access-control design.
 
+## Assumptions
+
+Assumptions are scheme-specific and often include a setup or key authority that issues function keys correctly. The system also assumes that the allowed function and repeated query pattern do not leak more than intended.
+
 ## Maturity and deployment
 
 Functional encryption remains largely research-stage for many general forms. Specialized forms may be more practical.
@@ -40,6 +48,12 @@ Depends on the concrete construction. Functional encryption is a broad research 
 
 Confidence often depends on a key authority or setup process that issues function keys. Even if the cryptography works, the allowed function can leak sensitive information, and repeated function outputs can become an inference channel.
 
+## Failure modes and anti-patterns
+
+- Issuing function keys that reveal too much.
+- Ignoring leakage from repeated function outputs.
+- Treating research-stage general functional encryption as a deployable access-control layer.
+
 ## Further reading
 
-- TODO: Add verified references for functional encryption definitions and practical schemes.
+- Boneh, Sahai, and Waters, "Functional Encryption: Definitions and Challenges."

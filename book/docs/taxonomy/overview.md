@@ -2,12 +2,16 @@
 title: Taxonomy Overview
 type: taxonomy
 level: taxonomy
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - taxonomy
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Taxonomy Overview
@@ -56,4 +60,5 @@ When evaluating a design, ask:
 
 ## Further reading
 
-- TODO: Add verified sources on applied cryptography taxonomies.
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Katz and Lindell, "Introduction to Modern Cryptography."

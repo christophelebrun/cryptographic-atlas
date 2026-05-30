@@ -1,14 +1,18 @@
 ---
 title: Electronic Voting
-type: protocol
+type: system
 level: system
+template: protocol
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - e-voting
   - voting
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Electronic Voting
@@ -95,4 +99,6 @@ Timing, voter check-in, device identifiers, and small precinct totals can leak i
 
 ## Further reading
 
-- TODO: Add verified references for end-to-end verifiable voting and coercion resistance.
+- Benaloh, "Verifiable Secret-Ballot Elections."
+- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
+- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."

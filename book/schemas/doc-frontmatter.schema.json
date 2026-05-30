@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptographic-atlas.local/schemas/doc-frontmatter.schema.json",
+  "title": "Cryptographic Atlas document frontmatter",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "title",
+    "type",
+    "level",
+    "template",
+    "status",
+    "last_reviewed",
+    "difficulty",
+    "maturity",
+    "tags",
+    "post_quantum_posture",
+    "confidence_model"
+  ],
+  "properties": {
+    "title": {"type": "string", "minLength": 1},
+    "type": {
+      "type": "string",
+      "enum": [
+        "assumption",
+        "primitive",
+        "protocol",
+        "pattern",
+        "system",
+        "glossary",
+        "appendix",
+        "taxonomy"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "security-goal",
+        "mathematical-assumption",
+        "assumption",
+        "basic-primitive",
+        "structured-primitive",
+        "proof-system",
+        "protocol",
+        "system",
+        "design-pattern",
+        "taxonomy",
+        "not-applicable"
+      ]
+    },
+    "template": {
+      "type": "string",
+      "enum": ["concept", "protocol", "case-study", "overview", "reference", "glossary"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["current", "needs-review", "outdated", "draft"]
+    },
+    "last_reviewed": {
+      "anyOf": [
+        {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        {"type": "object"}
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced"]
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["deployed", "mature", "emerging", "research", "theoretical", "not-applicable"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "post_quantum_posture": {
+      "type": "string",
+      "enum": ["vulnerable", "plausible", "depends", "unknown", "not-applicable"]
+    },
+    "confidence_model": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "mathematical-assumption",
+            "public-verifiability",
+            "trusted-setup",
+            "trusted-issuer",
+            "one-honest-party",
+            "t-of-n-threshold",
+            "honest-majority",
+            "non-collusion",
+            "client-side-secret",
+            "external-timing",
+            "mixed",
+            "depends",
+            "not-applicable"
+          ]
+        },
+        "threshold": {"type": ["string", "number", "null"]},
+        "breaks_if": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "setup": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

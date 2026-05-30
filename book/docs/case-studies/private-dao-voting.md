@@ -2,14 +2,18 @@
 title: Private DAO Voting
 type: system
 level: system
+template: case-study
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - voting
   - dao
   - privacy
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Private DAO Voting
@@ -98,4 +102,6 @@ Private DAO voting combines fast-moving privacy tooling with governance incentiv
 
 ## Further reading
 
-- TODO: Add verified references for e-voting, coercion resistance, and DAO governance privacy.
+- Benaloh, "Verifiable Secret-Ballot Elections."
+- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
+- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."

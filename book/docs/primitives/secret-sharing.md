@@ -2,13 +2,17 @@
 title: Secret Sharing
 type: primitive
 level: basic-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: mature
 tags:
   - secret-sharing
   - threshold
+post_quantum_posture: plausible
+confidence_model:
+  type: t-of-n-threshold
 ---
 
 # Secret Sharing
@@ -40,6 +44,10 @@ $$
 - Confidentiality against parties below the reconstruction threshold.
 - Availability when enough shares survive.
 
+## Assumptions
+
+Shares must be generated with correct randomness, distributed over authenticated channels, stored independently, and reconstructed only under the intended threshold and governance rules.
+
 ## Post-quantum posture
 
 Plausible for the information-theoretic core of schemes such as Shamir secret sharing. The full system may still depend on quantum-vulnerable authentication, transport encryption, signatures, or storage controls.
@@ -61,7 +69,7 @@ Confidence is threshold-based. Fewer than `t` shares should not reveal the secre
 - Distributed decryption.
 - MPC building blocks.
 
-## Failure modes
+## Failure modes and anti-patterns
 
 - Losing too many shares.
 - Letting one organization control enough shares.
@@ -69,4 +77,5 @@ Confidence is threshold-based. Fewer than `t` shares should not reveal the secre
 
 ## Further reading
 
-- TODO: Add verified references for Shamir secret sharing and verifiable secret sharing.
+- Adi Shamir, "How to Share a Secret."
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."

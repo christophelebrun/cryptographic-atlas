@@ -2,14 +2,18 @@
 title: Post-Quantum Posture
 type: appendix
 level: not-applicable
+template: reference
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: not-applicable
 tags:
   - post-quantum
   - quantum-resistance
   - assumptions
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Post-Quantum Posture
@@ -65,5 +69,6 @@ NIST has approved initial post-quantum standards for key encapsulation and signa
 
 - NIST: [Post-Quantum Cryptography FIPS Approved](https://csrc.nist.gov/News/2024/postquantum-cryptography-fips-approved)
 - NIST NCCoE: [Frequently Asked Questions about Post-Quantum Cryptography](https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/)
-- TODO: Add primary references for quantum attacks on RSA and discrete logarithms.
-- TODO: Add references on hash-based, lattice-based, code-based, and multivariate post-quantum assumptions.
+- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
+- Grover, "A Fast Quantum Mechanical Algorithm for Database Search."
+- NIST FIPS 203, FIPS 204, and FIPS 205.

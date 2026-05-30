@@ -39,7 +39,7 @@ The Docusaurus book app lives in `book/`. Book pages live in `book/docs/`, reusa
 
 Repository-level planning and maintenance files can stay outside the book app. For example, the initialization prompt remains at the repository root.
 
-Concept cards are YAML metadata files in `book/data/concept-cards/`. They are intended to support future badges, comparison tables, and machine-readable concept summaries.
+Concept cards are YAML metadata files in `book/data/concept-cards/`. They support generated concept-card rendering, comparison tables, and machine-readable concept summaries.
 
 ## Local development
 
@@ -47,6 +47,7 @@ Concept cards are YAML metadata files in `book/data/concept-cards/`. They are in
 cd book
 npm install
 npm run start
+npm run validate:content
 npm run build
 ```
 
@@ -85,7 +86,18 @@ Major concept pages and concept cards should surface:
 - composition risks;
 - what the concept does not provide.
 
-Other useful properties to add next include implementation risk, metadata leakage, auditability, parameter sensitivity, revocation/update story, and operational failure modes.
+Concept cards also track implementation risk, metadata leakage, auditability, parameter sensitivity, revocation/update story, and operational failure modes.
+
+## Content validation
+
+Content schemas live in `book/schemas/`. Run:
+
+```bash
+cd book
+npm run validate:content
+```
+
+The validator checks document frontmatter, page template sections, concept-card YAML, structured references, relationship data, and comparison matrices.
 
 ## Contributing
 
@@ -95,7 +107,7 @@ Contributions should improve conceptual clarity, threat-model precision, assumpt
 
 Book content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
 
-Website source code is intended to be licensed under MIT unless otherwise specified. A TODO remains to split code and content licensing if the project needs stricter separation.
+Website source code is intended to be licensed under MIT unless otherwise specified. Track code/content license separation explicitly if the project needs stricter boundaries later.
 
 ## Safety note
 
@@ -103,11 +115,9 @@ Cryptographic systems fail when guarantees are overstated, assumptions are hidde
 
 ## Next steps
 
-- Add verified citations.
 - Add diagrams for the taxonomy.
-- Add concept-card rendering from YAML.
 - Add French translation.
 - Add more case studies.
-- Add comparison matrices.
 - Add glossary backlinks.
-- Add implementation-risk, auditability, and metadata-leakage fields to concept cards.
+- Expand assumption/substrate pages.
+- Expand comparison matrices beyond proof-system families.

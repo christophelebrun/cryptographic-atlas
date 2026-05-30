@@ -2,13 +2,17 @@
 title: Threshold Cryptography
 type: primitive
 level: structured-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: mature
 tags:
   - threshold
   - key-management
+post_quantum_posture: depends
+confidence_model:
+  type: t-of-n-threshold
 ---
 
 # Threshold Cryptography
@@ -30,6 +34,10 @@ Threshold cryptography distributes a cryptographic power across several parties 
 - Simple operations or recovery.
 - Metadata privacy by itself.
 
+## Assumptions
+
+The protocol must generate and protect shares correctly, define the threshold and recovery process, authenticate participants, and handle share refresh, replacement, and audit procedures.
+
 ## Post-quantum posture
 
 Depends on the underlying primitive. Threshold ECDSA or threshold Schnorr is quantum-vulnerable. Threshold versions of post-quantum signatures, encryption, or key encapsulation need separate analysis and are not automatically available just because a single-party primitive exists.
@@ -38,7 +46,7 @@ Depends on the underlying primitive. Threshold ECDSA or threshold Schnorr is qua
 
 Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for privacy or key misuse resistance, and at least `t` parties are available for liveness. Distributed key generation, share custody, and recovery policy are part of the model.
 
-## Failure modes
+## Failure modes and anti-patterns
 
 - Bad distributed key generation.
 - Poor share custody.
@@ -47,4 +55,5 @@ Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for pr
 
 ## Further reading
 
-- TODO: Add verified references for threshold signatures and distributed key generation.
+- Adi Shamir, "How to Share a Secret."
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."

@@ -8,7 +8,10 @@
     "build": "docusaurus build",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "generate:concept-cards": "node scripts/generate-concept-card-data.js",
+    "prebuild": "npm run generate:concept-cards",
+    "validate:content": "node scripts/validate-content.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.10.1",

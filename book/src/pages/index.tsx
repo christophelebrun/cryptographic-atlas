@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
+import ConceptCardGallery from '../components/ConceptCardGallery';
 
 export default function Home(): JSX.Element {
   return (
@@ -45,6 +46,8 @@ export default function Home(): JSX.Element {
             cryptography guidance and does not replace expert protocol review.
           </div>
         </section>
+
+        <ConceptCardGallery />
       </main>
     </Layout>
   );

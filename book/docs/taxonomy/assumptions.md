@@ -2,12 +2,16 @@
 title: Assumptions
 type: taxonomy
 level: assumption
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - assumptions
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Assumptions
@@ -47,4 +51,5 @@ See [Confidence Models](/docs/appendices/confidence-models).
 
 ## Further reading
 
-- TODO: Add verified references for common cryptographic assumptions.
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."

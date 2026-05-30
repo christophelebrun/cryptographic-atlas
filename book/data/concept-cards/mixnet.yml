@@ -1,0 +1,56 @@
+id: mixnet
+name: Mixnet
+category: protocol
+level: protocol
+short_intuition: A sequence of servers shuffles or transforms messages to break sender-recipient linkage.
+security_goals:
+  - unlinkability
+  - anonymity-set-protection
+  - verifiable-shuffling-depending-on-design
+assumptions:
+  - at-least-one-honest-mix
+  - sufficient-batch-size
+  - message-format-uniformity
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: one-honest-party
+  threshold: one-honest-mix
+  breaks_if:
+    - all-mixes-collude
+    - batches-are-too-small
+    - timing-or-format-leaks-link-messages
+  setup:
+    - mix-public-keys
+    - bulletin-board-or-verification-process
+typical_uses:
+  - anonymous-messaging
+  - electronic-voting
+  - privacy-preserving-broadcast
+does_not_provide:
+  - low-latency-anonymity-without-tradeoffs
+  - protection-against-global-metadata-by-itself
+  - coercion-resistance
+composition_risks:
+  - Mixnets need batching, cover traffic, or timing controls.
+  - Verification protects shuffle correctness, not all metadata.
+metadata_leaks:
+  - timing
+  - message-size
+  - batch-membership
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Misbehaving mix servers require governance, replacement, and re-keying outside the core cryptography.
+operational_failure_modes:
+  - small-batches
+  - all-mixes-collude
+  - side-channel-message-formats
+maturity: mature
+related:
+  - e-voting
+  - anonymous-credentials
+  - make-receipts-useless
+references:
+  - chaum-mixnets

@@ -2,12 +2,16 @@
 title: Design Patterns Overview
 type: pattern
 level: design-pattern
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - design-patterns
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Design Patterns Overview

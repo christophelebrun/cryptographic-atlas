@@ -2,14 +2,18 @@
 title: Anonymous Airdrop
 type: system
 level: system
+template: case-study
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: intermediate
 maturity: emerging
 tags:
   - airdrops
   - nullifiers
   - anonymity
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Anonymous Airdrop
@@ -43,6 +47,14 @@ An anonymous airdrop lets eligible users claim once without publicly linking the
 
 Claim timing, gas funding, wallet reuse, and exchange withdrawals can identify claimants.
 
+## Post-quantum posture
+
+Depends on the selected membership proof, nullifier construction, signatures, shielding mechanism, and transaction layer. A hash-based nullifier does not make the whole airdrop post-quantum if the credential or proof system is quantum-vulnerable.
+
+## Confidence model
+
+Confidence combines a trusted or publicly auditable eligibility source, holder-controlled secrets, public spent-nullifier checks, proof-system soundness, and operational controls around funding and withdrawal privacy.
+
 ## Failure modes
 
 - Eligibility set contains duplicates.
@@ -50,6 +62,13 @@ Claim timing, gas funding, wallet reuse, and exchange withdrawals can identify c
 - Claims reveal wallet funding patterns.
 - The proof omits a required context.
 
+## Related concepts
+
+- [Nullifiers](/docs/protocols/nullifiers)
+- [Anonymous membership](/docs/design-patterns/anonymous-membership)
+- [Anti-double-use nullifiers](/docs/design-patterns/anti-double-use-nullifiers)
+
 ## Further reading
 
-- TODO: Add verified references for anonymous airdrop and private claim designs.
+- [Nullifiers](/docs/protocols/nullifiers)
+- [Membership proofs](/docs/proof-systems/membership-proofs)

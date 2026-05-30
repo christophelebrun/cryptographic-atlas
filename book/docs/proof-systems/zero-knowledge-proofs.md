@@ -2,13 +2,17 @@
 title: Zero-Knowledge Proofs
 type: primitive
 level: proof-system
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: mature
 tags:
   - zero-knowledge
   - proof-systems
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
 ---
 
 # Zero-Knowledge Proofs
@@ -111,4 +115,6 @@ ZKPs are a mature field, but concrete systems vary from widely deployed to resea
 
 ## Further reading
 
-- TODO: Add verified sources for zero-knowledge definitions and proof-system families.
+- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
+- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity."
+- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."

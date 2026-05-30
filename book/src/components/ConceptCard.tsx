@@ -1,7 +1,8 @@
 import React from 'react';
 import MaturityBadge, {type Maturity} from './MaturityBadge';
 
-export type ConceptCardProps = {
+export type ConceptCardData = {
+  id: string;
   name: string;
   category: string;
   level: string;
@@ -9,6 +10,10 @@ export type ConceptCardProps = {
   maturity: Maturity;
   securityGoals: string[];
   doesNotProvide: string[];
+  postQuantumPosture: string;
+  confidenceModelType: string;
+  implementationRisk: string;
+  metadataLeaks: string[];
 };
 
 export default function ConceptCard({
@@ -19,7 +24,11 @@ export default function ConceptCard({
   maturity,
   securityGoals,
   doesNotProvide,
-}: ConceptCardProps): JSX.Element {
+  postQuantumPosture,
+  confidenceModelType,
+  implementationRisk,
+  metadataLeaks,
+}: ConceptCardData): JSX.Element {
   return (
     <article className="conceptCard">
       <header className="conceptCard__header">
@@ -32,6 +41,20 @@ export default function ConceptCard({
         <MaturityBadge maturity={maturity} />
       </header>
       <p>{shortIntuition}</p>
+      <dl className="conceptCard__metadata">
+        <div>
+          <dt>PQ posture</dt>
+          <dd>{postQuantumPosture}</dd>
+        </div>
+        <div>
+          <dt>Confidence</dt>
+          <dd>{confidenceModelType}</dd>
+        </div>
+        <div>
+          <dt>Implementation risk</dt>
+          <dd>{implementationRisk}</dd>
+        </div>
+      </dl>
       <div className="conceptCard__grid">
         <section>
           <h4>Security goals</h4>
@@ -46,6 +69,14 @@ export default function ConceptCard({
           <ul>
             {doesNotProvide.map((missingGuarantee) => (
               <li key={missingGuarantee}>{missingGuarantee}</li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h4>Metadata leaks</h4>
+          <ul>
+            {metadataLeaks.map((leak) => (
+              <li key={leak}>{leak}</li>
             ))}
           </ul>
         </section>

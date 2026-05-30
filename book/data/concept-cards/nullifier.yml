@@ -36,10 +36,24 @@ composition_risks:
   - Reusing contexts can link actions.
   - Nullifiers must be paired with eligibility proofs.
   - Timing and transaction metadata can deanonymize users.
+metadata_leaks:
+  - timing
+  - transaction-fees
+  - wallet-funding
+  - reused-contexts
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: medium
+revocation_story: Nullifiers prevent reuse but do not revoke eligibility; revocation must be handled by the credential or membership layer.
+operational_failure_modes:
+  - public-registry-censorship
+  - weak-user-secrets
+  - context-reuse
 maturity: emerging
 related:
   - anonymous-membership
   - anti-double-use-nullifiers
   - zero-knowledge-proof
 references:
-  - TODO
+  - goldwasser-micali-rackoff-zk
+  - camenisch-lysyanskaya-credentials

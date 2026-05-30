@@ -2,13 +2,17 @@
 title: Primitives vs Protocols
 type: taxonomy
 level: taxonomy
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - primitives
   - protocols
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Primitives vs Protocols
@@ -30,4 +34,5 @@ A commitment can bind a value. A voting protocol may use commitments, signatures
 
 ## Further reading
 
-- TODO: Add verified references on protocol design terminology.
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Katz and Lindell, "Introduction to Modern Cryptography."

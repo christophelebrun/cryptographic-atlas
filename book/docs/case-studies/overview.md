@@ -2,12 +2,16 @@
 title: Case Studies Overview
 type: system
 level: system
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - case-studies
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Case Studies Overview

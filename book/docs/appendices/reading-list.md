@@ -2,42 +2,51 @@
 title: Reading List
 type: appendix
 level: not-applicable
+template: reference
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - references
   - reading-list
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Reading List
 
-This first reading list uses TODO placeholders until references are verified.
+This reading list mirrors the structured reference registry in `book/data/references.yml`.
 
 ## General applied cryptography
 
-- TODO: Real-World Cryptography — David Wong
-- TODO: Serious Cryptography — Jean-Philippe Aumasson
-- TODO: A Graduate Course in Applied Cryptography — Boneh and Shoup
-- TODO: Introduction to Modern Cryptography — Katz and Lindell
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Katz and Lindell, "Introduction to Modern Cryptography."
+- David Wong, "Real-World Cryptography."
+- Jean-Philippe Aumasson, "Serious Cryptography."
 
 ## Zero-knowledge proofs
 
-- TODO
+- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
+- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity."
+- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
 
 ## Electronic voting
 
-- TODO
+- Benaloh, "Verifiable Secret-Ballot Elections."
+- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
 
 ## MPC and secure aggregation
 
-- TODO
+- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
 
 ## Functional encryption
 
-- TODO
+- Boneh, Sahai, and Waters, "Functional Encryption: Definitions and Challenges."
 
 ## VDFs and timelock encryption
 
-- TODO
+- Boneh et al., "Verifiable Delay Functions."
+- Wesolowski, "Efficient Verifiable Delay Functions."

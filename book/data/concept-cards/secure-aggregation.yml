@@ -1,0 +1,56 @@
+id: secure-aggregation
+name: Secure Aggregation
+category: protocol
+level: protocol
+short_intuition: Many clients contribute values while the server learns only an aggregate.
+security_goals:
+  - input-privacy
+  - aggregate-correctness
+  - dropout-tolerance-depending-on-protocol
+assumptions:
+  - authenticated-clients
+  - honest-majority-or-non-collusion
+  - dropout-model
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: honest-majority
+  threshold: protocol-specific
+  breaks_if:
+    - too-many-clients-collude
+    - dropout-handling-leaks-masks
+    - aggregate-group-is-too-small
+  setup:
+    - client-authentication
+    - pairwise-or-server-assisted-masking
+typical_uses:
+  - federated-analytics
+  - private-telemetry
+  - model-update-aggregation
+does_not_provide:
+  - differential-privacy
+  - protection-from-small-cohort-inference
+  - malicious-input-validity-without-checks
+composition_risks:
+  - Aggregates can reveal individuals in small groups.
+  - Repeated aggregates can enable differencing attacks.
+metadata_leaks:
+  - participation
+  - dropout-events
+  - timing
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Client removal and key refresh are operational protocol concerns, especially after dropouts or compromise.
+operational_failure_modes:
+  - dropout-leakage
+  - malicious-clients
+  - small-cohort-disclosure
+maturity: mature
+related:
+  - private-aggregation
+  - mpc
+  - homomorphic-encryption
+references:
+  - bonawitz-secure-aggregation

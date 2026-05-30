@@ -2,12 +2,16 @@
 title: Hash Functions
 type: primitive
 level: basic-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: deployed
 tags:
   - hashes
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
 ---
 
 # Hash Functions
@@ -35,6 +39,10 @@ A cryptographic hash function maps data to a fixed-length digest in a way that s
 - Content addressing.
 - Transcript binding in protocols.
 
+## Assumptions
+
+The chosen hash function must be within its intended security lifetime, outputs must be long enough for the security target, and protocols must use clear domain separation when the same function is reused in different roles.
+
 ## Post-quantum posture
 
 Plausible with appropriate output lengths and parameters. Hash functions are often used as post-quantum building blocks, but the security target must account for quantum search speedups.
@@ -43,7 +51,7 @@ Plausible with appropriate output lengths and parameters. Hash functions are oft
 
 Confidence comes from public algorithm scrutiny, parameter choice, domain separation, and correct use. Hashing a low-entropy secret is not enough to make it hidden.
 
-## Failure modes
+## Failure modes and anti-patterns
 
 - Hashing passwords without a password-hashing scheme.
 - Treating a hash of a small secret as hidden.
@@ -51,4 +59,5 @@ Confidence comes from public algorithm scrutiny, parameter choice, domain separa
 
 ## Further reading
 
-- TODO: Add verified references for cryptographic hash functions.
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Grover, "A Fast Quantum Mechanical Algorithm for Database Search."

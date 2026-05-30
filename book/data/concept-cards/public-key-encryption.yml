@@ -1,0 +1,55 @@
+id: public-key-encryption
+name: Public-Key Encryption
+category: encryption
+level: basic-primitive
+short_intuition: Anyone can encrypt to a public key, but only the private key holder can decrypt.
+security_goals:
+  - confidentiality
+  - recipient-controlled-decryption
+assumptions:
+  - authenticated-public-keys
+  - private-key-secrecy
+  - scheme-specific-hardness-assumptions
+requires_trusted_setup: false
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - public-key-is-misbound
+    - private-key-is-compromised
+    - raw-encryption-is-used-unsafely
+  setup:
+    - authentic-public-key-distribution
+typical_uses:
+  - hybrid-encryption
+  - encrypted-ballots
+  - secure-messaging
+does_not_provide:
+  - sender-authentication
+  - metadata-privacy
+  - plaintext-validity
+composition_risks:
+  - Encryption must be combined with authentication or proofs when validity matters.
+  - Hybrid constructions need correct key encapsulation and data encapsulation.
+metadata_leaks:
+  - recipient-key
+  - ciphertext-size
+  - transmission-timing
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation is handled by key rotation, certificate status, or application policy, not by ciphertexts already published.
+operational_failure_modes:
+  - key-misbinding
+  - private-key-loss
+  - unsafe-padding-or-hybrid-use
+maturity: deployed
+related:
+  - homomorphic-encryption
+  - threshold-cryptography
+  - e-voting
+references:
+  - boneh-shoup-applied-cryptography
+  - nist-fips-203

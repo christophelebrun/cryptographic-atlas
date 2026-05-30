@@ -2,13 +2,17 @@
 title: Composability
 type: taxonomy
 level: taxonomy
+template: overview
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: not-applicable
 tags:
   - composability
   - failure-modes
+post_quantum_posture: not-applicable
+confidence_model:
+  type: not-applicable
 ---
 
 # Composability
@@ -50,4 +54,5 @@ Instead of saying "this system is secure," say:
 
 ## Further reading
 
-- TODO: Add verified sources on universal composability and protocol composition.
+- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Katz and Lindell, "Introduction to Modern Cryptography."

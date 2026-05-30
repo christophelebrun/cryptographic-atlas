@@ -2,13 +2,17 @@
 title: Make Receipts Useless
 type: pattern
 level: design-pattern
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: advanced
 maturity: emerging
 tags:
   - coercion-resistance
   - voting
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
 ---
 
 # Make Receipts Useless
@@ -34,6 +38,18 @@ Some systems need more than privacy from observers. They need to prevent a parti
 - Safety on compromised devices.
 - A simple add-on to ordinary privacy systems.
 
+## Assumptions
+
+The system must define the coercion model, control what public evidence is created, and account for user interfaces, logs, screenshots, credential recovery, and repeated participation.
+
+## Post-quantum posture
+
+Not applicable to the pattern by itself. Concrete posture depends on the voting, credential, encryption, proof, and tallying mechanisms used.
+
+## Confidence model
+
+Confidence usually combines public verifiability for tally integrity with protocol features that make user-held evidence deniable, fakeable, revocable, or superseded by later actions.
+
 ## Failure modes
 
 - User interfaces expose receipts.
@@ -43,4 +59,5 @@ Some systems need more than privacy from observers. They need to prevent a parti
 
 ## Further reading
 
-- TODO: Add verified references for receipt-freeness and coercion-resistant voting.
+- [Electronic voting](/docs/protocols/e-voting)
+- [Coercion-resistant voting](/docs/case-studies/coercion-resistant-voting)

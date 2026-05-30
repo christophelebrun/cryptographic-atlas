@@ -2,14 +2,18 @@
 title: Commitments
 type: primitive
 level: basic-primitive
+template: concept
 status: draft
-last_reviewed: 2026-05-30
+last_reviewed: '2026-05-30'
 difficulty: beginner
 maturity: mature
 tags:
   - commitments
   - hiding
   - binding
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
 ---
 
 # Commitments
@@ -117,4 +121,5 @@ Commitments are mature and widely used, but concrete schemes still depend on car
 
 ## Further reading
 
-- TODO: Add verified textbook references for commitment schemes.
+- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Pedersen, "Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing."
