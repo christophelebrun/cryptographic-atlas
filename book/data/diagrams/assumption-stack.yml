@@ -1,0 +1,99 @@
+id: assumption-stack
+title: Assumption stack
+description: Security claims inherit mathematical, model, setup, and operational assumptions.
+layout:
+  width: 1160
+  height: 560
+  columns: 4
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 32
+  node_width: 230
+  node_height: 76
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/assumption-stack.svg
+  mermaid: static/diagrams/assumption-stack.mmd
+nodes:
+  - id: mathematical-hardness
+    label: Mathematical hardness
+    detail: Discrete log, RSA, lattices
+    kind: assumption
+    column: 1
+    row: 1
+  - id: model-assumptions
+    label: Model assumptions
+    detail: Random oracle model
+    kind: assumption
+    column: 1
+    row: 2
+  - id: setup-assumptions
+    label: Setup assumptions
+    detail: Trusted setup, public parameters
+    kind: setup
+    column: 1
+    row: 3
+  - id: operational-trust
+    label: Operational trust
+    detail: Issuers, thresholds, timing
+    kind: actor
+    column: 1
+    row: 4
+  - id: primitives
+    label: Candidate primitives
+    detail: Signatures, KEMs, commitments
+    kind: primitive
+    column: 2
+    row: 1
+  - id: proof-systems
+    label: Proof systems
+    detail: SNARKs, STARKs, range proofs
+    kind: proof
+    column: 2
+    row: 2
+  - id: protocols
+    label: Protocols
+    detail: MPC, credentials, mixnets
+    kind: protocol
+    column: 2
+    row: 3
+  - id: system-claim
+    label: System claim
+    detail: Privacy, integrity, availability
+    kind: system
+    column: 3
+    row: 2
+  - id: confidence-model
+    label: Confidence model
+    detail: What must stay hard or honest
+    kind: output
+    column: 4
+    row: 2
+  - id: failure-review
+    label: Failure review
+    detail: Collusion, weak randomness, metadata
+    kind: metadata
+    column: 4
+    row: 3
+edges:
+  - from: mathematical-hardness
+    to: primitives
+  - from: model-assumptions
+    to: proof-systems
+  - from: setup-assumptions
+    to: proof-systems
+  - from: operational-trust
+    to: protocols
+  - from: primitives
+    to: system-claim
+  - from: proof-systems
+    to: system-claim
+  - from: protocols
+    to: system-claim
+  - from: system-claim
+    to: confidence-model
+  - from: confidence-model
+    to: failure-review
+    kind: warning

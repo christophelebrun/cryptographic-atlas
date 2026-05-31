@@ -31,6 +31,8 @@ A zero-knowledge proof lets one party prove that a statement is true without rev
 
 Zero-knowledge proofs (ZKPs) are useful when a verifier needs confidence in a claim but should not learn the private witness behind the claim.
 
+![Zero-knowledge proof flow](/img/diagrams/zero-knowledge-proof-flow.svg)
+
 ## Statement vs witness
 
 The statement is the public claim being proven. The witness is the private information that makes the statement true.

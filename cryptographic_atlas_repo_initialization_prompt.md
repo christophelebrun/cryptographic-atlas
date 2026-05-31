@@ -499,6 +499,19 @@ Avoid:
 - presenting research-stage tools as production-ready;
 - encouraging readers to deploy unaudited custom cryptography.
 
+## Diagram policy
+
+Diagrams must be editable and reviewable as structured data:
+
+- Use `book/data/diagrams/*.yml` as the source of truth.
+- Validate diagram files with `book/schemas/diagram.schema.json`.
+- Generate SVG outputs with `npm run generate:diagrams` from the `book/` directory.
+- Use generated SVGs from `book/static/img/diagrams/` in pages.
+- Keep optional generated Mermaid files in `book/static/diagrams/` for simple flow inspection.
+- Do not hand-edit generated SVG or Mermaid outputs.
+
+Prefer diagrams for taxonomy boundaries, assumption dependencies, protocol flows, composition paths, lifecycle steps, and failure modes involving setup, metadata, trust, or omitted checks.
+
 ## Terminology rules
 
 Use the following terms consistently:
@@ -963,7 +976,7 @@ Create a `TODO.md` or a section in the README with next steps:
 
 ```text
 - Add verified citations.
-- Add diagrams for the taxonomy.
+- Add generated YAML-backed diagrams for taxonomy, composition, and protocol flows.
 - Add concept-card rendering from YAML.
 - Add more case studies.
 - Add comparison matrices.

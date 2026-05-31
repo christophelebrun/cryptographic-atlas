@@ -1,0 +1,94 @@
+id: nullifier-flow
+title: Nullifier flow
+description: A public nullifier prevents reuse in one context without directly revealing identity.
+layout:
+  width: 1160
+  height: 480
+  columns: 4
+  rows: 3
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 36
+  node_width: 230
+  node_height: 72
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/nullifier-flow.svg
+  mermaid: static/diagrams/nullifier-flow.mmd
+nodes:
+  - id: holder-secret
+    label: Holder secret
+    detail: Credential key or secret
+    kind: actor
+    column: 1
+    row: 1
+  - id: context
+    label: Context
+    detail: Election, app, round, claim
+    kind: setup
+    column: 1
+    row: 2
+  - id: domain-separated-hash
+    label: Domain-separated hash
+    detail: H(secret || context)
+    kind: primitive
+    column: 2
+    row: 1
+  - id: eligibility-proof
+    label: Proof of eligibility
+    detail: Shows derivation is valid
+    kind: proof
+    column: 2
+    row: 2
+  - id: public-nullifier
+    label: Public nullifier
+    detail: Stable only for this context
+    kind: protocol
+    column: 3
+    row: 1
+  - id: spent-set
+    label: Spent set
+    detail: Public duplicate registry
+    kind: system
+    column: 3
+    row: 2
+  - id: accept
+    label: Accept action
+    detail: First valid use
+    kind: output
+    column: 4
+    row: 1
+  - id: reject
+    label: Reject duplicate
+    detail: Same nullifier seen before
+    kind: warning
+    column: 4
+    row: 2
+  - id: metadata-review
+    label: Metadata review
+    detail: Timing, fees, networks
+    kind: metadata
+    column: 4
+    row: 3
+edges:
+  - from: holder-secret
+    to: domain-separated-hash
+  - from: context
+    to: domain-separated-hash
+  - from: holder-secret
+    to: eligibility-proof
+  - from: domain-separated-hash
+    to: public-nullifier
+  - from: eligibility-proof
+    to: public-nullifier
+  - from: public-nullifier
+    to: spent-set
+  - from: spent-set
+    to: accept
+  - from: spent-set
+    to: reject
+    kind: warning
+  - from: spent-set
+    to: metadata-review
+    kind: warning

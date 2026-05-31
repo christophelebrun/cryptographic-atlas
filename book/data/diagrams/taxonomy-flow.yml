@@ -1,0 +1,84 @@
+id: taxonomy-flow
+title: Taxonomy flow
+description: Separate goals, assumptions, building blocks, protocols, systems, and patterns before composing them.
+layout:
+  width: 960
+  height: 560
+  columns: 3
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 64
+  row_gap: 32
+  node_width: 244
+  node_height: 74
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/taxonomy-flow.svg
+  mermaid: static/diagrams/taxonomy-flow.mmd
+nodes:
+  - id: security-goals
+    label: Security goals
+    detail: Confidentiality, integrity, anonymity
+    kind: goal
+    column: 1
+    row: 1
+  - id: assumptions
+    label: Assumptions
+    detail: Discrete log, RSA, lattices, setup
+    kind: assumption
+    column: 1
+    row: 2
+  - id: basic-primitives
+    label: Basic primitives
+    detail: Hash, MAC, signatures, encryption
+    kind: primitive
+    column: 2
+    row: 1
+  - id: structured-primitives
+    label: Structured primitives
+    detail: FHE, threshold, accumulators, VDFs
+    kind: structured
+    column: 2
+    row: 2
+  - id: proof-systems
+    label: Proof systems
+    detail: ZKPs, SNARKs, range proofs
+    kind: proof
+    column: 2
+    row: 3
+  - id: protocols
+    label: Protocols
+    detail: MPC, mixnets, credentials
+    kind: protocol
+    column: 3
+    row: 2
+  - id: systems
+    label: Systems
+    detail: Voting, private claims, rollups
+    kind: system
+    column: 3
+    row: 3
+  - id: design-patterns
+    label: Design patterns
+    detail: Commit-reveal, nullifiers, aggregation
+    kind: pattern
+    column: 3
+    row: 4
+edges:
+  - from: security-goals
+    to: basic-primitives
+  - from: assumptions
+    to: basic-primitives
+  - from: assumptions
+    to: structured-primitives
+  - from: basic-primitives
+    to: structured-primitives
+  - from: structured-primitives
+    to: proof-systems
+  - from: proof-systems
+    to: protocols
+  - from: protocols
+    to: systems
+  - from: systems
+    to: design-patterns

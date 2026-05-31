@@ -47,6 +47,8 @@ $$
 
 Real systems normally derive nullifiers inside a larger protocol and may prove correctness with a zero-knowledge proof.
 
+![Nullifier flow](/img/diagrams/nullifier-flow.svg)
+
 ## Building blocks
 
 - Hash functions.

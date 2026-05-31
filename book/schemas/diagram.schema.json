@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cryptographic-atlas.local/schemas/diagram.schema.json",
+  "title": "Cryptographic Atlas diagram",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "description", "layout", "outputs", "nodes", "edges"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "columns", "rows", "node_width", "node_height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 320, "maximum": 2400},
+        "height": {"type": "integer", "minimum": 240, "maximum": 2000},
+        "columns": {"type": "integer", "minimum": 1, "maximum": 8},
+        "rows": {"type": "integer", "minimum": 1, "maximum": 10},
+        "margin": {"type": "integer", "minimum": 0, "maximum": 240},
+        "top": {"type": "integer", "minimum": 0, "maximum": 320},
+        "column_gap": {"type": "integer", "minimum": 0, "maximum": 240},
+        "row_gap": {"type": "integer", "minimum": 0, "maximum": 240},
+        "node_width": {"type": "integer", "minimum": 80, "maximum": 600},
+        "node_height": {"type": "integer", "minimum": 40, "maximum": 240},
+        "mermaid_direction": {"type": "string", "enum": ["LR", "RL", "TD", "BT"]}
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["svg"],
+      "properties": {
+        "svg": {"type": "string", "pattern": "^static/[A-Za-z0-9._/-]+\\.svg$"},
+        "mermaid": {"type": "string", "pattern": "^static/[A-Za-z0-9._/-]+\\.mmd$"}
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "column", "row"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "label": {"type": "string", "minLength": 1},
+          "detail": {
+            "anyOf": [
+              {"type": "string", "minLength": 1},
+              {
+                "type": "array",
+                "items": {"type": "string", "minLength": 1},
+                "minItems": 1,
+                "maxItems": 3
+              }
+            ]
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "default",
+              "goal",
+              "assumption",
+              "primitive",
+              "structured",
+              "proof",
+              "protocol",
+              "system",
+              "pattern",
+              "actor",
+              "setup",
+              "warning",
+              "metadata",
+              "output"
+            ]
+          },
+          "column": {"type": "integer", "minimum": 1, "maximum": 8},
+          "row": {"type": "integer", "minimum": 1, "maximum": 10},
+          "width": {"type": "integer", "minimum": 80, "maximum": 600},
+          "height": {"type": "integer", "minimum": 40, "maximum": 240}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to"],
+        "properties": {
+          "from": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "to": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "label": {"type": "string", "minLength": 1},
+          "kind": {"type": "string", "enum": ["flow", "dependency", "warning"]},
+          "from_anchor": {"type": "string", "enum": ["auto", "top", "right", "bottom", "left"]},
+          "to_anchor": {"type": "string", "enum": ["auto", "top", "right", "bottom", "left"]}
+        }
+      }
+    }
+  }
+}

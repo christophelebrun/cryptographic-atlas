@@ -1,0 +1,85 @@
+id: private-voting-composition
+title: "Composition flow: private voting"
+description: Each component contributes a narrow guarantee and inherits assumptions from its layer.
+layout:
+  width: 960
+  height: 560
+  columns: 3
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 64
+  row_gap: 32
+  node_width: 244
+  node_height: 74
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/private-voting-composition.svg
+  mermaid: static/diagrams/private-voting-composition.mmd
+nodes:
+  - id: eligibility-source
+    label: Eligibility source
+    detail: Issuer, set, credential, registry
+    kind: setup
+    column: 1
+    row: 1
+  - id: voter-secret
+    label: Voter secret
+    detail: Credential, key, randomness
+    kind: actor
+    column: 1
+    row: 2
+  - id: membership-proof
+    label: Membership proof
+    detail: Eligible without revealing member
+    kind: proof
+    column: 2
+    row: 1
+  - id: context-nullifier
+    label: Context nullifier
+    detail: Reject duplicate action
+    kind: protocol
+    column: 2
+    row: 2
+  - id: encrypted-ballot
+    label: Encrypted ballot
+    detail: Hide vote value, prove validity
+    kind: primitive
+    column: 2
+    row: 3
+  - id: accept-or-reject
+    label: Accept or reject
+    detail: Verify proof, check nullifier
+    kind: protocol
+    column: 3
+    row: 2
+  - id: private-tally
+    label: Private tally
+    detail: Aggregate, decrypt, audit
+    kind: system
+    column: 3
+    row: 3
+  - id: metadata-review
+    label: Metadata review
+    detail: Timing, fees, groups, devices
+    kind: metadata
+    column: 3
+    row: 4
+edges:
+  - from: eligibility-source
+    to: membership-proof
+  - from: voter-secret
+    to: membership-proof
+  - from: voter-secret
+    to: context-nullifier
+  - from: membership-proof
+    to: accept-or-reject
+  - from: context-nullifier
+    to: accept-or-reject
+  - from: encrypted-ballot
+    to: private-tally
+  - from: accept-or-reject
+    to: private-tally
+  - from: private-tally
+    to: metadata-review
+    kind: warning

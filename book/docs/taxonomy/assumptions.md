@@ -18,6 +18,8 @@ confidence_model:
 
 Cryptographic guarantees are conditional. An assumption is something that must hold for a claim to be meaningful.
 
+![Assumption stack](/img/diagrams/assumption-stack.svg)
+
 ## Types of assumptions
 
 | Type | Examples |

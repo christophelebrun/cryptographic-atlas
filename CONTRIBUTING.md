@@ -15,11 +15,18 @@ The Cryptographic Atlas welcomes careful educational contributions.
 
 Use the templates in `AGENTS.md`. Major concepts should also receive a YAML concept card in `book/data/concept-cards/`.
 
+## Diagrams
+
+Diagram YAML in `book/data/diagrams/` is the editable source. Generated SVG and Mermaid outputs should be produced with `npm run generate:diagrams` from the `book/` directory and should not be hand-edited.
+
+Add a diagram when it clarifies taxonomy boundaries, assumption dependencies, protocol flows, composition risks, lifecycle steps, or failure modes that are hard to scan in prose.
+
 ## Local checks
 
 ```bash
 cd book
 npm install
+npm run generate:diagrams
 npm run validate:content
 npm run build
 ```

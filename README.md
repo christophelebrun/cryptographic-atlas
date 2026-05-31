@@ -35,17 +35,20 @@ The book organizes concepts across eight levels:
 
 ## Repository structure
 
-The Docusaurus book app lives in `book/`. Book pages live in `book/docs/`, reusable concept metadata lives in `book/data/concept-cards/`, and website components live in `book/src/components/`.
+The Docusaurus book app lives in `book/`. Book pages live in `book/docs/`, reusable concept metadata lives in `book/data/concept-cards/`, diagram sources live in `book/data/diagrams/`, and website components live in `book/src/components/`.
 
 Repository-level planning and maintenance files can stay outside the book app. For example, the initialization prompt remains at the repository root.
 
 Concept cards are YAML metadata files in `book/data/concept-cards/`. They support generated concept-card rendering, comparison tables, and machine-readable concept summaries.
+
+Diagrams are YAML metadata files in `book/data/diagrams/`. They generate SVG files in `book/static/img/diagrams/` and optional Mermaid files in `book/static/diagrams/`.
 
 ## Local development
 
 ```bash
 cd book
 npm install
+npm run generate:diagrams
 npm run start
 npm run validate:content
 npm run build
@@ -74,6 +77,17 @@ $$
 
 The site also includes a local search index. Search works in the statically built site, so use `npm run build` followed by `npm run serve` when testing search locally.
 
+## Diagram policy
+
+Diagram YAML is the source of truth. Edit `book/data/diagrams/*.yml`, validate it with `book/schemas/diagram.schema.json`, and regenerate assets with:
+
+```bash
+cd book
+npm run generate:diagrams
+```
+
+Use generated SVG assets from `book/static/img/diagrams/` in book pages. Optional generated Mermaid files in `book/static/diagrams/` are for review and simple machine-readable flow inspection. Do not hand-edit generated diagram outputs.
+
 ## Surfaced properties
 
 Major concept pages and concept cards should surface:
@@ -97,7 +111,7 @@ cd book
 npm run validate:content
 ```
 
-The validator checks document frontmatter, page template sections, concept-card YAML, structured references, relationship data, and comparison matrices.
+The validator checks document frontmatter, page template sections, concept-card YAML, structured references, relationship data, comparison matrices, diagram YAML, and generated diagram outputs.
 
 ## Contributing
 
@@ -118,4 +132,4 @@ Cryptographic systems fail when guarantees are overstated, assumptions are hidde
 - Add more case studies.
 - Add deeper assumption/substrate pages for newer or specialized assumptions.
 - Add generated rendering for comparison-matrix YAML.
-- Add more case studies and system walkthroughs.
+- Add more generated diagrams for case studies and lifecycle walkthroughs.

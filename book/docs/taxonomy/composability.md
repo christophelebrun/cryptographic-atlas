@@ -19,7 +19,7 @@ confidence_model:
 
 Cryptographic tools do not compose automatically. Each primitive or protocol comes with a specific interface, adversary model, setup assumption, and leakage profile.
 
-![Composition flow for private voting](/img/composition-flow.svg)
+![Composition flow for private voting](/img/diagrams/private-voting-composition.svg)
 
 ## One-sentence intuition
 

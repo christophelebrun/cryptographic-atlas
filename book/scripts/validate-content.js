@@ -22,6 +22,7 @@ const validators = {
   references: ajv.compile(loadJson(path.join(schemasDir, 'references.schema.json'))),
   relationships: ajv.compile(loadJson(path.join(schemasDir, 'relationships.schema.json'))),
   comparisonMatrix: ajv.compile(loadJson(path.join(schemasDir, 'comparison-matrix.schema.json'))),
+  diagram: ajv.compile(loadJson(path.join(schemasDir, 'diagram.schema.json'))),
 };
 
 const conceptCardAliases = {
@@ -108,6 +109,14 @@ function parseMarkdown(file) {
 
 function parseYaml(file) {
   return yaml.load(fs.readFileSync(file, 'utf8'));
+}
+
+function safeBookPath(relativePath) {
+  if (path.isAbsolute(relativePath) || relativePath.includes('..')) {
+    return null;
+  }
+  const resolved = path.resolve(root, relativePath);
+  return resolved.startsWith(root + path.sep) ? resolved : null;
 }
 
 function headings(body) {
@@ -230,6 +239,42 @@ if (fs.existsSync(relationshipsFile)) {
 
 for (const file of walk(path.join(dataDir, 'comparison-matrices'), (item) => item.endsWith('.yml'))) {
   validateObject(file, parseYaml(file), validators.comparisonMatrix);
+}
+
+const diagramIds = new Set();
+for (const file of walk(path.join(dataDir, 'diagrams'), (item) => item.endsWith('.yml'))) {
+  const diagram = parseYaml(file);
+  validateObject(file, diagram, validators.diagram);
+
+  if (!diagram || !diagram.id || !diagram.outputs) continue;
+  if (diagramIds.has(diagram.id)) errors.push(`${relative(file)}: duplicate diagram id "${diagram.id}"`);
+  diagramIds.add(diagram.id);
+
+  const nodeIds = new Set();
+  for (const node of diagram.nodes || []) {
+    if (nodeIds.has(node.id)) errors.push(`${relative(file)}: duplicate diagram node id "${node.id}"`);
+    nodeIds.add(node.id);
+    if (diagram.layout && node.column > diagram.layout.columns) {
+      errors.push(`${relative(file)}: node "${node.id}" column is outside the declared grid`);
+    }
+    if (diagram.layout && node.row > diagram.layout.rows) {
+      errors.push(`${relative(file)}: node "${node.id}" row is outside the declared grid`);
+    }
+  }
+
+  for (const edge of diagram.edges || []) {
+    if (!nodeIds.has(edge.from)) errors.push(`${relative(file)}: edge references unknown source "${edge.from}"`);
+    if (!nodeIds.has(edge.to)) errors.push(`${relative(file)}: edge references unknown target "${edge.to}"`);
+  }
+
+  for (const [kind, output] of Object.entries(diagram.outputs)) {
+    const outputFile = safeBookPath(output);
+    if (!outputFile) {
+      errors.push(`${relative(file)}: unsafe ${kind} output path "${output}"`);
+    } else if (!fs.existsSync(outputFile)) {
+      errors.push(`${relative(file)}: missing generated ${kind} output "${output}"`);
+    }
+  }
 }
 
 if (warnings.length > 0) {

@@ -1,0 +1,78 @@
+id: zero-knowledge-proof-flow
+title: Zero-knowledge proof flow
+description: The verifier learns that the public statement is valid, not the private witness.
+layout:
+  width: 1160
+  height: 480
+  columns: 4
+  rows: 3
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 36
+  node_width: 230
+  node_height: 72
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/zero-knowledge-proof-flow.svg
+  mermaid: static/diagrams/zero-knowledge-proof-flow.mmd
+nodes:
+  - id: public-statement
+    label: Public statement
+    detail: Claim x and public inputs
+    kind: output
+    column: 1
+    row: 1
+  - id: private-witness
+    label: Private witness
+    detail: Secret value w
+    kind: actor
+    column: 1
+    row: 2
+  - id: relation
+    label: Relation or circuit
+    detail: R(x, w) = 1
+    kind: setup
+    column: 2
+    row: 1
+  - id: prover
+    label: Prover
+    detail: Uses witness to build proof
+    kind: actor
+    column: 2
+    row: 2
+  - id: proof
+    label: Proof
+    detail: Small artifact or transcript
+    kind: proof
+    column: 3
+    row: 2
+  - id: verifier
+    label: Verifier
+    detail: Checks statement and proof
+    kind: actor
+    column: 4
+    row: 1
+  - id: result
+    label: Accept or reject
+    detail: No witness disclosure
+    kind: output
+    column: 4
+    row: 3
+edges:
+  - from: public-statement
+    to: relation
+  - from: public-statement
+    to: prover
+  - from: private-witness
+    to: prover
+  - from: relation
+    to: prover
+  - from: prover
+    to: proof
+  - from: proof
+    to: verifier
+  - from: relation
+    to: verifier
+  - from: verifier
+    to: result
