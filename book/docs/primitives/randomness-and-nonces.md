@@ -51,6 +51,17 @@ Confidence depends on local entropy sources, deterministic derivation where appr
 - Commitment randomness.
 - Protocol challenges.
 
+## Concrete generators and nonce patterns
+
+| Mechanism or pattern | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| Operating-system CSPRNGs | General key, salt, nonce, and challenge generation | Usually the right source for application randomness; failures often come from bypassing it. |
+| Hash_DRBG / HMAC_DRBG / CTR_DRBG | Deterministic random bit generators | Common in standards-oriented libraries and hardware modules; require correct seeding and reseeding. |
+| ChaCha20-based CSPRNGs | Fast software randomness expansion | Common in operating systems and libraries; security depends on seed handling and state protection. |
+| Counter nonces | Unique nonces for one key and one stream of messages | Good when state is reliable; dangerous if state rolls back or keys are reused. |
+| Random nonces | Large nonce spaces where collision probability is negligible | Requires enough nonce bits; small random nonces can collide under load. |
+| Synthetic IV / deterministic nonce designs | Misuse-resistant encryption modes and deterministic signatures | Reduces reliance on external randomness, but only within schemes designed for that model. |
+
 ## Failure modes and anti-patterns
 
 - Reusing a signature nonce in schemes where it exposes the private key.

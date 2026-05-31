@@ -90,6 +90,16 @@ The server may learn which clients participated, when they connected, and the ag
 - Multi-server aggregation.
 - Aggregation with differential privacy.
 
+## Concrete protocol families
+
+| Family or system | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| Bonawitz-style secure aggregation | Federated learning with client dropout | Pairwise masks cancel in aggregate; dropout handling and cohort size dominate privacy. |
+| Prio / Prio+ style systems | Private telemetry with validity checks | Adds client-side proof or verification machinery so malformed values are harder to inject. |
+| Secret-shared aggregation | Multi-server private aggregation | Privacy depends on non-collusion or corruption threshold between helper servers. |
+| Homomorphic-encryption aggregation | Encrypted sums with trustee or server decryption | Useful when client coordination is limited; key management and output leakage remain. |
+| Differentially private aggregation | Aggregate release with noise | Not just cryptography; privacy budget and repeated releases are central. |
+
 ## Where it is used
 
 - Federated analytics.

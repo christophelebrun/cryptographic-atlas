@@ -83,6 +83,15 @@ Confidence comes from the group assumption, independent public generator setup, 
 
 Pedersen commitments are usually instantiated in elliptic curve or finite-field groups. Concrete deployments must choose parameters and libraries carefully.
 
+## Concrete instantiations
+
+| Instantiation | Common setting | Key differences and cautions |
+| --- | --- | --- |
+| Elliptic-curve Pedersen commitments | Confidential transactions, range proofs, ZK protocols | Efficient and common; curve choice, generator derivation, and subgroup handling matter. |
+| Finite-field Pedersen commitments | Older protocols and threshold/verifiable secret sharing | Same discrete-logarithm posture, but parameter sizes and subgroup checks differ. |
+| Pedersen vector commitments | Commit to several values with independent generators | Useful for proving linear relations; binding depends on no party knowing generator relations. |
+| Bulletproof-style commitments | Range proofs and confidential amounts | Often built over Pedersen commitments; range proofs are needed to prevent overflow or negative-value attacks. |
+
 ## Use cases
 
 - Confidential transactions.

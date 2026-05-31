@@ -51,6 +51,16 @@ Confidence comes from entropy in the input material, domain separation in the KD
 - Session-key schedules.
 - Context-separated keys for protocols.
 
+## Concrete algorithms and schemes
+
+| Scheme | Main input shape | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| HKDF | High-entropy shared secret plus salt and info labels | Session key schedules and protocol key separation | Fast KDF; not a password-hashing scheme. |
+| PBKDF2 | Password plus salt and iteration count | Legacy password-based key derivation | Widely deployed, but easier to accelerate than modern memory-hard schemes. |
+| scrypt | Password plus salt and memory/cost parameters | Password hashing and key derivation | Adds memory cost; parameters must match attacker hardware assumptions. |
+| Argon2id | Password plus salt and memory/time/parallelism parameters | Password storage and password-derived keys | Modern memory-hard default when available; parameters need operational tuning. |
+| NIST counter-mode KDFs | Shared secret plus labels and context | Key management in NIST-profiled systems | Good for structured key derivation when labels and context are explicit. |
+
 ## Failure modes and anti-patterns
 
 - Reusing one derived key for multiple purposes.
@@ -61,3 +71,4 @@ Confidence comes from entropy in the input material, domain separation in the KD
 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - Katz and Lindell, "Introduction to Modern Cryptography."
+- RFC 5869, "HMAC-based Extract-and-Expand Key Derivation Function."

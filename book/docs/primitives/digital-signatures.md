@@ -41,6 +41,19 @@ A digital signature lets a private key holder authorize a message so anyone with
 - Credential issuance.
 - Protocol transcript authentication.
 
+## Concrete algorithms and schemes
+
+| Scheme family | Examples | Common role | Post-quantum posture and cautions |
+| --- | --- | --- | --- |
+| EdDSA | Ed25519, Ed448 | General-purpose signatures where ecosystem support exists | Quantum-vulnerable; deterministic signing helps avoid random nonce failures, but context binding still matters. |
+| ECDSA | ECDSA P-256, ECDSA secp256k1 | TLS, certificates, blockchain transactions | Quantum-vulnerable; nonce reuse or biased nonces can expose the private key. |
+| Schnorr-style signatures | BIP-340 Schnorr, protocol-specific Schnorr variants | Blockchains, multisignatures, zero-knowledge protocols | Quantum-vulnerable; batch verification and multisignature variants need careful domain separation. |
+| RSA-PSS | RSA Probabilistic Signature Scheme | Legacy public-key infrastructure and compatibility | Quantum-vulnerable; prefer PSS over older RSA PKCS #1 v1.5 signatures in new RSA designs. |
+| BLS signatures | BLS12-381 or BN254 deployments | Aggregatable signatures and threshold signing | Quantum-vulnerable and pairing-based; subgroup checks and domain separation are critical. |
+| ML-DSA | Module-lattice signature standard | Post-quantum migration | Plausibly post-quantum; larger keys and signatures affect protocol design. |
+| SLH-DSA | Stateless hash-based signature standard | Conservative post-quantum signatures | Plausibly post-quantum; signatures are large and performance differs sharply from elliptic-curve schemes. |
+| Legacy signatures | DSA, RSA PKCS #1 v1.5 signatures | Compatibility and verification of old artifacts | Keep as legacy context; do not present as a modern default. |
+
 ## Assumptions
 
 The signature scheme must resist forgery, the private key must remain secret, and verifiers must bind the public key to the right signer, protocol, message format, and domain.

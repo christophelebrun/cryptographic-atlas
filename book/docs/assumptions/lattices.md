@@ -77,6 +77,17 @@ Confidence comes from mathematical-assumption hardness, parameter selection, sta
 - Lattice-based signatures.
 - Fully homomorphic encryption schemes.
 
+## Concrete assumptions and schemes
+
+| Family or scheme | Common role | Key differences and cautions |
+| --- | --- | --- |
+| LWE and module-LWE | Foundation for KEMs and encryption | Parameter choices control concrete security and failure behavior. |
+| SIS and module-SIS | Foundation for signatures and commitments | Often appears in lattice signatures and proof systems. |
+| NTRU-style lattices | Key encapsulation and encryption families | Different structure and parameter trade-offs from module-LWE families. |
+| ML-KEM | Standardized post-quantum key encapsulation | Plausibly post-quantum; larger public keys and ciphertexts affect protocols. |
+| ML-DSA | Standardized post-quantum signatures | Plausibly post-quantum; signature size and deterministic/randomized signing choices matter. |
+| BFV, BGV, CKKS, TFHE/FHEW | Homomorphic encryption families | Workload fit, noise growth, bootstrapping, and approximation behavior differ sharply. |
+
 ## Use cases
 
 - Post-quantum key establishment.

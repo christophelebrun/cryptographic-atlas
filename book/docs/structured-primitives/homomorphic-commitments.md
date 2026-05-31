@@ -45,6 +45,16 @@ Depends on the construction. Pedersen-style homomorphic commitments are quantum-
 
 Confidence comes from the commitment binding and hiding assumptions plus explicit constraints on the hidden arithmetic domain. Homomorphic structure is useful only when invalid values are ruled out elsewhere.
 
+## Concrete schemes and families
+
+| Scheme | Homomorphic shape | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Pedersen commitments | Additive over committed values | Confidential amounts, private tallying, range proofs | Mature and efficient, but quantum-vulnerable and generator setup-sensitive. |
+| Pedersen vector commitments | Linear relations over committed vectors | Inner-product proofs and multi-value commitments | Requires independent generators or a sound generator-derivation process. |
+| KZG commitments | Polynomial openings and linear combinations | Rollups, data availability, succinct polynomial proofs | Compact but pairing-based and usually setup-dependent. |
+| Inner-product-argument commitments | Vector and polynomial commitments | Bulletproof-style systems and transparent-ish vector commitments | Avoids pairing setup in common forms, but proof sizes and verification costs differ. |
+| Merkle commitments | Set/list commitment via hashes | Membership proofs and sparse state commitments | Not algebraically homomorphic, but often used as the hash-based alternative when homomorphism is not required. |
+
 ## Failure modes and anti-patterns
 
 Homomorphism can let invalid values cancel or wrap unless the protocol adds range proofs and clear arithmetic domains.

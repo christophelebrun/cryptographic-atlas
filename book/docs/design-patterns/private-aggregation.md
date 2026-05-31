@@ -95,6 +95,16 @@ Confidence may come from threshold decryption, non-colluding helper servers, hon
 
 Private aggregation is often combined with range proofs, membership proofs, rate limits, threshold decryption, or differential privacy.
 
+## Concrete compositions
+
+| Composition | Typical role | Main caution |
+| --- | --- | --- |
+| Paillier-style or additive homomorphic encryption tally | Simple encrypted sums in legacy or specialized systems | Quantum-vulnerable and key-management-heavy; validity proofs are still required. |
+| Lattice HE tally | Post-quantum-oriented encrypted aggregation | Parameter choice and output leakage dominate practical risk. |
+| Bonawitz-style secure aggregation | Federated learning and telemetry | Dropout handling, cohort size, and malicious updates are the main failure points. |
+| Prio-style private telemetry | Aggregate statistics with validity checks | Requires a validation mechanism so clients cannot poison aggregates. |
+| MPC-based aggregation | Multi-server or multi-party analytics | Collusion threshold and abort behavior must be explicit. |
+
 ## Failure modes and anti-patterns
 
 - Aggregates over tiny groups reveal individuals.

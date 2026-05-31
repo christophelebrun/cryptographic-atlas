@@ -52,6 +52,17 @@ Confidence comes from symmetric key secrecy, unforgeability of the MAC construct
 - Protocol transcript authentication.
 - Authenticated encryption internals.
 
+## Concrete algorithms and schemes
+
+| Scheme | Built from | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| HMAC-SHA-256 / HMAC-SHA-512 | Hash function | General-purpose MAC and KDF component | Mature and conservative; key separation and unambiguous message encoding still matter. |
+| CMAC-AES | AES block cipher | MACs in AES-centered systems | Avoids naive CBC-MAC pitfalls when used as specified. |
+| GMAC | GCM authentication component | Authentication when AES-GCM infrastructure is already present | Requires nonce discipline; misuse can break authenticity. |
+| Poly1305 | One-time MAC, commonly paired with ChaCha20 | AEAD internals such as ChaCha20-Poly1305 | Requires one-time keys derived correctly; do not reuse Poly1305 keys directly. |
+| KMAC | SHA-3/cSHAKE family | SHA-3-based keyed hashing | Useful where SHA-3 primitives are already part of the design. |
+| CBC-MAC | Block cipher | Narrow legacy setting | Unsafe when copied outside its fixed-length, single-key assumptions. |
+
 ## Failure modes and anti-patterns
 
 - Reusing one MAC key across unrelated protocols without domain separation.
@@ -62,3 +73,4 @@ Confidence comes from symmetric key secrecy, unforgeability of the MAC construct
 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - Katz and Lindell, "Introduction to Modern Cryptography."
+- NIST SP 800-38B, "Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication."

@@ -85,6 +85,17 @@ Participation, timing, circuit shape, aborts, and output values can leak informa
 - MPC with preprocessing.
 - Threshold signing as a specialized use case.
 
+## Concrete protocol families
+
+| Family | Common setting | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Yao garbled circuits | Two-party computation | Boolean-circuit MPC | Often efficient for two parties; oblivious transfer and malicious-security upgrades matter. |
+| GMW | Multi-party Boolean circuits | General MPC with interactive rounds | Round complexity and network latency can dominate. |
+| BGW | Honest-majority arithmetic MPC | Information-theoretic MPC in suitable settings | Requires honest majority and synchronous-style assumptions. |
+| SPDZ-style protocols | Preprocessed arithmetic MPC | Dishonest-majority computation with offline preprocessing | Preprocessing generation and MAC checks are part of the confidence model. |
+| MASCOT / OT-extension preprocessing | Practical malicious-secure preprocessing | Generating correlated randomness for SPDZ-like protocols | Relies on oblivious transfer and implementation-specific security choices. |
+| Threshold signing protocols | FROST, threshold ECDSA, threshold BLS | Specialized MPC for signing | The signing protocol inherits both MPC threshold assumptions and signature-scheme assumptions. |
+
 ## Where it is used
 
 - Threshold custody.

@@ -18,7 +18,7 @@ confidence_model:
 
 # Concrete Algorithms and Schemes
 
-This appendix tracks concrete algorithms, schemes, parameter families, and named protocol suites that should be surfaced in the book.
+This appendix indexes concrete algorithms, schemes, parameter families, and named protocol suites that are surfaced on the concept pages they instantiate.
 
 ## Where algorithms sit in the taxonomy
 
@@ -38,9 +38,11 @@ Concrete algorithms inherit the taxonomy level of the concept they instantiate. 
 
 This distinction matters because a name like `SHA-256` does not explain its goal, assumptions, misuse cases, or composition role. The concept page should explain the primitive; the algorithm entry should explain the concrete trade-offs.
 
-## Why many algorithms are not yet first-class pages
+## Why most algorithms are not first-class pages
 
-The book started from concepts, not from an algorithm catalog. That keeps the taxonomy readable, but it leaves a coverage gap: readers often encounter names such as `SHA-256`, `AES-GCM`, `Ed25519`, `X25519`, `BLS12-381`, `Groth16`, or `ML-KEM` before they understand where those names sit.
+The book is organized by concepts, not as an algorithm catalog. That keeps the taxonomy readable, but readers still encounter names such as `SHA-256`, `AES-GCM`, `Ed25519`, `X25519`, `BLS12-381`, `Groth16`, or `ML-KEM` before they understand where those names sit.
+
+For that reason, concrete algorithms should usually appear first as comparison tables on their parent concept pages. A dedicated page is useful only when the named scheme has distinct assumptions, failure modes, deployment status, or composition risks that would overload the parent page.
 
 Concrete algorithms should be added when they do at least one of the following:
 

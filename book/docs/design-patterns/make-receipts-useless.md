@@ -50,6 +50,15 @@ Not applicable to the pattern by itself. Concrete posture depends on the voting,
 
 Confidence usually combines public verifiability for tally integrity with protocol features that make user-held evidence deniable, fakeable, revocable, or superseded by later actions.
 
+## Concrete compositions
+
+| Composition | Typical role | Main caution |
+| --- | --- | --- |
+| Re-voting with last vote counts | Reducing value of early coerced receipts | Does not help if coercion happens after the final opportunity to vote. |
+| Fakeable credential or transcript | Let users simulate evidence for any choice | Hard to make convincing without weakening auditability. |
+| Mixnet tallying without per-voter receipts | Hide ballot-to-voter linkage | Device compromise or check-in metadata can still create receipts. |
+| Coercion-resistant credential recovery | Let voters invalidate coerced credentials | Registration and recovery channels become part of the threat model. |
+
 ## Failure modes
 
 - User interfaces expose receipts.

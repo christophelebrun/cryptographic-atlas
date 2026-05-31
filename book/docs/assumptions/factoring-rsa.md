@@ -76,6 +76,17 @@ Confidence comes from mathematical-assumption hardness, parameter generation, pa
 - RSA accumulators.
 - Groups of unknown order used in some VDF or timelock designs.
 
+## Concrete schemes and parameter families
+
+| Scheme or substrate | Common role | Key differences and cautions |
+| --- | --- | --- |
+| RSA-OAEP | Public-key encryption and hybrid encryption | Safe padding is part of the scheme; textbook RSA is not safe encryption. |
+| RSA-PSS | Digital signatures | Preferable to legacy deterministic RSA signatures when RSA signatures are required. |
+| RSA PKCS #1 v1.5 encryption/signatures | Legacy compatibility | Historically fragile; should be treated as legacy context, not a modern design target. |
+| RSA accumulators | Compact membership witnesses | Require an RSA modulus with a clear trust story; setup and update rules dominate confidence. |
+| Unknown-order groups for delay | Repeated-squaring timelocks and VDFs | May use RSA groups or class groups; factorization or setup assumptions must be explicit. |
+| RSA modulus sizes | 2048-bit, 3072-bit, 4096-bit profiles | Classical security margin changes with size; all remain quantum-vulnerable. |
+
 ## Use cases
 
 - Legacy public-key encryption and signatures.

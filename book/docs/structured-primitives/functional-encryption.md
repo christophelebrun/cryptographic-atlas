@@ -48,6 +48,16 @@ Depends on the concrete construction. Functional encryption is a broad research 
 
 Confidence often depends on a key authority or setup process that issues function keys. Even if the cryptography works, the allowed function can leak sensitive information, and repeated function outputs can become an inference channel.
 
+## Concrete schemes and subfamilies
+
+| Family | What the function key reveals | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Identity-based encryption | Messages for a named identity | Key-management systems with a private-key generator | The authority can derive user keys, so issuer trust is central. |
+| Attribute-based encryption | Decryption under an access policy or attribute set | Fine-grained encrypted access control | Policy privacy, revocation, and key abuse are system problems. |
+| Inner-product functional encryption | Inner product or linear score | Private analytics and research prototypes | More specialized and practical than general FE, but still leakage-sensitive. |
+| Predicate encryption | Whether encrypted attributes satisfy a predicate | Search and policy checks | The revealed predicate result can still leak sensitive information. |
+| General functional encryption | Arbitrary functions in principle | Research-stage access to computed outputs | Mostly theoretical or highly specialized; do not present as deployable general access control. |
+
 ## Failure modes and anti-patterns
 
 - Issuing function keys that reveal too much.

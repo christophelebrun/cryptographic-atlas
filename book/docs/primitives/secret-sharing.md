@@ -69,6 +69,16 @@ Confidence is threshold-based. Fewer than `t` shares should not reveal the secre
 - Distributed decryption.
 - MPC building blocks.
 
+## Concrete algorithms and schemes
+
+| Scheme | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| Shamir secret sharing | Threshold sharing over a finite field | Information-theoretic privacy below threshold; requires authenticated distribution and careful reconstruction. |
+| Additive secret sharing | MPC and simple split-control workflows | Simple and efficient, but usually needs all shares or protocol-specific reconstruction. |
+| Feldman verifiable secret sharing | Publicly checkable share consistency | Adds public verification, but commitments can reveal structure and rely on discrete-logarithm assumptions. |
+| Pedersen verifiable secret sharing | Verifiable sharing with hiding commitments | Hides coefficients better than Feldman-style commitments, but inherits generator and group assumptions. |
+| Distributed key generation | Threshold key creation without one dealer knowing the whole secret | Protocol, not just a sharing algorithm; participant authentication and abort handling dominate risk. |
+
 ## Failure modes and anti-patterns
 
 - Losing too many shares.

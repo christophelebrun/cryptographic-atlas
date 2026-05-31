@@ -50,6 +50,17 @@ Confidence comes from secret-key control, public scrutiny of the algorithm, corr
 - Encrypted backups.
 - The data-encryption part of hybrid encryption.
 
+## Concrete algorithms and schemes
+
+| Scheme or mode | Primitive family | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| AES-GCM | AES block cipher plus Galois/Counter Mode | Authenticated encryption for network protocols and storage | Very common and hardware-accelerated; nonce reuse is catastrophic. |
+| ChaCha20-Poly1305 | Stream cipher plus MAC | Authenticated encryption in software and mobile environments | Often faster without AES hardware; nonces must still be unique per key. |
+| XChaCha20-Poly1305 | Extended-nonce ChaCha20-Poly1305 variant | Applications that want random nonces with a larger nonce space | Useful engineering shape, but check ecosystem support and protocol compatibility. |
+| AES-GCM-SIV / AES-SIV | Misuse-resistant authenticated encryption | Systems where accidental nonce reuse is a realistic risk | More forgiving of nonce mistakes, but not a license to ignore nonce design. |
+| AES-CBC plus MAC | Legacy composition | Older protocols and compatibility layers | Only safe with correct encrypt-then-MAC composition and padding handling; avoid for new designs when AEAD is available. |
+| AES-ECB | Raw block-cipher mode | Legacy anti-pattern | Reveals repeated plaintext blocks and should not be used for protecting structured data. |
+
 ## Failure modes and anti-patterns
 
 - Reusing nonces in modes that require uniqueness.
@@ -60,3 +71,5 @@ Confidence comes from secret-key control, public scrutiny of the algorithm, corr
 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - Katz and Lindell, "Introduction to Modern Cryptography."
+- NIST FIPS 197, "Advanced Encryption Standard."
+- RFC 8439, "ChaCha20 and Poly1305 for IETF Protocols."

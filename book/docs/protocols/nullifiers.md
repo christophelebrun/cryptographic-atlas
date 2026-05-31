@@ -112,6 +112,16 @@ Nullifiers can still be linked through timing, network address, account funding,
 - Rate-limited nullifiers.
 - Nullifiers derived from anonymous credentials.
 
+## Concrete constructions and patterns
+
+| Construction | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| Hash nullifier | One-use marker derived from a secret and context | Simple shape, but weak secrets or poor domain separation can make it guessable or linkable. |
+| ZK-derived nullifier | Public nullifier plus proof of correct derivation | Common in anonymous membership systems; statement must bind eligibility, context, and nullifier. |
+| Serial-number e-cash pattern | Preventing double-spend of anonymous tokens | Mature idea, but issuance, spend, and revocation details vary by system. |
+| Semaphore-style nullifier | Anonymous signal or one-action-per-group pattern | Tied to Merkle membership and zero-knowledge proof assumptions. |
+| Rate-limit nullifier | Allows limited actions per epoch or context | Context design controls linkability and replay boundaries. |
+
 ## Where it is used
 
 - Private voting.

@@ -89,6 +89,16 @@ Timing, verifier identity, IP addresses, rare attributes, and revocation checks 
 - Anonymous credentials with nullifiers.
 - Unlinkable presentations.
 
+## Concrete schemes and systems
+
+| Scheme or family | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| CL signatures / Idemix-style credentials | Anonymous credentials with selective disclosure | Mature academic lineage; issuer trust and revocation design are central. |
+| BBS+ signatures | Selective-disclosure credentials and unlinkable presentations | Pairing-based and quantum-vulnerable; useful for compact multi-message disclosure. |
+| SD-JWT / selective-disclosure verifiable credentials | Practical web credential ecosystems | Easier web integration, but not automatically unlinkable against issuer/verifier correlation. |
+| ZK credential systems | Credentials proven inside a zero-knowledge proof | Can hide more metadata, but inherits proof-system assumptions and circuit correctness risk. |
+| Accumulator-based revocation | Private or semi-private status checks | Revocation can reintroduce linkability if freshness checks are not designed carefully. |
+
 ## Where it is used
 
 - Private access control.

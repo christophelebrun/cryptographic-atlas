@@ -62,6 +62,16 @@ The proof system must be sound, the proof must be bound to the exact commitment 
 - Rate limits.
 - Private statistics.
 
+## Concrete schemes and families
+
+| Scheme or family | Commitment/proof base | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Bulletproof range proofs | Pedersen commitments plus inner-product arguments | Confidential transactions and hidden balances | No trusted setup in common forms, but discrete-logarithm based and quantum-vulnerable. |
+| Boudot-style interval proofs | Integer commitments | Earlier range-proof constructions | Useful historically; parameter and efficiency trade-offs differ from Bulletproofs. |
+| SNARK-based range proofs | Groth16, PLONK-style systems | Validity proofs inside larger circuits | Compact verification, but setup and statement correctness matter. |
+| STARK-based range checks | STARK constraints and lookups | Transparent proof systems | Plausibly post-quantum when the full stack is; proof size and constraint design matter. |
+| Lookup-based range checks | Plookup-style tables or custom lookup arguments | Modern circuit systems | Efficient for bounded values, but table binding and field encoding must be explicit. |
+
 ## Failure modes and anti-patterns
 
 - Proving the wrong bound.

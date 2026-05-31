@@ -76,6 +76,16 @@ Confidence comes from mathematical-assumption hardness, curve selection, subgrou
 - Identity-based encryption.
 - Polynomial commitments.
 
+## Concrete curves and schemes
+
+| Family or scheme | Common examples | Where it appears | Key differences and cautions |
+| --- | --- | --- | --- |
+| Pairing-friendly curves | BLS12-381, BN254 | SNARKs, BLS signatures, KZG commitments | Quantum-vulnerable; curve security level and subgroup checks are not interchangeable. |
+| BLS signatures | BLS signature variants over pairing-friendly curves | Aggregatable signatures, threshold signatures | Compact aggregation, but domain separation and rogue-key defenses matter. |
+| KZG commitments | KZG polynomial commitments | Rollups, data availability, polynomial openings | Very compact openings; relies on pairings and usually a structured reference string. |
+| Groth16-style SNARKs | Pairing-based succinct proofs | ZK circuits with very small proofs | Often circuit-specific trusted setup; posture inherits pairing vulnerability. |
+| Identity-based encryption | Boneh-Franklin-style systems | Specialized key-management models | Key generator trust is central, not an implementation detail. |
+
 ## Use cases
 
 - Succinct proof verification.

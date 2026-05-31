@@ -42,6 +42,16 @@ Coercion-resistant voting aims to prevent a voter from proving how they voted, e
 - Zero-knowledge proofs.
 - Careful user experience and operational procedures.
 
+## Concrete composition options
+
+| Requirement | Concrete options | Main caution |
+| --- | --- | --- |
+| Eligibility | Anonymous credentials, recovery credentials, private registration lists | Registration can itself create coercion and tracking channels. |
+| Ballot privacy | Mixnet tallying, homomorphic tallying, threshold decryption | The tally style changes trustee and metadata assumptions. |
+| Receipt resistance | Re-voting, fakeable transcripts, credential invalidation | Must match the coercion timing model. |
+| Validity and audit | ZK ballot-validity proofs, public bulletin board, verifiable shuffles | Public audit data must not become a voter-held receipt. |
+| Trustee model | Threshold trustees, distributed key generation, public ceremony | Trustee collusion and key loss are system-level failures. |
+
 ## Privacy leaks
 
 Timing, small groups, device compromise, and social pressure can defeat formal privacy claims.

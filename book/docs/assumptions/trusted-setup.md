@@ -76,6 +76,16 @@ Confidence comes from trusted-setup or one-honest-party ceremony assumptions, tr
 - Circuit-specific or universal SNARK setup.
 - Multi-party parameter-generation ceremonies.
 
+## Concrete setup patterns
+
+| Setup pattern | Common examples | Key differences and cautions |
+| --- | --- | --- |
+| Circuit-specific setup | Groth16-style circuits | Small proofs, but every circuit may need its own setup assumptions. |
+| Universal structured setup | Powers-of-tau, PLONK-style SRS reuse | Can support many circuits up to parameter limits; toxic waste and transcript audit remain central. |
+| Transparent setup | STARK-style systems, many Bulletproof-style systems | Avoids trusted toxic waste, but still has parameters and implementation assumptions. |
+| Updatable ceremonies | Multi-party SRS updates | Often rely on at least one honest contribution; update verification must be public. |
+| Application-specific parameters | KZG commitments, accumulator parameters | Reusing parameters outside their intended scope can invalidate the confidence model. |
+
 ## Use cases
 
 - Pairing-based SNARKs.

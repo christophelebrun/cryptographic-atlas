@@ -43,6 +43,16 @@ An anonymous airdrop lets eligible users claim once without publicly linking the
 - Zero-knowledge proof.
 - Private withdrawal or shielding mechanism.
 
+## Concrete composition options
+
+| Requirement | Concrete options | Main caution |
+| --- | --- | --- |
+| Eligibility commitment | Merkle tree, sparse Merkle tree, accumulator | The set root must be authenticated and deduplicated. |
+| Membership proof | Merkle proof inside ZK, accumulator witness, credential presentation | Proof choice determines setup, posture, and witness update risk. |
+| One-claim enforcement | Hash nullifier, ZK-derived nullifier, credential serial number | Nullifier context must be campaign-specific. |
+| Claim privacy | Shielded pool, delayed withdrawal, mixnet-style relay | Public ledger metadata can still identify claimants. |
+| Validity proof | Groth16, PLONK-style, STARK-style proof | The proof must include eligibility, nullifier correctness, and claim rules. |
+
 ## Privacy leaks
 
 Claim timing, gas funding, wallet reuse, and exchange withdrawals can identify claimants.

@@ -85,6 +85,16 @@ Batch size, timing, message size, and participation patterns can reveal users.
 - Verifiable mixnets.
 - Decryption mixnets.
 
+## Concrete protocols and packet formats
+
+| Family or system | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| Chaumian mixnets | Batched anonymous message delivery | Privacy depends on batching and at least one honest mix. |
+| Verifiable shuffle mixnets | Elections and public bulletin boards | Adds proofs that shuffles are correct; proof system and public auditability matter. |
+| Decryption mixnets | Encrypted ballots or messages decrypted through mixes | Mix servers transform and decrypt layers; trustee collusion breaks privacy. |
+| Sphinx packet format | Anonymous messaging packets | Hides routing metadata inside fixed-format packets; timing analysis still matters. |
+| Loopix-style mixnets | Continuous-time anonymous messaging | Adds delays and cover traffic; latency and traffic assumptions are part of the model. |
+
 ## Where it is used
 
 - Electronic voting.

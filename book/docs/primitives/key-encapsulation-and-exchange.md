@@ -52,6 +52,18 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 - Transport security handshakes.
 - Secure messaging session setup.
 
+## Concrete algorithms and schemes
+
+| Mechanism | Family | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| X25519 | Elliptic-curve Diffie-Hellman | Modern key agreement in protocols and libraries | Quantum-vulnerable; usually simple and robust when used through established libraries. |
+| X448 | Elliptic-curve Diffie-Hellman | Higher-security-margin key agreement | Quantum-vulnerable; less widely deployed than X25519. |
+| P-256 ECDH | Elliptic-curve Diffie-Hellman | TLS and standards-oriented environments | Quantum-vulnerable; point validation and library correctness matter. |
+| FFDHE | Finite-field Diffie-Hellman groups | Compatibility and standards profiles | Quantum-vulnerable; use reviewed safe-prime groups, not ad hoc parameters. |
+| ML-KEM | Module-lattice KEM | Post-quantum key encapsulation | Plausibly post-quantum; protocol designers must handle larger keys and ciphertexts. |
+| HPKE KEM suites | KEM plus KDF plus AEAD framework | Hybrid encryption and application protocols | HPKE is a composition framework; the selected KEM determines posture. |
+| Hybrid classical/PQ exchange | Classical ECDH plus ML-KEM or similar | Migration period key establishment | Reduces single-assumption risk, but transcript binding and failure handling must be explicit. |
+
 ## Failure modes and anti-patterns
 
 - Establishing a key with an unauthenticated attacker.

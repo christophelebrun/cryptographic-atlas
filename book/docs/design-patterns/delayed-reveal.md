@@ -46,6 +46,15 @@ Not applicable to the pattern by itself. A concrete design inherits posture from
 
 Confidence may come from mathematical binding, public-verifiability of openings, or external-timing assumptions when VDFs or timelocks are used.
 
+## Concrete compositions
+
+| Composition | Typical role | Main caution |
+| --- | --- | --- |
+| Hash commit-reveal | Lotteries, auctions, simple delayed disclosure | Weak randomness reveals low-entropy committed values. |
+| Pedersen commit-reveal | Numeric hidden values with later opening | Quantum-vulnerable; randomness and generator setup matter. |
+| Timelock puzzle reveal | Delay without relying only on a human opener | Delay assumptions and hardware advantage must be modeled. |
+| VDF-assisted reveal | Publicly verifiable delayed output | VDF setup and denial-of-service handling are part of the design. |
+
 ## Failure modes
 
 - Selective aborts.

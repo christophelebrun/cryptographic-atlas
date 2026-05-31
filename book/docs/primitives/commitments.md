@@ -91,6 +91,16 @@ Confidence comes from the hiding and binding assumptions of the concrete commitm
 - Pedersen commitments.
 - Merkle tree commitments to many values.
 
+## Concrete algorithms and schemes
+
+| Scheme | Typical role | Hiding and binding shape | Key differences and cautions |
+| --- | --- | --- | --- |
+| Hash commitment | Commit to one value with `H(message || randomness)` | Usually computational binding and hiding only with enough randomness | Simple and plausibly post-quantum with good hashes; weak randomness exposes low-entropy messages. |
+| Pedersen commitment | Commit to numeric values with additive homomorphism | Perfectly hiding, computationally binding under discrete-logarithm assumptions | Useful for range proofs and confidential values; quantum-vulnerable. |
+| Merkle commitment | Commit to a list or set of values | Binding from collision resistance | Efficient membership proofs; privacy depends on leaf encoding and whether paths reveal structure. |
+| KZG commitment | Polynomial or vector commitment | Binding under pairing assumptions and setup model | Very compact openings; quantum-vulnerable and often setup-dependent. |
+| Inner-product-argument commitments | Vector/polynomial commitments in discrete-logarithm groups | Binding under discrete-logarithm assumptions | Avoids trusted setup in common forms, but proofs can be larger and quantum-vulnerable. |
+
 ## Use cases
 
 - Commit-reveal protocols.

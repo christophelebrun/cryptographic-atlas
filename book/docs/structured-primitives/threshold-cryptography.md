@@ -46,6 +46,17 @@ Depends on the underlying primitive. Threshold ECDSA or threshold Schnorr is qua
 
 Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for privacy or key misuse resistance, and at least `t` parties are available for liveness. Distributed key generation, share custody, and recovery policy are part of the model.
 
+## Concrete schemes and protocols
+
+| Scheme or protocol family | Underlying primitive | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Threshold BLS | Pairing-based signatures | Aggregated committee signatures and validator groups | Compact aggregation, but quantum-vulnerable and subgroup/domain rules matter. |
+| FROST | Schnorr-style signatures | Efficient threshold signing | Quantum-vulnerable; participant binding, nonce handling, and signing rounds are critical. |
+| Threshold ECDSA | ECDSA | Custody and blockchain signing where ECDSA is fixed by the ecosystem | More complex than threshold Schnorr; protocol implementation risk is high. |
+| Distributed key generation | Secret sharing plus verification | Creating a threshold key without one dealer | Setup protocol must handle malicious participants and aborts. |
+| Threshold decryption | Public-key encryption or homomorphic encryption | Voting, private tallying, escrowed decryption | Privacy and liveness depend on trustee threshold and share verification. |
+| Threshold post-quantum schemes | Scheme-specific research and engineering | Migration target | Not automatic; each post-quantum primitive needs its own threshold design and maturity assessment. |
+
 ## Failure modes and anti-patterns
 
 - Bad distributed key generation.

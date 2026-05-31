@@ -47,6 +47,15 @@ Not applicable to the pattern by itself. A concrete nullifier design inherits po
 
 Confidence comes from client-side secret control, deterministic context binding, public duplicate detection, and a proof that the nullifier is derived from an eligible secret.
 
+## Concrete compositions
+
+| Composition | Typical role | Main caution |
+| --- | --- | --- |
+| Hash secret plus context | Simple one-use marker | Only safe when the secret has high entropy and the context is domain-separated. |
+| ZK proof plus nullifier | Anonymous voting, airdrops, signaling | The proof must bind membership, context, and nullifier into one statement. |
+| Credential serial number | Anonymous credential spending or presentation limits | Revocation and issuer linkability need separate treatment. |
+| Epoch-scoped nullifier | Rate limits per time window or application | Epoch design controls whether users are linkable across periods. |
+
 ## Failure modes
 
 - Reusing the same context links actions.

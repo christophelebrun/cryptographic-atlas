@@ -71,6 +71,16 @@ The scheme-specific hardness assumption, parameter set, noise budget, key-manage
 - Confidential analytics.
 - Encrypted computation services.
 
+## Concrete schemes and families
+
+| Family | Computation style | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| BFV | Exact arithmetic over integers modulo a plaintext modulus | Private tallying and exact arithmetic workloads | Good for exact values; parameter selection and batching shape performance. |
+| BGV | Exact arithmetic with leveled homomorphic evaluation | Exact encrypted computation | Similar use space to BFV, with different noise-management techniques. |
+| CKKS | Approximate arithmetic over real or complex values | Machine learning and statistical analytics | Approximate results are part of the design; precision and scale management are security-relevant engineering choices. |
+| TFHE / FHEW-style schemes | Boolean or small-gate bootstrapped computation | Bit-level computation and programmable bootstrapping | Can support frequent bootstrapping; performance profile differs from arithmetic-circuit schemes. |
+| Threshold HE variants | Shared decryption key across trustees | Private tallying and multi-party analytics | Adds a `t-of-n` confidence model on top of the encryption scheme. |
+
 ## Failure modes and anti-patterns
 
 - Choosing parameters that do not meet the security or correctness target.

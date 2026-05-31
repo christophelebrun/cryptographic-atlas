@@ -39,6 +39,16 @@ A cryptographic hash function maps data to a fixed-length digest in a way that s
 - Content addressing.
 - Transcript binding in protocols.
 
+## Concrete algorithms and schemes
+
+| Family | Examples | Where readers usually see it | Key differences and cautions |
+| --- | --- | --- | --- |
+| SHA-2 | SHA-256, SHA-384, SHA-512 | General-purpose hashing, signatures, Merkle trees, protocol transcripts | Conservative deployed default; choose output length for the security target and domain-separate protocol roles. |
+| SHA-3 and SHAKE | SHA3-256, SHA3-512, SHAKE128, SHAKE256 | Hashing, extendable-output functions, post-quantum schemes | Sponge-based design; SHAKE outputs variable length, so the output length is a security parameter. |
+| BLAKE family | BLAKE2, BLAKE3 | File integrity, application protocols, high-throughput hashing | Fast and widely used in software; check whether the exact variant is standardized or ecosystem-specific. |
+| ZK-friendly hashes | Poseidon, Rescue, MiMC, Griffin | Zero-knowledge circuits and proof systems | Optimized for arithmetic circuits, not a drop-in replacement for general-purpose hashing unless the full protocol expects that choice. |
+| Legacy or broken hashes | SHA-1, MD5 | Old protocols, compatibility checks, forensic context | Collision resistance is broken or deprecated; include only to explain legacy risk, not for new designs. |
+
 ## Assumptions
 
 The chosen hash function must be within its intended security lifetime, outputs must be long enough for the security target, and protocols must use clear domain separation when the same function is reused in different roles.
@@ -61,3 +71,5 @@ Confidence comes from public algorithm scrutiny, parameter choice, domain separa
 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - Grover, "A Fast Quantum Mechanical Algorithm for Database Search."
+- NIST FIPS 180-4, "Secure Hash Standard."
+- NIST FIPS 202, "SHA-3 Standard."

@@ -40,6 +40,17 @@ Public-key encryption lets anyone encrypt to a public key while only the private
 - Encrypted ballots.
 - Key exchange support, depending on the protocol.
 
+## Concrete algorithms and schemes
+
+| Scheme or suite | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| RSA-OAEP | Legacy public-key encryption and hybrid encryption | Quantum-vulnerable; safe padding is mandatory and raw RSA is not encryption. |
+| HPKE | Standard hybrid public-key encryption framework | Composes KEM, KDF, and AEAD choices; security depends on authenticated public keys and mode selection. |
+| ECIES-style schemes | Hybrid encryption over elliptic-curve key agreement | Quantum-vulnerable and variant-heavy; interoperability and authentication details vary. |
+| Integrated encryption in protocols | TLS 1.3, Signal-style sessions, Noise patterns | Public-key operations establish keys; application data is protected with symmetric encryption. |
+| Post-quantum KEM-based hybrids | ML-KEM plus AEAD through a key schedule | Plausibly post-quantum at the KEM layer; ciphertext size, failure behavior, and authentication still matter. |
+| Legacy RSA encryption | RSAES-PKCS1-v1_5 | Compatibility only; historically fragile against padding-oracle mistakes. |
+
 ## Assumptions
 
 The scheme must meet the intended security notion, public keys must be authenticated, private keys must remain secret, and encryption must be used through a safe scheme or hybrid construction rather than raw textbook operations.

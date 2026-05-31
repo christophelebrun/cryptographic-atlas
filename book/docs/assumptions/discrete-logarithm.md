@@ -76,6 +76,16 @@ Confidence comes from mathematical-assumption hardness, public parameter review,
 - Pedersen commitments.
 - Pairing-based constructions, with additional assumptions.
 
+## Concrete groups and schemes
+
+| Concrete family | Common examples | Where it appears | Key differences and cautions |
+| --- | --- | --- | --- |
+| Prime-order elliptic-curve groups | Curve25519, Curve448, P-256, P-384 | ECDH, EdDSA, ECDSA, Schnorr-style signatures | Quantum-vulnerable; subgroup and encoding rules are curve-specific. |
+| Blockchain curves | secp256k1 | Blockchain signatures and key recovery conventions | Quantum-vulnerable; ecosystem conventions are not interchangeable with other ECDSA settings. |
+| Finite-field groups | FFDHE safe-prime groups | Diffie-Hellman compatibility and standards profiles | Quantum-vulnerable; use reviewed groups and validate parameters. |
+| Discrete-log commitments | Pedersen commitments, inner-product commitments | Confidential values, range proofs, vector commitments | Binding relies on discrete-logarithm hardness and generator setup. |
+| Discrete-log proof systems | Schnorr identification, Bulletproofs | Authentication proofs and range proofs | Fiat-Shamir transcript binding and nonce handling are critical. |
+
 ## Use cases
 
 - Key agreement.

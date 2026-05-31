@@ -30,6 +30,18 @@ SNARKs, STARKs, and Bulletproofs are families of proof systems that package zero
 | STARKs | Transparent setup and hash-based assumptions | Larger proofs and heavier verification than many SNARKs |
 | Bulletproofs | No trusted setup and useful range proofs | Verification can be heavier for large statements |
 
+## Concrete systems and families
+
+| System or family | Category | Setup model | Common use | Main caution |
+| --- | --- | --- | --- | --- |
+| Groth16 | Pairing-based SNARK | Circuit-specific trusted setup | Very small proofs in deployed ZK systems | Setup and circuit specificity dominate confidence. |
+| PLONK-style systems | Polynomial-commitment SNARK | Often universal or updatable setup | General-purpose circuits and rollups | Exact assumptions depend on the commitment scheme and transcript design. |
+| Marlin / Sonic-style systems | Universal-setup SNARK family | Universal structured setup | General circuits with reusable setup | Setup is reusable but still a setup assumption. |
+| STARKs | Transparent proof system | Transparent | Scalable computation proofs | Larger proofs; hash and FRI parameters are security-critical. |
+| FRI / DEEP-FRI | Low-degree testing component | Transparent | STARK-style proof systems | It is a component, not the full application statement. |
+| Bulletproofs | Inner-product proof system | No trusted setup in common forms | Range proofs and confidential transactions | Discrete-logarithm based and quantum-vulnerable. |
+| Halo / Nova-style systems | Accumulation or folding families | Varies | Recursive and incremental proofs | Rapidly evolving; maturity is implementation-specific. |
+
 ## Post-quantum posture
 
 Depends on the family and construction. Many deployed pairing-based SNARKs are quantum-vulnerable. STARK-style systems are often treated as plausibly post-quantum when instantiated with appropriate hash functions. Bulletproof-style systems are usually discrete-logarithm based and therefore quantum-vulnerable.

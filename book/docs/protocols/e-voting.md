@@ -91,6 +91,17 @@ Timing, voter check-in, device identifiers, and small precinct totals can leak i
 - End-to-end verifiable voting.
 - Coercion-resistant voting protocols.
 
+## Concrete systems and protocol families
+
+| Family or system | Tally/privacy shape | Key differences and cautions |
+| --- | --- | --- |
+| Helios-style voting | Public bulletin board, encrypted ballots, public verification | Useful for low-coercion settings; not coercion-resistant by default. |
+| Mixnet tallying | Ballots are shuffled before decryption or publication | Stronger unlinkability when at least one mix is honest; shuffle proofs and batch size matter. |
+| Homomorphic tallying | Encrypted ballots combine into an encrypted tally | Efficient for simple ballot formats; validity proofs must prevent malformed ballots. |
+| Threshold decryption elections | Trustees jointly decrypt tally or ballots | Ballot secrecy depends on trustee threshold and key ceremony. |
+| Coercion-resistant protocols | Receipt-free or fake-credential-resistant designs | Much harder system problem; usability and registration assumptions are critical. |
+| DAO voting experiments | On-chain eligibility, nullifiers, ZK proofs, public tally | Ledger metadata, wallet funding, and coercion risks often dominate cryptography. |
+
 ## Where it is used
 
 - Government elections in limited settings.

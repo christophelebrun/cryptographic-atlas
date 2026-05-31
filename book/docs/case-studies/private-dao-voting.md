@@ -49,6 +49,16 @@ This case study sketches a private DAO voting system as a composition exercise. 
 | Private tallying | homomorphic encryption, MPC, or threshold decryption |
 | Delayed reveal | timelock pattern or governance-defined opening phase |
 
+## Concrete composition options
+
+| Requirement | Concrete options | Main caution |
+| --- | --- | --- |
+| Eligibility set | Merkle tree, sparse Merkle tree, accumulator, anonymous credential issuer | Set construction affects anonymity, updates, and revocation. |
+| Nullifier | Hash nullifier, Semaphore-style nullifier, credential serial number | Context binding controls cross-election linkability. |
+| Ballot privacy | ElGamal-style encryption, threshold encryption, homomorphic encryption | Many classical options are quantum-vulnerable; trustees and keys dominate confidence. |
+| Validity proof | Groth16, PLONK-style proof, STARK, Bulletproof-style range proof | Proof must bind ballot, election context, nullifier, and eligibility. |
+| Tally | Homomorphic tally, mixnet tally, MPC tally | The tally method determines trustee, batching, and audit assumptions. |
+
 ## Simple architecture
 
 1. The DAO publishes an election context, eligible voter set, and ballot rules.

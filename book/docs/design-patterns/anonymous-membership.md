@@ -47,6 +47,15 @@ Not applicable to the pattern by itself. A concrete anonymous-membership system 
 
 Confidence usually depends on a trusted issuer or public membership set, holder-controlled secrets, public verification of membership proofs, and non-linking contexts.
 
+## Concrete compositions
+
+| Composition | Typical role | Main caution |
+| --- | --- | --- |
+| Merkle membership plus zero-knowledge proof | Anonymous allowlist or group membership | The anonymity set is only the committed set, and stale roots can break eligibility. |
+| Accumulator membership plus zero-knowledge proof | Compact anonymous membership with dynamic sets | Witness updates and accumulator setup must be part of the protocol. |
+| BBS+ or CL anonymous credential | Attribute-based anonymous authorization | Issuer trust, revocation, and rare attributes can re-identify users. |
+| Semaphore-style group membership | Anonymous signaling and one-action-per-group designs | Nullifier context design controls linkability and rate limits. |
+
 ## Failure modes
 
 - The eligible set is too small.

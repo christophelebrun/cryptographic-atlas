@@ -45,6 +45,17 @@ Depends on the construction. Hash-based Merkle inclusion proofs can be plausibly
 
 Confidence comes from public verification of the set commitment, collision resistance or accumulator soundness, and correct binding between the proof and the policy context.
 
+## Concrete schemes and families
+
+| Scheme | Set commitment | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Merkle inclusion proof | Merkle root | Allowlists, transparency logs, blockchain state | Hash-based and compact logarithmic proofs; reveals path information unless wrapped in zero knowledge. |
+| Sparse Merkle proof | Sparse Merkle root | Large key spaces, nullifier sets, account state | Supports non-membership patterns; encoding and default nodes must be canonical. |
+| RSA accumulator witness | RSA accumulator value | Compact set membership and revocation | Quantum-vulnerable and setup-sensitive; witness updates are operationally important. |
+| Bilinear accumulator witness | Pairing-based accumulator | Anonymous credentials and specialized protocols | Quantum-vulnerable; setup and subgroup checks matter. |
+| KZG opening proof | Polynomial/vector commitment | Verkle-style state and data availability | Very compact openings; pairing and setup assumptions are central. |
+| ZK membership proof | Merkle or accumulator proof inside a ZKP | Anonymous membership | Hides which member is used, but inherits proof-system and set-root assumptions. |
+
 ## Failure modes
 
 - Using stale set roots.

@@ -62,6 +62,16 @@ The delay parameter must reflect realistic sequential computation, the setup mod
 - Delayed reveal.
 - Leader election protocols.
 
+## Concrete schemes and families
+
+| Scheme or family | Assumption shape | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Repeated-squaring timelocks | Sequential squaring in an unknown-order group | Delayed disclosure and timelock puzzles | Delay depends on sequential work; setup and modulus/class-group choice matter. |
+| Wesolowski VDF | Unknown-order group with compact proof | Publicly verifiable delay outputs | Compact verification, but assumption and setup choices must be explicit. |
+| Pietrzak VDF | Unknown-order group with interactive/recursive proof structure | Verifiable delay outputs | Different proof and verification trade-offs from Wesolowski-style VDFs. |
+| Class-group VDFs | Unknown-order class groups | Avoiding trusted RSA modulus generation | Parameter generation differs from RSA groups and still needs expert review. |
+| Trusted delay services | External time authority or server | Engineering substitute for cryptographic delay | Not a VDF; confidence shifts to service trust and availability. |
+
 ## Failure modes and anti-patterns
 
 - Underestimating hardware advantage.

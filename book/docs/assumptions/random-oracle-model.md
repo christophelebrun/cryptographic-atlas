@@ -76,6 +76,16 @@ Confidence comes from the proof model, conservative hash selection, domain separ
 - Non-interactive proof systems.
 - Hash-based commitments and nullifiers.
 
+## Concrete instantiations
+
+| Concrete choice | Typical role | Key differences and cautions |
+| --- | --- | --- |
+| SHA-256 / SHA-512 | General random-oracle-like hashing in protocols | Conservative deployed choices, but domain labels and transcript encodings are still required. |
+| SHA3 and SHAKE | Random-oracle-like hashing and extendable output | Variable output from SHAKE must be treated as a parameter, not an afterthought. |
+| Hash-to-curve suites | Mapping arbitrary strings into elliptic-curve groups | Needs standardized encodings; ad hoc mappings can bias outputs or break proofs. |
+| Poseidon / Rescue / MiMC | Proof-system-specific hashes in circuits | Chosen for circuit efficiency; the security argument is tied to the proof-system context. |
+| Fiat-Shamir transcripts | Challenge derivation for non-interactive proofs | Transcript encoding must bind statements, public inputs, protocol version, and domain. |
+
 ## Use cases
 
 - Security proofs for practical protocols.

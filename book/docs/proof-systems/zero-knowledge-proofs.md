@@ -79,6 +79,17 @@ Examples:
 
 "Zero-knowledge proof" is a broad family. SNARKs, STARKs, and Bulletproofs are concrete proof-system families with different trade-offs in proof size, verifier cost, prover cost, setup assumptions, post-quantum posture, and implementation maturity.
 
+## Concrete proof-system families
+
+| Family or scheme | Setup model | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Sigma protocols | Often interactive or Fiat-Shamir transformed | Knowledge proofs and identification-style protocols | Simple building blocks; transcript binding controls non-interactive security. |
+| Groth16 | Circuit-specific trusted setup | Very small proofs and fast verification | Pairing-based and quantum-vulnerable; setup is tied to the circuit. |
+| PLONK-style systems | Often universal/updatable setup | General-purpose SNARK proving stacks | More flexible setup than Groth16-style systems, but assumptions and arithmetization choices vary. |
+| STARKs | Transparent setup | Scalable transparent proofs | Usually hash-based and plausibly post-quantum; proofs are larger than many SNARKs. |
+| Bulletproofs | No trusted setup in common forms | Range proofs and inner-product statements | Discrete-logarithm based and quantum-vulnerable; verification cost grows with statement size. |
+| Folding and accumulation systems | Varies by construction | Recursive proofs and incremental verifiable computation | Maturity and assumptions are construction-specific; do not treat all folding schemes as interchangeable. |
+
 ## Minimal examples
 
 - Membership: prove a secret appears in a committed list without revealing which entry.
