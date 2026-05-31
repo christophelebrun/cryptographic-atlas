@@ -80,6 +80,12 @@ const config: Config = {
           label: 'Book',
         },
         {
+          to: '/downloads/cryptographic-atlas.pdf',
+          label: 'PDF',
+          position: 'right',
+          'data-noBrokenLinkCheck': true,
+        },
+        {
           href: 'https://github.com/christophelebrun/cryptographic-atlas',
           label: 'GitHub',
           position: 'right',

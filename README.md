@@ -49,6 +49,7 @@ Diagrams are YAML metadata files in `book/data/diagrams/`. They generate SVG fil
 cd book
 npm install
 npm run generate:diagrams
+npm run generate:pdf
 npm run start
 npm run validate:content
 npm run build
@@ -87,6 +88,17 @@ npm run generate:diagrams
 ```
 
 Use generated SVG assets from `book/static/img/diagrams/` in book pages. Optional generated Mermaid files in `book/static/diagrams/` are for review and simple machine-readable flow inspection. Do not hand-edit generated diagram outputs.
+
+## PDF export
+
+The downloadable book PDF is generated from the Docusaurus build output and committed as `book/static/downloads/cryptographic-atlas.pdf`.
+
+```bash
+cd book
+npm run generate:pdf
+```
+
+The script builds the site, extracts rendered docs in sidebar order, creates a print page, and uses a local Chrome or Chromium executable to write the PDF. Set `PDF_CHROME_PATH` if Chrome is installed outside the usual platform paths.
 
 ## Surfaced properties
 

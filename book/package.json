@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "generate:concept-cards": "node scripts/generate-concept-card-data.js",
     "generate:diagrams": "node scripts/generate-diagrams.js",
+    "generate:pdf": "node scripts/generate-pdf.js",
     "generate": "npm run generate:concept-cards && npm run generate:diagrams",
     "prebuild": "npm run generate",
     "validate:content": "node scripts/validate-content.js"

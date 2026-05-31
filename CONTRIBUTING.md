@@ -27,9 +27,12 @@ Add a diagram when it clarifies taxonomy boundaries, assumption dependencies, pr
 cd book
 npm install
 npm run generate:diagrams
+npm run generate:pdf
 npm run validate:content
 npm run build
 ```
+
+Regenerate the PDF when documentation content, diagrams, sidebars, or print styling changes.
 
 ## License
 
