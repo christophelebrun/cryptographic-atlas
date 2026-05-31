@@ -81,8 +81,8 @@ const config: Config = {
         },
         {
           to: '/downloads/cryptographic-atlas.pdf',
-          label: 'PDF',
-          position: 'right',
+          label: 'Download PDF',
+          position: 'left',
           'data-noBrokenLinkCheck': true,
         },
         {
