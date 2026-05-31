@@ -3,6 +3,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+const baseUrl = '/cryptographic-atlas/';
+
 const config: Config = {
   title: 'The Cryptographic Atlas',
   tagline:
@@ -10,7 +12,7 @@ const config: Config = {
   favicon: 'img/logo-placeholder.svg',
 
   url: 'https://christophelebrun.github.io',
-  baseUrl: '/cryptographic-atlas/',
+  baseUrl,
   organizationName: 'christophelebrun',
   projectName: 'cryptographic-atlas',
   deploymentBranch: 'gh-pages',
@@ -80,9 +82,11 @@ const config: Config = {
           label: 'Book',
         },
         {
-          to: '/downloads/cryptographic-atlas.pdf',
-          label: 'Download PDF',
+          href: 'pathname:///downloads/cryptographic-atlas.pdf',
+          html: 'Download PDF',
+          'aria-label': 'Download PDF',
           position: 'left',
+          target: '_self',
           'data-noBrokenLinkCheck': true,
         },
         {

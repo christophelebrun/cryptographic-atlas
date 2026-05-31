@@ -117,6 +117,7 @@ const sidebars: SidebarsConfig = {
         'appendices/notation',
         'appendices/maturity-scale',
         'appendices/comparison-matrices',
+        'appendices/concrete-algorithms-and-schemes',
         'appendices/diagram-authoring',
         'appendices/post-quantum-posture',
         'appendices/confidence-models',
