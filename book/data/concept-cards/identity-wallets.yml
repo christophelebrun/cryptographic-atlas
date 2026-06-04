@@ -1,0 +1,48 @@
+id: identity-wallets
+name: Identity Wallets
+category: Systems
+level: system
+short_intuition: Wallets store credentials and present claims with selective disclosure under issuer trust.
+security_goals:
+  - selective disclosure
+  - issuer authenticity
+assumptions:
+  - issuers are trusted for claims
+  - holder device protects secrets
+requires_trusted_setup: false
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-issuer
+  threshold: null
+  breaks_if:
+    - wallet over-discloses
+    - status checks track holders
+  setup:
+    - issuer keys and credential schemas
+typical_uses:
+  - verifiable credentials
+  - identity presentations
+does_not_provide:
+  - trustlessness
+  - revocation privacy by default
+composition_risks:
+  - rare-attribute re-identification
+  - issuer-verifier collusion
+metadata_leaks:
+  - presentation timing
+  - verifier identity
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: scheme-dependent
+revocation_story: Status lists or accumulators must be designed to limit tracking.
+operational_failure_modes:
+  - device compromise
+  - over-disclosure
+maturity: emerging
+related:
+  - anonymous-credential
+  - privacy-preserving-revocation
+references:
+  - w3c-vc-data-model-2
+  - w3c-bitstring-status-list

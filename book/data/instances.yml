@@ -821,3 +821,312 @@ instances:
     references:
       - rfc8446-tls13
       - bellare-rogaway-random-oracle
+  - id: p-256
+    name: NIST P-256
+    kind: curve
+    instance_of:
+      - elliptic-curves
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The elliptic-curve discrete-logarithm problem remains hard for the P-256 group.
+      - Implementations validate points and follow standardized encodings.
+    common_uses:
+      - ECDSA signatures.
+      - ECDH key agreement.
+      - Web PKI and hardware-backed credentials.
+    cautions:
+      - Quantum attacks against elliptic-curve discrete logarithms would break it.
+      - Cofactor, point-validation, and nonce rules still matter in protocols using the curve.
+    references:
+      - nist-fips-186-5
+      - shor-quantum-factoring
+  - id: curve25519
+    name: Curve25519 / Edwards25519 family
+    kind: curve
+    instance_of:
+      - elliptic-curves
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The curve's discrete-logarithm problem remains hard.
+      - Protocols use the correct Montgomery or Edwards form and encoding rules.
+    common_uses:
+      - X25519 key agreement.
+      - Ed25519 signatures.
+      - Secure messaging and application handshakes.
+    cautions:
+      - X25519 and Ed25519 are not interchangeable APIs.
+      - Classical curve security does not survive large-scale quantum attacks.
+    references:
+      - rfc7748-curves
+      - rfc8032-eddsa
+      - shor-quantum-factoring
+  - id: classic-mceliece
+    name: Classic McEliece
+    kind: standard
+    instance_of:
+      - code-based-assumptions
+      - key-encapsulation-and-exchange
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The selected code-based decoding problem remains hard.
+      - Implementations handle large public keys and decapsulation behavior safely.
+    common_uses:
+      - Post-quantum encryption and KEM diversity planning.
+      - Long-lived confidentiality migration studies.
+    cautions:
+      - Public keys are much larger than lattice KEM keys.
+      - Scheme-specific standards and interoperability profiles must be tracked.
+    references:
+      - classic-mceliece-spec
+      - nist-ir-8545
+  - id: hqc
+    name: HQC
+    kind: standard
+    instance_of:
+      - code-based-assumptions
+      - key-encapsulation-and-exchange
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The selected code-based assumptions and decoding parameters remain hard.
+      - Implementations avoid decapsulation side channels and parameter confusion.
+    common_uses:
+      - Planned post-quantum KEM standardization diversity.
+      - Hybrid key-establishment migration analysis.
+    cautions:
+      - Standardization and ecosystem support are still maturing.
+      - It is a KEM building block, not a complete secure channel.
+    references:
+      - nist-hqc-selection
+      - nist-ir-8545
+  - id: rsa-blind-signature
+    name: RSA blind signatures
+    kind: scheme
+    instance_of:
+      - blind-signatures
+    taxonomy_level: structured-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - RSA assumptions and the specified blind-signature padding rules hold.
+      - Issuance and redemption transports do not re-link the user.
+    common_uses:
+      - Anonymous tokens.
+      - Privacy Pass style issuance.
+      - E-cash and rate-limited authorization designs.
+    cautions:
+      - Blindness does not hide network, device, timing, or account metadata.
+      - Quantum factoring would break RSA assumptions.
+    references:
+      - rfc9474-rsa-blind-signatures
+      - shor-quantum-factoring
+  - id: ecvrf
+    name: ECVRF
+    kind: scheme
+    instance_of:
+      - verifiable-random-functions
+    taxonomy_level: structured-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Elliptic-curve discrete-logarithm assumptions hold for the selected suite.
+      - Inputs are domain-separated and bound to the intended application.
+    common_uses:
+      - Publicly verifiable lottery selection.
+      - Leader election and randomized protocol roles.
+      - Auditable pseudorandom outputs from a key holder.
+    cautions:
+      - A VRF key holder can often withhold unfavorable outputs.
+      - It does not provide unbiased public randomness by itself.
+    references:
+      - rfc9381-ecvrf
+      - micali-rabin-vadhan-vrf
+  - id: frost
+    name: FROST threshold signatures
+    kind: protocol-suite
+    instance_of:
+      - threshold-cryptography
+      - threshold-issuance
+    taxonomy_level: structured-primitive
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Fewer than the threshold number of signing shares are compromised.
+      - Nonces, participant binding, and transcript binding follow the protocol.
+    common_uses:
+      - Threshold signing wallets.
+      - Committee authorization.
+      - Distributed issuance and custody workflows.
+    cautions:
+      - Threshold signing does not remove operator trust or governance requirements.
+      - Share generation, refresh, backups, and policy enforcement remain operational risks.
+    references:
+      - rfc9591-frost
+  - id: mls
+    name: Messaging Layer Security
+    kind: protocol-suite
+    instance_of:
+      - secure-messaging
+      - secure-channels
+    taxonomy_level: protocol
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Group membership, credential validation, and delivery ordering are handled correctly.
+      - The selected cipher suites and authentication credentials remain secure.
+    common_uses:
+      - End-to-end encrypted group messaging.
+      - Application group channels with efficient membership changes.
+    cautions:
+      - MLS does not hide group metadata from every infrastructure component.
+      - Authentication, device management, and abuse handling are system responsibilities.
+    references:
+      - rfc9420-mls
+  - id: privacy-pass
+    name: Privacy Pass
+    kind: protocol-suite
+    instance_of:
+      - anonymous-tokens
+      - blind-signatures
+      - oblivious-pseudorandom-functions
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Token issuance and redemption are unlinkable under the selected protocol mode.
+      - Clients and deployments avoid stable metadata that links redemptions.
+    common_uses:
+      - Anonymous authorization tokens.
+      - Rate-limited access without stable account identifiers.
+      - Abuse mitigation with reduced tracking.
+    cautions:
+      - Browser, IP, timing, and verifier metadata can defeat token unlinkability.
+      - Classical suites are not post-quantum.
+    references:
+      - rfc9576-privacy-pass
+  - id: plonkish-proof-system
+    name: PLONK-style proof system
+    kind: scheme
+    instance_of:
+      - snarks-starks-bulletproofs
+      - arithmetization
+      - lookup-arguments
+    taxonomy_level: proof-system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - The arithmetization, permutation checks, lookup checks, and commitment scheme match the intended statement.
+      - Setup and transcript assumptions hold for the concrete PLONK family.
+    common_uses:
+      - General-purpose zero-knowledge circuits.
+      - Rollup validity proofs.
+      - Lookup-heavy application circuits.
+    cautions:
+      - Underconstrained circuits or wrong public inputs can produce valid proofs of the wrong claim.
+      - Pairing-based PLONK deployments are classically secure but quantum-vulnerable.
+    references:
+      - plonk
+      - gabizon-williamson-plookup
+  - id: nova-folding
+    name: Nova-style folding
+    kind: scheme
+    instance_of:
+      - folding-schemes
+      - recursive-proofs
+    taxonomy_level: proof-system
+    maturity: research
+    post_quantum_posture: depends
+    requires_trusted_setup: depends
+    assumptions:
+      - The relaxed relation and folding accumulator are specified correctly.
+      - The final proof or compression step is sound under its commitment assumptions.
+    common_uses:
+      - Incremental verifiable computation.
+      - Recursive proof research and prototypes.
+    cautions:
+      - Folding systems are fast-moving and construction-specific.
+      - Finalization, public-input binding, and accumulator state must be audited carefully.
+    references:
+      - kothapalli-setty-tzialla-nova
+  - id: halo-recursion
+    name: Halo-style recursion
+    kind: scheme
+    instance_of:
+      - recursive-proofs
+      - folding-schemes
+    taxonomy_level: proof-system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The recursive verifier, transcript, and accumulation checks are bound to the intended statement.
+      - Discrete-logarithm assumptions remain hard for the selected curve cycle or commitment setting.
+    common_uses:
+      - Recursive proof aggregation.
+      - Succinct chains of validity proofs.
+    cautions:
+      - Recursion bugs often come from omitted public inputs or verification keys.
+      - Common curve-based instantiations are quantum-vulnerable.
+    references:
+      - bowe-grigg-hopwood-halo
+      - shor-quantum-factoring
+  - id: gkr-sumcheck
+    name: GKR-style sumcheck protocols
+    kind: construction
+    instance_of:
+      - sumcheck
+    taxonomy_level: proof-system
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Polynomial degree bounds, field sizes, and verifier challenges are specified correctly.
+      - Fiat-Shamir transformation, if used, binds the full transcript and statement.
+    common_uses:
+      - Interactive proof systems.
+      - Layered-circuit verification.
+      - Components inside modern succinct proof systems.
+    cautions:
+      - Sumcheck does not commit to witness values without additional machinery.
+      - Wrong degree accounting can silently break soundness.
+    references:
+      - lund-sumcheck
+      - goldwasser-kalai-rothblum-gkr
+  - id: bitstring-status-list
+    name: W3C Bitstring Status List
+    kind: standard
+    instance_of:
+      - privacy-preserving-revocation
+      - identity-wallets
+    taxonomy_level: design-pattern
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Status-list publication, caching, and credential binding match the privacy goal.
+      - Verifiers do not turn status checks into holder tracking beacons.
+    common_uses:
+      - Verifiable credential revocation or suspension status.
+      - Identity-wallet status checks.
+    cautions:
+      - Status-list design reduces but does not eliminate correlation risk.
+      - Rare credentials and online fetch patterns can still identify holders.
+    references:
+      - w3c-bitstring-status-list

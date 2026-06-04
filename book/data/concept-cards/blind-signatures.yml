@@ -1,0 +1,48 @@
+id: blind-signatures
+name: Blind Signatures
+category: Structured primitives
+level: structured-primitive
+short_intuition: A signer authorizes a hidden message that can later be verified.
+security_goals:
+  - blindness
+  - unforgeability
+assumptions:
+  - signature assumption holds
+  - issuance metadata is not linkable
+requires_trusted_setup: false
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: null
+  breaks_if:
+    - signer logs identifying metadata
+    - signature assumption fails
+  setup:
+    - signer public key
+typical_uses:
+  - anonymous tokens
+  - e-cash
+does_not_provide:
+  - revocation
+  - network anonymity
+composition_risks:
+  - redemption timing linkage
+  - no rate limits
+metadata_leaks:
+  - issuance timing
+  - redemption context
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: scheme-dependent
+revocation_story: Revocation requires external status, spent-token, or credential mechanisms.
+operational_failure_modes:
+  - over-issuance
+  - linkable transport metadata
+maturity: mature
+related:
+  - anonymous-tokens
+  - blind-signature-credentials
+references:
+  - chaum-blind-signatures
+  - rfc9474-rsa-blind-signatures

@@ -1,0 +1,50 @@
+id: secure-messaging
+name: Secure Messaging
+category: Systems
+level: system
+short_intuition: Messaging systems combine channels, ratchets, identity keys, delivery, devices, and metadata policy.
+security_goals:
+  - message confidentiality
+  - forward secrecy
+  - participant authentication
+assumptions:
+  - device keys remain protected
+  - key directory behavior is trustworthy
+requires_trusted_setup: false
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - endpoints are compromised
+    - backups expose plaintext
+  setup:
+    - identity keys and device state
+typical_uses:
+  - private chat
+  - group messaging
+does_not_provide:
+  - complete metadata privacy
+  - guaranteed deletion
+composition_risks:
+  - multi-device sync weakening guarantees
+  - ignored key-change warnings
+metadata_leaks:
+  - contact graph
+  - timing
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Device removal, key change, and account recovery are application-specific.
+operational_failure_modes:
+  - endpoint compromise
+  - plaintext backups
+maturity: deployed
+related:
+  - secure-channels
+  - key-committing-encryption
+references:
+  - signal-x3dh
+  - signal-double-ratchet
+  - rfc9420-mls

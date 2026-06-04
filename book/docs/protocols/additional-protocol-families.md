@@ -3,8 +3,8 @@ title: Additional Protocol Families
 type: protocol
 level: protocol
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
@@ -19,7 +19,7 @@ confidence_model:
 
 # Additional Protocol Families
 
-This page covers protocol families that appear repeatedly in privacy-preserving systems, secure messaging, identity, and private payments.
+This page is now a routing overview for protocol families that appear repeatedly in privacy-preserving systems, secure messaging, identity, and private payments.
 
 This is a grouped overview. [Secure Channels](/docs/protocols/secure-channels), [Oblivious Transfer](/docs/protocols/oblivious-transfer), [Private Information Retrieval](/docs/protocols/private-information-retrieval), and [Password-Authenticated Key Exchange](/docs/protocols/password-authenticated-key-exchange) now have standalone pages.
 
@@ -31,9 +31,9 @@ This is a grouped overview. [Secure Channels](/docs/protocols/secure-channels), 
 | [Private information retrieval](/docs/protocols/private-information-retrieval) | Client retrieves a database item without revealing which item | coding, homomorphic encryption, PIR-specific protocols | Server/database size and access-pattern assumptions matter. |
 | [Password-authenticated key exchange](/docs/protocols/password-authenticated-key-exchange) | Parties derive a strong session key from a password without exposing it to offline guessing | PAKE protocol, KDF, authenticated transcript | Not the same as password hashing. |
 | [Secure channels](/docs/protocols/secure-channels) | Establish authenticated, encrypted sessions | key exchange, signatures/PSKs, KDFs, AEAD | Metadata and endpoint compromise remain. |
-| Anonymous tokens | Issue or redeem tokens without stable identity linkage | blind signatures, OPRFs, accumulators, rate limits | Token privacy depends on issuance, redemption, and transport metadata. |
-| Blind-signature credentials | Issue credentials using blind signatures | blind signatures, selective disclosure, issuer policy | Blind issuance does not solve revocation or misuse. |
-| Private-payment protocols | Transfer value while hiding payer, payee, amount, or linkage under a model | commitments, nullifiers, ZKPs, e-cash, ledgers | Ledger metadata and double-spend rules dominate. |
+| [Anonymous tokens](/docs/protocols/anonymous-tokens) | Issue or redeem tokens without stable identity linkage | blind signatures, OPRFs, accumulators, rate limits | Token privacy depends on issuance, redemption, and transport metadata. |
+| [Blind-signature credentials](/docs/protocols/blind-signature-credentials) | Issue credentials using blind signatures | blind signatures, selective disclosure, issuer policy | Blind issuance does not solve revocation or misuse. |
+| [Private-payment protocols](/docs/case-studies/private-payments) | Transfer value while hiding payer, payee, amount, or linkage under a model | commitments, nullifiers, ZKPs, e-cash, ledgers | Ledger metadata and double-spend rules dominate. |
 
 ## Oblivious transfer
 
@@ -196,18 +196,20 @@ Confidence may come from mathematical-assumption security, public-verifiability,
 
 - [MPC](/docs/protocols/mpc)
 - [Oblivious Pseudorandom Functions](/docs/protocols/oblivious-pseudorandom-functions)
+- [Anonymous Tokens](/docs/protocols/anonymous-tokens)
+- [Blind-Signature Credentials](/docs/protocols/blind-signature-credentials)
 - [Private Set Intersection](/docs/protocols/private-set-intersection)
 - [Authenticated Encryption](/docs/primitives/authenticated-encryption)
 - [Advanced Structured Primitives](/docs/structured-primitives/advanced-structured-primitives)
 
 ## Further reading
 
-- Rabin, "How to Exchange Secrets by Oblivious Transfer."
-- Chor et al., "Private Information Retrieval."
-- RFC 9383, "OPAQUE: An Asymmetric PAKE Protocol."
-- RFC 8446, "The Transport Layer Security (TLS) Protocol Version 1.3."
-- RFC 9180, "Hybrid Public Key Encryption."
-- Signal, "The X3DH Key Agreement Protocol" and "The Double Ratchet Algorithm."
-- RFC 9576, "The Privacy Pass Architecture."
-- Chaum, "Blind Signatures for Untraceable Payments."
-- Zerocash, "Decentralized Anonymous Payments from Bitcoin."
+- Rabin, ["How to Exchange Secrets by Oblivious Transfer"](https://eprint.iacr.org/2005/187).
+- Chor et al., ["Private Information Retrieval"](https://dl.acm.org/doi/10.1145/293347.293350).
+- RFC 9383, ["OPAQUE: An Asymmetric PAKE Protocol"](https://www.rfc-editor.org/rfc/rfc9383).
+- RFC 8446, ["The Transport Layer Security (TLS) Protocol Version 1.3"](https://www.rfc-editor.org/rfc/rfc8446).
+- RFC 9180, ["Hybrid Public Key Encryption"](https://www.rfc-editor.org/rfc/rfc9180).
+- Signal, ["The X3DH Key Agreement Protocol"](https://signal.org/docs/specifications/x3dh/) and ["The Double Ratchet Algorithm"](https://signal.org/docs/specifications/doubleratchet/).
+- RFC 9576, ["The Privacy Pass Architecture"](https://www.rfc-editor.org/rfc/rfc9576).
+- Chaum, ["Blind Signatures for Untraceable Payments"](https://www.chaum.com/publications/Chaum-blind-signatures.PDF).
+- Ben-Sasson et al., ["Zerocash: Decentralized Anonymous Payments from Bitcoin"](https://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf).

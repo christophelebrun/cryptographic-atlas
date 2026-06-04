@@ -1,0 +1,48 @@
+id: anonymous-tokens
+name: Anonymous Tokens
+category: Protocols
+level: protocol
+short_intuition: Tokens can be issued and redeemed with limited linkability between those phases.
+security_goals:
+  - unlinkability
+  - issuer authenticity
+assumptions:
+  - issuance policy is sound
+  - transport metadata is controlled
+requires_trusted_setup: false
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-issuer
+  threshold: null
+  breaks_if:
+    - issuer and verifier collude with rich metadata
+    - token metadata is unique
+  setup:
+    - issuer public key or OPRF key
+typical_uses:
+  - private rate limits
+  - abuse prevention
+does_not_provide:
+  - network anonymity
+  - Sybil resistance
+composition_risks:
+  - small issuance batches
+  - device identifiers
+metadata_leaks:
+  - timing
+  - redemption context
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: scheme-dependent
+revocation_story: Duplicate-use and expiry are token-system rules; revocation needs extra machinery.
+operational_failure_modes:
+  - linkable logs
+  - over-issuance
+maturity: emerging
+related:
+  - blind-signatures
+  - oblivious-pseudorandom-functions
+references:
+  - rfc9576-privacy-pass
+  - rfc9497-voprf

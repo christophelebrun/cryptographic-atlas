@@ -35,6 +35,8 @@ Protocols specify how parties interact. They combine primitives, messages, state
 - [Oblivious transfer](/docs/protocols/oblivious-transfer)
 - [Private information retrieval](/docs/protocols/private-information-retrieval)
 - [Anonymous credentials](/docs/protocols/anonymous-credentials)
+- [Anonymous tokens](/docs/protocols/anonymous-tokens)
+- [Blind-signature credentials](/docs/protocols/blind-signature-credentials)
 - [Nullifiers](/docs/protocols/nullifiers)
 - [Oblivious pseudorandom functions](/docs/protocols/oblivious-pseudorandom-functions)
 - [Private set intersection](/docs/protocols/private-set-intersection)
@@ -47,4 +49,4 @@ Protocols specify how parties interact. They combine primitives, messages, state
 
 A protocol can fail even if every primitive inside it is sound.
 
-Protocol coverage is still intentionally grouped in some areas. The grouped page remains a map for families that do not yet need a standalone page.
+Protocol coverage is still intentionally grouped in some areas. The grouped page remains a map for adjacent families and comparison context.

@@ -54,14 +54,17 @@ See [Confidence Models](/docs/appendices/confidence-models).
 ## Assumption pages
 
 - [Discrete logarithm](/docs/assumptions/discrete-logarithm)
+- [Elliptic curves](/docs/assumptions/elliptic-curves)
 - [Factoring and RSA](/docs/assumptions/factoring-rsa)
+- [Code-based assumptions](/docs/assumptions/code-based-assumptions)
 - [Pairings](/docs/assumptions/pairings)
 - [Lattices](/docs/assumptions/lattices)
 - [Random oracle model](/docs/assumptions/random-oracle-model)
 - [Trusted setup](/docs/assumptions/trusted-setup)
+- [Common reference strings](/docs/assumptions/common-reference-strings)
 - [Additional assumptions and substrates](/docs/assumptions/additional-substrates)
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
+- Boneh and Shoup, ["A Graduate Course in Applied Cryptography"](https://toc.cryptobook.us/).
+- Shor, ["Algorithms for Quantum Computation: Discrete Logarithms and Factoring"](https://doi.org/10.1109/SFCS.1994.365700).

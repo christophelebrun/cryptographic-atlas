@@ -1,0 +1,56 @@
+id: private-machine-learning-analytics
+name: Private Machine Learning Analytics
+category: Systems
+level: system
+short_intuition: Private analytics combines aggregation, computation, and release controls so model or metric outputs reveal less about individuals.
+security_goals:
+  - input privacy
+  - aggregate disclosure
+  - bounded output leakage
+assumptions:
+  - cohort sizes are large enough
+  - output policy limits differencing
+  - computation layer matches the threat model
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: construction-specific
+  breaks_if:
+    - repeated queries isolate users
+    - endpoints log raw records
+    - privacy budget is mismanaged
+  setup:
+    - aggregation servers, MPC parties, HE keys, or differential privacy policy
+typical_uses:
+  - telemetry aggregation
+  - federated analytics
+  - privacy-preserving model evaluation
+does_not_provide:
+  - privacy for small cohorts
+  - fairness guarantees
+  - correctness of model interpretation
+composition_risks:
+  - cryptographic input privacy paired with leaky outputs
+  - privacy budgets reset across products
+metadata_leaks:
+  - participation
+  - cohort membership
+  - query timing
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Usually handled through account deletion, cohort exclusion, and key rotation rather than cryptographic revocation.
+operational_failure_modes:
+  - differencing attacks
+  - poisoned inputs
+  - raw logging before encryption
+maturity: emerging
+related:
+  - private-aggregation
+  - secure-aggregation
+  - differential-privacy
+references:
+  - bonawitz-secure-aggregation
+  - dwork-differential-privacy

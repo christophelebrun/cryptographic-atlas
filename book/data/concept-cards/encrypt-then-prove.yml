@@ -1,0 +1,54 @@
+id: encrypt-then-prove
+name: Encrypt Then Prove
+category: Design patterns
+level: design-pattern
+short_intuition: A party encrypts data and proves in zero knowledge that the ciphertext encodes a valid hidden value.
+security_goals:
+  - hidden validity
+  - ciphertext binding
+  - public verifiability
+assumptions:
+  - encryption is secure
+  - proof statement binds the right ciphertext and context
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - proof omits ciphertext or recipient key binding
+    - randomness is reused
+    - decryptor and prover assumptions diverge
+  setup:
+    - encryption parameters and proof-system parameters
+typical_uses:
+  - encrypted voting
+  - confidential compliance
+  - verifiable encrypted credentials
+does_not_provide:
+  - plaintext availability
+  - recipient honesty
+  - metadata privacy by itself
+composition_risks:
+  - proving a different statement than applications verify
+  - malleable ciphertexts accepted as equivalent
+metadata_leaks:
+  - proof submission timing
+  - recipient public key
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation is external; encrypted values and proofs may remain valid unless policy checks are included.
+operational_failure_modes:
+  - missing domain separation
+  - omitted range or membership constraints
+  - key rotation invalidates decryptability
+maturity: mature
+related:
+  - zero-knowledge-proof
+  - public-key-encryption
+  - verifiable-encryption
+references:
+  - goldwasser-micali-rackoff-zk
+  - camenisch-shoup-verifiable-encryption

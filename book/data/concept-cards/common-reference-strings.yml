@@ -1,0 +1,49 @@
+id: common-reference-strings
+name: Common Reference Strings
+category: Assumptions and substrates
+level: assumption
+short_intuition: Public setup data enables protocols but can introduce toxic-waste or parameter trust.
+security_goals:
+  - shared verification parameters
+  - setup consistency
+assumptions:
+  - setup ceremony is sound
+  - verifiers use the correct CRS
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: trusted-setup
+  threshold: one honest setup participant when applicable
+  breaks_if:
+    - toxic waste survives
+    - wrong verifier key is accepted
+  setup:
+    - CRS, proving key, or verification key
+typical_uses:
+  - SNARKs
+  - polynomial commitments
+does_not_provide:
+  - correct circuit design
+  - toxic-waste destruction by itself
+composition_risks:
+  - CRS not bound to proofs
+  - hidden setup assumptions
+metadata_leaks:
+  - setup version
+  - circuit identifier
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Compromised setup requires migration to new parameters and verifier keys.
+operational_failure_modes:
+  - lost ceremony transcript
+  - stale verifier key
+maturity: mature
+related:
+  - trusted-setup
+  - polynomial-commitments
+references:
+  - groth16
+  - bowe-setup-mpc
+  - kate-zaverucha-goldberg-kzg

@@ -3,8 +3,8 @@ title: Additional Systems and Applications
 type: system
 level: system
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
@@ -19,7 +19,7 @@ confidence_model:
 
 # Additional Systems and Applications
 
-This page covers system-level applications that compose many primitives and protocols. Each should eventually become a deeper case study if the atlas expands in that direction.
+This page is now a routing overview for system-level applications that compose many primitives and protocols.
 
 This is a grouped overview. [Private Payments](/docs/case-studies/private-payments) and [ZK Rollups](/docs/case-studies/zk-rollups) now have standalone case studies.
 
@@ -29,10 +29,10 @@ This is a grouped overview. [Private Payments](/docs/case-studies/private-paymen
 | --- | --- | --- | --- |
 | [Private payments](/docs/case-studies/private-payments) | Transfer value with reduced transaction linkage | commitments, nullifiers, ZKPs, e-cash, ledgers | ledger and network metadata |
 | [ZK rollups](/docs/case-studies/zk-rollups) | Prove batches of state transitions succinctly | arithmetization, polynomial commitments, SNARKs/STARKs | data availability and prover centralization |
-| Secure messaging | Protect message content and session keys | secure channels, Double Ratchet, signatures, KDFs, AEAD | endpoint compromise and metadata |
-| Privacy-preserving identity wallets | Present credentials with minimal disclosure | credentials, selective disclosure, ZKPs, revocation | issuer/verifier linkage and rare attributes |
-| Encrypted mempools | Hide transaction contents before ordering or inclusion | encryption, threshold decryption, commitments, sequencing rules | timing, censorship, key release |
-| Private machine-learning analytics | Learn aggregate or model information without raw data exposure | secure aggregation, MPC, FHE, differential privacy | output leakage and small cohorts |
+| [Secure messaging](/docs/case-studies/secure-messaging) | Protect message content and session keys | secure channels, Double Ratchet, signatures, KDFs, AEAD | endpoint compromise and metadata |
+| [Privacy-preserving identity wallets](/docs/case-studies/identity-wallets) | Present credentials with minimal disclosure | credentials, selective disclosure, ZKPs, revocation | issuer/verifier linkage and rare attributes |
+| [Encrypted mempools](/docs/case-studies/encrypted-mempools) | Hide transaction contents before ordering or inclusion | encryption, threshold decryption, commitments, sequencing rules | timing, censorship, key release |
+| [Private machine-learning analytics](/docs/case-studies/private-machine-learning-analytics) | Learn aggregate or model information without raw data exposure | secure aggregation, MPC, FHE, differential privacy | output leakage and small cohorts |
 
 ## Private payments
 
@@ -217,15 +217,19 @@ Depends on the full stack. Systems inherit posture from key exchange, signatures
 
 - [Private Aggregation](/docs/design-patterns/private-aggregation)
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
+- [Secure Messaging](/docs/case-studies/secure-messaging)
+- [Identity Wallets](/docs/case-studies/identity-wallets)
+- [Encrypted Mempools](/docs/case-studies/encrypted-mempools)
+- [Private Machine-Learning Analytics](/docs/case-studies/private-machine-learning-analytics)
 - [Additional Protocol Families](/docs/protocols/additional-protocol-families)
 - [Advanced Structured Primitives](/docs/structured-primitives/advanced-structured-primitives)
 - [Metadata Leakage](/docs/appendices/metadata-leakage)
 
 ## Further reading
 
-- Ben-Sasson et al., "Zerocash: Decentralized Anonymous Payments from Bitcoin."
-- Signal, "The Double Ratchet Algorithm."
-- W3C, "Verifiable Credentials Data Model."
-- RFC 8446, "The Transport Layer Security (TLS) Protocol Version 1.3."
-- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Ben-Sasson et al., ["Zerocash: Decentralized Anonymous Payments from Bitcoin"](https://zerocash-project.org/media/pdf/zerocash-extended-20140518.pdf).
+- Signal, ["The Double Ratchet Algorithm"](https://signal.org/docs/specifications/doubleratchet/).
+- W3C, ["Verifiable Credentials Data Model v2.0"](https://www.w3.org/TR/vc-data-model-2.0/).
+- RFC 8446, ["The Transport Layer Security (TLS) Protocol Version 1.3"](https://www.rfc-editor.org/rfc/rfc8446).
+- Bonawitz et al., ["Practical Secure Aggregation for Privacy-Preserving Machine Learning"](https://research.google/pubs/practical-secure-aggregation-for-privacy-preserving-machine-learning/).
+- Canetti, ["Universally Composable Security; A New Paradigm for Cryptographic Protocols"](https://eprint.iacr.org/2000/067).

@@ -1,0 +1,49 @@
+id: code-based-assumptions
+name: Code-Based Assumptions
+category: Assumptions and substrates
+level: mathematical-assumption
+short_intuition: Security comes from the hardness of decoding noisy code data without hidden structure.
+security_goals:
+  - post-quantum key establishment
+  - decoding hardness
+assumptions:
+  - hard decoding problem
+  - reviewed code family and parameters
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
+  threshold: null
+  breaks_if:
+    - code structure leaks
+    - parameters are too small
+  setup:
+    - public parameter set
+typical_uses:
+  - KEMs
+  - post-quantum migration
+does_not_provide:
+  - small public keys in all schemes
+  - signatures by default
+composition_risks:
+  - treating candidate status as deployment maturity
+  - ignoring side channels
+metadata_leaks:
+  - algorithm choice
+  - public key size
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Key rotation and migration are operational controls.
+operational_failure_modes:
+  - decoding-failure leakage
+  - unreviewed parameters
+maturity: emerging
+related:
+  - key-encapsulation-and-exchange
+  - post-quantum-posture
+references:
+  - mceliece-original
+  - classic-mceliece-spec
+  - nist-ir-8545

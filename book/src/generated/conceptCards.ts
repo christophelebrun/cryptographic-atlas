@@ -210,6 +210,49 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "anonymous-tokens",
+    "name": "Anonymous Tokens",
+    "category": "Protocols",
+    "level": "protocol",
+    "pageLink": "/docs/protocols/anonymous-tokens",
+    "shortIntuition": "Tokens can be issued and redeemed with limited linkability between those phases.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "unlinkability",
+        "href": "/docs/glossary#unlinkability"
+      },
+      {
+        "label": "issuer authenticity",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "network anonymity",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Sybil resistance"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "trusted-issuer",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "redemption context",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "anti-double-use-nullifiers",
     "name": "Anti-Double-Use Nullifiers",
     "category": "design-pattern",
@@ -256,6 +299,46 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "context-identifier",
         "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "arithmetization",
+    "name": "Arithmetization",
+    "category": "Proof systems",
+    "level": "proof-system",
+    "pageLink": "/docs/proof-systems/arithmetization",
+    "shortIntuition": "Translate computation into algebraic constraints that a proof system checks.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "statement precision"
+      },
+      {
+        "label": "constraint correctness"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "privacy for public inputs",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "implementation correctness by itself"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "public-verifiability",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "public inputs",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "circuit shape"
       }
     ]
   },
@@ -309,6 +392,128 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "message-timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "blind-signatures",
+    "name": "Blind Signatures",
+    "category": "Structured primitives",
+    "level": "structured-primitive",
+    "pageLink": "/docs/structured-primitives/blind-signatures",
+    "shortIntuition": "A signer authorizes a hidden message that can later be verified.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "blindness"
+      },
+      {
+        "label": "unforgeability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "revocation"
+      },
+      {
+        "label": "network anonymity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "issuance timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "redemption context",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "blind-signature-credentials",
+    "name": "Blind-Signature Credentials",
+    "category": "Protocols",
+    "level": "protocol",
+    "pageLink": "/docs/protocols/blind-signature-credentials",
+    "shortIntuition": "Blind issuance can authorize credentials without exposing the exact token being signed.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "blind issuance"
+      },
+      {
+        "label": "credential authenticity",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "revocation privacy by default",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "non-transferability by default"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "trusted-issuer",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "presentation timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "verifier identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "code-based-assumptions",
+    "name": "Code-Based Assumptions",
+    "category": "Assumptions and substrates",
+    "level": "mathematical-assumption",
+    "pageLink": "/docs/assumptions/code-based-assumptions",
+    "shortIntuition": "Security comes from the hardness of decoding noisy code data without hidden structure.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "post-quantum key establishment"
+      },
+      {
+        "label": "decoding hardness"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "small public keys in all schemes"
+      },
+      {
+        "label": "signatures by default"
+      }
+    ],
+    "postQuantumPosture": "plausible",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "algorithm choice"
+      },
+      {
+        "label": "public key size",
         "href": "/docs/appendices/metadata-leakage"
       }
     ]
@@ -408,6 +613,44 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "public-context",
         "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "common-reference-strings",
+    "name": "Common Reference Strings",
+    "category": "Assumptions and substrates",
+    "level": "assumption",
+    "pageLink": "/docs/assumptions/common-reference-strings",
+    "shortIntuition": "Public setup data enables protocols but can introduce toxic-waste or parameter trust.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "shared verification parameters"
+      },
+      {
+        "label": "setup consistency"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "correct circuit design"
+      },
+      {
+        "label": "toxic-waste destruction by itself"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "trusted-setup",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "setup version"
+      },
+      {
+        "label": "circuit identifier"
       }
     ]
   },
@@ -604,6 +847,51 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "e-cash-primitives",
+    "name": "E-Cash Primitives",
+    "category": "Structured primitives",
+    "level": "structured-primitive",
+    "pageLink": "/docs/structured-primitives/e-cash-primitives",
+    "shortIntuition": "Issuance, spending, and duplicate-use controls for digital value with privacy goals.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "issuer authenticity",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "spending privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "double-spend control"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "solvency"
+      },
+      {
+        "label": "network anonymity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "amount patterns"
+      }
+    ]
+  },
+  {
     "id": "e-voting",
     "name": "Electronic Voting",
     "category": "system",
@@ -652,6 +940,133 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "elliptic-curves",
+    "name": "Elliptic Curves",
+    "category": "Assumptions and substrates",
+    "level": "mathematical-assumption",
+    "pageLink": "/docs/assumptions/elliptic-curves",
+    "shortIntuition": "Efficient finite groups for discrete-logarithm-based signatures, key exchange, and commitments.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "discrete-logarithm hardness",
+        "href": "/docs/glossary#discrete-logarithm"
+      },
+      {
+        "label": "compact public-key operations"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "post-quantum security"
+      },
+      {
+        "label": "endpoint authentication"
+      }
+    ],
+    "postQuantumPosture": "vulnerable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "public keys"
+      },
+      {
+        "label": "curve suite choices"
+      }
+    ]
+  },
+  {
+    "id": "encrypt-then-prove",
+    "name": "Encrypt Then Prove",
+    "category": "Design patterns",
+    "level": "design-pattern",
+    "pageLink": "/docs/design-patterns/encrypt-then-prove",
+    "shortIntuition": "A party encrypts data and proves in zero knowledge that the ciphertext encodes a valid hidden value.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "hidden validity"
+      },
+      {
+        "label": "ciphertext binding",
+        "href": "/docs/glossary#binding"
+      },
+      {
+        "label": "public verifiability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "plaintext availability"
+      },
+      {
+        "label": "recipient honesty"
+      },
+      {
+        "label": "metadata privacy by itself",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "proof submission timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "recipient public key"
+      }
+    ]
+  },
+  {
+    "id": "encrypted-mempools",
+    "name": "Encrypted Mempools",
+    "category": "Systems",
+    "level": "system",
+    "pageLink": "/docs/case-studies/encrypted-mempools",
+    "shortIntuition": "Encrypt pending transactions until ordering or reveal rules reduce content-based front-running.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "pre-order confidentiality",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "ordering fairness support"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "guaranteed inclusion"
+      },
+      {
+        "label": "network anonymity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "sender network path"
+      },
+      {
+        "label": "transaction size",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "factoring-rsa",
     "name": "Factoring and RSA",
     "category": "mathematical-assumption",
@@ -690,6 +1105,87 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "key-identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "folding-schemes",
+    "name": "Folding Schemes",
+    "category": "Proof systems",
+    "level": "proof-system",
+    "pageLink": "/docs/proof-systems/folding-schemes",
+    "shortIntuition": "Fold many proof instances into a smaller accumulated claim.",
+    "maturity": "research",
+    "securityGoals": [
+      {
+        "label": "incremental verification"
+      },
+      {
+        "label": "proof accumulation"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "universal SNARK replacement"
+      },
+      {
+        "label": "mature assumptions across schemes"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "computation shape"
+      },
+      {
+        "label": "public inputs",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "fri",
+    "name": "FRI",
+    "category": "Proof systems",
+    "level": "proof-system",
+    "pageLink": "/docs/proof-systems/fri",
+    "shortIntuition": "A transparent low-degree proximity test used in STARK-style proof systems.",
+    "maturity": "deployed",
+    "securityGoals": [
+      {
+        "label": "low-degree soundness",
+        "href": "/docs/glossary#soundness"
+      },
+      {
+        "label": "transparent verification"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "zero knowledge by itself",
+        "href": "/docs/glossary#zero-knowledge"
+      },
+      {
+        "label": "program correctness by itself"
+      }
+    ],
+    "postQuantumPosture": "plausible",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "public-verifiability",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "public inputs",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "proof size",
         "href": "/docs/appendices/metadata-leakage"
       }
     ]
@@ -888,6 +1384,48 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "identity-wallets",
+    "name": "Identity Wallets",
+    "category": "Systems",
+    "level": "system",
+    "pageLink": "/docs/case-studies/identity-wallets",
+    "shortIntuition": "Wallets store credentials and present claims with selective disclosure under issuer trust.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "selective disclosure"
+      },
+      {
+        "label": "issuer authenticity",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "trustlessness"
+      },
+      {
+        "label": "revocation privacy by default",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "trusted-issuer",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "presentation timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "verifier identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "key-derivation-functions",
     "name": "Key Derivation Functions",
     "category": "key-management",
@@ -979,6 +1517,90 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "key-rotation-and-migration",
+    "name": "Key Rotation and Migration",
+    "category": "Design patterns",
+    "level": "design-pattern",
+    "pageLink": "/docs/design-patterns/key-rotation-and-migration",
+    "shortIntuition": "Systems move from old keys or algorithms to new ones without losing authentication, availability, or rollback safety.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "compromise containment"
+      },
+      {
+        "label": "cryptographic agility"
+      },
+      {
+        "label": "rollback resistance"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "automatic recovery from exposed plaintext"
+      },
+      {
+        "label": "security for clients that ignore migration rules"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "operational-control",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "version support"
+      },
+      {
+        "label": "migration timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "key-committing-encryption",
+    "name": "Key-Committing Encryption",
+    "category": "Basic primitives",
+    "level": "basic-primitive",
+    "pageLink": "/docs/primitives/key-committing-encryption",
+    "shortIntuition": "Ciphertexts should validate under one intended key context, not several plausible keys.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "key commitment",
+        "href": "/docs/glossary#commitment"
+      },
+      {
+        "label": "ciphertext integrity",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "signatures"
+      },
+      {
+        "label": "sender identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "key identifier"
+      },
+      {
+        "label": "report timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "lattices",
     "name": "Lattices",
     "category": "mathematical-substrate",
@@ -1018,6 +1640,45 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "ciphertext-size",
         "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "lookup-arguments",
+    "name": "Lookup Arguments",
+    "category": "Proof systems",
+    "level": "proof-system",
+    "pageLink": "/docs/proof-systems/lookup-arguments",
+    "shortIntuition": "Prove witnessed values appear in an approved table.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "table membership"
+      },
+      {
+        "label": "efficient constraints"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "correct table semantics"
+      },
+      {
+        "label": "privacy for public lookups",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "public-verifiability",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "public table"
+      },
+      {
+        "label": "lookup pattern"
       }
     ]
   },
@@ -1475,6 +2136,45 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "password-hashing",
+    "name": "Password Hashing",
+    "category": "Basic primitives",
+    "level": "basic-primitive",
+    "pageLink": "/docs/primitives/password-hashing",
+    "shortIntuition": "Salted and expensive verifiers slow offline guessing after password-database theft.",
+    "maturity": "deployed",
+    "securityGoals": [
+      {
+        "label": "offline guessing resistance"
+      },
+      {
+        "label": "verifier storage hardening"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "PAKE"
+      },
+      {
+        "label": "account recovery security"
+      }
+    ],
+    "postQuantumPosture": "plausible",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "client-side-secret",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "medium",
+    "metadataLeaks": [
+      {
+        "label": "account existence"
+      },
+      {
+        "label": "login timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "password-authenticated-key-exchange",
     "name": "Password-Authenticated Key Exchange",
     "category": "Protocols",
@@ -1831,6 +2531,58 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "private-machine-learning-analytics",
+    "name": "Private Machine Learning Analytics",
+    "category": "Systems",
+    "level": "system",
+    "pageLink": "/docs/case-studies/private-machine-learning-analytics",
+    "shortIntuition": "Private analytics combines aggregation, computation, and release controls so model or metric outputs reveal less about individuals.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "input privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "aggregate disclosure"
+      },
+      {
+        "label": "bounded output leakage",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "privacy for small cohorts",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "fairness guarantees"
+      },
+      {
+        "label": "correctness of model interpretation"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "participation",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "cohort membership"
+      },
+      {
+        "label": "query timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "private-payments",
     "name": "Private Payments",
     "category": "Systems",
@@ -2122,6 +2874,45 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "recursive-proofs",
+    "name": "Recursive Proofs",
+    "category": "Proof systems",
+    "level": "proof-system",
+    "pageLink": "/docs/proof-systems/recursive-proofs",
+    "shortIntuition": "Verify proofs inside later proofs to compress a history of checks.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "proof aggregation"
+      },
+      {
+        "label": "accumulated verification"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "data availability"
+      },
+      {
+        "label": "automatic composition soundness",
+        "href": "/docs/glossary#soundness"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "proof chain length"
+      },
+      {
+        "label": "public state roots"
+      }
+    ]
+  },
+  {
     "id": "reveal-only-a-function",
     "name": "Reveal Only a Function",
     "category": "design-pattern",
@@ -2320,6 +3111,50 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "secure-messaging",
+    "name": "Secure Messaging",
+    "category": "Systems",
+    "level": "system",
+    "pageLink": "/docs/case-studies/secure-messaging",
+    "shortIntuition": "Messaging systems combine channels, ratchets, identity keys, delivery, devices, and metadata policy.",
+    "maturity": "deployed",
+    "securityGoals": [
+      {
+        "label": "message confidentiality",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "forward secrecy"
+      },
+      {
+        "label": "participant authentication"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "complete metadata privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "guaranteed deletion"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "contact graph"
+      },
+      {
+        "label": "timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "snarks-starks-bulletproofs",
     "name": "SNARKs, STARKs, and Bulletproofs",
     "category": "proof-system-family",
@@ -2368,6 +3203,48 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "verification-context",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "sumcheck",
+    "name": "Sumcheck",
+    "category": "Proof systems",
+    "level": "proof-system",
+    "pageLink": "/docs/proof-systems/sumcheck",
+    "shortIntuition": "Prove a large polynomial sum using smaller randomized polynomial checks.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "sum soundness",
+        "href": "/docs/glossary#soundness"
+      },
+      {
+        "label": "verifier efficiency"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "zero knowledge by itself",
+        "href": "/docs/glossary#zero-knowledge"
+      },
+      {
+        "label": "witness commitment by itself",
+        "href": "/docs/glossary#commitment"
+      }
+    ],
+    "postQuantumPosture": "plausible",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "public-verifiability",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "public relation"
+      },
+      {
+        "label": "transcript size",
         "href": "/docs/appendices/metadata-leakage"
       }
     ]
@@ -2466,6 +3343,52 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "recovery-events"
+      }
+    ]
+  },
+  {
+    "id": "threshold-issuance",
+    "name": "Threshold Issuance",
+    "category": "Design patterns",
+    "level": "design-pattern",
+    "pageLink": "/docs/design-patterns/threshold-issuance",
+    "shortIntuition": "Multiple issuers jointly authorize a token or credential so no single issuer can mint alone.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "distributed authorization"
+      },
+      {
+        "label": "issuer compromise tolerance"
+      },
+      {
+        "label": "rate-limit enforcement support"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "trustlessness"
+      },
+      {
+        "label": "revocation by itself"
+      },
+      {
+        "label": "protection from colluding issuers above threshold"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "t-of-n-threshold",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "issuer participation",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "issuance timing",
+        "href": "/docs/appendices/metadata-leakage"
       }
     ]
   },
@@ -2699,6 +3622,87 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "participant-availability"
+      }
+    ]
+  },
+  {
+    "id": "verifiable-encryption",
+    "name": "Verifiable Encryption",
+    "category": "Structured primitives",
+    "level": "structured-primitive",
+    "pageLink": "/docs/structured-primitives/verifiable-encryption",
+    "shortIntuition": "Encrypt a value and prove that the hidden plaintext satisfies a statement.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "plaintext confidentiality",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "statement verification"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "fair decryption"
+      },
+      {
+        "label": "metadata privacy",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "ciphertext size",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "recipient"
+      }
+    ]
+  },
+  {
+    "id": "verifiable-random-functions",
+    "name": "Verifiable Random Functions",
+    "category": "Structured primitives",
+    "level": "structured-primitive",
+    "pageLink": "/docs/structured-primitives/verifiable-random-functions",
+    "shortIntuition": "A secret key produces pseudorandom output with a public proof of correct evaluation.",
+    "maturity": "deployed",
+    "securityGoals": [
+      {
+        "label": "pseudorandomness"
+      },
+      {
+        "label": "public verifiability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "unbiased randomness beacon"
+      },
+      {
+        "label": "anonymity",
+        "href": "/docs/glossary#anonymity"
+      }
+    ],
+    "postQuantumPosture": "vulnerable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "public key"
+      },
+      {
+        "label": "input context",
+        "href": "/docs/appendices/metadata-leakage"
       }
     ]
   },

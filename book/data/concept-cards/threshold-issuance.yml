@@ -1,0 +1,54 @@
+id: threshold-issuance
+name: Threshold Issuance
+category: Design patterns
+level: design-pattern
+short_intuition: Multiple issuers jointly authorize a token or credential so no single issuer can mint alone.
+security_goals:
+  - distributed authorization
+  - issuer compromise tolerance
+  - rate-limit enforcement support
+assumptions:
+  - fewer than threshold issuers collude
+  - issuance transcript binds policy and subject
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: t-of-n-threshold
+  threshold: construction-specific
+  breaks_if:
+    - threshold shares are compromised
+    - issuance policy is not checked consistently
+    - partial signatures are replayed across contexts
+  setup:
+    - distributed key generation or share provisioning
+typical_uses:
+  - anonymous credentials
+  - anonymous tokens
+  - committee-controlled decryption or signing
+does_not_provide:
+  - trustlessness
+  - revocation by itself
+  - protection from colluding issuers above threshold
+composition_risks:
+  - unbound partial signatures
+  - availability loss when too few issuers respond
+metadata_leaks:
+  - issuer participation
+  - issuance timing
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Usually paired with spent-token sets, status registries, accumulators, or epoch keys.
+operational_failure_modes:
+  - bad DKG ceremony
+  - partial-signature equivocation
+  - inconsistent policy enforcement
+maturity: emerging
+related:
+  - threshold-cryptography
+  - blind-signature-credentials
+  - anonymous-tokens
+references:
+  - rfc9591-frost
+  - camenisch-lysyanskaya-credentials

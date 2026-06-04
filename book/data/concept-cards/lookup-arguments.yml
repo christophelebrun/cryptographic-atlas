@@ -1,0 +1,48 @@
+id: lookup-arguments
+name: Lookup Arguments
+category: Proof systems
+level: proof-system
+short_intuition: Prove witnessed values appear in an approved table.
+security_goals:
+  - table membership
+  - efficient constraints
+assumptions:
+  - table commitment is correct
+  - multiplicities are handled soundly
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: public-verifiability
+  threshold: null
+  breaks_if:
+    - wrong table is used
+    - duplicate handling is unsound
+  setup:
+    - table commitment or fixed table
+typical_uses:
+  - range checks
+  - VM opcode checks
+does_not_provide:
+  - correct table semantics
+  - privacy for public lookups
+composition_risks:
+  - table-version mismatch
+  - lookup value leakage
+metadata_leaks:
+  - public table
+  - lookup pattern
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Bad tables require circuit and verifier-key migration.
+operational_failure_modes:
+  - wrong table
+  - multiplicity bug
+maturity: emerging
+related:
+  - arithmetization
+  - range-proof
+references:
+  - gabizon-williamson-plookup
+  - plonk

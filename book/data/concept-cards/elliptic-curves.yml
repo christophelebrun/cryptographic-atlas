@@ -1,0 +1,51 @@
+id: elliptic-curves
+name: Elliptic Curves
+category: Assumptions and substrates
+level: mathematical-assumption
+short_intuition: Efficient finite groups for discrete-logarithm-based signatures, key exchange, and commitments.
+security_goals:
+  - discrete-logarithm hardness
+  - compact public-key operations
+assumptions:
+  - reviewed curve parameters
+  - correct point validation and encodings
+requires_trusted_setup: false
+post_quantum: false
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
+  threshold: null
+  breaks_if:
+    - discrete logarithms become easy
+    - invalid points or subgroups are accepted
+  setup:
+    - public curve parameters
+typical_uses:
+  - signatures
+  - key exchange
+  - commitments
+does_not_provide:
+  - post-quantum security
+  - endpoint authentication
+composition_risks:
+  - ambiguous encodings
+  - missing transcript binding
+metadata_leaks:
+  - public keys
+  - curve suite choices
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Key revocation is handled by certificates, key directories, or application policy.
+operational_failure_modes:
+  - nonce reuse
+  - invalid-curve attacks
+maturity: mature
+related:
+  - discrete-logarithm
+  - pairings
+references:
+  - rfc7748-curves
+  - rfc8032-eddsa
+  - nist-fips-186-5
+  - shor-quantum-factoring

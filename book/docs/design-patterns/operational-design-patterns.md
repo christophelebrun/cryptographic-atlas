@@ -3,8 +3,8 @@ title: Operational Design Patterns
 type: pattern
 level: design-pattern
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: mature
@@ -19,7 +19,7 @@ confidence_model:
 
 # Operational Design Patterns
 
-These design patterns are not single primitives. They are recurring ways to compose primitives, bind context, and manage cryptographic state over time.
+These design patterns are recurring ways to compose primitives, bind context, and manage cryptographic state over time. This page is now a routing overview.
 
 This is a grouped overview. [Domain Separation](/docs/design-patterns/domain-separation), [Transcript Binding](/docs/design-patterns/transcript-binding), and [Privacy-Preserving Revocation](/docs/design-patterns/privacy-preserving-revocation) now have standalone pages.
 
@@ -27,12 +27,12 @@ This is a grouped overview. [Domain Separation](/docs/design-patterns/domain-sep
 
 | Pattern | Main purpose | Common building blocks | Main failure |
 | --- | --- | --- | --- |
-| Encrypt-then-prove | Prove a statement about encrypted data | encryption, commitments, ZKPs | proof not bound to ciphertext or recipient |
-| Threshold issuance | Avoid one issuer/key having unilateral power | threshold signatures, MPC, DKG | quorum collusion or availability failure |
+| [Encrypt-then-prove](/docs/design-patterns/encrypt-then-prove) | Prove a statement about encrypted data | encryption, commitments, ZKPs | proof not bound to ciphertext or recipient |
+| [Threshold issuance](/docs/design-patterns/threshold-issuance) | Avoid one issuer/key having unilateral power | threshold signatures, MPC, DKG | quorum collusion or availability failure |
 | [Privacy-preserving revocation](/docs/design-patterns/privacy-preserving-revocation) | Revoke access or credentials without tracking everyone | accumulators, status lists, ZKPs | revocation checks become tracking beacons |
 | [Domain separation](/docs/design-patterns/domain-separation) | Prevent cross-protocol confusion | labels, transcript hashes, KDF contexts | reusing keys or hashes across domains |
 | [Transcript binding](/docs/design-patterns/transcript-binding) | Bind outputs to the full protocol transcript | KDFs, signatures, Fiat-Shamir, AEAD associated data | omitting identities, algorithms, or public inputs |
-| Key rotation and migration | Replace keys or algorithms over time | versioning, re-encryption, signatures, KDFs | stale keys, downgrade, or split trust roots |
+| [Key rotation and migration](/docs/design-patterns/key-rotation-and-migration) | Replace keys or algorithms over time | versioning, re-encryption, signatures, KDFs | stale keys, downgrade, or split trust roots |
 
 ## Encrypt-then-prove
 
@@ -224,13 +224,16 @@ Confidence depends on the pattern: public-verifiability for transcripts and proo
 - [Composability](/docs/taxonomy/composability)
 - [Authenticated Encryption](/docs/primitives/authenticated-encryption)
 - [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography)
+- [Encrypt-then-prove](/docs/design-patterns/encrypt-then-prove)
+- [Threshold Issuance](/docs/design-patterns/threshold-issuance)
+- [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration)
 - [Additional Security Goals](/docs/taxonomy/additional-security-goals)
 - [Post-Quantum Posture](/docs/appendices/post-quantum-posture)
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
-- RFC 8446, "The Transport Layer Security (TLS) Protocol Version 1.3."
-- RFC 9380, "Hashing to Elliptic Curves."
-- NIST SP 800-57, "Recommendation for Key Management."
+- Boneh and Shoup, ["A Graduate Course in Applied Cryptography"](https://toc.cryptobook.us/).
+- Canetti, ["Universally Composable Security; A New Paradigm for Cryptographic Protocols"](https://eprint.iacr.org/2000/067).
+- RFC 8446, ["The Transport Layer Security (TLS) Protocol Version 1.3"](https://www.rfc-editor.org/rfc/rfc8446).
+- RFC 9380, ["Hashing to Elliptic Curves"](https://www.rfc-editor.org/rfc/rfc9380).
+- NIST SP 800-57, ["Recommendation for Key Management"](https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final).

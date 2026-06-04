@@ -22,6 +22,27 @@ rows:
       inherited_risk: aggregation mechanism, cohort size, validity checks
       metadata_boundary: participation, output value, repeated releases
       deployment_caution: small groups and differencing attacks dominate many failures
+  - concept: Encrypt-then-prove
+    values:
+      level: design pattern
+      primary_goal: prove validity of encrypted data without revealing the plaintext
+      inherited_risk: encryption, proof statement, recipient-key binding, and transcript context
+      metadata_boundary: proof timing, recipient key, public inputs
+      deployment_caution: bind the proof to the exact ciphertext, key, and application context
+  - concept: Threshold issuance
+    values:
+      level: design pattern
+      primary_goal: require multiple issuers to authorize tokens, credentials, or signatures
+      inherited_risk: DKG or share provisioning, quorum policy, issuer availability
+      metadata_boundary: issuer participation and issuance timing
+      deployment_caution: threshold control is not trustlessness when operators collude
+  - concept: Key rotation and migration
+    values:
+      level: design pattern
+      primary_goal: replace keys or algorithms without silent downgrade or continuity loss
+      inherited_risk: trust roots, inventory accuracy, client enforcement, version policy
+      metadata_boundary: supported versions and migration timing
+      deployment_caution: dual-stack periods often preserve the weakest accepted algorithm
   - concept: Delayed reveal
     values:
       level: design pattern
@@ -36,6 +57,34 @@ rows:
       inherited_risk: credentials, nullifiers, ballot encryption, proofs, tallying
       metadata_boundary: wallet funding, submission timing, public discussion
       deployment_caution: not coercion-resistant by default
+  - concept: Secure messaging
+    values:
+      level: system
+      primary_goal: protect message contents and session keys across devices and compromise windows
+      inherited_risk: secure channels, ratchets, key directories, backups, endpoint security
+      metadata_boundary: contact graph, delivery timing, device list
+      deployment_caution: endpoint compromise and plaintext backup policy often dominate
+  - concept: Identity wallets
+    values:
+      level: system
+      primary_goal: hold credentials and present claims with selective disclosure
+      inherited_risk: issuer trust, holder-device secrets, verifier policy, revocation mechanism
+      metadata_boundary: presentation timing, verifier identity, status checks
+      deployment_caution: rare attributes and online revocation can re-identify holders
+  - concept: Encrypted mempools
+    values:
+      level: system
+      primary_goal: hide transaction contents before ordering or reveal
+      inherited_risk: threshold encryption, sequencing, censorship resistance, key release
+      metadata_boundary: sender network path, size, timing, inclusion status
+      deployment_caution: encryption cannot prevent censorship or metadata-based ordering alone
+  - concept: Private machine-learning analytics
+    values:
+      level: system
+      primary_goal: learn aggregates, model updates, or metrics with reduced exposure of raw inputs
+      inherited_risk: secure aggregation, MPC, HE, differential privacy, cohort policy
+      metadata_boundary: participation, cohort membership, output releases
+      deployment_caution: outputs, repeated queries, and small cohorts can defeat cryptographic input privacy
   - concept: Anonymous airdrop
     values:
       level: system

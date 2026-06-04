@@ -58,7 +58,7 @@
     },
     "coverage_depth": {
       "type": "string",
-      "enum": ["standalone", "grouped-first-pass", "overview", "reference", "not-applicable"]
+      "enum": ["standalone", "grouped-first-pass", "routing-overview", "overview", "reference", "not-applicable"]
     },
     "last_reviewed": {
       "anyOf": [

@@ -1,0 +1,48 @@
+id: sumcheck
+name: Sumcheck
+category: Proof systems
+level: proof-system
+short_intuition: Prove a large polynomial sum using smaller randomized polynomial checks.
+security_goals:
+  - sum soundness
+  - verifier efficiency
+assumptions:
+  - degree bounds are correct
+  - verifier challenges are unpredictable
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: public-verifiability
+  threshold: null
+  breaks_if:
+    - degree accounting is wrong
+    - transcript challenges are reused
+  setup:
+    - finite field and relation
+typical_uses:
+  - interactive proofs
+  - folding systems
+does_not_provide:
+  - zero knowledge by itself
+  - witness commitment by itself
+composition_risks:
+  - weak Fiat-Shamir transformation
+  - unbound witness values
+metadata_leaks:
+  - public relation
+  - transcript size
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Not applicable; parameters can be deprecated.
+operational_failure_modes:
+  - wrong field
+  - ambiguous transcript
+maturity: mature
+related:
+  - arithmetization
+  - folding-schemes
+references:
+  - lund-sumcheck
+  - goldwasser-kalai-rothblum-gkr

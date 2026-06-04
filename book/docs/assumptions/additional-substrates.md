@@ -3,8 +3,8 @@ title: Additional Assumptions and Substrates
 type: assumption
 level: assumption
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: not-applicable
@@ -19,17 +19,17 @@ confidence_model:
 
 # Additional Assumptions and Substrates
 
-This page covers substrate and model concepts that appear across concrete schemes but are not always standalone security goals or primitives.
+This page is now a routing overview for substrate and model concepts that appear across concrete schemes.
 
 ## Classification matrix
 
 | Concept | Level | Typical role | Post-quantum posture |
 | --- | --- | --- | --- |
-| Elliptic curves | mathematical assumption / substrate | Groups for signatures, key agreement, commitments, pairings | vulnerable for discrete-log-based uses |
+| [Elliptic curves](/docs/assumptions/elliptic-curves) | mathematical assumption / substrate | Groups for signatures, key agreement, commitments, pairings | vulnerable for discrete-log-based uses |
 | Finite-field groups | mathematical assumption / substrate | Diffie-Hellman, Schnorr-style protocols, classically deployed groups | vulnerable |
-| Code-based assumptions | mathematical assumption | Post-quantum encryption and key encapsulation candidates | plausible, scheme-dependent |
+| [Code-based assumptions](/docs/assumptions/code-based-assumptions) | mathematical assumption | Post-quantum encryption and key encapsulation candidates | plausible, scheme-dependent |
 | Hash-to-curve | substrate / encoding method | Maps arbitrary strings into curve/group elements | depends on target group and encoding |
-| Common reference strings | setup assumption | Public parameters for proofs, commitments, and protocols | depends on generation model |
+| [Common reference strings](/docs/assumptions/common-reference-strings) | setup assumption | Public parameters for proofs, commitments, and protocols | depends on generation model |
 | Standard model vs random oracle | proof model distinction | Explains whether a proof idealizes a hash function | not-applicable to the distinction itself |
 
 ## Elliptic curves as a substrate
@@ -167,15 +167,18 @@ These concepts have different confidence models: mathematical-assumption for cur
 ## Related concepts
 
 - [Discrete Logarithm](/docs/assumptions/discrete-logarithm)
+- [Elliptic Curves](/docs/assumptions/elliptic-curves)
+- [Code-Based Assumptions](/docs/assumptions/code-based-assumptions)
 - [Pairings](/docs/assumptions/pairings)
 - [Lattices](/docs/assumptions/lattices)
 - [Random Oracle Model](/docs/assumptions/random-oracle-model)
 - [Trusted Setup](/docs/assumptions/trusted-setup)
+- [Common Reference Strings](/docs/assumptions/common-reference-strings)
 
 ## Further reading
 
-- RFC 7748, "Elliptic Curves for Security."
-- RFC 7919, "Negotiated Finite Field Diffie-Hellman Ephemeral Parameters for TLS."
-- RFC 9380, "Hashing to Elliptic Curves."
-- Bellare and Rogaway, "Random Oracles are Practical."
-- NIST, "Post-Quantum Cryptography Project."
+- RFC 7748, ["Elliptic Curves for Security"](https://www.rfc-editor.org/rfc/rfc7748).
+- RFC 7919, ["Negotiated Finite Field Diffie-Hellman Ephemeral Parameters for TLS"](https://www.rfc-editor.org/rfc/rfc7919).
+- RFC 9380, ["Hashing to Elliptic Curves"](https://www.rfc-editor.org/rfc/rfc9380).
+- Bellare and Rogaway, ["Random Oracles are Practical"](https://cseweb.ucsd.edu/~mihir/papers/ro.pdf).
+- NIST, ["Post-Quantum Cryptography Project"](https://csrc.nist.gov/Projects/post-quantum-cryptography).

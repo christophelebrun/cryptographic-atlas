@@ -29,3 +29,45 @@ rows:
       common_risk: discrete-logarithm assumptions and heavier verification for large statements
       post_quantum_posture: vulnerable in common discrete-logarithm constructions
       maturity: mature
+  - concept: FRI
+    values:
+      setup: transparent
+      common_strength: scalable low-degree testing for STARK-style systems
+      common_risk: parameter, field, query, and hash choices drive soundness and size
+      post_quantum_posture: plausible when instantiated with conservative hashes and parameters
+      maturity: emerging
+  - concept: Folding schemes
+    values:
+      setup: construction-specific
+      common_strength: incrementally combine repeated computation claims
+      common_risk: fast-moving security analysis and accumulator-finalization details
+      post_quantum_posture: depends on commitment and proof-system assumptions
+      maturity: research to emerging
+  - concept: Recursive proofs
+    values:
+      setup: inherited from the inner and outer proof systems
+      common_strength: aggregate or chain proofs by verifying proofs inside proofs
+      common_risk: transcript binding, verification-key binding, and field-cycle constraints
+      post_quantum_posture: depends on every recursive layer
+      maturity: emerging
+  - concept: Lookup arguments
+    values:
+      setup: inherited from the arithmetization and commitment scheme
+      common_strength: efficient range, table, and opcode checks
+      common_risk: table versioning, multiplicities, and leaked lookup values
+      post_quantum_posture: depends on the enclosing proof system
+      maturity: emerging
+  - concept: Sumcheck
+    values:
+      setup: transparent as an interactive protocol component
+      common_strength: reduces large polynomial sum claims to small checks
+      common_risk: wrong degree bounds, field sizes, or Fiat-Shamir transcript binding
+      post_quantum_posture: plausible when paired with post-quantum commitments and hashes
+      maturity: mature component
+  - concept: Arithmetization
+    values:
+      setup: not a setup model; it defines the statement representation
+      common_strength: turns computation into checkable constraints or polynomial identities
+      common_risk: underconstrained circuits or traces prove the wrong program
+      post_quantum_posture: not applicable by itself
+      maturity: mature concept, implementation-specific

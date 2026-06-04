@@ -3,8 +3,8 @@ title: Proof-System Components
 type: appendix
 level: proof-system
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: advanced
 maturity: emerging
@@ -19,19 +19,19 @@ confidence_model:
 
 # Proof-System Components
 
-Modern proof systems are assembled from lower-level components. This page gives readers a map of the components that often appear inside SNARKs, STARKs, rollups, and recursive proving systems.
+Modern proof systems are assembled from lower-level components. This page is now a routing overview for components that often appear inside SNARKs, STARKs, rollups, and recursive proving systems.
 
 ## Component matrix
 
 | Component | Level | Typical role | Main caution |
 | --- | --- | --- | --- |
-| Polynomial commitments | structured primitive / proof-system component | Commit to polynomial witnesses and prove evaluations | Setup and assumption model vary sharply. |
-| FRI | proof-system component | Prove low-degree structure in transparent proof systems | Parameter and hash choices drive soundness and size. |
-| Folding schemes | proof-system component | Combine repeated computations or instances incrementally | Still fast-moving and construction-specific. |
-| Recursive proofs | proof-system technique | Verify proofs inside other proofs | Security depends on cycles, transcript binding, and soundness composition. |
-| Lookup arguments | proof-system component | Prove values belong to a table | Table commitments and multiplicity rules are subtle. |
-| Sumcheck | proof-system component | Reduce claims about large sums to smaller checks | Soundness depends on field, degree, and verifier challenges. |
-| Arithmetization | proof-system representation | Encode computation as constraints, circuits, traces, or polynomials | Bugs here prove the wrong program. |
+| [Polynomial commitments](/docs/structured-primitives/polynomial-commitments) | structured primitive / proof-system component | Commit to polynomial witnesses and prove evaluations | Setup and assumption model vary sharply. |
+| [FRI](/docs/proof-systems/fri) | proof-system component | Prove low-degree structure in transparent proof systems | Parameter and hash choices drive soundness and size. |
+| [Folding schemes](/docs/proof-systems/folding-schemes) | proof-system component | Combine repeated computations or instances incrementally | Still fast-moving and construction-specific. |
+| [Recursive proofs](/docs/proof-systems/recursive-proofs) | proof-system technique | Verify proofs inside other proofs | Security depends on cycles, transcript binding, and soundness composition. |
+| [Lookup arguments](/docs/proof-systems/lookup-arguments) | proof-system component | Prove values belong to a table | Table commitments and multiplicity rules are subtle. |
+| [Sumcheck](/docs/proof-systems/sumcheck) | proof-system component | Reduce claims about large sums to smaller checks | Soundness depends on field, degree, and verifier challenges. |
+| [Arithmetization](/docs/proof-systems/arithmetization) | proof-system representation | Encode computation as constraints, circuits, traces, or polynomials | Bugs here prove the wrong program. |
 
 ## Polynomial commitments
 
@@ -192,15 +192,21 @@ Confidence comes from public-verifiability, mathematical assumptions, transcript
 
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
 - [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs)
+- [FRI](/docs/proof-systems/fri)
+- [Folding Schemes](/docs/proof-systems/folding-schemes)
+- [Arithmetization](/docs/proof-systems/arithmetization)
+- [Sumcheck](/docs/proof-systems/sumcheck)
+- [Recursive Proofs](/docs/proof-systems/recursive-proofs)
+- [Lookup Arguments](/docs/proof-systems/lookup-arguments)
 - [Advanced Structured Primitives](/docs/structured-primitives/advanced-structured-primitives)
 - [ZK Rollups](/docs/case-studies/zk-rollups)
 
 ## Further reading
 
-- Lund, Fortnow, Karloff, and Nisan, "Algebraic Methods for Interactive Proof Systems."
-- Ben-Sasson et al., "Fast Reed-Solomon Interactive Oracle Proofs of Proximity."
-- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
-- Kate, Zaverucha, and Goldberg, "Constant-Size Commitments to Polynomials and Their Applications."
-- Gabizon and Williamson, "Plookup: A Simplified Polynomial Protocol for Lookup Tables."
-- Bowe, Grigg, and Hopwood, "Halo."
-- Kothapalli, Setty, and Tzialla, "Nova."
+- Lund, Fortnow, Karloff, and Nisan, ["Algebraic Methods for Interactive Proof Systems"](https://dl.acm.org/doi/10.1145/146585.146605).
+- Ben-Sasson et al., ["Fast Reed-Solomon Interactive Oracle Proofs of Proximity"](https://eccc.weizmann.ac.il/report/2017/134/).
+- Bünz et al., ["Bulletproofs: Short Proofs for Confidential Transactions and More"](https://eprint.iacr.org/2017/1066).
+- Kate, Zaverucha, and Goldberg, ["Constant-Size Commitments to Polynomials and Their Applications"](https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf).
+- Gabizon and Williamson, ["Plookup: A Simplified Polynomial Protocol for Lookup Tables"](https://eprint.iacr.org/2020/315).
+- Bowe, Grigg, and Hopwood, ["Halo"](https://eprint.iacr.org/2019/1021).
+- Kothapalli, Setty, and Tzialla, ["Nova"](https://eprint.iacr.org/2021/370).

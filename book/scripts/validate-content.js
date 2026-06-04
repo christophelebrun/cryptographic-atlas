@@ -23,6 +23,7 @@ const validators = {
   relationships: ajv.compile(loadJson(path.join(schemasDir, 'relationships.schema.json'))),
   comparisonMatrix: ajv.compile(loadJson(path.join(schemasDir, 'comparison-matrix.schema.json'))),
   instances: ajv.compile(loadJson(path.join(schemasDir, 'instances.schema.json'))),
+  sourceFreshness: ajv.compile(loadJson(path.join(schemasDir, 'source-freshness.schema.json'))),
   diagram: ajv.compile(loadJson(path.join(schemasDir, 'diagram.schema.json'))),
 };
 
@@ -229,6 +230,24 @@ for (const {file, reference} of conceptCardReferences) {
   if (!referenceIds.has(reference)) {
     errors.push(`${relative(file)}: unknown reference id "${reference}"`);
   }
+}
+
+const sourceFreshnessFile = path.join(dataDir, 'source-freshness.yml');
+if (fs.existsSync(sourceFreshnessFile)) {
+  const freshness = parseYaml(sourceFreshnessFile);
+  validateObject(sourceFreshnessFile, freshness, validators.sourceFreshness);
+  const clusterIds = new Set();
+  for (const cluster of freshness.clusters || []) {
+    if (clusterIds.has(cluster.id)) errors.push(`${relative(sourceFreshnessFile)}: duplicate cluster id "${cluster.id}"`);
+    clusterIds.add(cluster.id);
+    for (const reference of cluster.reference_ids || []) {
+      if (!referenceIds.has(reference)) {
+        errors.push(`${relative(sourceFreshnessFile)}: cluster "${cluster.id}" references unknown reference "${reference}"`);
+      }
+    }
+  }
+} else {
+  errors.push('data/source-freshness.yml: missing source freshness registry');
 }
 
 const instancesFile = path.join(dataDir, 'instances.yml');

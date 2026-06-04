@@ -3,8 +3,8 @@ title: Advanced Structured Primitives
 type: primitive
 level: structured-primitive
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
@@ -19,7 +19,7 @@ confidence_model:
 
 # Advanced Structured Primitives
 
-These primitives add structure beyond basic encryption, signatures, commitments, or hashes. They are common in credentials, randomness, e-cash, rollups, and private payment systems.
+This page is now a routing overview for primitives that add structure beyond basic encryption, signatures, commitments, or hashes.
 
 This is a grouped overview. [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments) and [Vector Commitments](/docs/structured-primitives/vector-commitments) now have standalone pages because their assumptions and failure modes are important enough to track separately.
 
@@ -27,12 +27,12 @@ This is a grouped overview. [Polynomial Commitments](/docs/structured-primitives
 
 | Concept | Level | Typical role | Main caution |
 | --- | --- | --- | --- |
-| Verifiable random functions (VRFs) | structured primitive | Publicly verifiable pseudorandom output from a secret key | Usually signature-like and scheme-specific. |
-| Blind signatures | structured primitive | Signer authorizes a hidden message | Blindness does not imply unlinkable spending by itself. |
+| [Verifiable random functions (VRFs)](/docs/structured-primitives/verifiable-random-functions) | structured primitive | Publicly verifiable pseudorandom output from a secret key | Usually signature-like and scheme-specific. |
+| [Blind signatures](/docs/structured-primitives/blind-signatures) | structured primitive | Signer authorizes a hidden message | Blindness does not imply unlinkable spending by itself. |
 | [Polynomial commitments](/docs/structured-primitives/polynomial-commitments) | structured primitive / proof-system building block | Commit to a polynomial and open evaluations | Setup, pairing, or transcript assumptions vary. |
 | [Vector commitments](/docs/structured-primitives/vector-commitments) | structured primitive | Commit to indexed values with compact openings | Update, non-membership, and setup models differ. |
-| Verifiable encryption | structured primitive | Encrypt while proving something about the plaintext | Easy to prove the wrong statement or leak metadata. |
-| E-cash primitives | structured primitive family | Issue, transfer, and redeem digital coins with privacy controls | Double-spend handling and issuer trust dominate. |
+| [Verifiable encryption](/docs/structured-primitives/verifiable-encryption) | structured primitive | Encrypt while proving something about the plaintext | Easy to prove the wrong statement or leak metadata. |
+| [E-cash primitives](/docs/structured-primitives/e-cash-primitives) | structured primitive family | Issue, transfer, and redeem digital coins with privacy controls | Double-spend handling and issuer trust dominate. |
 
 ## Verifiable random functions
 
@@ -175,15 +175,19 @@ Confidence varies: mathematical-assumption for core schemes, public-verifiabilit
 
 - [Commitments](/docs/primitives/commitments)
 - [Accumulators and Merkle Trees](/docs/structured-primitives/accumulators-and-merkle-trees)
+- [Blind Signatures](/docs/structured-primitives/blind-signatures)
+- [Verifiable Random Functions](/docs/structured-primitives/verifiable-random-functions)
+- [Verifiable Encryption](/docs/structured-primitives/verifiable-encryption)
+- [E-cash Primitives](/docs/structured-primitives/e-cash-primitives)
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
 - [Private Payments](/docs/case-studies/private-payments)
-- [Anonymous Tokens](/docs/protocols/additional-protocol-families#anonymous-tokens)
+- [Anonymous Tokens](/docs/protocols/anonymous-tokens)
 
 ## Further reading
 
-- Micali, Rabin, and Vadhan, "Verifiable Random Functions."
-- Chaum, "Blind Signatures for Untraceable Payments."
-- Kate, Zaverucha, and Goldberg, "Constant-Size Commitments to Polynomials and Their Applications."
-- Catalano and Fiore, "Vector Commitments and Their Applications."
-- Camenisch and Shoup, "Practical Verifiable Encryption and Decryption of Discrete Logarithms."
-- Chaum, Fiat, and Naor, "Untraceable Electronic Cash."
+- Micali, Rabin, and Vadhan, ["Verifiable Random Functions"](https://people.seas.harvard.edu/~salil/research/VRF-abs.html).
+- Chaum, ["Blind Signatures for Untraceable Payments"](https://www.chaum.com/publications/Chaum-blind-signatures.PDF).
+- Kate, Zaverucha, and Goldberg, ["Constant-Size Commitments to Polynomials and Their Applications"](https://www.iacr.org/archive/asiacrypt2010/6477178/6477178.pdf).
+- Catalano and Fiore, ["Vector Commitments and Their Applications"](https://eprint.iacr.org/2011/495).
+- Camenisch and Shoup, ["Practical Verifiable Encryption and Decryption of Discrete Logarithms"](https://www.shoup.net/papers/verenc.pdf).
+- Chaum, Fiat, and Naor, ["Untraceable Electronic Cash"](https://www.wisdom.weizmann.ac.il/~naor/PAPERS/chaum_fiat_naor.pdf).

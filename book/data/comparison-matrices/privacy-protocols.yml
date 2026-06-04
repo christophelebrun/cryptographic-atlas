@@ -15,6 +15,20 @@ rows:
       metadata_leaks: issuer-verifier collusion, rare attributes, revocation checks
       common_failure: revocation or verifier context tracks users
       maturity: emerging
+  - concept: Anonymous tokens
+    values:
+      main_privacy_goal: unlink issuance and redemption of authorization tokens
+      confidence_model: issuer policy plus blind signature, OPRF, or accumulator assumptions
+      metadata_leaks: issuance timing, redemption timing, transport identifiers
+      common_failure: token privacy defeated by browser, network, or verifier logs
+      maturity: emerging
+  - concept: Blind-signature credentials
+    values:
+      main_privacy_goal: authorize a credential without showing the issuer the eventual presentation token
+      confidence_model: trusted issuer plus blind-signature unforgeability and holder-secret policy
+      metadata_leaks: issuance metadata, presentation timing, revocation checks
+      common_failure: blind issuance treated as full anonymous credentials
+      maturity: emerging
   - concept: Nullifiers
     values:
       main_privacy_goal: one anonymous action per context
@@ -57,3 +71,10 @@ rows:
       metadata_leaks: timing, batch membership, message size
       common_failure: small batches or all mixes collude
       maturity: mature
+  - concept: Secure messaging
+    values:
+      main_privacy_goal: message-content confidentiality with forward secrecy and participant authentication
+      confidence_model: endpoint secrets, ratchet state, key directories, and server-delivery assumptions
+      metadata_leaks: contact graph, device list, timing, IP addresses
+      common_failure: endpoint compromise or plaintext backups defeat protocol guarantees
+      maturity: deployed

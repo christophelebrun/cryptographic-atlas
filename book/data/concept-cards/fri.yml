@@ -1,0 +1,48 @@
+id: fri
+name: FRI
+category: Proof systems
+level: proof-system
+short_intuition: A transparent low-degree proximity test used in STARK-style proof systems.
+security_goals:
+  - low-degree soundness
+  - transparent verification
+assumptions:
+  - conservative field and query parameters
+  - hash commitments bind layers
+requires_trusted_setup: false
+post_quantum: true
+post_quantum_posture: plausible
+confidence_model:
+  type: public-verifiability
+  threshold: null
+  breaks_if:
+    - parameters are weak
+    - transcript binding fails
+  setup:
+    - transparent public parameters
+typical_uses:
+  - STARKs
+  - rollups
+does_not_provide:
+  - zero knowledge by itself
+  - program correctness by itself
+composition_risks:
+  - bad arithmetization
+  - weak Fiat-Shamir transform
+metadata_leaks:
+  - public inputs
+  - proof size
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Parameter migration is required if soundness settings are deprecated.
+operational_failure_modes:
+  - weak query count
+  - wrong domain
+maturity: deployed
+related:
+  - snarks-starks-bulletproofs
+  - arithmetization
+references:
+  - ben-sasson-fri
+  - stark-integrity

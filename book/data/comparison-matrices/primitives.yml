@@ -50,6 +50,20 @@ rows:
       common_risk: key misbinding or unsafe raw encryption
       post_quantum_posture: depends on scheme
       implementation_risk: high
+  - concept: Password hashing
+    values:
+      primary_goal: make offline guessing of low-entropy secrets expensive
+      does_not_provide: high entropy, online rate limiting, or password-authenticated key exchange
+      common_risk: fast unsalted hashes, weak reset flows, or stale work factors
+      post_quantum_posture: plausible with current memory-hard parameters
+      implementation_risk: medium
+  - concept: Key-committing encryption
+    values:
+      primary_goal: bind ciphertext validity to the intended key or key commitment
+      does_not_provide: sender attribution, deniability, or metadata privacy by itself
+      common_risk: using non-committing AEAD where key ambiguity matters
+      post_quantum_posture: depends on the underlying encryption and authentication layers
+      implementation_risk: high
   - concept: Secret sharing
     values:
       primary_goal: threshold reconstruction and confidentiality below threshold

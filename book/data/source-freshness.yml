@@ -1,0 +1,123 @@
+clusters:
+  - id: zk-proof-systems
+    name: Zero-knowledge proof systems
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - proof-system-components
+      - snarks-starks-bulletproofs
+      - polynomial-commitments
+      - fri
+      - folding-schemes
+      - arithmetization
+      - sumcheck
+      - recursive-proofs
+      - lookup-arguments
+      - zk-rollups
+    reference_ids:
+      - stark-integrity
+      - groth16
+      - kate-zaverucha-goldberg-kzg
+      - ben-sasson-fri
+      - plonk
+      - gabizon-williamson-plookup
+      - bowe-grigg-hopwood-halo
+      - kothapalli-setty-tzialla-nova
+      - lund-sumcheck
+      - goldwasser-kalai-rothblum-gkr
+    notes: Proof-system families, recursion, folding, and rollup proving stacks move quickly.
+  - id: threshold-signing
+    name: Threshold signing and issuance
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - threshold-cryptography
+      - threshold-issuance
+      - secure-channels
+    reference_ids:
+      - shamir-secret-sharing
+      - rfc9591-frost
+      - canetti-uc
+    notes: Protocol variants and deployment guidance change as FROST and threshold custody mature.
+  - id: anonymous-credentials
+    name: Anonymous credentials and revocation
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - anonymous-credentials
+      - blind-signature-credentials
+      - privacy-preserving-revocation
+      - identity-wallets
+    reference_ids:
+      - camenisch-lysyanskaya-credentials
+      - w3c-vc-data-model-2
+      - w3c-bitstring-status-list
+      - rfc9576-privacy-pass
+    notes: Credential formats, revocation mechanisms, and selective-disclosure profiles are still evolving.
+  - id: private-payments
+    name: Private payments and ledger privacy
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - private-payments
+      - e-cash-primitives
+      - encrypted-mempools
+      - nullifiers
+    reference_ids:
+      - chaum-fiat-naor-ecash
+      - zerocash
+      - flash-boys-2
+    notes: Ledger metadata, wallet behavior, and ordering-layer designs change quickly.
+  - id: secure-channels
+    name: Secure channels and messaging
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - secure-channels
+      - secure-messaging
+      - transcript-binding
+    reference_ids:
+      - rfc8446-tls13
+      - rfc9180-hpke
+      - rfc9420-mls
+      - signal-x3dh
+      - signal-double-ratchet
+      - noise-framework
+    notes: Hybrid post-quantum profiles, messaging protocols, and metadata controls need periodic review.
+  - id: identity-wallets
+    name: Identity wallets and verifiable credentials
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - identity-wallets
+      - privacy-preserving-revocation
+      - blind-signature-credentials
+    reference_ids:
+      - w3c-vc-data-model-2
+      - w3c-bitstring-status-list
+      - rfc9576-privacy-pass
+    notes: VC 2.0 ecosystem profiles, status-list formats, wallets, and disclosure mechanisms are active areas.
+  - id: post-quantum-migration
+    name: Post-quantum migration
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - post-quantum-posture
+      - key-encapsulation-and-exchange
+      - digital-signatures
+      - secure-channels
+    reference_ids:
+      - nist-pqc-project
+      - nist-fips-203
+      - nist-fips-204
+      - nist-fips-205
+      - nist-hqc-selection
+      - nist-ir-8545
+    notes: NIST standardized ML-KEM, ML-DSA, and SLH-DSA in 2024; HQC was selected for future standardization in 2025, and FIPS 206 remains in development.

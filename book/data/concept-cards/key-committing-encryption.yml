@@ -1,0 +1,48 @@
+id: key-committing-encryption
+name: Key-Committing Encryption
+category: Basic primitives
+level: basic-primitive
+short_intuition: Ciphertexts should validate under one intended key context, not several plausible keys.
+security_goals:
+  - key commitment
+  - ciphertext integrity
+assumptions:
+  - committing property is proved for the scheme
+  - associated data binds context
+requires_trusted_setup: false
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: null
+  breaks_if:
+    - AEAD is not actually committing
+    - key context is omitted
+  setup:
+    - key and associated-data policy
+typical_uses:
+  - secure messaging
+  - abuse reporting
+does_not_provide:
+  - signatures
+  - sender identity
+composition_risks:
+  - weakening deniability
+  - treating key commitment as attribution
+metadata_leaks:
+  - key identifier
+  - report timing
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: scheme-dependent
+revocation_story: Key rotation must preserve evidence and privacy semantics explicitly.
+operational_failure_modes:
+  - non-committing AEAD
+  - missing associated data
+maturity: emerging
+related:
+  - authenticated-encryption
+  - secure-messaging
+references:
+  - grubbs-message-franking
+  - rogaway-shrimpton-dae

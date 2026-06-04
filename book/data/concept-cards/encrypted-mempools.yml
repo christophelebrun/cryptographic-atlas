@@ -1,0 +1,48 @@
+id: encrypted-mempools
+name: Encrypted Mempools
+category: Systems
+level: system
+short_intuition: Encrypt pending transactions until ordering or reveal rules reduce content-based front-running.
+security_goals:
+  - pre-order confidentiality
+  - ordering fairness support
+assumptions:
+  - decryption keys are released only after ordering
+  - encrypted submissions are not censored
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - committee colludes
+    - sequencer censors encrypted transactions
+  setup:
+    - threshold encryption keys or sequencing rules
+typical_uses:
+  - blockchain mempools
+  - MEV reduction
+does_not_provide:
+  - guaranteed inclusion
+  - network anonymity
+composition_risks:
+  - reveal griefing
+  - timing metadata
+metadata_leaks:
+  - sender network path
+  - transaction size
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Committee keys and sequencing rules need rotation and emergency handling.
+operational_failure_modes:
+  - early decryption
+  - committee unavailability
+maturity: emerging
+related:
+  - delayed-reveal
+  - threshold-issuance
+references:
+  - flash-boys-2
+  - canetti-uc

@@ -3,8 +3,8 @@ title: Primitive Engineering Concepts
 type: primitive
 level: basic-primitive
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: not-applicable
@@ -19,7 +19,7 @@ confidence_model:
 
 # Primitive Engineering Concepts
 
-These concepts explain recurring engineering risks around keys, passwords, nonces, and symmetric-key abstractions.
+This page is now a routing overview for recurring engineering risks around keys, passwords, nonces, and symmetric-key abstractions.
 
 ## Classification matrix
 
@@ -27,9 +27,9 @@ These concepts explain recurring engineering risks around keys, passwords, nonce
 | --- | --- | --- | --- |
 | Pseudorandom functions (PRFs) | basic primitive | Keyed deterministic function that looks random without the key | mature |
 | Pseudorandom permutations (PRPs) | basic primitive | Keyed reversible permutation, often block-cipher-like | mature |
-| Password hashing | basic primitive / storage pattern | Slows offline guessing of low-entropy secrets | widely deployed |
+| [Password hashing](/docs/primitives/password-hashing) | basic primitive / storage pattern | Slows offline guessing of low-entropy secrets | widely deployed |
 | Nonce-misuse-resistant encryption | basic primitive / scheme family | Reduces damage from accidental nonce reuse | mature but specialized |
-| Key-committing encryption | basic primitive / scheme property | Binds ciphertext validity to one key or key commitment | emerging |
+| [Key-committing encryption](/docs/primitives/key-committing-encryption) | basic primitive / scheme property | Binds ciphertext validity to one key or key commitment | emerging |
 
 ## Pseudorandom functions
 
@@ -152,13 +152,15 @@ Confidence comes from mathematical-assumption or symmetric-key security, paramet
 - [Hash Functions](/docs/primitives/hash-functions)
 - [Authenticated Encryption](/docs/primitives/authenticated-encryption)
 - [Key Derivation Functions](/docs/primitives/key-derivation-functions)
+- [Password Hashing](/docs/primitives/password-hashing)
+- [Key-Committing Encryption](/docs/primitives/key-committing-encryption)
 - [Randomness and Nonces](/docs/primitives/randomness-and-nonces)
 - [Secure Channels](/docs/protocols/secure-channels)
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- RFC 9106, "Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications."
-- RFC 8452, "AES-GCM-SIV: Nonce Misuse-Resistant Authenticated Encryption."
-- Rogaway and Shrimpton, "Deterministic Authenticated-Encryption."
-- Grubbs et al., "Message Franking via Committing Authenticated Encryption."
+- Boneh and Shoup, ["A Graduate Course in Applied Cryptography"](https://toc.cryptobook.us/).
+- RFC 9106, ["Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications"](https://www.rfc-editor.org/rfc/rfc9106).
+- RFC 8452, ["AES-GCM-SIV: Nonce Misuse-Resistant Authenticated Encryption"](https://www.rfc-editor.org/rfc/rfc8452).
+- Rogaway and Shrimpton, ["Deterministic Authenticated-Encryption"](https://web.cs.ucdavis.edu/~rogaway/papers/keywrap.pdf).
+- Grubbs et al., ["Message Franking via Committing Authenticated Encryption"](https://eprint.iacr.org/2017/664).

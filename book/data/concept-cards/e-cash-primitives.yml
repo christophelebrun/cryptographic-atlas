@@ -1,0 +1,49 @@
+id: e-cash-primitives
+name: E-Cash Primitives
+category: Structured primitives
+level: structured-primitive
+short_intuition: Issuance, spending, and duplicate-use controls for digital value with privacy goals.
+security_goals:
+  - issuer authenticity
+  - spending privacy
+  - double-spend control
+assumptions:
+  - issuer or ledger enforces value rules
+  - coin secrets remain secret
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - double-spend database fails
+    - issuance and redemption are linkable
+  setup:
+    - issuer key, ledger, or proof parameters
+typical_uses:
+  - private payments
+  - anonymous value tokens
+does_not_provide:
+  - solvency
+  - network anonymity
+composition_risks:
+  - linkable redemption
+  - weak serial-number design
+metadata_leaks:
+  - timing
+  - amount patterns
+implementation_risk: expert-only
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Spent serial numbers or nullifiers revoke coins from reuse.
+operational_failure_modes:
+  - issuer abuse
+  - small anonymity sets
+maturity: emerging
+related:
+  - private-payments
+  - blind-signatures
+references:
+  - chaum-fiat-naor-ecash
+  - zerocash

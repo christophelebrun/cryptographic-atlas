@@ -1,0 +1,48 @@
+id: verifiable-encryption
+name: Verifiable Encryption
+category: Structured primitives
+level: structured-primitive
+short_intuition: Encrypt a value and prove that the hidden plaintext satisfies a statement.
+security_goals:
+  - plaintext confidentiality
+  - statement verification
+assumptions:
+  - encryption and proof assumptions hold
+  - ciphertext and proof are bound together
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - proof references the wrong ciphertext
+    - decryptor refuses service
+  setup:
+    - recipient public key and proof parameters
+typical_uses:
+  - encrypted ballots
+  - dispute workflows
+does_not_provide:
+  - fair decryption
+  - metadata privacy
+composition_risks:
+  - weak statement design
+  - missing recipient binding
+metadata_leaks:
+  - ciphertext size
+  - recipient
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Decryption authority and key rotation are external policy.
+operational_failure_modes:
+  - wrong statement
+  - decryptor unavailability
+maturity: mature
+related:
+  - encrypt-then-prove
+  - zero-knowledge-proof
+references:
+  - camenisch-shoup-verifiable-encryption
+  - goldwasser-micali-rackoff-zk

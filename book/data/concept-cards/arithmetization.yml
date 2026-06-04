@@ -1,0 +1,49 @@
+id: arithmetization
+name: Arithmetization
+category: Proof systems
+level: proof-system
+short_intuition: Translate computation into algebraic constraints that a proof system checks.
+security_goals:
+  - statement precision
+  - constraint correctness
+assumptions:
+  - constraints match intended semantics
+  - public inputs are bound
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: public-verifiability
+  threshold: null
+  breaks_if:
+    - circuit is underconstrained
+    - ranges are omitted
+  setup:
+    - constraint system or trace definition
+typical_uses:
+  - ZK circuits
+  - rollup transitions
+does_not_provide:
+  - privacy for public inputs
+  - implementation correctness by itself
+composition_risks:
+  - proving the wrong program
+  - encoding mismatch
+metadata_leaks:
+  - public inputs
+  - circuit shape
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Buggy circuits need version migration and verifier-key replacement.
+operational_failure_modes:
+  - missing constraints
+  - wrong VM semantics
+maturity: mature
+related:
+  - lookup-arguments
+  - zk-rollups
+references:
+  - plonk
+  - stark-integrity
+  - goldwasser-kalai-rothblum-gkr

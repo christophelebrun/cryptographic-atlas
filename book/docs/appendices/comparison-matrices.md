@@ -19,6 +19,8 @@ confidence_model:
 
 These matrices are editorial shortcuts. They compare where to look first, not which construction to deploy.
 
+The manually maintained overview below is intentionally short. The reader-facing generated rendering of the full machine-readable YAML matrix data is [Generated Comparison Matrices](/docs/appendices/generated-comparison-matrices).
+
 ## Basic primitives
 
 | Primitive | Primary goal | Does not provide | Common risk |
@@ -58,3 +60,5 @@ The machine-readable versions live in:
 - `book/data/comparison-matrices/primitives.yml`
 - `book/data/comparison-matrices/privacy-protocols.yml`
 - `book/data/comparison-matrices/system-patterns.yml`
+
+Regenerate the reader-facing appendix with `npm run generate:comparison-matrices` from `book/`, or with `npm run generate` when updating all generated book assets.

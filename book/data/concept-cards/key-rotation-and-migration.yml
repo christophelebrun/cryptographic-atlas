@@ -1,0 +1,53 @@
+id: key-rotation-and-migration
+name: Key Rotation and Migration
+category: Design patterns
+level: design-pattern
+short_intuition: Systems move from old keys or algorithms to new ones without losing authentication, availability, or rollback safety.
+security_goals:
+  - compromise containment
+  - cryptographic agility
+  - rollback resistance
+assumptions:
+  - old and new trust anchors are bound explicitly
+  - clients enforce version and expiry policy
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: operational-control
+  threshold: null
+  breaks_if:
+    - legacy keys remain trusted indefinitely
+    - downgrade paths are accepted silently
+    - inventories miss deployed algorithms
+  setup:
+    - key inventories, migration policy, and versioned protocols
+typical_uses:
+  - certificate rollover
+  - post-quantum migration
+  - wallet or device recovery
+does_not_provide:
+  - automatic recovery from exposed plaintext
+  - security for clients that ignore migration rules
+composition_risks:
+  - dual-stack periods extend the weakest accepted algorithm
+  - old signatures may need archival validation rules
+metadata_leaks:
+  - version support
+  - migration timing
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: medium
+revocation_story: Rotation complements revocation; it does not prove old keys were never abused.
+operational_failure_modes:
+  - stale pinned keys
+  - split-brain trust roots
+  - incomplete asset inventory
+maturity: mature
+related:
+  - key-encapsulation-and-exchange
+  - secure-channels
+  - post-quantum-cryptography
+references:
+  - nist-sp-800-57
+  - nist-pqc-migration-project

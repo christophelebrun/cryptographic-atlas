@@ -1,0 +1,48 @@
+id: folding-schemes
+name: Folding Schemes
+category: Proof systems
+level: proof-system
+short_intuition: Fold many proof instances into a smaller accumulated claim.
+security_goals:
+  - incremental verification
+  - proof accumulation
+assumptions:
+  - folding relation is sound
+  - commitments bind accumulated state
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - finalization is wrong
+    - accumulator omits public inputs
+  setup:
+    - scheme-specific proof parameters
+typical_uses:
+  - recursive proofs
+  - long computations
+does_not_provide:
+  - universal SNARK replacement
+  - mature assumptions across schemes
+composition_risks:
+  - research-stage claims
+  - transcript ambiguity
+metadata_leaks:
+  - computation shape
+  - public inputs
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Not applicable; unsafe parameters require migration.
+operational_failure_modes:
+  - invalid accumulator
+  - wrong folded relation
+maturity: research
+related:
+  - recursive-proofs
+  - sumcheck
+references:
+  - bowe-grigg-hopwood-halo
+  - kothapalli-setty-tzialla-nova

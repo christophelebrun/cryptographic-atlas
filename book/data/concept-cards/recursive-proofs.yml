@@ -1,0 +1,48 @@
+id: recursive-proofs
+name: Recursive Proofs
+category: Proof systems
+level: proof-system
+short_intuition: Verify proofs inside later proofs to compress a history of checks.
+security_goals:
+  - proof aggregation
+  - accumulated verification
+assumptions:
+  - verifier circuit is correct
+  - prior proof and public inputs are bound
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - wrong verification key is used
+    - invalid state is accumulated
+  setup:
+    - recursive verifier parameters
+typical_uses:
+  - rollups
+  - proof aggregation
+does_not_provide:
+  - data availability
+  - automatic composition soundness
+composition_risks:
+  - stale verifier keys
+  - omitted public inputs
+metadata_leaks:
+  - proof chain length
+  - public state roots
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Verifier-key bugs require migration and rejection of affected proofs.
+operational_failure_modes:
+  - wrong verifier circuit
+  - non-native arithmetic bugs
+maturity: emerging
+related:
+  - folding-schemes
+  - zk-rollups
+references:
+  - bowe-grigg-hopwood-halo
+  - kothapalli-setty-tzialla-nova

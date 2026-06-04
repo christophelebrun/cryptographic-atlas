@@ -1,0 +1,48 @@
+id: verifiable-random-functions
+name: Verifiable Random Functions
+category: Structured primitives
+level: structured-primitive
+short_intuition: A secret key produces pseudorandom output with a public proof of correct evaluation.
+security_goals:
+  - pseudorandomness
+  - public verifiability
+assumptions:
+  - VRF key remains secret
+  - input domains are separated
+requires_trusted_setup: false
+post_quantum: false
+post_quantum_posture: vulnerable
+confidence_model:
+  type: mathematical-assumption
+  threshold: null
+  breaks_if:
+    - key holder withholds outputs
+    - inputs can be ground
+  setup:
+    - public VRF key
+typical_uses:
+  - leader election
+  - lotteries
+does_not_provide:
+  - unbiased randomness beacon
+  - anonymity
+composition_risks:
+  - missing domain separation
+  - withholding unfavorable outputs
+metadata_leaks:
+  - public key
+  - input context
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Key compromise requires rotation and invalidation under application rules.
+operational_failure_modes:
+  - key compromise
+  - grinding
+maturity: deployed
+related:
+  - digital-signature
+  - domain-separation
+references:
+  - micali-rabin-vadhan-vrf
+  - rfc9381-ecvrf

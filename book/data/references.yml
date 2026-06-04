@@ -883,3 +883,190 @@ references:
     used_by:
       - primitive-engineering-concepts
       - concrete-instances
+  - id: mceliece-original
+    title: A Public-Key Cryptosystem Based on Algebraic Coding Theory
+    authors:
+      - Robert J. McEliece
+    year: 1978
+    source_type: paper
+    url: https://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF
+    used_by:
+      - code-based-assumptions
+      - concrete-instances
+  - id: classic-mceliece-spec
+    title: Classic McEliece; conservative code-based cryptography
+    authors:
+      - Daniel J. Bernstein
+      - Tung Chou
+      - Tanja Lange
+      - Ingo von Maurich
+      - Rafael Misoczki
+      - Ruben Niederhagen
+      - Edoardo Persichetti
+      - Christiane Peters
+      - Peter Schwabe
+      - Nicolas Sendrier
+      - Jakub Szefer
+      - Wen Wang
+    year: 2022
+    source_type: official-docs
+    url: https://classic.mceliece.org/
+    used_by:
+      - code-based-assumptions
+      - concrete-instances
+  - id: nist-ir-8545
+    title: Status Report on the Fourth Round of the NIST Post-Quantum Cryptography Standardization Process
+    authors:
+      - National Institute of Standards and Technology
+    year: 2025
+    source_type: standard
+    url: https://doi.org/10.6028/NIST.IR.8545
+    doi: 10.6028/NIST.IR.8545
+    used_by:
+      - code-based-assumptions
+      - post-quantum-posture
+      - concrete-instances
+  - id: nist-pqc-migration-project
+    title: Migration to Post-Quantum Cryptography
+    authors:
+      - National Institute of Standards and Technology
+    year: 2025
+    source_type: official-docs
+    url: https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc
+    used_by:
+      - post-quantum-posture
+      - key-rotation-and-migration
+  - id: rfc9474-rsa-blind-signatures
+    title: RSA Blind Signatures
+    authors:
+      - Frank Denis
+      - Alex Davidson
+      - Christopher A. Wood
+    year: 2023
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9474
+    used_by:
+      - blind-signatures
+      - blind-signature-credentials
+      - concrete-instances
+  - id: rfc9381-ecvrf
+    title: Verifiable Random Functions
+    authors:
+      - Sharon Goldberg
+      - Dimitrios Papadopoulos
+      - Jan Vcelak
+      - Leonid Reyzin
+    year: 2023
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9381
+    used_by:
+      - verifiable-random-functions
+      - concrete-instances
+  - id: rfc9591-frost
+    title: The Flexible Round-Optimized Schnorr Threshold Signatures Protocol
+    authors:
+      - Chelsea Komlo
+      - Ian Goldberg
+      - Henry de Valence
+      - Jack Grigg
+    year: 2024
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9591
+    used_by:
+      - threshold-cryptography
+      - threshold-issuance
+      - concrete-instances
+  - id: rfc9420-mls
+    title: The Messaging Layer Security Protocol
+    authors:
+      - Richard Barnes
+      - Benjamin Beurdouche
+      - Raphael Robert
+      - Jon Millican
+      - Emad Omara
+      - Katriel Cohn-Gordon
+    year: 2023
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9420
+    used_by:
+      - secure-messaging
+      - secure-channels
+      - concrete-instances
+  - id: w3c-bitstring-status-list
+    title: Bitstring Status List v1.0
+    authors:
+      - World Wide Web Consortium
+    year: 2025
+    source_type: standard
+    url: https://www.w3.org/TR/vc-bitstring-status-list/
+    used_by:
+      - privacy-preserving-revocation
+      - identity-wallets
+  - id: flash-boys-2
+    title: Flash Boys 2.0; Frontrunning in Decentralized Exchanges, Miner Extractable Value, and Consensus Instability
+    authors:
+      - Philip Daian
+      - Steven Goldfeder
+      - Tyler Kell
+      - Yunqi Li
+      - Xueyuan Zhao
+      - Iddo Bentov
+      - Lorenz Breidenbach
+      - Ari Juels
+    year: 2020
+    source_type: paper
+    url: https://doi.org/10.1109/SP40000.2020.00040
+    doi: 10.1109/SP40000.2020.00040
+    used_by:
+      - encrypted-mempools
+  - id: dwork-differential-privacy
+    title: Calibrating Noise to Sensitivity in Private Data Analysis
+    authors:
+      - Cynthia Dwork
+      - Frank McSherry
+      - Kobbi Nissim
+      - Adam Smith
+    year: 2006
+    source_type: paper
+    url: https://doi.org/10.1007/11681878_14
+    doi: 10.1007/11681878_14
+    used_by:
+      - private-machine-learning-analytics
+      - private-aggregation
+  - id: plonk
+    title: PLONK; Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge
+    authors:
+      - Ariel Gabizon
+      - Zachary J. Williamson
+      - Oana Ciobotaru
+    year: 2019
+    source_type: preprint
+    url: https://eprint.iacr.org/2019/953
+    used_by:
+      - arithmetization
+      - lookup-arguments
+      - zk-rollups
+      - concrete-instances
+  - id: goldwasser-kalai-rothblum-gkr
+    title: Delegating Computation; Interactive Proofs for Muggles
+    authors:
+      - Shafi Goldwasser
+      - Yael Tauman Kalai
+      - Guy N. Rothblum
+    year: 2008
+    source_type: paper
+    url: https://doi.org/10.1145/1374376.1374421
+    doi: 10.1145/1374376.1374421
+    used_by:
+      - sumcheck
+      - arithmetization
+      - proof-system-components
+  - id: owasp-password-storage
+    title: Password Storage Cheat Sheet
+    authors:
+      - OWASP Foundation
+    year: 2025
+    source_type: official-docs
+    url: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+    used_by:
+      - password-hashing

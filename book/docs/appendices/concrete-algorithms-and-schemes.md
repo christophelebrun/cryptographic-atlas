@@ -30,7 +30,7 @@ Use this mental format:
 Concrete instance of: [parent concept]
 ```
 
-Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols.
+Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols. The registry also tracks concrete entries such as P-256, Curve25519, Classic McEliece, HQC, RSA blind signatures, ECVRF, FROST, MLS, Privacy Pass, PLONK-style proof systems, Nova-style folding, Halo-style recursion, and W3C Bitstring Status Lists.
 
 | Example | Taxonomy placement | Why |
 | --- | --- | --- |
@@ -75,7 +75,9 @@ Concrete algorithms should be added when they do at least one of the following:
 - are common in blockchain, zero-knowledge, privacy, or applied security systems;
 - are legacy names readers still need to recognize.
 
-## Inclusion backlog by category
+## Expansion candidates by category
+
+The registry is intentionally selective. The tables below are expansion candidates; some entries are already present in `book/data/instances.yml` and others remain useful future additions.
 
 ### Assumptions and substrates
 
