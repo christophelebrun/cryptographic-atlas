@@ -131,5 +131,5 @@ Commitments are mature and widely used, but concrete schemes still depend on car
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Pedersen, "Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- Pedersen, [Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing](https://doi.org/10.1007/3-540-46766-1_9).

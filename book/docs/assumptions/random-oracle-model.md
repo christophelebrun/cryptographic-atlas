@@ -115,5 +115,5 @@ Mature as a proof model, but idealized. It should be named explicitly when a con
 
 ## Further reading
 
-- Bellare and Rogaway, "Random Oracles are Practical; A Paradigm for Designing Efficient Protocols."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Bellare and Rogaway, [Random Oracles are Practical; A Paradigm for Designing Efficient Protocols](https://cseweb.ucsd.edu/~mihir/papers/ro.pdf).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

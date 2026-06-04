@@ -1,0 +1,49 @@
+id: forward-secrecy
+name: Forward Secrecy
+category: Security goals
+level: security-goal
+short_intuition: Later long-term key compromise should not reveal past session secrets.
+security_goals:
+  - forward secrecy
+assumptions:
+  - ephemeral secrets are fresh
+  - old session secrets are erased
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - ephemeral keys are reused
+    - session secrets are logged
+  setup:
+    - key schedule and erasure policy
+typical_uses:
+  - TLS
+  - secure messaging
+  - VPN handshakes
+does_not_provide:
+  - endpoint compromise protection during the session
+  - metadata privacy
+  - post-quantum security by itself
+composition_risks:
+  - resumption without clear policy
+  - classical key exchange under harvest-now-decrypt-later risk
+metadata_leaks:
+  - connection timing
+  - endpoint identities
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; key rotation complements but does not replace forward secrecy.
+operational_failure_modes:
+  - static key exchange
+  - retained traffic secrets
+maturity: not-applicable
+related:
+  - secure-channels
+  - secure-messaging
+references:
+  - rfc8446-tls13
+  - signal-double-ratchet

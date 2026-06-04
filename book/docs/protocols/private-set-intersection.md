@@ -123,7 +123,7 @@ Confidence may come from mathematical assumptions, a semi-honest or malicious-se
 
 ## Further reading
 
-- Freedman, Nissim, and Pinkas, "Efficient Private Matching and Set Intersection."
-- RFC 9497, "Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups."
-- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Freedman, Nissim, and Pinkas, [Efficient Private Matching and Set Intersection](https://doi.org/10.1007/978-3-540-24676-3_1).
+- RFC 9497, [Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups](https://www.rfc-editor.org/rfc/rfc9497).
+- Bonawitz et al., [Practical Secure Aggregation for Privacy-Preserving Machine Learning](https://research.google/pubs/practical-secure-aggregation-for-privacy-preserving-machine-learning/).
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).

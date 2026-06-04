@@ -18,6 +18,9 @@
             "type": "string",
             "enum": [
               "requires",
+              "uses",
+              "commonly-composed-with",
+              "breaks-if",
               "composes-with",
               "contrasts-with",
               "used-in",

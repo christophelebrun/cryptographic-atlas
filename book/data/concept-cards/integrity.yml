@@ -1,0 +1,49 @@
+id: integrity
+name: Integrity
+category: Security goals
+level: security-goal
+short_intuition: Unauthorized changes should be detected.
+security_goals:
+  - integrity
+assumptions:
+  - verifier checks the full protected data
+  - verification parameters are authentic
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - tags or signatures are not checked
+    - context is omitted
+  setup:
+    - verification keys, MAC keys, roots, or proof parameters
+typical_uses:
+  - message tamper detection
+  - software updates
+  - state-root checks
+does_not_provide:
+  - confidentiality
+  - authenticity by itself
+  - semantic correctness
+composition_risks:
+  - verifying only part of a message
+  - parsing before verification
+metadata_leaks:
+  - public verification context
+  - message size
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; concrete verification keys and roots may need revocation.
+operational_failure_modes:
+  - skipped verification
+  - stale root or key
+maturity: not-applicable
+related:
+  - message-authentication-codes
+  - digital-signature
+references:
+  - boneh-shoup-applied-cryptography
+  - rfc5116-aead

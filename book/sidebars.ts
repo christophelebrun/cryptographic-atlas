@@ -9,6 +9,13 @@ const sidebars: SidebarsConfig = {
       items: [
         'taxonomy/overview',
         'taxonomy/security-goals',
+        'taxonomy/confidentiality',
+        'taxonomy/integrity',
+        'taxonomy/authenticity',
+        'taxonomy/anonymity',
+        'taxonomy/unlinkability',
+        'taxonomy/forward-secrecy',
+        'taxonomy/verifiability',
         'taxonomy/additional-security-goals',
         'taxonomy/assumptions',
         'taxonomy/primitives-vs-protocols',

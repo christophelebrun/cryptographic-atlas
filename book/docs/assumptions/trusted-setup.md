@@ -115,5 +115,5 @@ Mature but specialized. Setup ceremonies are deployed in some proof-system ecosy
 
 ## Further reading
 
-- Groth, "On the Size of Pairing-Based Non-interactive Arguments."
-- Bowe, Gabizon, and Miers, "Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model."
+- Groth, [On the Size of Pairing-Based Non-interactive Arguments](https://eprint.iacr.org/2016/260).
+- Bowe, Gabizon, and Miers, [Scalable Multi-party Computation for zk-SNARK Parameters in the Random Beacon Model](https://eprint.iacr.org/2017/1050).

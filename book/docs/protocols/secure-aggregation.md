@@ -108,5 +108,5 @@ The server may learn which clients participated, when they connected, and the ag
 
 ## Further reading
 
-- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Bonawitz et al., [Practical Secure Aggregation for Privacy-Preserving Machine Learning](https://research.google/pubs/practical-secure-aggregation-for-privacy-preserving-machine-learning/).
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).

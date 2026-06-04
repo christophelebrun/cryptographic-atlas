@@ -112,6 +112,6 @@ Private DAO voting combines fast-moving privacy tooling with governance incentiv
 
 ## Further reading
 
-- Benaloh, "Verifiable Secret-Ballot Elections."
-- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
-- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).
+- Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).
+- Bonawitz et al., [Practical Secure Aggregation for Privacy-Preserving Machine Learning](https://research.google/pubs/practical-secure-aggregation-for-privacy-preserving-machine-learning/).

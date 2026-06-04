@@ -123,3 +123,135 @@ relationships:
     relation: strengthens
     target: transcript-binding
     notes: Domain separation makes transcript fields and protocol phases unambiguous.
+  - source: confidentiality
+    relation: commonly-composed-with
+    target: integrity
+    notes: Most deployed confidentiality mechanisms also need tamper detection.
+  - source: confidentiality
+    relation: breaks-if
+    target: authenticated-encryption
+    notes: Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged.
+  - source: integrity
+    relation: commonly-composed-with
+    target: authenticity
+    notes: Systems usually need both tamper detection and origin binding.
+  - source: authenticity
+    relation: requires
+    target: transcript-binding
+    notes: Authenticating incomplete context can bind the right key to the wrong session or statement.
+  - source: anonymity
+    relation: commonly-composed-with
+    target: unlinkability
+    notes: Anonymous systems often need unlinkability across repeated actions, but the goals are distinct.
+  - source: anonymity
+    relation: breaks-if
+    target: metadata-leakage
+    notes: Timing, network, amount, and rare-attribute metadata can defeat anonymity even when proofs verify.
+  - source: unlinkability
+    relation: commonly-composed-with
+    target: domain-separation
+    notes: Context-bound tags prevent linkability across unrelated applications.
+  - source: unlinkability
+    relation: breaks-if
+    target: nullifier
+    notes: Nullifiers deliberately create linkability inside a context and must not be reused across contexts.
+  - source: forward-secrecy
+    relation: requires
+    target: key-encapsulation-and-exchange
+    notes: Secure channels need fresh key-establishment material to make later long-term key compromise less damaging.
+  - source: forward-secrecy
+    relation: commonly-composed-with
+    target: secure-channels
+    notes: Forward secrecy is usually realized at the protocol layer.
+  - source: verifiability
+    relation: commonly-composed-with
+    target: integrity
+    notes: A verifier needs tamper-evident inputs and authentic verification parameters.
+  - source: verifiability
+    relation: breaks-if
+    target: transcript-binding
+    notes: Verification can be meaningless if public inputs, verifier keys, or context are omitted.
+  - source: zcash-orchard
+    relation: uses
+    target: halo-recursion
+    notes: Orchard uses Halo-style proving to avoid the trusted setup model used by earlier Zcash pools.
+  - source: zcash-sapling
+    relation: uses
+    target: private-payments
+    notes: Sapling is a concrete shielded-payment protocol suite.
+  - source: bbs-verifiable-credentials
+    relation: uses
+    target: anonymous-credential
+    notes: BBS-based credential profiles support selective disclosure and unlinkable derived proofs under pairing assumptions.
+  - source: sd-jwt
+    relation: contrasts-with
+    target: anonymous-credential
+    notes: SD-JWT provides selective disclosure, but not anonymous-credential unlinkability by default.
+  - source: vc-di-ecdsa
+    relation: uses
+    target: authenticity
+    notes: ECDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity.
+  - source: vc-di-eddsa
+    relation: uses
+    target: authenticity
+    notes: EdDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity.
+  - source: lucid-encrypted-mempool
+    relation: uses
+    target: delayed-reveal
+    notes: Encrypted mempools use commit-before-reveal or delayed-decryption sequencing rules.
+  - source: ferveo-threshold-mempool
+    relation: uses
+    target: threshold-cryptography
+    notes: Threshold decryption distributes reveal power across a committee.
+  - source: encrypted-mempools
+    relation: breaks-if
+    target: metadata-leakage
+    notes: Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted.
+  - source: threshold-bls
+    relation: requires
+    target: pairings
+    notes: Threshold BLS inherits both threshold-share assumptions and pairing-friendly curve assumptions.
+  - source: gennaro-dkg
+    relation: used-in
+    target: threshold-cryptography
+    notes: DKG is a setup protocol for dealerless threshold keys.
+  - source: poseidon
+    relation: used-in
+    target: arithmetization
+    notes: ZK-friendly hashes are chosen to reduce circuit or constraint cost.
+  - source: mimc
+    relation: used-in
+    target: arithmetization
+    notes: MiMC is an example of a low-multiplicative-complexity hash used in some proof circuits.
+  - source: rescue-prime
+    relation: used-in
+    target: arithmetization
+    notes: Rescue-Prime is a proof-system-oriented hash family with scheme-specific parameters.
+  - source: ckks
+    relation: used-in
+    target: private-machine-learning-analytics
+    notes: Approximate homomorphic arithmetic is common in privacy-preserving analytics and inference discussions.
+  - source: bfv
+    relation: used-in
+    target: private-machine-learning-analytics
+    notes: Exact homomorphic arithmetic can support bounded private analytics workloads.
+  - source: spdz
+    relation: used-in
+    target: mpc
+    notes: SPDZ is a concrete actively secure arithmetic MPC family.
+  - source: mascot
+    relation: uses
+    target: oblivious-transfer
+    notes: MASCOT uses OT-based preprocessing for maliciously secure arithmetic MPC.
+  - source: rsa-pkcs1-v1-5-encryption
+    relation: breaks-if
+    target: public-key-encryption
+    notes: Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories.
+  - source: sha-1
+    relation: breaks-if
+    target: hash-function
+    notes: SHA-1 collision resistance is not adequate for new cryptographic uses.
+  - source: md5
+    relation: breaks-if
+    target: hash-function
+    notes: MD5 is retained only for legacy recognition and non-adversarial checksum context.

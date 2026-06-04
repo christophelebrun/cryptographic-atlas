@@ -84,5 +84,5 @@ Coercion resistance is a demanding system property. Treat any simple claim of co
 
 ## Further reading
 
-- Benaloh, "Verifiable Secret-Ballot Elections."
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).
 - [Electronic voting](/docs/protocols/e-voting)

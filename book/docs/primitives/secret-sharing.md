@@ -87,5 +87,5 @@ Confidence is threshold-based. Fewer than `t` shares should not reveal the secre
 
 ## Further reading
 
-- Adi Shamir, "How to Share a Secret."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Shamir, [How to Share a Secret](https://doi.org/10.1145/359168.359176).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

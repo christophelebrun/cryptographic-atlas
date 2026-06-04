@@ -80,5 +80,5 @@ The proof system must be sound, the proof must be bound to the exact commitment 
 
 ## Further reading
 
-- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
-- Boudot, "Efficient Proofs that a Committed Number Lies in an Interval."
+- Bünz et al., [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066).
+- Boudot, [Efficient Proofs that a Committed Number Lies in an Interval](https://doi.org/10.1007/3-540-46588-8_13).

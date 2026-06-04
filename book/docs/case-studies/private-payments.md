@@ -76,6 +76,10 @@ Confidence is mixed: public-verifiability for ledger rules and proofs, client-si
 - Trusted issuer abuse or insolvency in issuer-backed systems.
 - Treating ledger privacy as user anonymity.
 
+## Source-depth notes
+
+Private-payment source coverage should separate e-cash lineage, shielded-ledger protocol specifications, and metadata analysis. A deployed protocol specification can describe note and nullifier mechanics, but it does not by itself prove wallet, exchange, bridge, or network privacy.
+
 ## Related concepts
 
 - [Nullifiers](/docs/protocols/nullifiers)
@@ -89,4 +93,6 @@ Confidence is mixed: public-verifiability for ledger rules and proofs, client-si
 - [Chaum, Fiat, and Naor, "Untraceable Electronic Cash"](https://doi.org/10.1007/0-387-34799-2_25).
 - [Zerocash: Decentralized Anonymous Payments from Bitcoin](https://doi.org/10.1109/SP.2014.36).
 - [Chaum, "Blind Signatures for Untraceable Payments"](https://doi.org/10.1007/978-1-4757-0602-4_18).
+- [Zcash Protocol Specification](https://zips.z.cash/protocol/protocol.pdf).
+- [The Orchard Book](https://zcash.github.io/orchard/).
 - [Metadata Leakage](/docs/appendices/metadata-leakage).

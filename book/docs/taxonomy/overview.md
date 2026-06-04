@@ -78,5 +78,5 @@ When evaluating a design, ask:
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Katz and Lindell, "Introduction to Modern Cryptography."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).

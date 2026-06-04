@@ -1,0 +1,50 @@
+id: verifiability
+name: Verifiability
+category: Security goals
+level: security-goal
+short_intuition: A party can check that a claim, proof, transcript, tally, or state transition satisfies stated rules.
+security_goals:
+  - verifiability
+assumptions:
+  - statement captures the needed property
+  - verifier checks complete public inputs
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: public-verifiability
+  threshold: null
+  breaks_if:
+    - wrong statement is verified
+    - verifier key or public inputs are misbound
+  setup:
+    - verifier keys, roots, or audit parameters
+typical_uses:
+  - ZK rollups
+  - voting tally checks
+  - credential presentations
+does_not_provide:
+  - truth of off-chain facts
+  - privacy by itself
+  - enforcement after detection
+composition_risks:
+  - public inputs leaking data
+  - controlled verifier infrastructure
+metadata_leaks:
+  - public statement
+  - verification timing
+  - audit trail
+implementation_risk: not-applicable
+auditability: publicly-verifiable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; concrete verifier keys and logs may need rotation or revocation.
+operational_failure_modes:
+  - omitted public input
+  - no response plan for failed verification
+maturity: not-applicable
+related:
+  - zero-knowledge-proof
+  - zk-rollups
+references:
+  - goldwasser-micali-rackoff-zk
+  - benaloh-secret-ballot

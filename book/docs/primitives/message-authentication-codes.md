@@ -73,6 +73,6 @@ When confidentiality and integrity are both required for ciphertexts, prefer a r
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Katz and Lindell, "Introduction to Modern Cryptography."
-- NIST SP 800-38B, "Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).
+- NIST SP 800-38B, [Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication](https://csrc.nist.gov/pubs/sp/800/38/b/upd1/final).

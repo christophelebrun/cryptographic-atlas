@@ -131,5 +131,5 @@ Nullifiers can still be linked through timing, network address, account funding,
 
 ## Further reading
 
-- Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation."
-- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
+- Camenisch and Lysyanskaya, [An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation](https://doi.org/10.1007/3-540-44987-6_7).
+- Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).

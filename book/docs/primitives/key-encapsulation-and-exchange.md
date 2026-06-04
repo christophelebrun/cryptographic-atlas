@@ -73,6 +73,6 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- NIST FIPS 203, "Module-Lattice-Based Key-Encapsulation Mechanism Standard."
-- NIST, "NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- NIST FIPS 203, [Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/pubs/fips/203/final).
+- NIST, [NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption](https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption).

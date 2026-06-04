@@ -116,6 +116,6 @@ Mature and widely deployed, but quantum-vulnerable.
 
 ## Further reading
 
-- Diffie and Hellman, "New Directions in Cryptography."
-- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Diffie and Hellman, [New Directions in Cryptography](https://doi.org/10.1109/TIT.1976.1055638).
+- Shor, [Algorithms for Quantum Computation; Discrete Logarithms and Factoring](https://doi.org/10.1109/SFCS.1994.365700).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

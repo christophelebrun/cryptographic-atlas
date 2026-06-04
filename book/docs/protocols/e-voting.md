@@ -110,6 +110,6 @@ Timing, voter check-in, device identifiers, and small precinct totals can leak i
 
 ## Further reading
 
-- Benaloh, "Verifiable Secret-Ballot Elections."
-- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).
+- Chaum, [Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms](https://doi.org/10.1145/358549.358563).
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).

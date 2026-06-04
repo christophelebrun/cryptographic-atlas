@@ -30,7 +30,7 @@ Use this mental format:
 Concrete instance of: [parent concept]
 ```
 
-Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols. The registry also tracks concrete entries such as P-256, Curve25519, Classic McEliece, HQC, RSA blind signatures, ECVRF, FROST, MLS, Privacy Pass, PLONK-style proof systems, Nova-style folding, Halo-style recursion, and W3C Bitstring Status Lists.
+Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols. The registry also tracks concrete entries such as P-256, Curve25519, BLS12-381, BN254, SHA-1, MD5, Classic McEliece, HQC, RSA blind signatures, ECVRF, FROST, threshold BLS, MLS, Privacy Pass, PLONK-style proof systems, Nova-style folding, Halo-style recursion, ZK-friendly hashes, FHE schemes, MPC protocol families, W3C credential profiles, Zcash-style payment profiles, encrypted-mempool profiles, and W3C Bitstring Status Lists.
 
 | Example | Taxonomy placement | Why |
 | --- | --- | --- |

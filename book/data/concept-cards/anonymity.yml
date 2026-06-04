@@ -1,0 +1,50 @@
+id: anonymity
+name: Anonymity
+category: Security goals
+level: security-goal
+short_intuition: The actor should be hidden among a plausible set of actors.
+security_goals:
+  - anonymity
+assumptions:
+  - anonymity set is large enough
+  - metadata does not identify the actor
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - anonymity set is too small
+    - timing or rare attributes identify the actor
+  setup:
+    - anonymity set definition and metadata controls
+typical_uses:
+  - private voting
+  - anonymous credentials
+  - private payments
+does_not_provide:
+  - confidentiality
+  - unlinkability across repeated actions
+  - network anonymity by default
+composition_risks:
+  - small sets
+  - issuer-verifier collusion
+metadata_leaks:
+  - timing
+  - group size
+  - network path
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; revocation mechanisms can reduce anonymity if designed poorly.
+operational_failure_modes:
+  - rare-attribute re-identification
+  - address or wallet linkage
+maturity: not-applicable
+related:
+  - anonymous-credential
+  - mixnet
+references:
+  - chaum-mixnets
+  - camenisch-lysyanskaya-credentials

@@ -68,6 +68,10 @@ Confidence is mixed: threshold or trusted decryption committee, sequencer assump
 - Metadata still revealing strategy.
 - Reveal failures or griefing.
 
+## Source-depth notes
+
+Encrypted-mempool coverage should treat current Ethereum designs as draft-stage unless the page is explicitly about a deployed system. Source depth should include MEV motivation, threshold-decryption designs, batching proposals, and the limitations of encrypted ordering under censorship, size, timing, and reveal failures.
+
 ## Related concepts
 
 - [Delayed Reveal](/docs/design-patterns/delayed-reveal)
@@ -78,3 +82,6 @@ Confidence is mixed: threshold or trusted decryption committee, sequencer assump
 
 - [Daian et al., "Flash Boys 2.0"](https://doi.org/10.1109/SP40000.2020.00040).
 - [Canetti, "Universally Composable Security"](https://eprint.iacr.org/2000/067).
+- [EIP-8184: LUCID encrypted mempool](https://eips.ethereum.org/EIPS/eip-8184).
+- Goes, [Ferveo: Threshold Decryption for Mempool Privacy in BFT Networks](https://eprint.iacr.org/2022/898).
+- Condorelli et al., [Mempool Privacy via Batched Threshold Encryption](https://eprint.iacr.org/2024/669).

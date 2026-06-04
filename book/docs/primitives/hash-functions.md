@@ -69,7 +69,7 @@ Confidence comes from public algorithm scrutiny, parameter choice, domain separa
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Grover, "A Fast Quantum Mechanical Algorithm for Database Search."
-- NIST FIPS 180-4, "Secure Hash Standard."
-- NIST FIPS 202, "SHA-3 Standard."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- Grover, [A Fast Quantum Mechanical Algorithm for Database Search](https://doi.org/10.1145/237814.237866).
+- NIST FIPS 180-4, [Secure Hash Standard](https://csrc.nist.gov/pubs/fips/180-4/upd1/final).
+- NIST FIPS 202, [SHA-3 Standard](https://csrc.nist.gov/pubs/fips/202/final).

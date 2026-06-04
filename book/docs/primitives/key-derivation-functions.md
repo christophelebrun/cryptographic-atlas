@@ -69,6 +69,6 @@ Confidence comes from entropy in the input material, domain separation in the KD
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Katz and Lindell, "Introduction to Modern Cryptography."
-- RFC 5869, "HMAC-based Extract-and-Expand Key Derivation Function."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).
+- RFC 5869, [HMAC-based Extract-and-Expand Key Derivation Function](https://www.rfc-editor.org/rfc/rfc5869).

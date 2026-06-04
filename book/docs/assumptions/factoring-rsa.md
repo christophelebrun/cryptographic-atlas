@@ -116,6 +116,6 @@ Mature and widely deployed historically, but quantum-vulnerable and being migrat
 
 ## Further reading
 
-- Rivest, Shamir, and Adleman, "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems."
-- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Rivest, Shamir, and Adleman, [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems](https://doi.org/10.1145/359340.359342).
+- Shor, [Algorithms for Quantum Computation; Discrete Logarithms and Factoring](https://doi.org/10.1109/SFCS.1994.365700).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

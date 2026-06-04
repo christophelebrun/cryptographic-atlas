@@ -57,6 +57,10 @@ Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for pr
 | Threshold decryption | Public-key encryption or homomorphic encryption | Voting, private tallying, escrowed decryption | Privacy and liveness depend on trustee threshold and share verification. |
 | Threshold post-quantum schemes | Scheme-specific research and engineering | Migration target | Not automatic; each post-quantum primitive needs its own threshold design and maturity assessment. |
 
+## Source-depth notes
+
+Threshold signing should cite both the signing protocol and the setup protocol. For Schnorr-style deployments, FROST is a protocol standard, while distributed key generation remains a separate trust and liveness concern. For BLS and ECDSA ecosystems, aggregation, pairing, nonce, and share-generation assumptions differ enough that they should not be collapsed into one generic "threshold" claim.
+
 ## Failure modes and anti-patterns
 
 - Bad distributed key generation.
@@ -66,5 +70,9 @@ Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for pr
 
 ## Further reading
 
-- Adi Shamir, "How to Share a Secret."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Shamir, [How to Share a Secret](https://doi.org/10.1145/359168.359176).
+- Gennaro, Jarecki, Krawczyk, and Rabin, [Secure Distributed Key Generation for Discrete-Log Based Cryptosystems](https://doi.org/10.1007/s00145-006-0347-3).
+- RFC 9591, [The FROST Protocol](https://www.rfc-editor.org/rfc/rfc9591).
+- Boneh, Lynn, and Shacham, [Short Signatures from the Weil Pairing](https://doi.org/10.1007/3-540-45682-1_30).
+- Boldyreva, [Threshold Signatures, Multisignatures and Blind Signatures](https://www.iacr.org/archive/pkc2003/25670272/25670272.pdf).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

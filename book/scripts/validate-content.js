@@ -148,6 +148,8 @@ function formatAjvErrors(validate) {
 const errors = [];
 const warnings = [];
 const majorDocCardIds = new Set();
+const docIds = new Set();
+const instanceIds = new Set();
 
 function validateObject(file, data, validate) {
   if (!validate(data)) {
@@ -166,6 +168,7 @@ for (const file of walk(docsDir, (item) => item.endsWith('.md') || item.endsWith
 
   const pageHeadings = headings(parsed.body);
   const template = parsed.frontmatter.template;
+  docIds.add(path.basename(file, path.extname(file)));
   if (['concept', 'protocol', 'case-study'].includes(template)) {
     const slug = path.basename(file, path.extname(file));
     majorDocCardIds.add(conceptCardAliases[slug] || slug);
@@ -254,7 +257,6 @@ const instancesFile = path.join(dataDir, 'instances.yml');
 if (fs.existsSync(instancesFile)) {
   const instancesData = parseYaml(instancesFile);
   validateObject(instancesFile, instancesData, validators.instances);
-  const instanceIds = new Set();
   for (const instance of instancesData.instances || []) {
     if (instanceIds.has(instance.id)) errors.push(`${relative(instancesFile)}: duplicate instance id "${instance.id}"`);
     instanceIds.add(instance.id);
@@ -277,7 +279,21 @@ if (fs.existsSync(instancesFile)) {
 
 const relationshipsFile = path.join(dataDir, 'relationships.yml');
 if (fs.existsSync(relationshipsFile)) {
-  validateObject(relationshipsFile, parseYaml(relationshipsFile), validators.relationships);
+  const relationshipsData = parseYaml(relationshipsFile);
+  validateObject(relationshipsFile, relationshipsData, validators.relationships);
+  const relationshipIds = new Set([...conceptCardIds, ...instanceIds, ...docIds]);
+  for (const [alias, canonical] of Object.entries(conceptCardAliases)) {
+    relationshipIds.add(alias);
+    relationshipIds.add(canonical);
+  }
+  for (const relationship of relationshipsData.relationships || []) {
+    if (!relationshipIds.has(relationship.source)) {
+      errors.push(`${relative(relationshipsFile)}: relationship source "${relationship.source}" is not a known concept card, alias, instance, or document`);
+    }
+    if (!relationshipIds.has(relationship.target)) {
+      errors.push(`${relative(relationshipsFile)}: relationship target "${relationship.target}" is not a known concept card, alias, instance, or document`);
+    }
+  }
 } else {
   errors.push('data/relationships.yml: missing relationship registry');
 }

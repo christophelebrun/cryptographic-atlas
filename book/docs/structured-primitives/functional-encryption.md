@@ -66,4 +66,4 @@ Confidence often depends on a key authority or setup process that issues functio
 
 ## Further reading
 
-- Boneh, Sahai, and Waters, "Functional Encryption: Definitions and Challenges."
+- Boneh, Sahai, and Waters, [Functional Encryption: Definitions and Challenges](https://eprint.iacr.org/2010/543).

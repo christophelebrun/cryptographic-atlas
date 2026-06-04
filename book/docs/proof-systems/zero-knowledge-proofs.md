@@ -128,6 +128,6 @@ ZKPs are a mature field, but concrete systems vary from widely deployed to resea
 
 ## Further reading
 
-- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
-- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity."
-- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
+- Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).
+- Ben-Sasson et al., [Scalable, transparent, and post-quantum secure computational integrity](https://eprint.iacr.org/2018/046).
+- Bünz et al., [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066).

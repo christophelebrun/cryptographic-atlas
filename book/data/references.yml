@@ -1070,3 +1070,417 @@ references:
     url: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
     used_by:
       - password-hashing
+  - id: rfc8017-pkcs1
+    title: PKCS #1; RSA Cryptography Specifications Version 2.2
+    authors:
+      - Kathleen Moriarty
+      - Burt Kaliski
+      - Jakob Jonsson
+      - Andreas Rusch
+    year: 2016
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc8017
+    used_by:
+      - concrete-instances
+  - id: nist-sp-800-131a
+    title: Transitioning the Use of Cryptographic Algorithms and Key Lengths
+    authors:
+      - National Institute of Standards and Technology
+    year: 2019
+    source_type: standard
+    url: https://csrc.nist.gov/pubs/sp/800/131/a/r2/final
+    used_by:
+      - concrete-instances
+      - post-quantum-posture
+  - id: sec2-curves
+    title: SEC 2; Recommended Elliptic Curve Domain Parameters
+    authors:
+      - Standards for Efficient Cryptography Group
+    year: 2010
+    source_type: standard
+    url: https://www.secg.org/sec2-v2.pdf
+    used_by:
+      - concrete-instances
+      - elliptic-curves
+  - id: cfrg-pairing-friendly-curves
+    title: Pairing-Friendly Curves
+    authors:
+      - Yumi Sakemi
+      - Taichi Kobayashi
+      - Tsuyoshi Takagi
+      - Stanislav Mishin
+    year: 2024
+    source_type: official-docs
+    url: https://datatracker.ietf.org/doc/draft-irtf-cfrg-pairing-friendly-curves/
+    used_by:
+      - pairings
+      - elliptic-curves
+      - concrete-instances
+  - id: eip-196-alt-bn128
+    title: EIP-196; Precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128
+    authors:
+      - Christian Reitwiessner
+    year: 2017
+    source_type: official-docs
+    url: https://eips.ethereum.org/EIPS/eip-196
+    used_by:
+      - concrete-instances
+      - zk-rollups
+  - id: poseidon-hash
+    title: Poseidon; A New Hash Function for Zero-Knowledge Proof Systems
+    authors:
+      - Lorenzo Grassi
+      - Dmitry Khovratovich
+      - Christian Rechberger
+      - Arnab Roy
+      - Markus Schofnegger
+    year: 2019
+    source_type: preprint
+    url: https://eprint.iacr.org/2019/458
+    used_by:
+      - concrete-instances
+      - proof-system-components
+  - id: mimc-hash
+    title: MiMC; Efficient Encryption and Cryptographic Hashing with Minimal Multiplicative Complexity
+    authors:
+      - Martin Albrecht
+      - Lorenzo Grassi
+      - Christian Rechberger
+      - Arnab Roy
+      - Tyge Tiessen
+    year: 2016
+    source_type: preprint
+    url: https://eprint.iacr.org/2016/492
+    used_by:
+      - concrete-instances
+      - proof-system-components
+  - id: rescue-prime
+    title: Rescue-Prime; a Standard Specification
+    authors:
+      - Alex A. A. Aly
+      - Tomer Ashur
+      - Eli Ben-Sasson
+      - Siemen Dhooghe
+      - Alan Szepieniec
+    year: 2020
+    source_type: preprint
+    url: https://eprint.iacr.org/2020/1143
+    used_by:
+      - concrete-instances
+      - proof-system-components
+  - id: homomorphic-encryption-standard
+    title: Homomorphic Encryption Standard
+    authors:
+      - HomomorphicEncryption.org
+    year: 2024
+    source_type: official-docs
+    url: https://homomorphicencryption.org/standard/
+    used_by:
+      - homomorphic-encryption
+      - concrete-instances
+  - id: bgv-homomorphic-encryption
+    title: Fully Homomorphic Encryption without Bootstrapping
+    authors:
+      - Zvika Brakerski
+      - Craig Gentry
+      - Vinod Vaikuntanathan
+    year: 2011
+    source_type: preprint
+    url: https://eprint.iacr.org/2011/277
+    used_by:
+      - homomorphic-encryption
+      - concrete-instances
+  - id: fan-vercauteren-bfv
+    title: Somewhat Practical Fully Homomorphic Encryption
+    authors:
+      - Junfeng Fan
+      - Frederik Vercauteren
+    year: 2012
+    source_type: preprint
+    url: https://eprint.iacr.org/2012/144
+    used_by:
+      - homomorphic-encryption
+      - concrete-instances
+  - id: ckks
+    title: Homomorphic Encryption for Arithmetic of Approximate Numbers
+    authors:
+      - Jung Hee Cheon
+      - Andrey Kim
+      - Miran Kim
+      - Yongsoo Song
+    year: 2016
+    source_type: preprint
+    url: https://eprint.iacr.org/2016/421
+    used_by:
+      - homomorphic-encryption
+      - concrete-instances
+  - id: tfhe
+    title: Faster Fully Homomorphic Encryption; Bootstrapping in Less Than 0.1 Seconds
+    authors:
+      - Ilaria Chillotti
+      - Nicolas Gama
+      - Mariya Georgieva
+      - Malika Izabachene
+    year: 2016
+    source_type: preprint
+    url: https://eprint.iacr.org/2016/870
+    used_by:
+      - homomorphic-encryption
+      - concrete-instances
+  - id: yao-garbled-circuits
+    title: How to Generate and Exchange Secrets
+    authors:
+      - Andrew C. Yao
+    year: 1986
+    source_type: paper
+    url: https://doi.org/10.1109/SFCS.1986.25
+    doi: 10.1109/SFCS.1986.25
+    used_by:
+      - mpc
+      - concrete-instances
+  - id: gmw-mpc
+    title: How to Play Any Mental Game
+    authors:
+      - Oded Goldreich
+      - Silvio Micali
+      - Avi Wigderson
+    year: 1987
+    source_type: paper
+    url: https://doi.org/10.1145/28395.28420
+    doi: 10.1145/28395.28420
+    used_by:
+      - mpc
+      - concrete-instances
+  - id: bgw-mpc
+    title: Completeness Theorems for Non-Cryptographic Fault-Tolerant Distributed Computation
+    authors:
+      - Michael Ben-Or
+      - Shafi Goldwasser
+      - Avi Wigderson
+    year: 1988
+    source_type: paper
+    url: https://doi.org/10.1145/62212.62213
+    doi: 10.1145/62212.62213
+    used_by:
+      - mpc
+      - concrete-instances
+  - id: spdz
+    title: Multiparty Computation from Somewhat Homomorphic Encryption
+    authors:
+      - Ivan Damgard
+      - Valerio Pastro
+      - Nigel Smart
+      - Sarah Zakarias
+    year: 2011
+    source_type: preprint
+    url: https://eprint.iacr.org/2011/535
+    used_by:
+      - mpc
+      - concrete-instances
+  - id: mascot
+    title: MASCOT; Faster Malicious Arithmetic Secure Computation with Oblivious Transfer
+    authors:
+      - Marcel Keller
+      - Emmanuela Orsini
+      - Peter Scholl
+    year: 2016
+    source_type: preprint
+    url: https://eprint.iacr.org/2016/505
+    used_by:
+      - mpc
+      - concrete-instances
+  - id: gennaro-dkg
+    title: Secure Distributed Key Generation for Discrete-Log Based Cryptosystems
+    authors:
+      - Rosario Gennaro
+      - Stanislaw Jarecki
+      - Hugo Krawczyk
+      - Tal Rabin
+    year: 2007
+    source_type: paper
+    url: https://doi.org/10.1007/s00145-006-0347-3
+    doi: 10.1007/s00145-006-0347-3
+    used_by:
+      - threshold-cryptography
+      - threshold-issuance
+      - concrete-instances
+  - id: bls-signatures
+    title: Short Signatures from the Weil Pairing
+    authors:
+      - Dan Boneh
+      - Ben Lynn
+      - Hovav Shacham
+    year: 2001
+    source_type: paper
+    url: https://doi.org/10.1007/3-540-45682-1_30
+    doi: 10.1007/3-540-45682-1_30
+    used_by:
+      - threshold-cryptography
+      - concrete-instances
+  - id: boldyreva-threshold-signatures
+    title: Threshold Signatures, Multisignatures and Blind Signatures Based on the Gap-Diffie-Hellman-Group Signature Scheme
+    authors:
+      - Alexandra Boldyreva
+    year: 2003
+    source_type: paper
+    url: https://www.iacr.org/archive/pkc2003/25670272/25670272.pdf
+    used_by:
+      - threshold-cryptography
+      - blind-signatures
+      - concrete-instances
+  - id: cfrg-bbs-signatures
+    title: The BBS Signature Scheme
+    authors:
+      - Tobias Looker
+      - Vasilis Kalos
+      - Mike Lodder
+      - Greg Bernstein
+    year: 2026
+    source_type: official-docs
+    url: https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/
+    notes: IETF Internet-Draft; review freshness before treating as stable.
+    used_by:
+      - anonymous-credentials
+      - identity-wallets
+      - concrete-instances
+  - id: w3c-vc-di-bbs
+    title: Data Integrity BBS Cryptosuites v1.0
+    authors:
+      - World Wide Web Consortium
+    year: 2026
+    source_type: official-docs
+    url: https://www.w3.org/TR/vc-di-bbs/
+    notes: W3C Candidate Recommendation Draft as of April 7, 2026.
+    used_by:
+      - anonymous-credentials
+      - identity-wallets
+      - concrete-instances
+  - id: w3c-vc-di-ecdsa
+    title: Data Integrity ECDSA Cryptosuites v1.0
+    authors:
+      - World Wide Web Consortium
+    year: 2025
+    source_type: standard
+    url: https://www.w3.org/TR/vc-di-ecdsa/
+    used_by:
+      - identity-wallets
+      - concrete-instances
+  - id: w3c-vc-di-eddsa
+    title: Data Integrity EdDSA Cryptosuites v1.0
+    authors:
+      - World Wide Web Consortium
+    year: 2025
+    source_type: standard
+    url: https://www.w3.org/TR/vc-di-eddsa/
+    used_by:
+      - identity-wallets
+      - concrete-instances
+  - id: rfc9901-sd-jwt
+    title: Selective Disclosure for JSON Web Tokens
+    authors:
+      - Daniel Fett
+      - Brian Campbell
+      - Kristina Yasuda
+      - Torsten Lodderstedt
+      - Oliver Terbu
+      - Michael B. Jones
+    year: 2025
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9901
+    used_by:
+      - identity-wallets
+      - anonymous-credentials
+      - concrete-instances
+  - id: draft-oauth-sd-jwt-vc
+    title: SD-JWT-based Verifiable Digital Credentials
+    authors:
+      - Oliver Terbu
+      - Daniel Fett
+      - Brian Campbell
+    year: 2026
+    source_type: official-docs
+    url: https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/
+    notes: IETF Internet-Draft; review freshness before treating as stable.
+    used_by:
+      - identity-wallets
+      - concrete-instances
+  - id: zcash-protocol-spec
+    title: Zcash Protocol Specification
+    authors:
+      - Electric Coin Company
+    year: 2026
+    source_type: official-docs
+    url: https://zips.z.cash/protocol/protocol.pdf
+    used_by:
+      - private-payments
+      - concrete-instances
+  - id: zcash-orchard
+    title: The Orchard Book
+    authors:
+      - Electric Coin Company
+    year: 2026
+    source_type: official-docs
+    url: https://zcash.github.io/orchard/
+    used_by:
+      - private-payments
+      - concrete-instances
+  - id: eip-8184-lucid
+    title: EIP-8184; LUCID encrypted mempool
+    authors:
+      - Anders Elowsson
+      - Justin Florentine
+      - Julian Ma
+    year: 2026
+    source_type: official-docs
+    url: https://eips.ethereum.org/EIPS/eip-8184
+    notes: Draft Standards Track EIP as of 2026; not a deployed Ethereum protocol feature.
+    used_by:
+      - encrypted-mempools
+  - id: ferveo
+    title: Ferveo; Threshold Decryption for Mempool Privacy in BFT Networks
+    authors:
+      - Christopher Goes
+    year: 2022
+    source_type: preprint
+    url: https://eprint.iacr.org/2022/898
+    used_by:
+      - encrypted-mempools
+      - threshold-cryptography
+  - id: batched-threshold-mempools
+    title: Mempool Privacy via Batched Threshold Encryption
+    authors:
+      - Daniele Condorelli
+      - Lefteris Kokoris-Kogias
+      - Alberto Sonnino
+      - Alexander Spiegelman
+    year: 2024
+    source_type: preprint
+    url: https://eprint.iacr.org/2024/669
+    used_by:
+      - encrypted-mempools
+  - id: rfc9750-mls-architecture
+    title: The Messaging Layer Security Architecture
+    authors:
+      - Richard Barnes
+      - Benjamin Beurdouche
+      - Raphael Robert
+      - Jon Millican
+      - Emad Omara
+      - Katriel Cohn-Gordon
+    year: 2025
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9750
+    used_by:
+      - secure-channels
+      - secure-messaging
+  - id: nist-ir-8581
+    title: Status Report on the Additional Digital Signature Schemes for the NIST Post-Quantum Cryptography Standardization Process
+    authors:
+      - National Institute of Standards and Technology
+    year: 2026
+    source_type: standard
+    url: https://doi.org/10.6028/NIST.IR.8581
+    doi: 10.6028/NIST.IR.8581
+    used_by:
+      - post-quantum-posture
+      - concrete-instances

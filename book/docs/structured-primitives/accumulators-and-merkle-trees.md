@@ -65,5 +65,5 @@ Confidence comes from the authenticated set root, update rules, and membership p
 
 ## Further reading
 
-- Ralph Merkle, "A Digital Signature Based on a Conventional Encryption Function."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Merkle, [A Digital Signature Based on a Conventional Encryption Function](https://doi.org/10.1007/3-540-48184-2_32).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

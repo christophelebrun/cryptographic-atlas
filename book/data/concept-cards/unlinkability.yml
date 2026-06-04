@@ -1,0 +1,50 @@
+id: unlinkability
+name: Unlinkability
+category: Security goals
+level: security-goal
+short_intuition: Observers should not tell that two actions came from the same subject.
+security_goals:
+  - unlinkability
+assumptions:
+  - presentations are randomized or blinded
+  - metadata is not stable across actions
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - identifiers are reused
+    - timing or device metadata links actions
+  setup:
+    - context labels and metadata controls
+typical_uses:
+  - anonymous tokens
+  - selective-disclosure credentials
+  - private payments
+does_not_provide:
+  - double-use prevention
+  - network anonymity
+  - non-transferability
+composition_risks:
+  - reused nullifier contexts
+  - unique redemption patterns
+metadata_leaks:
+  - issuance timing
+  - redemption timing
+  - device identifiers
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; status checks can undermine unlinkability.
+operational_failure_modes:
+  - stable cookies or wallet IDs
+  - rare disclosed claims
+maturity: not-applicable
+related:
+  - anonymous-tokens
+  - blind-signatures
+references:
+  - rfc9576-privacy-pass
+  - chaum-blind-signatures

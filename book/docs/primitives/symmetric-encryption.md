@@ -71,8 +71,8 @@ Confidence comes from secret-key control, public scrutiny of the algorithm, corr
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Katz and Lindell, "Introduction to Modern Cryptography."
-- NIST FIPS 197, "Advanced Encryption Standard."
-- RFC 5116, "An Interface and Algorithms for Authenticated Encryption."
-- RFC 8439, "ChaCha20 and Poly1305 for IETF Protocols."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).
+- NIST FIPS 197, [Advanced Encryption Standard](https://csrc.nist.gov/pubs/fips/197/final).
+- RFC 5116, [An Interface and Algorithms for Authenticated Encryption](https://www.rfc-editor.org/rfc/rfc5116).
+- RFC 8439, [ChaCha20 and Poly1305 for IETF Protocols](https://www.rfc-editor.org/rfc/rfc8439).

@@ -116,6 +116,6 @@ Confidence comes from mathematical-assumption hardness, server key secrecy, publ
 
 ## Further reading
 
-- RFC 9497, "Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups."
-- Jarecki and Liu, "Efficient Oblivious Pseudorandom Function with Applications to Adaptive OT and Secure Computation of Set Intersection."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- RFC 9497, [Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups](https://www.rfc-editor.org/rfc/rfc9497).
+- Jarecki and Liu, [Efficient Oblivious Pseudorandom Function with Applications to Adaptive OT and Secure Computation of Set Intersection](https://doi.org/10.1007/978-3-642-00457-5_34).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

@@ -80,5 +80,5 @@ The delay parameter must reflect realistic sequential computation, the setup mod
 
 ## Further reading
 
-- Boneh et al., "Verifiable Delay Functions."
-- Wesolowski, "Efficient Verifiable Delay Functions."
+- Boneh et al., [Verifiable Delay Functions](https://eprint.iacr.org/2018/601).
+- Wesolowski, [Efficient Verifiable Delay Functions](https://eprint.iacr.org/2018/623).

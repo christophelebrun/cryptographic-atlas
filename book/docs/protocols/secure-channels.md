@@ -124,6 +124,10 @@ Confidence is mixed: mathematical-assumption for key exchange and authentication
 - Signal X3DH plus Double Ratchet for asynchronous secure messaging.
 - Post-quantum or hybrid handshakes that combine classical and post-quantum key establishment.
 
+## Source-depth notes
+
+Secure-channel source coverage should distinguish transport standards, application encryption components, and messaging protocols. TLS 1.3 is a complete channel protocol; HPKE is a building block for application encryption; MLS standardizes group messaging key management; Signal X3DH and Double Ratchet cover asynchronous messaging patterns. Post-quantum migration requires reviewing key establishment and authentication separately.
+
 ## Where it is used
 
 - Web transport security.
@@ -136,6 +140,8 @@ Confidence is mixed: mathematical-assumption for key exchange and authentication
 
 - [RFC 8446: The Transport Layer Security Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc8446).
 - [RFC 9180: Hybrid Public Key Encryption](https://www.rfc-editor.org/rfc/rfc9180).
+- [RFC 9420: The Messaging Layer Security Protocol](https://www.rfc-editor.org/rfc/rfc9420).
+- [RFC 9750: The Messaging Layer Security Architecture](https://www.rfc-editor.org/rfc/rfc9750).
 - [The Noise Protocol Framework](https://noiseprotocol.org/noise.html).
 - [Signal X3DH](https://signal.org/docs/specifications/x3dh/) and [Double Ratchet](https://signal.org/docs/specifications/doubleratchet/).
 - [RFC 5869: HKDF](https://www.rfc-editor.org/rfc/rfc5869).

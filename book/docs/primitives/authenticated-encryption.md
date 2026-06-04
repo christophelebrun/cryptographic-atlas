@@ -120,7 +120,7 @@ Widely deployed. Authenticated encryption with associated data (AEAD) is the def
 
 ## Further reading
 
-- RFC 5116, "An Interface and Algorithms for Authenticated Encryption."
-- RFC 8439, "ChaCha20 and Poly1305 for IETF Protocols."
-- Rogaway, "Authenticated-Encryption with Associated-Data."
-- NIST SP 800-38D, "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC."
+- RFC 5116, [An Interface and Algorithms for Authenticated Encryption](https://www.rfc-editor.org/rfc/rfc5116).
+- RFC 8439, [ChaCha20 and Poly1305 for IETF Protocols](https://www.rfc-editor.org/rfc/rfc8439).
+- Rogaway, [Authenticated-Encryption with Associated-Data](https://web.cs.ucdavis.edu/~rogaway/papers/ad.pdf).
+- NIST SP 800-38D, [Recommendation for Block Cipher Modes of Operation: GCM and GMAC](https://csrc.nist.gov/pubs/sp/800/38/d/final).

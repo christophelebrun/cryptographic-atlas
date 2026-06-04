@@ -134,6 +134,6 @@ The pattern is mature, but concrete systems range from well deployed to experime
 
 ## Further reading
 
-- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
-- Gentry, "Fully Homomorphic Encryption Using Ideal Lattices."
-- Benaloh, "Verifiable Secret-Ballot Elections."
+- Bonawitz et al., [Practical Secure Aggregation for Privacy-Preserving Machine Learning](https://research.google/pubs/practical-secure-aggregation-for-privacy-preserving-machine-learning/).
+- Gentry, [Fully Homomorphic Encryption Using Ideal Lattices](https://doi.org/10.1145/1536414.1536440).
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).

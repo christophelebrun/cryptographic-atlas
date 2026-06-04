@@ -116,6 +116,6 @@ Mature but specialized. Pairing-based systems are deployed, but they require exp
 
 ## Further reading
 
-- Boneh and Franklin, "Identity-Based Encryption from the Weil Pairing."
-- Groth, "On the Size of Pairing-Based Non-interactive Arguments."
-- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
+- Boneh and Franklin, [Identity-Based Encryption from the Weil Pairing](https://doi.org/10.1007/3-540-44647-8_13).
+- Groth, [On the Size of Pairing-Based Non-interactive Arguments](https://eprint.iacr.org/2016/260).
+- Shor, [Algorithms for Quantum Computation; Discrete Logarithms and Factoring](https://doi.org/10.1109/SFCS.1994.365700).

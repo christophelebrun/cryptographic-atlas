@@ -55,6 +55,53 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "anonymity",
+    "name": "Anonymity",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/anonymity",
+    "shortIntuition": "The actor should be hidden among a plausible set of actors.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "anonymity",
+        "href": "/docs/taxonomy/anonymity"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "confidentiality",
+        "href": "/docs/taxonomy/confidentiality"
+      },
+      {
+        "label": "unlinkability across repeated actions",
+        "href": "/docs/glossary#unlinkability"
+      },
+      {
+        "label": "network anonymity by default",
+        "href": "/docs/glossary#anonymity"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "group size",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "network path"
+      }
+    ]
+  },
+  {
     "id": "anonymous-airdrop",
     "name": "Anonymous Airdrop",
     "category": "system",
@@ -167,7 +214,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "anonymity",
-        "href": "/docs/glossary#anonymity"
+        "href": "/docs/taxonomy/anonymity"
       },
       {
         "label": "eligibility"
@@ -220,7 +267,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "unlinkability",
-        "href": "/docs/glossary#unlinkability"
+        "href": "/docs/taxonomy/unlinkability"
       },
       {
         "label": "issuer authenticity",
@@ -353,15 +400,15 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "integrity",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/integrity"
       },
       {
         "label": "authenticity",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/authenticity"
       }
     ],
     "doesNotProvide": [
@@ -393,6 +440,50 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "message-timing",
         "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "authenticity",
+    "name": "Authenticity",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/authenticity",
+    "shortIntuition": "Data or actions should be bound to the expected actor, key, role, or authority.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "authenticity",
+        "href": "/docs/taxonomy/authenticity"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "confidentiality",
+        "href": "/docs/taxonomy/confidentiality"
+      },
+      {
+        "label": "truth of signed claims"
+      },
+      {
+        "label": "human intent"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "identity",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "issuer"
+      },
+      {
+        "label": "credential type"
       }
     ]
   },
@@ -655,6 +746,54 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "confidentiality",
+    "name": "Confidentiality",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/confidentiality",
+    "shortIntuition": "Protected content should not be learned by unauthorized parties.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "confidentiality",
+        "href": "/docs/taxonomy/confidentiality"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "integrity",
+        "href": "/docs/taxonomy/integrity"
+      },
+      {
+        "label": "anonymity",
+        "href": "/docs/taxonomy/anonymity"
+      },
+      {
+        "label": "metadata privacy",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "size",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "endpoint identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "delayed-reveal",
     "name": "Delayed Reveal",
     "category": "design-pattern",
@@ -713,11 +852,11 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "authenticity",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/authenticity"
       },
       {
         "label": "integrity",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/integrity"
       },
       {
         "label": "unforgeability"
@@ -726,11 +865,11 @@ const conceptCards: ConceptCardData[] = [
     "doesNotProvide": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "anonymity",
-        "href": "/docs/glossary#anonymity"
+        "href": "/docs/taxonomy/anonymity"
       },
       {
         "label": "proof-of-human-understanding"
@@ -907,7 +1046,8 @@ const conceptCards: ConceptCardData[] = [
         "label": "ballot-secrecy"
       },
       {
-        "label": "verifiability"
+        "label": "verifiability",
+        "href": "/docs/taxonomy/verifiability"
       }
     ],
     "doesNotProvide": [
@@ -1149,6 +1289,47 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "forward-secrecy",
+    "name": "Forward Secrecy",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/forward-secrecy",
+    "shortIntuition": "Later long-term key compromise should not reveal past session secrets.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "forward secrecy",
+        "href": "/docs/taxonomy/forward-secrecy"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "endpoint compromise protection during the session"
+      },
+      {
+        "label": "metadata privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "post-quantum security by itself"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "connection timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "endpoint identities"
+      }
+    ]
+  },
+  {
     "id": "fri",
     "name": "FRI",
     "category": "Proof systems",
@@ -1204,7 +1385,7 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "least-privilege-decryption"
@@ -1344,7 +1525,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "encrypted-computation"
@@ -1421,6 +1602,49 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "verifier identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "integrity",
+    "name": "Integrity",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/integrity",
+    "shortIntuition": "Unauthorized changes should be detected.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "integrity",
+        "href": "/docs/taxonomy/integrity"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "confidentiality",
+        "href": "/docs/taxonomy/confidentiality"
+      },
+      {
+        "label": "authenticity by itself",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "semantic correctness"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "public verification context",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "message size",
         "href": "/docs/appendices/metadata-leakage"
       }
     ]
@@ -1795,7 +2019,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "integrity",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/integrity"
       },
       {
         "label": "symmetric-authenticity",
@@ -1814,7 +2038,7 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       }
     ],
     "postQuantumPosture": "plausible",
@@ -1844,7 +2068,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "unlinkability",
-        "href": "/docs/glossary#unlinkability"
+        "href": "/docs/taxonomy/unlinkability"
       },
       {
         "label": "anonymity-set-protection",
@@ -2012,7 +2236,7 @@ const conceptCards: ConceptCardData[] = [
     "doesNotProvide": [
       {
         "label": "anonymity",
-        "href": "/docs/glossary#anonymity"
+        "href": "/docs/taxonomy/anonymity"
       },
       {
         "label": "network-privacy",
@@ -2697,7 +2921,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "recipient-controlled-decryption"
@@ -3067,17 +3291,18 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "integrity",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/integrity"
       },
       {
         "label": "endpoint authentication"
       },
       {
-        "label": "forward secrecy"
+        "label": "forward secrecy",
+        "href": "/docs/taxonomy/forward-secrecy"
       }
     ],
     "doesNotProvide": [
@@ -3124,7 +3349,8 @@ const conceptCards: ConceptCardData[] = [
         "href": "/docs/taxonomy/security-goals"
       },
       {
-        "label": "forward secrecy"
+        "label": "forward secrecy",
+        "href": "/docs/taxonomy/forward-secrecy"
       },
       {
         "label": "participant authentication"
@@ -3260,7 +3486,7 @@ const conceptCards: ConceptCardData[] = [
     "securityGoals": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "bulk-data-protection"
@@ -3531,6 +3757,51 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "unlinkability",
+    "name": "Unlinkability",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/unlinkability",
+    "shortIntuition": "Observers should not tell that two actions came from the same subject.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "unlinkability",
+        "href": "/docs/taxonomy/unlinkability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "double-use prevention"
+      },
+      {
+        "label": "network anonymity",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "non-transferability"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "issuance timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "redemption timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "device identifiers"
+      }
+    ]
+  },
+  {
     "id": "vector-commitments",
     "name": "Vector Commitments",
     "category": "Structured primitives",
@@ -3580,6 +3851,50 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "verifiability",
+    "name": "Verifiability",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/verifiability",
+    "shortIntuition": "A party can check that a claim, proof, transcript, tally, or state transition satisfies stated rules.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "verifiability",
+        "href": "/docs/taxonomy/verifiability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "truth of off-chain facts"
+      },
+      {
+        "label": "privacy by itself",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "enforcement after detection"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "public-verifiability",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "public statement"
+      },
+      {
+        "label": "verification timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "audit trail"
+      }
+    ]
+  },
+  {
     "id": "vdf",
     "name": "Verifiable Delay Function",
     "category": "delay",
@@ -3598,7 +3913,7 @@ const conceptCards: ConceptCardData[] = [
     "doesNotProvide": [
       {
         "label": "confidentiality",
-        "href": "/docs/taxonomy/security-goals"
+        "href": "/docs/taxonomy/confidentiality"
       },
       {
         "label": "trusted-wall-clock-time"
@@ -3688,7 +4003,7 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "anonymity",
-        "href": "/docs/glossary#anonymity"
+        "href": "/docs/taxonomy/anonymity"
       }
     ],
     "postQuantumPosture": "vulnerable",

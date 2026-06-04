@@ -109,5 +109,5 @@ See also [Private Set Intersection](/docs/protocols/private-set-intersection), w
 
 ## Further reading
 
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

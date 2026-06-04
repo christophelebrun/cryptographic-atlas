@@ -1,0 +1,50 @@
+id: authenticity
+name: Authenticity
+category: Security goals
+level: security-goal
+short_intuition: Data or actions should be bound to the expected actor, key, role, or authority.
+security_goals:
+  - authenticity
+assumptions:
+  - verification keys or trust anchors are authentic
+  - statements include intended context
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - wrong identity is bound
+    - key is compromised
+  setup:
+    - trust anchors, issuer keys, or shared keys
+typical_uses:
+  - server authentication
+  - credential issuance
+  - signed updates
+does_not_provide:
+  - confidentiality
+  - truth of signed claims
+  - human intent
+composition_risks:
+  - ambiguous signed bytes
+  - missing revocation policy
+metadata_leaks:
+  - identity
+  - issuer
+  - credential type
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Concrete authenticators need key revocation, issuer revocation, and migration policy.
+operational_failure_modes:
+  - key misbinding
+  - stale trust anchors
+maturity: not-applicable
+related:
+  - digital-signature
+  - secure-channels
+references:
+  - rfc8446-tls13
+  - nist-fips-186-5

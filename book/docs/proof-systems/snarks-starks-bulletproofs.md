@@ -42,6 +42,10 @@ SNARKs, STARKs, and Bulletproofs are families of proof systems that package zero
 | Bulletproofs | Inner-product proof system | No trusted setup in common forms | Range proofs and confidential transactions | Discrete-logarithm based and quantum-vulnerable. |
 | Halo / Nova-style systems | Accumulation or folding families | Varies | Recursive and incremental proofs | Rapidly evolving; maturity is implementation-specific. |
 
+## Source-depth notes
+
+The families in this page should be read through their concrete construction papers, not only through umbrella terms. Groth16, PLONK, STARK/FRI systems, Bulletproofs, Halo, Nova, lookup arguments, and arithmetization each move assumptions into different places: setup, pairings, hashes, transcript binding, field choice, or circuit correctness.
+
 ## Post-quantum posture
 
 Depends on the family and construction. Many deployed pairing-based SNARKs are quantum-vulnerable. STARK-style systems are often treated as plausibly post-quantum when instantiated with appropriate hash functions. Bulletproof-style systems are usually discrete-logarithm based and therefore quantum-vulnerable.
@@ -70,6 +74,12 @@ Assumptions are family-specific: pairing-based SNARKs often depend on elliptic-c
 
 ## Further reading
 
-- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity."
-- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
-- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
+- Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).
+- Groth, [On the Size of Pairing-Based Non-interactive Arguments](https://eprint.iacr.org/2016/260).
+- Ben-Sasson et al., [Scalable, transparent, and post-quantum secure computational integrity](https://eprint.iacr.org/2018/046).
+- Ben-Sasson et al., [Fast Reed-Solomon Interactive Oracle Proofs of Proximity](https://eccc.weizmann.ac.il/report/2017/134/).
+- Bünz et al., [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066).
+- Gabizon, Williamson, and Ciobotaru, [PLONK](https://eprint.iacr.org/2019/953).
+- Bowe, Grigg, and Hopwood, [Halo](https://eprint.iacr.org/2019/1021).
+- Kothapalli, Setty, and Tzialla, [Nova](https://eprint.iacr.org/2021/370).
+- Gabizon and Williamson, [Plookup](https://eprint.iacr.org/2020/315).

@@ -36,5 +36,5 @@ For every primitive, protocol, or system page, separate the cryptographic statem
 
 ## Further reading
 
-- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
+- Chaum, [Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms](https://doi.org/10.1145/358549.358563).
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).

@@ -68,6 +68,10 @@ Confidence comes from trusted issuers, holder-side secrets, verifier policy, wal
 - Device compromise or credential export.
 - Issuer keys not rotated or revoked cleanly.
 
+## Source-depth notes
+
+Identity-wallet source coverage should distinguish the credential data model, proof cryptosuites, and presentation profiles. W3C Data Integrity ECDSA and EdDSA are Recommendation-track credential signature profiles; W3C BBS is current but Candidate Recommendation draft-stage; SD-JWT is an IETF standard for selective disclosure, while SD-JWT VC remains an active Internet-Draft.
+
 ## Related concepts
 
 - [Anonymous Credentials](/docs/protocols/anonymous-credentials)
@@ -78,4 +82,9 @@ Confidence comes from trusted issuers, holder-side secrets, verifier policy, wal
 
 - [W3C Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model/).
 - [W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/).
+- [W3C Data Integrity ECDSA Cryptosuites v1.0](https://www.w3.org/TR/vc-di-ecdsa/).
+- [W3C Data Integrity EdDSA Cryptosuites v1.0](https://www.w3.org/TR/vc-di-eddsa/).
+- [W3C Data Integrity BBS Cryptosuites v1.0](https://www.w3.org/TR/vc-di-bbs/).
+- [RFC 9901: Selective Disclosure for JSON Web Tokens](https://www.rfc-editor.org/rfc/rfc9901).
+- [IETF SD-JWT-based Verifiable Digital Credentials draft](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/).
 - [Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials"](https://doi.org/10.1007/3-540-44987-6_7).

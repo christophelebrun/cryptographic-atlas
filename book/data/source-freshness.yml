@@ -26,6 +26,10 @@ clusters:
       - kothapalli-setty-tzialla-nova
       - lund-sumcheck
       - goldwasser-kalai-rothblum-gkr
+      - poseidon-hash
+      - mimc-hash
+      - rescue-prime
+      - cfrg-pairing-friendly-curves
     notes: Proof-system families, recursion, folding, and rollup proving stacks move quickly.
   - id: threshold-signing
     name: Threshold signing and issuance
@@ -39,6 +43,9 @@ clusters:
     reference_ids:
       - shamir-secret-sharing
       - rfc9591-frost
+      - gennaro-dkg
+      - bls-signatures
+      - boldyreva-threshold-signatures
       - canetti-uc
     notes: Protocol variants and deployment guidance change as FROST and threshold custody mature.
   - id: anonymous-credentials
@@ -56,6 +63,10 @@ clusters:
       - w3c-vc-data-model-2
       - w3c-bitstring-status-list
       - rfc9576-privacy-pass
+      - cfrg-bbs-signatures
+      - w3c-vc-di-bbs
+      - rfc9901-sd-jwt
+      - draft-oauth-sd-jwt-vc
     notes: Credential formats, revocation mechanisms, and selective-disclosure profiles are still evolving.
   - id: private-payments
     name: Private payments and ledger privacy
@@ -70,6 +81,8 @@ clusters:
     reference_ids:
       - chaum-fiat-naor-ecash
       - zerocash
+      - zcash-protocol-spec
+      - zcash-orchard
       - flash-boys-2
     notes: Ledger metadata, wallet behavior, and ordering-layer designs change quickly.
   - id: secure-channels
@@ -85,6 +98,7 @@ clusters:
       - rfc8446-tls13
       - rfc9180-hpke
       - rfc9420-mls
+      - rfc9750-mls-architecture
       - signal-x3dh
       - signal-double-ratchet
       - noise-framework
@@ -101,6 +115,11 @@ clusters:
     reference_ids:
       - w3c-vc-data-model-2
       - w3c-bitstring-status-list
+      - w3c-vc-di-bbs
+      - w3c-vc-di-ecdsa
+      - w3c-vc-di-eddsa
+      - rfc9901-sd-jwt
+      - draft-oauth-sd-jwt-vc
       - rfc9576-privacy-pass
     notes: VC 2.0 ecosystem profiles, status-list formats, wallets, and disclosure mechanisms are active areas.
   - id: post-quantum-migration
@@ -120,4 +139,42 @@ clusters:
       - nist-fips-205
       - nist-hqc-selection
       - nist-ir-8545
+      - nist-ir-8581
+      - nist-pqc-migration-project
     notes: NIST standardized ML-KEM, ML-DSA, and SLH-DSA in 2024; HQC was selected for future standardization in 2025, and FIPS 206 remains in development.
+  - id: fhe-and-mpc
+    name: FHE and MPC scheme families
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - homomorphic-encryption
+      - mpc
+      - private-machine-learning-analytics
+    reference_ids:
+      - homomorphic-encryption-standard
+      - bgv-homomorphic-encryption
+      - fan-vercauteren-bfv
+      - ckks
+      - tfhe
+      - yao-garbled-circuits
+      - gmw-mpc
+      - bgw-mpc
+      - spdz
+      - mascot
+    notes: FHE libraries, parameter guidance, MPC frameworks, and practical deployment profiles evolve quickly.
+  - id: encrypted-mempools
+    name: Encrypted mempools and fair ordering
+    review_window_months: 6
+    last_reviewed: '2026-06-04'
+    next_review_due: '2026-12-04'
+    topics:
+      - encrypted-mempools
+      - delayed-reveal
+      - threshold-cryptography
+    reference_ids:
+      - flash-boys-2
+      - eip-8184-lucid
+      - ferveo
+      - batched-threshold-mempools
+    notes: Ethereum encrypted-mempool designs are draft-stage and should be reviewed before presenting as deployed guarantees.

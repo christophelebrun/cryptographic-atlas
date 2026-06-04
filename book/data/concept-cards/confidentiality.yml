@@ -1,0 +1,50 @@
+id: confidentiality
+name: Confidentiality
+category: Security goals
+level: security-goal
+short_intuition: Protected content should not be learned by unauthorized parties.
+security_goals:
+  - confidentiality
+assumptions:
+  - encryption keys remain secret
+  - plaintext handling is controlled
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - keys or plaintext leak
+    - encryption is unauthenticated where tampering matters
+  setup:
+    - key management and access-control policy
+typical_uses:
+  - encrypted transport
+  - storage encryption
+  - private transaction contents
+does_not_provide:
+  - integrity
+  - anonymity
+  - metadata privacy
+composition_risks:
+  - encryption without authentication
+  - endpoint compromise
+metadata_leaks:
+  - size
+  - timing
+  - endpoint identity
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; concrete key systems need rotation and revocation.
+operational_failure_modes:
+  - plaintext logging
+  - key custody failure
+maturity: not-applicable
+related:
+  - authenticated-encryption
+  - secure-channels
+references:
+  - boneh-shoup-applied-cryptography
+  - rfc5116-aead

@@ -89,5 +89,5 @@ The scheme-specific hardness assumption, parameter set, noise budget, key-manage
 
 ## Further reading
 
-- Craig Gentry, "Fully Homomorphic Encryption Using Ideal Lattices."
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
+- Gentry, [Fully Homomorphic Encryption Using Ideal Lattices](https://doi.org/10.1145/1536414.1536440).
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

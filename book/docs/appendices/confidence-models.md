@@ -66,6 +66,6 @@ Avoid vague statements:
 
 ## Further reading
 
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
-- Shamir, "How to Share a Secret."
-- Benaloh, "Verifiable Secret-Ballot Elections."
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
+- Shamir, [How to Share a Secret](https://doi.org/10.1145/359168.359176).
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).

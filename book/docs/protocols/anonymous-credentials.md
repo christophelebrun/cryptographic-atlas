@@ -99,6 +99,10 @@ Timing, verifier identity, IP addresses, rare attributes, and revocation checks 
 | ZK credential systems | Credentials proven inside a zero-knowledge proof | Can hide more metadata, but inherits proof-system assumptions and circuit correctness risk. |
 | Accumulator-based revocation | Private or semi-private status checks | Revocation can reintroduce linkability if freshness checks are not designed carefully. |
 
+## Source-depth notes
+
+Credential pages should distinguish mature anonymous-credential schemes from web credential profiles that primarily provide issuer authenticity and selective disclosure. BBS-based W3C work is current but still draft-stage as of April 2026, while SD-JWT is standardized for selective disclosure and SD-JWT VC remains an active Internet-Draft.
+
 ## Where it is used
 
 - Private access control.
@@ -107,5 +111,10 @@ Timing, verifier identity, IP addresses, rare attributes, and revocation checks 
 
 ## Further reading
 
-- Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation."
-- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
+- Camenisch and Lysyanskaya, [An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation](https://doi.org/10.1007/3-540-44987-6_7).
+- Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).
+- IETF CFRG, [The BBS Signature Scheme](https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/).
+- W3C, [Data Integrity BBS Cryptosuites v1.0](https://www.w3.org/TR/vc-di-bbs/).
+- RFC 9901, [Selective Disclosure for JSON Web Tokens](https://www.rfc-editor.org/rfc/rfc9901).
+- IETF OAuth, [SD-JWT-based Verifiable Digital Credentials](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/).
+- W3C, [Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/).

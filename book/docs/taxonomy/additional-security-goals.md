@@ -3,8 +3,8 @@ title: Additional Security Goals
 type: taxonomy
 level: security-goal
 template: overview
-status: current
-coverage_depth: grouped-first-pass
+status: needs-review
+coverage_depth: routing-overview
 last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
@@ -19,19 +19,21 @@ confidence_model:
 
 # Additional Security Goals
 
-Security goals describe what a system is trying to achieve before any primitive or protocol is selected. This page adds goals that often appear in secure messaging, voting, rollups, identity, and operational cryptography.
+Security goals describe what a system is trying to achieve before any primitive or protocol is selected. This page now routes to standalone high-value goals and keeps grouped coverage for adjacent goals.
 
 ## Goal matrix
 
 | Goal | One-sentence intuition | Usually sits at | What it does not provide |
 | --- | --- | --- | --- |
-| Verifiability | A party can check that a statement, tally, proof, or transcript satisfies stated rules. | proof system, protocol, system | Truth of off-chain facts or good user intent. |
+| [Verifiability](/docs/taxonomy/verifiability) | A party can check that a statement, tally, proof, or transcript satisfies stated rules. | proof system, protocol, system | Truth of off-chain facts or good user intent. |
 | Auditability | Enough evidence exists for later review of a process or decision. | protocol, system, governance layer | Privacy by itself; logs can create new leaks. |
 | Accountability | Misbehavior can be attributed or sanctioned under stated rules. | protocol, system | Public identity disclosure or automatic enforcement. |
-| Forward secrecy | Later compromise of long-term keys does not expose past session secrets. | protocol | Protection if session secrets were recorded or compromised at the time. |
+| [Forward secrecy](/docs/taxonomy/forward-secrecy) | Later compromise of long-term keys does not expose past session secrets. | protocol | Protection if session secrets were recorded or compromised at the time. |
 | Deniability | A transcript does not convince outsiders that a participant said or did something. | protocol, system | Public verifiability or legal non-repudiation. |
 
 ## Verifiability
+
+See [Verifiability](/docs/taxonomy/verifiability) for the standalone page.
 
 Verifiability is the ability to check a claim. A verifier may check a digital signature, a zero-knowledge proof, a Merkle inclusion proof, a voting tally, or a rollup state transition.
 
@@ -96,6 +98,8 @@ Failure modes:
 
 ## Forward secrecy
 
+See [Forward Secrecy](/docs/taxonomy/forward-secrecy) for the standalone page.
+
 Forward secrecy is a protocol goal: compromise of a long-term secret should not reveal past session keys.
 
 Security properties:
@@ -143,6 +147,13 @@ Not applicable to the goals themselves. Each goal inherits posture from the conc
 ## Related concepts
 
 - [Security Goals](/docs/taxonomy/security-goals)
+- [Confidentiality](/docs/taxonomy/confidentiality)
+- [Integrity](/docs/taxonomy/integrity)
+- [Authenticity](/docs/taxonomy/authenticity)
+- [Anonymity](/docs/taxonomy/anonymity)
+- [Unlinkability](/docs/taxonomy/unlinkability)
+- [Forward Secrecy](/docs/taxonomy/forward-secrecy)
+- [Verifiability](/docs/taxonomy/verifiability)
 - [Digital Signatures](/docs/primitives/digital-signatures)
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
 - [Secure Channels](/docs/protocols/secure-channels)
@@ -150,7 +161,7 @@ Not applicable to the goals themselves. Each goal inherits posture from the conc
 
 ## Further reading
 
-- Katz and Lindell, "Introduction to Modern Cryptography."
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
-- Benaloh, "Verifiable Secret-Ballot Elections."
-- Signal, "The Double Ratchet Algorithm."
+- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).
+- Signal, [The Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet/).

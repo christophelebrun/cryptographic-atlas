@@ -103,5 +103,5 @@ Batch size, timing, message size, and participation patterns can reveal users.
 
 ## Further reading
 
-- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
-- Benaloh, "Verifiable Secret-Ballot Elections."
+- Chaum, [Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms](https://doi.org/10.1145/358549.358563).
+- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).

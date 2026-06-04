@@ -122,5 +122,5 @@ Pedersen commitments are mature but should be used through well-reviewed librari
 
 ## Further reading
 
-- Pedersen, "Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing."
-- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
+- Pedersen, [Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing](https://doi.org/10.1007/3-540-46766-1_9).
+- Bünz et al., [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066).

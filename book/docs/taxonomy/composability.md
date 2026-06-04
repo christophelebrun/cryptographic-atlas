@@ -56,5 +56,5 @@ Instead of saying "this system is secure," say:
 
 ## Further reading
 
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
-- Katz and Lindell, "Introduction to Modern Cryptography."
+- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
+- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).

@@ -75,7 +75,7 @@ Confidence comes from the signer controlling the private key, verifiers binding 
 
 ## Further reading
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- NIST FIPS 204, "Module-Lattice-Based Digital Signature Standard."
-- NIST FIPS 205, "Stateless Hash-Based Digital Signature Standard."
-- NIST CSRC, "Post-Quantum Cryptography Project."
+- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- NIST FIPS 204, [Module-Lattice-Based Digital Signature Standard](https://csrc.nist.gov/pubs/fips/204/final).
+- NIST FIPS 205, [Stateless Hash-Based Digital Signature Standard](https://csrc.nist.gov/pubs/fips/205/final).
+- NIST CSRC, [Post-Quantum Cryptography Project](https://csrc.nist.gov/Projects/post-quantum-cryptography).

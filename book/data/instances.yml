@@ -1130,3 +1130,674 @@ instances:
       - Rare credentials and online fetch patterns can still identify holders.
     references:
       - w3c-bitstring-status-list
+  - id: sha-1
+    name: SHA-1
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Legacy systems may still require recognition of SHA-1 identifiers.
+      - Collision resistance is not adequate for new cryptographic designs.
+    common_uses:
+      - Legacy protocol and certificate archaeology.
+      - Migration inventories.
+    cautions:
+      - Do not use SHA-1 for new collision-resistance-dependent designs.
+      - Treat SHA-1 as legacy or deprecated even before considering quantum attacks.
+    references:
+      - nist-fips-180-4
+      - nist-sp-800-131a
+  - id: md5
+    name: MD5
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - MD5 appears only for legacy recognition and migration work.
+      - Collision resistance is broken for cryptographic purposes.
+    common_uses:
+      - Legacy checksums and old protocol identifiers.
+      - Asset inventory and deprecation tracking.
+    cautions:
+      - Do not use MD5 for cryptographic integrity, signatures, or commitments.
+      - A checksum use case should be explicitly non-adversarial.
+    references:
+      - nist-sp-800-131a
+  - id: rsa-pkcs1-v1-5-encryption
+    name: RSAES-PKCS1-v1_5 encryption
+    kind: scheme
+    instance_of:
+      - public-key-encryption
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Factoring remains hard and padding-oracle behavior is impossible in the deployment.
+      - Implementations apply strict error handling and migration policy.
+    common_uses:
+      - Legacy public-key encryption interoperability.
+      - Migration inventories for old TLS, CMS, or application formats.
+    cautions:
+      - New designs should use modern KEM or RSA-OAEP profiles rather than RSAES-PKCS1-v1_5.
+      - Padding-oracle behavior can be catastrophic.
+    references:
+      - rfc8017-pkcs1
+      - nist-sp-800-131a
+  - id: rsa-pkcs1-v1-5-signature
+    name: RSASSA-PKCS1-v1_5 signature
+    kind: scheme
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Factoring remains hard and encodings are verified exactly.
+      - Legacy acceptance is controlled by policy and not silently extended.
+    common_uses:
+      - Legacy certificate and document-signature ecosystems.
+      - Migration compatibility checks.
+    cautions:
+      - Prefer RSA-PSS or post-quantum signatures for new designs where RSA interoperability is not required.
+      - Classical RSA signatures are quantum-vulnerable.
+    references:
+      - rfc8017-pkcs1
+      - nist-sp-800-131a
+  - id: p-384
+    name: NIST P-384
+    kind: curve
+    instance_of:
+      - elliptic-curves
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The elliptic-curve discrete-logarithm problem remains hard for P-384.
+      - Implementations validate points and use constant-time scalar operations.
+    common_uses:
+      - ECDSA and ECDH profiles requiring a larger classical security margin than P-256.
+      - PKI and hardware-backed credentials.
+    cautions:
+      - Larger classical parameters do not make the curve post-quantum.
+      - Point validation and nonce handling remain critical.
+    references:
+      - nist-fips-186-5
+      - shor-quantum-factoring
+  - id: curve448
+    name: Curve448 / X448
+    kind: curve
+    instance_of:
+      - elliptic-curves
+      - key-encapsulation-and-exchange
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Curve448 discrete logarithms remain hard.
+      - Protocols bind public keys and transcript context correctly.
+    common_uses:
+      - Diffie-Hellman key agreement with a larger classical margin than X25519.
+      - Secure-channel profiles that support X448.
+    cautions:
+      - X448 provides key agreement, not endpoint authentication by itself.
+      - Quantum attacks would break the curve assumption.
+    references:
+      - rfc7748-curves
+      - shor-quantum-factoring
+  - id: secp256k1
+    name: secp256k1
+    kind: curve
+    instance_of:
+      - elliptic-curves
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The elliptic-curve discrete-logarithm problem remains hard for secp256k1.
+      - Implementations use reviewed signature encodings and nonce generation.
+    common_uses:
+      - Blockchain signatures.
+      - Wallet and account keys in ecosystems that standardized on secp256k1.
+    cautions:
+      - Quantum attacks would break the underlying assumption.
+      - Signature malleability, nonce failures, and message-domain mistakes are ecosystem risks.
+    references:
+      - sec2-curves
+      - shor-quantum-factoring
+  - id: bls12-381
+    name: BLS12-381
+    kind: curve
+    instance_of:
+      - pairings
+      - elliptic-curves
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Pairing and elliptic-curve discrete-logarithm assumptions remain hard at the selected security level.
+      - Subgroup checks, serialization, and hash-to-curve suites are used correctly.
+    common_uses:
+      - Pairing-based signatures.
+      - KZG commitments.
+      - Pairing-based SNARKs and accumulator designs.
+    cautions:
+      - Pairing-friendly does not mean general-purpose curve safety.
+      - Classical pairing curves are quantum-vulnerable.
+    references:
+      - cfrg-pairing-friendly-curves
+      - shor-quantum-factoring
+  - id: bn254
+    name: BN254 / alt_bn128
+    kind: curve
+    instance_of:
+      - pairings
+      - elliptic-curves
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The deployment accepts the effective classical security level and Ethereum precompile constraints.
+      - Subgroup and pairing checks are implemented exactly.
+    common_uses:
+      - Ethereum zk-SNARK verification precompiles.
+      - Legacy Groth16 and PLONK deployments.
+    cautions:
+      - Security margins are weaker than newer pairing-friendly choices.
+      - It remains quantum-vulnerable and should be inventoried separately from BLS12-381.
+    references:
+      - eip-196-alt-bn128
+      - cfrg-pairing-friendly-curves
+  - id: poseidon
+    name: Poseidon
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Parameters and round constants match a reviewed instantiation for the field and security target.
+      - The proof system and circuit use canonical field encodings.
+    common_uses:
+      - ZK-friendly hashing in arithmetic circuits.
+      - Merkle trees inside SNARK-oriented applications.
+    cautions:
+      - ZK-friendly hashes are not drop-in replacements for standardized general-purpose hashes.
+      - Parameter drift across libraries can break interoperability or security assumptions.
+    references:
+      - poseidon-hash
+  - id: mimc
+    name: MiMC
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - The chosen exponent, rounds, field, and domain separation match reviewed parameters.
+      - Circuit and implementation encodings are canonical.
+    common_uses:
+      - ZK-friendly hash and block-cipher-like constructions.
+      - Legacy or educational SNARK circuits.
+    cautions:
+      - Many deployments have moved toward newer ZK-friendly hash choices.
+      - Do not improvise parameters.
+    references:
+      - mimc-hash
+  - id: rescue-prime
+    name: Rescue-Prime
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - The permutation parameters match a reviewed security level.
+      - The field and sponge usage match the proof-system setting.
+    common_uses:
+      - ZK-friendly hashing in proof systems.
+      - STARK- and SNARK-oriented circuit designs.
+    cautions:
+      - Treat parameter selection as scheme-specific cryptography.
+      - General-purpose deployment maturity differs from SHA-2 or SHA-3.
+    references:
+      - rescue-prime
+  - id: bgv
+    name: BGV homomorphic encryption
+    kind: scheme
+    instance_of:
+      - homomorphic-encryption
+    taxonomy_level: structured-primitive
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Ring-LWE style assumptions and selected parameters remain hard.
+      - Noise growth and modulus switching are managed correctly.
+    common_uses:
+      - Batched exact arithmetic over encrypted data.
+      - Private analytics and outsourced computation.
+    cautions:
+      - Parameter selection requires expert tooling and review.
+      - Output leakage and access patterns remain outside the scheme.
+    references:
+      - bgv-homomorphic-encryption
+      - homomorphic-encryption-standard
+  - id: bfv
+    name: BFV homomorphic encryption
+    kind: scheme
+    instance_of:
+      - homomorphic-encryption
+    taxonomy_level: structured-primitive
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Ring-LWE style assumptions and selected parameters remain hard.
+      - Plaintext modulus, ciphertext modulus, and noise budget fit the computation.
+    common_uses:
+      - Exact arithmetic on encrypted integers or modular data.
+      - Private analytics workloads with bounded circuits.
+    cautions:
+      - Wrong parameters can break correctness or security.
+      - Homomorphic encryption does not validate malicious inputs by itself.
+    references:
+      - fan-vercauteren-bfv
+      - homomorphic-encryption-standard
+  - id: ckks
+    name: CKKS homomorphic encryption
+    kind: scheme
+    instance_of:
+      - homomorphic-encryption
+    taxonomy_level: structured-primitive
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Ring-LWE style assumptions and approximate arithmetic parameters remain appropriate.
+      - Scale management and precision loss are acceptable for the application.
+    common_uses:
+      - Approximate encrypted numerical computation.
+      - Private machine-learning inference and analytics.
+    cautions:
+      - Approximation error is part of the semantics.
+      - Decryption and output policies can leak sensitive information.
+    references:
+      - ckks
+      - homomorphic-encryption-standard
+  - id: tfhe
+    name: TFHE
+    kind: scheme
+    instance_of:
+      - homomorphic-encryption
+    taxonomy_level: structured-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - LWE/TLWE-style assumptions and bootstrapping parameters remain adequate.
+      - Gate-level or programmable bootstrapping costs fit the application.
+    common_uses:
+      - Boolean or small-message FHE circuits.
+      - Private computation with frequent bootstrapping.
+    cautions:
+      - Performance and parameter choices are highly workload-dependent.
+      - FHE does not solve input validity or output leakage by itself.
+    references:
+      - tfhe
+      - homomorphic-encryption-standard
+  - id: yao-garbled-circuits
+    name: Yao garbled circuits
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - The adversary model matches the garbling and oblivious-transfer construction.
+      - The function is compiled into the intended circuit.
+    common_uses:
+      - Two-party secure computation.
+      - Private function evaluation prototypes and systems.
+    cautions:
+      - Circuit size, input encoding, and malicious-security upgrades dominate practicality.
+      - Output and abort behavior can still leak.
+    references:
+      - yao-garbled-circuits
+  - id: gmw
+    name: GMW protocol family
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - The network, corruption threshold, and OT or commitment assumptions match the security model.
+      - Boolean circuit representation matches the intended function.
+    common_uses:
+      - General MPC over Boolean circuits.
+      - Protocol education and building-block analysis.
+    cautions:
+      - Round complexity and circuit depth matter.
+      - Malicious security requires additional checks.
+    references:
+      - gmw-mpc
+  - id: bgw
+    name: BGW protocol family
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The honest-majority threshold and synchronous communication assumptions hold.
+      - Secret sharing and multiplication checks are implemented correctly.
+    common_uses:
+      - Honest-majority MPC.
+      - Arithmetic-circuit computation with Shamir sharing.
+    cautions:
+      - The adversary threshold is not optional.
+      - Abort, robustness, and network model must be stated.
+    references:
+      - bgw-mpc
+      - shamir-secret-sharing
+  - id: spdz
+    name: SPDZ protocol family
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: depends
+    assumptions:
+      - Preprocessing, MAC keys, and authenticated shares are generated securely.
+      - The implementation enforces malicious-security checks.
+    common_uses:
+      - Actively secure arithmetic MPC.
+      - Private analytics and threshold computation systems.
+    cautions:
+      - Offline preprocessing assumptions are central.
+      - Output release and abort behavior remain application-level risks.
+    references:
+      - spdz
+  - id: mascot
+    name: MASCOT
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Oblivious transfer and correlation checks are secure under the chosen adversary model.
+      - Authenticated triples are generated and consumed correctly.
+    common_uses:
+      - Maliciously secure arithmetic MPC preprocessing.
+      - SPDZ-style online computation pipelines.
+    cautions:
+      - OT assumptions and implementation details affect post-quantum posture.
+      - Preprocessing failures can compromise later computations.
+    references:
+      - mascot
+  - id: gennaro-dkg
+    name: Gennaro-Jarecki-Krawczyk-Rabin DKG
+    kind: protocol-suite
+    instance_of:
+      - threshold-cryptography
+    taxonomy_level: structured-primitive
+    maturity: mature
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The discrete-logarithm assumption holds and participants follow the DKG complaint rules.
+      - The threshold and broadcast assumptions match the deployment.
+    common_uses:
+      - Dealerless threshold-key generation.
+      - Setup for threshold signatures and decryption.
+    cautions:
+      - DKG is a protocol with abort and blame behavior, not just a key format.
+      - Classical discrete-log DKG is quantum-vulnerable.
+    references:
+      - gennaro-dkg
+  - id: threshold-bls
+    name: Threshold BLS signatures
+    kind: scheme
+    instance_of:
+      - threshold-cryptography
+      - digital-signature
+    taxonomy_level: structured-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Pairing assumptions and the threshold-share assumptions hold.
+      - DKG or share provisioning is correct and subgroup/domain checks are enforced.
+    common_uses:
+      - Validator committee signatures.
+      - Distributed signing and aggregation.
+    cautions:
+      - Pairing and threshold assumptions both matter.
+      - It does not make a committee trustless.
+    references:
+      - bls-signatures
+      - boldyreva-threshold-signatures
+      - cfrg-pairing-friendly-curves
+  - id: fn-dsa
+    name: FN-DSA / Falcon
+    kind: standard
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - NTRU-lattice assumptions and selected parameters remain hard.
+      - Implementations handle sampling and side channels correctly.
+    common_uses:
+      - Planned post-quantum signature standardization.
+      - Migration planning where smaller signatures and fast verification are important.
+    cautions:
+      - Treat as in-development standardization until final FIPS status is confirmed.
+      - Implementation complexity is a central deployment risk.
+    references:
+      - nist-ir-8581
+  - id: bbs-verifiable-credentials
+    name: BBS Data Integrity credentials
+    kind: protocol-suite
+    instance_of:
+      - anonymous-credential
+      - identity-wallets
+    taxonomy_level: protocol
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - BBS signature assumptions over pairing-friendly curves hold.
+      - Canonicalization, mandatory disclosure, and proof-generation rules are implemented exactly.
+    common_uses:
+      - Selective-disclosure verifiable credentials.
+      - Unlinkable derived credential presentations.
+    cautions:
+      - The W3C BBS cryptosuite is still in Candidate Recommendation as of April 2026.
+      - Pairing-based signatures are quantum-vulnerable.
+    references:
+      - cfrg-bbs-signatures
+      - w3c-vc-di-bbs
+  - id: sd-jwt
+    name: Selective Disclosure JWT
+    kind: standard
+    instance_of:
+      - identity-wallets
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - JWT signing keys, disclosures, and holder binding are verified according to profile rules.
+      - The application accepts selective disclosure without assuming unlinkability.
+    common_uses:
+      - Web credential claims with selective disclosure.
+      - Identity-wallet credential presentations.
+    cautions:
+      - Selective disclosure is not the same as anonymous credentials.
+      - Signature algorithms and holder-binding choices determine post-quantum posture.
+    references:
+      - rfc9901-sd-jwt
+      - draft-oauth-sd-jwt-vc
+  - id: vc-di-ecdsa
+    name: W3C Data Integrity ECDSA credentials
+    kind: standard
+    instance_of:
+      - identity-wallets
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - ECDSA keys, canonicalization, proof purpose, and verification method resolution are correct.
+      - Issuer trust and credential status are handled by the relying system.
+    common_uses:
+      - W3C verifiable credential issuance and verification.
+      - Identity-wallet ecosystems using NIST-compatible curves.
+    cautions:
+      - ECDSA is quantum-vulnerable.
+      - Data canonicalization and verification method handling are common implementation risks.
+    references:
+      - w3c-vc-di-ecdsa
+  - id: vc-di-eddsa
+    name: W3C Data Integrity EdDSA credentials
+    kind: standard
+    instance_of:
+      - identity-wallets
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - EdDSA keys, canonicalization, proof purpose, and verification method resolution are correct.
+      - Issuer trust and credential status are handled by the relying system.
+    common_uses:
+      - W3C verifiable credential issuance and verification.
+      - Linked-data proof ecosystems using EdDSA.
+    cautions:
+      - EdDSA is quantum-vulnerable.
+      - Credential privacy depends on disclosure, status, and wallet behavior, not just signatures.
+    references:
+      - w3c-vc-di-eddsa
+  - id: zcash-sapling
+    name: Zcash Sapling shielded protocol
+    kind: protocol-suite
+    instance_of:
+      - private-payments
+    taxonomy_level: system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: true
+    assumptions:
+      - The Sapling proof system, note commitments, nullifiers, and wallet key derivation are implemented as specified.
+      - The proving parameters and ledger rules remain sound.
+    common_uses:
+      - Shielded private payments.
+      - Viewing-key and note-based wallet workflows.
+    cautions:
+      - Ledger, exchange, timing, and wallet metadata can still link users.
+      - Trusted setup and classical proof assumptions matter.
+    references:
+      - zcash-protocol-spec
+      - zerocash
+  - id: zcash-orchard
+    name: Zcash Orchard shielded protocol
+    kind: protocol-suite
+    instance_of:
+      - private-payments
+      - recursive-proofs
+    taxonomy_level: system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The Orchard note, action, nullifier, and proof rules are implemented as specified.
+      - Wallets handle viewing keys, diversifiers, and metadata safely.
+    common_uses:
+      - Shielded private payments.
+      - Halo-style proving without a trusted setup.
+    cautions:
+      - Removing trusted setup does not remove all metadata or wallet risks.
+      - Common curve-based assumptions remain quantum-vulnerable.
+    references:
+      - zcash-protocol-spec
+      - zcash-orchard
+      - bowe-grigg-hopwood-halo
+  - id: lucid-encrypted-mempool
+    name: LUCID encrypted mempool proposal
+    kind: protocol-suite
+    instance_of:
+      - encrypted-mempools
+      - delayed-reveal
+    taxonomy_level: system
+    maturity: research
+    post_quantum_posture: depends
+    requires_trusted_setup: depends
+    assumptions:
+      - Encrypted transaction commitments are fixed before reveal.
+      - Inclusion, reveal, and fallback rules are enforced by the surrounding protocol.
+    common_uses:
+      - Ethereum encrypted-mempool design discussion.
+      - Commit-before-reveal transaction inclusion proposals.
+    cautions:
+      - Draft EIP status is not deployment maturity.
+      - Encryption does not by itself prevent censorship, size analysis, or timing linkage.
+    references:
+      - eip-8184-lucid
+      - flash-boys-2
+  - id: ferveo-threshold-mempool
+    name: Ferveo threshold-decrypted mempool
+    kind: protocol-suite
+    instance_of:
+      - encrypted-mempools
+      - threshold-cryptography
+    taxonomy_level: system
+    maturity: research
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - DKG, threshold decryption, and consensus-triggered reveal assumptions hold.
+      - The validator set and threshold match the mempool privacy goal.
+    common_uses:
+      - BFT-network threshold decryption research.
+      - Mempool privacy and fair-ordering designs.
+    cautions:
+      - Reveal timing and committee availability are central risks.
+      - Classical threshold encryption is quantum-vulnerable.
+    references:
+      - ferveo
+      - gennaro-dkg

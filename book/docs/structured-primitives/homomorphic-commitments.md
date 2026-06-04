@@ -61,5 +61,5 @@ Homomorphism can let invalid values cancel or wrap unless the protocol adds rang
 
 ## Further reading
 
-- Torben Pryds Pedersen, "Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing."
+- Pedersen, [Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing](https://doi.org/10.1007/3-540-46766-1_9).
 - [Pedersen commitments](/docs/primitives/pedersen-commitments)

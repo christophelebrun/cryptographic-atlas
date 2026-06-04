@@ -67,12 +67,19 @@ As of June 4, 2026, NIST's principal post-quantum standards are FIPS 203 for ML-
 
 This atlas should still classify broad concepts conservatively, because a concept such as "signature" or "encryption" can be instantiated with either quantum-vulnerable or post-quantum schemes.
 
+## Migration source-depth notes
+
+Migration should be tracked as an operational program, not only as an algorithm replacement. Inventory classical RSA, finite-field, elliptic-curve, pairing, and hybrid dependencies; separate key establishment from authentication; and treat threshold, credential, proof-system, and hardware-validation profiles as independent migration workstreams.
+
 ## Further reading
 
 - NIST: [Post-Quantum Cryptography FIPS Approved](https://csrc.nist.gov/News/2024/postquantum-cryptography-fips-approved)
 - NIST CSRC: [Post-Quantum Cryptography Project](https://csrc.nist.gov/Projects/post-quantum-cryptography)
 - NIST, [NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption](https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption)
+- NIST, [Status Report on the Fourth Round of the NIST Post-Quantum Cryptography Standardization Process](https://doi.org/10.6028/NIST.IR.8545)
+- NIST, [Status Report on the Additional Digital Signature Schemes for the NIST Post-Quantum Cryptography Standardization Process](https://doi.org/10.6028/NIST.IR.8581)
+- NIST NCCoE, [Migration to Post-Quantum Cryptography](https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc)
 - NIST NCCoE: [Frequently Asked Questions about Post-Quantum Cryptography](https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/)
-- Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
-- Grover, "A Fast Quantum Mechanical Algorithm for Database Search."
-- NIST FIPS 203, FIPS 204, and FIPS 205.
+- Shor, [Algorithms for Quantum Computation; Discrete Logarithms and Factoring](https://doi.org/10.1109/SFCS.1994.365700).
+- Grover, [A Fast Quantum Mechanical Algorithm for Database Search](https://doi.org/10.1145/237814.237866).
+- NIST [FIPS 203](https://csrc.nist.gov/pubs/fips/203/final), [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final), and [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final).

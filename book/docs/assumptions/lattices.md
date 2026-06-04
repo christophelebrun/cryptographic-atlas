@@ -118,6 +118,6 @@ Emerging to deployed depending on the scheme. ML-KEM and ML-DSA are standardized
 
 ## Further reading
 
-- Regev, "On Lattices, Learning with Errors, Random Linear Codes, and Cryptography."
-- NIST FIPS 203, "Module-Lattice-Based Key-Encapsulation Mechanism Standard."
-- Gentry, "Fully Homomorphic Encryption Using Ideal Lattices."
+- Regev, [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](https://doi.org/10.1145/1060590.1060603).
+- NIST FIPS 203, [Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/pubs/fips/203/final).
+- Gentry, [Fully Homomorphic Encryption Using Ideal Lattices](https://doi.org/10.1145/1536414.1536440).
