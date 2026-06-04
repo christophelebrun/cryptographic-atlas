@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: trusted-issuer
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check W3C VC, OpenID4VC, SD-JWT VC, EUDI ARF, ISO mdoc, AnonCreds, and wallet implementation references.
 ---
 
 # Identity Wallets
@@ -87,4 +91,9 @@ Identity-wallet source coverage should distinguish the credential data model, pr
 - [W3C Data Integrity BBS Cryptosuites v1.0](https://www.w3.org/TR/vc-di-bbs/).
 - [RFC 9901: Selective Disclosure for JSON Web Tokens](https://www.rfc-editor.org/rfc/rfc9901).
 - [IETF SD-JWT-based Verifiable Digital Credentials draft](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/).
+- [OpenID for Verifiable Credential Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html).
+- [OpenID for Verifiable Presentations](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html).
+- [European Digital Identity Wallet Architecture and Reference Framework](https://eudi.dev/latest/architecture-and-reference-framework-main/).
+- [ISO/IEC 18013-5 mobile driving licence application](https://www.iso.org/standard/69084.html).
+- [Hyperledger AnonCreds Specification](https://hyperledger.github.io/anoncreds-spec/).
 - [Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials"](https://doi.org/10.1007/3-540-44987-6_7).

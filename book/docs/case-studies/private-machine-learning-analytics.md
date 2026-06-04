@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check FHE, MPC, secure aggregation, differential privacy, and ML-specific leakage references.
 ---
 
 # Private Machine-Learning Analytics

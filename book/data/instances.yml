@@ -1801,3 +1801,718 @@ instances:
     references:
       - ferveo
       - gennaro-dkg
+  - id: p-521
+    name: P-521
+    kind: curve
+    instance_of:
+      - elliptic-curves
+      - discrete-logarithm
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The NIST P-521 curve parameters and implementation checks are used exactly.
+      - Scalar multiplication, validation, and encoding are implemented without side-channel leakage.
+    common_uses:
+      - High-security-level ECDSA and ECDH deployments.
+      - Legacy and compliance-driven elliptic-curve systems.
+    cautions:
+      - Larger classical security does not provide post-quantum security.
+      - Implementation compatibility is less common than P-256 or Curve25519.
+    references:
+      - sec2-curves
+      - nist-fips-186-5
+  - id: bls12-377
+    name: BLS12-377
+    kind: curve
+    instance_of:
+      - elliptic-curves
+      - pairings
+    taxonomy_level: mathematical-assumption
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Pairing-friendly curve parameters and subgroup checks are implemented correctly.
+      - The selected proof-system or recursion stack matches the curve cycle assumptions.
+    common_uses:
+      - Pairing-based proof systems.
+      - Recursive proof stacks that pair BLS12-377 with BW6-761.
+    cautions:
+      - Pairing-friendly curves are quantum-vulnerable.
+      - Curve-cycle choices affect verifier-circuit cost and compatibility.
+    references:
+      - cfrg-pairing-friendly-curves
+      - gnark-docs
+  - id: bw6-761
+    name: BW6-761
+    kind: curve
+    instance_of:
+      - elliptic-curves
+      - pairings
+    taxonomy_level: mathematical-assumption
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - BW6-761 parameters, subgroup checks, and pairing operations are implemented correctly.
+      - The surrounding proving stack accounts for the larger arithmetic cost.
+    common_uses:
+      - Outer curves for recursive SNARK verification.
+      - Pairing cycles with BLS12-377.
+    cautions:
+      - Specialized proof-system use does not imply broad deployment maturity.
+      - Quantum attacks on discrete logarithms still apply.
+    references:
+      - cfrg-pairing-friendly-curves
+      - gnark-docs
+  - id: jubjub
+    name: Jubjub
+    kind: curve
+    instance_of:
+      - elliptic-curves
+      - discrete-logarithm
+    taxonomy_level: mathematical-assumption
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The curve is used inside the intended field and protocol context.
+      - Encodings, subgroup behavior, and hash-to-curve rules match the deployed specification.
+    common_uses:
+      - Zcash Sapling-related note and spend authorization components.
+      - ZK-friendly elliptic-curve operations inside circuits.
+    cautions:
+      - Circuit convenience is not a general-purpose deployment recommendation.
+      - Classical elliptic-curve assumptions are quantum-vulnerable.
+    references:
+      - zcash-protocol-spec
+  - id: ml-kem-512
+    name: ML-KEM-512
+    kind: parameter-family
+    instance_of:
+      - key-encapsulation-and-exchange
+      - lattices
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE assumptions for the selected FIPS 203 parameter set remain hard.
+      - Implementations perform decapsulation, randomness, and side-channel handling correctly.
+    common_uses:
+      - Lower-bandwidth post-quantum KEM deployments where the selected security category is acceptable.
+      - Hybrid TLS and migration experiments.
+    cautions:
+      - Parameter choice is a policy and risk decision, not a generic upgrade.
+      - Hybrid deployments still inherit classical and protocol implementation risks.
+    references:
+      - nist-fips-203
+      - nist-pqc-project
+  - id: ml-kem-768
+    name: ML-KEM-768
+    kind: parameter-family
+    instance_of:
+      - key-encapsulation-and-exchange
+      - lattices
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE assumptions for the selected FIPS 203 parameter set remain hard.
+      - Implementations perform decapsulation, randomness, and side-channel handling correctly.
+    common_uses:
+      - General-purpose post-quantum KEM migration profiles.
+      - Hybrid key establishment in TLS-like protocols.
+    cautions:
+      - Standardization does not eliminate implementation and protocol-integration risk.
+      - Systems must inventory where KEM keys, certificates, and negotiation policies are used.
+    references:
+      - nist-fips-203
+      - nist-pqc-migration-project
+  - id: ml-kem-1024
+    name: ML-KEM-1024
+    kind: parameter-family
+    instance_of:
+      - key-encapsulation-and-exchange
+      - lattices
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE assumptions for the selected FIPS 203 parameter set remain hard.
+      - Implementations can tolerate larger keys and ciphertexts without breaking protocol limits.
+    common_uses:
+      - Higher-security-level post-quantum KEM profiles.
+      - Migration planning for long-lived confidentiality requirements.
+    cautions:
+      - Larger parameters increase operational and protocol-integration pressure.
+      - Hybrid deployment needs downgrade and negotiation checks.
+    references:
+      - nist-fips-203
+      - cisa-quantum-readiness
+  - id: ml-dsa-44
+    name: ML-DSA-44
+    kind: parameter-family
+    instance_of:
+      - digital-signature
+      - lattices
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE and module-SIS assumptions for the selected FIPS 204 parameter set remain hard.
+      - Implementations handle signing randomness, rejection sampling, and side channels correctly.
+    common_uses:
+      - Lower-size post-quantum signature profiles where the selected security category is acceptable.
+      - Migration testing for code signing and authentication.
+    cautions:
+      - Signature and public-key sizes affect protocols and certificates.
+      - Parameter selection should follow policy rather than ad hoc preference.
+    references:
+      - nist-fips-204
+  - id: ml-dsa-65
+    name: ML-DSA-65
+    kind: parameter-family
+    instance_of:
+      - digital-signature
+      - lattices
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE and module-SIS assumptions for the selected FIPS 204 parameter set remain hard.
+      - Verification, serialization, and key lifecycle rules match the deployment profile.
+    common_uses:
+      - General-purpose post-quantum signature migration profiles.
+      - Software and firmware signing transition planning.
+    cautions:
+      - It is not a drop-in replacement where certificate, message, or hardware limits are tight.
+      - Implementations need side-channel and fault-injection review.
+    references:
+      - nist-fips-204
+      - nist-pqc-migration-project
+  - id: ml-dsa-87
+    name: ML-DSA-87
+    kind: parameter-family
+    instance_of:
+      - digital-signature
+      - lattices
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE and module-SIS assumptions for the selected FIPS 204 parameter set remain hard.
+      - The surrounding system can handle larger signatures and keys.
+    common_uses:
+      - Higher-security-level post-quantum signature profiles.
+      - Long-lived signature migration planning.
+    cautions:
+      - Larger parameters can stress constrained protocols and embedded systems.
+      - Cryptographic inventory should identify every verifier before migration.
+    references:
+      - nist-fips-204
+      - cisa-quantum-readiness
+  - id: slh-dsa-sha2
+    name: SLH-DSA SHA2 parameter sets
+    kind: parameter-family
+    instance_of:
+      - digital-signature
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Hash-function assumptions and FIPS 205 parameter choices remain sound.
+      - Stateful implementation mistakes are avoided even though SLH-DSA itself is stateless.
+    common_uses:
+      - Conservative hash-based signature migration profiles.
+      - Backup signature families where larger signatures are acceptable.
+    cautions:
+      - Signatures are much larger than many lattice-based alternatives.
+      - Performance and bandwidth constraints matter.
+    references:
+      - nist-fips-205
+  - id: slh-dsa-shake
+    name: SLH-DSA SHAKE parameter sets
+    kind: parameter-family
+    instance_of:
+      - digital-signature
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - SHAKE-based hash-function assumptions and FIPS 205 parameter choices remain sound.
+      - Implementations use the specified randomized or deterministic signing mode consistently.
+    common_uses:
+      - Hash-based post-quantum signatures.
+      - Migration plans that want a non-lattice standardized signature family.
+    cautions:
+      - Large signatures can affect certificate chains, logs, and constrained links.
+      - Review exact parameter sets rather than treating the family as a single algorithm.
+    references:
+      - nist-fips-205
+  - id: hqc-128
+    name: HQC-128
+    kind: parameter-family
+    instance_of:
+      - key-encapsulation-and-exchange
+      - code-based-assumptions
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The selected HQC parameter set and code-based assumptions survive standardization review.
+      - Implementations follow the eventual FIPS 206 specification.
+    common_uses:
+      - Backup post-quantum KEM planning.
+      - Algorithm-diversity analysis for migration programs.
+    cautions:
+      - FIPS 206 is not final; review status before deployment guidance.
+      - Performance and bandwidth differ from ML-KEM.
+    references:
+      - nist-hqc-selection
+  - id: hqc-192
+    name: HQC-192
+    kind: parameter-family
+    instance_of:
+      - key-encapsulation-and-exchange
+      - code-based-assumptions
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The selected HQC parameter set and code-based assumptions survive standardization review.
+      - Implementations follow the eventual FIPS 206 specification.
+    common_uses:
+      - Higher-category backup post-quantum KEM planning.
+      - Code-based migration diversity.
+    cautions:
+      - Treat as planning material until FIPS 206 is final.
+      - Parameter size and performance need protocol-specific evaluation.
+    references:
+      - nist-hqc-selection
+      - nist-ir-8545
+  - id: hqc-256
+    name: HQC-256
+    kind: parameter-family
+    instance_of:
+      - key-encapsulation-and-exchange
+      - code-based-assumptions
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The selected HQC parameter set and code-based assumptions survive standardization review.
+      - Systems can tolerate the resource requirements of the highest listed profile.
+    common_uses:
+      - High-category backup post-quantum KEM planning.
+      - Diversity analysis against lattice-only migration strategies.
+    cautions:
+      - Not yet a finalized FIPS profile.
+      - Larger parameters can create integration failures before cryptography is evaluated.
+    references:
+      - nist-hqc-selection
+      - nist-ir-8545
+  - id: halo2
+    name: halo2 proving system stack
+    kind: protocol-suite
+    instance_of:
+      - recursive-proofs
+      - snarks-starks-bulletproofs
+    taxonomy_level: proof-system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The selected halo2 backend, curve cycle, transcript, and circuit constraints are sound.
+      - Implementations bind public inputs and domain separation labels correctly.
+    common_uses:
+      - Recursive proof systems.
+      - Zcash Orchard-style and application-specific ZK circuits.
+    cautions:
+      - Circuit correctness and backend choices dominate deployment risk.
+      - No trusted setup does not imply post-quantum security.
+    references:
+      - halo2-book
+      - zcash-orchard
+  - id: gnark
+    name: gnark
+    kind: protocol-suite
+    instance_of:
+      - snarks-starks-bulletproofs
+      - arithmetization
+    taxonomy_level: proof-system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Circuit compilation, witness assignment, and selected proving backend match the intended statement.
+      - Serialization and verifier export formats are handled according to the selected release.
+    common_uses:
+      - Go-based Groth16 and PLONK circuit development.
+      - ZK-rollup and application-specific proof engineering.
+    cautions:
+      - API, serialization, curve support, and GPU features are version-sensitive.
+      - Underconstrained circuits can verify false statements.
+    references:
+      - gnark-docs
+  - id: arkworks
+    name: arkworks
+    kind: protocol-suite
+    instance_of:
+      - snarks-starks-bulletproofs
+      - arithmetization
+    taxonomy_level: proof-system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Individual crates and proof systems are selected with their stated assumptions.
+      - Constraint-system gadgets are reviewed for soundness and serialization consistency.
+    common_uses:
+      - Rust SNARK research and prototyping.
+      - Finite-field, curve, R1CS, Groth16, Marlin, and related components.
+    cautions:
+      - Ecosystem-level availability does not imply every crate is production-audited.
+      - Proof-system and curve choices determine setup and security posture.
+    references:
+      - arkworks-ecosystem
+  - id: circom
+    name: Circom
+    kind: protocol-suite
+    instance_of:
+      - arithmetization
+      - snarks-starks-bulletproofs
+    taxonomy_level: proof-system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Circuit templates constrain every statement the application relies on.
+      - The selected proving system, trusted setup, and verifier generation are correct.
+    common_uses:
+      - Application-specific ZK circuits.
+      - Identity, private voting, and membership proof systems.
+    cautions:
+      - Circuit code can compile while omitting necessary constraints.
+      - Trusted setup and proof-system posture depend on the backend.
+    references:
+      - circom-docs
+  - id: microsoft-seal
+    name: Microsoft SEAL
+    kind: protocol-suite
+    instance_of:
+      - homomorphic-encryption
+    taxonomy_level: structured-primitive
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - BFV, BGV, or CKKS parameters are selected with expert tooling.
+      - The data owner controls decryption keys and accepts output leakage.
+    common_uses:
+      - Encrypted integer and approximate-number computation.
+      - FHE experiments and specialized privacy-preserving analytics.
+    cautions:
+      - Homomorphic encryption does not let a server learn plaintext insights without a decryption path.
+      - Parameter and operation choices are expert-sensitive.
+    references:
+      - microsoft-seal
+      - homomorphic-encryption-standard
+  - id: openfhe
+    name: OpenFHE
+    kind: protocol-suite
+    instance_of:
+      - homomorphic-encryption
+    taxonomy_level: structured-primitive
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The selected FHE scheme, ring parameters, bootstrapping mode, and key-switching configuration match the security target.
+      - Output release and side channels are reviewed.
+    common_uses:
+      - BGV, BFV, CKKS, FHEW, and TFHE-style experimentation and deployments.
+      - Privacy-preserving analytics prototypes.
+    cautions:
+      - Library support for many schemes does not remove parameter-selection risk.
+      - Performance tuning can silently change security margins.
+    references:
+      - openfhe
+      - homomorphic-encryption-standard
+  - id: concrete-ml
+    name: Concrete ML
+    kind: protocol-suite
+    instance_of:
+      - homomorphic-encryption
+      - private-machine-learning-analytics
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Model conversion, quantization, and TFHE parameters preserve the intended model behavior and security target.
+      - Outputs, model access, and repeated queries are privacy-reviewed.
+    common_uses:
+      - FHE-backed machine-learning inference.
+      - Privacy-preserving analytics prototypes using familiar ML APIs.
+    cautions:
+      - FHE hides inputs during computation, not necessarily outputs or model-level leakage.
+      - ML accuracy, quantization, and cryptographic parameters interact.
+    references:
+      - zama-concrete-ml
+      - tfhe
+  - id: mp-spdz-framework
+    name: MP-SPDZ framework
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: depends
+    assumptions:
+      - The selected MP-SPDZ protocol matches the honest-majority, dishonest-majority, passive, or malicious adversary model.
+      - Preprocessing, networking, and deployment secrets are handled according to the chosen protocol.
+    common_uses:
+      - Benchmarking and implementing many MPC protocol families.
+      - Private analytics and threshold-computation experiments.
+    cautions:
+      - The framework exposes many protocols with different guarantees.
+      - Choosing a script is not the same as selecting a threat model.
+    references:
+      - mp-spdz-framework
+      - spdz
+      - mascot
+  - id: emp-toolkit
+    name: EMP toolkit
+    kind: protocol-suite
+    instance_of:
+      - mpc
+      - oblivious-transfer
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: depends
+    assumptions:
+      - The selected EMP package matches the intended two-party, multi-party, semi-honest, or malicious model.
+      - OT extension, circuit representation, and input validation are correctly configured.
+    common_uses:
+      - Garbled-circuit MPC.
+      - Oblivious transfer and two-party computation experiments.
+    cautions:
+      - Security claims vary by subpackage and protocol.
+      - Circuit format and input validation mistakes can invalidate guarantees.
+    references:
+      - emp-toolkit
+      - yao-garbled-circuits
+  - id: fresco-framework
+    name: FRESCO
+    kind: protocol-suite
+    instance_of:
+      - mpc
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: depends
+    requires_trusted_setup: depends
+    assumptions:
+      - The selected FRESCO protocol suite and network deployment match the stated adversary model.
+      - Application code exposes only intended outputs.
+    common_uses:
+      - Java-based secure-computation applications.
+      - Prototyping arithmetic MPC workflows.
+    cautions:
+      - Framework-level abstractions do not hide protocol threat-model choices.
+      - Deployment and output leakage remain application risks.
+    references:
+      - fresco-framework
+  - id: oid4vci
+    name: OpenID for Verifiable Credential Issuance
+    kind: standard
+    instance_of:
+      - identity-wallets
+      - anonymous-credential
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - OAuth/OIDC flows, issuer metadata, credential format profiles, and holder binding are implemented correctly.
+      - Credential format and signature algorithms match the privacy goal.
+    common_uses:
+      - Wallet credential issuance.
+      - Issuer-to-holder credential delivery flows.
+    cautions:
+      - Issuance protocol standardization does not imply anonymous presentation.
+      - Wallet, issuer, and verifier metadata can still be linkable.
+    references:
+      - openid4vci
+      - w3c-vc-data-model-2
+  - id: oid4vp
+    name: OpenID for Verifiable Presentations
+    kind: standard
+    instance_of:
+      - identity-wallets
+      - anonymous-credential
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Request objects, presentation definitions, holder binding, and verifier checks are implemented correctly.
+      - Wallets disclose only the claims and identifiers intended for the transaction.
+    common_uses:
+      - Wallet-to-verifier presentation flows.
+      - Cross-device and same-device credential presentation.
+    cautions:
+      - The protocol can carry many credential formats with very different privacy properties.
+      - Verifier request policy can defeat minimization.
+    references:
+      - openid4vp
+      - rfc9901-sd-jwt
+  - id: eudi-wallet-arf
+    name: EUDI Wallet Architecture and Reference Framework
+    kind: standard
+    instance_of:
+      - identity-wallets
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Wallet units, secure cryptographic devices, issuer/verifier roles, and trust lists are implemented according to the current ARF.
+      - National deployments preserve privacy and interoperability requirements.
+    common_uses:
+      - European digital identity wallet profiles.
+      - Public-sector and regulated identity-wallet interoperability planning.
+    cautions:
+      - ARF versions evolve; treat profile details as review-window material.
+      - Governance, device attestation, and verifier policy can dominate privacy.
+    references:
+      - eudi-arf
+      - openid4vci
+      - openid4vp
+  - id: iso-mdoc-mdl
+    name: ISO mdoc / mobile driving licence
+    kind: standard
+    instance_of:
+      - identity-wallets
+    taxonomy_level: system
+    maturity: deployed
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Issuing authority keys, device binding, reader authentication, and disclosure protocols are implemented as profiled.
+      - Wallets handle consent and verifier requests consistently.
+    common_uses:
+      - Mobile driving licences and in-person identity presentation.
+      - Credential-wallet ecosystems that support mdoc formats.
+    cautions:
+      - Selective disclosure does not automatically prevent verifier correlation.
+      - Reader authentication and device platform controls affect privacy and availability.
+    references:
+      - iso-iec-18013-5-mdl
+      - openid4vp
+  - id: anoncreds-v1
+    name: Hyperledger AnonCreds v1
+    kind: standard
+    instance_of:
+      - anonymous-credential
+      - identity-wallets
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - CL-signature and zero-knowledge proof assumptions hold.
+      - Credential definitions, revocation registries, and claim encodings follow the selected AnonCreds method.
+    common_uses:
+      - Selective-disclosure credentials with unlinkable presentations.
+      - Indy/Aries-style credential ecosystems.
+    cautions:
+      - Registry methods, revocation, and encoding conventions are interoperability risks.
+      - Classical signature assumptions are quantum-vulnerable.
+    references:
+      - hyperledger-anoncreds
+      - credo-docs
+  - id: didcomm-v2
+    name: DIDComm Messaging v2
+    kind: standard
+    instance_of:
+      - secure-messaging
+      - identity-wallets
+    taxonomy_level: protocol
+    maturity: emerging
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - DID resolution, key agreement, message packing, routing, and mediator behavior match the deployment.
+      - The wallet ecosystem distinguishes transport confidentiality from credential privacy.
+    common_uses:
+      - Wallet-agent communication.
+      - Credential issuance and presentation workflows in DID-based ecosystems.
+    cautions:
+      - DIDComm is a messaging layer, not an anonymous credential scheme.
+      - Routing metadata and DID correlation can still leak relationships.
+    references:
+      - didcomm-v2
+      - credo-docs
+  - id: shutter-encrypted-mempool
+    name: Shutter encrypted mempool
+    kind: protocol-suite
+    instance_of:
+      - encrypted-mempools
+      - threshold-cryptography
+    taxonomy_level: system
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Keypers perform DKG, threshold encryption, and key release according to the selected chain integration.
+      - Users and builders cannot learn transaction contents before the reveal condition.
+    common_uses:
+      - Threshold-encrypted mempool deployments and prototypes.
+      - MEV mitigation and shielded trading flows.
+    cautions:
+      - Encrypted mempools reduce pre-trade visibility but do not remove all censorship, timing, or ordering risks.
+      - Committee availability and reveal timing are central operational assumptions.
+    references:
+      - shutter-docs
+      - shutter-api-docs
+      - flash-boys-2
+  - id: open-quantum-safe
+    name: Open Quantum Safe tooling
+    kind: protocol-suite
+    instance_of:
+      - key-rotation-and-migration
+      - key-encapsulation-and-exchange
+    taxonomy_level: design-pattern
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Test integrations use current algorithm versions and are not treated as production certification.
+      - Migration experiments distinguish library support from protocol and policy readiness.
+    common_uses:
+      - PQC interoperability testing.
+      - liboqs and OpenSSL-provider experiments.
+    cautions:
+      - Prototype support is not the same as standardized production deployment.
+      - Hybrid negotiation and certificate support need separate review.
+    references:
+      - open-quantum-safe
+      - oqs-tls
+      - nist-pqc-migration-project

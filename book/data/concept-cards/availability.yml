@@ -1,0 +1,52 @@
+id: availability
+name: Availability
+category: Security goals
+level: security-goal
+short_intuition: The system can provide its intended service when honest users need it.
+security_goals:
+  - availability
+assumptions:
+  - enough independent parties or paths remain reachable
+  - recovery procedures match the failure model
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - quorum members fail together
+    - data or keys are not recoverable
+    - fallback paths are untested
+  setup:
+    - redundancy and recovery plan
+typical_uses:
+  - threshold custody
+  - secure messaging delivery
+  - rollup data availability
+does_not_provide:
+  - confidentiality
+  - integrity
+  - censorship resistance by itself
+composition_risks:
+  - shared operator dependencies
+  - status checks that fail closed without policy
+metadata_leaks:
+  - outage patterns
+  - retry timing
+implementation_risk: not-applicable
+auditability: requires-operational-audit
+parameter_sensitivity: not-applicable
+revocation_story: Availability mechanisms need recovery, replacement, and rotation procedures for failed parties and keys.
+operational_failure_modes:
+  - correlated outage
+  - unavailable quorum
+  - committed data not retrievable
+maturity: not-applicable
+related:
+  - threshold-cryptography
+  - censorship-resistance
+  - key-rotation-and-migration
+references:
+  - canetti-uc
+  - rfc9420-mls

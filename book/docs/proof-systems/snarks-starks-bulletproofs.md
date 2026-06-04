@@ -14,6 +14,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: depends
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check proof-system family sources, implementation stacks, setup posture, and deployed rollup proving systems.
 ---
 
 # SNARKs, STARKs, and Bulletproofs
@@ -83,3 +87,7 @@ Assumptions are family-specific: pairing-based SNARKs often depend on elliptic-c
 - Bowe, Grigg, and Hopwood, [Halo](https://eprint.iacr.org/2019/1021).
 - Kothapalli, Setty, and Tzialla, [Nova](https://eprint.iacr.org/2021/370).
 - Gabizon and Williamson, [Plookup](https://eprint.iacr.org/2020/315).
+- Electric Coin Company, [The halo2 Book](https://zcash.github.io/halo2/).
+- Consensys, [gnark documentation](https://docs.gnark.consensys.io/).
+- arkworks contributors, [arkworks ecosystem](https://github.com/arkworks-rs).
+- iden3, [Circom documentation](https://docs.circom.io/).

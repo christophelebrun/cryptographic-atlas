@@ -1,0 +1,3737 @@
+{
+  "schema_version": 1,
+  "generated_from": [
+    "book/data/relationships.yml",
+    "book/data/concept-cards/*.yml",
+    "book/data/instances.yml",
+    "book/docs/**/*.md"
+  ],
+  "node_count": 120,
+  "edge_count": 111,
+  "nodes": [
+    {
+      "id": "accountability",
+      "label": "Accountability",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/accountability.yml"
+    },
+    {
+      "id": "anoncreds-v1",
+      "label": "Hyperledger AnonCreds v1",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "anonymity",
+      "label": "Anonymity",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/anonymity.yml"
+    },
+    {
+      "id": "anonymous-airdrop",
+      "label": "Anonymous Airdrop",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "system",
+      "source": "data/concept-cards/anonymous-airdrop.yml"
+    },
+    {
+      "id": "anonymous-credential",
+      "label": "Anonymous Credential",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "protocol",
+      "source": "data/concept-cards/anonymous-credential.yml"
+    },
+    {
+      "id": "anonymous-membership",
+      "label": "Anonymous Membership",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "design-pattern",
+      "source": "data/concept-cards/anonymous-membership.yml"
+    },
+    {
+      "id": "anti-double-use-nullifiers",
+      "label": "Anti-Double-Use Nullifiers",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "design-pattern",
+      "source": "data/concept-cards/anti-double-use-nullifiers.yml"
+    },
+    {
+      "id": "arithmetization",
+      "label": "Arithmetization",
+      "kind": "concept-card",
+      "level": "proof-system",
+      "category": "Proof systems",
+      "source": "data/concept-cards/arithmetization.yml"
+    },
+    {
+      "id": "arkworks",
+      "label": "arkworks",
+      "kind": "instance",
+      "level": "proof-system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "auditability",
+      "label": "Auditability",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/auditability.yml"
+    },
+    {
+      "id": "authenticated-encryption",
+      "label": "Authenticated Encryption",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "encryption",
+      "source": "data/concept-cards/authenticated-encryption.yml"
+    },
+    {
+      "id": "authenticity",
+      "label": "Authenticity",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/authenticity.yml"
+    },
+    {
+      "id": "availability",
+      "label": "Availability",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/availability.yml"
+    },
+    {
+      "id": "bbs-verifiable-credentials",
+      "label": "BBS Data Integrity credentials",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "bfv",
+      "label": "BFV homomorphic encryption",
+      "kind": "instance",
+      "level": "structured-primitive",
+      "category": "scheme",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "bls12-377",
+      "label": "BLS12-377",
+      "kind": "instance",
+      "level": "mathematical-assumption",
+      "category": "curve",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "bw6-761",
+      "label": "BW6-761",
+      "kind": "instance",
+      "level": "mathematical-assumption",
+      "category": "curve",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "censorship-resistance",
+      "label": "Censorship Resistance",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/censorship-resistance.yml"
+    },
+    {
+      "id": "circom",
+      "label": "Circom",
+      "kind": "instance",
+      "level": "proof-system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "ckks",
+      "label": "CKKS homomorphic encryption",
+      "kind": "instance",
+      "level": "structured-primitive",
+      "category": "scheme",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "code-based-assumptions",
+      "label": "Code-Based Assumptions",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "Assumptions and substrates",
+      "source": "data/concept-cards/code-based-assumptions.yml"
+    },
+    {
+      "id": "commitments",
+      "label": "Commitments",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "primitive",
+      "source": "data/concept-cards/commitments.yml"
+    },
+    {
+      "id": "concrete-ml",
+      "label": "Concrete ML",
+      "kind": "instance",
+      "level": "system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "confidentiality",
+      "label": "Confidentiality",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/confidentiality.yml"
+    },
+    {
+      "id": "delayed-reveal",
+      "label": "Delayed Reveal",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "design-pattern",
+      "source": "data/concept-cards/delayed-reveal.yml"
+    },
+    {
+      "id": "deniability",
+      "label": "Deniability",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/deniability.yml"
+    },
+    {
+      "id": "didcomm-v2",
+      "label": "DIDComm Messaging v2",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "digital-signature",
+      "label": "Digital Signature",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "authentication",
+      "source": "data/concept-cards/digital-signature.yml"
+    },
+    {
+      "id": "discrete-logarithm",
+      "label": "Discrete Logarithm",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "mathematical-assumption",
+      "source": "data/concept-cards/discrete-logarithm.yml"
+    },
+    {
+      "id": "domain-separation",
+      "label": "Domain Separation",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "Design patterns",
+      "source": "data/concept-cards/domain-separation.yml"
+    },
+    {
+      "id": "e-voting",
+      "label": "Electronic Voting",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "system",
+      "source": "data/concept-cards/e-voting.yml"
+    },
+    {
+      "id": "emp-toolkit",
+      "label": "EMP toolkit",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "encrypted-mempools",
+      "label": "Encrypted Mempools",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "Systems",
+      "source": "data/concept-cards/encrypted-mempools.yml"
+    },
+    {
+      "id": "eudi-wallet-arf",
+      "label": "EUDI Wallet Architecture and Reference Framework",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "factoring-rsa",
+      "label": "Factoring and RSA",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "mathematical-assumption",
+      "source": "data/concept-cards/factoring-rsa.yml"
+    },
+    {
+      "id": "ferveo-threshold-mempool",
+      "label": "Ferveo threshold-decrypted mempool",
+      "kind": "instance",
+      "level": "system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "forward-secrecy",
+      "label": "Forward Secrecy",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/forward-secrecy.yml"
+    },
+    {
+      "id": "fresco-framework",
+      "label": "FRESCO",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "gennaro-dkg",
+      "label": "Gennaro-Jarecki-Krawczyk-Rabin DKG",
+      "kind": "instance",
+      "level": "structured-primitive",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "gnark",
+      "label": "gnark",
+      "kind": "instance",
+      "level": "proof-system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "halo-recursion",
+      "label": "Halo-style recursion",
+      "kind": "instance",
+      "level": "proof-system",
+      "category": "scheme",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "halo2",
+      "label": "halo2 proving system stack",
+      "kind": "instance",
+      "level": "proof-system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "hash-function",
+      "label": "Hash Function",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "primitive",
+      "source": "data/concept-cards/hash-function.yml"
+    },
+    {
+      "id": "homomorphic-encryption",
+      "label": "Homomorphic Encryption",
+      "kind": "concept-card",
+      "level": "structured-primitive",
+      "category": "encryption",
+      "source": "data/concept-cards/homomorphic-encryption.yml"
+    },
+    {
+      "id": "hqc-128",
+      "label": "HQC-128",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "hqc-192",
+      "label": "HQC-192",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "hqc-256",
+      "label": "HQC-256",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "identity-wallets",
+      "label": "Identity Wallets",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "Systems",
+      "source": "data/concept-cards/identity-wallets.yml"
+    },
+    {
+      "id": "integrity",
+      "label": "Integrity",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/integrity.yml"
+    },
+    {
+      "id": "iso-mdoc-mdl",
+      "label": "ISO mdoc / mobile driving licence",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "jubjub",
+      "label": "Jubjub",
+      "kind": "instance",
+      "level": "mathematical-assumption",
+      "category": "curve",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "key-encapsulation-and-exchange",
+      "label": "Key Encapsulation and Exchange",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "key-management",
+      "source": "data/concept-cards/key-encapsulation-and-exchange.yml"
+    },
+    {
+      "id": "key-rotation-and-migration",
+      "label": "Key Rotation and Migration",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "Design patterns",
+      "source": "data/concept-cards/key-rotation-and-migration.yml"
+    },
+    {
+      "id": "lattices",
+      "label": "Lattices",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "mathematical-substrate",
+      "source": "data/concept-cards/lattices.yml"
+    },
+    {
+      "id": "lucid-encrypted-mempool",
+      "label": "LUCID encrypted mempool proposal",
+      "kind": "instance",
+      "level": "system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "make-receipts-useless",
+      "label": "Make Receipts Useless",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "design-pattern",
+      "source": "data/concept-cards/make-receipts-useless.yml"
+    },
+    {
+      "id": "mascot",
+      "label": "MASCOT",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "md5",
+      "label": "MD5",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "algorithm",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "message-authentication-codes",
+      "label": "Message Authentication Codes",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "authentication",
+      "source": "data/concept-cards/message-authentication-codes.yml"
+    },
+    {
+      "id": "metadata-leakage",
+      "label": "Metadata Leakage",
+      "kind": "page",
+      "level": "not-applicable",
+      "category": "appendix",
+      "source": "docs/appendices/metadata-leakage.md"
+    },
+    {
+      "id": "microsoft-seal",
+      "label": "Microsoft SEAL",
+      "kind": "instance",
+      "level": "structured-primitive",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "mimc",
+      "label": "MiMC",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "algorithm",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "mixnets",
+      "label": "Mixnets",
+      "kind": "page",
+      "level": "protocol",
+      "category": "protocol",
+      "source": "docs/protocols/mixnets.md"
+    },
+    {
+      "id": "ml-dsa-44",
+      "label": "ML-DSA-44",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "ml-dsa-65",
+      "label": "ML-DSA-65",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "ml-dsa-87",
+      "label": "ML-DSA-87",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "ml-kem-1024",
+      "label": "ML-KEM-1024",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "ml-kem-512",
+      "label": "ML-KEM-512",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "ml-kem-768",
+      "label": "ML-KEM-768",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "mp-spdz-framework",
+      "label": "MP-SPDZ framework",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "mpc",
+      "label": "Multi-Party Computation",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "protocol",
+      "source": "data/concept-cards/mpc.yml"
+    },
+    {
+      "id": "non-repudiation",
+      "label": "Non-Repudiation",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/non-repudiation.yml"
+    },
+    {
+      "id": "nullifier",
+      "label": "Nullifier",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "anti-double-use",
+      "source": "data/concept-cards/nullifier.yml"
+    },
+    {
+      "id": "oblivious-pseudorandom-functions",
+      "label": "Oblivious Pseudorandom Functions",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "protocol",
+      "source": "data/concept-cards/oblivious-pseudorandom-functions.yml"
+    },
+    {
+      "id": "oblivious-transfer",
+      "label": "Oblivious Transfer",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "Protocols",
+      "source": "data/concept-cards/oblivious-transfer.yml"
+    },
+    {
+      "id": "oid4vci",
+      "label": "OpenID for Verifiable Credential Issuance",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "oid4vp",
+      "label": "OpenID for Verifiable Presentations",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "open-quantum-safe",
+      "label": "Open Quantum Safe tooling",
+      "kind": "instance",
+      "level": "design-pattern",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "openfhe",
+      "label": "OpenFHE",
+      "kind": "instance",
+      "level": "structured-primitive",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "pairings",
+      "label": "Pairings",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "mathematical-substrate",
+      "source": "data/concept-cards/pairings.yml"
+    },
+    {
+      "id": "password-authenticated-key-exchange",
+      "label": "Password-Authenticated Key Exchange",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "Protocols",
+      "source": "data/concept-cards/password-authenticated-key-exchange.yml"
+    },
+    {
+      "id": "pedersen-commitment",
+      "label": "Pedersen commitment",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "scheme",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "polynomial-commitments",
+      "label": "Polynomial Commitments",
+      "kind": "concept-card",
+      "level": "structured-primitive",
+      "category": "Structured primitives",
+      "source": "data/concept-cards/polynomial-commitments.yml"
+    },
+    {
+      "id": "poseidon",
+      "label": "Poseidon",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "algorithm",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "privacy-preserving-revocation",
+      "label": "Privacy-Preserving Revocation",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "Design patterns",
+      "source": "data/concept-cards/privacy-preserving-revocation.yml"
+    },
+    {
+      "id": "private-aggregation",
+      "label": "Private Aggregation",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "design-pattern",
+      "source": "data/concept-cards/private-aggregation.yml"
+    },
+    {
+      "id": "private-dao-voting",
+      "label": "Private DAO Voting",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "system",
+      "source": "data/concept-cards/private-dao-voting.yml"
+    },
+    {
+      "id": "private-information-retrieval",
+      "label": "Private Information Retrieval",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "Protocols",
+      "source": "data/concept-cards/private-information-retrieval.yml"
+    },
+    {
+      "id": "private-machine-learning-analytics",
+      "label": "Private Machine Learning Analytics",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "Systems",
+      "source": "data/concept-cards/private-machine-learning-analytics.yml"
+    },
+    {
+      "id": "private-payments",
+      "label": "Private Payments",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "Systems",
+      "source": "data/concept-cards/private-payments.yml"
+    },
+    {
+      "id": "private-set-intersection",
+      "label": "Private Set Intersection",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "protocol",
+      "source": "data/concept-cards/private-set-intersection.yml"
+    },
+    {
+      "id": "public-key-encryption",
+      "label": "Public-Key Encryption",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "encryption",
+      "source": "data/concept-cards/public-key-encryption.yml"
+    },
+    {
+      "id": "random-oracle-model",
+      "label": "Random Oracle Model",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "proof-model",
+      "source": "data/concept-cards/random-oracle-model.yml"
+    },
+    {
+      "id": "range-proofs",
+      "label": "Range Proofs",
+      "kind": "page",
+      "level": "proof-system",
+      "category": "primitive",
+      "source": "docs/proof-systems/range-proofs.md"
+    },
+    {
+      "id": "recursive-proofs",
+      "label": "Recursive Proofs",
+      "kind": "concept-card",
+      "level": "proof-system",
+      "category": "Proof systems",
+      "source": "data/concept-cards/recursive-proofs.yml"
+    },
+    {
+      "id": "rescue-prime",
+      "label": "Rescue-Prime",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "algorithm",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "rsa-pkcs1-v1-5-encryption",
+      "label": "RSAES-PKCS1-v1_5 encryption",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "scheme",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "sd-jwt",
+      "label": "Selective Disclosure JWT",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "secure-aggregation",
+      "label": "Secure Aggregation",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "protocol",
+      "source": "data/concept-cards/secure-aggregation.yml"
+    },
+    {
+      "id": "secure-channels",
+      "label": "Secure Channels",
+      "kind": "concept-card",
+      "level": "protocol",
+      "category": "Protocols",
+      "source": "data/concept-cards/secure-channels.yml"
+    },
+    {
+      "id": "sha-1",
+      "label": "SHA-1",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "algorithm",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "shutter-encrypted-mempool",
+      "label": "Shutter encrypted mempool",
+      "kind": "instance",
+      "level": "system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "slh-dsa-sha2",
+      "label": "SLH-DSA SHA2 parameter sets",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "slh-dsa-shake",
+      "label": "SLH-DSA SHAKE parameter sets",
+      "kind": "instance",
+      "level": "basic-primitive",
+      "category": "parameter-family",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "snarks-starks-bulletproofs",
+      "label": "SNARKs, STARKs, and Bulletproofs",
+      "kind": "concept-card",
+      "level": "proof-system",
+      "category": "proof-system-family",
+      "source": "data/concept-cards/snarks-starks-bulletproofs.yml"
+    },
+    {
+      "id": "spdz",
+      "label": "SPDZ protocol family",
+      "kind": "instance",
+      "level": "protocol",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "symmetric-encryption",
+      "label": "Symmetric Encryption",
+      "kind": "concept-card",
+      "level": "basic-primitive",
+      "category": "encryption",
+      "source": "data/concept-cards/symmetric-encryption.yml"
+    },
+    {
+      "id": "threshold-bls",
+      "label": "Threshold BLS signatures",
+      "kind": "instance",
+      "level": "structured-primitive",
+      "category": "scheme",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "threshold-cryptography",
+      "label": "Threshold Cryptography",
+      "kind": "concept-card",
+      "level": "structured-primitive",
+      "category": "threshold",
+      "source": "data/concept-cards/threshold-cryptography.yml"
+    },
+    {
+      "id": "transcript-binding",
+      "label": "Transcript Binding",
+      "kind": "concept-card",
+      "level": "design-pattern",
+      "category": "Design patterns",
+      "source": "data/concept-cards/transcript-binding.yml"
+    },
+    {
+      "id": "trusted-setup",
+      "label": "Trusted Setup",
+      "kind": "concept-card",
+      "level": "mathematical-assumption",
+      "category": "setup-assumption",
+      "source": "data/concept-cards/trusted-setup.yml"
+    },
+    {
+      "id": "unlinkability",
+      "label": "Unlinkability",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/unlinkability.yml"
+    },
+    {
+      "id": "vc-di-ecdsa",
+      "label": "W3C Data Integrity ECDSA credentials",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "vc-di-eddsa",
+      "label": "W3C Data Integrity EdDSA credentials",
+      "kind": "instance",
+      "level": "system",
+      "category": "standard",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "vector-commitments",
+      "label": "Vector Commitments",
+      "kind": "concept-card",
+      "level": "structured-primitive",
+      "category": "Structured primitives",
+      "source": "data/concept-cards/vector-commitments.yml"
+    },
+    {
+      "id": "verifiability",
+      "label": "Verifiability",
+      "kind": "concept-card",
+      "level": "security-goal",
+      "category": "Security goals",
+      "source": "data/concept-cards/verifiability.yml"
+    },
+    {
+      "id": "zcash-orchard",
+      "label": "Zcash Orchard shielded protocol",
+      "kind": "instance",
+      "level": "system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "zcash-sapling",
+      "label": "Zcash Sapling shielded protocol",
+      "kind": "instance",
+      "level": "system",
+      "category": "protocol-suite",
+      "source": "data/instances.yml"
+    },
+    {
+      "id": "zero-knowledge-proof",
+      "label": "Zero-Knowledge Proof",
+      "kind": "concept-card",
+      "level": "proof-system",
+      "category": "proof-system",
+      "source": "data/concept-cards/zero-knowledge-proof.yml"
+    },
+    {
+      "id": "zk-rollups",
+      "label": "ZK Rollups",
+      "kind": "concept-card",
+      "level": "system",
+      "category": "Systems",
+      "source": "data/concept-cards/zk-rollups.yml"
+    }
+  ],
+  "edges": [
+    {
+      "source": "commitments",
+      "relation": "composes-with",
+      "target": "zero-knowledge-proof",
+      "notes": "ZK proofs often prove statements about committed values without opening them."
+    },
+    {
+      "source": "pedersen-commitment",
+      "relation": "requires",
+      "target": "discrete-logarithm",
+      "notes": "Binding depends on the infeasibility of finding the generator relation."
+    },
+    {
+      "source": "digital-signature",
+      "relation": "inherits-risk-from",
+      "target": "discrete-logarithm",
+      "notes": "ECDSA, EdDSA, and Schnorr-style signatures inherit discrete-logarithm quantum vulnerability."
+    },
+    {
+      "source": "public-key-encryption",
+      "relation": "inherits-risk-from",
+      "target": "factoring-rsa",
+      "notes": "RSA-based encryption inherits factoring and padding assumptions."
+    },
+    {
+      "source": "homomorphic-encryption",
+      "relation": "inherits-risk-from",
+      "target": "lattices",
+      "notes": "Many modern FHE families rely on lattice assumptions and parameter selection."
+    },
+    {
+      "source": "snarks-starks-bulletproofs",
+      "relation": "inherits-risk-from",
+      "target": "pairings",
+      "notes": "Pairing-based SNARKs inherit pairing and elliptic-curve assumptions."
+    },
+    {
+      "source": "range-proofs",
+      "relation": "requires",
+      "target": "commitments",
+      "notes": "Range proofs usually constrain a hidden value inside a commitment or ciphertext."
+    },
+    {
+      "source": "nullifier",
+      "relation": "implements-pattern",
+      "target": "anti-double-use-nullifiers",
+      "notes": "Nullifiers are the public duplicate-detection tag used by the pattern."
+    },
+    {
+      "source": "anonymous-airdrop",
+      "relation": "composes-with",
+      "target": "nullifier",
+      "notes": "Airdrops use nullifiers to reject duplicate claims."
+    },
+    {
+      "source": "private-dao-voting",
+      "relation": "composes-with",
+      "target": "anonymous-membership",
+      "notes": "Voters may prove eligibility without revealing which member they are."
+    },
+    {
+      "source": "private-dao-voting",
+      "relation": "composes-with",
+      "target": "private-aggregation",
+      "notes": "The tally should reveal an aggregate rather than individual ballots."
+    },
+    {
+      "source": "homomorphic-encryption",
+      "relation": "used-in",
+      "target": "private-aggregation",
+      "notes": "Additive homomorphic encryption is a common private tallying mechanism."
+    },
+    {
+      "source": "secure-aggregation",
+      "relation": "implements-pattern",
+      "target": "private-aggregation",
+      "notes": "Secure aggregation is a protocol family for aggregating many client inputs."
+    },
+    {
+      "source": "mixnets",
+      "relation": "used-in",
+      "target": "e-voting",
+      "notes": "Mixnets can break the link between submitted encrypted ballots and decrypted ballots."
+    },
+    {
+      "source": "make-receipts-useless",
+      "relation": "strengthens",
+      "target": "e-voting",
+      "notes": "Receipt-freeness and coercion resistance are stronger than ballot secrecy."
+    },
+    {
+      "source": "snarks-starks-bulletproofs",
+      "relation": "inherits-risk-from",
+      "target": "trusted-setup",
+      "notes": "Some proof systems require setup ceremonies or structured reference strings."
+    },
+    {
+      "source": "zero-knowledge-proof",
+      "relation": "inherits-risk-from",
+      "target": "random-oracle-model",
+      "notes": "Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning."
+    },
+    {
+      "source": "authenticated-encryption",
+      "relation": "composes-with",
+      "target": "symmetric-encryption",
+      "notes": "AEAD schemes combine encryption with integrity and associated-data authentication."
+    },
+    {
+      "source": "authenticated-encryption",
+      "relation": "composes-with",
+      "target": "message-authentication-codes",
+      "notes": "AEAD schemes often use MAC-like authentication internally or replace ad hoc encryption-plus-MAC composition."
+    },
+    {
+      "source": "oblivious-pseudorandom-functions",
+      "relation": "used-in",
+      "target": "private-set-intersection",
+      "notes": "OPRF-based PSI is a common construction family."
+    },
+    {
+      "source": "private-set-intersection",
+      "relation": "composes-with",
+      "target": "mpc",
+      "notes": "PSI can be built from general MPC techniques or specialized protocols depending on the deployment model."
+    },
+    {
+      "source": "secure-channels",
+      "relation": "composes-with",
+      "target": "transcript-binding",
+      "notes": "Secure channels bind identities, negotiation, and key exchange into the derived traffic keys."
+    },
+    {
+      "source": "secure-channels",
+      "relation": "composes-with",
+      "target": "authenticated-encryption",
+      "notes": "Secure channels usually protect application records with AEAD once handshake keys are derived."
+    },
+    {
+      "source": "password-authenticated-key-exchange",
+      "relation": "composes-with",
+      "target": "secure-channels",
+      "notes": "PAKEs can establish or authenticate a session key that is then used by a secure channel."
+    },
+    {
+      "source": "oblivious-transfer",
+      "relation": "used-in",
+      "target": "mpc",
+      "notes": "OT is a core building block for many MPC and garbled-circuit protocols."
+    },
+    {
+      "source": "private-information-retrieval",
+      "relation": "contrasts-with",
+      "target": "private-set-intersection",
+      "notes": "PIR hides a database index, while PSI reveals an intersection or intersection-derived output."
+    },
+    {
+      "source": "polynomial-commitments",
+      "relation": "used-in",
+      "target": "zk-rollups",
+      "notes": "Many rollup proof systems use polynomial commitments to bind witness or trace polynomials."
+    },
+    {
+      "source": "vector-commitments",
+      "relation": "used-in",
+      "target": "privacy-preserving-revocation",
+      "notes": "Revocation systems can use vector commitments or authenticated status lists for compact status proofs."
+    },
+    {
+      "source": "private-payments",
+      "relation": "composes-with",
+      "target": "nullifier",
+      "notes": "Private payments often use nullifiers or serial numbers to prevent duplicate spending."
+    },
+    {
+      "source": "zk-rollups",
+      "relation": "composes-with",
+      "target": "transcript-binding",
+      "notes": "Rollup proofs must bind public inputs, state roots, verifier keys, and batch data to the proof."
+    },
+    {
+      "source": "domain-separation",
+      "relation": "strengthens",
+      "target": "transcript-binding",
+      "notes": "Domain separation makes transcript fields and protocol phases unambiguous."
+    },
+    {
+      "source": "confidentiality",
+      "relation": "commonly-composed-with",
+      "target": "integrity",
+      "notes": "Most deployed confidentiality mechanisms also need tamper detection."
+    },
+    {
+      "source": "confidentiality",
+      "relation": "breaks-if",
+      "target": "authenticated-encryption",
+      "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
+    },
+    {
+      "source": "integrity",
+      "relation": "commonly-composed-with",
+      "target": "authenticity",
+      "notes": "Systems usually need both tamper detection and origin binding."
+    },
+    {
+      "source": "authenticity",
+      "relation": "requires",
+      "target": "transcript-binding",
+      "notes": "Authenticating incomplete context can bind the right key to the wrong session or statement."
+    },
+    {
+      "source": "anonymity",
+      "relation": "commonly-composed-with",
+      "target": "unlinkability",
+      "notes": "Anonymous systems often need unlinkability across repeated actions, but the goals are distinct."
+    },
+    {
+      "source": "anonymity",
+      "relation": "breaks-if",
+      "target": "metadata-leakage",
+      "notes": "Timing, network, amount, and rare-attribute metadata can defeat anonymity even when proofs verify."
+    },
+    {
+      "source": "unlinkability",
+      "relation": "commonly-composed-with",
+      "target": "domain-separation",
+      "notes": "Context-bound tags prevent linkability across unrelated applications."
+    },
+    {
+      "source": "unlinkability",
+      "relation": "breaks-if",
+      "target": "nullifier",
+      "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
+    },
+    {
+      "source": "forward-secrecy",
+      "relation": "requires",
+      "target": "key-encapsulation-and-exchange",
+      "notes": "Secure channels need fresh key-establishment material to make later long-term key compromise less damaging."
+    },
+    {
+      "source": "forward-secrecy",
+      "relation": "commonly-composed-with",
+      "target": "secure-channels",
+      "notes": "Forward secrecy is usually realized at the protocol layer."
+    },
+    {
+      "source": "verifiability",
+      "relation": "commonly-composed-with",
+      "target": "integrity",
+      "notes": "A verifier needs tamper-evident inputs and authentic verification parameters."
+    },
+    {
+      "source": "verifiability",
+      "relation": "breaks-if",
+      "target": "transcript-binding",
+      "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
+    },
+    {
+      "source": "zcash-orchard",
+      "relation": "uses",
+      "target": "halo-recursion",
+      "notes": "Orchard uses Halo-style proving to avoid the trusted setup model used by earlier Zcash pools."
+    },
+    {
+      "source": "zcash-sapling",
+      "relation": "uses",
+      "target": "private-payments",
+      "notes": "Sapling is a concrete shielded-payment protocol suite."
+    },
+    {
+      "source": "bbs-verifiable-credentials",
+      "relation": "uses",
+      "target": "anonymous-credential",
+      "notes": "BBS-based credential profiles support selective disclosure and unlinkable derived proofs under pairing assumptions."
+    },
+    {
+      "source": "sd-jwt",
+      "relation": "contrasts-with",
+      "target": "anonymous-credential",
+      "notes": "SD-JWT provides selective disclosure, but not anonymous-credential unlinkability by default."
+    },
+    {
+      "source": "vc-di-ecdsa",
+      "relation": "uses",
+      "target": "authenticity",
+      "notes": "ECDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+    },
+    {
+      "source": "vc-di-eddsa",
+      "relation": "uses",
+      "target": "authenticity",
+      "notes": "EdDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+    },
+    {
+      "source": "lucid-encrypted-mempool",
+      "relation": "uses",
+      "target": "delayed-reveal",
+      "notes": "Encrypted mempools use commit-before-reveal or delayed-decryption sequencing rules."
+    },
+    {
+      "source": "ferveo-threshold-mempool",
+      "relation": "uses",
+      "target": "threshold-cryptography",
+      "notes": "Threshold decryption distributes reveal power across a committee."
+    },
+    {
+      "source": "encrypted-mempools",
+      "relation": "breaks-if",
+      "target": "metadata-leakage",
+      "notes": "Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted."
+    },
+    {
+      "source": "threshold-bls",
+      "relation": "requires",
+      "target": "pairings",
+      "notes": "Threshold BLS inherits both threshold-share assumptions and pairing-friendly curve assumptions."
+    },
+    {
+      "source": "gennaro-dkg",
+      "relation": "used-in",
+      "target": "threshold-cryptography",
+      "notes": "DKG is a setup protocol for dealerless threshold keys."
+    },
+    {
+      "source": "poseidon",
+      "relation": "used-in",
+      "target": "arithmetization",
+      "notes": "ZK-friendly hashes are chosen to reduce circuit or constraint cost."
+    },
+    {
+      "source": "mimc",
+      "relation": "used-in",
+      "target": "arithmetization",
+      "notes": "MiMC is an example of a low-multiplicative-complexity hash used in some proof circuits."
+    },
+    {
+      "source": "rescue-prime",
+      "relation": "used-in",
+      "target": "arithmetization",
+      "notes": "Rescue-Prime is a proof-system-oriented hash family with scheme-specific parameters."
+    },
+    {
+      "source": "ckks",
+      "relation": "used-in",
+      "target": "private-machine-learning-analytics",
+      "notes": "Approximate homomorphic arithmetic is common in privacy-preserving analytics and inference discussions."
+    },
+    {
+      "source": "bfv",
+      "relation": "used-in",
+      "target": "private-machine-learning-analytics",
+      "notes": "Exact homomorphic arithmetic can support bounded private analytics workloads."
+    },
+    {
+      "source": "spdz",
+      "relation": "used-in",
+      "target": "mpc",
+      "notes": "SPDZ is a concrete actively secure arithmetic MPC family."
+    },
+    {
+      "source": "mascot",
+      "relation": "uses",
+      "target": "oblivious-transfer",
+      "notes": "MASCOT uses OT-based preprocessing for maliciously secure arithmetic MPC."
+    },
+    {
+      "source": "rsa-pkcs1-v1-5-encryption",
+      "relation": "breaks-if",
+      "target": "public-key-encryption",
+      "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
+    },
+    {
+      "source": "sha-1",
+      "relation": "breaks-if",
+      "target": "hash-function",
+      "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
+    },
+    {
+      "source": "md5",
+      "relation": "breaks-if",
+      "target": "hash-function",
+      "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
+    },
+    {
+      "source": "auditability",
+      "relation": "commonly-composed-with",
+      "target": "verifiability",
+      "notes": "Audit trails are stronger when reviewers can independently verify records, proofs, or logs."
+    },
+    {
+      "source": "auditability",
+      "relation": "breaks-if",
+      "target": "metadata-leakage",
+      "notes": "Over-collected audit logs can defeat privacy goals even when evidence integrity is strong."
+    },
+    {
+      "source": "accountability",
+      "relation": "requires",
+      "target": "authenticity",
+      "notes": "Misbehavior cannot be attributed if actions are not bound to accountable roles, keys, or credentials."
+    },
+    {
+      "source": "accountability",
+      "relation": "commonly-composed-with",
+      "target": "auditability",
+      "notes": "Accountability usually needs durable evidence and a review process."
+    },
+    {
+      "source": "deniability",
+      "relation": "contrasts-with",
+      "target": "non-repudiation",
+      "notes": "Deniable protocols avoid portable proof, while non-repudiation intentionally creates it."
+    },
+    {
+      "source": "deniability",
+      "relation": "commonly-composed-with",
+      "target": "forward-secrecy",
+      "notes": "Key evolution and erasure reduce the value of later transcript compromise."
+    },
+    {
+      "source": "deniability",
+      "relation": "breaks-if",
+      "target": "digital-signature",
+      "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
+    },
+    {
+      "source": "non-repudiation",
+      "relation": "requires",
+      "target": "digital-signature",
+      "notes": "Non-repudiation commonly depends on signatures plus operational key-control evidence."
+    },
+    {
+      "source": "non-repudiation",
+      "relation": "commonly-composed-with",
+      "target": "accountability",
+      "notes": "Signed evidence must feed a dispute or accountability process to have practical effect."
+    },
+    {
+      "source": "availability",
+      "relation": "commonly-composed-with",
+      "target": "threshold-cryptography",
+      "notes": "Threshold designs can remove single points of failure if quorum independence assumptions hold."
+    },
+    {
+      "source": "availability",
+      "relation": "weakens-if",
+      "target": "trusted-setup",
+      "notes": "Setup or recovery ceremonies can become availability bottlenecks if no replacement path exists."
+    },
+    {
+      "source": "censorship-resistance",
+      "relation": "requires",
+      "target": "availability",
+      "notes": "A valid action needs at least one live inclusion path before censorship resistance can be meaningful."
+    },
+    {
+      "source": "censorship-resistance",
+      "relation": "commonly-composed-with",
+      "target": "encrypted-mempools",
+      "notes": "Encrypted mempools can reduce content-based censorship before reveal, but only under committee and inclusion assumptions."
+    },
+    {
+      "source": "censorship-resistance",
+      "relation": "breaks-if",
+      "target": "metadata-leakage",
+      "notes": "Sender, fee, size, and timing metadata can leave enough information to censor targeted users."
+    },
+    {
+      "source": "bls12-377",
+      "relation": "requires",
+      "target": "pairings",
+      "notes": "BLS12-377 is used as a pairing-friendly curve in proof-system stacks."
+    },
+    {
+      "source": "bw6-761",
+      "relation": "requires",
+      "target": "pairings",
+      "notes": "BW6-761 is often discussed as an outer curve in recursive proof cycles."
+    },
+    {
+      "source": "jubjub",
+      "relation": "used-in",
+      "target": "zcash-sapling",
+      "notes": "Jubjub appears in Zcash Sapling-related circuit and note components."
+    },
+    {
+      "source": "ml-kem-512",
+      "relation": "used-in",
+      "target": "key-encapsulation-and-exchange",
+      "notes": "ML-KEM parameter profiles should be selected according to policy and protocol constraints."
+    },
+    {
+      "source": "ml-kem-768",
+      "relation": "used-in",
+      "target": "key-encapsulation-and-exchange",
+      "notes": "ML-KEM-768 is a common general-purpose migration profile."
+    },
+    {
+      "source": "ml-kem-1024",
+      "relation": "used-in",
+      "target": "key-encapsulation-and-exchange",
+      "notes": "Larger KEM parameters increase integration pressure and should be inventory-driven."
+    },
+    {
+      "source": "ml-dsa-44",
+      "relation": "used-in",
+      "target": "digital-signature",
+      "notes": "ML-DSA parameter profiles affect certificate, protocol, and hardware constraints."
+    },
+    {
+      "source": "ml-dsa-65",
+      "relation": "used-in",
+      "target": "digital-signature",
+      "notes": "ML-DSA-65 is a common general-purpose post-quantum signature migration profile."
+    },
+    {
+      "source": "ml-dsa-87",
+      "relation": "used-in",
+      "target": "digital-signature",
+      "notes": "Higher signature parameters require compatibility review before deployment."
+    },
+    {
+      "source": "slh-dsa-sha2",
+      "relation": "uses",
+      "target": "hash-function",
+      "notes": "SLH-DSA SHA2 profiles rely on hash-based security assumptions and large signatures."
+    },
+    {
+      "source": "slh-dsa-shake",
+      "relation": "uses",
+      "target": "hash-function",
+      "notes": "SLH-DSA SHAKE profiles rely on SHAKE-based hash assumptions and large signatures."
+    },
+    {
+      "source": "hqc-128",
+      "relation": "used-in",
+      "target": "code-based-assumptions",
+      "notes": "HQC profiles are migration-planning entries until the backup KEM standard is final."
+    },
+    {
+      "source": "hqc-192",
+      "relation": "used-in",
+      "target": "code-based-assumptions",
+      "notes": "Higher HQC profiles provide code-based algorithm diversity with larger integration costs."
+    },
+    {
+      "source": "hqc-256",
+      "relation": "used-in",
+      "target": "code-based-assumptions",
+      "notes": "HQC-256 is retained as a high-category planning profile pending final standardization."
+    },
+    {
+      "source": "halo2",
+      "relation": "uses",
+      "target": "recursive-proofs",
+      "notes": "halo2 is commonly associated with recursive proof-system engineering."
+    },
+    {
+      "source": "gnark",
+      "relation": "uses",
+      "target": "arithmetization",
+      "notes": "gnark circuit definitions must compile to constraints that exactly capture the intended statement."
+    },
+    {
+      "source": "arkworks",
+      "relation": "uses",
+      "target": "snarks-starks-bulletproofs",
+      "notes": "arkworks provides implementation components for multiple SNARK constructions."
+    },
+    {
+      "source": "circom",
+      "relation": "uses",
+      "target": "arithmetization",
+      "notes": "Circom circuits need explicit constraint review to avoid underconstrained statements."
+    },
+    {
+      "source": "microsoft-seal",
+      "relation": "uses",
+      "target": "homomorphic-encryption",
+      "notes": "Microsoft SEAL exposes concrete FHE schemes whose parameter choices remain expert-sensitive."
+    },
+    {
+      "source": "openfhe",
+      "relation": "uses",
+      "target": "homomorphic-encryption",
+      "notes": "OpenFHE supports several FHE families; guarantees depend on the selected scheme and parameters."
+    },
+    {
+      "source": "concrete-ml",
+      "relation": "commonly-composed-with",
+      "target": "private-machine-learning-analytics",
+      "notes": "FHE-based ML tooling still needs output, model, and repeated-query leakage review."
+    },
+    {
+      "source": "mp-spdz-framework",
+      "relation": "uses",
+      "target": "mpc",
+      "notes": "MP-SPDZ exposes many MPC protocols with different adversary models."
+    },
+    {
+      "source": "emp-toolkit",
+      "relation": "uses",
+      "target": "oblivious-transfer",
+      "notes": "EMP packages often depend on OT and garbled-circuit assumptions."
+    },
+    {
+      "source": "fresco-framework",
+      "relation": "uses",
+      "target": "mpc",
+      "notes": "FRESCO is a framework layer; protocol selection determines the security model."
+    },
+    {
+      "source": "oid4vci",
+      "relation": "used-in",
+      "target": "identity-wallets",
+      "notes": "OID4VCI describes credential issuance flows, not presentation privacy by itself."
+    },
+    {
+      "source": "oid4vp",
+      "relation": "used-in",
+      "target": "identity-wallets",
+      "notes": "OID4VP describes wallet-to-verifier presentation flows across credential formats."
+    },
+    {
+      "source": "eudi-wallet-arf",
+      "relation": "commonly-composed-with",
+      "target": "identity-wallets",
+      "notes": "EUDI ARF profiles wallet roles, trust lists, and secure-device assumptions."
+    },
+    {
+      "source": "iso-mdoc-mdl",
+      "relation": "used-in",
+      "target": "identity-wallets",
+      "notes": "ISO mdoc and mobile driving licence profiles are deployed credential-wallet formats."
+    },
+    {
+      "source": "anoncreds-v1",
+      "relation": "uses",
+      "target": "anonymous-credential",
+      "notes": "AnonCreds uses credential-specific ZK proofs and revocation registries."
+    },
+    {
+      "source": "didcomm-v2",
+      "relation": "commonly-composed-with",
+      "target": "identity-wallets",
+      "notes": "DIDComm is a wallet-agent messaging layer and should not be mistaken for credential privacy."
+    },
+    {
+      "source": "shutter-encrypted-mempool",
+      "relation": "uses",
+      "target": "threshold-cryptography",
+      "notes": "Shutter-style encrypted mempools use threshold encryption and key-release committees."
+    },
+    {
+      "source": "shutter-encrypted-mempool",
+      "relation": "commonly-composed-with",
+      "target": "censorship-resistance",
+      "notes": "Threshold encryption can reduce pre-reveal content-based censorship but not all exclusion paths."
+    },
+    {
+      "source": "open-quantum-safe",
+      "relation": "used-in",
+      "target": "key-rotation-and-migration",
+      "notes": "OQS tooling is useful for experimentation and interoperability, not a deployment certificate."
+    }
+  ],
+  "adjacency": {
+    "commitments": [
+      {
+        "relation": "composes-with",
+        "target": "zero-knowledge-proof",
+        "notes": "ZK proofs often prove statements about committed values without opening them."
+      }
+    ],
+    "pedersen-commitment": [
+      {
+        "relation": "requires",
+        "target": "discrete-logarithm",
+        "notes": "Binding depends on the infeasibility of finding the generator relation."
+      }
+    ],
+    "digital-signature": [
+      {
+        "relation": "inherits-risk-from",
+        "target": "discrete-logarithm",
+        "notes": "ECDSA, EdDSA, and Schnorr-style signatures inherit discrete-logarithm quantum vulnerability."
+      }
+    ],
+    "public-key-encryption": [
+      {
+        "relation": "inherits-risk-from",
+        "target": "factoring-rsa",
+        "notes": "RSA-based encryption inherits factoring and padding assumptions."
+      }
+    ],
+    "homomorphic-encryption": [
+      {
+        "relation": "inherits-risk-from",
+        "target": "lattices",
+        "notes": "Many modern FHE families rely on lattice assumptions and parameter selection."
+      },
+      {
+        "relation": "used-in",
+        "target": "private-aggregation",
+        "notes": "Additive homomorphic encryption is a common private tallying mechanism."
+      }
+    ],
+    "snarks-starks-bulletproofs": [
+      {
+        "relation": "inherits-risk-from",
+        "target": "pairings",
+        "notes": "Pairing-based SNARKs inherit pairing and elliptic-curve assumptions."
+      },
+      {
+        "relation": "inherits-risk-from",
+        "target": "trusted-setup",
+        "notes": "Some proof systems require setup ceremonies or structured reference strings."
+      }
+    ],
+    "range-proofs": [
+      {
+        "relation": "requires",
+        "target": "commitments",
+        "notes": "Range proofs usually constrain a hidden value inside a commitment or ciphertext."
+      }
+    ],
+    "nullifier": [
+      {
+        "relation": "implements-pattern",
+        "target": "anti-double-use-nullifiers",
+        "notes": "Nullifiers are the public duplicate-detection tag used by the pattern."
+      }
+    ],
+    "anonymous-airdrop": [
+      {
+        "relation": "composes-with",
+        "target": "nullifier",
+        "notes": "Airdrops use nullifiers to reject duplicate claims."
+      }
+    ],
+    "private-dao-voting": [
+      {
+        "relation": "composes-with",
+        "target": "anonymous-membership",
+        "notes": "Voters may prove eligibility without revealing which member they are."
+      },
+      {
+        "relation": "composes-with",
+        "target": "private-aggregation",
+        "notes": "The tally should reveal an aggregate rather than individual ballots."
+      }
+    ],
+    "secure-aggregation": [
+      {
+        "relation": "implements-pattern",
+        "target": "private-aggregation",
+        "notes": "Secure aggregation is a protocol family for aggregating many client inputs."
+      }
+    ],
+    "mixnets": [
+      {
+        "relation": "used-in",
+        "target": "e-voting",
+        "notes": "Mixnets can break the link between submitted encrypted ballots and decrypted ballots."
+      }
+    ],
+    "make-receipts-useless": [
+      {
+        "relation": "strengthens",
+        "target": "e-voting",
+        "notes": "Receipt-freeness and coercion resistance are stronger than ballot secrecy."
+      }
+    ],
+    "zero-knowledge-proof": [
+      {
+        "relation": "inherits-risk-from",
+        "target": "random-oracle-model",
+        "notes": "Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning."
+      }
+    ],
+    "authenticated-encryption": [
+      {
+        "relation": "composes-with",
+        "target": "message-authentication-codes",
+        "notes": "AEAD schemes often use MAC-like authentication internally or replace ad hoc encryption-plus-MAC composition."
+      },
+      {
+        "relation": "composes-with",
+        "target": "symmetric-encryption",
+        "notes": "AEAD schemes combine encryption with integrity and associated-data authentication."
+      }
+    ],
+    "oblivious-pseudorandom-functions": [
+      {
+        "relation": "used-in",
+        "target": "private-set-intersection",
+        "notes": "OPRF-based PSI is a common construction family."
+      }
+    ],
+    "private-set-intersection": [
+      {
+        "relation": "composes-with",
+        "target": "mpc",
+        "notes": "PSI can be built from general MPC techniques or specialized protocols depending on the deployment model."
+      }
+    ],
+    "secure-channels": [
+      {
+        "relation": "composes-with",
+        "target": "authenticated-encryption",
+        "notes": "Secure channels usually protect application records with AEAD once handshake keys are derived."
+      },
+      {
+        "relation": "composes-with",
+        "target": "transcript-binding",
+        "notes": "Secure channels bind identities, negotiation, and key exchange into the derived traffic keys."
+      }
+    ],
+    "password-authenticated-key-exchange": [
+      {
+        "relation": "composes-with",
+        "target": "secure-channels",
+        "notes": "PAKEs can establish or authenticate a session key that is then used by a secure channel."
+      }
+    ],
+    "oblivious-transfer": [
+      {
+        "relation": "used-in",
+        "target": "mpc",
+        "notes": "OT is a core building block for many MPC and garbled-circuit protocols."
+      }
+    ],
+    "private-information-retrieval": [
+      {
+        "relation": "contrasts-with",
+        "target": "private-set-intersection",
+        "notes": "PIR hides a database index, while PSI reveals an intersection or intersection-derived output."
+      }
+    ],
+    "polynomial-commitments": [
+      {
+        "relation": "used-in",
+        "target": "zk-rollups",
+        "notes": "Many rollup proof systems use polynomial commitments to bind witness or trace polynomials."
+      }
+    ],
+    "vector-commitments": [
+      {
+        "relation": "used-in",
+        "target": "privacy-preserving-revocation",
+        "notes": "Revocation systems can use vector commitments or authenticated status lists for compact status proofs."
+      }
+    ],
+    "private-payments": [
+      {
+        "relation": "composes-with",
+        "target": "nullifier",
+        "notes": "Private payments often use nullifiers or serial numbers to prevent duplicate spending."
+      }
+    ],
+    "zk-rollups": [
+      {
+        "relation": "composes-with",
+        "target": "transcript-binding",
+        "notes": "Rollup proofs must bind public inputs, state roots, verifier keys, and batch data to the proof."
+      }
+    ],
+    "domain-separation": [
+      {
+        "relation": "strengthens",
+        "target": "transcript-binding",
+        "notes": "Domain separation makes transcript fields and protocol phases unambiguous."
+      }
+    ],
+    "confidentiality": [
+      {
+        "relation": "breaks-if",
+        "target": "authenticated-encryption",
+        "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "integrity",
+        "notes": "Most deployed confidentiality mechanisms also need tamper detection."
+      }
+    ],
+    "integrity": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "authenticity",
+        "notes": "Systems usually need both tamper detection and origin binding."
+      }
+    ],
+    "authenticity": [
+      {
+        "relation": "requires",
+        "target": "transcript-binding",
+        "notes": "Authenticating incomplete context can bind the right key to the wrong session or statement."
+      }
+    ],
+    "anonymity": [
+      {
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Timing, network, amount, and rare-attribute metadata can defeat anonymity even when proofs verify."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "unlinkability",
+        "notes": "Anonymous systems often need unlinkability across repeated actions, but the goals are distinct."
+      }
+    ],
+    "unlinkability": [
+      {
+        "relation": "breaks-if",
+        "target": "nullifier",
+        "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "domain-separation",
+        "notes": "Context-bound tags prevent linkability across unrelated applications."
+      }
+    ],
+    "forward-secrecy": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "secure-channels",
+        "notes": "Forward secrecy is usually realized at the protocol layer."
+      },
+      {
+        "relation": "requires",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "Secure channels need fresh key-establishment material to make later long-term key compromise less damaging."
+      }
+    ],
+    "verifiability": [
+      {
+        "relation": "breaks-if",
+        "target": "transcript-binding",
+        "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "integrity",
+        "notes": "A verifier needs tamper-evident inputs and authentic verification parameters."
+      }
+    ],
+    "zcash-orchard": [
+      {
+        "relation": "uses",
+        "target": "halo-recursion",
+        "notes": "Orchard uses Halo-style proving to avoid the trusted setup model used by earlier Zcash pools."
+      }
+    ],
+    "zcash-sapling": [
+      {
+        "relation": "uses",
+        "target": "private-payments",
+        "notes": "Sapling is a concrete shielded-payment protocol suite."
+      }
+    ],
+    "bbs-verifiable-credentials": [
+      {
+        "relation": "uses",
+        "target": "anonymous-credential",
+        "notes": "BBS-based credential profiles support selective disclosure and unlinkable derived proofs under pairing assumptions."
+      }
+    ],
+    "sd-jwt": [
+      {
+        "relation": "contrasts-with",
+        "target": "anonymous-credential",
+        "notes": "SD-JWT provides selective disclosure, but not anonymous-credential unlinkability by default."
+      }
+    ],
+    "vc-di-ecdsa": [
+      {
+        "relation": "uses",
+        "target": "authenticity",
+        "notes": "ECDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+      }
+    ],
+    "vc-di-eddsa": [
+      {
+        "relation": "uses",
+        "target": "authenticity",
+        "notes": "EdDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+      }
+    ],
+    "lucid-encrypted-mempool": [
+      {
+        "relation": "uses",
+        "target": "delayed-reveal",
+        "notes": "Encrypted mempools use commit-before-reveal or delayed-decryption sequencing rules."
+      }
+    ],
+    "ferveo-threshold-mempool": [
+      {
+        "relation": "uses",
+        "target": "threshold-cryptography",
+        "notes": "Threshold decryption distributes reveal power across a committee."
+      }
+    ],
+    "encrypted-mempools": [
+      {
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted."
+      }
+    ],
+    "threshold-bls": [
+      {
+        "relation": "requires",
+        "target": "pairings",
+        "notes": "Threshold BLS inherits both threshold-share assumptions and pairing-friendly curve assumptions."
+      }
+    ],
+    "gennaro-dkg": [
+      {
+        "relation": "used-in",
+        "target": "threshold-cryptography",
+        "notes": "DKG is a setup protocol for dealerless threshold keys."
+      }
+    ],
+    "poseidon": [
+      {
+        "relation": "used-in",
+        "target": "arithmetization",
+        "notes": "ZK-friendly hashes are chosen to reduce circuit or constraint cost."
+      }
+    ],
+    "mimc": [
+      {
+        "relation": "used-in",
+        "target": "arithmetization",
+        "notes": "MiMC is an example of a low-multiplicative-complexity hash used in some proof circuits."
+      }
+    ],
+    "rescue-prime": [
+      {
+        "relation": "used-in",
+        "target": "arithmetization",
+        "notes": "Rescue-Prime is a proof-system-oriented hash family with scheme-specific parameters."
+      }
+    ],
+    "ckks": [
+      {
+        "relation": "used-in",
+        "target": "private-machine-learning-analytics",
+        "notes": "Approximate homomorphic arithmetic is common in privacy-preserving analytics and inference discussions."
+      }
+    ],
+    "bfv": [
+      {
+        "relation": "used-in",
+        "target": "private-machine-learning-analytics",
+        "notes": "Exact homomorphic arithmetic can support bounded private analytics workloads."
+      }
+    ],
+    "spdz": [
+      {
+        "relation": "used-in",
+        "target": "mpc",
+        "notes": "SPDZ is a concrete actively secure arithmetic MPC family."
+      }
+    ],
+    "mascot": [
+      {
+        "relation": "uses",
+        "target": "oblivious-transfer",
+        "notes": "MASCOT uses OT-based preprocessing for maliciously secure arithmetic MPC."
+      }
+    ],
+    "rsa-pkcs1-v1-5-encryption": [
+      {
+        "relation": "breaks-if",
+        "target": "public-key-encryption",
+        "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
+      }
+    ],
+    "sha-1": [
+      {
+        "relation": "breaks-if",
+        "target": "hash-function",
+        "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
+      }
+    ],
+    "md5": [
+      {
+        "relation": "breaks-if",
+        "target": "hash-function",
+        "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
+      }
+    ],
+    "auditability": [
+      {
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Over-collected audit logs can defeat privacy goals even when evidence integrity is strong."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "verifiability",
+        "notes": "Audit trails are stronger when reviewers can independently verify records, proofs, or logs."
+      }
+    ],
+    "accountability": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "auditability",
+        "notes": "Accountability usually needs durable evidence and a review process."
+      },
+      {
+        "relation": "requires",
+        "target": "authenticity",
+        "notes": "Misbehavior cannot be attributed if actions are not bound to accountable roles, keys, or credentials."
+      }
+    ],
+    "deniability": [
+      {
+        "relation": "breaks-if",
+        "target": "digital-signature",
+        "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "forward-secrecy",
+        "notes": "Key evolution and erasure reduce the value of later transcript compromise."
+      },
+      {
+        "relation": "contrasts-with",
+        "target": "non-repudiation",
+        "notes": "Deniable protocols avoid portable proof, while non-repudiation intentionally creates it."
+      }
+    ],
+    "non-repudiation": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "accountability",
+        "notes": "Signed evidence must feed a dispute or accountability process to have practical effect."
+      },
+      {
+        "relation": "requires",
+        "target": "digital-signature",
+        "notes": "Non-repudiation commonly depends on signatures plus operational key-control evidence."
+      }
+    ],
+    "availability": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "threshold-cryptography",
+        "notes": "Threshold designs can remove single points of failure if quorum independence assumptions hold."
+      },
+      {
+        "relation": "weakens-if",
+        "target": "trusted-setup",
+        "notes": "Setup or recovery ceremonies can become availability bottlenecks if no replacement path exists."
+      }
+    ],
+    "censorship-resistance": [
+      {
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Sender, fee, size, and timing metadata can leave enough information to censor targeted users."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "target": "encrypted-mempools",
+        "notes": "Encrypted mempools can reduce content-based censorship before reveal, but only under committee and inclusion assumptions."
+      },
+      {
+        "relation": "requires",
+        "target": "availability",
+        "notes": "A valid action needs at least one live inclusion path before censorship resistance can be meaningful."
+      }
+    ],
+    "bls12-377": [
+      {
+        "relation": "requires",
+        "target": "pairings",
+        "notes": "BLS12-377 is used as a pairing-friendly curve in proof-system stacks."
+      }
+    ],
+    "bw6-761": [
+      {
+        "relation": "requires",
+        "target": "pairings",
+        "notes": "BW6-761 is often discussed as an outer curve in recursive proof cycles."
+      }
+    ],
+    "jubjub": [
+      {
+        "relation": "used-in",
+        "target": "zcash-sapling",
+        "notes": "Jubjub appears in Zcash Sapling-related circuit and note components."
+      }
+    ],
+    "ml-kem-512": [
+      {
+        "relation": "used-in",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "ML-KEM parameter profiles should be selected according to policy and protocol constraints."
+      }
+    ],
+    "ml-kem-768": [
+      {
+        "relation": "used-in",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "ML-KEM-768 is a common general-purpose migration profile."
+      }
+    ],
+    "ml-kem-1024": [
+      {
+        "relation": "used-in",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "Larger KEM parameters increase integration pressure and should be inventory-driven."
+      }
+    ],
+    "ml-dsa-44": [
+      {
+        "relation": "used-in",
+        "target": "digital-signature",
+        "notes": "ML-DSA parameter profiles affect certificate, protocol, and hardware constraints."
+      }
+    ],
+    "ml-dsa-65": [
+      {
+        "relation": "used-in",
+        "target": "digital-signature",
+        "notes": "ML-DSA-65 is a common general-purpose post-quantum signature migration profile."
+      }
+    ],
+    "ml-dsa-87": [
+      {
+        "relation": "used-in",
+        "target": "digital-signature",
+        "notes": "Higher signature parameters require compatibility review before deployment."
+      }
+    ],
+    "slh-dsa-sha2": [
+      {
+        "relation": "uses",
+        "target": "hash-function",
+        "notes": "SLH-DSA SHA2 profiles rely on hash-based security assumptions and large signatures."
+      }
+    ],
+    "slh-dsa-shake": [
+      {
+        "relation": "uses",
+        "target": "hash-function",
+        "notes": "SLH-DSA SHAKE profiles rely on SHAKE-based hash assumptions and large signatures."
+      }
+    ],
+    "hqc-128": [
+      {
+        "relation": "used-in",
+        "target": "code-based-assumptions",
+        "notes": "HQC profiles are migration-planning entries until the backup KEM standard is final."
+      }
+    ],
+    "hqc-192": [
+      {
+        "relation": "used-in",
+        "target": "code-based-assumptions",
+        "notes": "Higher HQC profiles provide code-based algorithm diversity with larger integration costs."
+      }
+    ],
+    "hqc-256": [
+      {
+        "relation": "used-in",
+        "target": "code-based-assumptions",
+        "notes": "HQC-256 is retained as a high-category planning profile pending final standardization."
+      }
+    ],
+    "halo2": [
+      {
+        "relation": "uses",
+        "target": "recursive-proofs",
+        "notes": "halo2 is commonly associated with recursive proof-system engineering."
+      }
+    ],
+    "gnark": [
+      {
+        "relation": "uses",
+        "target": "arithmetization",
+        "notes": "gnark circuit definitions must compile to constraints that exactly capture the intended statement."
+      }
+    ],
+    "arkworks": [
+      {
+        "relation": "uses",
+        "target": "snarks-starks-bulletproofs",
+        "notes": "arkworks provides implementation components for multiple SNARK constructions."
+      }
+    ],
+    "circom": [
+      {
+        "relation": "uses",
+        "target": "arithmetization",
+        "notes": "Circom circuits need explicit constraint review to avoid underconstrained statements."
+      }
+    ],
+    "microsoft-seal": [
+      {
+        "relation": "uses",
+        "target": "homomorphic-encryption",
+        "notes": "Microsoft SEAL exposes concrete FHE schemes whose parameter choices remain expert-sensitive."
+      }
+    ],
+    "openfhe": [
+      {
+        "relation": "uses",
+        "target": "homomorphic-encryption",
+        "notes": "OpenFHE supports several FHE families; guarantees depend on the selected scheme and parameters."
+      }
+    ],
+    "concrete-ml": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "private-machine-learning-analytics",
+        "notes": "FHE-based ML tooling still needs output, model, and repeated-query leakage review."
+      }
+    ],
+    "mp-spdz-framework": [
+      {
+        "relation": "uses",
+        "target": "mpc",
+        "notes": "MP-SPDZ exposes many MPC protocols with different adversary models."
+      }
+    ],
+    "emp-toolkit": [
+      {
+        "relation": "uses",
+        "target": "oblivious-transfer",
+        "notes": "EMP packages often depend on OT and garbled-circuit assumptions."
+      }
+    ],
+    "fresco-framework": [
+      {
+        "relation": "uses",
+        "target": "mpc",
+        "notes": "FRESCO is a framework layer; protocol selection determines the security model."
+      }
+    ],
+    "oid4vci": [
+      {
+        "relation": "used-in",
+        "target": "identity-wallets",
+        "notes": "OID4VCI describes credential issuance flows, not presentation privacy by itself."
+      }
+    ],
+    "oid4vp": [
+      {
+        "relation": "used-in",
+        "target": "identity-wallets",
+        "notes": "OID4VP describes wallet-to-verifier presentation flows across credential formats."
+      }
+    ],
+    "eudi-wallet-arf": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "identity-wallets",
+        "notes": "EUDI ARF profiles wallet roles, trust lists, and secure-device assumptions."
+      }
+    ],
+    "iso-mdoc-mdl": [
+      {
+        "relation": "used-in",
+        "target": "identity-wallets",
+        "notes": "ISO mdoc and mobile driving licence profiles are deployed credential-wallet formats."
+      }
+    ],
+    "anoncreds-v1": [
+      {
+        "relation": "uses",
+        "target": "anonymous-credential",
+        "notes": "AnonCreds uses credential-specific ZK proofs and revocation registries."
+      }
+    ],
+    "didcomm-v2": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "identity-wallets",
+        "notes": "DIDComm is a wallet-agent messaging layer and should not be mistaken for credential privacy."
+      }
+    ],
+    "shutter-encrypted-mempool": [
+      {
+        "relation": "commonly-composed-with",
+        "target": "censorship-resistance",
+        "notes": "Threshold encryption can reduce pre-reveal content-based censorship but not all exclusion paths."
+      },
+      {
+        "relation": "uses",
+        "target": "threshold-cryptography",
+        "notes": "Shutter-style encrypted mempools use threshold encryption and key-release committees."
+      }
+    ],
+    "open-quantum-safe": [
+      {
+        "relation": "used-in",
+        "target": "key-rotation-and-migration",
+        "notes": "OQS tooling is useful for experimentation and interoperability, not a deployment certificate."
+      }
+    ]
+  },
+  "reverse_adjacency": {
+    "zero-knowledge-proof": [
+      {
+        "relation": "composes-with",
+        "source": "commitments",
+        "notes": "ZK proofs often prove statements about committed values without opening them."
+      }
+    ],
+    "discrete-logarithm": [
+      {
+        "relation": "inherits-risk-from",
+        "source": "digital-signature",
+        "notes": "ECDSA, EdDSA, and Schnorr-style signatures inherit discrete-logarithm quantum vulnerability."
+      },
+      {
+        "relation": "requires",
+        "source": "pedersen-commitment",
+        "notes": "Binding depends on the infeasibility of finding the generator relation."
+      }
+    ],
+    "factoring-rsa": [
+      {
+        "relation": "inherits-risk-from",
+        "source": "public-key-encryption",
+        "notes": "RSA-based encryption inherits factoring and padding assumptions."
+      }
+    ],
+    "lattices": [
+      {
+        "relation": "inherits-risk-from",
+        "source": "homomorphic-encryption",
+        "notes": "Many modern FHE families rely on lattice assumptions and parameter selection."
+      }
+    ],
+    "pairings": [
+      {
+        "relation": "inherits-risk-from",
+        "source": "snarks-starks-bulletproofs",
+        "notes": "Pairing-based SNARKs inherit pairing and elliptic-curve assumptions."
+      },
+      {
+        "relation": "requires",
+        "source": "bls12-377",
+        "notes": "BLS12-377 is used as a pairing-friendly curve in proof-system stacks."
+      },
+      {
+        "relation": "requires",
+        "source": "bw6-761",
+        "notes": "BW6-761 is often discussed as an outer curve in recursive proof cycles."
+      },
+      {
+        "relation": "requires",
+        "source": "threshold-bls",
+        "notes": "Threshold BLS inherits both threshold-share assumptions and pairing-friendly curve assumptions."
+      }
+    ],
+    "commitments": [
+      {
+        "relation": "requires",
+        "source": "range-proofs",
+        "notes": "Range proofs usually constrain a hidden value inside a commitment or ciphertext."
+      }
+    ],
+    "anti-double-use-nullifiers": [
+      {
+        "relation": "implements-pattern",
+        "source": "nullifier",
+        "notes": "Nullifiers are the public duplicate-detection tag used by the pattern."
+      }
+    ],
+    "nullifier": [
+      {
+        "relation": "breaks-if",
+        "source": "unlinkability",
+        "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
+      },
+      {
+        "relation": "composes-with",
+        "source": "anonymous-airdrop",
+        "notes": "Airdrops use nullifiers to reject duplicate claims."
+      },
+      {
+        "relation": "composes-with",
+        "source": "private-payments",
+        "notes": "Private payments often use nullifiers or serial numbers to prevent duplicate spending."
+      }
+    ],
+    "anonymous-membership": [
+      {
+        "relation": "composes-with",
+        "source": "private-dao-voting",
+        "notes": "Voters may prove eligibility without revealing which member they are."
+      }
+    ],
+    "private-aggregation": [
+      {
+        "relation": "composes-with",
+        "source": "private-dao-voting",
+        "notes": "The tally should reveal an aggregate rather than individual ballots."
+      },
+      {
+        "relation": "implements-pattern",
+        "source": "secure-aggregation",
+        "notes": "Secure aggregation is a protocol family for aggregating many client inputs."
+      },
+      {
+        "relation": "used-in",
+        "source": "homomorphic-encryption",
+        "notes": "Additive homomorphic encryption is a common private tallying mechanism."
+      }
+    ],
+    "e-voting": [
+      {
+        "relation": "strengthens",
+        "source": "make-receipts-useless",
+        "notes": "Receipt-freeness and coercion resistance are stronger than ballot secrecy."
+      },
+      {
+        "relation": "used-in",
+        "source": "mixnets",
+        "notes": "Mixnets can break the link between submitted encrypted ballots and decrypted ballots."
+      }
+    ],
+    "trusted-setup": [
+      {
+        "relation": "inherits-risk-from",
+        "source": "snarks-starks-bulletproofs",
+        "notes": "Some proof systems require setup ceremonies or structured reference strings."
+      },
+      {
+        "relation": "weakens-if",
+        "source": "availability",
+        "notes": "Setup or recovery ceremonies can become availability bottlenecks if no replacement path exists."
+      }
+    ],
+    "random-oracle-model": [
+      {
+        "relation": "inherits-risk-from",
+        "source": "zero-knowledge-proof",
+        "notes": "Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning."
+      }
+    ],
+    "symmetric-encryption": [
+      {
+        "relation": "composes-with",
+        "source": "authenticated-encryption",
+        "notes": "AEAD schemes combine encryption with integrity and associated-data authentication."
+      }
+    ],
+    "message-authentication-codes": [
+      {
+        "relation": "composes-with",
+        "source": "authenticated-encryption",
+        "notes": "AEAD schemes often use MAC-like authentication internally or replace ad hoc encryption-plus-MAC composition."
+      }
+    ],
+    "private-set-intersection": [
+      {
+        "relation": "contrasts-with",
+        "source": "private-information-retrieval",
+        "notes": "PIR hides a database index, while PSI reveals an intersection or intersection-derived output."
+      },
+      {
+        "relation": "used-in",
+        "source": "oblivious-pseudorandom-functions",
+        "notes": "OPRF-based PSI is a common construction family."
+      }
+    ],
+    "mpc": [
+      {
+        "relation": "composes-with",
+        "source": "private-set-intersection",
+        "notes": "PSI can be built from general MPC techniques or specialized protocols depending on the deployment model."
+      },
+      {
+        "relation": "used-in",
+        "source": "oblivious-transfer",
+        "notes": "OT is a core building block for many MPC and garbled-circuit protocols."
+      },
+      {
+        "relation": "used-in",
+        "source": "spdz",
+        "notes": "SPDZ is a concrete actively secure arithmetic MPC family."
+      },
+      {
+        "relation": "uses",
+        "source": "fresco-framework",
+        "notes": "FRESCO is a framework layer; protocol selection determines the security model."
+      },
+      {
+        "relation": "uses",
+        "source": "mp-spdz-framework",
+        "notes": "MP-SPDZ exposes many MPC protocols with different adversary models."
+      }
+    ],
+    "transcript-binding": [
+      {
+        "relation": "breaks-if",
+        "source": "verifiability",
+        "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
+      },
+      {
+        "relation": "composes-with",
+        "source": "secure-channels",
+        "notes": "Secure channels bind identities, negotiation, and key exchange into the derived traffic keys."
+      },
+      {
+        "relation": "composes-with",
+        "source": "zk-rollups",
+        "notes": "Rollup proofs must bind public inputs, state roots, verifier keys, and batch data to the proof."
+      },
+      {
+        "relation": "requires",
+        "source": "authenticity",
+        "notes": "Authenticating incomplete context can bind the right key to the wrong session or statement."
+      },
+      {
+        "relation": "strengthens",
+        "source": "domain-separation",
+        "notes": "Domain separation makes transcript fields and protocol phases unambiguous."
+      }
+    ],
+    "authenticated-encryption": [
+      {
+        "relation": "breaks-if",
+        "source": "confidentiality",
+        "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
+      },
+      {
+        "relation": "composes-with",
+        "source": "secure-channels",
+        "notes": "Secure channels usually protect application records with AEAD once handshake keys are derived."
+      }
+    ],
+    "secure-channels": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "forward-secrecy",
+        "notes": "Forward secrecy is usually realized at the protocol layer."
+      },
+      {
+        "relation": "composes-with",
+        "source": "password-authenticated-key-exchange",
+        "notes": "PAKEs can establish or authenticate a session key that is then used by a secure channel."
+      }
+    ],
+    "zk-rollups": [
+      {
+        "relation": "used-in",
+        "source": "polynomial-commitments",
+        "notes": "Many rollup proof systems use polynomial commitments to bind witness or trace polynomials."
+      }
+    ],
+    "privacy-preserving-revocation": [
+      {
+        "relation": "used-in",
+        "source": "vector-commitments",
+        "notes": "Revocation systems can use vector commitments or authenticated status lists for compact status proofs."
+      }
+    ],
+    "integrity": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "confidentiality",
+        "notes": "Most deployed confidentiality mechanisms also need tamper detection."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "source": "verifiability",
+        "notes": "A verifier needs tamper-evident inputs and authentic verification parameters."
+      }
+    ],
+    "authenticity": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "integrity",
+        "notes": "Systems usually need both tamper detection and origin binding."
+      },
+      {
+        "relation": "requires",
+        "source": "accountability",
+        "notes": "Misbehavior cannot be attributed if actions are not bound to accountable roles, keys, or credentials."
+      },
+      {
+        "relation": "uses",
+        "source": "vc-di-ecdsa",
+        "notes": "ECDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+      },
+      {
+        "relation": "uses",
+        "source": "vc-di-eddsa",
+        "notes": "EdDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+      }
+    ],
+    "unlinkability": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "anonymity",
+        "notes": "Anonymous systems often need unlinkability across repeated actions, but the goals are distinct."
+      }
+    ],
+    "metadata-leakage": [
+      {
+        "relation": "breaks-if",
+        "source": "anonymity",
+        "notes": "Timing, network, amount, and rare-attribute metadata can defeat anonymity even when proofs verify."
+      },
+      {
+        "relation": "breaks-if",
+        "source": "auditability",
+        "notes": "Over-collected audit logs can defeat privacy goals even when evidence integrity is strong."
+      },
+      {
+        "relation": "breaks-if",
+        "source": "censorship-resistance",
+        "notes": "Sender, fee, size, and timing metadata can leave enough information to censor targeted users."
+      },
+      {
+        "relation": "breaks-if",
+        "source": "encrypted-mempools",
+        "notes": "Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted."
+      }
+    ],
+    "domain-separation": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "unlinkability",
+        "notes": "Context-bound tags prevent linkability across unrelated applications."
+      }
+    ],
+    "key-encapsulation-and-exchange": [
+      {
+        "relation": "requires",
+        "source": "forward-secrecy",
+        "notes": "Secure channels need fresh key-establishment material to make later long-term key compromise less damaging."
+      },
+      {
+        "relation": "used-in",
+        "source": "ml-kem-1024",
+        "notes": "Larger KEM parameters increase integration pressure and should be inventory-driven."
+      },
+      {
+        "relation": "used-in",
+        "source": "ml-kem-512",
+        "notes": "ML-KEM parameter profiles should be selected according to policy and protocol constraints."
+      },
+      {
+        "relation": "used-in",
+        "source": "ml-kem-768",
+        "notes": "ML-KEM-768 is a common general-purpose migration profile."
+      }
+    ],
+    "halo-recursion": [
+      {
+        "relation": "uses",
+        "source": "zcash-orchard",
+        "notes": "Orchard uses Halo-style proving to avoid the trusted setup model used by earlier Zcash pools."
+      }
+    ],
+    "private-payments": [
+      {
+        "relation": "uses",
+        "source": "zcash-sapling",
+        "notes": "Sapling is a concrete shielded-payment protocol suite."
+      }
+    ],
+    "anonymous-credential": [
+      {
+        "relation": "contrasts-with",
+        "source": "sd-jwt",
+        "notes": "SD-JWT provides selective disclosure, but not anonymous-credential unlinkability by default."
+      },
+      {
+        "relation": "uses",
+        "source": "anoncreds-v1",
+        "notes": "AnonCreds uses credential-specific ZK proofs and revocation registries."
+      },
+      {
+        "relation": "uses",
+        "source": "bbs-verifiable-credentials",
+        "notes": "BBS-based credential profiles support selective disclosure and unlinkable derived proofs under pairing assumptions."
+      }
+    ],
+    "delayed-reveal": [
+      {
+        "relation": "uses",
+        "source": "lucid-encrypted-mempool",
+        "notes": "Encrypted mempools use commit-before-reveal or delayed-decryption sequencing rules."
+      }
+    ],
+    "threshold-cryptography": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "availability",
+        "notes": "Threshold designs can remove single points of failure if quorum independence assumptions hold."
+      },
+      {
+        "relation": "used-in",
+        "source": "gennaro-dkg",
+        "notes": "DKG is a setup protocol for dealerless threshold keys."
+      },
+      {
+        "relation": "uses",
+        "source": "ferveo-threshold-mempool",
+        "notes": "Threshold decryption distributes reveal power across a committee."
+      },
+      {
+        "relation": "uses",
+        "source": "shutter-encrypted-mempool",
+        "notes": "Shutter-style encrypted mempools use threshold encryption and key-release committees."
+      }
+    ],
+    "arithmetization": [
+      {
+        "relation": "used-in",
+        "source": "mimc",
+        "notes": "MiMC is an example of a low-multiplicative-complexity hash used in some proof circuits."
+      },
+      {
+        "relation": "used-in",
+        "source": "poseidon",
+        "notes": "ZK-friendly hashes are chosen to reduce circuit or constraint cost."
+      },
+      {
+        "relation": "used-in",
+        "source": "rescue-prime",
+        "notes": "Rescue-Prime is a proof-system-oriented hash family with scheme-specific parameters."
+      },
+      {
+        "relation": "uses",
+        "source": "circom",
+        "notes": "Circom circuits need explicit constraint review to avoid underconstrained statements."
+      },
+      {
+        "relation": "uses",
+        "source": "gnark",
+        "notes": "gnark circuit definitions must compile to constraints that exactly capture the intended statement."
+      }
+    ],
+    "private-machine-learning-analytics": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "concrete-ml",
+        "notes": "FHE-based ML tooling still needs output, model, and repeated-query leakage review."
+      },
+      {
+        "relation": "used-in",
+        "source": "bfv",
+        "notes": "Exact homomorphic arithmetic can support bounded private analytics workloads."
+      },
+      {
+        "relation": "used-in",
+        "source": "ckks",
+        "notes": "Approximate homomorphic arithmetic is common in privacy-preserving analytics and inference discussions."
+      }
+    ],
+    "oblivious-transfer": [
+      {
+        "relation": "uses",
+        "source": "emp-toolkit",
+        "notes": "EMP packages often depend on OT and garbled-circuit assumptions."
+      },
+      {
+        "relation": "uses",
+        "source": "mascot",
+        "notes": "MASCOT uses OT-based preprocessing for maliciously secure arithmetic MPC."
+      }
+    ],
+    "public-key-encryption": [
+      {
+        "relation": "breaks-if",
+        "source": "rsa-pkcs1-v1-5-encryption",
+        "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
+      }
+    ],
+    "hash-function": [
+      {
+        "relation": "breaks-if",
+        "source": "md5",
+        "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
+      },
+      {
+        "relation": "breaks-if",
+        "source": "sha-1",
+        "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
+      },
+      {
+        "relation": "uses",
+        "source": "slh-dsa-sha2",
+        "notes": "SLH-DSA SHA2 profiles rely on hash-based security assumptions and large signatures."
+      },
+      {
+        "relation": "uses",
+        "source": "slh-dsa-shake",
+        "notes": "SLH-DSA SHAKE profiles rely on SHAKE-based hash assumptions and large signatures."
+      }
+    ],
+    "verifiability": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "auditability",
+        "notes": "Audit trails are stronger when reviewers can independently verify records, proofs, or logs."
+      }
+    ],
+    "auditability": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "accountability",
+        "notes": "Accountability usually needs durable evidence and a review process."
+      }
+    ],
+    "non-repudiation": [
+      {
+        "relation": "contrasts-with",
+        "source": "deniability",
+        "notes": "Deniable protocols avoid portable proof, while non-repudiation intentionally creates it."
+      }
+    ],
+    "forward-secrecy": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "deniability",
+        "notes": "Key evolution and erasure reduce the value of later transcript compromise."
+      }
+    ],
+    "digital-signature": [
+      {
+        "relation": "breaks-if",
+        "source": "deniability",
+        "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
+      },
+      {
+        "relation": "requires",
+        "source": "non-repudiation",
+        "notes": "Non-repudiation commonly depends on signatures plus operational key-control evidence."
+      },
+      {
+        "relation": "used-in",
+        "source": "ml-dsa-44",
+        "notes": "ML-DSA parameter profiles affect certificate, protocol, and hardware constraints."
+      },
+      {
+        "relation": "used-in",
+        "source": "ml-dsa-65",
+        "notes": "ML-DSA-65 is a common general-purpose post-quantum signature migration profile."
+      },
+      {
+        "relation": "used-in",
+        "source": "ml-dsa-87",
+        "notes": "Higher signature parameters require compatibility review before deployment."
+      }
+    ],
+    "accountability": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "non-repudiation",
+        "notes": "Signed evidence must feed a dispute or accountability process to have practical effect."
+      }
+    ],
+    "availability": [
+      {
+        "relation": "requires",
+        "source": "censorship-resistance",
+        "notes": "A valid action needs at least one live inclusion path before censorship resistance can be meaningful."
+      }
+    ],
+    "encrypted-mempools": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "censorship-resistance",
+        "notes": "Encrypted mempools can reduce content-based censorship before reveal, but only under committee and inclusion assumptions."
+      }
+    ],
+    "zcash-sapling": [
+      {
+        "relation": "used-in",
+        "source": "jubjub",
+        "notes": "Jubjub appears in Zcash Sapling-related circuit and note components."
+      }
+    ],
+    "code-based-assumptions": [
+      {
+        "relation": "used-in",
+        "source": "hqc-128",
+        "notes": "HQC profiles are migration-planning entries until the backup KEM standard is final."
+      },
+      {
+        "relation": "used-in",
+        "source": "hqc-192",
+        "notes": "Higher HQC profiles provide code-based algorithm diversity with larger integration costs."
+      },
+      {
+        "relation": "used-in",
+        "source": "hqc-256",
+        "notes": "HQC-256 is retained as a high-category planning profile pending final standardization."
+      }
+    ],
+    "recursive-proofs": [
+      {
+        "relation": "uses",
+        "source": "halo2",
+        "notes": "halo2 is commonly associated with recursive proof-system engineering."
+      }
+    ],
+    "snarks-starks-bulletproofs": [
+      {
+        "relation": "uses",
+        "source": "arkworks",
+        "notes": "arkworks provides implementation components for multiple SNARK constructions."
+      }
+    ],
+    "homomorphic-encryption": [
+      {
+        "relation": "uses",
+        "source": "microsoft-seal",
+        "notes": "Microsoft SEAL exposes concrete FHE schemes whose parameter choices remain expert-sensitive."
+      },
+      {
+        "relation": "uses",
+        "source": "openfhe",
+        "notes": "OpenFHE supports several FHE families; guarantees depend on the selected scheme and parameters."
+      }
+    ],
+    "identity-wallets": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "didcomm-v2",
+        "notes": "DIDComm is a wallet-agent messaging layer and should not be mistaken for credential privacy."
+      },
+      {
+        "relation": "commonly-composed-with",
+        "source": "eudi-wallet-arf",
+        "notes": "EUDI ARF profiles wallet roles, trust lists, and secure-device assumptions."
+      },
+      {
+        "relation": "used-in",
+        "source": "iso-mdoc-mdl",
+        "notes": "ISO mdoc and mobile driving licence profiles are deployed credential-wallet formats."
+      },
+      {
+        "relation": "used-in",
+        "source": "oid4vci",
+        "notes": "OID4VCI describes credential issuance flows, not presentation privacy by itself."
+      },
+      {
+        "relation": "used-in",
+        "source": "oid4vp",
+        "notes": "OID4VP describes wallet-to-verifier presentation flows across credential formats."
+      }
+    ],
+    "censorship-resistance": [
+      {
+        "relation": "commonly-composed-with",
+        "source": "shutter-encrypted-mempool",
+        "notes": "Threshold encryption can reduce pre-reveal content-based censorship but not all exclusion paths."
+      }
+    ],
+    "key-rotation-and-migration": [
+      {
+        "relation": "used-in",
+        "source": "open-quantum-safe",
+        "notes": "OQS tooling is useful for experimentation and interoperability, not a deployment certificate."
+      }
+    ]
+  },
+  "by_relation": {
+    "composes-with": [
+      {
+        "source": "anonymous-airdrop",
+        "relation": "composes-with",
+        "target": "nullifier",
+        "notes": "Airdrops use nullifiers to reject duplicate claims."
+      },
+      {
+        "source": "authenticated-encryption",
+        "relation": "composes-with",
+        "target": "message-authentication-codes",
+        "notes": "AEAD schemes often use MAC-like authentication internally or replace ad hoc encryption-plus-MAC composition."
+      },
+      {
+        "source": "authenticated-encryption",
+        "relation": "composes-with",
+        "target": "symmetric-encryption",
+        "notes": "AEAD schemes combine encryption with integrity and associated-data authentication."
+      },
+      {
+        "source": "commitments",
+        "relation": "composes-with",
+        "target": "zero-knowledge-proof",
+        "notes": "ZK proofs often prove statements about committed values without opening them."
+      },
+      {
+        "source": "password-authenticated-key-exchange",
+        "relation": "composes-with",
+        "target": "secure-channels",
+        "notes": "PAKEs can establish or authenticate a session key that is then used by a secure channel."
+      },
+      {
+        "source": "private-dao-voting",
+        "relation": "composes-with",
+        "target": "anonymous-membership",
+        "notes": "Voters may prove eligibility without revealing which member they are."
+      },
+      {
+        "source": "private-dao-voting",
+        "relation": "composes-with",
+        "target": "private-aggregation",
+        "notes": "The tally should reveal an aggregate rather than individual ballots."
+      },
+      {
+        "source": "private-payments",
+        "relation": "composes-with",
+        "target": "nullifier",
+        "notes": "Private payments often use nullifiers or serial numbers to prevent duplicate spending."
+      },
+      {
+        "source": "private-set-intersection",
+        "relation": "composes-with",
+        "target": "mpc",
+        "notes": "PSI can be built from general MPC techniques or specialized protocols depending on the deployment model."
+      },
+      {
+        "source": "secure-channels",
+        "relation": "composes-with",
+        "target": "authenticated-encryption",
+        "notes": "Secure channels usually protect application records with AEAD once handshake keys are derived."
+      },
+      {
+        "source": "secure-channels",
+        "relation": "composes-with",
+        "target": "transcript-binding",
+        "notes": "Secure channels bind identities, negotiation, and key exchange into the derived traffic keys."
+      },
+      {
+        "source": "zk-rollups",
+        "relation": "composes-with",
+        "target": "transcript-binding",
+        "notes": "Rollup proofs must bind public inputs, state roots, verifier keys, and batch data to the proof."
+      }
+    ],
+    "requires": [
+      {
+        "source": "accountability",
+        "relation": "requires",
+        "target": "authenticity",
+        "notes": "Misbehavior cannot be attributed if actions are not bound to accountable roles, keys, or credentials."
+      },
+      {
+        "source": "authenticity",
+        "relation": "requires",
+        "target": "transcript-binding",
+        "notes": "Authenticating incomplete context can bind the right key to the wrong session or statement."
+      },
+      {
+        "source": "bls12-377",
+        "relation": "requires",
+        "target": "pairings",
+        "notes": "BLS12-377 is used as a pairing-friendly curve in proof-system stacks."
+      },
+      {
+        "source": "bw6-761",
+        "relation": "requires",
+        "target": "pairings",
+        "notes": "BW6-761 is often discussed as an outer curve in recursive proof cycles."
+      },
+      {
+        "source": "censorship-resistance",
+        "relation": "requires",
+        "target": "availability",
+        "notes": "A valid action needs at least one live inclusion path before censorship resistance can be meaningful."
+      },
+      {
+        "source": "forward-secrecy",
+        "relation": "requires",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "Secure channels need fresh key-establishment material to make later long-term key compromise less damaging."
+      },
+      {
+        "source": "non-repudiation",
+        "relation": "requires",
+        "target": "digital-signature",
+        "notes": "Non-repudiation commonly depends on signatures plus operational key-control evidence."
+      },
+      {
+        "source": "pedersen-commitment",
+        "relation": "requires",
+        "target": "discrete-logarithm",
+        "notes": "Binding depends on the infeasibility of finding the generator relation."
+      },
+      {
+        "source": "range-proofs",
+        "relation": "requires",
+        "target": "commitments",
+        "notes": "Range proofs usually constrain a hidden value inside a commitment or ciphertext."
+      },
+      {
+        "source": "threshold-bls",
+        "relation": "requires",
+        "target": "pairings",
+        "notes": "Threshold BLS inherits both threshold-share assumptions and pairing-friendly curve assumptions."
+      }
+    ],
+    "inherits-risk-from": [
+      {
+        "source": "digital-signature",
+        "relation": "inherits-risk-from",
+        "target": "discrete-logarithm",
+        "notes": "ECDSA, EdDSA, and Schnorr-style signatures inherit discrete-logarithm quantum vulnerability."
+      },
+      {
+        "source": "homomorphic-encryption",
+        "relation": "inherits-risk-from",
+        "target": "lattices",
+        "notes": "Many modern FHE families rely on lattice assumptions and parameter selection."
+      },
+      {
+        "source": "public-key-encryption",
+        "relation": "inherits-risk-from",
+        "target": "factoring-rsa",
+        "notes": "RSA-based encryption inherits factoring and padding assumptions."
+      },
+      {
+        "source": "snarks-starks-bulletproofs",
+        "relation": "inherits-risk-from",
+        "target": "pairings",
+        "notes": "Pairing-based SNARKs inherit pairing and elliptic-curve assumptions."
+      },
+      {
+        "source": "snarks-starks-bulletproofs",
+        "relation": "inherits-risk-from",
+        "target": "trusted-setup",
+        "notes": "Some proof systems require setup ceremonies or structured reference strings."
+      },
+      {
+        "source": "zero-knowledge-proof",
+        "relation": "inherits-risk-from",
+        "target": "random-oracle-model",
+        "notes": "Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning."
+      }
+    ],
+    "implements-pattern": [
+      {
+        "source": "nullifier",
+        "relation": "implements-pattern",
+        "target": "anti-double-use-nullifiers",
+        "notes": "Nullifiers are the public duplicate-detection tag used by the pattern."
+      },
+      {
+        "source": "secure-aggregation",
+        "relation": "implements-pattern",
+        "target": "private-aggregation",
+        "notes": "Secure aggregation is a protocol family for aggregating many client inputs."
+      }
+    ],
+    "used-in": [
+      {
+        "source": "bfv",
+        "relation": "used-in",
+        "target": "private-machine-learning-analytics",
+        "notes": "Exact homomorphic arithmetic can support bounded private analytics workloads."
+      },
+      {
+        "source": "ckks",
+        "relation": "used-in",
+        "target": "private-machine-learning-analytics",
+        "notes": "Approximate homomorphic arithmetic is common in privacy-preserving analytics and inference discussions."
+      },
+      {
+        "source": "gennaro-dkg",
+        "relation": "used-in",
+        "target": "threshold-cryptography",
+        "notes": "DKG is a setup protocol for dealerless threshold keys."
+      },
+      {
+        "source": "homomorphic-encryption",
+        "relation": "used-in",
+        "target": "private-aggregation",
+        "notes": "Additive homomorphic encryption is a common private tallying mechanism."
+      },
+      {
+        "source": "hqc-128",
+        "relation": "used-in",
+        "target": "code-based-assumptions",
+        "notes": "HQC profiles are migration-planning entries until the backup KEM standard is final."
+      },
+      {
+        "source": "hqc-192",
+        "relation": "used-in",
+        "target": "code-based-assumptions",
+        "notes": "Higher HQC profiles provide code-based algorithm diversity with larger integration costs."
+      },
+      {
+        "source": "hqc-256",
+        "relation": "used-in",
+        "target": "code-based-assumptions",
+        "notes": "HQC-256 is retained as a high-category planning profile pending final standardization."
+      },
+      {
+        "source": "iso-mdoc-mdl",
+        "relation": "used-in",
+        "target": "identity-wallets",
+        "notes": "ISO mdoc and mobile driving licence profiles are deployed credential-wallet formats."
+      },
+      {
+        "source": "jubjub",
+        "relation": "used-in",
+        "target": "zcash-sapling",
+        "notes": "Jubjub appears in Zcash Sapling-related circuit and note components."
+      },
+      {
+        "source": "mimc",
+        "relation": "used-in",
+        "target": "arithmetization",
+        "notes": "MiMC is an example of a low-multiplicative-complexity hash used in some proof circuits."
+      },
+      {
+        "source": "mixnets",
+        "relation": "used-in",
+        "target": "e-voting",
+        "notes": "Mixnets can break the link between submitted encrypted ballots and decrypted ballots."
+      },
+      {
+        "source": "ml-dsa-44",
+        "relation": "used-in",
+        "target": "digital-signature",
+        "notes": "ML-DSA parameter profiles affect certificate, protocol, and hardware constraints."
+      },
+      {
+        "source": "ml-dsa-65",
+        "relation": "used-in",
+        "target": "digital-signature",
+        "notes": "ML-DSA-65 is a common general-purpose post-quantum signature migration profile."
+      },
+      {
+        "source": "ml-dsa-87",
+        "relation": "used-in",
+        "target": "digital-signature",
+        "notes": "Higher signature parameters require compatibility review before deployment."
+      },
+      {
+        "source": "ml-kem-1024",
+        "relation": "used-in",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "Larger KEM parameters increase integration pressure and should be inventory-driven."
+      },
+      {
+        "source": "ml-kem-512",
+        "relation": "used-in",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "ML-KEM parameter profiles should be selected according to policy and protocol constraints."
+      },
+      {
+        "source": "ml-kem-768",
+        "relation": "used-in",
+        "target": "key-encapsulation-and-exchange",
+        "notes": "ML-KEM-768 is a common general-purpose migration profile."
+      },
+      {
+        "source": "oblivious-pseudorandom-functions",
+        "relation": "used-in",
+        "target": "private-set-intersection",
+        "notes": "OPRF-based PSI is a common construction family."
+      },
+      {
+        "source": "oblivious-transfer",
+        "relation": "used-in",
+        "target": "mpc",
+        "notes": "OT is a core building block for many MPC and garbled-circuit protocols."
+      },
+      {
+        "source": "oid4vci",
+        "relation": "used-in",
+        "target": "identity-wallets",
+        "notes": "OID4VCI describes credential issuance flows, not presentation privacy by itself."
+      },
+      {
+        "source": "oid4vp",
+        "relation": "used-in",
+        "target": "identity-wallets",
+        "notes": "OID4VP describes wallet-to-verifier presentation flows across credential formats."
+      },
+      {
+        "source": "open-quantum-safe",
+        "relation": "used-in",
+        "target": "key-rotation-and-migration",
+        "notes": "OQS tooling is useful for experimentation and interoperability, not a deployment certificate."
+      },
+      {
+        "source": "polynomial-commitments",
+        "relation": "used-in",
+        "target": "zk-rollups",
+        "notes": "Many rollup proof systems use polynomial commitments to bind witness or trace polynomials."
+      },
+      {
+        "source": "poseidon",
+        "relation": "used-in",
+        "target": "arithmetization",
+        "notes": "ZK-friendly hashes are chosen to reduce circuit or constraint cost."
+      },
+      {
+        "source": "rescue-prime",
+        "relation": "used-in",
+        "target": "arithmetization",
+        "notes": "Rescue-Prime is a proof-system-oriented hash family with scheme-specific parameters."
+      },
+      {
+        "source": "spdz",
+        "relation": "used-in",
+        "target": "mpc",
+        "notes": "SPDZ is a concrete actively secure arithmetic MPC family."
+      },
+      {
+        "source": "vector-commitments",
+        "relation": "used-in",
+        "target": "privacy-preserving-revocation",
+        "notes": "Revocation systems can use vector commitments or authenticated status lists for compact status proofs."
+      }
+    ],
+    "strengthens": [
+      {
+        "source": "domain-separation",
+        "relation": "strengthens",
+        "target": "transcript-binding",
+        "notes": "Domain separation makes transcript fields and protocol phases unambiguous."
+      },
+      {
+        "source": "make-receipts-useless",
+        "relation": "strengthens",
+        "target": "e-voting",
+        "notes": "Receipt-freeness and coercion resistance are stronger than ballot secrecy."
+      }
+    ],
+    "contrasts-with": [
+      {
+        "source": "deniability",
+        "relation": "contrasts-with",
+        "target": "non-repudiation",
+        "notes": "Deniable protocols avoid portable proof, while non-repudiation intentionally creates it."
+      },
+      {
+        "source": "private-information-retrieval",
+        "relation": "contrasts-with",
+        "target": "private-set-intersection",
+        "notes": "PIR hides a database index, while PSI reveals an intersection or intersection-derived output."
+      },
+      {
+        "source": "sd-jwt",
+        "relation": "contrasts-with",
+        "target": "anonymous-credential",
+        "notes": "SD-JWT provides selective disclosure, but not anonymous-credential unlinkability by default."
+      }
+    ],
+    "commonly-composed-with": [
+      {
+        "source": "accountability",
+        "relation": "commonly-composed-with",
+        "target": "auditability",
+        "notes": "Accountability usually needs durable evidence and a review process."
+      },
+      {
+        "source": "anonymity",
+        "relation": "commonly-composed-with",
+        "target": "unlinkability",
+        "notes": "Anonymous systems often need unlinkability across repeated actions, but the goals are distinct."
+      },
+      {
+        "source": "auditability",
+        "relation": "commonly-composed-with",
+        "target": "verifiability",
+        "notes": "Audit trails are stronger when reviewers can independently verify records, proofs, or logs."
+      },
+      {
+        "source": "availability",
+        "relation": "commonly-composed-with",
+        "target": "threshold-cryptography",
+        "notes": "Threshold designs can remove single points of failure if quorum independence assumptions hold."
+      },
+      {
+        "source": "censorship-resistance",
+        "relation": "commonly-composed-with",
+        "target": "encrypted-mempools",
+        "notes": "Encrypted mempools can reduce content-based censorship before reveal, but only under committee and inclusion assumptions."
+      },
+      {
+        "source": "concrete-ml",
+        "relation": "commonly-composed-with",
+        "target": "private-machine-learning-analytics",
+        "notes": "FHE-based ML tooling still needs output, model, and repeated-query leakage review."
+      },
+      {
+        "source": "confidentiality",
+        "relation": "commonly-composed-with",
+        "target": "integrity",
+        "notes": "Most deployed confidentiality mechanisms also need tamper detection."
+      },
+      {
+        "source": "deniability",
+        "relation": "commonly-composed-with",
+        "target": "forward-secrecy",
+        "notes": "Key evolution and erasure reduce the value of later transcript compromise."
+      },
+      {
+        "source": "didcomm-v2",
+        "relation": "commonly-composed-with",
+        "target": "identity-wallets",
+        "notes": "DIDComm is a wallet-agent messaging layer and should not be mistaken for credential privacy."
+      },
+      {
+        "source": "eudi-wallet-arf",
+        "relation": "commonly-composed-with",
+        "target": "identity-wallets",
+        "notes": "EUDI ARF profiles wallet roles, trust lists, and secure-device assumptions."
+      },
+      {
+        "source": "forward-secrecy",
+        "relation": "commonly-composed-with",
+        "target": "secure-channels",
+        "notes": "Forward secrecy is usually realized at the protocol layer."
+      },
+      {
+        "source": "integrity",
+        "relation": "commonly-composed-with",
+        "target": "authenticity",
+        "notes": "Systems usually need both tamper detection and origin binding."
+      },
+      {
+        "source": "non-repudiation",
+        "relation": "commonly-composed-with",
+        "target": "accountability",
+        "notes": "Signed evidence must feed a dispute or accountability process to have practical effect."
+      },
+      {
+        "source": "shutter-encrypted-mempool",
+        "relation": "commonly-composed-with",
+        "target": "censorship-resistance",
+        "notes": "Threshold encryption can reduce pre-reveal content-based censorship but not all exclusion paths."
+      },
+      {
+        "source": "unlinkability",
+        "relation": "commonly-composed-with",
+        "target": "domain-separation",
+        "notes": "Context-bound tags prevent linkability across unrelated applications."
+      },
+      {
+        "source": "verifiability",
+        "relation": "commonly-composed-with",
+        "target": "integrity",
+        "notes": "A verifier needs tamper-evident inputs and authentic verification parameters."
+      }
+    ],
+    "breaks-if": [
+      {
+        "source": "anonymity",
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Timing, network, amount, and rare-attribute metadata can defeat anonymity even when proofs verify."
+      },
+      {
+        "source": "auditability",
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Over-collected audit logs can defeat privacy goals even when evidence integrity is strong."
+      },
+      {
+        "source": "censorship-resistance",
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Sender, fee, size, and timing metadata can leave enough information to censor targeted users."
+      },
+      {
+        "source": "confidentiality",
+        "relation": "breaks-if",
+        "target": "authenticated-encryption",
+        "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
+      },
+      {
+        "source": "deniability",
+        "relation": "breaks-if",
+        "target": "digital-signature",
+        "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
+      },
+      {
+        "source": "encrypted-mempools",
+        "relation": "breaks-if",
+        "target": "metadata-leakage",
+        "notes": "Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted."
+      },
+      {
+        "source": "md5",
+        "relation": "breaks-if",
+        "target": "hash-function",
+        "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
+      },
+      {
+        "source": "rsa-pkcs1-v1-5-encryption",
+        "relation": "breaks-if",
+        "target": "public-key-encryption",
+        "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
+      },
+      {
+        "source": "sha-1",
+        "relation": "breaks-if",
+        "target": "hash-function",
+        "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
+      },
+      {
+        "source": "unlinkability",
+        "relation": "breaks-if",
+        "target": "nullifier",
+        "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
+      },
+      {
+        "source": "verifiability",
+        "relation": "breaks-if",
+        "target": "transcript-binding",
+        "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
+      }
+    ],
+    "uses": [
+      {
+        "source": "anoncreds-v1",
+        "relation": "uses",
+        "target": "anonymous-credential",
+        "notes": "AnonCreds uses credential-specific ZK proofs and revocation registries."
+      },
+      {
+        "source": "arkworks",
+        "relation": "uses",
+        "target": "snarks-starks-bulletproofs",
+        "notes": "arkworks provides implementation components for multiple SNARK constructions."
+      },
+      {
+        "source": "bbs-verifiable-credentials",
+        "relation": "uses",
+        "target": "anonymous-credential",
+        "notes": "BBS-based credential profiles support selective disclosure and unlinkable derived proofs under pairing assumptions."
+      },
+      {
+        "source": "circom",
+        "relation": "uses",
+        "target": "arithmetization",
+        "notes": "Circom circuits need explicit constraint review to avoid underconstrained statements."
+      },
+      {
+        "source": "emp-toolkit",
+        "relation": "uses",
+        "target": "oblivious-transfer",
+        "notes": "EMP packages often depend on OT and garbled-circuit assumptions."
+      },
+      {
+        "source": "ferveo-threshold-mempool",
+        "relation": "uses",
+        "target": "threshold-cryptography",
+        "notes": "Threshold decryption distributes reveal power across a committee."
+      },
+      {
+        "source": "fresco-framework",
+        "relation": "uses",
+        "target": "mpc",
+        "notes": "FRESCO is a framework layer; protocol selection determines the security model."
+      },
+      {
+        "source": "gnark",
+        "relation": "uses",
+        "target": "arithmetization",
+        "notes": "gnark circuit definitions must compile to constraints that exactly capture the intended statement."
+      },
+      {
+        "source": "halo2",
+        "relation": "uses",
+        "target": "recursive-proofs",
+        "notes": "halo2 is commonly associated with recursive proof-system engineering."
+      },
+      {
+        "source": "lucid-encrypted-mempool",
+        "relation": "uses",
+        "target": "delayed-reveal",
+        "notes": "Encrypted mempools use commit-before-reveal or delayed-decryption sequencing rules."
+      },
+      {
+        "source": "mascot",
+        "relation": "uses",
+        "target": "oblivious-transfer",
+        "notes": "MASCOT uses OT-based preprocessing for maliciously secure arithmetic MPC."
+      },
+      {
+        "source": "microsoft-seal",
+        "relation": "uses",
+        "target": "homomorphic-encryption",
+        "notes": "Microsoft SEAL exposes concrete FHE schemes whose parameter choices remain expert-sensitive."
+      },
+      {
+        "source": "mp-spdz-framework",
+        "relation": "uses",
+        "target": "mpc",
+        "notes": "MP-SPDZ exposes many MPC protocols with different adversary models."
+      },
+      {
+        "source": "openfhe",
+        "relation": "uses",
+        "target": "homomorphic-encryption",
+        "notes": "OpenFHE supports several FHE families; guarantees depend on the selected scheme and parameters."
+      },
+      {
+        "source": "shutter-encrypted-mempool",
+        "relation": "uses",
+        "target": "threshold-cryptography",
+        "notes": "Shutter-style encrypted mempools use threshold encryption and key-release committees."
+      },
+      {
+        "source": "slh-dsa-sha2",
+        "relation": "uses",
+        "target": "hash-function",
+        "notes": "SLH-DSA SHA2 profiles rely on hash-based security assumptions and large signatures."
+      },
+      {
+        "source": "slh-dsa-shake",
+        "relation": "uses",
+        "target": "hash-function",
+        "notes": "SLH-DSA SHAKE profiles rely on SHAKE-based hash assumptions and large signatures."
+      },
+      {
+        "source": "vc-di-ecdsa",
+        "relation": "uses",
+        "target": "authenticity",
+        "notes": "ECDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+      },
+      {
+        "source": "vc-di-eddsa",
+        "relation": "uses",
+        "target": "authenticity",
+        "notes": "EdDSA data integrity credentials primarily provide issuer authenticity and integrity, not anonymity."
+      },
+      {
+        "source": "zcash-orchard",
+        "relation": "uses",
+        "target": "halo-recursion",
+        "notes": "Orchard uses Halo-style proving to avoid the trusted setup model used by earlier Zcash pools."
+      },
+      {
+        "source": "zcash-sapling",
+        "relation": "uses",
+        "target": "private-payments",
+        "notes": "Sapling is a concrete shielded-payment protocol suite."
+      }
+    ],
+    "weakens-if": [
+      {
+        "source": "availability",
+        "relation": "weakens-if",
+        "target": "trusted-setup",
+        "notes": "Setup or recovery ceremonies can become availability bottlenecks if no replacement path exists."
+      }
+    ]
+  }
+}

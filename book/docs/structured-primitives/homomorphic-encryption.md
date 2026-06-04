@@ -13,6 +13,10 @@ tags:
 post_quantum_posture: plausible
 confidence_model:
   type: mathematical-assumption
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check FHE standardization, Microsoft SEAL, OpenFHE, TFHE, Concrete ML, parameter guidance, and deployment cautions.
 ---
 
 # Homomorphic Encryption
@@ -90,4 +94,7 @@ The scheme-specific hardness assumption, parameter set, noise budget, key-manage
 ## Further reading
 
 - Gentry, [Fully Homomorphic Encryption Using Ideal Lattices](https://doi.org/10.1145/1536414.1536440).
+- Microsoft Research, [Microsoft SEAL](https://www.microsoft.com/en-us/research/project/microsoft-seal/).
+- OpenFHE contributors, [OpenFHE documentation](https://openfhe.org/documentation/).
+- Zama, [Concrete ML documentation](https://docs.zama.org/concrete-ml/).
 - Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

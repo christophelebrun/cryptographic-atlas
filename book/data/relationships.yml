@@ -255,3 +255,191 @@ relationships:
     relation: breaks-if
     target: hash-function
     notes: MD5 is retained only for legacy recognition and non-adversarial checksum context.
+  - source: auditability
+    relation: commonly-composed-with
+    target: verifiability
+    notes: Audit trails are stronger when reviewers can independently verify records, proofs, or logs.
+  - source: auditability
+    relation: breaks-if
+    target: metadata-leakage
+    notes: Over-collected audit logs can defeat privacy goals even when evidence integrity is strong.
+  - source: accountability
+    relation: requires
+    target: authenticity
+    notes: Misbehavior cannot be attributed if actions are not bound to accountable roles, keys, or credentials.
+  - source: accountability
+    relation: commonly-composed-with
+    target: auditability
+    notes: Accountability usually needs durable evidence and a review process.
+  - source: deniability
+    relation: contrasts-with
+    target: non-repudiation
+    notes: Deniable protocols avoid portable proof, while non-repudiation intentionally creates it.
+  - source: deniability
+    relation: commonly-composed-with
+    target: forward-secrecy
+    notes: Key evolution and erasure reduce the value of later transcript compromise.
+  - source: deniability
+    relation: breaks-if
+    target: digital-signature
+    notes: Publicly verifiable signatures on message content can create durable third-party evidence.
+  - source: non-repudiation
+    relation: requires
+    target: digital-signature
+    notes: Non-repudiation commonly depends on signatures plus operational key-control evidence.
+  - source: non-repudiation
+    relation: commonly-composed-with
+    target: accountability
+    notes: Signed evidence must feed a dispute or accountability process to have practical effect.
+  - source: availability
+    relation: commonly-composed-with
+    target: threshold-cryptography
+    notes: Threshold designs can remove single points of failure if quorum independence assumptions hold.
+  - source: availability
+    relation: weakens-if
+    target: trusted-setup
+    notes: Setup or recovery ceremonies can become availability bottlenecks if no replacement path exists.
+  - source: censorship-resistance
+    relation: requires
+    target: availability
+    notes: A valid action needs at least one live inclusion path before censorship resistance can be meaningful.
+  - source: censorship-resistance
+    relation: commonly-composed-with
+    target: encrypted-mempools
+    notes: Encrypted mempools can reduce content-based censorship before reveal, but only under committee and inclusion assumptions.
+  - source: censorship-resistance
+    relation: breaks-if
+    target: metadata-leakage
+    notes: Sender, fee, size, and timing metadata can leave enough information to censor targeted users.
+  - source: bls12-377
+    relation: requires
+    target: pairings
+    notes: BLS12-377 is used as a pairing-friendly curve in proof-system stacks.
+  - source: bw6-761
+    relation: requires
+    target: pairings
+    notes: BW6-761 is often discussed as an outer curve in recursive proof cycles.
+  - source: jubjub
+    relation: used-in
+    target: zcash-sapling
+    notes: Jubjub appears in Zcash Sapling-related circuit and note components.
+  - source: ml-kem-512
+    relation: used-in
+    target: key-encapsulation-and-exchange
+    notes: ML-KEM parameter profiles should be selected according to policy and protocol constraints.
+  - source: ml-kem-768
+    relation: used-in
+    target: key-encapsulation-and-exchange
+    notes: ML-KEM-768 is a common general-purpose migration profile.
+  - source: ml-kem-1024
+    relation: used-in
+    target: key-encapsulation-and-exchange
+    notes: Larger KEM parameters increase integration pressure and should be inventory-driven.
+  - source: ml-dsa-44
+    relation: used-in
+    target: digital-signature
+    notes: ML-DSA parameter profiles affect certificate, protocol, and hardware constraints.
+  - source: ml-dsa-65
+    relation: used-in
+    target: digital-signature
+    notes: ML-DSA-65 is a common general-purpose post-quantum signature migration profile.
+  - source: ml-dsa-87
+    relation: used-in
+    target: digital-signature
+    notes: Higher signature parameters require compatibility review before deployment.
+  - source: slh-dsa-sha2
+    relation: uses
+    target: hash-function
+    notes: SLH-DSA SHA2 profiles rely on hash-based security assumptions and large signatures.
+  - source: slh-dsa-shake
+    relation: uses
+    target: hash-function
+    notes: SLH-DSA SHAKE profiles rely on SHAKE-based hash assumptions and large signatures.
+  - source: hqc-128
+    relation: used-in
+    target: code-based-assumptions
+    notes: HQC profiles are migration-planning entries until the backup KEM standard is final.
+  - source: hqc-192
+    relation: used-in
+    target: code-based-assumptions
+    notes: Higher HQC profiles provide code-based algorithm diversity with larger integration costs.
+  - source: hqc-256
+    relation: used-in
+    target: code-based-assumptions
+    notes: HQC-256 is retained as a high-category planning profile pending final standardization.
+  - source: halo2
+    relation: uses
+    target: recursive-proofs
+    notes: halo2 is commonly associated with recursive proof-system engineering.
+  - source: gnark
+    relation: uses
+    target: arithmetization
+    notes: gnark circuit definitions must compile to constraints that exactly capture the intended statement.
+  - source: arkworks
+    relation: uses
+    target: snarks-starks-bulletproofs
+    notes: arkworks provides implementation components for multiple SNARK constructions.
+  - source: circom
+    relation: uses
+    target: arithmetization
+    notes: Circom circuits need explicit constraint review to avoid underconstrained statements.
+  - source: microsoft-seal
+    relation: uses
+    target: homomorphic-encryption
+    notes: Microsoft SEAL exposes concrete FHE schemes whose parameter choices remain expert-sensitive.
+  - source: openfhe
+    relation: uses
+    target: homomorphic-encryption
+    notes: OpenFHE supports several FHE families; guarantees depend on the selected scheme and parameters.
+  - source: concrete-ml
+    relation: commonly-composed-with
+    target: private-machine-learning-analytics
+    notes: FHE-based ML tooling still needs output, model, and repeated-query leakage review.
+  - source: mp-spdz-framework
+    relation: uses
+    target: mpc
+    notes: MP-SPDZ exposes many MPC protocols with different adversary models.
+  - source: emp-toolkit
+    relation: uses
+    target: oblivious-transfer
+    notes: EMP packages often depend on OT and garbled-circuit assumptions.
+  - source: fresco-framework
+    relation: uses
+    target: mpc
+    notes: FRESCO is a framework layer; protocol selection determines the security model.
+  - source: oid4vci
+    relation: used-in
+    target: identity-wallets
+    notes: OID4VCI describes credential issuance flows, not presentation privacy by itself.
+  - source: oid4vp
+    relation: used-in
+    target: identity-wallets
+    notes: OID4VP describes wallet-to-verifier presentation flows across credential formats.
+  - source: eudi-wallet-arf
+    relation: commonly-composed-with
+    target: identity-wallets
+    notes: EUDI ARF profiles wallet roles, trust lists, and secure-device assumptions.
+  - source: iso-mdoc-mdl
+    relation: used-in
+    target: identity-wallets
+    notes: ISO mdoc and mobile driving licence profiles are deployed credential-wallet formats.
+  - source: anoncreds-v1
+    relation: uses
+    target: anonymous-credential
+    notes: AnonCreds uses credential-specific ZK proofs and revocation registries.
+  - source: didcomm-v2
+    relation: commonly-composed-with
+    target: identity-wallets
+    notes: DIDComm is a wallet-agent messaging layer and should not be mistaken for credential privacy.
+  - source: shutter-encrypted-mempool
+    relation: uses
+    target: threshold-cryptography
+    notes: Shutter-style encrypted mempools use threshold encryption and key-release committees.
+  - source: shutter-encrypted-mempool
+    relation: commonly-composed-with
+    target: censorship-resistance
+    notes: Threshold encryption can reduce pre-reveal content-based censorship but not all exclusion paths.
+  - source: open-quantum-safe
+    relation: used-in
+    target: key-rotation-and-migration
+    notes: OQS tooling is useful for experimentation and interoperability, not a deployment certificate.

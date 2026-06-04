@@ -12,6 +12,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check MPC protocol families, MP-SPDZ, EMP, FRESCO, threshold signing, and private analytics implementation guidance.
 ---
 
 # Multi-Party Computation
@@ -110,4 +114,7 @@ See also [Private Set Intersection](/docs/protocols/private-set-intersection), w
 ## Further reading
 
 - Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
+- Keller, [MP-SPDZ: A Versatile Framework for Multi-Party Computation](https://doi.org/10.1145/3372297.3417872).
+- EMP toolkit contributors, [EMP toolkit](https://github.com/emp-toolkit).
+- FRESCO contributors, [FRESCO documentation](https://fresco.readthedocs.io/en/latest/intro.html).
 - Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

@@ -13,6 +13,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: trusted-issuer
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check W3C, IETF, OpenID4VC, AnonCreds, BBS, SD-JWT VC, wallet, and revocation references.
 ---
 
 # Anonymous Credentials
@@ -117,4 +121,7 @@ Credential pages should distinguish mature anonymous-credential schemes from web
 - W3C, [Data Integrity BBS Cryptosuites v1.0](https://www.w3.org/TR/vc-di-bbs/).
 - RFC 9901, [Selective Disclosure for JSON Web Tokens](https://www.rfc-editor.org/rfc/rfc9901).
 - IETF OAuth, [SD-JWT-based Verifiable Digital Credentials](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/).
+- OpenID Foundation, [OpenID for Verifiable Credential Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html).
+- OpenID Foundation, [OpenID for Verifiable Presentations](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html).
+- Hyperledger, [AnonCreds Specification](https://hyperledger.github.io/anoncreds-spec/).
 - W3C, [Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/).

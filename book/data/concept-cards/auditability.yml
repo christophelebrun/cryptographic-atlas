@@ -1,0 +1,52 @@
+id: auditability
+name: Auditability
+category: Security goals
+level: security-goal
+short_intuition: Enough trustworthy evidence exists to review a process after it happens.
+security_goals:
+  - auditability
+assumptions:
+  - audit scope is explicit
+  - evidence is integrity-protected
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: public-verifiability or operational-audit
+  threshold: null
+  breaks_if:
+    - evidence omits critical events
+    - logs can be rewritten by the audited party
+  setup:
+    - audit trail
+    - retention and access policy
+typical_uses:
+  - election audits
+  - transparency logs
+  - rollup operation review
+does_not_provide:
+  - privacy by itself
+  - enforcement after detection
+  - proof of unlogged events
+composition_risks:
+  - over-collecting sensitive logs
+  - auditor dependence on the audited party
+metadata_leaks:
+  - audit trail
+  - reviewer access patterns
+implementation_risk: not-applicable
+auditability: requires-operational-audit
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; concrete logs, keys, and retention policies may need rotation or deletion rules.
+operational_failure_modes:
+  - missing context
+  - mutable records
+  - inaccessible evidence
+maturity: not-applicable
+related:
+  - verifiability
+  - accountability
+  - integrity
+references:
+  - benaloh-secret-ballot
+  - canetti-uc

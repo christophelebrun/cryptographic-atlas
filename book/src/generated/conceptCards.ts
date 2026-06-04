@@ -5,6 +5,46 @@ import type {ConceptCardData} from '../components/ConceptCard';
 
 const conceptCards: ConceptCardData[] = [
   {
+    "id": "accountability",
+    "name": "Accountability",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/accountability",
+    "shortIntuition": "Misbehavior can be attributed, challenged, or sanctioned under stated rules.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "accountability",
+        "href": "/docs/taxonomy/accountability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "public identity by default",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "automatic punishment"
+      },
+      {
+        "label": "proof that a human controlled a key"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "accountable role"
+      },
+      {
+        "label": "dispute evidence"
+      }
+    ]
+  },
+  {
     "id": "accumulators-and-merkle-trees",
     "name": "Accumulators and Merkle Trees",
     "category": "authenticated-data-structure",
@@ -390,6 +430,47 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "auditability",
+    "name": "Auditability",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/auditability",
+    "shortIntuition": "Enough trustworthy evidence exists to review a process after it happens.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "auditability",
+        "href": "/docs/taxonomy/auditability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "privacy by itself",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "enforcement after detection"
+      },
+      {
+        "label": "proof of unlogged events"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "public-verifiability or operational-audit",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "audit trail"
+      },
+      {
+        "label": "reviewer access patterns",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "authenticated-encryption",
     "name": "Authenticated Encryption",
     "category": "encryption",
@@ -413,7 +494,8 @@ const conceptCards: ConceptCardData[] = [
     ],
     "doesNotProvide": [
       {
-        "label": "non-repudiation"
+        "label": "non-repudiation",
+        "href": "/docs/taxonomy/non-repudiation"
       },
       {
         "label": "sender-identity-with-shared-keys",
@@ -484,6 +566,48 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "credential type"
+      }
+    ]
+  },
+  {
+    "id": "availability",
+    "name": "Availability",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/availability",
+    "shortIntuition": "The system can provide its intended service when honest users need it.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "availability",
+        "href": "/docs/taxonomy/availability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "confidentiality",
+        "href": "/docs/taxonomy/confidentiality"
+      },
+      {
+        "label": "integrity",
+        "href": "/docs/taxonomy/integrity"
+      },
+      {
+        "label": "censorship resistance by itself"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "outage patterns"
+      },
+      {
+        "label": "retry timing",
+        "href": "/docs/appendices/metadata-leakage"
       }
     ]
   },
@@ -566,6 +690,51 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "verifier identity",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "censorship-resistance",
+    "name": "Censorship Resistance",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/censorship-resistance",
+    "shortIntuition": "Valid actions cannot be selectively blocked beyond the system's stated tolerance.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "censorship-resistance",
+        "href": "/docs/taxonomy/censorship-resistance"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "payload privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "fair ordering by itself"
+      },
+      {
+        "label": "protection from every denial-of-service attack"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "submission timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "sender route"
+      },
+      {
+        "label": "fee or size information",
         "href": "/docs/appendices/metadata-leakage"
       }
     ]
@@ -838,6 +1007,50 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "participant-identity",
         "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
+    "id": "deniability",
+    "name": "Deniability",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/deniability",
+    "shortIntuition": "A transcript should not become convincing evidence to outsiders that a participant said or did something.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "deniability",
+        "href": "/docs/taxonomy/deniability"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "anonymity",
+        "href": "/docs/taxonomy/anonymity"
+      },
+      {
+        "label": "protection from screenshots"
+      },
+      {
+        "label": "public auditability"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "client-side-secret and mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "contact graph"
+      },
+      {
+        "label": "delivery timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "device logs"
       }
     ]
   },
@@ -1923,7 +2136,8 @@ const conceptCards: ConceptCardData[] = [
         "label": "coercion-resistance"
       },
       {
-        "label": "deniability"
+        "label": "deniability",
+        "href": "/docs/taxonomy/deniability"
       }
     ],
     "doesNotProvide": [
@@ -2034,7 +2248,8 @@ const conceptCards: ConceptCardData[] = [
         "label": "public-verifiability"
       },
       {
-        "label": "non-repudiation"
+        "label": "non-repudiation",
+        "href": "/docs/taxonomy/non-repudiation"
       },
       {
         "label": "confidentiality",
@@ -2156,6 +2371,50 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "aborts"
+      }
+    ]
+  },
+  {
+    "id": "non-repudiation",
+    "name": "Non-Repudiation",
+    "category": "Security goals",
+    "level": "security-goal",
+    "pageLink": "/docs/taxonomy/non-repudiation",
+    "shortIntuition": "Evidence is intended to make later denial of an action unconvincing under a stated process.",
+    "maturity": "not-applicable",
+    "securityGoals": [
+      {
+        "label": "non-repudiation",
+        "href": "/docs/taxonomy/non-repudiation"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "proof of human intent"
+      },
+      {
+        "label": "deniability",
+        "href": "/docs/taxonomy/deniability"
+      },
+      {
+        "label": "legal effect without process"
+      }
+    ],
+    "postQuantumPosture": "not-applicable",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mixed",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "not-applicable",
+    "metadataLeaks": [
+      {
+        "label": "signer identity or role",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "timestamp"
+      },
+      {
+        "label": "certificate chain"
       }
     ]
   },
@@ -3643,7 +3902,8 @@ const conceptCards: ConceptCardData[] = [
         "href": "/docs/taxonomy/security-goals"
       },
       {
-        "label": "availability"
+        "label": "availability",
+        "href": "/docs/taxonomy/availability"
       }
     ],
     "postQuantumPosture": "depends",
@@ -3919,7 +4179,8 @@ const conceptCards: ConceptCardData[] = [
         "label": "trusted-wall-clock-time"
       },
       {
-        "label": "availability"
+        "label": "availability",
+        "href": "/docs/taxonomy/availability"
       }
     ],
     "postQuantumPosture": "depends",

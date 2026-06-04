@@ -1,0 +1,52 @@
+id: censorship-resistance
+name: Censorship Resistance
+category: Security goals
+level: security-goal
+short_intuition: Valid actions cannot be selectively blocked beyond the system's stated tolerance.
+security_goals:
+  - censorship-resistance
+assumptions:
+  - at least one inclusion path is honest, available, or accountable
+  - users can reach the inclusion path
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - all inclusion paths collude or fail
+    - valid submissions cannot be distinguished from invalid ones
+  setup:
+    - inclusion rules
+    - fallback path
+typical_uses:
+  - blockchain transaction inclusion
+  - private payments
+  - governance submissions
+does_not_provide:
+  - payload privacy
+  - fair ordering by itself
+  - protection from every denial-of-service attack
+composition_risks:
+  - hidden sender or fee metadata still enabling censorship
+  - fallback route too slow or expensive
+metadata_leaks:
+  - submission timing
+  - sender route
+  - fee or size information
+implementation_risk: not-applicable
+auditability: publicly-verifiable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; concrete relays, keys, and committees need governance and replacement rules.
+operational_failure_modes:
+  - censor controls all relays
+  - no verifiable inclusion failure evidence
+maturity: not-applicable
+related:
+  - availability
+  - encrypted-mempools
+  - private-payments
+references:
+  - flash-boys-2
+  - eip-7547-inclusion-lists

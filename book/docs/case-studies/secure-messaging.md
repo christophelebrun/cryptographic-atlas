@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check Signal, MLS, backup, multi-device, metadata, and hybrid post-quantum messaging references.
 ---
 
 # Secure Messaging
@@ -71,7 +75,7 @@ Confidence is mixed: client-side-secret for device keys, mathematical assumption
 
 - [Secure Channels](/docs/protocols/secure-channels)
 - [Key-Committing Encryption](/docs/primitives/key-committing-encryption)
-- [Deniability](/docs/taxonomy/additional-security-goals#deniability)
+- [Deniability](/docs/taxonomy/deniability)
 
 ## Further reading
 

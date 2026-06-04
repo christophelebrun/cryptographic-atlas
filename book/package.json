@@ -12,8 +12,9 @@
     "generate:concept-cards": "node scripts/generate-concept-card-data.js",
     "generate:diagrams": "node scripts/generate-diagrams.js",
     "generate:comparison-matrices": "node scripts/generate-comparison-matrices.js",
+    "generate:relationship-graph": "node scripts/generate-relationship-graph.js",
     "generate:pdf": "node scripts/generate-pdf.js",
-    "generate": "npm run generate:concept-cards && npm run generate:diagrams && npm run generate:comparison-matrices",
+    "generate": "npm run generate:concept-cards && npm run generate:diagrams && npm run generate:comparison-matrices && npm run generate:relationship-graph",
     "prebuild": "npm run generate",
     "validate:content": "node scripts/validate-content.js"
   },

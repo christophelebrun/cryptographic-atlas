@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: not-applicable
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check cryptographic inventory, PQC migration, hybrid deployment, and vendor/tooling guidance.
 ---
 
 # Key Rotation and Migration

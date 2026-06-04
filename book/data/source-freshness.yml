@@ -30,6 +30,10 @@ clusters:
       - mimc-hash
       - rescue-prime
       - cfrg-pairing-friendly-curves
+      - halo2-book
+      - gnark-docs
+      - arkworks-ecosystem
+      - circom-docs
     notes: Proof-system families, recursion, folding, and rollup proving stacks move quickly.
   - id: threshold-signing
     name: Threshold signing and issuance
@@ -46,6 +50,8 @@ clusters:
       - gennaro-dkg
       - bls-signatures
       - boldyreva-threshold-signatures
+      - zcash-frost-implementation
+      - drand-protocol
       - canetti-uc
     notes: Protocol variants and deployment guidance change as FROST and threshold custody mature.
   - id: anonymous-credentials
@@ -67,6 +73,11 @@ clusters:
       - w3c-vc-di-bbs
       - rfc9901-sd-jwt
       - draft-oauth-sd-jwt-vc
+      - openid4vci
+      - openid4vp
+      - hyperledger-anoncreds
+      - credo-docs
+      - didcomm-v2
     notes: Credential formats, revocation mechanisms, and selective-disclosure profiles are still evolving.
   - id: private-payments
     name: Private payments and ledger privacy
@@ -102,6 +113,8 @@ clusters:
       - signal-x3dh
       - signal-double-ratchet
       - noise-framework
+      - didcomm-v2
+      - oqs-tls
     notes: Hybrid post-quantum profiles, messaging protocols, and metadata controls need periodic review.
   - id: identity-wallets
     name: Identity wallets and verifiable credentials
@@ -121,6 +134,13 @@ clusters:
       - rfc9901-sd-jwt
       - draft-oauth-sd-jwt-vc
       - rfc9576-privacy-pass
+      - openid4vci
+      - openid4vp
+      - eudi-arf
+      - iso-iec-18013-5-mdl
+      - hyperledger-anoncreds
+      - didcomm-v2
+      - credo-docs
     notes: VC 2.0 ecosystem profiles, status-list formats, wallets, and disclosure mechanisms are active areas.
   - id: post-quantum-migration
     name: Post-quantum migration
@@ -141,7 +161,10 @@ clusters:
       - nist-ir-8545
       - nist-ir-8581
       - nist-pqc-migration-project
-    notes: NIST standardized ML-KEM, ML-DSA, and SLH-DSA in 2024; HQC was selected for future standardization in 2025, and FIPS 206 remains in development.
+      - open-quantum-safe
+      - oqs-tls
+      - cisa-quantum-readiness
+    notes: NIST standardized ML-KEM, ML-DSA, and SLH-DSA in 2024; HQC was selected for future standardization in 2025, and FIPS 206 plus ecosystem migration tooling remain active review items.
   - id: fhe-and-mpc
     name: FHE and MPC scheme families
     review_window_months: 6
@@ -162,6 +185,12 @@ clusters:
       - bgw-mpc
       - spdz
       - mascot
+      - microsoft-seal
+      - openfhe
+      - zama-concrete-ml
+      - mp-spdz-framework
+      - emp-toolkit
+      - fresco-framework
     notes: FHE libraries, parameter guidance, MPC frameworks, and practical deployment profiles evolve quickly.
   - id: encrypted-mempools
     name: Encrypted mempools and fair ordering
@@ -174,7 +203,10 @@ clusters:
       - threshold-cryptography
     reference_ids:
       - flash-boys-2
+      - eip-7547-inclusion-lists
       - eip-8184-lucid
       - ferveo
       - batched-threshold-mempools
+      - shutter-docs
+      - shutter-api-docs
     notes: Ethereum encrypted-mempool designs are draft-stage and should be reviewed before presenting as deployed guarantees.

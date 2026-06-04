@@ -114,7 +114,7 @@ The concepts previously listed as highest-value gaps now have standalone first-p
 
 | Taxonomy area | Missing or shallow concepts | Why they matter |
 | --- | --- | --- |
-| Security goals | promoted with routing overview | Confidentiality, integrity, authenticity, anonymity, unlinkability, forward secrecy, and verifiability now have standalone pages; auditability, accountability, deniability, and non-repudiation remain future candidates if the goals section grows. |
+| Security goals | promoted with routing overview | Confidentiality, integrity, authenticity, anonymity, unlinkability, forward secrecy, verifiability, auditability, accountability, deniability, non-repudiation, availability, and censorship resistance now have standalone pages. Receipt-freeness and coercion resistance remain grouped system-level refinements. |
 | Assumptions and substrates | promoted with routing overview | Elliptic curves, code-based assumptions, and common reference strings now have standalone pages; finite-field groups and hash-to-curve remain future candidates. |
 | Basic primitives | promoted with routing overview | Password hashing and key-committing encryption now have standalone pages; PRFs, PRPs, and misuse-resistant encryption remain candidates if depth is needed. |
 | Structured primitives | promoted with routing overview | Blind signatures, VRFs, verifiable encryption, and e-cash primitives now have standalone pages. |
@@ -125,7 +125,7 @@ The concepts previously listed as highest-value gaps now have standalone first-p
 
 ## Source-depth status
 
-The source registry now covers the main historical and standards references for existing pages, plus deeper clusters for ZK proof-system families, threshold signing and DKG, anonymous credentials, private payments, secure channels, encrypted mempools, identity wallets, post-quantum migration, FHE, and MPC.
+The source registry now covers the main historical and standards references for existing pages, plus deeper clusters for ZK proof-system families, implementation stacks, threshold signing and DKG, anonymous credentials, private payments, secure channels, encrypted mempools, identity wallets, post-quantum migration, FHE, and MPC.
 
 Remaining source work should focus on depth and freshness rather than breadth alone:
 
@@ -145,17 +145,22 @@ Remaining source work should focus on depth and freshness rather than breadth al
 8. Promoted high-value security goals into standalone pages and concept cards for confidentiality, integrity, authenticity, anonymity, unlinkability, forward secrecy, and verifiability.
 9. Added richer relationship edge types beyond `instance_of`, including `uses`, `requires`, `breaks-if`, and `commonly-composed-with`, with validation against concept-card IDs, instance IDs, aliases, and document slugs.
 10. Cleaned older `Further reading` sections so title-only citations are replaced with topic-local URLs where a stable source URL was available.
+11. Added generated reader-facing and machine-facing relationship graph exports: `book/docs/appendices/generated-relationship-graph.md` and `book/static/data/relationship-graph.json`.
+12. Expanded `book/data/instances.yml` with PQ parameter profiles, less common curves, ZK implementation stacks, FHE libraries, MPC frameworks, wallet/credential deployment profiles, and encrypted-mempool prototypes.
+13. Promoted auditability, accountability, deniability, non-repudiation, availability, and censorship resistance into standalone security-goal pages with concept cards.
+14. Added implementation-specific references for halo2, gnark, arkworks, Circom, Zcash Foundation FROST, drand, OpenID4VC, EUDI ARF, AnonCreds, Shutter, OQS, Microsoft SEAL, OpenFHE, Concrete ML, MP-SPDZ, EMP, and FRESCO.
+15. Added per-page `source_review` notes and review windows to fast-moving pages that depend on draft standards, ecosystem specifications, proving stacks, PQ migration tooling, FHE/MPC libraries, or encrypted-mempool prototypes.
 
 ## Remaining editorial backlog
 
 This is the authoritative maintenance backlog. Do not duplicate the active list in `TODO.md`.
 
-1. Turn the richer relationship registry into reader-facing and machine-facing graph exports, such as adjacency tables, concept dependency views, or JSON graph snapshots.
-2. Continue expanding `book/data/instances.yml` selectively with less common curve families, post-quantum parameter profiles, MPC framework families, wallet and credential deployment profiles, and legacy schemes that readers still encounter.
-3. Promote auditability, accountability, deniability, non-repudiation, availability, and censorship resistance into standalone security-goal pages if they become central enough to deserve more than grouped coverage.
-4. Add implementation-specific references where they materially change deployment advice, especially for ZK proving stacks, threshold-signing libraries, anonymous-credential wallets, encrypted-mempool prototypes, and PQ migration tooling.
-5. Continue topic-local URL cleanup as pages are edited; current scans show only internal atlas links in remaining URL-free `Further reading` bullets, not obvious title-only external citations.
-6. Add per-page review notes or reviewed-reference windows for pages that depend on draft standards or fast-moving project documentation.
+1. Add a formal JSON schema for `static/data/relationship-graph.json` if external tools begin consuming the graph snapshot.
+2. Add generated graph slices for common reader questions, such as "what breaks this guarantee?", "what does this scheme require?", and "which concepts use this primitive?".
+3. Continue expanding `book/data/instances.yml` selectively with additional deployed libraries, wallet profiles, proof-system backends, PQ migration profiles, and legacy schemes only when readers are likely to encounter them.
+4. Promote receipt-freeness, coercion resistance, fairness, or liveness into standalone pages if the atlas adds a larger voting, governance, or consensus-goals section.
+5. Add versioned audit-status notes for implementation stacks where audits, release trains, or API stability materially change deployment advice.
+6. Continue source-freshness reviews on the six-month windows and mark pages `needs-review` when draft standards or ecosystem profiles move.
 
 ## Timestamped editorial changelog
 
@@ -175,6 +180,10 @@ This is the authoritative maintenance backlog. Do not duplicate the active list 
 | 2026-06-04 | Expanded source coverage for ZK proof-system families, threshold signing and DKG, anonymous credentials, private payments, secure channels, encrypted mempools, identity wallets, FHE/MPC, and post-quantum migration. |
 | 2026-06-04 | Expanded concrete instances with legacy schemes, pairing-friendly curves, ZK-friendly hashes, FHE schemes, MPC protocol families, deployed credential profiles, private-payment profiles, and encrypted-mempool profiles. |
 | 2026-06-04 | Added relationship edge types for uses, requirements, break conditions, and common compositions, with validator checks against pages, concept cards, instances, and aliases. |
+| 2026-06-04 | Added generated relationship graph exports as reader-facing Markdown and machine-facing JSON. |
+| 2026-06-04 | Expanded concrete instances with PQ parameter profiles, BLS12-377/BW6-761/Jubjub, halo2, gnark, arkworks, Circom, Microsoft SEAL, OpenFHE, Concrete ML, MP-SPDZ, EMP, FRESCO, OpenID4VC, EUDI, ISO mdoc, AnonCreds, DIDComm, Shutter, and OQS entries. |
+| 2026-06-04 | Promoted auditability, accountability, deniability, non-repudiation, availability, and censorship resistance into standalone security-goal pages with concept cards. |
+| 2026-06-04 | Added per-page source-review windows to fast-moving ZK, threshold, credential, payment, channel, mempool, wallet, PQ, FHE, MPC, and private-ML pages. |
 
 ## Maintenance rule
 
@@ -182,4 +191,4 @@ For fast-moving areas such as post-quantum cryptography, zero-knowledge proof sy
 
 ## Bottom line
 
-The taxonomy is sound. The atlas is now more mature as an educational map, the highest-priority gaps have standalone pages, and concrete instances and relationship edges are machine-readable. The biggest remaining gap is turning the richer data layer into generated graph views and keeping fast-moving sources fresh.
+The taxonomy is sound. The atlas is now more mature as an educational map, the highest-priority gaps have standalone pages, and concrete instances plus relationship edges are machine-readable and generated into reader-facing views. The biggest remaining gap is deeper graph tooling, versioned implementation-audit metadata, and disciplined source freshness.

@@ -14,6 +14,10 @@ tags:
 post_quantum_posture: not-applicable
 confidence_model:
   type: not-applicable
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check NIST PQC standards, HQC/FIPS 206 status, CISA/NCCoE migration guidance, and OQS tooling posture.
 ---
 
 # Post-Quantum Posture
@@ -80,6 +84,9 @@ Migration should be tracked as an operational program, not only as an algorithm 
 - NIST, [Status Report on the Additional Digital Signature Schemes for the NIST Post-Quantum Cryptography Standardization Process](https://doi.org/10.6028/NIST.IR.8581)
 - NIST NCCoE, [Migration to Post-Quantum Cryptography](https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc)
 - NIST NCCoE: [Frequently Asked Questions about Post-Quantum Cryptography](https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/)
+- CISA, NSA, and NIST, [Quantum-Readiness: Migration to Post-Quantum Cryptography](https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography).
+- Open Quantum Safe, [project documentation](https://openquantumsafe.org/).
+- Open Quantum Safe, [TLS integrations](https://openquantumsafe.org/applications/tls.html).
 - Shor, [Algorithms for Quantum Computation; Discrete Logarithms and Factoring](https://doi.org/10.1109/SFCS.1994.365700).
 - Grover, [A Fast Quantum Mechanical Algorithm for Database Search](https://doi.org/10.1145/237814.237866).
 - NIST [FIPS 203](https://csrc.nist.gov/pubs/fips/203/final), [FIPS 204](https://csrc.nist.gov/pubs/fips/204/final), and [FIPS 205](https://csrc.nist.gov/pubs/fips/205/final).

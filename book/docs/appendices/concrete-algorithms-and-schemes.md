@@ -30,7 +30,7 @@ Use this mental format:
 Concrete instance of: [parent concept]
 ```
 
-Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols. The registry also tracks concrete entries such as P-256, Curve25519, BLS12-381, BN254, SHA-1, MD5, Classic McEliece, HQC, RSA blind signatures, ECVRF, FROST, threshold BLS, MLS, Privacy Pass, PLONK-style proof systems, Nova-style folding, Halo-style recursion, ZK-friendly hashes, FHE schemes, MPC protocol families, W3C credential profiles, Zcash-style payment profiles, encrypted-mempool profiles, and W3C Bitstring Status Lists.
+Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols. The registry also tracks concrete entries such as P-256, Curve25519, BLS12-381, BN254, BLS12-377, BW6-761, Jubjub, SHA-1, MD5, Classic McEliece, HQC profiles, ML-KEM and ML-DSA parameter profiles, RSA blind signatures, ECVRF, FROST, threshold BLS, MLS, Privacy Pass, PLONK-style proof systems, Nova-style folding, Halo-style recursion, ZK proving stacks, ZK-friendly hashes, FHE schemes and libraries, MPC protocol and framework families, W3C/OpenID/AnonCreds/EUDI credential profiles, Zcash-style payment profiles, encrypted-mempool profiles, and W3C Bitstring Status Lists.
 
 | Example | Taxonomy placement | Why |
 | --- | --- | --- |
@@ -86,8 +86,8 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Area | Include first | Include later or mention as caution |
 | --- | --- | --- |
 | Finite-field discrete logarithm | FFDHE groups, safe-prime groups | Small or custom groups |
-| Elliptic curves | P-256, P-384, Curve25519, Curve448, secp256k1 | P-521, legacy binary curves |
-| Pairing-friendly curves | BLS12-381, BN254 | BW6 curves, MNT curves |
+| Elliptic curves | P-256, P-384, P-521, Curve25519, Curve448, secp256k1, Jubjub | Legacy binary curves |
+| Pairing-friendly curves | BLS12-381, BN254, BLS12-377, BW6-761 | MNT curves and specialized cycle choices |
 | RSA substrate | RSA modulus sizes, public exponent conventions | Multi-prime RSA, raw RSA |
 | Lattice assumptions | Learning with errors (LWE), module-LWE, short integer solution (SIS), module-SIS, NTRU lattices | Ring-LWE variants, parameter-set caveats |
 | Hash-to-curve | RFC 9380 suites | Ad hoc hash-to-curve mappings |
@@ -104,15 +104,15 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Key derivation and password hashing | HKDF, PBKDF2, scrypt, Argon2id | Raw hashes as password storage anti-patterns |
 | Randomness and nonces | HMAC_DRBG, Hash_DRBG, CTR_DRBG, ChaCha20-based CSPRNGs, operating-system CSPRNG interfaces | Reused nonces, userland entropy mixers |
 | Commitments | Hash commitments, Pedersen commitments, Merkle commitments | Low-entropy committed values without salt or hiding |
-| Digital signatures | Ed25519, Ed448, ECDSA P-256, ECDSA secp256k1, RSA-PSS, Schnorr/BIP-340, BLS signatures, ML-DSA, SLH-DSA | RSA PKCS #1 v1.5 signatures, DSA, Falcon/FN-DSA as standardization and deployment profiles evolve |
-| Public-key encryption and KEMs | RSA-OAEP, HPKE, X25519, X448, ML-KEM | RSAES-PKCS1-v1_5, ECIES variants, HQC while standardization is still in progress |
+| Digital signatures | Ed25519, Ed448, ECDSA P-256, ECDSA secp256k1, RSA-PSS, Schnorr/BIP-340, BLS signatures, ML-DSA-44/65/87, SLH-DSA SHA2/SHAKE profiles | RSA PKCS #1 v1.5 signatures, DSA, Falcon/FN-DSA as standardization and deployment profiles evolve |
+| Public-key encryption and KEMs | RSA-OAEP, HPKE, X25519, X448, ML-KEM-512/768/1024 | RSAES-PKCS1-v1_5, ECIES variants, HQC-128/192/256 while standardization is still in progress |
 | Secret sharing | Shamir secret sharing, additive secret sharing, Feldman VSS, Pedersen VSS | Naive share splitting |
 
 ### Structured primitives
 
 | Primitive page | Include first | Include later or mention as caution |
 | --- | --- | --- |
-| Homomorphic encryption | BFV, BGV, CKKS, TFHE/FHEW | Parameter-selection examples and bootstrapping costs |
+| Homomorphic encryption | BFV, BGV, CKKS, TFHE/FHEW, Microsoft SEAL, OpenFHE, Concrete ML | Parameter-selection examples and bootstrapping costs |
 | Homomorphic commitments | Pedersen vector commitments, KZG commitments, inner-product-argument commitments | Trusted-setup and pairing-specific caveats |
 | Threshold cryptography | FROST, threshold BLS, threshold ECDSA families, distributed key generation (DKG) | Implementation-specific MPC signing protocols |
 | Accumulators and authenticated data structures | Merkle trees, sparse Merkle trees, RSA accumulators, bilinear accumulators, Verkle/KZG vector commitments | Dynamic accumulator update costs |
@@ -124,7 +124,7 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Proof-system page | Include first | Include later or mention as caution |
 | --- | --- | --- |
 | Interactive proof building blocks | Sigma protocols, Schnorr identification, Fiat-Shamir transform | Rewinding assumptions and transcript ambiguity |
-| SNARK families | Groth16, PLONK, Marlin, Sonic-style universal setup systems | Scheme-specific arithmetization details |
+| SNARK families | Groth16, PLONK, Marlin, Sonic-style universal setup systems, halo2, gnark, arkworks, Circom | Scheme-specific arithmetization details and audit posture |
 | Transparent proof systems | STARKs, FRI, DEEP-FRI | Parameter and hash choices |
 | Inner-product systems | Bulletproofs, Halo-style accumulation, Nova-style folding | Proof-size and verification trade-offs |
 | Range proofs | Bulletproof range proofs, Pedersen commitment plus range proof patterns | Bit-decomposition pitfalls |
@@ -136,11 +136,11 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Protocol page | Include first | Include later or mention as caution |
 | --- | --- | --- |
 | Key establishment and secure channels | TLS 1.3, HPKE, Noise patterns, Signal X3DH and Double Ratchet | Legacy TLS and static key exchange |
-| Multi-party computation | Yao garbled circuits, GMW, BGW, SPDZ, MASCOT, oblivious transfer extension | Fairness and abort-model variants |
+| Multi-party computation | Yao garbled circuits, GMW, BGW, SPDZ, MASCOT, MP-SPDZ, EMP, FRESCO, oblivious transfer extension | Fairness and abort-model variants |
 | Secure aggregation | Bonawitz-style secure aggregation, Prio/Prio+ | Small-cohort leakage and dropout handling |
 | Oblivious pseudorandom functions | RFC 9497 OPRF/VOPRF/POPRF suites | Prime-order-group suites are quantum-vulnerable; application context binding matters. |
 | Private set intersection | Diffie-Hellman PSI, OPRF-based PSI, circuit PSI | Cardinality-only PSI and malicious-security upgrades |
-| Anonymous credentials | CL signatures / Idemix, BBS+ signatures, selective-disclosure JWT/VC patterns, ZK credential systems | Revocation and rare-attribute leakage |
+| Anonymous credentials | CL signatures / Idemix, BBS+ signatures, selective-disclosure JWT/VC patterns, ZK credential systems, OID4VCI, OID4VP, AnonCreds | Revocation, rare-attribute leakage, and wallet/verifier metadata |
 | Mixnets | Chaumian mixnets, Sphinx packet format, Loopix-style mixnets | Timing and active tagging attacks |
 | Electronic voting | Helios-style encrypted tallying, mixnet tallying, homomorphic tallying, coercion-resistant protocols | Receipt-freeness claims without a coercion model |
 
@@ -153,6 +153,8 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Anti-double-use nullifiers | Hash nullifiers, serial-number e-cash patterns, context-bound nullifiers | Cross-context linkability |
 | Private aggregation | Secret-shared aggregation, Prio-style validation, differential privacy composition | Differencing attacks |
 | Private payments | Zerocoin, Zerocash, Zcash Sapling/Orchard-style note systems | Ledger metadata leakage |
+| Identity wallets | W3C VC Data Integrity profiles, SD-JWT VC, OID4VCI, OID4VP, EUDI ARF, ISO mdoc/mDL, DIDComm | Verifier correlation, device attestation, and status-check leakage |
+| Encrypted mempools | LUCID, Ferveo, Shutter-style encrypted mempools | Reveal timing, committee availability, censorship fallback, and deployment maturity |
 | ZK rollups | Groth16-based rollups, PLONK-ish rollups, STARK-based rollups | Data availability and prover centralization |
 
 ## Editorial policy

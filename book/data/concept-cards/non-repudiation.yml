@@ -1,0 +1,55 @@
+id: non-repudiation
+name: Non-Repudiation
+category: Security goals
+level: security-goal
+short_intuition: Evidence is intended to make later denial of an action unconvincing under a stated process.
+security_goals:
+  - non-repudiation
+assumptions:
+  - private keys remain under accountable control
+  - signed context and validity time are clear
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - keys are compromised
+    - signatures omit context
+    - revocation or timestamp evidence is missing
+  setup:
+    - signing keys
+    - trust anchors
+    - timestamp or audit process
+typical_uses:
+  - software release signing
+  - document signing
+  - transaction authorization
+does_not_provide:
+  - proof of human intent
+  - deniability
+  - legal effect without process
+composition_risks:
+  - signing ambiguous bytes
+  - using non-repudiating signatures in deniable protocols
+metadata_leaks:
+  - signer identity or role
+  - timestamp
+  - certificate chain
+implementation_risk: not-applicable
+auditability: publicly-verifiable
+parameter_sensitivity: not-applicable
+revocation_story: Concrete signing systems need certificate revocation, key rotation, and archival validation policy.
+operational_failure_modes:
+  - stale certificates
+  - compromised signing keys
+  - unclear signed statements
+maturity: not-applicable
+related:
+  - digital-signature
+  - accountability
+  - deniability
+references:
+  - nist-fips-186-5
+  - boneh-shoup-applied-cryptography

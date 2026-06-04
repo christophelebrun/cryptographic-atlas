@@ -1484,3 +1484,299 @@ references:
     used_by:
       - post-quantum-posture
       - concrete-instances
+  - id: halo2-book
+    title: The halo2 Book
+    authors:
+      - Electric Coin Company
+    year: 2026
+    source_type: official-docs
+    url: https://zcash.github.io/halo2/
+    notes: Implementation documentation for the halo2 proving system ecosystem; review version and audit posture before deriving deployment advice.
+    used_by:
+      - snarks-starks-bulletproofs
+      - zk-rollups
+      - concrete-instances
+  - id: gnark-docs
+    title: gnark Documentation
+    authors:
+      - Consensys
+    year: 2026
+    source_type: official-docs
+    url: https://docs.gnark.consensys.io/
+    notes: Implementation documentation for a Go zk-SNARK stack; supported proving systems, curves, serialization, and API stability are version-sensitive.
+    used_by:
+      - snarks-starks-bulletproofs
+      - zk-rollups
+      - concrete-instances
+  - id: arkworks-ecosystem
+    title: arkworks zkSNARK ecosystem
+    authors:
+      - arkworks contributors
+    year: 2026
+    source_type: official-docs
+    url: https://github.com/arkworks-rs
+    notes: Rust ecosystem for SNARK components; individual crates may have different audit and production-readiness posture.
+    used_by:
+      - snarks-starks-bulletproofs
+      - concrete-instances
+  - id: circom-docs
+    title: Circom Documentation
+    authors:
+      - iden3
+    year: 2026
+    source_type: official-docs
+    url: https://docs.circom.io/
+    notes: Circuit language and tooling documentation; circuit constraints still require expert review for underconstraint bugs.
+    used_by:
+      - arithmetization
+      - zk-rollups
+      - concrete-instances
+  - id: zcash-frost-implementation
+    title: Zcash Foundation FROST implementation
+    authors:
+      - Zcash Foundation
+    year: 2026
+    source_type: official-docs
+    url: https://github.com/ZcashFoundation/frost
+    notes: Reference implementation family for FROST ciphersuites; check release notes, audits, and selected ciphersuite before deployment.
+    used_by:
+      - threshold-cryptography
+      - concrete-instances
+  - id: drand-protocol
+    title: drand Protocol Specification
+    authors:
+      - drand contributors
+    year: 2026
+    source_type: official-docs
+    url: https://docs.drand.love/docs/specification/
+    notes: Deployed threshold BLS randomness beacon protocol documentation.
+    used_by:
+      - threshold-cryptography
+      - concrete-instances
+  - id: mp-spdz-framework
+    title: MP-SPDZ; A Versatile Framework for Multi-Party Computation
+    authors:
+      - Marcel Keller
+    year: 2020
+    source_type: paper
+    url: https://doi.org/10.1145/3372297.3417872
+    doi: 10.1145/3372297.3417872
+    used_by:
+      - mpc
+      - private-machine-learning-analytics
+      - concrete-instances
+  - id: emp-toolkit
+    title: EMP toolkit
+    authors:
+      - EMP toolkit contributors
+    year: 2026
+    source_type: official-docs
+    url: https://github.com/emp-toolkit
+    notes: Implementation ecosystem for garbled-circuit, OT, and MPC protocols; security model depends on the selected package.
+    used_by:
+      - mpc
+      - oblivious-transfer
+      - concrete-instances
+  - id: fresco-framework
+    title: FRESCO documentation
+    authors:
+      - FRESCO contributors
+    year: 2026
+    source_type: official-docs
+    url: https://fresco.readthedocs.io/en/latest/intro.html
+    notes: Java framework documentation for secure computation; protocol suite and deployment model determine guarantees.
+    used_by:
+      - mpc
+      - concrete-instances
+  - id: microsoft-seal
+    title: Microsoft SEAL
+    authors:
+      - Microsoft Research
+    year: 2026
+    source_type: official-docs
+    url: https://www.microsoft.com/en-us/research/project/microsoft-seal/
+    notes: Homomorphic-encryption library documentation; parameter selection and supported operations remain expert-sensitive.
+    used_by:
+      - homomorphic-encryption
+      - private-machine-learning-analytics
+      - concrete-instances
+  - id: openfhe
+    title: OpenFHE documentation
+    authors:
+      - OpenFHE contributors
+    year: 2026
+    source_type: official-docs
+    url: https://openfhe.org/documentation/
+    notes: Open-source FHE library documentation; supported schemes and APIs should be checked against current releases.
+    used_by:
+      - homomorphic-encryption
+      - concrete-instances
+  - id: zama-concrete-ml
+    title: Concrete ML documentation
+    authors:
+      - Zama
+    year: 2026
+    source_type: official-docs
+    url: https://docs.zama.org/concrete-ml/
+    notes: FHE-based machine-learning framework documentation; deployment guarantees depend on model conversion, quantization, and leakage review.
+    used_by:
+      - private-machine-learning-analytics
+      - homomorphic-encryption
+      - concrete-instances
+  - id: openid4vci
+    title: OpenID for Verifiable Credential Issuance 1.0
+    authors:
+      - OpenID Foundation
+    year: 2025
+    source_type: standard
+    url: https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html
+    used_by:
+      - identity-wallets
+      - anonymous-credentials
+      - concrete-instances
+  - id: openid4vp
+    title: OpenID for Verifiable Presentations 1.0
+    authors:
+      - OpenID Foundation
+    year: 2025
+    source_type: standard
+    url: https://openid.net/specs/openid-4-verifiable-presentations-1_0.html
+    used_by:
+      - identity-wallets
+      - anonymous-credentials
+      - concrete-instances
+  - id: eudi-arf
+    title: European Digital Identity Wallet Architecture and Reference Framework
+    authors:
+      - European Commission
+    year: 2026
+    source_type: official-docs
+    url: https://eudi.dev/latest/architecture-and-reference-framework-main/
+    notes: Fast-moving wallet ecosystem profile; review against the current ARF release before citing deployment requirements.
+    used_by:
+      - identity-wallets
+      - concrete-instances
+  - id: iso-iec-18013-5-mdl
+    title: ISO/IEC 18013-5; Mobile driving licence application
+    authors:
+      - International Organization for Standardization
+      - International Electrotechnical Commission
+    year: 2021
+    source_type: standard
+    url: https://www.iso.org/standard/69084.html
+    used_by:
+      - identity-wallets
+      - concrete-instances
+  - id: hyperledger-anoncreds
+    title: Hyperledger AnonCreds Specification
+    authors:
+      - Hyperledger AnonCreds contributors
+    year: 2026
+    source_type: official-docs
+    url: https://hyperledger.github.io/anoncreds-spec/
+    notes: Specification and implementation ecosystem for CL-signature and ZKP-based credentials; registry and revocation methods are deployment-specific.
+    used_by:
+      - anonymous-credentials
+      - identity-wallets
+      - concrete-instances
+  - id: didcomm-v2
+    title: DIDComm Messaging Specification v2.1
+    authors:
+      - Decentralized Identity Foundation
+    year: 2026
+    source_type: official-docs
+    url: https://identity.foundation/didcomm-messaging/spec/v2.1
+    notes: Messaging layer often used by credential wallets; it is not itself a credential cryptosuite.
+    used_by:
+      - identity-wallets
+      - secure-messaging
+      - concrete-instances
+  - id: credo-docs
+    title: Credo Verifiable Credentials documentation
+    authors:
+      - Credo contributors
+    year: 2026
+    source_type: official-docs
+    url: https://credo.js.org/guides/features/credentials
+    notes: Implementation documentation for a credential wallet and agent framework; supported formats are version-sensitive.
+    used_by:
+      - identity-wallets
+      - anonymous-credentials
+      - concrete-instances
+  - id: shutter-docs
+    title: Shutter Network documentation
+    authors:
+      - Shutter Network contributors
+    year: 2026
+    source_type: official-docs
+    url: https://docs.shutter.network/docs/shutter
+    notes: Threshold-encryption protocol documentation for shielded trading, voting, and encrypted-mempool style deployments.
+    used_by:
+      - encrypted-mempools
+      - threshold-cryptography
+      - concrete-instances
+  - id: shutter-api-docs
+    title: Shutter API documentation
+    authors:
+      - Shutter Network contributors
+    year: 2026
+    source_type: official-docs
+    url: https://docs.shutter.network/docs/protocol/api
+    notes: Application-layer threshold-encryption API documentation; distinguish this from protocol-level encrypted mempool integration.
+    used_by:
+      - encrypted-mempools
+      - delayed-reveal
+      - concrete-instances
+  - id: open-quantum-safe
+    title: Open Quantum Safe
+    authors:
+      - Open Quantum Safe contributors
+    year: 2026
+    source_type: official-docs
+    url: https://openquantumsafe.org/
+    notes: Prototype and interoperability tooling for quantum-resistant cryptography; not a substitute for production certification.
+    used_by:
+      - post-quantum-posture
+      - key-rotation-and-migration
+      - concrete-instances
+  - id: oqs-tls
+    title: Open Quantum Safe TLS integrations
+    authors:
+      - Open Quantum Safe contributors
+    year: 2026
+    source_type: official-docs
+    url: https://openquantumsafe.org/applications/tls.html
+    notes: Prototype TLS integrations for PQ experimentation and interoperability testing.
+    used_by:
+      - post-quantum-posture
+      - secure-channels
+      - concrete-instances
+  - id: cisa-quantum-readiness
+    title: Quantum-Readiness; Migration to Post-Quantum Cryptography
+    authors:
+      - Cybersecurity and Infrastructure Security Agency
+      - National Security Agency
+      - National Institute of Standards and Technology
+    year: 2023
+    source_type: official-docs
+    url: https://www.cisa.gov/resources-tools/resources/quantum-readiness-migration-post-quantum-cryptography
+    notes: Operational migration guidance emphasizing roadmap, inventory, and vendor coordination.
+    used_by:
+      - post-quantum-posture
+      - key-rotation-and-migration
+  - id: eip-7547-inclusion-lists
+    title: EIP-7547; Inclusion lists
+    authors:
+      - Michael Neuder
+      - Vitalik Buterin
+      - Francesco D'Amato
+      - Terence Tsao
+      - Potuz
+      - Manav
+    year: 2023
+    source_type: official-docs
+    url: https://eips.ethereum.org/EIPS/eip-7547
+    notes: Draft Ethereum inclusion-list proposal; use for censorship-resistance design context, not as deployed Ethereum behavior.
+    used_by:
+      - censorship-resistance
+      - encrypted-mempools

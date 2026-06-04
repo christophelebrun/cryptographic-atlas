@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check TLS, HPKE, MLS, Signal, Noise, DIDComm, and hybrid post-quantum channel profiles.
 ---
 
 # Secure Channels

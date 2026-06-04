@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check encrypted-mempool EIPs, Shutter deployments, Ferveo-style threshold decryption, and MEV research.
 ---
 
 # Encrypted Mempools
@@ -85,3 +89,5 @@ Encrypted-mempool coverage should treat current Ethereum designs as draft-stage 
 - [EIP-8184: LUCID encrypted mempool](https://eips.ethereum.org/EIPS/eip-8184).
 - Goes, [Ferveo: Threshold Decryption for Mempool Privacy in BFT Networks](https://eprint.iacr.org/2022/898).
 - Condorelli et al., [Mempool Privacy via Batched Threshold Encryption](https://eprint.iacr.org/2024/669).
+- Shutter Network, [Shutter documentation](https://docs.shutter.network/docs/shutter).
+- Shutter Network, [Shutter API documentation](https://docs.shutter.network/docs/protocol/api).

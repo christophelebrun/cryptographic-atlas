@@ -1,0 +1,52 @@
+id: deniability
+name: Deniability
+category: Security goals
+level: security-goal
+short_intuition: A transcript should not become convincing evidence to outsiders that a participant said or did something.
+security_goals:
+  - deniability
+assumptions:
+  - authentication is local rather than publicly transferable
+  - transcripts and logs do not add independent evidence
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: client-side-secret and mixed
+  threshold: null
+  breaks_if:
+    - messages are digitally signed for public verification
+    - server or client logs create durable receipts
+  setup:
+    - session keys
+    - transcript handling policy
+typical_uses:
+  - secure messaging
+  - off-the-record negotiation
+  - coercion-resistant workflows
+does_not_provide:
+  - anonymity
+  - protection from screenshots
+  - public auditability
+composition_risks:
+  - adding non-repudiating signatures
+  - retaining plaintext backups
+metadata_leaks:
+  - contact graph
+  - delivery timing
+  - device logs
+implementation_risk: not-applicable
+auditability: not-applicable
+parameter_sensitivity: not-applicable
+revocation_story: Not applicable to the goal; concrete messaging keys and devices need rotation and compromise recovery.
+operational_failure_modes:
+  - public transcript publication
+  - endpoint compromise
+maturity: not-applicable
+related:
+  - forward-secrecy
+  - secure-messaging
+  - non-repudiation
+references:
+  - signal-double-ratchet
+  - katz-lindell-modern-cryptography

@@ -13,6 +13,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: t-of-n-threshold
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check FROST, threshold BLS, DKG, custody, and deployed threshold-signing implementation guidance.
 ---
 
 # Threshold Cryptography
@@ -73,6 +77,8 @@ Threshold signing should cite both the signing protocol and the setup protocol. 
 - Shamir, [How to Share a Secret](https://doi.org/10.1145/359168.359176).
 - Gennaro, Jarecki, Krawczyk, and Rabin, [Secure Distributed Key Generation for Discrete-Log Based Cryptosystems](https://doi.org/10.1007/s00145-006-0347-3).
 - RFC 9591, [The FROST Protocol](https://www.rfc-editor.org/rfc/rfc9591).
+- Zcash Foundation, [FROST implementation](https://github.com/ZcashFoundation/frost).
+- drand, [Protocol Specification](https://docs.drand.love/docs/specification/).
 - Boneh, Lynn, and Shacham, [Short Signatures from the Weil Pairing](https://doi.org/10.1007/3-540-45682-1_30).
 - Boldyreva, [Threshold Signatures, Multisignatures and Blind Signatures](https://www.iacr.org/archive/pkc2003/25670272/25670272.pdf).
 - Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).

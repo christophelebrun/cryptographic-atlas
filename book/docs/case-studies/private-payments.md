@@ -15,6 +15,10 @@ tags:
 post_quantum_posture: depends
 confidence_model:
   type: mixed
+source_review:
+  window_months: 6
+  next_review_due: '2026-12-04'
+  notes: Re-check Zcash protocol references, private-payment wallet behavior, ledger metadata research, and shielded-pool deployment status.
 ---
 
 # Private Payments

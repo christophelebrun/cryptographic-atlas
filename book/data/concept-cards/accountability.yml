@@ -1,0 +1,51 @@
+id: accountability
+name: Accountability
+category: Security goals
+level: security-goal
+short_intuition: Misbehavior can be attributed, challenged, or sanctioned under stated rules.
+security_goals:
+  - accountability
+assumptions:
+  - actions bind to accountable roles or keys
+  - dispute process accepts the evidence model
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - key-role binding is wrong
+    - no enforcement or appeal process exists
+  setup:
+    - role registry
+    - evidence and dispute process
+typical_uses:
+  - governance systems
+  - threshold signing
+  - abuse reporting
+does_not_provide:
+  - public identity by default
+  - automatic punishment
+  - proof that a human controlled a key
+composition_risks:
+  - permanent identity leakage
+  - no appeal path for key compromise
+metadata_leaks:
+  - accountable role
+  - dispute evidence
+implementation_risk: not-applicable
+auditability: requires-operational-audit
+parameter_sensitivity: not-applicable
+revocation_story: Accountability mechanisms usually need key revocation, role replacement, and dispute-retention rules.
+operational_failure_modes:
+  - accused party controls the logs
+  - compromised keys treated as human intent
+maturity: not-applicable
+related:
+  - authenticity
+  - auditability
+  - non-repudiation
+references:
+  - canetti-uc
+  - boneh-shoup-applied-cryptography
