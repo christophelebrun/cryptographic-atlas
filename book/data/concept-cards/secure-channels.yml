@@ -1,0 +1,61 @@
+id: secure-channels
+name: Secure Channels
+category: Protocols
+level: protocol
+short_intuition: Authenticated encrypted sessions bind key exchange, identities, transcript, and traffic protection.
+security_goals:
+  - confidentiality
+  - integrity
+  - endpoint authentication
+  - forward secrecy
+assumptions:
+  - authentic trust anchors or pinned keys
+  - fresh ephemeral secrets
+  - correct transcript binding
+  - safe AEAD nonce management
+requires_trusted_setup: false
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - endpoint keys are compromised
+    - certificates or identities are misbound
+    - transcript fields are omitted
+  setup:
+    - certificates, pinned keys, or pre-shared keys
+typical_uses:
+  - web transport
+  - service-to-service APIs
+  - secure messaging
+does_not_provide:
+  - network anonymity
+  - endpoint compromise protection
+  - application authorization
+composition_risks:
+  - downgrade negotiation
+  - using HPKE as a complete channel without authentication
+  - omitting channel binding to the application
+metadata_leaks:
+  - endpoint addresses
+  - timing
+  - traffic volume
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Certificate, key, and session revocation are external operational processes.
+operational_failure_modes:
+  - stale trust anchors
+  - weak certificate validation
+  - session-key retention
+maturity: deployed
+related:
+  - key-encapsulation-and-exchange
+  - authenticated-encryption
+  - transcript-binding
+references:
+  - rfc8446-tls13
+  - rfc9180-hpke
+  - signal-double-ratchet
+  - noise-framework

@@ -1,0 +1,94 @@
+id: private-payment-note-flow
+title: Private-payment note flow
+description: Private payments combine hidden notes, public nullifiers, proofs, and ledger metadata controls.
+layout:
+  width: 1500
+  height: 620
+  columns: 5
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 36
+  node_width: 230
+  node_height: 76
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/private-payment-note-flow.svg
+  mermaid: static/diagrams/private-payment-note-flow.mmd
+nodes:
+  - id: payer-secret
+    label: Payer secret
+    detail: Note key, viewing key, spend authority
+    kind: actor
+    column: 1
+    row: 1
+  - id: note-commitment
+    label: Note commitment
+    detail: Hidden amount and recipient data
+    kind: primitive
+    column: 2
+    row: 1
+  - id: membership
+    label: Membership proof
+    detail: Note exists in the ledger set
+    kind: proof
+    column: 3
+    row: 1
+  - id: nullifier
+    label: Nullifier
+    detail: Public duplicate-spend tag
+    kind: protocol
+    column: 3
+    row: 2
+  - id: conservation-proof
+    label: Conservation proof
+    detail: Inputs equal outputs and fees
+    kind: proof
+    column: 4
+    row: 1
+  - id: ledger
+    label: Ledger update
+    detail: Add output notes, reject duplicates
+    kind: system
+    column: 5
+    row: 1
+  - id: recipient
+    label: Recipient secret
+    detail: Detects and spends new note
+    kind: actor
+    column: 5
+    row: 2
+  - id: metadata
+    label: Metadata review
+    detail: Timing, amount patterns, exchanges
+    kind: metadata
+    column: 4
+    row: 4
+  - id: network
+    label: Network layer
+    detail: IPs, relays, wallet fingerprinting
+    kind: warning
+    column: 2
+    row: 4
+edges:
+  - from: payer-secret
+    to: note-commitment
+  - from: note-commitment
+    to: membership
+  - from: payer-secret
+    to: nullifier
+  - from: membership
+    to: conservation-proof
+  - from: nullifier
+    to: conservation-proof
+  - from: conservation-proof
+    to: ledger
+  - from: ledger
+    to: recipient
+  - from: ledger
+    to: metadata
+    kind: warning
+  - from: network
+    to: metadata
+    kind: warning

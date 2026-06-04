@@ -40,7 +40,7 @@ This book is not production cryptography guidance. It is not a source of copy-pa
 
 Do not design or deploy custom cryptographic protocols without expert review.
 
-The atlas is also not complete. See [Editorial Maturity and Coverage](/docs/appendices/editorial-maturity-and-coverage) for the current coverage assessment, promotion candidates, and source-depth priorities.
+The atlas is also not complete. See [Editorial State, Coverage, and Backlog](/docs/appendices/editorial-maturity-and-coverage) for the current coverage assessment, promotion candidates, source-depth priorities, and changelog.
 
 ## AI generation disclosure
 

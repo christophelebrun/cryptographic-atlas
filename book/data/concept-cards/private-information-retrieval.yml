@@ -1,0 +1,57 @@
+id: private-information-retrieval
+name: Private Information Retrieval
+category: Protocols
+level: protocol
+short_intuition: A client retrieves a database item while hiding which item was requested.
+security_goals:
+  - query privacy
+  - correctness
+  - optional database privacy
+assumptions:
+  - computational assumptions or non-colluding servers
+  - database version binding
+  - integrity checks when servers may be malicious
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - non-colluding servers collude
+    - server returns stale or malformed data
+    - repeated queries are linkable
+  setup:
+    - replicated servers or cryptographic public parameters
+typical_uses:
+  - private lookup
+  - contact discovery
+  - key transparency lookup
+does_not_provide:
+  - network anonymity
+  - write privacy
+  - hiding returned content
+composition_risks:
+  - database freshness omitted
+  - access-pattern leakage outside PIR
+  - query result revealing the request
+metadata_leaks:
+  - timing
+  - client identity
+  - response size
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: high
+revocation_story: Not applicable; database freshness and versioning are separate controls.
+operational_failure_modes:
+  - server collusion
+  - stale database roots
+  - repeated-query linkage
+maturity: mature
+related:
+  - secure-aggregation
+  - homomorphic-encryption
+  - metadata-leakage
+references:
+  - chor-private-information-retrieval
+  - boneh-shoup-applied-cryptography

@@ -1,0 +1,86 @@
+id: privacy-preserving-revocation
+title: Privacy-preserving revocation
+description: Revocation should prove freshness and non-revocation without calling home on every presentation.
+layout:
+  width: 1280
+  height: 620
+  columns: 4
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 36
+  node_width: 240
+  node_height: 76
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/privacy-preserving-revocation.svg
+  mermaid: static/diagrams/privacy-preserving-revocation.mmd
+nodes:
+  - id: issuer
+    label: Issuer
+    detail: Decides revocation state
+    kind: actor
+    column: 1
+    row: 1
+  - id: status-root
+    label: Status commitment
+    detail: Signed list, root, or accumulator
+    kind: structured
+    column: 2
+    row: 1
+  - id: holder
+    label: Holder
+    detail: Credential and witness
+    kind: actor
+    column: 1
+    row: 3
+  - id: nonrevocation-proof
+    label: Non-revocation proof
+    detail: Valid under a fresh root
+    kind: proof
+    column: 2
+    row: 3
+  - id: verifier
+    label: Verifier
+    detail: Checks proof locally
+    kind: output
+    column: 3
+    row: 3
+  - id: freshness
+    label: Freshness policy
+    detail: Time, epoch, or version
+    kind: setup
+    column: 3
+    row: 1
+  - id: call-home
+    label: Tracking hazard
+    detail: Online status check reveals presentation
+    kind: warning
+    column: 4
+    row: 2
+  - id: metadata
+    label: Residual metadata
+    detail: Rare attributes, timing, verifier logs
+    kind: metadata
+    column: 4
+    row: 4
+edges:
+  - from: issuer
+    to: status-root
+  - from: status-root
+    to: freshness
+  - from: holder
+    to: nonrevocation-proof
+  - from: status-root
+    to: nonrevocation-proof
+  - from: freshness
+    to: verifier
+  - from: nonrevocation-proof
+    to: verifier
+  - from: verifier
+    to: metadata
+    kind: warning
+  - from: call-home
+    to: metadata
+    kind: warning

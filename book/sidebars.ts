@@ -54,6 +54,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'structured-primitives/overview',
         'structured-primitives/advanced-structured-primitives',
+        'structured-primitives/polynomial-commitments',
+        'structured-primitives/vector-commitments',
         'structured-primitives/homomorphic-commitments',
         'structured-primitives/homomorphic-encryption',
         'structured-primitives/threshold-cryptography',
@@ -80,6 +82,10 @@ const sidebars: SidebarsConfig = {
       items: [
         'protocols/overview',
         'protocols/additional-protocol-families',
+        'protocols/secure-channels',
+        'protocols/password-authenticated-key-exchange',
+        'protocols/oblivious-transfer',
+        'protocols/private-information-retrieval',
         'protocols/anonymous-credentials',
         'protocols/nullifiers',
         'protocols/oblivious-pseudorandom-functions',
@@ -96,6 +102,9 @@ const sidebars: SidebarsConfig = {
       items: [
         'design-patterns/overview',
         'design-patterns/operational-design-patterns',
+        'design-patterns/domain-separation',
+        'design-patterns/transcript-binding',
+        'design-patterns/privacy-preserving-revocation',
         'design-patterns/anonymous-membership',
         'design-patterns/anti-double-use-nullifiers',
         'design-patterns/private-aggregation',
@@ -110,6 +119,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'case-studies/overview',
         'case-studies/additional-systems',
+        'case-studies/private-payments',
+        'case-studies/zk-rollups',
         'case-studies/private-dao-voting',
         'case-studies/coercion-resistant-voting',
         'case-studies/anonymous-airdrop',

@@ -4,6 +4,7 @@ type: primitive
 level: basic-primitive
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: not-applicable
@@ -152,7 +153,7 @@ Confidence comes from mathematical-assumption or symmetric-key security, paramet
 - [Authenticated Encryption](/docs/primitives/authenticated-encryption)
 - [Key Derivation Functions](/docs/primitives/key-derivation-functions)
 - [Randomness and Nonces](/docs/primitives/randomness-and-nonces)
-- [Secure Channels](/docs/protocols/additional-protocol-families#secure-channels)
+- [Secure Channels](/docs/protocols/secure-channels)
 
 ## Further reading
 

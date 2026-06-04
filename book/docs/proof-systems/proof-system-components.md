@@ -4,6 +4,7 @@ type: appendix
 level: proof-system
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: advanced
 maturity: emerging
@@ -192,7 +193,7 @@ Confidence comes from public-verifiability, mathematical assumptions, transcript
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
 - [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs)
 - [Advanced Structured Primitives](/docs/structured-primitives/advanced-structured-primitives)
-- [ZK Rollups](/docs/case-studies/additional-systems#zk-rollups)
+- [ZK Rollups](/docs/case-studies/zk-rollups)
 
 ## Further reading
 

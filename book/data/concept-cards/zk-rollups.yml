@@ -1,0 +1,58 @@
+id: zk-rollups
+name: ZK Rollups
+category: Systems
+level: system
+short_intuition: Validity proofs let verifiers check batches of state transitions cheaply.
+security_goals:
+  - validity
+  - public verification
+  - reduced verifier cost
+assumptions:
+  - transition relation is correctly arithmetized
+  - data availability is handled separately
+  - proof-system assumptions hold
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - data is unavailable
+    - verifier key is wrong
+    - circuit omits critical checks
+  setup:
+    - proof-system parameters, verifier contracts, sequencer/prover infrastructure
+typical_uses:
+  - blockchain scaling
+  - validity proofs
+  - batched state transitions
+does_not_provide:
+  - data availability
+  - privacy by default
+  - decentralized sequencing by default
+composition_risks:
+  - bridge bypass
+  - upgrade-key control
+  - prover centralization
+metadata_leaks:
+  - batch timing
+  - public transaction data
+  - sequencer behavior
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Not applicable; faulty verifier keys or circuits require migration or governance action.
+operational_failure_modes:
+  - invalid circuit semantics
+  - unavailable data
+  - centralized censorship
+maturity: emerging
+related:
+  - snarks-starks-bulletproofs
+  - polynomial-commitments
+  - transcript-binding
+references:
+  - stark-integrity
+  - groth16
+  - kate-zaverucha-goldberg-kzg

@@ -1,0 +1,58 @@
+id: domain-separation
+name: Domain Separation
+category: Design patterns
+level: design-pattern
+short_intuition: Labels prevent cryptographic bytes from one context being valid in another.
+security_goals:
+  - context binding
+  - replay resistance
+  - unambiguous encoding
+assumptions:
+  - labels are unique and specified
+  - encodings are canonical
+  - implementations include all relevant context
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - critical fields are omitted
+    - labels are reused across incompatible domains
+    - encodings are ambiguous
+  setup:
+    - protocol labels, version strings, and test vectors
+typical_uses:
+  - signatures
+  - KDFs
+  - hash-to-curve
+does_not_provide:
+  - primitive security
+  - key separation where separate keys are required
+  - privacy for labels
+composition_risks:
+  - retrofitted labels without migration
+  - UI text not matching signed bytes
+  - concatenation ambiguity
+metadata_leaks:
+  - public labels
+  - protocol version
+  - application context
+implementation_risk: medium
+auditability: requires-expert-review
+parameter_sensitivity: medium
+revocation_story: Not applicable; labels can support migration but do not revoke old values by themselves.
+operational_failure_modes:
+  - inconsistent encodings
+  - missing chain or domain ID
+  - reused labels
+maturity: mature
+related:
+  - transcript-binding
+  - hash-function
+  - key-derivation-functions
+references:
+  - rfc9380-hash-to-curve
+  - rfc8446-tls13
+  - boneh-shoup-applied-cryptography

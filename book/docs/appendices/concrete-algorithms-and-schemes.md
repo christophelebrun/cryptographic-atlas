@@ -18,7 +18,7 @@ confidence_model:
 
 # Concrete Algorithms and Schemes
 
-This appendix indexes concrete algorithms, schemes, parameter families, and named protocol suites that are surfaced on the concept pages they instantiate.
+This appendix explains how concrete algorithms, schemes, parameter families, and named protocol suites fit into the taxonomy. The machine-readable source of truth is `book/data/instances.yml`, where each entry declares `instance_of` relationships to parent concept-card IDs.
 
 ## Where algorithms sit in the taxonomy
 
@@ -43,6 +43,8 @@ Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a con
 | Groth16 | Proof system | It is a concrete succinct proof system. |
 | Pedersen commitment | Basic primitive: commitments | It is a concrete commitment scheme. |
 | KZG commitment | Structured primitive: polynomial/vector commitment | It is a concrete commitment scheme with pairing and setup assumptions. |
+| TLS 1.3 | Protocol: secure channels | It is a concrete protocol suite combining key exchange, authentication, transcript binding, and traffic protection. |
+| OPAQUE | Protocol: password-authenticated key exchange | It is a concrete PAKE suite with OPRF, envelope, and authenticated key-exchange components. |
 
 This distinction matters because a name like `SHA-256` does not explain its goal, assumptions, misuse cases, or composition role. The concept page should explain the primitive; the instance entry should explain the concrete trade-offs.
 
@@ -52,7 +54,18 @@ The book is organized by concepts, not as an algorithm catalog. That keeps the t
 
 For that reason, concrete algorithms should usually appear first as comparison tables on their parent concept pages. A dedicated page is useful only when the named scheme has distinct assumptions, failure modes, deployment status, or composition risks that would overload the parent page.
 
-If this appendix later becomes machine-readable, use an `instance_of` relationship rather than a new `level` value. That preserves the main taxonomy while allowing filters such as "show concrete instances of digital signatures" or "show post-quantum instances of key encapsulation".
+## Machine-readable instance registry
+
+The instance registry lives in `book/data/instances.yml`. Each entry includes:
+
+- `id` and `name`;
+- `kind`, such as algorithm, scheme, mode, curve, standard, or protocol suite;
+- `instance_of`, which points to one or more concept-card IDs;
+- taxonomy level, maturity, post-quantum posture, setup posture, assumptions, uses, cautions, and references.
+
+Validation checks that every instance ID is unique, every parent in `instance_of` exists as a concept card, and every reference ID exists in `book/data/references.yml`.
+
+Use an `instance_of` relationship rather than a new `level` value. That preserves the main taxonomy while allowing filters such as "show concrete instances of digital signatures" or "show post-quantum instances of key encapsulation".
 
 Concrete algorithms should be added when they do at least one of the following:
 
@@ -89,7 +102,7 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Key derivation and password hashing | HKDF, PBKDF2, scrypt, Argon2id | Raw hashes as password storage anti-patterns |
 | Randomness and nonces | HMAC_DRBG, Hash_DRBG, CTR_DRBG, ChaCha20-based CSPRNGs, operating-system CSPRNG interfaces | Reused nonces, userland entropy mixers |
 | Commitments | Hash commitments, Pedersen commitments, Merkle commitments | Low-entropy committed values without salt or hiding |
-| Digital signatures | Ed25519, Ed448, ECDSA P-256, ECDSA secp256k1, RSA-PSS, Schnorr/BIP-340, BLS signatures, ML-DSA, SLH-DSA | RSA PKCS #1 v1.5 signatures, DSA, Falcon/FN-DSA while FIPS 206 is still in development |
+| Digital signatures | Ed25519, Ed448, ECDSA P-256, ECDSA secp256k1, RSA-PSS, Schnorr/BIP-340, BLS signatures, ML-DSA, SLH-DSA | RSA PKCS #1 v1.5 signatures, DSA, Falcon/FN-DSA as standardization and deployment profiles evolve |
 | Public-key encryption and KEMs | RSA-OAEP, HPKE, X25519, X448, ML-KEM | RSAES-PKCS1-v1_5, ECIES variants, HQC while standardization is still in progress |
 | Secret sharing | Shamir secret sharing, additive secret sharing, Feldman VSS, Pedersen VSS | Naive share splitting |
 

@@ -1,0 +1,58 @@
+id: private-payments
+name: Private Payments
+category: Systems
+level: system
+short_intuition: Transfer value while hiding selected transaction details under a stated ledger or issuer model.
+security_goals:
+  - transaction privacy
+  - value conservation
+  - double-spend prevention
+assumptions:
+  - valid note or ledger rules
+  - client-side secrets remain secret
+  - proof and commitment assumptions hold
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - wallet secrets leak
+    - anonymity sets are small
+    - ledger metadata links users
+  setup:
+    - issuer, ledger, setup ceremony, or public parameters depending on design
+typical_uses:
+  - shielded payments
+  - e-cash
+  - private transfers
+does_not_provide:
+  - network anonymity
+  - solvency guarantees
+  - compliance policy
+composition_risks:
+  - note/nullifier design mistakes
+  - exchange metadata linkage
+  - trusted issuer abuse
+metadata_leaks:
+  - timing
+  - amount patterns
+  - network metadata
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Spent notes are revoked through nullifiers or serial numbers; key recovery is system-specific.
+operational_failure_modes:
+  - wallet compromise
+  - small anonymity sets
+  - viewing-key leakage
+maturity: emerging
+related:
+  - nullifier
+  - commitments
+  - zero-knowledge-proof
+references:
+  - chaum-fiat-naor-ecash
+  - zerocash
+  - chaum-blind-signatures

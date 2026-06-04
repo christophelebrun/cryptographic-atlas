@@ -4,6 +4,7 @@ type: assumption
 level: assumption
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: not-applicable

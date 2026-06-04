@@ -1,0 +1,58 @@
+id: transcript-binding
+name: Transcript Binding
+category: Design patterns
+level: design-pattern
+short_intuition: Outputs are derived from the complete protocol transcript they are meant to authenticate.
+security_goals:
+  - downgrade resistance
+  - statement binding
+  - key separation
+assumptions:
+  - transcript includes all security-critical fields
+  - parties reconstruct the transcript independently
+  - encodings and ordering are canonical
+requires_trusted_setup: not-applicable
+post_quantum: not-applicable
+post_quantum_posture: not-applicable
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - algorithm choices are omitted
+    - public inputs are omitted
+    - verifier accepts externally supplied transcript hashes
+  setup:
+    - transcript specification and test vectors
+typical_uses:
+  - secure-channel handshakes
+  - Fiat-Shamir proofs
+  - threshold signing
+does_not_provide:
+  - endpoint security
+  - privacy for public fields
+  - correctness if the wrong fields are bound
+composition_risks:
+  - unknown-key-share attacks
+  - proof statement substitution
+  - downgrade negotiation
+metadata_leaks:
+  - public inputs
+  - protocol version
+  - transcript timing
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: medium
+revocation_story: Not applicable; binding can include revocation state but does not revoke by itself.
+operational_failure_modes:
+  - inconsistent transcript reconstruction
+  - missing verification key
+  - omitted peer identity
+maturity: mature
+related:
+  - domain-separation
+  - secure-channels
+  - zero-knowledge-proof
+references:
+  - rfc8446-tls13
+  - bellare-rogaway-random-oracle
+  - noise-framework

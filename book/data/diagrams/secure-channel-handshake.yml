@@ -1,0 +1,98 @@
+id: secure-channel-handshake
+title: Secure-channel handshake
+description: A secure channel binds identity, negotiation, key exchange, and traffic keys into one transcript.
+layout:
+  width: 1280
+  height: 620
+  columns: 4
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 36
+  node_width: 240
+  node_height: 76
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/secure-channel-handshake.svg
+  mermaid: static/diagrams/secure-channel-handshake.mmd
+nodes:
+  - id: client
+    label: Client
+    detail: Initiator identity and ephemeral key
+    kind: actor
+    column: 1
+    row: 1
+  - id: server
+    label: Server
+    detail: Responder identity and certificate/key
+    kind: actor
+    column: 1
+    row: 3
+  - id: negotiation
+    label: Negotiation
+    detail: Version, suite, extensions
+    kind: protocol
+    column: 2
+    row: 1
+  - id: key-exchange
+    label: Key exchange
+    detail: Ephemeral DH or KEM secret
+    kind: primitive
+    column: 2
+    row: 2
+  - id: authentication
+    label: Authentication
+    detail: Certificate, signature, PSK, or pinned key
+    kind: primitive
+    column: 2
+    row: 3
+  - id: transcript
+    label: Transcript binding
+    detail: Identities, algorithms, messages
+    kind: pattern
+    column: 3
+    row: 2
+  - id: traffic-keys
+    label: Traffic keys
+    detail: KDF outputs for data protection
+    kind: output
+    column: 4
+    row: 1
+  - id: aead-data
+    label: AEAD records
+    detail: Confidentiality and integrity
+    kind: output
+    column: 4
+    row: 2
+  - id: metadata
+    label: Metadata remains
+    detail: IPs, timing, packet sizes
+    kind: metadata
+    column: 4
+    row: 4
+edges:
+  - from: client
+    to: negotiation
+  - from: server
+    to: negotiation
+  - from: client
+    to: key-exchange
+  - from: server
+    to: key-exchange
+  - from: server
+    to: authentication
+  - from: negotiation
+    to: transcript
+  - from: key-exchange
+    to: transcript
+  - from: authentication
+    to: transcript
+  - from: transcript
+    to: traffic-keys
+  - from: traffic-keys
+    to: aead-data
+  - from: aead-data
+    to: metadata
+    kind: warning
+    label: does not hide

@@ -4,6 +4,7 @@ type: pattern
 level: design-pattern
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: mature
@@ -20,15 +21,17 @@ confidence_model:
 
 These design patterns are not single primitives. They are recurring ways to compose primitives, bind context, and manage cryptographic state over time.
 
+This is a grouped overview. [Domain Separation](/docs/design-patterns/domain-separation), [Transcript Binding](/docs/design-patterns/transcript-binding), and [Privacy-Preserving Revocation](/docs/design-patterns/privacy-preserving-revocation) now have standalone pages.
+
 ## Pattern matrix
 
 | Pattern | Main purpose | Common building blocks | Main failure |
 | --- | --- | --- | --- |
 | Encrypt-then-prove | Prove a statement about encrypted data | encryption, commitments, ZKPs | proof not bound to ciphertext or recipient |
 | Threshold issuance | Avoid one issuer/key having unilateral power | threshold signatures, MPC, DKG | quorum collusion or availability failure |
-| Revocation with privacy | Revoke access or credentials without tracking everyone | accumulators, status lists, ZKPs | revocation checks become tracking beacons |
-| Domain separation | Prevent cross-protocol confusion | labels, transcript hashes, KDF contexts | reusing keys or hashes across domains |
-| Transcript binding | Bind outputs to the full protocol transcript | KDFs, signatures, Fiat-Shamir, AEAD associated data | omitting identities, algorithms, or public inputs |
+| [Privacy-preserving revocation](/docs/design-patterns/privacy-preserving-revocation) | Revoke access or credentials without tracking everyone | accumulators, status lists, ZKPs | revocation checks become tracking beacons |
+| [Domain separation](/docs/design-patterns/domain-separation) | Prevent cross-protocol confusion | labels, transcript hashes, KDF contexts | reusing keys or hashes across domains |
+| [Transcript binding](/docs/design-patterns/transcript-binding) | Bind outputs to the full protocol transcript | KDFs, signatures, Fiat-Shamir, AEAD associated data | omitting identities, algorithms, or public inputs |
 | Key rotation and migration | Replace keys or algorithms over time | versioning, re-encryption, signatures, KDFs | stale keys, downgrade, or split trust roots |
 
 ## Encrypt-then-prove

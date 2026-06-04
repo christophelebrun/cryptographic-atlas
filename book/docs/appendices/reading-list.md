@@ -1,5 +1,5 @@
 ---
-title: Reading List
+title: Source Policy and Topic References
 type: appendix
 level: not-applicable
 template: reference
@@ -9,92 +9,44 @@ difficulty: beginner
 maturity: not-applicable
 tags:
   - references
-  - reading-list
+  - sources
 post_quantum_posture: not-applicable
 confidence_model:
   type: not-applicable
 ---
 
-# Reading List
+# Source Policy and Topic References
 
-This reading list mirrors the structured reference registry in `book/data/references.yml`.
+The atlas does not maintain a single canonical reading list for all readers. References should be topic-dependent: each concept, protocol, pattern, and case study should include a `Further reading` section close to the claims it supports.
 
-## General applied cryptography
+The structured source registry is `book/data/references.yml`. Concept cards and concrete instances refer to sources by registry ID so the book can later expose source filters, freshness checks, and dependency maps.
 
-- Boneh and Shoup, "A Graduate Course in Applied Cryptography."
-- Katz and Lindell, "Introduction to Modern Cryptography."
-- David Wong, "Real-World Cryptography."
-- Jean-Philippe Aumasson, "Serious Cryptography."
+## Editorial rule
 
-## Symmetric encryption and authentication
+- Put beginner-friendly orientation in the page body.
+- Put source-backed technical depth in the page's `Further reading` section.
+- Prefer online references with stable URLs.
+- Prefer standards, peer-reviewed papers, recognized preprints, textbooks, and official documentation.
+- Do not invent citations.
+- Mark uncertain or fast-moving claims with a verification TODO instead of presenting them as settled.
 
-- RFC 5116, "An Interface and Algorithms for Authenticated Encryption."
-- Rogaway, "Authenticated-Encryption with Associated-Data."
-- RFC 8439, "ChaCha20 and Poly1305 for IETF Protocols."
-- NIST SP 800-38D, "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC."
-- RFC 8452, "AES-GCM-SIV: Nonce Misuse-Resistant Authenticated Encryption."
-- RFC 9106, "Argon2 Memory-Hard Function for Password Hashing and Proof-of-Work Applications."
+## Machine-readable references
 
-## Assumptions, groups, and encodings
+The structured registry records:
 
-- RFC 7748, "Elliptic Curves for Security."
-- RFC 7919, "Negotiated Finite Field Diffie-Hellman Ephemeral Parameters for TLS."
-- RFC 9380, "Hashing to Elliptic Curves."
-- Bellare and Rogaway, "Random Oracles are Practical."
-- NIST, "Post-Quantum Cryptography Project."
+- reference ID;
+- title, authors, year, source type, URL, and optional DOI;
+- `used_by` topics.
 
-## Zero-knowledge proofs
+The content validator checks that every concept-card reference and concrete-instance reference points to a known registry ID.
 
-- Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
-- Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity."
-- Bünz et al., "Bulletproofs: Short Proofs for Confidential Transactions and More."
-- Kate, Zaverucha, and Goldberg, "Constant-Size Commitments to Polynomials and Their Applications."
-- Ben-Sasson et al., "Fast Reed-Solomon Interactive Oracle Proofs of Proximity."
-- Lund, Fortnow, Karloff, and Nisan, "Algebraic Methods for Interactive Proof Systems."
-- Gabizon and Williamson, "Plookup: A Simplified Polynomial Protocol for Lookup Tables."
-- Bowe, Grigg, and Hopwood, "Halo."
-- Kothapalli, Setty, and Tzialla, "Nova."
+## Topic-local examples
 
-## Structured primitives and credentials
+- [Secure Channels](/docs/protocols/secure-channels#further-reading) links to TLS 1.3, HPKE, Noise, and Signal specifications.
+- [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments#further-reading) links to KZG, FRI, and Halo references.
+- [Private Payments](/docs/case-studies/private-payments#further-reading) links to e-cash and Zerocash sources.
+- [Privacy-Preserving Revocation](/docs/design-patterns/privacy-preserving-revocation#further-reading) links to credential and vector-commitment sources.
 
-- Micali, Rabin, and Vadhan, "Verifiable Random Functions."
-- Chaum, "Blind Signatures for Untraceable Payments."
-- Catalano and Fiore, "Vector Commitments and Their Applications."
-- Camenisch and Shoup, "Practical Verifiable Encryption and Decryption of Discrete Logarithms."
-- Chaum, Fiat, and Naor, "Untraceable Electronic Cash."
+## Maintenance rule
 
-## Electronic voting
-
-- Benaloh, "Verifiable Secret-Ballot Elections."
-- Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms."
-
-## MPC and secure aggregation
-
-- Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
-- Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
-- Jarecki and Liu, "Efficient Oblivious Pseudorandom Function with Applications to Adaptive OT and Secure Computation of Set Intersection."
-- RFC 9497, "Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups."
-- Freedman, Nissim, and Pinkas, "Efficient Private Matching and Set Intersection."
-- Rabin, "How to Exchange Secrets by Oblivious Transfer."
-- Chor et al., "Private Information Retrieval."
-
-## Secure channels, tokens, and systems
-
-- RFC 8446, "The Transport Layer Security (TLS) Protocol Version 1.3."
-- RFC 9180, "Hybrid Public Key Encryption."
-- RFC 9383, "OPAQUE: An Asymmetric PAKE Protocol."
-- RFC 9576, "The Privacy Pass Architecture."
-- Signal, "The X3DH Key Agreement Protocol."
-- Signal, "The Double Ratchet Algorithm."
-- W3C, "Verifiable Credentials Data Model."
-- Ben-Sasson et al., "Zerocash: Decentralized Anonymous Payments from Bitcoin."
-- NIST SP 800-57, "Recommendation for Key Management."
-
-## Functional encryption
-
-- Boneh, Sahai, and Waters, "Functional Encryption: Definitions and Challenges."
-
-## VDFs and timelock encryption
-
-- Boneh et al., "Verifiable Delay Functions."
-- Wesolowski, "Efficient Verifiable Delay Functions."
+When a topic is updated, update its local `Further reading` section and the structured reference registry together. If a source is useful only for one page, it still belongs in the registry when a concept card or concrete instance needs to cite it by ID.

@@ -4,6 +4,7 @@ type: system
 level: system
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
@@ -20,12 +21,14 @@ confidence_model:
 
 This page covers system-level applications that compose many primitives and protocols. Each should eventually become a deeper case study if the atlas expands in that direction.
 
+This is a grouped overview. [Private Payments](/docs/case-studies/private-payments) and [ZK Rollups](/docs/case-studies/zk-rollups) now have standalone case studies.
+
 ## System matrix
 
 | System | Main goal | Typical building blocks | Main risk |
 | --- | --- | --- | --- |
-| Private payments | Transfer value with reduced transaction linkage | commitments, nullifiers, ZKPs, e-cash, ledgers | ledger and network metadata |
-| ZK rollups | Prove batches of state transitions succinctly | arithmetization, polynomial commitments, SNARKs/STARKs | data availability and prover centralization |
+| [Private payments](/docs/case-studies/private-payments) | Transfer value with reduced transaction linkage | commitments, nullifiers, ZKPs, e-cash, ledgers | ledger and network metadata |
+| [ZK rollups](/docs/case-studies/zk-rollups) | Prove batches of state transitions succinctly | arithmetization, polynomial commitments, SNARKs/STARKs | data availability and prover centralization |
 | Secure messaging | Protect message content and session keys | secure channels, Double Ratchet, signatures, KDFs, AEAD | endpoint compromise and metadata |
 | Privacy-preserving identity wallets | Present credentials with minimal disclosure | credentials, selective disclosure, ZKPs, revocation | issuer/verifier linkage and rare attributes |
 | Encrypted mempools | Hide transaction contents before ordering or inclusion | encryption, threshold decryption, commitments, sequencing rules | timing, censorship, key release |

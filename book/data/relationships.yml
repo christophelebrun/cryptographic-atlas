@@ -83,3 +83,43 @@ relationships:
     relation: composes-with
     target: mpc
     notes: PSI can be built from general MPC techniques or specialized protocols depending on the deployment model.
+  - source: secure-channels
+    relation: composes-with
+    target: transcript-binding
+    notes: Secure channels bind identities, negotiation, and key exchange into the derived traffic keys.
+  - source: secure-channels
+    relation: composes-with
+    target: authenticated-encryption
+    notes: Secure channels usually protect application records with AEAD once handshake keys are derived.
+  - source: password-authenticated-key-exchange
+    relation: composes-with
+    target: secure-channels
+    notes: PAKEs can establish or authenticate a session key that is then used by a secure channel.
+  - source: oblivious-transfer
+    relation: used-in
+    target: mpc
+    notes: OT is a core building block for many MPC and garbled-circuit protocols.
+  - source: private-information-retrieval
+    relation: contrasts-with
+    target: private-set-intersection
+    notes: PIR hides a database index, while PSI reveals an intersection or intersection-derived output.
+  - source: polynomial-commitments
+    relation: used-in
+    target: zk-rollups
+    notes: Many rollup proof systems use polynomial commitments to bind witness or trace polynomials.
+  - source: vector-commitments
+    relation: used-in
+    target: privacy-preserving-revocation
+    notes: Revocation systems can use vector commitments or authenticated status lists for compact status proofs.
+  - source: private-payments
+    relation: composes-with
+    target: nullifier
+    notes: Private payments often use nullifiers or serial numbers to prevent duplicate spending.
+  - source: zk-rollups
+    relation: composes-with
+    target: transcript-binding
+    notes: Rollup proofs must bind public inputs, state roots, verifier keys, and batch data to the proof.
+  - source: domain-separation
+    relation: strengthens
+    target: transcript-binding
+    notes: Domain separation makes transcript fields and protocol phases unambiguous.

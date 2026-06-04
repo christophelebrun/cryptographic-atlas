@@ -4,6 +4,7 @@ type: protocol
 level: protocol
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
@@ -20,14 +21,16 @@ confidence_model:
 
 This page covers protocol families that appear repeatedly in privacy-preserving systems, secure messaging, identity, and private payments.
 
+This is a grouped overview. [Secure Channels](/docs/protocols/secure-channels), [Oblivious Transfer](/docs/protocols/oblivious-transfer), [Private Information Retrieval](/docs/protocols/private-information-retrieval), and [Password-Authenticated Key Exchange](/docs/protocols/password-authenticated-key-exchange) now have standalone pages.
+
 ## Protocol matrix
 
 | Protocol family | Goal | Typical building blocks | Main caution |
 | --- | --- | --- | --- |
-| Oblivious transfer | Receiver obtains one of several sender messages without revealing which one | public-key crypto, OPRFs, OT extension | Core MPC building block; adversary model matters. |
-| Private information retrieval | Client retrieves a database item without revealing which item | coding, homomorphic encryption, PIR-specific protocols | Server/database size and access-pattern assumptions matter. |
-| Password-authenticated key exchange | Parties derive a strong session key from a password without exposing it to offline guessing | PAKE protocol, KDF, authenticated transcript | Not the same as password hashing. |
-| Secure channels | Establish authenticated, encrypted sessions | key exchange, signatures/PSKs, KDFs, AEAD | Metadata and endpoint compromise remain. |
+| [Oblivious transfer](/docs/protocols/oblivious-transfer) | Receiver obtains one of several sender messages without revealing which one | public-key crypto, OPRFs, OT extension | Core MPC building block; adversary model matters. |
+| [Private information retrieval](/docs/protocols/private-information-retrieval) | Client retrieves a database item without revealing which item | coding, homomorphic encryption, PIR-specific protocols | Server/database size and access-pattern assumptions matter. |
+| [Password-authenticated key exchange](/docs/protocols/password-authenticated-key-exchange) | Parties derive a strong session key from a password without exposing it to offline guessing | PAKE protocol, KDF, authenticated transcript | Not the same as password hashing. |
+| [Secure channels](/docs/protocols/secure-channels) | Establish authenticated, encrypted sessions | key exchange, signatures/PSKs, KDFs, AEAD | Metadata and endpoint compromise remain. |
 | Anonymous tokens | Issue or redeem tokens without stable identity linkage | blind signatures, OPRFs, accumulators, rate limits | Token privacy depends on issuance, redemption, and transport metadata. |
 | Blind-signature credentials | Issue credentials using blind signatures | blind signatures, selective disclosure, issuer policy | Blind issuance does not solve revocation or misuse. |
 | Private-payment protocols | Transfer value while hiding payer, payee, amount, or linkage under a model | commitments, nullifiers, ZKPs, e-cash, ledgers | Ledger metadata and double-spend rules dominate. |

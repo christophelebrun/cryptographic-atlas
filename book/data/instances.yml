@@ -1,0 +1,823 @@
+instances:
+  - id: sha-256
+    name: SHA-256
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - SHA-2 collision resistance and preimage resistance remain adequate for the use case.
+      - Output length and domain separation match the security goal.
+    common_uses:
+      - Hashing public data.
+      - Commitment preimages with sufficient entropy.
+      - Transcript hashing and identifier derivation.
+    cautions:
+      - Do not use a bare hash as a message authentication code.
+      - Do not treat hash commitments to low-entropy values as hiding without salt or randomness.
+    references:
+      - nist-fips-180-4
+  - id: sha3-256
+    name: SHA3-256
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Keccak sponge security and selected output length remain adequate.
+      - The application uses the standardized SHA-3 function rather than an incompatible Keccak variant.
+    common_uses:
+      - Hashing and transcript binding.
+      - Systems that prefer SHA-3 standardization or sponge constructions.
+    cautions:
+      - Be explicit about SHA3-256 versus legacy Keccak-256 encodings.
+      - Domain separation is still required across protocol contexts.
+    references:
+      - nist-fips-202
+  - id: shake128
+    name: SHAKE128
+    kind: algorithm
+    instance_of:
+      - hash-function
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The requested output length is chosen for the intended security level.
+      - Callers encode context and output length unambiguously.
+    common_uses:
+      - Extendable-output hashing.
+      - Random oracle style domain-separated expansion.
+      - Some post-quantum schemes and hash-based designs.
+    cautions:
+      - Variable output length can cause interoperability mistakes.
+      - The same input should not be reused across domains without labels.
+    references:
+      - nist-fips-202
+  - id: aes-256
+    name: AES-256
+    kind: algorithm
+    instance_of:
+      - symmetric-encryption
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - AES remains secure at the selected key size.
+      - The block cipher is used through a reviewed mode.
+    common_uses:
+      - Symmetric encryption modes.
+      - AEAD schemes such as AES-GCM and AES-GCM-SIV.
+      - Key wrapping and storage encryption.
+    cautions:
+      - AES by itself is only a block cipher, not variable-length authenticated encryption.
+      - Implementation side channels matter.
+    references:
+      - nist-fips-197
+  - id: aes-gcm
+    name: AES-GCM
+    kind: mode
+    instance_of:
+      - authenticated-encryption
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Nonces are unique for each key.
+      - Authentication tags are verified before plaintext is trusted.
+    common_uses:
+      - Transport encryption.
+      - Storage encryption with carefully managed nonces.
+      - Hardware-accelerated AEAD.
+    cautions:
+      - Nonce reuse can be catastrophic.
+      - Associated data must include protocol context when context matters.
+    references:
+      - nist-sp-800-38d
+      - rfc5116-aead
+  - id: chacha20-poly1305
+    name: ChaCha20-Poly1305
+    kind: mode
+    instance_of:
+      - authenticated-encryption
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Nonces are unique for each key.
+      - The AEAD construction is used as specified.
+    common_uses:
+      - TLS and application transport encryption.
+      - Mobile and software-heavy environments without AES acceleration.
+    cautions:
+      - Nonce reuse remains dangerous.
+      - Associated data must bind the protocol context.
+    references:
+      - rfc8439-chacha20-poly1305
+  - id: aes-gcm-siv
+    name: AES-GCM-SIV
+    kind: mode
+    instance_of:
+      - authenticated-encryption
+    taxonomy_level: basic-primitive
+    maturity: mature
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The synthetic-IV construction is used directly rather than recreated ad hoc.
+      - Deterministic leakage under repeated plaintext and associated data is acceptable.
+    common_uses:
+      - AEAD deployments where accidental nonce reuse is a realistic risk.
+      - Storage or message systems that need bounded misuse resistance.
+    cautions:
+      - Misuse-resistant does not mean misuse-proof.
+      - Repeated plaintext/context pairs can still reveal equality.
+    references:
+      - rfc8452-aes-gcm-siv
+  - id: hmac-sha-256
+    name: HMAC-SHA-256
+    kind: construction
+    instance_of:
+      - message-authentication-codes
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The HMAC key remains secret.
+      - SHA-256 remains adequate for HMAC use.
+    common_uses:
+      - Message authentication.
+      - KDF internals.
+      - Webhook and API request authentication.
+    cautions:
+      - HMAC authenticates only parties that share the key.
+      - It does not provide non-repudiation or public verifiability.
+    references:
+      - nist-fips-180-4
+      - rfc5869-hkdf
+  - id: hkdf
+    name: HKDF
+    kind: construction
+    instance_of:
+      - key-derivation-functions
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Input keying material has enough entropy for the use case.
+      - Salt, labels, and info fields are bound to the intended context.
+    common_uses:
+      - Session key schedules.
+      - Deriving multiple keys from shared secrets.
+      - Transcript-bound secure channels.
+    cautions:
+      - HKDF is not a password hashing function.
+      - Missing context labels can cause key reuse across domains.
+    references:
+      - rfc5869-hkdf
+  - id: argon2id
+    name: Argon2id
+    kind: algorithm
+    instance_of:
+      - key-derivation-functions
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Memory, time, and parallelism parameters match current hardware and risk.
+      - Password reset and online guessing controls are handled outside the hash.
+    common_uses:
+      - Password verifier storage.
+      - Memory-hard password-derived secrets.
+    cautions:
+      - It cannot add entropy to weak passwords.
+      - Parameters need periodic review.
+    references:
+      - rfc9106-argon2
+  - id: ed25519
+    name: Ed25519
+    kind: scheme
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Discrete logarithms over the selected Edwards curve remain hard.
+      - Implementations follow the specified encoding and verification rules.
+    common_uses:
+      - Software signing.
+      - Authentication keys.
+      - Protocol identity keys.
+    cautions:
+      - Quantum attacks against elliptic-curve discrete logarithms would break it.
+      - Context and domain separation are still needed at the message layer.
+    references:
+      - rfc8032-eddsa
+      - shor-quantum-factoring
+  - id: ecdsa-p256
+    name: ECDSA P-256
+    kind: scheme
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Elliptic-curve discrete logarithms remain hard for P-256.
+      - Signature nonces are generated correctly and never reused.
+    common_uses:
+      - Web PKI and certificates.
+      - Hardware-backed signing.
+      - Legacy interoperable systems.
+    cautions:
+      - Nonce failures can reveal signing keys.
+      - Quantum attacks would break the underlying curve assumption.
+    references:
+      - nist-fips-186-5
+      - shor-quantum-factoring
+  - id: rsa-pss
+    name: RSA-PSS
+    kind: scheme
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Factoring large RSA moduli remains hard.
+      - Padding and hash parameters are enforced exactly.
+    common_uses:
+      - Certificate and software-signing environments.
+      - Systems that require RSA interoperability.
+    cautions:
+      - Do not use raw RSA signatures.
+      - Quantum factoring would break RSA assumptions.
+    references:
+      - nist-fips-186-5
+      - rsa-original
+      - shor-quantum-factoring
+  - id: x25519
+    name: X25519
+    kind: algorithm
+    instance_of:
+      - key-encapsulation-and-exchange
+    taxonomy_level: basic-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Curve25519 discrete logarithms remain hard.
+      - Public keys are handled according to the protocol's validation and transcript rules.
+    common_uses:
+      - Diffie-Hellman key agreement.
+      - TLS, Noise, Signal, and application handshakes.
+    cautions:
+      - It provides a shared secret, not endpoint authentication by itself.
+      - Quantum attacks would break the elliptic-curve assumption.
+    references:
+      - rfc7748-curves
+      - shor-quantum-factoring
+  - id: ml-kem
+    name: ML-KEM
+    kind: standard
+    instance_of:
+      - key-encapsulation-and-exchange
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-LWE remains hard at the selected parameter set.
+      - Implementations resist side-channel and decapsulation-failure leakage.
+    common_uses:
+      - Post-quantum key establishment.
+      - Hybrid migration with classical key exchange.
+    cautions:
+      - It is a KEM, not a complete secure-channel protocol.
+      - Parameter sets and interoperability profiles must be tracked.
+    references:
+      - nist-fips-203
+  - id: ml-dsa
+    name: ML-DSA
+    kind: standard
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Module-lattice signature assumptions remain hard at the chosen parameter set.
+      - Implementations handle randomness, rejection sampling, and side channels correctly.
+    common_uses:
+      - Post-quantum digital signatures.
+      - Hybrid certificate and software-signing migration.
+    cautions:
+      - Signatures and public keys are larger than many classical schemes.
+      - Deployment confidence depends on implementation review and ecosystem support.
+    references:
+      - nist-fips-204
+  - id: slh-dsa
+    name: SLH-DSA
+    kind: standard
+    instance_of:
+      - digital-signature
+    taxonomy_level: basic-primitive
+    maturity: emerging
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Hash-function assumptions remain adequate at the selected parameter set.
+      - State and parameter choices follow the standard.
+    common_uses:
+      - Conservative post-quantum signatures.
+      - Environments that prefer hash-based assumptions.
+    cautions:
+      - Signatures are relatively large.
+      - Performance and key-management trade-offs differ from ML-DSA.
+    references:
+      - nist-fips-205
+  - id: pedersen-commitment
+    name: Pedersen commitment
+    kind: scheme
+    instance_of:
+      - pedersen-commitment
+    taxonomy_level: basic-primitive
+    maturity: mature
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - Discrete logarithms are hard in the chosen group.
+      - The generator relation is unknown when binding is required.
+    common_uses:
+      - Hidden-value commitments.
+      - Range proofs.
+      - Homomorphic tally and balance checks.
+    cautions:
+      - Binding is broken if the generator trapdoor is known.
+      - It does not authenticate who made the commitment.
+    references:
+      - pedersen-commitments
+  - id: kzg-commitment
+    name: KZG commitment
+    kind: scheme
+    instance_of:
+      - polynomial-commitments
+    taxonomy_level: structured-primitive
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: true
+    assumptions:
+      - Pairing assumptions hold for the selected curve.
+      - Structured setup toxic waste is destroyed or otherwise unavailable.
+    common_uses:
+      - Polynomial openings in SNARKs.
+      - Data-availability and vector-commitment designs.
+      - Succinct batch verification.
+    cautions:
+      - Setup and curve choice dominate the trust model.
+      - Wrong evaluation domains or transcript binding can invalidate security.
+    references:
+      - kate-zaverucha-goldberg-kzg
+  - id: merkle-tree
+    name: Merkle tree
+    kind: construction
+    instance_of:
+      - accumulators-and-merkle-trees
+    taxonomy_level: structured-primitive
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - The hash function remains collision resistant.
+      - Tree shape, leaf encoding, and domain separation are unambiguous.
+    common_uses:
+      - Inclusion proofs.
+      - Transparency logs.
+      - Anonymous membership sets.
+    cautions:
+      - Merkle inclusion does not prove freshness without an authenticated root.
+      - Poor leaf encoding can create ambiguity.
+    references:
+      - merkle-signatures
+      - nist-fips-180-4
+  - id: shamir-secret-sharing
+    name: Shamir secret sharing
+    kind: scheme
+    instance_of:
+      - secret-sharing
+    taxonomy_level: basic-primitive
+    maturity: mature
+    post_quantum_posture: not-applicable
+    requires_trusted_setup: false
+    assumptions:
+      - Shares are generated over an appropriate finite field.
+      - Fewer than the threshold number of shares remain hidden from the adversary.
+    common_uses:
+      - Backup key splitting.
+      - Threshold setup ceremonies.
+      - MPC and distributed key generation components.
+    cautions:
+      - Plain Shamir sharing does not authenticate shares.
+      - Losing too many shares loses the secret.
+    references:
+      - shamir-secret-sharing
+  - id: wesolowski-vdf
+    name: Wesolowski VDF
+    kind: scheme
+    instance_of:
+      - timelock-and-vdfs
+    taxonomy_level: structured-primitive
+    maturity: emerging
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: depends
+    assumptions:
+      - The underlying group or RSA-style setup has the required delay properties.
+      - Adversaries cannot parallelize the delay beyond the model.
+    common_uses:
+      - Public randomness beacons.
+      - Delayed reveal and timelock-style systems.
+    cautions:
+      - Hardware assumptions and setup choices matter.
+      - Delay does not provide secrecy after the time elapses.
+    references:
+      - wesolowski-vdf
+  - id: groth16
+    name: Groth16
+    kind: scheme
+    instance_of:
+      - snarks-starks-bulletproofs
+    taxonomy_level: proof-system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: true
+    assumptions:
+      - Pairing assumptions hold for the selected curve.
+      - Circuit-specific setup is generated correctly and toxic waste is unavailable.
+    common_uses:
+      - Succinct zero-knowledge proofs.
+      - Private payment systems.
+      - Rollup and validity-proof systems with fixed circuits.
+    cautions:
+      - Setup is circuit-specific.
+      - Verifying the wrong verification key or public inputs breaks the system.
+    references:
+      - groth16
+      - bowe-setup-mpc
+  - id: bulletproof-range-proof
+    name: Bulletproof range proof
+    kind: scheme
+    instance_of:
+      - range-proof
+    taxonomy_level: proof-system
+    maturity: mature
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Discrete logarithms remain hard in the selected group.
+      - The commitment and transcript are bound to the intended statement.
+    common_uses:
+      - Confidential transaction amount proofs.
+      - Range checks over committed values.
+    cautions:
+      - Verification and proof-size trade-offs differ from SNARK-style systems.
+      - It does not hide metadata around the transaction.
+    references:
+      - bulletproofs
+  - id: fri
+    name: FRI
+    kind: construction
+    instance_of:
+      - snarks-starks-bulletproofs
+    taxonomy_level: proof-system
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Field choice, query count, hash function, and soundness parameters are adequate.
+      - Fiat-Shamir transcript binding is correct when made non-interactive.
+    common_uses:
+      - STARK-style proof systems.
+      - Transparent validity proofs.
+      - ZK-rollup proof backends.
+    cautions:
+      - FRI proves low-degree proximity, not program correctness by itself.
+      - Parameter mistakes affect soundness and proof size.
+    references:
+      - ben-sasson-fri
+      - stark-integrity
+  - id: tls-1-3
+    name: TLS 1.3
+    kind: protocol-suite
+    instance_of:
+      - secure-channels
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Endpoint authentication, certificate validation, key exchange, and AEAD are implemented correctly.
+      - Classical authentication and key exchange assumptions remain acceptable or are replaced by hybrid profiles.
+    common_uses:
+      - Web transport security.
+      - API and service-to-service channels.
+      - Certificate-authenticated sessions.
+    cautions:
+      - TLS hides content, not endpoint IP addresses or timing.
+      - Classical deployments are not post-quantum secure.
+    references:
+      - rfc8446-tls13
+  - id: hpke
+    name: HPKE
+    kind: standard
+    instance_of:
+      - public-key-encryption
+      - secure-channels
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - The selected KEM, KDF, and AEAD suite remains secure.
+      - Application context is bound into the info and associated-data fields.
+    common_uses:
+      - Application-layer encrypted messages.
+      - Encrypted ClientHello-style designs.
+      - Protocol components that need recipient public-key encryption.
+    cautions:
+      - HPKE is not a full authenticated channel by itself.
+      - Authentication and replay handling are application responsibilities unless added by the mode.
+    references:
+      - rfc9180-hpke
+  - id: noise-patterns
+    name: Noise patterns
+    kind: protocol-suite
+    instance_of:
+      - secure-channels
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Pattern choice matches the authentication and forward-secrecy goal.
+      - Handshake hashes and prologue data bind the intended context.
+    common_uses:
+      - Custom secure-channel handshakes.
+      - Peer-to-peer protocols.
+      - Systems that need explicit handshake patterns.
+    cautions:
+      - Picking the wrong pattern changes the security goal.
+      - Classical Diffie-Hellman patterns are quantum-vulnerable.
+    references:
+      - noise-framework
+  - id: signal-double-ratchet
+    name: Signal Double Ratchet
+    kind: protocol-suite
+    instance_of:
+      - secure-channels
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Identity keys, prekeys, session keys, and deletion behavior are handled correctly.
+      - The initial key agreement and ongoing ratchets remain secure.
+    common_uses:
+      - Secure messaging sessions.
+      - Forward secrecy and post-compromise recovery in asynchronous messaging.
+    cautions:
+      - It does not hide social graph, timing, or endpoint compromise.
+      - Multi-device and backup behavior can weaken the system.
+    references:
+      - signal-x3dh
+      - signal-double-ratchet
+  - id: opaque
+    name: OPAQUE
+    kind: protocol-suite
+    instance_of:
+      - password-authenticated-key-exchange
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The OPRF, KDF, envelope, and authenticated key exchange are used as specified.
+      - Server-side rate limits and password reset flows address online guessing.
+    common_uses:
+      - Password-based login without exposing a reusable password verifier.
+      - Augmented PAKE deployments.
+    cautions:
+      - It is not a password manager or account recovery system.
+      - The standardized prime-order-group suites are classical.
+    references:
+      - rfc9383-opaque
+      - rfc9497-voprf
+  - id: rfc9497-voprf
+    name: RFC 9497 VOPRF suites
+    kind: protocol-suite
+    instance_of:
+      - oblivious-pseudorandom-functions
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Prime-order-group assumptions hold.
+      - Applications bind protocol mode, suite, and context into inputs.
+    common_uses:
+      - Anonymous tokens.
+      - Password hardening.
+      - PSI-style protocols.
+    cautions:
+      - OPRF privacy does not hide transport metadata.
+      - Prime-order-group suites are quantum-vulnerable.
+    references:
+      - rfc9497-voprf
+  - id: diffie-hellman-psi
+    name: Diffie-Hellman PSI
+    kind: protocol-suite
+    instance_of:
+      - private-set-intersection
+    taxonomy_level: protocol
+    maturity: mature
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - Discrete-logarithm assumptions hold in the chosen group.
+      - Parties use the protocol variant matching the adversary model.
+    common_uses:
+      - Private matching.
+      - Contact discovery variants.
+      - Dataset overlap checks.
+    cautions:
+      - Cardinality, repeated queries, timing, or output handling can leak sensitive information.
+      - Semi-honest variants are not safe for malicious settings.
+    references:
+      - freedman-nissim-pinkas-psi
+      - diffie-hellman-new-directions
+  - id: oprf-psi
+    name: OPRF-based PSI
+    kind: protocol-suite
+    instance_of:
+      - private-set-intersection
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: false
+    assumptions:
+      - The OPRF remains secure and inputs are encoded consistently.
+      - Output release and cardinality leakage are acceptable under the use case.
+    common_uses:
+      - Private matching.
+      - Breach and abuse checks.
+      - Contact discovery with server-aided computation.
+    cautions:
+      - PSI does not hide that a query occurred.
+      - Low-entropy inputs may require rate limits and padding.
+    references:
+      - jarecki-liu-oprf
+      - rfc9497-voprf
+  - id: bonawitz-secure-aggregation
+    name: Bonawitz-style secure aggregation
+    kind: protocol-suite
+    instance_of:
+      - secure-aggregation
+    taxonomy_level: protocol
+    maturity: deployed
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Dropout handling and pairwise masks are implemented correctly.
+      - Cohorts are large enough to hide individual contributions.
+    common_uses:
+      - Federated learning aggregation.
+      - Private telemetry sums.
+    cautions:
+      - Small cohorts and repeated aggregates can leak.
+      - Secure aggregation does not validate malicious client updates by itself.
+    references:
+      - bonawitz-secure-aggregation
+  - id: zerocash-note-system
+    name: Zerocash-style note system
+    kind: scheme
+    instance_of:
+      - private-payments
+    taxonomy_level: system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: true
+    assumptions:
+      - Proof-system, commitment, nullifier, and note-secret assumptions hold.
+      - Ledger rules enforce conservation and duplicate-spend rejection.
+    common_uses:
+      - Shielded private payments.
+      - Ledger systems that need hidden amounts and recipients.
+    cautions:
+      - Network, exchange, timing, and amount metadata can still link users.
+      - Trusted setup and wallet key handling dominate practical risk.
+    references:
+      - zerocash
+      - groth16
+  - id: groth16-rollup
+    name: Groth16-based rollup
+    kind: protocol-suite
+    instance_of:
+      - zk-rollups
+    taxonomy_level: system
+    maturity: deployed
+    post_quantum_posture: vulnerable
+    requires_trusted_setup: true
+    assumptions:
+      - The circuit exactly represents the state-transition function.
+      - Data availability and verifier-key management are handled outside the proof.
+    common_uses:
+      - Validity-rollup systems with compact verification.
+      - Fixed-circuit state-transition proofs.
+    cautions:
+      - A valid proof does not imply data availability.
+      - Prover, sequencer, and upgrade-key centralization are system risks.
+    references:
+      - groth16
+      - kate-zaverucha-goldberg-kzg
+  - id: stark-rollup
+    name: STARK-style rollup
+    kind: protocol-suite
+    instance_of:
+      - zk-rollups
+    taxonomy_level: system
+    maturity: deployed
+    post_quantum_posture: plausible
+    requires_trusted_setup: false
+    assumptions:
+      - Hash and FRI parameters provide the intended soundness level.
+      - The arithmetized transition matches the intended state machine.
+    common_uses:
+      - Transparent validity proofs for rollup systems.
+      - High-throughput state-transition verification.
+    cautions:
+      - Proofs can be larger than pairing-based SNARK proofs.
+      - Data availability and sequencer behavior remain separate assumptions.
+    references:
+      - stark-integrity
+      - ben-sasson-fri
+  - id: domain-separated-hash
+    name: Domain-separated hash
+    kind: construction
+    instance_of:
+      - domain-separation
+    taxonomy_level: design-pattern
+    maturity: deployed
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - Labels, versions, and encodings are unique and unambiguous.
+      - The underlying hash or XOF remains secure.
+    common_uses:
+      - Signatures over structured messages.
+      - Fiat-Shamir transcripts.
+      - Chain- or application-specific identifiers.
+    cautions:
+      - Labels must be specified and reviewed, not improvised per implementation.
+      - Concatenation without length encoding can reintroduce ambiguity.
+    references:
+      - rfc9380-hash-to-curve
+      - boneh-shoup-applied-cryptography
+  - id: transcript-hash-binding
+    name: Transcript hash binding
+    kind: construction
+    instance_of:
+      - transcript-binding
+    taxonomy_level: design-pattern
+    maturity: deployed
+    post_quantum_posture: depends
+    requires_trusted_setup: false
+    assumptions:
+      - All security-critical messages, identities, algorithms, and public inputs are included.
+      - Each party reconstructs and verifies the transcript independently.
+    common_uses:
+      - Secure-channel handshakes.
+      - Fiat-Shamir challenges.
+      - Threshold signing and proof aggregation.
+    cautions:
+      - Omitting algorithm choices or public inputs can enable downgrade or statement-substitution attacks.
+      - Transcript hashes do not hide public transcript metadata.
+    references:
+      - rfc8446-tls13
+      - bellare-rogaway-random-oracle

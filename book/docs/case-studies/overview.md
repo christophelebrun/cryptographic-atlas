@@ -20,13 +20,15 @@ Case studies show how multiple concepts interact in system designs. They are map
 
 ## Current studies
 
-- Additional systems and applications.
-- Private DAO voting.
-- Coercion-resistant voting.
-- Anonymous airdrops.
+- [Additional systems and applications](/docs/case-studies/additional-systems).
+- [Private payments](/docs/case-studies/private-payments).
+- [ZK rollups](/docs/case-studies/zk-rollups).
+- [Private DAO voting](/docs/case-studies/private-dao-voting).
+- [Coercion-resistant voting](/docs/case-studies/coercion-resistant-voting).
+- [Anonymous airdrops](/docs/case-studies/anonymous-airdrop).
 
 ## Reading rule
 
 Track goals, non-goals, building blocks, leaks, and maturity warnings separately.
 
-See [Additional Systems and Applications](/docs/case-studies/additional-systems).
+Start with [Additional Systems and Applications](/docs/case-studies/additional-systems) for the broad map, then use standalone case studies for deeper treatment.

@@ -22,6 +22,7 @@ const validators = {
   references: ajv.compile(loadJson(path.join(schemasDir, 'references.schema.json'))),
   relationships: ajv.compile(loadJson(path.join(schemasDir, 'relationships.schema.json'))),
   comparisonMatrix: ajv.compile(loadJson(path.join(schemasDir, 'comparison-matrix.schema.json'))),
+  instances: ajv.compile(loadJson(path.join(schemasDir, 'instances.schema.json'))),
   diagram: ajv.compile(loadJson(path.join(schemasDir, 'diagram.schema.json'))),
 };
 
@@ -228,6 +229,31 @@ for (const {file, reference} of conceptCardReferences) {
   if (!referenceIds.has(reference)) {
     errors.push(`${relative(file)}: unknown reference id "${reference}"`);
   }
+}
+
+const instancesFile = path.join(dataDir, 'instances.yml');
+if (fs.existsSync(instancesFile)) {
+  const instancesData = parseYaml(instancesFile);
+  validateObject(instancesFile, instancesData, validators.instances);
+  const instanceIds = new Set();
+  for (const instance of instancesData.instances || []) {
+    if (instanceIds.has(instance.id)) errors.push(`${relative(instancesFile)}: duplicate instance id "${instance.id}"`);
+    instanceIds.add(instance.id);
+
+    for (const parent of instance.instance_of || []) {
+      if (!conceptCardIds.has(parent)) {
+        errors.push(`${relative(instancesFile)}: instance "${instance.id}" references unknown parent concept "${parent}"`);
+      }
+    }
+
+    for (const reference of instance.references || []) {
+      if (!referenceIds.has(reference)) {
+        errors.push(`${relative(instancesFile)}: instance "${instance.id}" references unknown reference "${reference}"`);
+      }
+    }
+  }
+} else {
+  errors.push('data/instances.yml: missing concrete instance registry');
 }
 
 const relationshipsFile = path.join(dataDir, 'relationships.yml');

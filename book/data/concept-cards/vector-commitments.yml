@@ -1,0 +1,58 @@
+id: vector-commitments
+name: Vector Commitments
+category: Structured primitives
+level: structured-primitive
+short_intuition: Commit to an indexed list and prove claims about selected positions.
+security_goals:
+  - binding
+  - compact openings
+  - authenticated indexing
+assumptions:
+  - hash, RSA, pairing, or polynomial-commitment assumptions
+  - authentic roots
+  - unambiguous index encoding
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - stale roots are accepted
+    - index encodings are ambiguous
+    - update witnesses are inconsistent
+  setup:
+    - commitment parameters or authenticated roots
+typical_uses:
+  - membership proofs
+  - state commitments
+  - revocation lists
+does_not_provide:
+  - freshness by itself
+  - privacy unless hiding is added
+  - efficient updates in every construction
+composition_risks:
+  - stale-root attacks
+  - path or index leakage
+  - witness update failures
+metadata_leaks:
+  - queried index
+  - tree path shape
+  - root version
+implementation_risk: high
+auditability: publicly-verifiable
+parameter_sensitivity: scheme-dependent
+revocation_story: Often used to implement revocation; freshness policy is external.
+operational_failure_modes:
+  - stale status roots
+  - ambiguous leaf encoding
+  - missing root signatures
+maturity: mature
+related:
+  - accumulators-and-merkle-trees
+  - polynomial-commitments
+  - privacy-preserving-revocation
+references:
+  - catalano-fiore-vector-commitments
+  - merkle-signatures
+  - kate-zaverucha-goldberg-kzg

@@ -30,6 +30,10 @@ Protocols specify how parties interact. They combine primitives, messages, state
 ## Covered protocol families
 
 - [Additional protocol families](/docs/protocols/additional-protocol-families)
+- [Secure channels](/docs/protocols/secure-channels)
+- [Password-authenticated key exchange](/docs/protocols/password-authenticated-key-exchange)
+- [Oblivious transfer](/docs/protocols/oblivious-transfer)
+- [Private information retrieval](/docs/protocols/private-information-retrieval)
 - [Anonymous credentials](/docs/protocols/anonymous-credentials)
 - [Nullifiers](/docs/protocols/nullifiers)
 - [Oblivious pseudorandom functions](/docs/protocols/oblivious-pseudorandom-functions)
@@ -43,4 +47,4 @@ Protocols specify how parties interact. They combine primitives, messages, state
 
 A protocol can fail even if every primitive inside it is sound.
 
-Protocol coverage is still intentionally high-level in some areas. Full standalone pages can be promoted from the additional protocol-family coverage as needed.
+Protocol coverage is still intentionally grouped in some areas. The grouped page remains a map for families that do not yet need a standalone page.

@@ -4,6 +4,7 @@ type: primitive
 level: structured-primitive
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
@@ -20,14 +21,16 @@ confidence_model:
 
 These primitives add structure beyond basic encryption, signatures, commitments, or hashes. They are common in credentials, randomness, e-cash, rollups, and private payment systems.
 
+This is a grouped overview. [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments) and [Vector Commitments](/docs/structured-primitives/vector-commitments) now have standalone pages because their assumptions and failure modes are important enough to track separately.
+
 ## Classification matrix
 
 | Concept | Level | Typical role | Main caution |
 | --- | --- | --- | --- |
 | Verifiable random functions (VRFs) | structured primitive | Publicly verifiable pseudorandom output from a secret key | Usually signature-like and scheme-specific. |
 | Blind signatures | structured primitive | Signer authorizes a hidden message | Blindness does not imply unlinkable spending by itself. |
-| Polynomial commitments | structured primitive / proof-system building block | Commit to a polynomial and open evaluations | Setup, pairing, or transcript assumptions vary. |
-| Vector commitments | structured primitive | Commit to indexed values with compact openings | Update, non-membership, and setup models differ. |
+| [Polynomial commitments](/docs/structured-primitives/polynomial-commitments) | structured primitive / proof-system building block | Commit to a polynomial and open evaluations | Setup, pairing, or transcript assumptions vary. |
+| [Vector commitments](/docs/structured-primitives/vector-commitments) | structured primitive | Commit to indexed values with compact openings | Update, non-membership, and setup models differ. |
 | Verifiable encryption | structured primitive | Encrypt while proving something about the plaintext | Easy to prove the wrong statement or leak metadata. |
 | E-cash primitives | structured primitive family | Issue, transfer, and redeem digital coins with privacy controls | Double-spend handling and issuer trust dominate. |
 
@@ -173,7 +176,7 @@ Confidence varies: mathematical-assumption for core schemes, public-verifiabilit
 - [Commitments](/docs/primitives/commitments)
 - [Accumulators and Merkle Trees](/docs/structured-primitives/accumulators-and-merkle-trees)
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
-- [Private Payments](/docs/case-studies/additional-systems#private-payments)
+- [Private Payments](/docs/case-studies/private-payments)
 - [Anonymous Tokens](/docs/protocols/additional-protocol-families#anonymous-tokens)
 
 ## Further reading

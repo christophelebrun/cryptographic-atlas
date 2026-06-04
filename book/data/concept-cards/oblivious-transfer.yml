@@ -1,0 +1,58 @@
+id: oblivious-transfer
+name: Oblivious Transfer
+category: Protocols
+level: protocol
+short_intuition: A receiver learns one selected message while hiding the choice and not learning the others.
+security_goals:
+  - receiver choice privacy
+  - unchosen message privacy
+  - correctness
+assumptions:
+  - adversary model matches the OT variant
+  - authenticated channels
+  - secure base OT or setup
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: null
+  breaks_if:
+    - semi-honest OT is used against malicious parties
+    - base OT assumptions fail
+    - correlation checks are skipped
+  setup:
+    - base OT or correlated randomness
+typical_uses:
+  - MPC
+  - garbled circuits
+  - private set intersection
+does_not_provide:
+  - fairness
+  - hiding that parties interacted
+  - general MPC by itself
+composition_risks:
+  - mismatched adversary model
+  - unauthenticated transport
+  - reused setup material
+metadata_leaks:
+  - interaction timing
+  - batch size
+  - abort behavior
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: scheme-dependent
+revocation_story: Not applicable; failed or compromised setup material must be discarded and regenerated.
+operational_failure_modes:
+  - incorrect extension checks
+  - weak base OT
+  - unauthenticated peer identity
+maturity: mature
+related:
+  - mpc
+  - private-set-intersection
+  - oblivious-pseudorandom-functions
+references:
+  - rabin-oblivious-transfer
+  - canetti-uc
+  - boneh-shoup-applied-cryptography

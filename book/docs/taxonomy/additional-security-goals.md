@@ -4,6 +4,7 @@ type: taxonomy
 level: security-goal
 template: overview
 status: current
+coverage_depth: grouped-first-pass
 last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
@@ -144,7 +145,7 @@ Not applicable to the goals themselves. Each goal inherits posture from the conc
 - [Security Goals](/docs/taxonomy/security-goals)
 - [Digital Signatures](/docs/primitives/digital-signatures)
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
-- [Secure Channels](/docs/protocols/additional-protocol-families#secure-channels)
+- [Secure Channels](/docs/protocols/secure-channels)
 - [Metadata Leakage](/docs/appendices/metadata-leakage)
 
 ## Further reading

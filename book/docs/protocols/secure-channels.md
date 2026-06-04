@@ -1,0 +1,141 @@
+---
+title: Secure Channels
+type: protocol
+level: protocol
+template: protocol
+status: current
+coverage_depth: standalone
+last_reviewed: '2026-06-04'
+difficulty: intermediate
+maturity: deployed
+tags:
+  - secure-channels
+  - key-exchange
+  - transport-security
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+---
+
+# Secure Channels
+
+## Goal
+
+Establish an authenticated, encrypted session between endpoints so application data has confidentiality, integrity, replay protection, and usually forward secrecy under a stated endpoint-authentication model.
+
+## Participants
+
+- Client or initiator.
+- Server or responder.
+- Optional certificate authority, identity provider, pre-shared-key issuer, or key-transparency service.
+- Network adversary that can observe, delay, replay, drop, and inject messages.
+
+## Inputs and outputs
+
+Inputs:
+
+- Endpoint identities, public keys, certificates, pre-shared keys, or trust anchors.
+- Supported algorithm suites and protocol versions.
+- Fresh randomness and ephemeral key shares.
+- Application context such as hostnames, service names, or channel bindings.
+
+Outputs:
+
+- Session traffic keys.
+- Authenticated handshake transcript.
+- Exported channel bindings or application keys, when supported.
+- Failure if authentication, negotiation, or transcript checks fail.
+
+## Building blocks
+
+- Key exchange or key encapsulation.
+- Digital signatures, certificates, pre-shared keys, or authenticated public keys.
+- Key derivation functions.
+- Authenticated encryption with associated data.
+- Transcript binding and domain separation.
+
+![Secure-channel handshake](/img/diagrams/secure-channel-handshake.svg)
+
+## Security goals
+
+- Confidentiality and integrity for session data.
+- Endpoint authentication according to the configured identity model.
+- Forward secrecy when fresh ephemeral secrets are used and erased.
+- Replay and downgrade resistance when the protocol binds transcript, version, and suite choices.
+- Key separation between handshake, application data, and exported keys.
+
+## Non-goals
+
+- Hiding endpoint IP addresses, packet timing, or traffic volume.
+- Protecting compromised endpoints.
+- Solving application authorization.
+- Making every transcript deniable.
+- Preventing all denial of service.
+
+## Threat model
+
+The usual model assumes an active network attacker. The attacker can observe and modify traffic but cannot break the selected cryptographic assumptions, compromise endpoint secrets during the protected session, or subvert the trust anchor. Stronger models add post-compromise recovery, key transparency, delegated credentials, anonymity networks, or post-quantum hybrid key establishment.
+
+## Protocol sketch
+
+1. Endpoints negotiate a version, cipher suite, and authentication mode.
+2. They exchange ephemeral key material or encapsulated secrets.
+3. Each side derives handshake secrets from the key exchange and transcript.
+4. The authenticated party proves control of a private key, certificate chain, or pre-shared key.
+5. Both sides derive traffic keys and bind them to the transcript.
+6. Application data is encrypted with AEAD under monotonically managed nonces or sequence numbers.
+
+## Trust assumptions
+
+- Trust anchors, public keys, or pre-shared keys are authentic.
+- Ephemeral secrets are generated with strong randomness and erased when required.
+- Transcript hashes include identities, algorithms, public keys, and negotiation choices.
+- Implementations reject downgrade, replay, certificate, and hostname failures.
+
+## Post-quantum posture
+
+Depends on the concrete suite. Classical TLS 1.3, Noise, X25519, ECDSA, EdDSA, and many Signal-style deployments rely on discrete-logarithm assumptions and are quantum-vulnerable. Symmetric encryption and KDF layers can be plausible with conservative parameters, but authentication and key establishment need post-quantum or hybrid migration.
+
+## Confidence model
+
+Confidence is mixed: mathematical-assumption for key exchange and authentication, public-key infrastructure or pinned-key trust for endpoint identity, client-side-secret for endpoint private keys, and implementation review for parsing, transcript binding, and state-machine correctness.
+
+## Metadata leaks
+
+- Endpoint addresses and routing metadata.
+- Server name or certificate metadata unless hidden by additional mechanisms.
+- Timing, packet sizes, connection counts, and session duration.
+- Authentication method and sometimes client identity.
+
+## Failure modes
+
+- Accepting a certificate or public key for the wrong identity.
+- Omitting algorithm choices or identities from the transcript.
+- Reusing nonces or sequence numbers under an AEAD key.
+- Supporting downgrade to legacy versions or weak suites.
+- Storing session secrets too long.
+- Treating HPKE or raw Diffie-Hellman as a complete secure channel without authentication and replay handling.
+
+## Variants
+
+- TLS 1.3 for web and service transport.
+- HPKE-based application encryption, often as a component rather than a full channel.
+- Noise handshakes for explicitly selected peer-to-peer patterns.
+- Signal X3DH plus Double Ratchet for asynchronous secure messaging.
+- Post-quantum or hybrid handshakes that combine classical and post-quantum key establishment.
+
+## Where it is used
+
+- Web transport security.
+- API and service-to-service calls.
+- Secure messaging.
+- Blockchain peer-to-peer networking.
+- Application-layer encrypted objects and session establishment.
+
+## Further reading
+
+- [RFC 8446: The Transport Layer Security Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc8446).
+- [RFC 9180: Hybrid Public Key Encryption](https://www.rfc-editor.org/rfc/rfc9180).
+- [The Noise Protocol Framework](https://noiseprotocol.org/noise.html).
+- [Signal X3DH](https://signal.org/docs/specifications/x3dh/) and [Double Ratchet](https://signal.org/docs/specifications/doubleratchet/).
+- [RFC 5869: HKDF](https://www.rfc-editor.org/rfc/rfc5869).

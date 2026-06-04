@@ -1,0 +1,58 @@
+id: polynomial-commitments
+name: Polynomial Commitments
+category: Structured primitives
+level: structured-primitive
+short_intuition: Commit to a polynomial and later prove selected evaluations compactly.
+security_goals:
+  - binding
+  - compact evaluation verification
+  - optional hiding
+assumptions:
+  - construction-specific algebraic or hash assumptions
+  - correct evaluation-domain binding
+  - trusted setup for setup-dependent schemes
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: null
+  breaks_if:
+    - toxic waste is known
+    - transcript omits evaluation context
+    - verifier checks the wrong domain
+  setup:
+    - structured reference string for KZG-like schemes
+typical_uses:
+  - SNARKs
+  - STARKs
+  - rollups
+does_not_provide:
+  - complete proof systems
+  - zero knowledge by itself
+  - transparent setup in all schemes
+composition_risks:
+  - wrong public inputs
+  - domain mismatch
+  - setup assumptions hidden by abstraction
+metadata_leaks:
+  - proof timing
+  - public inputs
+  - evaluation points
+implementation_risk: expert-only
+auditability: publicly-verifiable
+parameter_sensitivity: high
+revocation_story: Not applicable; compromised setup or parameters require migration.
+operational_failure_modes:
+  - stale verifier keys
+  - setup ceremony failure
+  - incompatible curve or field choices
+maturity: deployed
+related:
+  - commitments
+  - vector-commitments
+  - snarks-starks-bulletproofs
+references:
+  - kate-zaverucha-goldberg-kzg
+  - ben-sasson-fri
+  - bowe-grigg-hopwood-halo

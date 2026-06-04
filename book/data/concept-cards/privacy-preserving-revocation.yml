@@ -1,0 +1,58 @@
+id: privacy-preserving-revocation
+name: Privacy-Preserving Revocation
+category: Design patterns
+level: design-pattern
+short_intuition: Reject revoked credentials or tokens without turning status checks into tracking beacons.
+security_goals:
+  - revocation correctness
+  - presentation unlinkability
+  - freshness
+assumptions:
+  - authentic status roots
+  - holder witnesses are updated safely
+  - verifiers enforce freshness
+requires_trusted_setup: depends
+post_quantum: depends
+post_quantum_posture: depends
+confidence_model:
+  type: mixed
+  threshold: null
+  breaks_if:
+    - status checks call home
+    - revocation sets are identifying
+    - stale roots are accepted
+  setup:
+    - signed status lists, accumulators, or commitment roots
+typical_uses:
+  - anonymous credentials
+  - identity wallets
+  - access tokens
+does_not_provide:
+  - issuer honesty
+  - non-transferability
+  - perfect privacy for tiny sets
+composition_risks:
+  - status-list tracking
+  - stable revocation identifiers
+  - witness-update logs
+metadata_leaks:
+  - status version
+  - revocation-set size
+  - presentation timing
+implementation_risk: high
+auditability: requires-operational-audit
+parameter_sensitivity: scheme-dependent
+revocation_story: This is the revocation story; it must specify freshness, witness update, and privacy leakage.
+operational_failure_modes:
+  - stale witnesses
+  - issuer/verifier collusion
+  - online status beacons
+maturity: emerging
+related:
+  - anonymous-credential
+  - vector-commitments
+  - accumulators-and-merkle-trees
+references:
+  - w3c-vc-data-model-2
+  - camenisch-lysyanskaya-credentials
+  - catalano-fiore-vector-commitments

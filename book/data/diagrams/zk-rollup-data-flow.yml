@@ -1,0 +1,95 @@
+id: zk-rollup-data-flow
+title: ZK-rollup data flow
+description: Validity proofs check state transitions, while data availability and sequencing remain separate assumptions.
+layout:
+  width: 1500
+  height: 620
+  columns: 5
+  rows: 4
+  margin: 48
+  top: 104
+  column_gap: 48
+  row_gap: 36
+  node_width: 230
+  node_height: 76
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/zk-rollup-data-flow.svg
+  mermaid: static/diagrams/zk-rollup-data-flow.mmd
+nodes:
+  - id: transactions
+    label: Transactions
+    detail: User operations and signatures
+    kind: actor
+    column: 1
+    row: 1
+  - id: sequencer
+    label: Sequencer
+    detail: Orders and batches operations
+    kind: system
+    column: 2
+    row: 1
+  - id: state-transition
+    label: State transition
+    detail: Circuit, VM, or constraints
+    kind: proof
+    column: 3
+    row: 1
+  - id: prover
+    label: Prover
+    detail: Generates validity proof
+    kind: proof
+    column: 4
+    row: 1
+  - id: verifier
+    label: Verifier contract
+    detail: Checks proof and public inputs
+    kind: output
+    column: 5
+    row: 1
+  - id: old-root
+    label: Old state root
+    detail: Public input
+    kind: metadata
+    column: 2
+    row: 3
+  - id: new-root
+    label: New state root
+    detail: Public input
+    kind: metadata
+    column: 4
+    row: 3
+  - id: data-availability
+    label: Data availability
+    detail: Needed to reconstruct state
+    kind: warning
+    column: 3
+    row: 4
+  - id: governance
+    label: Operational controls
+    detail: Upgrade keys, prover and sequencer policy
+    kind: warning
+    column: 5
+    row: 4
+edges:
+  - from: transactions
+    to: sequencer
+  - from: sequencer
+    to: state-transition
+  - from: state-transition
+    to: prover
+  - from: prover
+    to: verifier
+  - from: old-root
+    to: state-transition
+  - from: state-transition
+    to: new-root
+  - from: sequencer
+    to: data-availability
+    kind: warning
+  - from: data-availability
+    to: verifier
+    kind: warning
+  - from: governance
+    to: verifier
+    kind: warning
