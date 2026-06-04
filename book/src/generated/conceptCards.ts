@@ -260,6 +260,60 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "authenticated-encryption",
+    "name": "Authenticated Encryption",
+    "category": "encryption",
+    "level": "basic-primitive",
+    "pageLink": "/docs/primitives/authenticated-encryption",
+    "shortIntuition": "Encryption that also lets the receiver reject tampered ciphertexts and authenticate public context.",
+    "maturity": "deployed",
+    "securityGoals": [
+      {
+        "label": "confidentiality",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "integrity",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "authenticity",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "non-repudiation"
+      },
+      {
+        "label": "sender-identity-with-shared-keys",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "metadata-privacy",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
+    "postQuantumPosture": "plausible",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "ciphertext-size",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "associated-data"
+      },
+      {
+        "label": "message-timing",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ]
+  },
+  {
     "id": "coercion-resistant-voting",
     "name": "Coercion-Resistant Voting",
     "category": "system",
@@ -1224,6 +1278,59 @@ const conceptCards: ConceptCardData[] = [
     ]
   },
   {
+    "id": "oblivious-pseudorandom-functions",
+    "name": "Oblivious Pseudorandom Functions",
+    "category": "protocol",
+    "level": "protocol",
+    "pageLink": "/docs/protocols/oblivious-pseudorandom-functions",
+    "shortIntuition": "A client learns a keyed PRF output without revealing its input or learning the server key.",
+    "maturity": "emerging",
+    "securityGoals": [
+      {
+        "label": "client-input-privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "server-key-privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "pseudorandomness"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "anonymity",
+        "href": "/docs/glossary#anonymity"
+      },
+      {
+        "label": "network-privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "protection-for-low-entropy-inputs-by-itself"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "mathematical-assumption",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "high",
+    "metadataLeaks": [
+      {
+        "label": "request-timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "server-identity",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "request-volume"
+      }
+    ]
+  },
+  {
     "id": "pairings",
     "name": "Pairings",
     "category": "mathematical-substrate",
@@ -1411,6 +1518,59 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "small-voter-groups"
+      }
+    ]
+  },
+  {
+    "id": "private-set-intersection",
+    "name": "Private Set Intersection",
+    "category": "protocol",
+    "level": "protocol",
+    "pageLink": "/docs/protocols/private-set-intersection",
+    "shortIntuition": "Parties learn the overlap between private sets without simply exchanging the full sets.",
+    "maturity": "mature",
+    "securityGoals": [
+      {
+        "label": "input-privacy",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "limited-output-disclosure",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "private-matching"
+      }
+    ],
+    "doesNotProvide": [
+      {
+        "label": "set-size-hiding-by-default",
+        "href": "/docs/glossary#hiding"
+      },
+      {
+        "label": "inference-protection-from-output",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "fairness-on-abort"
+      }
+    ],
+    "postQuantumPosture": "depends",
+    "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
+    "confidenceModelType": "depends",
+    "confidenceModelLink": "/docs/appendices/confidence-models",
+    "implementationRisk": "expert-only",
+    "metadataLeaks": [
+      {
+        "label": "set-size",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "protocol-timing",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "abort-patterns"
       }
     ]
   },

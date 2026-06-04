@@ -3,8 +3,8 @@ title: Reveal Only a Function
 type: pattern
 level: design-pattern
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
 tags:

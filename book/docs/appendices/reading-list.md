@@ -3,8 +3,8 @@ title: Reading List
 type: appendix
 level: not-applicable
 template: reference
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:
@@ -26,6 +26,13 @@ This reading list mirrors the structured reference registry in `book/data/refere
 - David Wong, "Real-World Cryptography."
 - Jean-Philippe Aumasson, "Serious Cryptography."
 
+## Symmetric encryption and authentication
+
+- RFC 5116, "An Interface and Algorithms for Authenticated Encryption."
+- Rogaway, "Authenticated-Encryption with Associated-Data."
+- RFC 8439, "ChaCha20 and Poly1305 for IETF Protocols."
+- NIST SP 800-38D, "Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC."
+
 ## Zero-knowledge proofs
 
 - Goldwasser, Micali, and Rackoff, "The Knowledge Complexity of Interactive Proof Systems."
@@ -41,6 +48,9 @@ This reading list mirrors the structured reference registry in `book/data/refere
 
 - Canetti, "Universally Composable Security; A New Paradigm for Cryptographic Protocols."
 - Bonawitz et al., "Practical Secure Aggregation for Privacy-Preserving Machine Learning."
+- Jarecki and Liu, "Efficient Oblivious Pseudorandom Function with Applications to Adaptive OT and Secure Computation of Set Intersection."
+- RFC 9497, "Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups."
+- Freedman, Nissim, and Pinkas, "Efficient Private Matching and Set Intersection."
 
 ## Functional encryption
 

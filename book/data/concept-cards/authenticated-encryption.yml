@@ -1,0 +1,57 @@
+id: authenticated-encryption
+name: Authenticated Encryption
+category: encryption
+level: basic-primitive
+short_intuition: Encryption that also lets the receiver reject tampered ciphertexts and authenticate public context.
+security_goals:
+  - confidentiality
+  - integrity
+  - authenticity
+assumptions:
+  - secret-key-control
+  - nonce-discipline
+  - unambiguous-associated-data
+requires_trusted_setup: false
+post_quantum: varies
+post_quantum_posture: plausible
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - symmetric-key-is-compromised
+    - nonce-reuse-breaks-the-scheme
+    - associated-data-omits-context
+  setup:
+    - shared-secret-key-and-nonce-policy
+typical_uses:
+  - secure-channel-records
+  - encrypted-application-messages
+  - file-encryption
+does_not_provide:
+  - non-repudiation
+  - sender-identity-with-shared-keys
+  - metadata-privacy
+composition_risks:
+  - Associated data must bind protocol, version, sender, recipient, and purpose where relevant.
+  - Nonce misuse can be catastrophic for common AEAD schemes.
+metadata_leaks:
+  - ciphertext-size
+  - associated-data
+  - message-timing
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Revocation is external; systems rotate keys, expire sessions, or re-encrypt data.
+operational_failure_modes:
+  - nonce-reuse
+  - tag-check-bypass
+  - missing-domain-separation
+maturity: deployed
+related:
+  - symmetric-encryption
+  - message-authentication-codes
+  - randomness-and-nonces
+references:
+  - rfc5116-aead
+  - rogaway-aead
+  - rfc8439-chacha20-poly1305

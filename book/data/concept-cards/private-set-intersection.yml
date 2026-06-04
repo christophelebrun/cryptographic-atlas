@@ -1,0 +1,58 @@
+id: private-set-intersection
+name: Private Set Intersection
+category: protocol
+level: protocol
+short_intuition: Parties learn the overlap between private sets without simply exchanging the full sets.
+security_goals:
+  - input-privacy
+  - limited-output-disclosure
+  - private-matching
+assumptions:
+  - protocol-specific-hardness
+  - canonical-encoding
+  - stated-adversary-model
+requires_trusted_setup: varies
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: depends
+  threshold: not-applicable
+  breaks_if:
+    - semi-honest-protocol-faces-malicious-party
+    - low-entropy-elements-are-guessable
+    - repeated-queries-enable-differencing
+  setup:
+    - protocol-parameters-and-output-policy
+typical_uses:
+  - contact-discovery
+  - record-linkage
+  - fraud-signal-sharing
+does_not_provide:
+  - set-size-hiding-by-default
+  - inference-protection-from-output
+  - fairness-on-abort
+composition_risks:
+  - The revealed intersection can still be sensitive.
+  - Repeated PSI runs can leak through differencing attacks.
+  - Normalization choices can create false matches or missed matches.
+metadata_leaks:
+  - set-size
+  - protocol-timing
+  - abort-patterns
+implementation_risk: expert-only
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: PSI has no native revocation; output retention, query authorization, and deletion are application responsibilities.
+operational_failure_modes:
+  - wrong-threat-model
+  - inconsistent-normalization
+  - output-overexposure
+maturity: mature
+related:
+  - oblivious-pseudorandom-functions
+  - mpc
+  - private-aggregation
+references:
+  - freedman-nissim-pinkas-psi
+  - rfc9497-voprf
+  - canetti-uc

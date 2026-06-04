@@ -3,8 +3,8 @@ title: Mixnets
 type: protocol
 level: protocol
 template: protocol
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: mature
 tags:

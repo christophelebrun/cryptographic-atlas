@@ -67,3 +67,19 @@ relationships:
     relation: inherits-risk-from
     target: random-oracle-model
     notes: Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning.
+  - source: authenticated-encryption
+    relation: composes-with
+    target: symmetric-encryption
+    notes: AEAD schemes combine encryption with integrity and associated-data authentication.
+  - source: authenticated-encryption
+    relation: composes-with
+    target: message-authentication-codes
+    notes: AEAD schemes often use MAC-like authentication internally or replace ad hoc encryption-plus-MAC composition.
+  - source: oblivious-pseudorandom-functions
+    relation: used-in
+    target: private-set-intersection
+    notes: OPRF-based PSI is a common construction family.
+  - source: private-set-intersection
+    relation: composes-with
+    target: mpc
+    notes: PSI can be built from general MPC techniques or specialized protocols depending on the deployment model.

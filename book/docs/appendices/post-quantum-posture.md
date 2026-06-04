@@ -3,8 +3,8 @@ title: Post-Quantum Posture
 type: appendix
 level: not-applicable
 template: reference
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: not-applicable
 tags:
@@ -63,11 +63,15 @@ When a page says "depends," ask:
 
 ## Current standards context
 
-NIST has approved initial post-quantum standards for key encapsulation and signatures: ML-KEM, ML-DSA, and SLH-DSA. This atlas should still classify broad concepts conservatively, because a concept such as "signature" or "encryption" can be instantiated with either quantum-vulnerable or post-quantum schemes.
+As of June 4, 2026, NIST's principal post-quantum standards are FIPS 203 for ML-KEM, FIPS 204 for ML-DSA, and FIPS 205 for SLH-DSA. NIST also states that Falcon/FN-DSA and HQC were selected for ongoing standardization, but those are not the same as the three finalized FIPS standards.
+
+This atlas should still classify broad concepts conservatively, because a concept such as "signature" or "encryption" can be instantiated with either quantum-vulnerable or post-quantum schemes.
 
 ## Further reading
 
 - NIST: [Post-Quantum Cryptography FIPS Approved](https://csrc.nist.gov/News/2024/postquantum-cryptography-fips-approved)
+- NIST CSRC: [Post-Quantum Cryptography Project](https://csrc.nist.gov/Projects/post-quantum-cryptography)
+- NIST, [NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption](https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption)
 - NIST NCCoE: [Frequently Asked Questions about Post-Quantum Cryptography](https://pages.nist.gov/nccoe-migration-post-quantum-cryptography/)
 - Shor, "Algorithms for Quantum Computation; Discrete Logarithms and Factoring."
 - Grover, "A Fast Quantum Mechanical Algorithm for Database Search."

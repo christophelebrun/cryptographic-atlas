@@ -3,8 +3,8 @@ title: Accumulators and Merkle Trees
 type: primitive
 level: structured-primitive
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: deployed
 tags:

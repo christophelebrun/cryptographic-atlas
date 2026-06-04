@@ -3,8 +3,8 @@ title: Private DAO Voting
 type: system
 level: system
 template: case-study
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: emerging
 tags:

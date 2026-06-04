@@ -3,7 +3,7 @@ title: Welcome to The Cryptographic Atlas
 type: taxonomy
 level: not-applicable
 template: overview
-status: draft
+status: current
 last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
@@ -39,6 +39,8 @@ This book is:
 This book is not production cryptography guidance. It is not a source of copy-paste implementations, audited protocols, or deployment recipes.
 
 Do not design or deploy custom cryptographic protocols without expert review.
+
+The atlas is also not complete. See [Editorial Maturity and Coverage](/docs/appendices/editorial-maturity-and-coverage) for the current coverage assessment, known missing concepts, and source-depth priorities.
 
 ## AI generation disclosure
 

@@ -55,3 +55,4 @@ references:
   - boneh-shoup-applied-cryptography
   - nist-fips-204
   - nist-fips-205
+  - nist-pqc-project

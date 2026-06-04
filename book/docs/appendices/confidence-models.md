@@ -3,8 +3,8 @@ title: Confidence Models
 type: appendix
 level: not-applicable
 template: reference
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: not-applicable
 tags:

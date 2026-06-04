@@ -3,8 +3,8 @@ title: Zero-Knowledge Proofs
 type: primitive
 level: proof-system
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: mature
 tags:

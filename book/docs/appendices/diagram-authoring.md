@@ -3,8 +3,8 @@ title: Diagram Authoring
 type: appendix
 level: not-applicable
 template: reference
-status: draft
-last_reviewed: '2026-05-31'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:

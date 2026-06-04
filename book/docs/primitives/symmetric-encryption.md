@@ -3,8 +3,8 @@ title: Symmetric Encryption
 type: primitive
 level: basic-primitive
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: deployed
 tags:
@@ -25,6 +25,8 @@ Symmetric encryption uses the same secret key to encrypt and decrypt data.
 
 - Confidentiality under the chosen attack model.
 - Efficient protection for bulk data when used through a safe mode or authenticated-encryption construction.
+
+For most new protocol designs, the safer interface is [authenticated encryption](/docs/primitives/authenticated-encryption), not bare encryption.
 
 ## What it does not provide
 
@@ -72,4 +74,5 @@ Confidence comes from secret-key control, public scrutiny of the algorithm, corr
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - Katz and Lindell, "Introduction to Modern Cryptography."
 - NIST FIPS 197, "Advanced Encryption Standard."
+- RFC 5116, "An Interface and Algorithms for Authenticated Encryption."
 - RFC 8439, "ChaCha20 and Poly1305 for IETF Protocols."

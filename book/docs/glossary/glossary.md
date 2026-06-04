@@ -3,8 +3,8 @@ title: Glossary
 type: glossary
 level: not-applicable
 template: glossary
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:
@@ -15,6 +15,12 @@ confidence_model:
 ---
 
 # Glossary
+
+## Authenticated encryption
+
+A symmetric encryption interface that provides plaintext confidentiality and lets receivers reject modified ciphertexts, often while authenticating public associated data.
+
+Related: [Authenticated encryption](/docs/primitives/authenticated-encryption), [Symmetric encryption](/docs/primitives/symmetric-encryption), [Message authentication codes](/docs/primitives/message-authentication-codes).
 
 ## Anonymity
 
@@ -88,6 +94,12 @@ A public value used to detect repeated anonymous actions within a context.
 
 Related: [Nullifiers](/docs/protocols/nullifiers), [Anti-double-use nullifiers](/docs/design-patterns/anti-double-use-nullifiers), [Anonymous airdrop](/docs/case-studies/anonymous-airdrop).
 
+## Oblivious pseudorandom function
+
+A two-party protocol where a client learns a keyed pseudorandom function output for its private input without learning the key and without revealing the input to the server.
+
+Related: [Oblivious pseudorandom functions](/docs/protocols/oblivious-pseudorandom-functions), [Private set intersection](/docs/protocols/private-set-intersection), [Discrete logarithm](/docs/assumptions/discrete-logarithm).
+
 ## Pairing
 
 A special map between algebraic groups that makes some hidden exponent relationships publicly checkable.
@@ -99,6 +111,12 @@ Related: [Pairings](/docs/assumptions/pairings), [SNARKs, STARKs, and Bulletproo
 An editorial classification of whether a construction is quantum-vulnerable, plausibly post-quantum, dependent on instantiation, unknown, or not applicable.
 
 Related: [Post-quantum posture](/docs/appendices/post-quantum-posture), [Lattices](/docs/assumptions/lattices), [Discrete logarithm](/docs/assumptions/discrete-logarithm).
+
+## Private set intersection
+
+A protocol family that lets parties learn the overlap, size of overlap, or approved function of their private sets while limiting disclosure about non-matching elements.
+
+Related: [Private set intersection](/docs/protocols/private-set-intersection), [Oblivious pseudorandom functions](/docs/protocols/oblivious-pseudorandom-functions), [MPC](/docs/protocols/mpc).
 
 ## Random oracle model
 

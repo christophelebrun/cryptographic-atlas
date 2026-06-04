@@ -3,8 +3,8 @@ title: Digital Signatures
 type: primitive
 level: basic-primitive
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: deployed
 tags:
@@ -52,6 +52,7 @@ A digital signature lets a private key holder authorize a message so anyone with
 | BLS signatures | BLS12-381 or BN254 deployments | Aggregatable signatures and threshold signing | Quantum-vulnerable and pairing-based; subgroup checks and domain separation are critical. |
 | ML-DSA | Module-lattice signature standard | Post-quantum migration | Plausibly post-quantum; larger keys and signatures affect protocol design. |
 | SLH-DSA | Stateless hash-based signature standard | Conservative post-quantum signatures | Plausibly post-quantum; signatures are large and performance differs sharply from elliptic-curve schemes. |
+| Falcon / FN-DSA | Compact lattice signature selected for ongoing NIST standardization | Future post-quantum option where smaller signatures matter | Not one of the three finalized 2024 FIPS standards; track FIPS 206 status before treating as finalized. |
 | Legacy signatures | DSA, RSA PKCS #1 v1.5 signatures | Compatibility and verification of old artifacts | Keep as legacy context; do not present as a modern default. |
 
 ## Assumptions
@@ -60,7 +61,7 @@ The signature scheme must resist forgery, the private key must remain secret, an
 
 ## Post-quantum posture
 
-Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable, while standardized post-quantum signature families such as ML-DSA and SLH-DSA are designed for post-quantum migration.
+Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable, while finalized post-quantum signature standards such as ML-DSA and SLH-DSA are designed for post-quantum migration. Falcon/FN-DSA is selected for ongoing standardization, so its deployment status should be checked separately.
 
 ## Confidence model
 
@@ -77,3 +78,4 @@ Confidence comes from the signer controlling the private key, verifiers binding 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - NIST FIPS 204, "Module-Lattice-Based Digital Signature Standard."
 - NIST FIPS 205, "Stateless Hash-Based Digital Signature Standard."
+- NIST CSRC, "Post-Quantum Cryptography Project."

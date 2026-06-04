@@ -3,8 +3,8 @@ title: Basic Primitives Overview
 type: primitive
 level: basic-primitive
 template: overview
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:
@@ -22,6 +22,7 @@ Basic primitives provide narrow cryptographic guarantees. They are not complete 
 
 - Hash functions compress data into fixed-length digests.
 - Symmetric encryption protects bulk data under a shared secret key.
+- Authenticated encryption combines confidentiality with ciphertext integrity and authenticated public context.
 - Message authentication codes authenticate messages with a shared secret key.
 - Key derivation functions separate keys by context.
 - Randomness and nonces provide freshness or uniqueness where schemes require it.
@@ -34,3 +35,7 @@ Basic primitives provide narrow cryptographic guarantees. They are not complete 
 ## Reading rule
 
 For each primitive, ask what it guarantees, what it assumes, what it does not provide, and what breaks when it is composed incorrectly.
+
+## Coverage note
+
+This section now covers the main symmetric-key and public-key primitives that most applied systems rely on. Remaining primitive-level gaps are tracked in [Editorial Maturity and Coverage](/docs/appendices/editorial-maturity-and-coverage).

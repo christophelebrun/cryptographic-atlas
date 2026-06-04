@@ -22,6 +22,13 @@ rows:
       common_risk: nonce misuse or unauthenticated ciphertexts
       post_quantum_posture: plausible with conservative key sizes
       implementation_risk: high
+  - concept: Authenticated encryption
+    values:
+      primary_goal: confidentiality plus ciphertext and associated-data integrity
+      does_not_provide: public verifiability, identity, or metadata privacy
+      common_risk: nonce reuse, missing associated-data context, or tag-check bypass
+      post_quantum_posture: plausible with conservative parameters
+      implementation_risk: high
   - concept: MACs
     values:
       primary_goal: shared-key integrity and authenticity

@@ -3,8 +3,8 @@ title: Key Encapsulation and Exchange
 type: primitive
 level: basic-primitive
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: deployed
 tags:
@@ -61,6 +61,7 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 | P-256 ECDH | Elliptic-curve Diffie-Hellman | TLS and standards-oriented environments | Quantum-vulnerable; point validation and library correctness matter. |
 | FFDHE | Finite-field Diffie-Hellman groups | Compatibility and standards profiles | Quantum-vulnerable; use reviewed safe-prime groups, not ad hoc parameters. |
 | ML-KEM | Module-lattice KEM | Post-quantum key encapsulation | Plausibly post-quantum; protocol designers must handle larger keys and ciphertexts. |
+| HQC | Code-based KEM selected for ongoing NIST standardization | Backup or alternative post-quantum KEM family | Selected by NIST in 2025 for future standardization; not a finalized FIPS standard as of this review. |
 | HPKE KEM suites | KEM plus KDF plus AEAD framework | Hybrid encryption and application protocols | HPKE is a composition framework; the selected KEM determines posture. |
 | Hybrid classical/PQ exchange | Classical ECDH plus ML-KEM or similar | Migration period key establishment | Reduces single-assumption risk, but transcript binding and failure handling must be explicit. |
 
@@ -74,3 +75,4 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 
 - Boneh and Shoup, "A Graduate Course in Applied Cryptography."
 - NIST FIPS 203, "Module-Lattice-Based Key-Encapsulation Mechanism Standard."
+- NIST, "NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption."

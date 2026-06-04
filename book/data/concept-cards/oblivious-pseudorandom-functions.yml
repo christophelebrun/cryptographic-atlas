@@ -1,0 +1,57 @@
+id: oblivious-pseudorandom-functions
+name: Oblivious Pseudorandom Functions
+category: protocol
+level: protocol
+short_intuition: A client learns a keyed PRF output without revealing its input or learning the server key.
+security_goals:
+  - client-input-privacy
+  - server-key-privacy
+  - pseudorandomness
+assumptions:
+  - construction-specific-hardness
+  - server-key-secrecy
+  - correct-domain-separation
+requires_trusted_setup: false
+post_quantum: varies
+post_quantum_posture: depends
+confidence_model:
+  type: mathematical-assumption
+  threshold: not-applicable
+  breaks_if:
+    - server-key-is-compromised
+    - group-assumption-fails
+    - domain-separation-is-missing
+  setup:
+    - public-parameters-and-server-key
+typical_uses:
+  - private-set-intersection
+  - password-hardening
+  - privacy-preserving-tokens
+does_not_provide:
+  - anonymity
+  - network-privacy
+  - protection-for-low-entropy-inputs-by-itself
+composition_risks:
+  - OPRF outputs need context binding before they are used as tokens or keys.
+  - Low-entropy inputs need application-level rate limits or hardening.
+metadata_leaks:
+  - request-timing
+  - server-identity
+  - request-volume
+implementation_risk: high
+auditability: requires-expert-review
+parameter_sensitivity: high
+revocation_story: Server keys can be rotated, but old outputs may remain valid unless the application scopes or expires them.
+operational_failure_modes:
+  - invalid-group-element-acceptance
+  - key-substitution-without-verifiability
+  - replay-or-context-confusion
+maturity: emerging
+related:
+  - private-set-intersection
+  - discrete-logarithm
+  - zero-knowledge-proof
+references:
+  - rfc9497-voprf
+  - jarecki-liu-oprf
+  - boneh-shoup-applied-cryptography

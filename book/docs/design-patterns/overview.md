@@ -3,8 +3,8 @@ title: Design Patterns Overview
 type: pattern
 level: design-pattern
 template: overview
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:

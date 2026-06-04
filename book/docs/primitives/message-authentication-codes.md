@@ -3,8 +3,8 @@ title: Message Authentication Codes
 type: primitive
 level: basic-primitive
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: deployed
 tags:
@@ -51,6 +51,8 @@ Confidence comes from symmetric key secrecy, unforgeability of the MAC construct
 - Authenticated APIs.
 - Protocol transcript authentication.
 - Authenticated encryption internals.
+
+When confidentiality and integrity are both required for ciphertexts, prefer a reviewed [authenticated-encryption](/docs/primitives/authenticated-encryption) scheme over designing a custom encryption-plus-MAC composition.
 
 ## Concrete algorithms and schemes
 

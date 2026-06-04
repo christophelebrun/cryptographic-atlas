@@ -3,8 +3,8 @@ title: Structured Primitives Overview
 type: primitive
 level: structured-primitive
 template: overview
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:

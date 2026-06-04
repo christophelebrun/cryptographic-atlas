@@ -3,7 +3,7 @@ title: Primitives vs Protocols
 type: taxonomy
 level: taxonomy
 template: overview
-status: draft
+status: current
 last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable

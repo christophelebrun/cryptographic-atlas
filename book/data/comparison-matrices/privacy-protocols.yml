@@ -22,6 +22,20 @@ rows:
       metadata_leaks: timing, transaction fees, reused contexts
       common_failure: nullifier accepted without eligibility proof
       maturity: emerging
+  - concept: OPRFs
+    values:
+      main_privacy_goal: client learns keyed PRF output without revealing input
+      confidence_model: mathematical assumption plus server-key secrecy
+      metadata_leaks: request timing, server identity, request volume
+      common_failure: missing domain separation or invalid group-element handling
+      maturity: emerging
+  - concept: Private set intersection
+    values:
+      main_privacy_goal: reveal only set overlap, cardinality, or approved function
+      confidence_model: depends on semi-honest, malicious, or helper-server model
+      metadata_leaks: set size, output, timing, abort behavior
+      common_failure: repeated queries, low-entropy elements, or wrong adversary model
+      maturity: mature
   - concept: Secure aggregation
     values:
       main_privacy_goal: aggregate-only disclosure

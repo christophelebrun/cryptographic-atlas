@@ -268,6 +268,27 @@ references:
     used_by:
       - digital-signatures
       - post-quantum-posture
+  - id: nist-pqc-project
+    title: Post-Quantum Cryptography Project
+    authors:
+      - National Institute of Standards and Technology
+    year: 2025
+    source_type: official-docs
+    url: https://csrc.nist.gov/Projects/post-quantum-cryptography
+    used_by:
+      - post-quantum-posture
+      - digital-signatures
+      - key-encapsulation-and-exchange
+  - id: nist-hqc-selection
+    title: NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption
+    authors:
+      - National Institute of Standards and Technology
+    year: 2025
+    source_type: official-docs
+    url: https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption
+    used_by:
+      - post-quantum-posture
+      - key-encapsulation-and-exchange
   - id: canetti-uc
     title: Universally Composable Security; A New Paradigm for Cryptographic Protocols
     authors:
@@ -357,3 +378,70 @@ references:
     used_by:
       - e-voting
       - coercion-resistant-voting
+  - id: rfc5116-aead
+    title: An Interface and Algorithms for Authenticated Encryption
+    authors:
+      - David A. McGrew
+    year: 2008
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc5116
+    used_by:
+      - authenticated-encryption
+      - symmetric-encryption
+  - id: rogaway-aead
+    title: Authenticated-Encryption with Associated-Data
+    authors:
+      - Phillip Rogaway
+    year: 2002
+    source_type: paper
+    url: https://www.cs.ucdavis.edu/~rogaway/papers/ad.html
+    used_by:
+      - authenticated-encryption
+  - id: rfc8439-chacha20-poly1305
+    title: ChaCha20 and Poly1305 for IETF Protocols
+    authors:
+      - Yoav Nir
+      - Adam Langley
+    year: 2018
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc8439
+    used_by:
+      - authenticated-encryption
+      - symmetric-encryption
+  - id: rfc9497-voprf
+    title: Oblivious Pseudorandom Functions (OPRFs) Using Prime-Order Groups
+    authors:
+      - Alex Davidson
+      - Armando Faz-Hernandez
+      - Nick Sullivan
+      - Christopher A. Wood
+    year: 2023
+    source_type: official-docs
+    url: https://www.rfc-editor.org/rfc/rfc9497.html
+    used_by:
+      - oblivious-pseudorandom-functions
+      - private-set-intersection
+  - id: jarecki-liu-oprf
+    title: Efficient Oblivious Pseudorandom Function with Applications to Adaptive OT and Secure Computation of Set Intersection
+    authors:
+      - Stanislaw Jarecki
+      - Xiaomin Liu
+    year: 2009
+    source_type: paper
+    url: https://doi.org/10.1007/978-3-642-00457-5_34
+    doi: 10.1007/978-3-642-00457-5_34
+    used_by:
+      - oblivious-pseudorandom-functions
+      - private-set-intersection
+  - id: freedman-nissim-pinkas-psi
+    title: Efficient Private Matching and Set Intersection
+    authors:
+      - Michael J. Freedman
+      - Kobbi Nissim
+      - Benny Pinkas
+    year: 2004
+    source_type: paper
+    url: https://doi.org/10.1007/978-3-540-24676-3_1
+    doi: 10.1007/978-3-540-24676-3_1
+    used_by:
+      - private-set-intersection

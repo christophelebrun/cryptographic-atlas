@@ -3,8 +3,8 @@ title: Multi-Party Computation
 type: protocol
 level: protocol
 template: protocol
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: mature
 tags:
@@ -32,6 +32,7 @@ Each party supplies an input. The protocol reveals an output to designated parti
 
 - Secret sharing.
 - Oblivious transfer.
+- Oblivious pseudorandom functions in some specialized protocols.
 - Commitments.
 - Zero-knowledge proofs, in malicious-secure settings.
 
@@ -102,6 +103,9 @@ Participation, timing, circuit shape, aborts, and output values can leak informa
 - Private analytics.
 - Auctions.
 - Collaborative risk scoring.
+- Private set intersection variants.
+
+See also [Private Set Intersection](/docs/protocols/private-set-intersection), which can be built from MPC techniques or from more specialized protocol families.
 
 ## Further reading
 

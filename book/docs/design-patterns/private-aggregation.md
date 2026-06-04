@@ -3,8 +3,8 @@ title: Private Aggregation
 type: pattern
 level: design-pattern
 template: concept
-status: draft
-last_reviewed: '2026-05-30'
+status: current
+last_reviewed: '2026-06-04'
 difficulty: intermediate
 maturity: mature
 tags:
@@ -129,6 +129,7 @@ The pattern is mature, but concrete systems range from well deployed to experime
 
 - [Homomorphic encryption](/docs/structured-primitives/homomorphic-encryption)
 - [Secure aggregation](/docs/protocols/secure-aggregation)
+- [Private set intersection](/docs/protocols/private-set-intersection)
 - [Private DAO voting](/docs/case-studies/private-dao-voting)
 
 ## Further reading

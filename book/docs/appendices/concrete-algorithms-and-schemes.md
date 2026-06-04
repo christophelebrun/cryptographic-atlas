@@ -123,6 +123,7 @@ These are mostly parameter families, groups, curves, or problem families rather 
 | Key establishment and secure channels | TLS 1.3, HPKE, Noise patterns, Signal X3DH and Double Ratchet | Legacy TLS and static key exchange |
 | Multi-party computation | Yao garbled circuits, GMW, BGW, SPDZ, MASCOT, oblivious transfer extension | Fairness and abort-model variants |
 | Secure aggregation | Bonawitz-style secure aggregation, Prio/Prio+ | Small-cohort leakage and dropout handling |
+| Oblivious pseudorandom functions | RFC 9497 OPRF/VOPRF/POPRF suites | Prime-order-group suites are quantum-vulnerable; application context binding matters. |
 | Private set intersection | Diffie-Hellman PSI, OPRF-based PSI, circuit PSI | Cardinality-only PSI and malicious-security upgrades |
 | Anonymous credentials | CL signatures / Idemix, BBS+ signatures, selective-disclosure JWT/VC patterns, ZK credential systems | Revocation and rare-attribute leakage |
 | Mixnets | Chaumian mixnets, Sphinx packet format, Loopix-style mixnets | Timing and active tagging attacks |
