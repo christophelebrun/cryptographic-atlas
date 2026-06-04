@@ -69,6 +69,7 @@
               "protocol",
               "system",
               "pattern",
+              "instance",
               "actor",
               "setup",
               "warning",

@@ -8,6 +8,7 @@ flowchart LR
   n_protocols["Protocols<br/>MPC, mixnets, credentials"]
   n_systems["Systems<br/>Voting, private claims, rollups"]
   n_design_patterns["Design patterns<br/>Commit-reveal, nullifiers, aggregation"]
+  n_concrete_instances["Concrete instances<br/>Algorithms, schemes, suites"]
   n_security_goals --> n_basic_primitives
   n_assumptions --> n_basic_primitives
   n_assumptions --> n_structured_primitives
@@ -16,3 +17,7 @@ flowchart LR
   n_proof_systems --> n_protocols
   n_protocols --> n_systems
   n_systems --> n_design_patterns
+  n_basic_primitives -->|has instances| n_concrete_instances
+  n_structured_primitives -->|has instances| n_concrete_instances
+  n_proof_systems -->|has instances| n_concrete_instances
+  n_protocols -->|has instances| n_concrete_instances

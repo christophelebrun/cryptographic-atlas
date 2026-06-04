@@ -130,7 +130,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} The Cryptographic Atlas contributors. Content is licensed under CC BY-SA 4.0 unless otherwise noted.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The Cryptographic Atlas contributors. Content was generated and revised with AI agents; verify technical claims before relying on them. Content is licensed under CC BY-SA 4.0 unless otherwise noted.`,
     },
     prism: {
       theme: require('prism-react-renderer').themes.github,

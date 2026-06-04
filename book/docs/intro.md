@@ -4,7 +4,7 @@ type: taxonomy
 level: not-applicable
 template: overview
 status: draft
-last_reviewed: '2026-05-30'
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:
@@ -40,6 +40,10 @@ This book is not production cryptography guidance. It is not a source of copy-pa
 
 Do not design or deploy custom cryptographic protocols without expert review.
 
+## AI generation disclosure
+
+The content in this book was generated and iteratively revised with AI agents. Treat it as educational draft material: verify technical claims against the cited sources, and do not rely on it as a substitute for expert cryptographic review.
+
 ## How to read it
 
 Start with the taxonomy, then move from goals to building blocks:
@@ -65,6 +69,8 @@ The atlas uses eight levels:
 | Protocols | Multi-step interactions between parties | MPC, secure aggregation, anonymous credentials |
 | Systems | End-to-end applications | e-voting, private payments, anonymous airdrops |
 | Design patterns | Reusable composition ideas | anonymous membership, delayed reveal, private aggregation |
+
+Concrete algorithms, named schemes, parameter families, and protocol suites are treated as instances of these concepts, not as a ninth top-level category. For example, Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of a proof system, and TLS 1.3 is a concrete protocol suite. See [Concrete Algorithms and Schemes](/docs/appendices/concrete-algorithms-and-schemes).
 
 ## Motivating example: private voting
 

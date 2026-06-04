@@ -4,7 +4,7 @@ type: appendix
 level: not-applicable
 template: reference
 status: current
-last_reviewed: '2026-05-31'
+last_reviewed: '2026-06-04'
 difficulty: beginner
 maturity: not-applicable
 tags:
@@ -22,7 +22,15 @@ This appendix indexes concrete algorithms, schemes, parameter families, and name
 
 ## Where algorithms sit in the taxonomy
 
-Concrete algorithms inherit the taxonomy level of the concept they instantiate. They are usually not a separate top-level level.
+Concrete algorithms inherit the taxonomy level of the concept they instantiate. They are not a separate top-level level; they sit in a cross-cutting instance layer attached to a parent concept.
+
+Use this mental format:
+
+```text
+Concrete instance of: [parent concept]
+```
+
+Examples: Ed25519 is a concrete instance of digital signatures, Groth16 is a concrete instance of SNARK-style proof systems, and TLS 1.3 is a concrete instance of secure-channel protocols.
 
 | Example | Taxonomy placement | Why |
 | --- | --- | --- |
@@ -36,13 +44,15 @@ Concrete algorithms inherit the taxonomy level of the concept they instantiate. 
 | Pedersen commitment | Basic primitive: commitments | It is a concrete commitment scheme. |
 | KZG commitment | Structured primitive: polynomial/vector commitment | It is a concrete commitment scheme with pairing and setup assumptions. |
 
-This distinction matters because a name like `SHA-256` does not explain its goal, assumptions, misuse cases, or composition role. The concept page should explain the primitive; the algorithm entry should explain the concrete trade-offs.
+This distinction matters because a name like `SHA-256` does not explain its goal, assumptions, misuse cases, or composition role. The concept page should explain the primitive; the instance entry should explain the concrete trade-offs.
 
 ## Why most algorithms are not first-class pages
 
 The book is organized by concepts, not as an algorithm catalog. That keeps the taxonomy readable, but readers still encounter names such as `SHA-256`, `AES-GCM`, `Ed25519`, `X25519`, `BLS12-381`, `Groth16`, or `ML-KEM` before they understand where those names sit.
 
 For that reason, concrete algorithms should usually appear first as comparison tables on their parent concept pages. A dedicated page is useful only when the named scheme has distinct assumptions, failure modes, deployment status, or composition risks that would overload the parent page.
+
+If this appendix later becomes machine-readable, use an `instance_of` relationship rather than a new `level` value. That preserves the main taxonomy while allowing filters such as "show concrete instances of digital signatures" or "show post-quantum instances of key encapsulation".
 
 Concrete algorithms should be added when they do at least one of the following:
 

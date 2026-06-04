@@ -44,6 +44,8 @@ export default function Home(): JSX.Element {
           <div className="container">
             <strong>Educational use only.</strong> This book is not production
             cryptography guidance and does not replace expert protocol review.
+            Content was generated and revised with AI agents; verify technical
+            claims against cited sources before relying on them.
           </div>
         </section>
 

@@ -1,10 +1,10 @@
 id: taxonomy-flow
 title: Taxonomy flow
-description: Separate goals, assumptions, building blocks, protocols, systems, and patterns before composing them.
+description: Separate goals, assumptions, concepts, concrete instances, protocols, systems, and patterns before composing them.
 layout:
-  width: 960
+  width: 1280
   height: 560
-  columns: 3
+  columns: 4
   rows: 4
   margin: 48
   top: 104
@@ -65,6 +65,12 @@ nodes:
     kind: pattern
     column: 3
     row: 4
+  - id: concrete-instances
+    label: Concrete instances
+    detail: Algorithms, schemes, suites
+    kind: instance
+    column: 4
+    row: 2
 edges:
   - from: security-goals
     to: basic-primitives
@@ -82,3 +88,15 @@ edges:
     to: systems
   - from: systems
     to: design-patterns
+  - from: basic-primitives
+    to: concrete-instances
+    label: has instances
+  - from: structured-primitives
+    to: concrete-instances
+    label: has instances
+  - from: proof-systems
+    to: concrete-instances
+    label: has instances
+  - from: protocols
+    to: concrete-instances
+    label: has instances

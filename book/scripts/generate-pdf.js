@@ -207,7 +207,7 @@ function builtStylesheetPath() {
   return `${baseUrl}assets/css/${files[0]}`;
 }
 
-function renderPrintHtml(docs) {
+function renderPrintHtml(docs, tocPageNumbers = null) {
   const generatedAt = new Date().toISOString().slice(0, 10);
   let currentCategory = null;
   const tocItems = [];
@@ -221,7 +221,13 @@ function renderPrintHtml(docs) {
       sections.push(`<h1 class="pdf-category">${escapeHtml(currentCategory)}</h1>`);
     }
 
-    tocItems.push(`<li><a href="#${id}">${escapeHtml(doc.title)}</a></li>`);
+    const tocPageNumber = tocPageNumbers?.get(doc.id) ?? '';
+    tocItems.push(
+      `<li><a href="#${id}">` +
+        `<span class="toc-title">${escapeHtml(doc.title)}</span>` +
+        `<span class="toc-page" data-page-target="${id}" aria-label="page">${escapeHtml(tocPageNumber)}</span>` +
+        `</a></li>`,
+    );
     sections.push(
       `<section id="${id}" class="pdf-doc-section" data-doc-id="${escapeHtml(doc.id)}">` +
         cleanDocHtml(doc.html) +
@@ -305,6 +311,34 @@ function renderPrintHtml(docs) {
     .pdf-toc li {
       list-style: none;
       margin: 5px 0;
+    }
+
+    .pdf-toc a {
+      align-items: baseline;
+      color: inherit;
+      display: flex;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .pdf-toc a::after {
+      border-bottom: 1px dotted #9fb3b6;
+      content: "";
+      flex: 1 1 auto;
+      order: 1;
+      transform: translateY(-3px);
+    }
+
+    .pdf-toc .toc-title {
+      order: 0;
+    }
+
+    .pdf-toc .toc-page {
+      color: #526166;
+      font-variant-numeric: tabular-nums;
+      min-width: 3ch;
+      order: 2;
+      text-align: right;
     }
 
     .pdf-toc .toc-category {
@@ -415,6 +449,7 @@ function renderPrintHtml(docs) {
   <section class="pdf-cover">
     <h1>The Cryptographic Atlas</h1>
     <p>A practical map of modern cryptographic primitives, protocols, guarantees, and design patterns.</p>
+    <p>Content was generated and revised with AI agents. Treat this PDF as educational draft material and verify technical claims against cited sources before relying on them.</p>
     <p class="pdf-meta">Generated ${generatedAt}. Source: ${publicUrl}/</p>
   </section>
   <nav class="pdf-toc" aria-label="Table of contents">
@@ -426,6 +461,95 @@ function renderPrintHtml(docs) {
   <main class="markdown">
     ${sections.join('\n')}
   </main>
+  ${
+    tocPageNumbers
+      ? ''
+      : `<script>
+    (function () {
+      var PAGE_HEIGHT_MM = 297 - 17 - 19;
+      var PX_PER_MM = 96 / 25.4;
+      var pageHeight = PAGE_HEIGHT_MM * PX_PER_MM;
+
+      function outerHeight(element) {
+        if (!element) return 0;
+        var rect = element.getBoundingClientRect();
+        var style = window.getComputedStyle(element);
+        return (
+          rect.height +
+          parseFloat(style.marginTop || '0') +
+          parseFloat(style.marginBottom || '0')
+        );
+      }
+
+      function pageCountForHeight(height) {
+        return Math.max(1, Math.ceil(height / pageHeight));
+      }
+
+      function pageCountForElement(element) {
+        return pageCountForHeight(outerHeight(element));
+      }
+
+      function setTocPage(docId, page) {
+        var pageNode = document.querySelector('.toc-page[data-page-target="' + docId + '"]');
+        if (!pageNode) return;
+        pageNode.textContent = String(page);
+      }
+
+      function assignTocPageNumbers() {
+        var cover = document.querySelector('.pdf-cover');
+        var toc = document.querySelector('.pdf-toc');
+        var main = document.querySelector('main.markdown');
+        if (!cover || !toc || !main) return;
+
+        var page = pageCountForElement(cover) + pageCountForElement(toc) + 1;
+        var children = Array.prototype.slice.call(main.children);
+        var firstCategory = true;
+
+        for (var index = 0; index < children.length; index += 1) {
+          var child = children[index];
+
+          if (child.classList.contains('pdf-category')) {
+            if (!firstCategory) page += 1;
+            firstCategory = false;
+
+            var groupedHeight = outerHeight(child);
+            var next = children[index + 1];
+
+            if (next && next.classList.contains('pdf-doc-section')) {
+              setTocPage(next.id, page);
+              groupedHeight += outerHeight(next);
+              page += pageCountForHeight(groupedHeight) - 1;
+              index += 1;
+            } else {
+              page += pageCountForHeight(groupedHeight) - 1;
+            }
+
+            continue;
+          }
+
+          if (child.classList.contains('pdf-doc-section')) {
+            page += 1;
+            setTocPage(child.id, page);
+            page += pageCountForElement(child) - 1;
+          }
+        }
+      }
+
+      function assignUntilStable() {
+        for (var i = 0; i < 3; i += 1) {
+          assignTocPageNumbers();
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        assignUntilStable();
+      } else {
+        window.addEventListener('load', assignUntilStable);
+      }
+    })();
+  </script>
+`
+  }
 </body>
 </html>
 `;
@@ -585,6 +709,69 @@ async function chromePrint(url, outputFile) {
   }
 }
 
+function normalizePdfLine(value) {
+  return String(value).replace(/\s+/g, ' ').trim();
+}
+
+function titleStartsAt(lines, doc) {
+  const title = normalizePdfLine(doc.title);
+  const category = normalizePdfLine(doc.category);
+  const firstLines = lines.slice(0, 5);
+  if (firstLines.length === 0) return false;
+
+  if (firstLines[0] === title) return true;
+  if (firstLines[0] === category && normalizePdfLine(firstLines.slice(1, 5).join(' ')).startsWith(title)) {
+    return true;
+  }
+
+  return normalizePdfLine(firstLines.slice(0, 3).join(' ')).startsWith(title);
+}
+
+function extractTocPageNumbers(pdfFile, docs) {
+  const result = spawnSync('pdftotext', [pdfFile, '-'], {
+    encoding: 'utf8',
+    maxBuffer: 1024 * 1024 * 16,
+  });
+
+  if (result.status !== 0 || !result.stdout) {
+    console.warn('Could not extract PDF text with pdftotext; using estimated TOC page numbers.');
+    return null;
+  }
+
+  const pages = result.stdout.split('\f');
+  const pageNumbers = new Map();
+  let docIndex = 0;
+  let mainStarted = false;
+
+  for (let pageIndex = 0; pageIndex < pages.length && docIndex < docs.length; pageIndex += 1) {
+    const lines = pages[pageIndex]
+      .split(/\n/)
+      .map(normalizePdfLine)
+      .filter(Boolean);
+
+    if (!mainStarted) {
+      mainStarted = titleStartsAt(lines, docs[0]);
+      if (!mainStarted) continue;
+    }
+
+    const doc = docs[docIndex];
+    if (titleStartsAt(lines, doc)) {
+      pageNumbers.set(doc.id, pageIndex + 1);
+      docIndex += 1;
+    }
+  }
+
+  if (pageNumbers.size !== docs.length) {
+    console.warn(
+      `Could only extract ${pageNumbers.size} of ${docs.length} PDF TOC page numbers; ` +
+        'using estimated TOC page numbers.',
+    );
+    return null;
+  }
+
+  return pageNumbers;
+}
+
 async function main() {
   ensurePlaceholderPdf();
   runBuild();
@@ -608,11 +795,22 @@ async function main() {
   const server = await startServer();
   const port = server.address().port;
   const printUrl = `http://127.0.0.1:${port}${baseUrl}pdf/cryptographic-atlas.html`;
+  const probePdfFile = path.join(os.tmpdir(), `cryptographic-atlas-probe-${Date.now()}.pdf`);
 
   try {
-    await chromePrint(printUrl, staticPdfFile);
+    await chromePrint(printUrl, probePdfFile);
+    const tocPageNumbers = extractTocPageNumbers(probePdfFile, docs);
+
+    if (tocPageNumbers) {
+      fs.writeFileSync(printHtmlFile, renderPrintHtml(docs, tocPageNumbers));
+      await chromePrint(printUrl, staticPdfFile);
+    } else {
+      fs.mkdirSync(path.dirname(staticPdfFile), {recursive: true});
+      fs.copyFileSync(probePdfFile, staticPdfFile);
+    }
   } finally {
     await new Promise((resolve) => server.close(resolve));
+    fs.rmSync(probePdfFile, {force: true});
   }
 
   fs.mkdirSync(path.dirname(buildPdfFile), {recursive: true});

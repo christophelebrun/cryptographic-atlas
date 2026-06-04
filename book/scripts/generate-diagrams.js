@@ -19,6 +19,7 @@ const palette = {
   protocol: {fill: '#f0f9ff', stroke: '#60a5fa'},
   system: {fill: '#f8fafc', stroke: '#94a3b8'},
   pattern: {fill: '#fefce8', stroke: '#d9b84f'},
+  instance: {fill: '#fdf2f8', stroke: '#f472b6'},
   actor: {fill: '#f8fafc', stroke: '#64748b'},
   setup: {fill: '#fff7ed', stroke: '#fb923c'},
   warning: {fill: '#fff7ed', stroke: '#fb923c'},
