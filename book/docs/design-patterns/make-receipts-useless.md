@@ -21,16 +21,29 @@ confidence_model:
 
 This pattern tries to stop users from proving to a coercer how they acted.
 
+## Where it sits in the taxonomy
+
+- Level: design-pattern
+- Parent category: design-pattern
+- Related concepts: [Coercion-Resistant Voting](/docs/case-studies/coercion-resistant-voting), [Electronic Voting](/docs/protocols/e-voting), [Mixnets](/docs/protocols/mixnets)
+
 ## Problem it solves
 
-Some systems need more than privacy from observers. They need to prevent a participant from producing convincing evidence of their own action.
+This page explains the problem behind the concept: Prevent users from producing convincing evidence of how they acted. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
 
-## Common approaches
+## Mental model
 
-- Deniable or fakeable transcripts.
-- Re-voting where only the last vote counts.
-- Controlled credential recovery or revocation.
-- Mixnets or tallying designs that avoid public vote receipts.
+Think of a voting booth where any receipt a voter brings outside can be plausibly faked or superseded.
+
+## Minimal example
+
+A voting system lets a voter cast again so an earlier coerced vote and its receipt no longer prove the final counted choice.
+
+## Security properties
+
+- receipt freeness
+- coercion resistance
+- deniability
 
 ## What it does not provide
 
@@ -50,7 +63,16 @@ Not applicable to the pattern by itself. Concrete posture depends on the voting,
 
 Confidence usually combines public verifiability for tally integrity with protocol features that make user-held evidence deniable, fakeable, revocable, or superseded by later actions.
 
-## Concrete compositions
+## Common constructions
+
+### Common approaches
+
+- Deniable or fakeable transcripts.
+- Re-voting where only the last vote counts.
+- Controlled credential recovery or revocation.
+- Mixnets or tallying designs that avoid public vote receipts.
+
+### Concrete compositions
 
 | Composition | Typical role | Main caution |
 | --- | --- | --- |
@@ -59,12 +81,35 @@ Confidence usually combines public verifiability for tally integrity with protoc
 | Mixnet tallying without per-voter receipts | Hide ballot-to-voter linkage | Device compromise or check-in metadata can still create receipts. |
 | Coercion-resistant credential recovery | Let voters invalidate coerced credentials | Registration and recovery channels become part of the threat model. |
 
-## Failure modes
+## Use cases
+
+- coercion resistant voting
+- private signaling
+- sensitive choice systems
+
+## Composition patterns
+
+- Receipt-freeness must include operational artifacts such as logs and screenshots.
+- Ballot secrecy alone is weaker than coercion resistance.
+
+Common adjacent concepts: [Coercion-Resistant Voting](/docs/case-studies/coercion-resistant-voting), [Electronic Voting](/docs/protocols/e-voting), [Mixnets](/docs/protocols/mixnets).
+
+## Failure modes and anti-patterns
 
 - User interfaces expose receipts.
 - Logs or screenshots become proofs.
 - Coercers demand credentials before the action.
 - Small groups make choices inferable from outcomes.
+
+## Maturity and deployment
+
+Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+
+## Related concepts
+
+- [Coercion-Resistant Voting](/docs/case-studies/coercion-resistant-voting)
+- [Electronic Voting](/docs/protocols/e-voting)
+- [Mixnets](/docs/protocols/mixnets)
 
 ## Further reading
 

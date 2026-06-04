@@ -21,6 +21,24 @@ confidence_model:
 
 Randomness and nonces provide the fresh or unique values that many cryptographic schemes need to stay secure.
 
+## Where it sits in the taxonomy
+
+- Level: basic-primitive
+- Parent category: implementation-substrate
+- Related concepts: Digital Signature, [Commitments](/docs/primitives/commitments), [Symmetric Encryption](/docs/primitives/symmetric-encryption)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Fresh random or unique values keep many schemes from repeating dangerous internal state. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of freshness labels and unpredictable draws that keep repeated cryptographic operations from colliding.
+
+## Minimal example
+
+AES-GCM encrypts several records under one key, and each record uses a distinct nonce so authentication and confidentiality do not collapse.
+
 ## Security properties
 
 - Unpredictability for secrets, keys, salts, and some protocol challenges.
@@ -44,14 +62,9 @@ Not applicable as a standalone category. Randomness quality matters equally in c
 
 Confidence depends on local entropy sources, deterministic derivation where appropriate, implementation checks, and operational monitoring for reuse or generator failure.
 
-## Use cases
+## Common constructions
 
-- Encryption nonces.
-- Signature nonces.
-- Commitment randomness.
-- Protocol challenges.
-
-## Concrete generators and nonce patterns
+### Concrete generators and nonce patterns
 
 | Mechanism or pattern | Typical role | Key differences and cautions |
 | --- | --- | --- |
@@ -62,11 +75,35 @@ Confidence depends on local entropy sources, deterministic derivation where appr
 | Random nonces | Large nonce spaces where collision probability is negligible | Requires enough nonce bits; small random nonces can collide under load. |
 | Synthetic IV / deterministic nonce designs | Misuse-resistant encryption modes and deterministic signatures | Reduces reliance on external randomness, but only within schemes designed for that model. |
 
+## Use cases
+
+- Encryption nonces.
+- Signature nonces.
+- Commitment randomness.
+- Protocol challenges.
+
+## Composition patterns
+
+- Nonce rules differ by scheme and cannot be guessed.
+- Randomness failures can break otherwise sound primitives.
+
+Common adjacent concepts: Digital Signature, [Commitments](/docs/primitives/commitments), [Symmetric Encryption](/docs/primitives/symmetric-encryption).
+
 ## Failure modes and anti-patterns
 
 - Reusing a signature nonce in schemes where it exposes the private key.
 - Reusing encryption nonces in modes that require uniqueness.
 - Treating predictable identifiers as random values.
+
+## Maturity and deployment
+
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: high.
+
+## Related concepts
+
+- Digital Signature
+- [Commitments](/docs/primitives/commitments)
+- [Symmetric Encryption](/docs/primitives/symmetric-encryption)
 
 ## Further reading
 

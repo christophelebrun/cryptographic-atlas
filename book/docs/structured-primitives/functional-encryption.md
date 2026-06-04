@@ -21,9 +21,29 @@ confidence_model:
 
 Functional encryption lets a key reveal only a specific function of encrypted data, rather than the full plaintext.
 
+## Where it sits in the taxonomy
+
+- Level: structured-primitive
+- Parent category: encryption
+- Related concepts: [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption), [Reveal Only a Function](/docs/design-patterns/reveal-only-a-function), [Private Aggregation](/docs/design-patterns/private-aggregation)
+
 ## Problem it solves
 
-It aims to make decryption rights more precise. A party might learn an aggregate, classification, or score without learning each input.
+This page explains the problem behind the concept: Encryption where specialized keys reveal only approved functions of plaintext data. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of giving someone a key that opens only one computed view of encrypted data, not the raw data.
+
+## Minimal example
+
+An analyst receives a function key that reveals a risk score over encrypted records, not the underlying records.
+
+## Security properties
+
+- controlled disclosure
+- confidentiality
+- least privilege decryption
 
 ## What it does not provide
 
@@ -36,10 +56,6 @@ It aims to make decryption rights more precise. A party might learn an aggregate
 
 Assumptions are scheme-specific and often include a setup or key authority that issues function keys correctly. The system also assumes that the allowed function and repeated query pattern do not leak more than intended.
 
-## Maturity and deployment
-
-Functional encryption remains largely research-stage for many general forms. Specialized forms may be more practical.
-
 ## Post-quantum posture
 
 Depends on the concrete construction. Functional encryption is a broad research area; posture should be classified per scheme and parameter set, not for the category as a whole.
@@ -48,21 +64,39 @@ Depends on the concrete construction. Functional encryption is a broad research 
 
 Confidence often depends on a key authority or setup process that issues function keys. Even if the cryptography works, the allowed function can leak sensitive information, and repeated function outputs can become an inference channel.
 
-## Concrete schemes and subfamilies
+## Common constructions
 
-| Family | What the function key reveals | Typical role | Key differences and cautions |
-| --- | --- | --- | --- |
-| Identity-based encryption | Messages for a named identity | Key-management systems with a private-key generator | The authority can derive user keys, so issuer trust is central. |
-| Attribute-based encryption | Decryption under an access policy or attribute set | Fine-grained encrypted access control | Policy privacy, revocation, and key abuse are system problems. |
-| Inner-product functional encryption | Inner product or linear score | Private analytics and research prototypes | More specialized and practical than general FE, but still leakage-sensitive. |
-| Predicate encryption | Whether encrypted attributes satisfy a predicate | Search and policy checks | The revealed predicate result can still leak sensitive information. |
-| General functional encryption | Arbitrary functions in principle | Research-stage access to computed outputs | Mostly theoretical or highly specialized; do not present as deployable general access control. |
+Common constructions vary by concrete scheme and deployment context. Use the concrete scheme or composition tables on this page to check the exact assumptions, setup model, and implementation risk.
+
+## Use cases
+
+- restricted analytics
+- private classification
+- reveal only a function
+
+## Composition patterns
+
+- The allowed function output may reveal more than intended.
+- Repeated function queries can leak inputs.
+- Key authority trust can dominate the privacy model.
+
+Common adjacent concepts: [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption), [Reveal Only a Function](/docs/design-patterns/reveal-only-a-function), [Private Aggregation](/docs/design-patterns/private-aggregation).
 
 ## Failure modes and anti-patterns
 
 - Issuing function keys that reveal too much.
 - Ignoring leakage from repeated function outputs.
 - Treating research-stage general functional encryption as a deployable access-control layer.
+
+## Maturity and deployment
+
+Functional encryption remains largely research-stage for many general forms. Specialized forms may be more practical.
+
+## Related concepts
+
+- [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption)
+- [Reveal Only a Function](/docs/design-patterns/reveal-only-a-function)
+- [Private Aggregation](/docs/design-patterns/private-aggregation)
 
 ## Further reading
 

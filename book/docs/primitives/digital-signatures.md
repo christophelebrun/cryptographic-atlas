@@ -21,6 +21,24 @@ confidence_model:
 
 A digital signature lets a private key holder authorize a message so anyone with the public key can verify it.
 
+## Where it sits in the taxonomy
+
+- Level: basic-primitive
+- Parent category: authentication
+- Related concepts: [Anonymous Credentials](/docs/protocols/anonymous-credentials), [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography), [Public-Key Encryption](/docs/primitives/public-key-encryption)
+
+## Problem it solves
+
+This page explains the problem behind the concept: A private key holder signs a message so verifiers can check its origin and integrity. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a public wax seal: anyone can check the seal, but only the private key holder should be able to create it.
+
+## Minimal example
+
+A package maintainer signs a release digest; users verify the signature against the maintainer public key before installing.
+
 ## Security properties
 
 - Message authenticity.
@@ -34,14 +52,21 @@ A digital signature lets a private key holder authorize a message so anyone with
 - Proof that the signer understood the message.
 - Protection if the private key is stolen.
 
-## Use cases
+## Assumptions
 
-- Software updates.
-- Blockchain transactions.
-- Credential issuance.
-- Protocol transcript authentication.
+The signature scheme must resist forgery, the private key must remain secret, and verifiers must bind the public key to the right signer, protocol, message format, and domain.
 
-## Concrete algorithms and schemes
+## Post-quantum posture
+
+Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable, while finalized post-quantum signature standards such as ML-DSA and SLH-DSA are designed for post-quantum migration. Falcon/FN-DSA is selected for ongoing standardization, so its deployment status should be checked separately.
+
+## Confidence model
+
+Confidence comes from the signer controlling the private key, verifiers binding the public key to the right identity and context, and the signature scheme resisting forgery.
+
+## Common constructions
+
+### Concrete algorithms and schemes
 
 | Scheme family | Examples | Common role | Post-quantum posture and cautions |
 | --- | --- | --- | --- |
@@ -55,23 +80,35 @@ A digital signature lets a private key holder authorize a message so anyone with
 | Falcon / FN-DSA | Compact lattice signature selected for ongoing NIST standardization | Future post-quantum option where smaller signatures matter | Not one of the three finalized 2024 FIPS standards; track FIPS 206 status before treating as finalized. |
 | Legacy signatures | DSA, RSA PKCS #1 v1.5 signatures | Compatibility and verification of old artifacts | Keep as legacy context; do not present as a modern default. |
 
-## Assumptions
+## Use cases
 
-The signature scheme must resist forgery, the private key must remain secret, and verifiers must bind the public key to the right signer, protocol, message format, and domain.
+- Software updates.
+- Blockchain transactions.
+- Credential issuance.
+- Protocol transcript authentication.
 
-## Post-quantum posture
+## Composition patterns
 
-Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable, while finalized post-quantum signature standards such as ML-DSA and SLH-DSA are designed for post-quantum migration. Falcon/FN-DSA is selected for ongoing standardization, so its deployment status should be checked separately.
+- Signatures must bind protocol, domain, and message encoding.
+- Legal non-repudiation depends on operational key control.
 
-## Confidence model
-
-Confidence comes from the signer controlling the private key, verifiers binding the public key to the right identity and context, and the signature scheme resisting forgery.
+Common adjacent concepts: [Anonymous Credentials](/docs/protocols/anonymous-credentials), [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography), [Public-Key Encryption](/docs/primitives/public-key-encryption).
 
 ## Failure modes and anti-patterns
 
 - Signing ambiguous encodings.
 - Reusing nonces in schemes where nonce uniqueness is required.
 - Failing to bind signatures to domain, chain, or protocol context.
+
+## Maturity and deployment
+
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: high.
+
+## Related concepts
+
+- [Anonymous Credentials](/docs/protocols/anonymous-credentials)
+- [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography)
+- [Public-Key Encryption](/docs/primitives/public-key-encryption)
 
 ## Further reading
 

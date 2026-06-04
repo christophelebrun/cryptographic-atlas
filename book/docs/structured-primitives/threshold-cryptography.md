@@ -25,11 +25,29 @@ source_review:
 
 Threshold cryptography distributes a cryptographic power across several parties so that a quorum is required to act.
 
-## What it can provide
+## Where it sits in the taxonomy
 
-- Reduced single-key compromise risk.
-- Distributed signing or decryption.
-- Better availability if some parties fail.
+- Level: structured-primitive
+- Parent category: threshold
+- Related concepts: [Secret Sharing](/docs/primitives/secret-sharing), [Electronic Voting](/docs/protocols/e-voting), [Public-Key Encryption](/docs/primitives/public-key-encryption)
+
+## Problem it solves
+
+This page explains the problem behind the concept: A cryptographic power is split so a quorum is required to act. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a cryptographic power split across operators so no single operator can act alone.
+
+## Minimal example
+
+Five trustees hold decryption shares, and any three can jointly decrypt an election tally while fewer than three learn nothing.
+
+## Security properties
+
+- distributed control
+- compromise resilience
+- availability at threshold
 
 ## What it does not provide
 
@@ -50,20 +68,22 @@ Depends on the underlying primitive. Threshold ECDSA or threshold Schnorr is qua
 
 Confidence is `t-of-n`: the system assumes fewer than `t` parties collude for privacy or key misuse resistance, and at least `t` parties are available for liveness. Distributed key generation, share custody, and recovery policy are part of the model.
 
-## Concrete schemes and protocols
+## Common constructions
 
-| Scheme or protocol family | Underlying primitive | Typical role | Key differences and cautions |
-| --- | --- | --- | --- |
-| Threshold BLS | Pairing-based signatures | Aggregated committee signatures and validator groups | Compact aggregation, but quantum-vulnerable and subgroup/domain rules matter. |
-| FROST | Schnorr-style signatures | Efficient threshold signing | Quantum-vulnerable; participant binding, nonce handling, and signing rounds are critical. |
-| Threshold ECDSA | ECDSA | Custody and blockchain signing where ECDSA is fixed by the ecosystem | More complex than threshold Schnorr; protocol implementation risk is high. |
-| Distributed key generation | Secret sharing plus verification | Creating a threshold key without one dealer | Setup protocol must handle malicious participants and aborts. |
-| Threshold decryption | Public-key encryption or homomorphic encryption | Voting, private tallying, escrowed decryption | Privacy and liveness depend on trustee threshold and share verification. |
-| Threshold post-quantum schemes | Scheme-specific research and engineering | Migration target | Not automatic; each post-quantum primitive needs its own threshold design and maturity assessment. |
+Common constructions vary by concrete scheme and deployment context. Use the concrete scheme or composition tables on this page to check the exact assumptions, setup model, and implementation risk.
 
-## Source-depth notes
+## Use cases
 
-Threshold signing should cite both the signing protocol and the setup protocol. For Schnorr-style deployments, FROST is a protocol standard, while distributed key generation remains a separate trust and liveness concern. For BLS and ECDSA ecosystems, aggregation, pairing, nonce, and share-generation assumptions differ enough that they should not be collapsed into one generic "threshold" claim.
+- threshold signatures
+- threshold decryption
+- trustee based voting
+
+## Composition patterns
+
+- Threshold cryptography shifts trust into custody and governance.
+- Liveness and confidentiality thresholds may differ.
+
+Common adjacent concepts: [Secret Sharing](/docs/primitives/secret-sharing), [Electronic Voting](/docs/protocols/e-voting), [Public-Key Encryption](/docs/primitives/public-key-encryption).
 
 ## Failure modes and anti-patterns
 
@@ -71,6 +91,20 @@ Threshold signing should cite both the signing protocol and the setup protocol. 
 - Poor share custody.
 - Unclear quorum governance.
 - No plan for rotation, slashing, replacement, or disaster recovery.
+
+## Maturity and deployment
+
+Classified as mature. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+
+## Source-depth notes
+
+Threshold signing should cite both the signing protocol and the setup protocol. For Schnorr-style deployments, FROST is a protocol standard, while distributed key generation remains a separate trust and liveness concern. For BLS and ECDSA ecosystems, aggregation, pairing, nonce, and share-generation assumptions differ enough that they should not be collapsed into one generic "threshold" claim.
+
+## Related concepts
+
+- [Secret Sharing](/docs/primitives/secret-sharing)
+- [Electronic Voting](/docs/protocols/e-voting)
+- [Public-Key Encryption](/docs/primitives/public-key-encryption)
 
 ## Further reading
 

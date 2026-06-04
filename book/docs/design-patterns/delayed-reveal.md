@@ -21,12 +21,28 @@ confidence_model:
 
 Delayed reveal fixes information at one time and discloses it later.
 
-## Common building blocks
+## Where it sits in the taxonomy
 
-- Commitments.
-- Timelocks or VDFs.
-- Public bulletin boards.
-- Opening deadlines and dispute rules.
+- Level: design-pattern
+- Parent category: design-pattern
+- Related concepts: [Commitments](/docs/primitives/commitments), [Timelock and VDFs](/docs/structured-primitives/timelock-and-vdfs)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Fix information now and disclose it later. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of sealing an answer in a tamper-evident envelope now and opening it after everyone has committed.
+
+## Minimal example
+
+Bidders first publish commitments to bids. After the deadline, they open the commitments so late bidders cannot adapt to visible bids.
+
+## Security properties
+
+- temporal binding
+- delayed disclosure
 
 ## What it does not provide
 
@@ -46,7 +62,16 @@ Not applicable to the pattern by itself. A concrete design inherits posture from
 
 Confidence may come from mathematical binding, public-verifiability of openings, or external-timing assumptions when VDFs or timelocks are used.
 
-## Concrete compositions
+## Common constructions
+
+### Common building blocks
+
+- Commitments.
+- Timelocks or VDFs.
+- Public bulletin boards.
+- Opening deadlines and dispute rules.
+
+### Concrete compositions
 
 | Composition | Typical role | Main caution |
 | --- | --- | --- |
@@ -55,12 +80,34 @@ Confidence may come from mathematical binding, public-verifiability of openings,
 | Timelock puzzle reveal | Delay without relying only on a human opener | Delay assumptions and hardware advantage must be modeled. |
 | VDF-assisted reveal | Publicly verifiable delayed output | VDF setup and denial-of-service handling are part of the design. |
 
-## Failure modes
+## Use cases
+
+- commit reveal
+- randomness beacons
+- sealed bid processes
+
+## Composition patterns
+
+- Delayed reveal needs deadlines and penalties.
+- VDFs and timelocks add timing assumptions, not trusted wall-clock time.
+
+Common adjacent concepts: [Commitments](/docs/primitives/commitments), [Timelock and VDFs](/docs/structured-primitives/timelock-and-vdfs).
+
+## Failure modes and anti-patterns
 
 - Selective aborts.
 - Weak randomness in commitments.
 - Ambiguous opening formats.
 - No rule for missed deadlines.
+
+## Maturity and deployment
+
+Classified as mature. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: medium. Parameter sensitivity: scheme-dependent.
+
+## Related concepts
+
+- [Commitments](/docs/primitives/commitments)
+- [Timelock and VDFs](/docs/structured-primitives/timelock-and-vdfs)
 
 ## Further reading
 

@@ -33,6 +33,21 @@ jobs:
         working-directory: book
         run: npm ci
 
+      - name: Validate content
+        working-directory: book
+        run: npm run validate:content
+
+      - name: Typecheck
+        working-directory: book
+        run: npm run typecheck
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Generate PDF
+        working-directory: book
+        run: npm run generate:pdf
+
       - name: Build website
         working-directory: book
         run: npm run build

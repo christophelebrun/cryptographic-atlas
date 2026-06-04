@@ -42,11 +42,21 @@ const conceptCardAliases = {
 
 const conceptSections = [
   'One-sentence intuition',
-  ['What it does not provide', 'What ZKPs do not provide'],
-  ['Assumptions', 'Trust assumptions'],
+  'Where it sits in the taxonomy',
+  'Problem it solves',
+  'Mental model',
+  'Minimal example',
+  'Security properties',
+  'What it does not provide',
+  'Assumptions',
   'Post-quantum posture',
   'Confidence model',
-  ['Failure modes and anti-patterns', 'Failure modes'],
+  'Common constructions',
+  'Use cases',
+  'Composition patterns',
+  'Failure modes and anti-patterns',
+  'Maturity and deployment',
+  'Related concepts',
   'Further reading',
 ];
 

@@ -21,6 +21,24 @@ confidence_model:
 
 A key derivation function (KDF) turns shared secret material into context-specific cryptographic keys.
 
+## Where it sits in the taxonomy
+
+- Level: basic-primitive
+- Parent category: key-management
+- Related concepts: [Symmetric Encryption](/docs/primitives/symmetric-encryption), [Key Encapsulation and Exchange](/docs/primitives/key-encapsulation-and-exchange), [Message Authentication Codes](/docs/primitives/message-authentication-codes)
+
+## Problem it solves
+
+This page explains the problem behind the concept: A KDF turns shared secret material into context-specific keys. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a key schedule that turns one master secret into separate labeled keys for separate jobs.
+
+## Minimal example
+
+TLS derives separate client-write and server-write traffic keys from one handshake secret and transcript labels.
+
 ## Security properties
 
 - Key separation between contexts.
@@ -45,13 +63,9 @@ Plausible for hash-based KDFs with appropriate parameters. The posture of the ke
 
 Confidence comes from entropy in the input material, domain separation in the KDF inputs, and disciplined key lifecycle management.
 
-## Use cases
+## Common constructions
 
-- Deriving encryption and MAC keys from a shared secret.
-- Session-key schedules.
-- Context-separated keys for protocols.
-
-## Concrete algorithms and schemes
+### Concrete algorithms and schemes
 
 | Scheme | Main input shape | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -61,11 +75,34 @@ Confidence comes from entropy in the input material, domain separation in the KD
 | Argon2id | Password plus salt and memory/time/parallelism parameters | Password storage and password-derived keys | Modern memory-hard default when available; parameters need operational tuning. |
 | NIST counter-mode KDFs | Shared secret plus labels and context | Key management in NIST-profiled systems | Good for structured key derivation when labels and context are explicit. |
 
+## Use cases
+
+- Deriving encryption and MAC keys from a shared secret.
+- Session-key schedules.
+- Context-separated keys for protocols.
+
+## Composition patterns
+
+- KDF context must bind protocol transcripts and algorithm choices.
+- Passwords need password-hashing schemes, not only fast KDFs.
+
+Common adjacent concepts: [Symmetric Encryption](/docs/primitives/symmetric-encryption), [Key Encapsulation and Exchange](/docs/primitives/key-encapsulation-and-exchange), [Message Authentication Codes](/docs/primitives/message-authentication-codes).
+
 ## Failure modes and anti-patterns
 
 - Reusing one derived key for multiple purposes.
 - Feeding low-entropy passwords into a fast KDF.
 - Omitting transcript or domain labels, which can create cross-protocol key reuse.
+
+## Maturity and deployment
+
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: medium. Parameter sensitivity: medium.
+
+## Related concepts
+
+- [Symmetric Encryption](/docs/primitives/symmetric-encryption)
+- [Key Encapsulation and Exchange](/docs/primitives/key-encapsulation-and-exchange)
+- [Message Authentication Codes](/docs/primitives/message-authentication-codes)
 
 ## Further reading
 

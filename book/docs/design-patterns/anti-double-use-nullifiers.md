@@ -21,12 +21,29 @@ confidence_model:
 
 Anti-double-use nullifiers let a system reject repeated anonymous actions in the same context.
 
-## Pattern
+## Where it sits in the taxonomy
 
-1. Bind the action to a context.
-2. Derive a public nullifier from a private secret and that context.
-3. Prove the nullifier is well formed and eligible.
-4. Reject the action if the nullifier was already used.
+- Level: design-pattern
+- Parent category: design-pattern
+- Related concepts: [Nullifiers](/docs/protocols/nullifiers), [Anonymous Membership](/docs/design-patterns/anonymous-membership), [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
+
+## Problem it solves
+
+This page explains the problem behind the concept: A public context-specific tag lets a system reject repeated anonymous actions. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a private ticket that stamps the same public mark whenever it is used for one event, while hiding who held the ticket.
+
+## Minimal example
+
+An airdrop claim includes a nullifier derived from the claimant secret and the airdrop ID; the contract rejects a second claim with the same nullifier.
+
+## Security properties
+
+- double use prevention
+- limited linkability
+- anonymous rate limiting
 
 ## What it does not provide
 
@@ -47,7 +64,16 @@ Not applicable to the pattern by itself. A concrete nullifier design inherits po
 
 Confidence comes from client-side secret control, deterministic context binding, public duplicate detection, and a proof that the nullifier is derived from an eligible secret.
 
-## Concrete compositions
+## Common constructions
+
+### Pattern
+
+1. Bind the action to a context.
+2. Derive a public nullifier from a private secret and that context.
+3. Prove the nullifier is well formed and eligible.
+4. Reject the action if the nullifier was already used.
+
+### Concrete compositions
 
 | Composition | Typical role | Main caution |
 | --- | --- | --- |
@@ -56,12 +82,29 @@ Confidence comes from client-side secret control, deterministic context binding,
 | Credential serial number | Anonymous credential spending or presentation limits | Revocation and issuer linkability need separate treatment. |
 | Epoch-scoped nullifier | Rate limits per time window or application | Epoch design controls whether users are linkable across periods. |
 
-## Failure modes
+## Use cases
+
+- private voting
+- anonymous airdrops
+- anonymous signaling
+
+## Composition patterns
+
+- The nullifier must be bound to an eligibility proof.
+- Context reuse can link actions across systems.
+
+Common adjacent concepts: [Nullifiers](/docs/protocols/nullifiers), [Anonymous Membership](/docs/design-patterns/anonymous-membership), [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs).
+
+## Failure modes and anti-patterns
 
 - Reusing the same context links actions.
 - Omitting domain separation.
 - Storing side metadata that identifies the user.
 - Accepting nullifiers without proving eligibility.
+
+## Maturity and deployment
+
+Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: medium.
 
 ## Related concepts
 

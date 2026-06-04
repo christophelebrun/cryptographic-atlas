@@ -21,12 +21,29 @@ confidence_model:
 
 Accumulators and Merkle trees commit to a collection while supporting compact membership, and sometimes non-membership, proofs.
 
-## Use cases
+## Where it sits in the taxonomy
 
-- Certificate transparency.
-- Blockchains and authenticated data structures.
-- Anonymous membership sets.
-- Airdrop eligibility lists.
+- Level: structured-primitive
+- Parent category: authenticated-data-structure
+- Related concepts: [Membership Proofs](/docs/proof-systems/membership-proofs), Hash Function, [Anonymous Membership](/docs/design-patterns/anonymous-membership)
+
+## Problem it solves
+
+This page explains the problem behind the concept: A compact commitment to a collection supports membership and sometimes non-membership proofs. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a compact root that stands for a whole collection and can be checked with a short path or witness.
+
+## Minimal example
+
+A transparency log publishes a Merkle root, and a user verifies that a certificate appears under that root with an inclusion path.
+
+## Security properties
+
+- set commitment
+- membership verification
+- compact proofs
 
 ## What it does not provide
 
@@ -46,22 +63,39 @@ Depends on the accumulator. Merkle trees built from appropriate hash functions a
 
 Confidence comes from the authenticated set root, update rules, and membership proof verification. Dynamic accumulators also need a freshness model so verifiers know which root is current.
 
-## Concrete schemes and data structures
+## Common constructions
 
-| Scheme or structure | Proof type | Typical role | Key differences and cautions |
-| --- | --- | --- | --- |
-| Binary Merkle tree | Inclusion proofs | Blockchains, transparency logs, allowlists | Hash-based and plausibly post-quantum; encoding and leaf/internal-node domain separation matter. |
-| Sparse Merkle tree | Inclusion and non-inclusion over a large key space | Account/state commitments and nullifier sets | Proofs can be predictable in size; default empty nodes and key hashing must be specified. |
-| Merkle Mountain Range | Append-only inclusion proofs | Logs and append-only ledgers | Good for append-only histories; not the same update model as a mutable tree. |
-| RSA accumulator | Compact membership witnesses | Credential revocation and set membership | Quantum-vulnerable; modulus generation and witness update rules are central. |
-| Bilinear accumulator | Pairing-based membership witnesses | Specialized anonymous credential or proof systems | Quantum-vulnerable and pairing-based; setup and subgroup checks matter. |
-| KZG/Verkle-style commitments | Vector openings | Compact authenticated state | Pairing-based and setup-sensitive in common forms. |
+Common constructions vary by concrete scheme and deployment context. Use the concrete scheme or composition tables on this page to check the exact assumptions, setup model, and implementation risk.
+
+## Use cases
+
+- Certificate transparency.
+- Blockchains and authenticated data structures.
+- Anonymous membership sets.
+- Airdrop eligibility lists.
+
+## Composition patterns
+
+- Set membership is not the same as eligibility policy.
+- Dynamic updates need a freshness story.
+
+Common adjacent concepts: [Membership Proofs](/docs/proof-systems/membership-proofs), Hash Function, [Anonymous Membership](/docs/design-patterns/anonymous-membership).
 
 ## Failure modes and anti-patterns
 
 - Ambiguous tree encoding.
 - No domain separation between leaves and internal nodes.
 - Treating membership as authorization without checking context.
+
+## Maturity and deployment
+
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: scheme-dependent.
+
+## Related concepts
+
+- [Membership Proofs](/docs/proof-systems/membership-proofs)
+- Hash Function
+- [Anonymous Membership](/docs/design-patterns/anonymous-membership)
 
 ## Further reading
 

@@ -1165,7 +1165,7 @@
     },
     {
       "source": "confidentiality",
-      "relation": "breaks-if",
+      "relation": "breaks-if-missing",
       "target": "authenticated-encryption",
       "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
     },
@@ -1201,7 +1201,7 @@
     },
     {
       "source": "unlinkability",
-      "relation": "breaks-if",
+      "relation": "breaks-if-misused",
       "target": "nullifier",
       "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
     },
@@ -1225,7 +1225,7 @@
     },
     {
       "source": "verifiability",
-      "relation": "breaks-if",
+      "relation": "breaks-if-missing",
       "target": "transcript-binding",
       "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
     },
@@ -1339,19 +1339,19 @@
     },
     {
       "source": "rsa-pkcs1-v1-5-encryption",
-      "relation": "breaks-if",
+      "relation": "unsafe-instance-of",
       "target": "public-key-encryption",
       "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
     },
     {
       "source": "sha-1",
-      "relation": "breaks-if",
+      "relation": "unsafe-instance-of",
       "target": "hash-function",
       "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
     },
     {
       "source": "md5",
-      "relation": "breaks-if",
+      "relation": "unsafe-instance-of",
       "target": "hash-function",
       "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
     },
@@ -1393,7 +1393,7 @@
     },
     {
       "source": "deniability",
-      "relation": "breaks-if",
+      "relation": "breaks-if-misused",
       "target": "digital-signature",
       "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
     },
@@ -1848,7 +1848,7 @@
     ],
     "confidentiality": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-missing",
         "target": "authenticated-encryption",
         "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
       },
@@ -1886,7 +1886,7 @@
     ],
     "unlinkability": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-misused",
         "target": "nullifier",
         "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
       },
@@ -1910,7 +1910,7 @@
     ],
     "verifiability": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-missing",
         "target": "transcript-binding",
         "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
       },
@@ -2048,21 +2048,21 @@
     ],
     "rsa-pkcs1-v1-5-encryption": [
       {
-        "relation": "breaks-if",
+        "relation": "unsafe-instance-of",
         "target": "public-key-encryption",
         "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
       }
     ],
     "sha-1": [
       {
-        "relation": "breaks-if",
+        "relation": "unsafe-instance-of",
         "target": "hash-function",
         "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
       }
     ],
     "md5": [
       {
-        "relation": "breaks-if",
+        "relation": "unsafe-instance-of",
         "target": "hash-function",
         "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
       }
@@ -2093,7 +2093,7 @@
     ],
     "deniability": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-misused",
         "target": "digital-signature",
         "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
       },
@@ -2451,7 +2451,7 @@
     ],
     "nullifier": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-misused",
         "source": "unlinkability",
         "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
       },
@@ -2576,7 +2576,7 @@
     ],
     "transcript-binding": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-missing",
         "source": "verifiability",
         "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
       },
@@ -2603,7 +2603,7 @@
     ],
     "authenticated-encryption": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-missing",
         "source": "confidentiality",
         "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
       },
@@ -2849,19 +2849,19 @@
     ],
     "public-key-encryption": [
       {
-        "relation": "breaks-if",
+        "relation": "unsafe-instance-of",
         "source": "rsa-pkcs1-v1-5-encryption",
         "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
       }
     ],
     "hash-function": [
       {
-        "relation": "breaks-if",
+        "relation": "unsafe-instance-of",
         "source": "md5",
         "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
       },
       {
-        "relation": "breaks-if",
+        "relation": "unsafe-instance-of",
         "source": "sha-1",
         "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
       },
@@ -2906,7 +2906,7 @@
     ],
     "digital-signature": [
       {
-        "relation": "breaks-if",
+        "relation": "breaks-if-misused",
         "source": "deniability",
         "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
       },
@@ -3529,6 +3529,20 @@
         "notes": "A verifier needs tamper-evident inputs and authentic verification parameters."
       }
     ],
+    "breaks-if-missing": [
+      {
+        "source": "confidentiality",
+        "relation": "breaks-if-missing",
+        "target": "authenticated-encryption",
+        "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
+      },
+      {
+        "source": "verifiability",
+        "relation": "breaks-if-missing",
+        "target": "transcript-binding",
+        "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
+      }
+    ],
     "breaks-if": [
       {
         "source": "anonymity",
@@ -3549,52 +3563,24 @@
         "notes": "Sender, fee, size, and timing metadata can leave enough information to censor targeted users."
       },
       {
-        "source": "confidentiality",
-        "relation": "breaks-if",
-        "target": "authenticated-encryption",
-        "notes": "Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged."
-      },
-      {
-        "source": "deniability",
-        "relation": "breaks-if",
-        "target": "digital-signature",
-        "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
-      },
-      {
         "source": "encrypted-mempools",
         "relation": "breaks-if",
         "target": "metadata-leakage",
         "notes": "Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted."
-      },
+      }
+    ],
+    "breaks-if-misused": [
       {
-        "source": "md5",
-        "relation": "breaks-if",
-        "target": "hash-function",
-        "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
-      },
-      {
-        "source": "rsa-pkcs1-v1-5-encryption",
-        "relation": "breaks-if",
-        "target": "public-key-encryption",
-        "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
-      },
-      {
-        "source": "sha-1",
-        "relation": "breaks-if",
-        "target": "hash-function",
-        "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
+        "source": "deniability",
+        "relation": "breaks-if-misused",
+        "target": "digital-signature",
+        "notes": "Publicly verifiable signatures on message content can create durable third-party evidence."
       },
       {
         "source": "unlinkability",
-        "relation": "breaks-if",
+        "relation": "breaks-if-misused",
         "target": "nullifier",
         "notes": "Nullifiers deliberately create linkability inside a context and must not be reused across contexts."
-      },
-      {
-        "source": "verifiability",
-        "relation": "breaks-if",
-        "target": "transcript-binding",
-        "notes": "Verification can be meaningless if public inputs, verifier keys, or context are omitted."
       }
     ],
     "uses": [
@@ -3723,6 +3709,26 @@
         "relation": "uses",
         "target": "private-payments",
         "notes": "Sapling is a concrete shielded-payment protocol suite."
+      }
+    ],
+    "unsafe-instance-of": [
+      {
+        "source": "md5",
+        "relation": "unsafe-instance-of",
+        "target": "hash-function",
+        "notes": "MD5 is retained only for legacy recognition and non-adversarial checksum context."
+      },
+      {
+        "source": "rsa-pkcs1-v1-5-encryption",
+        "relation": "unsafe-instance-of",
+        "target": "public-key-encryption",
+        "notes": "Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories."
+      },
+      {
+        "source": "sha-1",
+        "relation": "unsafe-instance-of",
+        "target": "hash-function",
+        "notes": "SHA-1 collision resistance is not adequate for new cryptographic uses."
       }
     ],
     "weakens-if": [

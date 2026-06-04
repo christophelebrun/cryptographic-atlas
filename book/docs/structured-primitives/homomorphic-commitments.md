@@ -21,11 +21,29 @@ confidence_model:
 
 A homomorphic commitment lets commitments be combined in ways that correspond to operations on the hidden values.
 
-## Use cases
+## Where it sits in the taxonomy
 
-- Confidential sums.
-- Private tallying.
-- Range proof systems.
+- Level: structured-primitive
+- Parent category: commitment
+- Related concepts: [Pedersen Commitments](/docs/primitives/pedersen-commitments), [Commitments](/docs/primitives/commitments), [Private Aggregation](/docs/design-patterns/private-aggregation)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Commitments can be combined so their hidden values combine in a matching way. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of sealed numbers that can be added while still sealed, with the result opening consistently.
+
+## Minimal example
+
+Two committed balances can be added to produce a commitment to the total, then a proof checks the total without opening each balance.
+
+## Security properties
+
+- hiding
+- binding
+- additive structure
 
 ## What it does not provide
 
@@ -45,7 +63,9 @@ Depends on the construction. Pedersen-style homomorphic commitments are quantum-
 
 Confidence comes from the commitment binding and hiding assumptions plus explicit constraints on the hidden arithmetic domain. Homomorphic structure is useful only when invalid values are ruled out elsewhere.
 
-## Concrete schemes and families
+## Common constructions
+
+### Concrete schemes and families
 
 | Scheme | Homomorphic shape | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -55,9 +75,32 @@ Confidence comes from the commitment binding and hiding assumptions plus explici
 | Inner-product-argument commitments | Vector and polynomial commitments | Bulletproof-style systems and transparent-ish vector commitments | Avoids pairing setup in common forms, but proof sizes and verification costs differ. |
 | Merkle commitments | Set/list commitment via hashes | Membership proofs and sparse state commitments | Not algebraically homomorphic, but often used as the hash-based alternative when homomorphism is not required. |
 
+## Use cases
+
+- Confidential sums.
+- Private tallying.
+- Range proof systems.
+
+## Composition patterns
+
+- Homomorphic arithmetic can wrap or cancel invalid values.
+- Range proofs or validity proofs are usually needed.
+
+Common adjacent concepts: [Pedersen Commitments](/docs/primitives/pedersen-commitments), [Commitments](/docs/primitives/commitments), [Private Aggregation](/docs/design-patterns/private-aggregation).
+
 ## Failure modes and anti-patterns
 
 Homomorphism can let invalid values cancel or wrap unless the protocol adds range proofs and clear arithmetic domains.
+
+## Maturity and deployment
+
+Classified as mature. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: high.
+
+## Related concepts
+
+- [Pedersen Commitments](/docs/primitives/pedersen-commitments)
+- [Commitments](/docs/primitives/commitments)
+- [Private Aggregation](/docs/design-patterns/private-aggregation)
 
 ## Further reading
 

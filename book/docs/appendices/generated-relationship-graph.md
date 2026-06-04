@@ -64,7 +64,7 @@ Graph size: 120 referenced nodes and 111 directed edges.
 
 ## Break Conditions and Inherited Risks
 
-`breaks-if`, `weakens-if`, and `inherits-risk-from` edges show conditions that can defeat or materially weaken a guarantee.
+`breaks-if`, `breaks-if-missing`, `breaks-if-misused`, `weakens-if`, `inherits-risk-from`, and `unsafe-instance-of` edges show conditions that can defeat or materially weaken a guarantee.
 
 | Source | Relation | Target | Notes |
 | --- | --- | --- | --- |
@@ -74,16 +74,16 @@ Graph size: 120 referenced nodes and 111 directed edges.
 | SNARKs, STARKs, and Bulletproofs | inherits risk from | Pairings | Pairing-based SNARKs inherit pairing and elliptic-curve assumptions. |
 | SNARKs, STARKs, and Bulletproofs | inherits risk from | Trusted Setup | Some proof systems require setup ceremonies or structured reference strings. |
 | Zero-Knowledge Proof | inherits risk from | Random Oracle Model | Fiat-Shamir-style non-interactive proofs often use random-oracle-model reasoning. |
-| Confidentiality | breaks if | Authenticated Encryption | Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged. |
+| Confidentiality | breaks if missing | Authenticated Encryption | Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged. |
 | Anonymity | breaks if | Metadata Leakage | Timing, network, amount, and rare-attribute metadata can defeat anonymity even when proofs verify. |
-| Unlinkability | breaks if | Nullifier | Nullifiers deliberately create linkability inside a context and must not be reused across contexts. |
-| Verifiability | breaks if | Transcript Binding | Verification can be meaningless if public inputs, verifier keys, or context are omitted. |
+| Unlinkability | breaks if misused | Nullifier | Nullifiers deliberately create linkability inside a context and must not be reused across contexts. |
+| Verifiability | breaks if missing | Transcript Binding | Verification can be meaningless if public inputs, verifier keys, or context are omitted. |
 | Encrypted Mempools | breaks if | Metadata Leakage | Size, timing, sender path, and censorship behavior can reveal transaction strategy even when payloads are encrypted. |
-| RSAES-PKCS1-v1_5 encryption | breaks if | Public-Key Encryption | Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories. |
-| SHA-1 | breaks if | Hash Function | SHA-1 collision resistance is not adequate for new cryptographic uses. |
-| MD5 | breaks if | Hash Function | MD5 is retained only for legacy recognition and non-adversarial checksum context. |
+| RSAES-PKCS1-v1_5 encryption | unsafe instance of | Public-Key Encryption | Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories. |
+| SHA-1 | unsafe instance of | Hash Function | SHA-1 collision resistance is not adequate for new cryptographic uses. |
+| MD5 | unsafe instance of | Hash Function | MD5 is retained only for legacy recognition and non-adversarial checksum context. |
 | Auditability | breaks if | Metadata Leakage | Over-collected audit logs can defeat privacy goals even when evidence integrity is strong. |
-| Deniability | breaks if | Digital Signature | Publicly verifiable signatures on message content can create durable third-party evidence. |
+| Deniability | breaks if misused | Digital Signature | Publicly verifiable signatures on message content can create durable third-party evidence. |
 | Availability | weakens if | Trusted Setup | Setup or recovery ceremonies can become availability bottlenecks if no replacement path exists. |
 | Censorship Resistance | breaks if | Metadata Leakage | Sender, fee, size, and timing metadata can leave enough information to censor targeted users. |
 
@@ -175,8 +175,8 @@ Outgoing edges grouped by source. This table is useful when reviewing what a con
 | CKKS homomorphic encryption | used in -> Private Machine Learning Analytics |
 | Commitments | composes with -> Zero-Knowledge Proof |
 | Concrete ML | commonly composed with -> Private Machine Learning Analytics |
-| Confidentiality | breaks if -> Authenticated Encryption<br />commonly composed with -> Integrity |
-| Deniability | breaks if -> Digital Signature<br />commonly composed with -> Forward Secrecy<br />contrasts with -> Non-Repudiation |
+| Confidentiality | breaks if missing -> Authenticated Encryption<br />commonly composed with -> Integrity |
+| Deniability | breaks if misused -> Digital Signature<br />commonly composed with -> Forward Secrecy<br />contrasts with -> Non-Repudiation |
 | DIDComm Messaging v2 | commonly composed with -> Identity Wallets |
 | Digital Signature | inherits risk from -> Discrete Logarithm |
 | Domain Separation | strengthens -> Transcript Binding |
@@ -199,7 +199,7 @@ Outgoing edges grouped by source. This table is useful when reviewing what a con
 | LUCID encrypted mempool proposal | uses -> Delayed Reveal |
 | Make Receipts Useless | strengthens -> Electronic Voting |
 | MASCOT | uses -> Oblivious Transfer |
-| MD5 | breaks if -> Hash Function |
+| MD5 | unsafe instance of -> Hash Function |
 | Microsoft SEAL | uses -> Homomorphic Encryption |
 | MiMC | used in -> Arithmetization |
 | Mixnets | used in -> Electronic Voting |
@@ -229,22 +229,22 @@ Outgoing edges grouped by source. This table is useful when reviewing what a con
 | Public-Key Encryption | inherits risk from -> Factoring and RSA |
 | Range Proofs | requires -> Commitments |
 | Rescue-Prime | used in -> Arithmetization |
-| RSAES-PKCS1-v1_5 encryption | breaks if -> Public-Key Encryption |
+| RSAES-PKCS1-v1_5 encryption | unsafe instance of -> Public-Key Encryption |
 | Selective Disclosure JWT | contrasts with -> Anonymous Credential |
 | Secure Aggregation | implements pattern -> Private Aggregation |
 | Secure Channels | composes with -> Authenticated Encryption<br />composes with -> Transcript Binding |
-| SHA-1 | breaks if -> Hash Function |
+| SHA-1 | unsafe instance of -> Hash Function |
 | Shutter encrypted mempool | commonly composed with -> Censorship Resistance<br />uses -> Threshold Cryptography |
 | SLH-DSA SHA2 parameter sets | uses -> Hash Function |
 | SLH-DSA SHAKE parameter sets | uses -> Hash Function |
 | SNARKs, STARKs, and Bulletproofs | inherits risk from -> Pairings<br />inherits risk from -> Trusted Setup |
 | SPDZ protocol family | used in -> Multi-Party Computation |
 | Threshold BLS signatures | requires -> Pairings |
-| Unlinkability | breaks if -> Nullifier<br />commonly composed with -> Domain Separation |
+| Unlinkability | breaks if misused -> Nullifier<br />commonly composed with -> Domain Separation |
 | W3C Data Integrity ECDSA credentials | uses -> Authenticity |
 | W3C Data Integrity EdDSA credentials | uses -> Authenticity |
 | Vector Commitments | used in -> Privacy-Preserving Revocation |
-| Verifiability | breaks if -> Transcript Binding<br />commonly composed with -> Integrity |
+| Verifiability | breaks if missing -> Transcript Binding<br />commonly composed with -> Integrity |
 | Zcash Orchard shielded protocol | uses -> Halo-style recursion |
 | Zcash Sapling shielded protocol | uses -> Private Payments |
 | Zero-Knowledge Proof | inherits risk from -> Random Oracle Model |

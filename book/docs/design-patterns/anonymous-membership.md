@@ -21,12 +21,29 @@ confidence_model:
 
 Anonymous membership lets someone prove they belong to an eligible group without revealing which member they are.
 
-## Common building blocks
+## Where it sits in the taxonomy
 
-- Anonymous credentials.
-- Merkle or accumulator membership proofs.
-- Zero-knowledge proofs.
-- Context binding.
+- Level: design-pattern
+- Parent category: design-pattern
+- Related concepts: [Anonymous Credentials](/docs/protocols/anonymous-credentials), [Membership Proofs](/docs/proof-systems/membership-proofs), [Nullifiers](/docs/protocols/nullifiers)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Prove group membership without revealing which member you are. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a guarded doorway that checks a valid badge from a crowd without learning which badge holder is at the door.
+
+## Minimal example
+
+A voter proves they are in an eligibility Merkle tree and submits a ballot without revealing which leaf belongs to them.
+
+## Security properties
+
+- anonymity
+- eligibility
+- unlinkability depending on context
 
 ## What it does not provide
 
@@ -47,21 +64,53 @@ Not applicable to the pattern by itself. A concrete anonymous-membership system 
 
 Confidence usually depends on a trusted issuer or public membership set, holder-controlled secrets, public verification of membership proofs, and non-linking contexts.
 
-## Concrete compositions
+## Common constructions
+
+### Common building blocks
+
+- Anonymous credentials.
+- Merkle or accumulator membership proofs.
+- Zero-knowledge proofs.
+- Context binding.
+
+### Concrete compositions
 
 | Composition | Typical role | Main caution |
 | --- | --- | --- |
 | Merkle membership plus zero-knowledge proof | Anonymous allowlist or group membership | The anonymity set is only the committed set, and stale roots can break eligibility. |
 | Accumulator membership plus zero-knowledge proof | Compact anonymous membership with dynamic sets | Witness updates and accumulator setup must be part of the protocol. |
 | BBS+ or CL anonymous credential | Attribute-based anonymous authorization | Issuer trust, revocation, and rare attributes can re-identify users. |
-| Semaphore-style group membership | Anonymous signaling and one-action-per-group designs | Nullifier context design controls linkability and rate limits. |
+| Semaphore-style group membership | Anonymous signaling and one-action-per-group designs | [Nullifiers](/docs/protocols/nullifiers) context design controls linkability and rate limits. |
 
-## Failure modes
+## Use cases
+
+- eligibility proofs
+- private access control
+- private voting
+
+## Composition patterns
+
+- Nullifiers or rate limits are needed to prevent repeated use.
+- Rare attributes or small groups can deanonymize members.
+
+Common adjacent concepts: [Anonymous Credentials](/docs/protocols/anonymous-credentials), [Membership Proofs](/docs/proof-systems/membership-proofs), [Nullifiers](/docs/protocols/nullifiers).
+
+## Failure modes and anti-patterns
 
 - The eligible set is too small.
 - Membership data is stale or manipulable.
 - Proofs are linkable across contexts.
 - Metadata reveals the member.
+
+## Maturity and deployment
+
+Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: scheme-dependent.
+
+## Related concepts
+
+- [Anonymous Credentials](/docs/protocols/anonymous-credentials)
+- [Membership Proofs](/docs/proof-systems/membership-proofs)
+- [Nullifiers](/docs/protocols/nullifiers)
 
 ## Further reading
 

@@ -128,7 +128,7 @@ relationships:
     target: integrity
     notes: Most deployed confidentiality mechanisms also need tamper detection.
   - source: confidentiality
-    relation: breaks-if
+    relation: breaks-if-missing
     target: authenticated-encryption
     notes: Confidentiality claims often fail operationally when encryption is used without authentication or plaintext is logged.
   - source: integrity
@@ -152,7 +152,7 @@ relationships:
     target: domain-separation
     notes: Context-bound tags prevent linkability across unrelated applications.
   - source: unlinkability
-    relation: breaks-if
+    relation: breaks-if-misused
     target: nullifier
     notes: Nullifiers deliberately create linkability inside a context and must not be reused across contexts.
   - source: forward-secrecy
@@ -168,7 +168,7 @@ relationships:
     target: integrity
     notes: A verifier needs tamper-evident inputs and authentic verification parameters.
   - source: verifiability
-    relation: breaks-if
+    relation: breaks-if-missing
     target: transcript-binding
     notes: Verification can be meaningless if public inputs, verifier keys, or context are omitted.
   - source: zcash-orchard
@@ -244,15 +244,15 @@ relationships:
     target: oblivious-transfer
     notes: MASCOT uses OT-based preprocessing for maliciously secure arithmetic MPC.
   - source: rsa-pkcs1-v1-5-encryption
-    relation: breaks-if
+    relation: unsafe-instance-of
     target: public-key-encryption
     notes: Legacy RSA encryption can fail through padding-oracle behavior and should be isolated in migration inventories.
   - source: sha-1
-    relation: breaks-if
+    relation: unsafe-instance-of
     target: hash-function
     notes: SHA-1 collision resistance is not adequate for new cryptographic uses.
   - source: md5
-    relation: breaks-if
+    relation: unsafe-instance-of
     target: hash-function
     notes: MD5 is retained only for legacy recognition and non-adversarial checksum context.
   - source: auditability
@@ -280,7 +280,7 @@ relationships:
     target: forward-secrecy
     notes: Key evolution and erasure reduce the value of later transcript compromise.
   - source: deniability
-    relation: breaks-if
+    relation: breaks-if-misused
     target: digital-signature
     notes: Publicly verifiable signatures on message content can create durable third-party evidence.
   - source: non-repudiation

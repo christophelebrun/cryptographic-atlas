@@ -22,6 +22,24 @@ confidence_model:
 
 Key encapsulation and key exchange let parties establish shared secret material over an insecure channel.
 
+## Where it sits in the taxonomy
+
+- Level: basic-primitive
+- Parent category: key-management
+- Related concepts: [Public-Key Encryption](/docs/primitives/public-key-encryption), [Key Derivation Functions](/docs/primitives/key-derivation-functions), [Lattices](/docs/assumptions/lattices)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Parties establish shared secret material over an insecure channel. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of two parties creating the same fresh secret in public while outsiders cannot compute it.
+
+## Minimal example
+
+A sender encapsulates to a recipient public key, both derive the same shared secret, and a KDF turns it into an encryption key.
+
 ## Security properties
 
 - Shared secret establishment.
@@ -46,13 +64,9 @@ Depends on the concrete mechanism. Diffie-Hellman and elliptic-curve Diffie-Hell
 
 Confidence comes from the key-establishment assumption, authentication binding, fresh ephemeral secret handling, and correct derivation of application keys from the shared secret.
 
-## Use cases
+## Common constructions
 
-- Hybrid public-key encryption.
-- Transport security handshakes.
-- Secure messaging session setup.
-
-## Concrete algorithms and schemes
+### Concrete algorithms and schemes
 
 | Mechanism | Family | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -65,11 +79,34 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 | HPKE KEM suites | KEM plus KDF plus AEAD framework | Hybrid encryption and application protocols | HPKE is a composition framework; the selected KEM determines posture. |
 | Hybrid classical/PQ exchange | Classical ECDH plus ML-KEM or similar | Migration period key establishment | Reduces single-assumption risk, but transcript binding and failure handling must be explicit. |
 
+## Use cases
+
+- Hybrid public-key encryption.
+- Transport security handshakes.
+- Secure messaging session setup.
+
+## Composition patterns
+
+- Key exchange must feed a KDF and authenticated transcript.
+- Hybrid post-quantum migration must define combiner behavior.
+
+Common adjacent concepts: [Public-Key Encryption](/docs/primitives/public-key-encryption), [Key Derivation Functions](/docs/primitives/key-derivation-functions), [Lattices](/docs/assumptions/lattices).
+
 ## Failure modes and anti-patterns
 
 - Establishing a key with an unauthenticated attacker.
 - Failing to bind the transcript, identities, and algorithm choices into derived keys.
 - Reusing ephemeral secrets where freshness is required.
+
+## Maturity and deployment
+
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+
+## Related concepts
+
+- [Public-Key Encryption](/docs/primitives/public-key-encryption)
+- [Key Derivation Functions](/docs/primitives/key-derivation-functions)
+- [Lattices](/docs/assumptions/lattices)
 
 ## Further reading
 

@@ -21,12 +21,15 @@
               "uses",
               "commonly-composed-with",
               "breaks-if",
+              "breaks-if-missing",
+              "breaks-if-misused",
               "composes-with",
               "contrasts-with",
               "used-in",
               "inherits-risk-from",
               "implements-pattern",
               "strengthens",
+              "unsafe-instance-of",
               "weakens-if"
             ]
           },

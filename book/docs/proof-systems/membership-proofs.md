@@ -21,11 +21,29 @@ confidence_model:
 
 A membership proof shows that an item belongs to a committed set.
 
-## Use cases
+## Where it sits in the taxonomy
 
-- Proving eligibility.
-- Showing inclusion in a Merkle tree.
-- Anonymous membership when combined with zero knowledge.
+- Level: proof-system
+- Parent category: proof-system
+- Related concepts: [Accumulators and Merkle Trees](/docs/structured-primitives/accumulators-and-merkle-trees), [Anonymous Membership](/docs/design-patterns/anonymous-membership), [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
+
+## Problem it solves
+
+This page explains the problem behind the concept: A proof that an item belongs to a committed set. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of proving your name appears on a committed list without asking the verifier to trust a separate database lookup.
+
+## Minimal example
+
+A client proves an account key is included under a published Merkle root by sending the leaf and authentication path.
+
+## Security properties
+
+- set membership
+- public verifiability
+- privacy depending on construction
 
 ## What it does not provide
 
@@ -45,7 +63,9 @@ Depends on the construction. Hash-based Merkle inclusion proofs can be plausibly
 
 Confidence comes from public verification of the set commitment, collision resistance or accumulator soundness, and correct binding between the proof and the policy context.
 
-## Concrete schemes and families
+## Common constructions
+
+### Concrete schemes and families
 
 | Scheme | Set commitment | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -56,11 +76,34 @@ Confidence comes from public verification of the set commitment, collision resis
 | KZG opening proof | Polynomial/vector commitment | Verkle-style state and data availability | Very compact openings; pairing and setup assumptions are central. |
 | ZK membership proof | Merkle or accumulator proof inside a ZKP | Anonymous membership | Hides which member is used, but inherits proof-system and set-root assumptions. |
 
-## Failure modes
+## Use cases
+
+- Proving eligibility.
+- Showing inclusion in a Merkle tree.
+- Anonymous membership when combined with zero knowledge.
+
+## Composition patterns
+
+- Membership must be bound to the correct policy context.
+- Proof paths or public inputs can reveal the member.
+
+Common adjacent concepts: [Accumulators and Merkle Trees](/docs/structured-primitives/accumulators-and-merkle-trees), [Anonymous Membership](/docs/design-patterns/anonymous-membership), [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs).
+
+## Failure modes and anti-patterns
 
 - Using stale set roots.
 - Ambiguous leaf encoding.
 - Revealing the member through the proof path or metadata.
+
+## Maturity and deployment
+
+Classified as mature. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: scheme-dependent.
+
+## Related concepts
+
+- [Accumulators and Merkle Trees](/docs/structured-primitives/accumulators-and-merkle-trees)
+- [Anonymous Membership](/docs/design-patterns/anonymous-membership)
+- [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
 
 ## Further reading
 

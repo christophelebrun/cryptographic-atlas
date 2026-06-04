@@ -21,12 +21,29 @@ confidence_model:
 
 Reveal only a function means exposing a computed result while keeping the underlying inputs hidden.
 
-## Common building blocks
+## Where it sits in the taxonomy
 
-- Homomorphic encryption.
-- Functional encryption.
-- Multi-party computation.
-- Zero-knowledge proofs for input validity.
+- Level: design-pattern
+- Parent category: design-pattern
+- Related concepts: [Functional Encryption](/docs/structured-primitives/functional-encryption), [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption), [MPC](/docs/protocols/mpc)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Expose a computed result while hiding the underlying inputs. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a calculator that accepts hidden inputs and shows only the approved output, not the inputs themselves.
+
+## Minimal example
+
+A service learns that a user score is above a threshold without learning the exact score.
+
+## Security properties
+
+- controlled disclosure
+- input privacy
+- least information release
 
 ## What it does not provide
 
@@ -46,7 +63,16 @@ Not applicable to the pattern by itself. A concrete system inherits posture from
 
 Confidence depends on the mechanism: a key authority for functional encryption, threshold or honest-party assumptions for multi-party computation, or mathematical assumptions and key control for homomorphic encryption.
 
-## Concrete compositions
+## Common constructions
+
+### Common building blocks
+
+- Homomorphic encryption.
+- Functional encryption.
+- Multi-party computation.
+- Zero-knowledge proofs for input validity.
+
+### Concrete compositions
 
 | Composition | Revealed value | Main caution |
 | --- | --- | --- |
@@ -55,11 +81,34 @@ Confidence depends on the mechanism: a key authority for functional encryption, 
 | Functional encryption | Function value authorized by a function key | Key issuer trust and repeated-query leakage are central. |
 | ZK proof plus public computation | Proof that a hidden input satisfies a function predicate | The predicate may still reveal sensitive facts. |
 
-## Failure modes
+## Use cases
+
+- restricted analytics
+- private classification
+- private tallying
+
+## Composition patterns
+
+- Repeated function outputs can reconstruct inputs.
+- Access control must govern who can ask which function.
+
+Common adjacent concepts: [Functional Encryption](/docs/structured-primitives/functional-encryption), [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption), [MPC](/docs/protocols/mpc).
+
+## Failure modes and anti-patterns
 
 - Differencing attacks across multiple outputs.
 - Functions that encode private values directly.
 - Missing access control around who can ask which function.
+
+## Maturity and deployment
+
+Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: scheme-dependent.
+
+## Related concepts
+
+- [Functional Encryption](/docs/structured-primitives/functional-encryption)
+- [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption)
+- [MPC](/docs/protocols/mpc)
 
 ## Further reading
 

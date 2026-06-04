@@ -41,7 +41,12 @@ function escapeCell(value) {
 }
 
 function relationLabel(relation) {
-  return relation.replace(/-/g, ' ');
+  const labels = {
+    'breaks-if-missing': 'breaks if missing',
+    'breaks-if-misused': 'breaks if misused',
+    'unsafe-instance-of': 'unsafe instance of',
+  };
+  return labels[relation] || relation.replace(/-/g, ' ');
 }
 
 function loadNodes() {
@@ -186,7 +191,15 @@ function renderAdjacency(graph, nodeMap) {
 function renderMarkdown(graph) {
   const nodeMap = new Map(graph.nodes.map((node) => [node.id, node]));
   const dependencyEdges = graph.edges.filter((edge) => ['requires', 'uses'].includes(edge.relation));
-  const breakEdges = graph.edges.filter((edge) => ['breaks-if', 'weakens-if', 'inherits-risk-from'].includes(edge.relation));
+  const breakRelations = [
+    'breaks-if',
+    'breaks-if-missing',
+    'breaks-if-misused',
+    'weakens-if',
+    'inherits-risk-from',
+    'unsafe-instance-of',
+  ];
+  const breakEdges = graph.edges.filter((edge) => breakRelations.includes(edge.relation));
   const compositionEdges = graph.edges.filter((edge) => ['commonly-composed-with', 'composes-with', 'implements-pattern', 'used-in'].includes(edge.relation));
 
   return [
@@ -217,7 +230,12 @@ function renderMarkdown(graph) {
     `Graph size: ${graph.node_count} referenced nodes and ${graph.edge_count} directed edges.`,
     '',
     renderEdgeTable('Direct Dependencies', '`requires` and `uses` edges show dependencies that should be reviewed before changing a concept, protocol, system, or concrete instance.', dependencyEdges, nodeMap),
-    renderEdgeTable('Break Conditions and Inherited Risks', '`breaks-if`, `weakens-if`, and `inherits-risk-from` edges show conditions that can defeat or materially weaken a guarantee.', breakEdges, nodeMap),
+    renderEdgeTable(
+      'Break Conditions and Inherited Risks',
+      '`breaks-if`, `breaks-if-missing`, `breaks-if-misused`, `weakens-if`, `inherits-risk-from`, and `unsafe-instance-of` edges show conditions that can defeat or materially weaken a guarantee.',
+      breakEdges,
+      nodeMap,
+    ),
     renderEdgeTable('Composition and Usage', '`commonly-composed-with`, `composes-with`, `implements-pattern`, and `used-in` edges show common composition paths and placement relationships.', compositionEdges, nodeMap),
     renderAdjacency(graph, nodeMap),
   ].join('\n');

@@ -20,7 +20,13 @@ confidence_model:
 
 A range proof shows that a hidden value lies within an allowed interval.
 
-## Why it matters
+## Where it sits in the taxonomy
+
+- Level: proof-system
+- Parent category: proof-system
+- Related concepts: [Pedersen Commitments](/docs/primitives/pedersen-commitments), [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs), [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs)
+
+## Problem it solves
 
 Hidden values can be invalid. In private payments, a value may need to be non-negative. In voting, a ballot may need to be one of a small set of choices.
 
@@ -36,13 +42,19 @@ $$
 C = \operatorname{Commit}(m; r)
 $$
 
-## Post-quantum posture
+## Mental model
 
-Depends on the proof system and commitment scheme. Bulletproof-style range proofs are usually discrete-logarithm based and quantum-vulnerable; hash-based or STARK-style approaches may be plausibly post-quantum if the full construction supports the required statement.
+Think of proving a sealed number is between two bounds without revealing the number.
 
-## Confidence model
+## Minimal example
 
-Confidence comes from public verification of the range statement, the soundness of the proof system, and correct binding to the commitment or ciphertext being constrained.
+A private payment proves the committed amount is non-negative and below 2^64 without revealing the amount.
+
+## Security properties
+
+- value validity
+- soundness
+- zero knowledge depending on construction
 
 ## What it does not provide
 
@@ -55,14 +67,17 @@ Confidence comes from public verification of the range statement, the soundness 
 
 The proof system must be sound, the proof must be bound to the exact commitment or ciphertext, and the range must be encoded without field wraparound or overflow ambiguity.
 
-## Use cases
+## Post-quantum posture
 
-- Confidential transactions.
-- Private voting.
-- Rate limits.
-- Private statistics.
+Depends on the proof system and commitment scheme. Bulletproof-style range proofs are usually discrete-logarithm based and quantum-vulnerable; hash-based or STARK-style approaches may be plausibly post-quantum if the full construction supports the required statement.
 
-## Concrete schemes and families
+## Confidence model
+
+Confidence comes from public verification of the range statement, the soundness of the proof system, and correct binding to the commitment or ciphertext being constrained.
+
+## Common constructions
+
+### Concrete schemes and families
 
 | Scheme or family | Commitment/proof base | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -72,11 +87,35 @@ The proof system must be sound, the proof must be bound to the exact commitment 
 | STARK-based range checks | STARK constraints and lookups | Transparent proof systems | Plausibly post-quantum when the full stack is; proof size and constraint design matter. |
 | Lookup-based range checks | Plookup-style tables or custom lookup arguments | Modern circuit systems | Efficient for bounded values, but table binding and field encoding must be explicit. |
 
+## Use cases
+
+- Confidential transactions.
+- Private voting.
+- Rate limits.
+- Private statistics.
+
+## Composition patterns
+
+- The proved interval must match the application policy.
+- Arithmetic domains and overflows must be explicit.
+
+Common adjacent concepts: [Pedersen Commitments](/docs/primitives/pedersen-commitments), [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs), [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs).
+
 ## Failure modes and anti-patterns
 
 - Proving the wrong bound.
 - Ignoring overflow or field wraparound.
 - Failing to bind the proof to the correct commitment or context.
+
+## Maturity and deployment
+
+Classified as mature. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+
+## Related concepts
+
+- [Pedersen Commitments](/docs/primitives/pedersen-commitments)
+- [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
+- [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs)
 
 ## Further reading
 

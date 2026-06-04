@@ -25,6 +25,24 @@ source_review:
 
 Homomorphic encryption allows computation on ciphertexts so that decrypting the result reveals the result of a computation on the plaintexts.
 
+## Where it sits in the taxonomy
+
+- Level: structured-primitive
+- Parent category: encryption
+- Related concepts: [Private Aggregation](/docs/design-patterns/private-aggregation), [Reveal Only a Function](/docs/design-patterns/reveal-only-a-function), [Secure Aggregation](/docs/protocols/secure-aggregation)
+
+## Problem it solves
+
+This page explains the problem behind the concept: Encryption that supports computation over ciphertexts. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of doing arithmetic on locked boxes so the final unlocked box contains the computed answer.
+
+## Minimal example
+
+Clients encrypt measurements, a server adds ciphertexts, and trustees decrypt only the aggregate sum.
+
 At a high level, evaluation over ciphertexts should agree with evaluating the function over plaintexts:
 
 $$
@@ -38,25 +56,10 @@ $$
 c_i = \operatorname{Enc}_{pk}(m_i)
 $$
 
-## Types
+## Security properties
 
-- Partially homomorphic encryption supports limited operations.
-- Somewhat homomorphic encryption supports bounded computations.
-- Fully homomorphic encryption (FHE) supports general computation in principle.
-
-For an additive homomorphic scheme, the useful shape is:
-
-$$
-\operatorname{Dec}_{sk}(c_1 \oplus c_2) = m_1 + m_2
-$$
-
-## Post-quantum posture
-
-Plausible for many lattice-based homomorphic encryption families, assuming appropriate parameters and implementations. The posture still depends on the concrete scheme, security level, and whether surrounding signatures, proofs, or key-management layers are post-quantum.
-
-## Confidence model
-
-Confidence usually comes from a scheme-specific hardness assumption, correct parameter selection, secure key generation, and protection of decryption keys. In threshold or multi-key settings, the confidence model also includes the trustee or participant threshold.
+- confidentiality
+- encrypted computation
 
 ## What it does not provide
 
@@ -69,13 +72,17 @@ Confidence usually comes from a scheme-specific hardness assumption, correct par
 
 The scheme-specific hardness assumption, parameter set, noise budget, key-management model, and implementation side-channel posture must all match the workload and threat model.
 
-## Use cases
+## Post-quantum posture
 
-- Private tallying.
-- Confidential analytics.
-- Encrypted computation services.
+Plausible for many lattice-based homomorphic encryption families, assuming appropriate parameters and implementations. The posture still depends on the concrete scheme, security level, and whether surrounding signatures, proofs, or key-management layers are post-quantum.
 
-## Concrete schemes and families
+## Confidence model
+
+Confidence usually comes from a scheme-specific hardness assumption, correct parameter selection, secure key generation, and protection of decryption keys. In threshold or multi-key settings, the confidence model also includes the trustee or participant threshold.
+
+## Common constructions
+
+### Concrete schemes and families
 
 | Family | Computation style | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -85,11 +92,35 @@ The scheme-specific hardness assumption, parameter set, noise budget, key-manage
 | TFHE / FHEW-style schemes | Boolean or small-gate bootstrapped computation | Bit-level computation and programmable bootstrapping | Can support frequent bootstrapping; performance profile differs from arithmetic-circuit schemes. |
 | Threshold HE variants | Shared decryption key across trustees | Private tallying and multi-party analytics | Adds a `t-of-n` confidence model on top of the encryption scheme. |
 
+## Use cases
+
+- Private tallying.
+- Confidential analytics.
+- Encrypted computation services.
+
+## Composition patterns
+
+- Outputs can reveal sensitive input information.
+- Malicious inputs may require zero-knowledge validity proofs.
+- Incorrect parameters can break correctness or security.
+
+Common adjacent concepts: [Private Aggregation](/docs/design-patterns/private-aggregation), [Reveal Only a Function](/docs/design-patterns/reveal-only-a-function), [Secure Aggregation](/docs/protocols/secure-aggregation).
+
 ## Failure modes and anti-patterns
 
 - Choosing parameters that do not meet the security or correctness target.
 - Ignoring noise growth or implementation limits.
 - Revealing too much through outputs or repeated queries.
+
+## Maturity and deployment
+
+Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+
+## Related concepts
+
+- [Private Aggregation](/docs/design-patterns/private-aggregation)
+- [Reveal Only a Function](/docs/design-patterns/reveal-only-a-function)
+- [Secure Aggregation](/docs/protocols/secure-aggregation)
 
 ## Further reading
 

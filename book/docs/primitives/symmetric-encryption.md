@@ -21,6 +21,24 @@ confidence_model:
 
 Symmetric encryption uses the same secret key to encrypt and decrypt data.
 
+## Where it sits in the taxonomy
+
+- Level: basic-primitive
+- Parent category: encryption
+- Related concepts: [Message Authentication Codes](/docs/primitives/message-authentication-codes), [Key Derivation Functions](/docs/primitives/key-derivation-functions), [Public-Key Encryption](/docs/primitives/public-key-encryption)
+
+## Problem it solves
+
+This page explains the problem behind the concept: One shared secret key encrypts and decrypts data. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+
+## Mental model
+
+Think of a locked box where the same secret key locks and unlocks the contents.
+
+## Minimal example
+
+A backup tool encrypts a local archive with a secret key before uploading it to storage.
+
 ## Security properties
 
 - Confidentiality under the chosen attack model.
@@ -46,13 +64,9 @@ Plausible with appropriate key sizes and conservative parameters. Quantum search
 
 Confidence comes from secret-key control, public scrutiny of the algorithm, correct nonce handling, and authenticated use when active attackers can modify ciphertexts.
 
-## Use cases
+## Common constructions
 
-- Bulk data encryption.
-- Encrypted backups.
-- The data-encryption part of hybrid encryption.
-
-## Concrete algorithms and schemes
+### Concrete algorithms and schemes
 
 | Scheme or mode | Primitive family | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
@@ -63,11 +77,34 @@ Confidence comes from secret-key control, public scrutiny of the algorithm, corr
 | AES-CBC plus MAC | Legacy composition | Older protocols and compatibility layers | Only safe with correct encrypt-then-MAC composition and padding handling; avoid for new designs when AEAD is available. |
 | AES-ECB | Raw block-cipher mode | Legacy anti-pattern | Reveals repeated plaintext blocks and should not be used for protecting structured data. |
 
+## Use cases
+
+- Bulk data encryption.
+- Encrypted backups.
+- The data-encryption part of hybrid encryption.
+
+## Composition patterns
+
+- Symmetric encryption often needs authenticated encryption.
+- Key establishment must be handled separately.
+
+Common adjacent concepts: [Message Authentication Codes](/docs/primitives/message-authentication-codes), [Key Derivation Functions](/docs/primitives/key-derivation-functions), [Public-Key Encryption](/docs/primitives/public-key-encryption).
+
 ## Failure modes and anti-patterns
 
 - Reusing nonces in modes that require uniqueness.
 - Using encryption without authentication.
 - Designing a custom mode around a block cipher or stream cipher.
+
+## Maturity and deployment
+
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: high. Parameter sensitivity: medium.
+
+## Related concepts
+
+- [Message Authentication Codes](/docs/primitives/message-authentication-codes)
+- [Key Derivation Functions](/docs/primitives/key-derivation-functions)
+- [Public-Key Encryption](/docs/primitives/public-key-encryption)
 
 ## Further reading
 

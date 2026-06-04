@@ -24,19 +24,21 @@ Private aggregation reveals a combined result without revealing each participant
 
 ## Where it sits in the taxonomy
 
-- Level: design pattern
-- Parent category: design patterns
-- Related concepts: homomorphic encryption, homomorphic commitments, MPC, secure aggregation
+- Level: design-pattern
+- Parent category: design-pattern
+- Related concepts: [Secure Aggregation](/docs/protocols/secure-aggregation), [Homomorphic Encryption](/docs/structured-primitives/homomorphic-encryption), [MPC](/docs/protocols/mpc)
 
 ## Problem it solves
 
-Many systems need aggregate information: a vote total, a usage statistic, a risk score, or a sum of measurements. Private aggregation tries to compute that aggregate while keeping each input hidden.
+This page explains the problem behind the concept: Reveal a combined result while keeping individual inputs hidden. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
 
 ## Mental model
 
-Participants place values into sealed envelopes that can be combined. The system opens only the total, not the individual envelopes.
+Think of private aggregation as a narrow building block whose guarantee must be composed with the rest of the system.
 
 ## Minimal example
+
+A system uses private aggregation for one explicit role and handles authentication, metadata, and operational policy separately.
 
 In a private poll, each voter submits an encrypted vote. The system combines encrypted votes and decrypts only the final tally.
 
@@ -47,15 +49,6 @@ T = \sum_{i=1}^{n} x_i
 $$
 
 The privacy goal is to reveal $T$ without revealing the individual values $x_1, \ldots, x_n$.
-
-## Approaches
-
-| Approach | Useful when | Main risk |
-| --- | --- | --- |
-| Homomorphic encryption | A public aggregator should combine ciphertexts | Key management and invalid inputs |
-| Homomorphic commitments | Values need binding plus additive structure | Requires proofs that values are valid |
-| Multi-party computation (MPC) | No single party should see inputs | Assumptions about parties and availability |
-| Secure aggregation | Many clients report statistics | Dropout, malicious clients, and small groups |
 
 ## Security properties
 
@@ -83,6 +76,27 @@ Not applicable to the pattern by itself. The posture is inherited from the aggre
 
 Confidence may come from threshold decryption, non-colluding helper servers, honest-majority MPC, or public verification of encrypted inputs. The page for a concrete design should state which model is being used.
 
+## Common constructions
+
+### Approaches
+
+| Approach | Useful when | Main risk |
+| --- | --- | --- |
+| Homomorphic encryption | A public aggregator should combine ciphertexts | Key management and invalid inputs |
+| Homomorphic commitments | Values need binding plus additive structure | Requires proofs that values are valid |
+| Multi-party computation (MPC) | No single party should see inputs | Assumptions about parties and availability |
+| Secure aggregation | Many clients report statistics | Dropout, malicious clients, and small groups |
+
+### Concrete compositions
+
+| Composition | Typical role | Main caution |
+| --- | --- | --- |
+| Paillier-style or additive homomorphic encryption tally | Simple encrypted sums in legacy or specialized systems | Quantum-vulnerable and key-management-heavy; validity proofs are still required. |
+| Lattice HE tally | Post-quantum-oriented encrypted aggregation | Parameter choice and output leakage dominate practical risk. |
+| Bonawitz-style secure aggregation | Federated learning and telemetry | Dropout handling, cohort size, and malicious updates are the main failure points. |
+| Prio-style private telemetry | Aggregate statistics with validity checks | Requires a validation mechanism so clients cannot poison aggregates. |
+| MPC-based aggregation | Multi-server or multi-party analytics | Collusion threshold and abort behavior must be explicit. |
+
 ## Use cases
 
 - Voting and polling.
@@ -94,16 +108,6 @@ Confidence may come from threshold decryption, non-colluding helper servers, hon
 ## Composition patterns
 
 Private aggregation is often combined with range proofs, membership proofs, rate limits, threshold decryption, or differential privacy.
-
-## Concrete compositions
-
-| Composition | Typical role | Main caution |
-| --- | --- | --- |
-| Paillier-style or additive homomorphic encryption tally | Simple encrypted sums in legacy or specialized systems | Quantum-vulnerable and key-management-heavy; validity proofs are still required. |
-| Lattice HE tally | Post-quantum-oriented encrypted aggregation | Parameter choice and output leakage dominate practical risk. |
-| Bonawitz-style secure aggregation | Federated learning and telemetry | Dropout handling, cohort size, and malicious updates are the main failure points. |
-| Prio-style private telemetry | Aggregate statistics with validity checks | Requires a validation mechanism so clients cannot poison aggregates. |
-| MPC-based aggregation | Multi-server or multi-party analytics | Collusion threshold and abort behavior must be explicit. |
 
 ## Failure modes and anti-patterns
 

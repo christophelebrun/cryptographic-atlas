@@ -23,9 +23,9 @@ A zero-knowledge proof lets one party prove that a statement is true without rev
 
 ## Where it sits in the taxonomy
 
-- Level: proof system
-- Parent category: proof systems
-- Related concepts: SNARKs, STARKs, Bulletproofs, range proofs, membership proofs
+- Level: proof-system
+- Parent category: proof-system
+- Related concepts: [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs), [Range Proofs](/docs/proof-systems/range-proofs), [Membership Proofs](/docs/proof-systems/membership-proofs)
 
 ## Problem it solves
 
@@ -33,7 +33,7 @@ Zero-knowledge proofs (ZKPs) are useful when a verifier needs confidence in a cl
 
 ![Zero-knowledge proof flow](/img/diagrams/zero-knowledge-proof-flow.svg)
 
-## Statement vs witness
+### Statement vs witness
 
 The statement is the public claim being proven. The witness is the private information that makes the statement true.
 
@@ -53,20 +53,25 @@ Examples:
 | I know a credential signed by an issuer | The credential and secret key |
 | This encrypted vote is one of the allowed choices | The plaintext vote and encryption randomness |
 
-## Core properties
+## Mental model
+
+Think of proving you know a valid solution without handing over the solution.
+
+## Minimal example
+
+A prover shows they know a credential signed by an issuer and that it contains an age-over-18 attribute, without revealing the credential.
+
+- Membership: prove a secret appears in a committed list without revealing which entry.
+- Valid vote: prove an encrypted ballot encodes one allowed choice.
+- Range proof: prove a hidden amount is non-negative and below a limit.
+
+## Security properties
 
 - Completeness: honest proofs for true statements verify.
 - Soundness: false statements should not verify except with negligible probability.
 - Zero-knowledge: the proof should not reveal the witness beyond the truth of the statement.
 
-## What ZKPs do
-
-- Prove membership in a set without revealing which member, depending on the construction.
-- Prove that a hidden value is in a valid range.
-- Prove that a vote, transaction, or credential use follows specified rules.
-- Reduce trust in validators who would otherwise need to inspect private data.
-
-## What ZKPs do not provide
+## What it does not provide
 
 - Encryption of arbitrary data.
 - Network anonymity.
@@ -74,27 +79,6 @@ Examples:
 - A complete protocol by themselves.
 - Safety if the statement being proven is the wrong statement.
 - Protection against a compromised witness.
-
-## Family vs concrete proof systems
-
-"Zero-knowledge proof" is a broad family. SNARKs, STARKs, and Bulletproofs are concrete proof-system families with different trade-offs in proof size, verifier cost, prover cost, setup assumptions, post-quantum posture, and implementation maturity.
-
-## Concrete proof-system families
-
-| Family or scheme | Setup model | Typical role | Key differences and cautions |
-| --- | --- | --- | --- |
-| Sigma protocols | Often interactive or Fiat-Shamir transformed | Knowledge proofs and identification-style protocols | Simple building blocks; transcript binding controls non-interactive security. |
-| Groth16 | Circuit-specific trusted setup | Very small proofs and fast verification | Pairing-based and quantum-vulnerable; setup is tied to the circuit. |
-| PLONK-style systems | Often universal/updatable setup | General-purpose SNARK proving stacks | More flexible setup than Groth16-style systems, but assumptions and arithmetization choices vary. |
-| STARKs | Transparent setup | Scalable transparent proofs | Usually hash-based and plausibly post-quantum; proofs are larger than many SNARKs. |
-| Bulletproofs | No trusted setup in common forms | Range proofs and inner-product statements | Discrete-logarithm based and quantum-vulnerable; verification cost grows with statement size. |
-| Folding and accumulation systems | Varies by construction | Recursive proofs and incremental verifiable computation | Maturity and assumptions are construction-specific; do not treat all folding schemes as interchangeable. |
-
-## Minimal examples
-
-- Membership: prove a secret appears in a committed list without revealing which entry.
-- Valid vote: prove an encrypted ballot encodes one allowed choice.
-- Range proof: prove a hidden amount is non-negative and below a limit.
 
 ## Assumptions
 
@@ -107,6 +91,38 @@ Depends on the proof system. Hash-based transparent systems such as many STARK-s
 ## Confidence model
 
 Confidence comes from three layers: the proof-system assumptions, the correctness of the statement being proven, and the setup model. A proof can verify correctly while still proving the wrong statement for the application.
+
+## Common constructions
+
+### Concrete proof-system families
+
+| Family or scheme | Setup model | Typical role | Key differences and cautions |
+| --- | --- | --- | --- |
+| Sigma protocols | Often interactive or Fiat-Shamir transformed | Knowledge proofs and identification-style protocols | Simple building blocks; transcript binding controls non-interactive security. |
+| Groth16 | Circuit-specific trusted setup | Very small proofs and fast verification | Pairing-based and quantum-vulnerable; setup is tied to the circuit. |
+| PLONK-style systems | Often universal/updatable setup | General-purpose SNARK proving stacks | More flexible setup than Groth16-style systems, but assumptions and arithmetization choices vary. |
+| STARKs | Transparent setup | Scalable transparent proofs | Usually hash-based and plausibly post-quantum; proofs are larger than many SNARKs. |
+| Bulletproofs | No trusted setup in common forms | Range proofs and inner-product statements | Discrete-logarithm based and quantum-vulnerable; verification cost grows with statement size. |
+| Folding and accumulation systems | Varies by construction | Recursive proofs and incremental verifiable computation | Maturity and assumptions are construction-specific; do not treat all folding schemes as interchangeable. |
+
+### Family vs concrete proof systems
+
+"Zero-knowledge proof" is a broad family. SNARKs, STARKs, and Bulletproofs are concrete proof-system families with different trade-offs in proof size, verifier cost, prover cost, setup assumptions, post-quantum posture, and implementation maturity.
+
+## Use cases
+
+- Prove membership in a set without revealing which member, depending on the construction.
+- Prove that a hidden value is in a valid range.
+- Prove that a vote, transaction, or credential use follows specified rules.
+- Reduce trust in validators who would otherwise need to inspect private data.
+
+## Composition patterns
+
+- A proof can be valid for a statement that is too weak for the protocol.
+- Public inputs can reveal identity or linkage.
+- Setup assumptions vary significantly across proof systems.
+
+Common adjacent concepts: [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs), [Range Proofs](/docs/proof-systems/range-proofs), [Membership Proofs](/docs/proof-systems/membership-proofs).
 
 ## Failure modes and anti-patterns
 
