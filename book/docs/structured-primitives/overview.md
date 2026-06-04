@@ -25,7 +25,10 @@ Structured primitives add algebraic, access-control, timing, or delegation struc
 - Threshold cryptography distributes authority across parties.
 - Functional encryption reveals only an approved function of encrypted data.
 - Verifiable delay functions make computation take sequential time.
+- Advanced structured primitives include VRFs, blind signatures, polynomial commitments, vector commitments, verifiable encryption, and e-cash primitives.
 
 ## Safety note
 
 The extra structure is useful because it exposes controlled relationships. The same structure can create surprising failure modes if the protocol forgets to constrain inputs or metadata.
+
+See [Advanced Structured Primitives](/docs/structured-primitives/advanced-structured-primitives).

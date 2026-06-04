@@ -40,6 +40,8 @@ Saying "private" is usually too vague. A system may hide values but expose ident
 
 Some goals are primitive-level, such as confidentiality or integrity for a specific message. Others are protocol or system-level, such as coercion resistance, auditability, or forward secrecy. Do not assign a system-level goal to a primitive unless the surrounding protocol assumptions are also stated.
 
+See [Additional Security Goals](/docs/taxonomy/additional-security-goals) for verifiability, auditability, accountability, forward secrecy, and deniability.
+
 ## Further reading
 
 - Katz and Lindell, "Introduction to Modern Cryptography."

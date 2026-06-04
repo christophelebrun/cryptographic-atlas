@@ -41,28 +41,36 @@ One taxonomy tension remains: some objects are both building blocks and interact
 - cross-link it as a building block where it is composed into MPC, PSI, credentials, or token systems;
 - avoid creating a separate "protocol primitive" level unless the atlas later needs a more formal ontology.
 
-## Coverage added in this pass
+## Coverage added in recent passes
 
 | Area | Added concept | Why it matters |
 | --- | --- | --- |
 | Basic primitives | [Authenticated encryption](/docs/primitives/authenticated-encryption) | Modern systems usually need confidentiality and integrity together; bare encryption is easy to misuse. |
 | Protocols | [Oblivious pseudorandom functions](/docs/protocols/oblivious-pseudorandom-functions) | OPRFs are a common building block for password hardening, tokens, credentials, and PSI. |
 | Protocols | [Private set intersection](/docs/protocols/private-set-intersection) | PSI is one of the core privacy-preserving computation protocols missing from the initial protocol set. |
+| Security goals | [Additional security goals](/docs/taxonomy/additional-security-goals) | Covers verifiability, auditability, accountability, forward secrecy, and deniability. |
+| Assumptions and substrates | [Additional assumptions and substrates](/docs/assumptions/additional-substrates) | Covers elliptic curves, finite-field groups, code-based assumptions, hash-to-curve, common reference strings, and proof-model distinctions. |
+| Basic primitives | [Primitive engineering concepts](/docs/primitives/primitive-engineering-concepts) | Covers PRFs, PRPs, password hashing, nonce-misuse-resistant encryption, and key-committing encryption. |
+| Structured primitives | [Advanced structured primitives](/docs/structured-primitives/advanced-structured-primitives) | Covers VRFs, blind signatures, polynomial/vector commitments, verifiable encryption, and e-cash primitives. |
+| Proof systems | [Proof-system components](/docs/proof-systems/proof-system-components) | Covers polynomial commitments, FRI, folding, recursive proofs, lookup arguments, sumcheck, and arithmetization. |
+| Protocols | [Additional protocol families](/docs/protocols/additional-protocol-families) | Covers oblivious transfer, PIR, PAKE, secure channels, anonymous tokens, blind-signature credentials, and private-payment protocols. |
+| Systems | [Additional systems and applications](/docs/case-studies/additional-systems) | Covers private payments, ZK rollups, secure messaging, identity wallets, encrypted mempools, and private ML analytics. |
+| Design patterns | [Operational design patterns](/docs/design-patterns/operational-design-patterns) | Covers encrypt-then-prove, threshold issuance, privacy-preserving revocation, domain separation, transcript binding, and key rotation. |
 
-## Important missing concepts
+## Coverage status
 
-These are the highest-value gaps for future expansion.
+The concepts previously listed as highest-value gaps now have first-pass coverage. Many are intentionally grouped by taxonomy area rather than promoted to standalone pages, because a full page for every subcomponent would make the sidebar harder to navigate before the book has enough depth to justify it.
 
 | Taxonomy area | Missing or shallow concepts | Why they matter |
 | --- | --- | --- |
-| Security goals | verifiability, auditability, accountability, forward secrecy, deniability | Many systems claim "privacy" while relying on public audit or transcript properties that need precise goals. |
-| Assumptions and substrates | elliptic curves as a substrate, finite-field groups, code-based assumptions, hash-to-curve, common reference strings, standard-model vs random-oracle distinctions | Current assumption pages cover the main families, but concrete curve/group/setup choices deserve clearer treatment. |
-| Basic primitives | pseudorandom functions, pseudorandom permutations, password hashing, nonce-misuse-resistant encryption, key-committing encryption | These explain everyday engineering risks that recur across protocols. |
-| Structured primitives | verifiable random functions, blind signatures, polynomial commitments, vector commitments, verifiable encryption, e-cash primitives | These are heavily used in blockchain, credentials, rollups, and private payments. |
-| Proof systems | polynomial commitments, FRI, folding schemes, recursive proofs, lookup arguments, sumcheck, arithmetization | The proof-system overview is useful, but ZK engineering needs more concept pages below the family level. |
-| Protocols | oblivious transfer, private information retrieval, password-authenticated key exchange, secure channels, anonymous tokens, blind-signature credentials, private payments | These are common in deployed privacy systems and would strengthen the bridge from primitives to systems. |
-| Systems | private payments, ZK rollups, secure messaging, privacy-preserving identity wallets, encrypted mempools, private machine-learning analytics | The current system coverage is privacy/voting-heavy; broader deployed systems would make the atlas more balanced. |
-| Design patterns | encrypt-then-prove, threshold issuance, revocation with privacy, domain separation, transcript binding, key rotation and migration | These recurring engineering patterns are where many real systems fail. |
+| Security goals | covered in grouped page | Promote individual pages if the atlas adds a dedicated security-goal section. |
+| Assumptions and substrates | covered in grouped page | Elliptic curves, code-based assumptions, and common reference strings are the strongest candidates for standalone pages. |
+| Basic primitives | covered in grouped page | Password hashing and key-committing encryption are the strongest candidates for standalone pages. |
+| Structured primitives | covered in grouped page | Polynomial commitments, blind signatures, and VRFs are the strongest candidates for standalone pages. |
+| Proof systems | covered in grouped page | FRI, folding schemes, arithmetization, and lookup arguments deserve deeper pages before a ZK-rollup deep dive. |
+| Protocols | covered in grouped page | Secure channels, oblivious transfer, PIR, and PAKE are the strongest candidates for standalone pages. |
+| Systems | covered in grouped page | Private payments, ZK rollups, and secure messaging are the strongest candidates for full case studies. |
+| Design patterns | covered in grouped page | Domain separation, transcript binding, and key rotation are the strongest candidates for implementation-oriented guidance. |
 
 ## Source-depth gaps
 
@@ -79,11 +87,11 @@ Prioritize deeper sources for:
 
 ## Recommended next content sequence
 
-1. Add Oblivious Transfer as a protocol page and cross-link it from MPC and PSI.
-2. Add Secure Channels covering TLS 1.3, HPKE, Noise, and Signal at the protocol-suite level.
-3. Add Polynomial Commitments and Vector Commitments before expanding ZK rollup coverage.
-4. Add Verifiable Random Functions and Blind Signatures as structured primitives used by randomness, credentials, and private payments.
-5. Add Private Payments as a system page after the blind-signature and accumulator material is stronger.
+1. Promote Secure Channels to a full protocol page because TLS, HPKE, Noise, and Signal have enough depth to justify standalone treatment.
+2. Promote Polynomial Commitments and Vector Commitments before expanding ZK rollup coverage.
+3. Promote Private Payments and ZK Rollups to full case studies after proof-system component coverage deepens.
+4. Promote Domain Separation and Transcript Binding to implementation-oriented design-pattern pages.
+5. Add machine-readable `instance_of` data for concrete algorithms and schemes.
 
 ## Maintenance rule
 
@@ -91,4 +99,4 @@ For fast-moving areas such as post-quantum cryptography, zero-knowledge proof sy
 
 ## Bottom line
 
-The taxonomy is sound. The atlas is now more mature as an educational map, but it is not complete. The biggest remaining gap is not the top-level taxonomy; it is deeper coverage of concrete instances, protocol suites, and system case studies.
+The taxonomy is sound. The atlas is now more mature as an educational map, but it is not complete. The biggest remaining gap is not top-level coverage; it is deeper standalone treatment of concrete instances, protocol suites, and system case studies.

@@ -29,6 +29,7 @@ Protocols specify how parties interact. They combine primitives, messages, state
 
 ## Covered protocol families
 
+- [Additional protocol families](/docs/protocols/additional-protocol-families)
 - [Anonymous credentials](/docs/protocols/anonymous-credentials)
 - [Nullifiers](/docs/protocols/nullifiers)
 - [Oblivious pseudorandom functions](/docs/protocols/oblivious-pseudorandom-functions)
@@ -42,4 +43,4 @@ Protocols specify how parties interact. They combine primitives, messages, state
 
 A protocol can fail even if every primitive inside it is sound.
 
-Protocol coverage is intentionally not exhaustive. Missing or shallow protocol families are tracked in [Editorial Maturity and Coverage](/docs/appendices/editorial-maturity-and-coverage).
+Protocol coverage is still intentionally high-level in some areas. Full standalone pages can be promoted from the additional protocol-family coverage as needed.

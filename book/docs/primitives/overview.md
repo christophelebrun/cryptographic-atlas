@@ -38,4 +38,4 @@ For each primitive, ask what it guarantees, what it assumes, what it does not pr
 
 ## Coverage note
 
-This section now covers the main symmetric-key and public-key primitives that most applied systems rely on. Remaining primitive-level gaps are tracked in [Editorial Maturity and Coverage](/docs/appendices/editorial-maturity-and-coverage).
+This section covers the main symmetric-key and public-key primitives that most applied systems rely on. See [Primitive Engineering Concepts](/docs/primitives/primitive-engineering-concepts) for PRFs, PRPs, password hashing, nonce-misuse-resistant encryption, and key-committing encryption.

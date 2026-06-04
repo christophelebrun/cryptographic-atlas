@@ -59,6 +59,7 @@ See [Confidence Models](/docs/appendices/confidence-models).
 - [Lattices](/docs/assumptions/lattices)
 - [Random oracle model](/docs/assumptions/random-oracle-model)
 - [Trusted setup](/docs/assumptions/trusted-setup)
+- [Additional assumptions and substrates](/docs/assumptions/additional-substrates)
 
 ## Further reading
 

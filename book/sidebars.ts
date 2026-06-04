@@ -9,6 +9,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'taxonomy/overview',
         'taxonomy/security-goals',
+        'taxonomy/additional-security-goals',
         'taxonomy/assumptions',
         'taxonomy/primitives-vs-protocols',
         'taxonomy/composability',
@@ -24,6 +25,7 @@ const sidebars: SidebarsConfig = {
         'assumptions/lattices',
         'assumptions/random-oracle-model',
         'assumptions/trusted-setup',
+        'assumptions/additional-substrates',
       ],
     },
     {
@@ -31,6 +33,7 @@ const sidebars: SidebarsConfig = {
       label: 'Basic Primitives',
       items: [
         'primitives/overview',
+        'primitives/primitive-engineering-concepts',
         'primitives/hash-functions',
         'primitives/symmetric-encryption',
         'primitives/authenticated-encryption',
@@ -50,6 +53,7 @@ const sidebars: SidebarsConfig = {
       label: 'Structured Primitives',
       items: [
         'structured-primitives/overview',
+        'structured-primitives/advanced-structured-primitives',
         'structured-primitives/homomorphic-commitments',
         'structured-primitives/homomorphic-encryption',
         'structured-primitives/threshold-cryptography',
@@ -63,6 +67,7 @@ const sidebars: SidebarsConfig = {
       label: 'Proof Systems',
       items: [
         'proof-systems/overview',
+        'proof-systems/proof-system-components',
         'proof-systems/zero-knowledge-proofs',
         'proof-systems/snarks-starks-bulletproofs',
         'proof-systems/range-proofs',
@@ -74,6 +79,7 @@ const sidebars: SidebarsConfig = {
       label: 'Protocols',
       items: [
         'protocols/overview',
+        'protocols/additional-protocol-families',
         'protocols/anonymous-credentials',
         'protocols/nullifiers',
         'protocols/oblivious-pseudorandom-functions',
@@ -89,6 +95,7 @@ const sidebars: SidebarsConfig = {
       label: 'Design Patterns',
       items: [
         'design-patterns/overview',
+        'design-patterns/operational-design-patterns',
         'design-patterns/anonymous-membership',
         'design-patterns/anti-double-use-nullifiers',
         'design-patterns/private-aggregation',
@@ -102,6 +109,7 @@ const sidebars: SidebarsConfig = {
       label: 'Case Studies',
       items: [
         'case-studies/overview',
+        'case-studies/additional-systems',
         'case-studies/private-dao-voting',
         'case-studies/coercion-resistant-voting',
         'case-studies/anonymous-airdrop',

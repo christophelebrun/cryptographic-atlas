@@ -20,6 +20,7 @@ Case studies show how multiple concepts interact in system designs. They are map
 
 ## Current studies
 
+- Additional systems and applications.
 - Private DAO voting.
 - Coercion-resistant voting.
 - Anonymous airdrops.
@@ -27,3 +28,5 @@ Case studies show how multiple concepts interact in system designs. They are map
 ## Reading rule
 
 Track goals, non-goals, building blocks, leaks, and maturity warnings separately.
+
+See [Additional Systems and Applications](/docs/case-studies/additional-systems).

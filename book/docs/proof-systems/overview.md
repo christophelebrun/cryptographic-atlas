@@ -24,7 +24,10 @@ Proof systems let a prover convince a verifier that a statement is true. Some pr
 - Range proofs show a hidden value is within bounds.
 - Membership proofs show inclusion in a set.
 - SNARKs, STARKs, and Bulletproofs are proof-system families with different trade-offs.
+- Proof-system components include polynomial commitments, FRI, folding, recursion, lookup arguments, sumcheck, and arithmetization.
 
 ## Reading rule
 
 Always identify the statement, the witness, public inputs, setup assumptions, verifier cost, prover cost, and metadata leaks.
+
+See [Proof-System Components](/docs/proof-systems/proof-system-components).
