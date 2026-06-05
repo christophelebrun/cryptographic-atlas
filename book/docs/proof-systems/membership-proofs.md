@@ -29,7 +29,7 @@ A membership proof shows that an item belongs to a committed set.
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A proof that an item belongs to a committed set. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+A verifier may need evidence that an item is in a committed set without receiving the full set. Membership proofs provide that evidence, and their privacy and update properties depend heavily on the underlying commitment or accumulator.
 
 ## Mental model
 

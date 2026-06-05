@@ -29,7 +29,7 @@ Timelock tools and verifiable delay functions (VDFs) make information or outputs
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A function that takes sequential time to compute but is fast to verify. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Some protocols need a public delay that cannot be skipped by adding parallel hardware, but can be checked quickly afterward. Timelocks and verifiable delay functions (VDFs) model time as a cryptographic resource, with security tied to sequential-work assumptions.
 
 ## Mental model
 

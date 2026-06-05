@@ -29,7 +29,7 @@ Accumulators and Merkle trees commit to a collection while supporting compact me
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A compact commitment to a collection supports membership and sometimes non-membership proofs. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Systems often need to publish a compact digest of a large set while letting users prove membership, and sometimes non-membership, without sending the whole set. Accumulators and Merkle trees trade storage, update cost, proof size, and trust assumptions in different ways.
 
 ## Mental model
 

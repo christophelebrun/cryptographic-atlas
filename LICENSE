@@ -1,18 +1,43 @@
-Creative Commons Attribution-ShareAlike 4.0 International
+The Cryptographic Atlas uses separate licenses for educational content and
+website source code.
 
-The educational book content in this repository is licensed under the
-Creative Commons Attribution-ShareAlike 4.0 International Public License
-(CC BY-SA 4.0).
+Educational Content
 
-You are free to share and adapt the content, provided you give appropriate
-credit, indicate if changes were made, and distribute adaptations under the
-same license.
+The book content is licensed under Creative Commons Attribution-ShareAlike
+4.0 International (CC BY-SA 4.0). See LICENSE-CONTENT.
 
-License text:
-https://creativecommons.org/licenses/by-sa/4.0/legalcode
+This includes:
 
-Website source code, including React components and configuration files, is
-intended to be licensed under the MIT License unless otherwise specified.
+- book/docs/**
+- book/data/concept-cards/**
+- book/data/diagrams/**
+- book/data/comparison-matrices/**
+- book/data/references.yml
+- book/data/source-freshness.yml
+- generated content artifacts under book/static/diagrams/**,
+  book/static/img/diagrams/**, book/static/data/**, and
+  book/static/downloads/**
+- generated content data under book/src/generated/**
+- repository documentation such as README.md unless stated otherwise
 
-TODO: Split content and website-code licensing into separate license files if
-the project grows beyond this initial repository structure.
+Website Source Code
+
+Website source code is licensed under the MIT License. See LICENSE-CODE.
+
+This includes:
+
+- book/src/components/**
+- book/src/pages/**
+- book/src/css/**
+- book/scripts/**
+- book/schemas/**
+- book/docusaurus.config.ts
+- book/sidebars.ts
+- package metadata, TypeScript configuration, and CI configuration files
+
+License Boundaries
+
+If a file states a different license explicitly, that file's license controls.
+Generated files inherit the license of the source material they are generated
+from unless stated otherwise. Third-party dependencies and assets remain under
+their own licenses.

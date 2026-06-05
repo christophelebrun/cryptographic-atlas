@@ -29,7 +29,7 @@ Symmetric encryption uses the same secret key to encrypt and decrypt data.
 
 ## Problem it solves
 
-This page explains the problem behind the concept: One shared secret key encrypts and decrypts data. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Many systems need to store or transmit data so only parties with the same secret can read it. Symmetric encryption turns confidentiality into a key-management problem: protect the key, choose safe modes, and avoid reusing dangerous state.
 
 ## Mental model
 

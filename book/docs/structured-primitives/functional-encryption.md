@@ -29,7 +29,7 @@ Functional encryption lets a key reveal only a specific function of encrypted da
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Encryption where specialized keys reveal only approved functions of plaintext data. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Sometimes a data holder wants another party to learn only a permitted computation over encrypted data, not the underlying plaintext. Functional encryption captures that goal with restricted decryption keys, at the cost of strong assumptions and careful function design.
 
 ## Mental model
 

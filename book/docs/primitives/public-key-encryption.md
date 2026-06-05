@@ -29,7 +29,7 @@ Public-key encryption lets anyone encrypt to a public key while only the private
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Anyone can encrypt to a public key, but only the private key holder can decrypt. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+A sender often needs to protect data for a recipient before the two parties share a secret. Public-key encryption solves that bootstrapping problem by letting anyone encrypt to a public key while only the private-key holder can decrypt.
 
 ## Mental model
 

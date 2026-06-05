@@ -29,7 +29,7 @@ Reveal only a function means exposing a computed result while keeping the underl
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Expose a computed result while hiding the underlying inputs. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+A party may need to disclose an approved result, such as a score, eligibility bit, or aggregate, without exposing the raw input that produced it. This pattern frames the boundary between useful disclosure and unnecessary data release.
 
 ## Mental model
 

@@ -29,7 +29,7 @@ Randomness and nonces provide the fresh or unique values that many cryptographic
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Fresh random or unique values keep many schemes from repeating dangerous internal state. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Many cryptographic schemes break when they reuse supposedly fresh values or rely on predictable randomness. Randomness and nonces provide uniqueness or unpredictability so keys, signatures, encryption modes, and protocols do not repeat unsafe internal state.
 
 ## Mental model
 

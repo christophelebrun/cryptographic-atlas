@@ -36,4 +36,4 @@ Regenerate the PDF when documentation content, diagrams, sidebars, or print styl
 
 ## License
 
-By contributing, you agree that educational content is licensed under CC BY-SA 4.0 and website source code is intended to be licensed under MIT unless otherwise specified.
+By contributing, you agree that educational content is licensed under CC BY-SA 4.0 and website source code is licensed under the MIT License unless a file explicitly states otherwise. See `LICENSE`, `LICENSE-CONTENT`, and `LICENSE-CODE` for the repository license boundaries.

@@ -29,7 +29,7 @@ Anonymous membership lets someone prove they belong to an eligible group without
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Prove group membership without revealing which member you are. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Many systems need to check that a participant belongs to an approved set without learning which approved member is acting. Anonymous membership patterns preserve eligibility while reducing identity linkage across actions.
 
 ## Mental model
 

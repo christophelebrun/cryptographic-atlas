@@ -33,7 +33,7 @@ Homomorphic encryption allows computation on ciphertexts so that decrypting the 
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Encryption that supports computation over ciphertexts. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Some applications need computation on sensitive data by parties who should not see the plaintext. Homomorphic encryption lets selected operations happen on ciphertexts, but shifts difficulty to parameter choices, leakage boundaries, and performance.
 
 ## Mental model
 

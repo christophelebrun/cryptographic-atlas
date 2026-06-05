@@ -29,7 +29,7 @@ A digital signature lets a private key holder authorize a message so anyone with
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A private key holder signs a message so verifiers can check its origin and integrity. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Open systems need a way for anyone to verify that a message was authorized by a private-key holder. Digital signatures provide public verifiability for origin and integrity, but only if keys, contexts, and verification rules are handled correctly.
 
 ## Mental model
 

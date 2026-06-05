@@ -29,7 +29,7 @@ Secret sharing splits a secret into shares so that only an authorized subset can
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A secret is split into shares so only an authorized subset can reconstruct it. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Some systems need to protect a secret from single-point compromise while still allowing recovery or action by an authorized group. Secret sharing distributes risk across shares and defines which subsets can reconstruct the value.
 
 ## Mental model
 

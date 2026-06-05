@@ -29,7 +29,7 @@ A homomorphic commitment lets commitments be combined in ways that correspond to
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Commitments can be combined so their hidden values combine in a matching way. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Protocols often need to keep values hidden while proving that sums, differences, or other relations over those values are consistent. Homomorphic commitments let verifiers check algebraic relationships without opening every committed value.
 
 ## Mental model
 

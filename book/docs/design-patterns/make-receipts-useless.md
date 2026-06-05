@@ -29,7 +29,7 @@ This pattern tries to stop users from proving to a coercer how they acted.
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Prevent users from producing convincing evidence of how they acted. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Some protocols fail if participants can later prove how they acted to a coercer, buyer, or outside observer. Receipt-freeness patterns try to remove or weaken that proof while preserving enough verifiability for the system to accept legitimate actions.
 
 ## Mental model
 

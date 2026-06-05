@@ -29,7 +29,7 @@ A key derivation function (KDF) turns shared secret material into context-specif
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A KDF turns shared secret material into context-specific keys. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Raw shared secrets are rarely safe to use directly as application keys. Key derivation functions (KDFs) extract and expand secret material into separate context-bound keys so different purposes do not accidentally share the same cryptographic state.
 
 ## Mental model
 

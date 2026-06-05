@@ -30,7 +30,7 @@ Private aggregation reveals a combined result without revealing each participant
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Reveal a combined result while keeping individual inputs hidden. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Applications often need totals or statistics without collecting each participant's raw value. Private aggregation focuses on revealing only the combined result and managing what the aggregate, failures, and side channels still leak.
 
 ## Mental model
 

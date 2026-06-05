@@ -30,7 +30,7 @@ Key encapsulation and key exchange let parties establish shared secret material 
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Parties establish shared secret material over an insecure channel. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Parties that start with no shared secret need a way to agree on fresh key material across an observable network. Key exchange and key encapsulation mechanisms (KEMs) solve that setup step so later symmetric encryption and authentication can protect session traffic.
 
 ## Mental model
 

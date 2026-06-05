@@ -29,7 +29,7 @@ Anti-double-use nullifiers let a system reject repeated anonymous actions in the
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A public context-specific tag lets a system reject repeated anonymous actions. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Anonymous systems often need to stop a credential, coin, or eligibility proof from being used twice without learning who used it. Anti-double-use nullifiers give verifiers a public, context-bound value they can compare for repeats while keeping the underlying identity or secret hidden.
 
 ## Mental model
 

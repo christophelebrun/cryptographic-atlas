@@ -131,9 +131,12 @@ Contributions should improve conceptual clarity, threat-model precision, assumpt
 
 ## License
 
-Book content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+This repository uses separate licenses for content and code:
 
-Website source code is intended to be licensed under MIT unless otherwise specified. Track code/content license separation explicitly if the project needs stricter boundaries later.
+- Book content is licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). See `LICENSE-CONTENT`.
+- Website source code is licensed under the MIT License. See `LICENSE-CODE`.
+
+The root `LICENSE` file defines the path-level boundaries. Generated files inherit the license of the source material they are generated from unless stated otherwise.
 
 ## Safety note
 

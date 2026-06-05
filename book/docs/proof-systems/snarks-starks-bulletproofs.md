@@ -34,7 +34,7 @@ SNARKs, STARKs, and Bulletproofs are families of proof systems that package zero
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Proof-system families that trade setup, proof size, verifier cost, and assumptions differently. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Applications that use succinct or zero-knowledge proofs must choose among families with very different setup, proof-size, verifier-cost, prover-cost, and assumption profiles. Comparing SNARKs, STARKs, and Bulletproofs helps match a proof system to a threat model and deployment setting.
 
 ## Mental model
 

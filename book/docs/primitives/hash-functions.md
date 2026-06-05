@@ -28,7 +28,7 @@ A cryptographic hash function maps data to a fixed-length digest in a way that s
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A deterministic digest function designed to resist reversal and collisions. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Systems often need a compact, deterministic representation of data for identifiers, commitments, integrity checks, and transcript binding. Cryptographic hash functions are useful when that representation must resist preimage, second-preimage, or collision attacks.
 
 ## Mental model
 

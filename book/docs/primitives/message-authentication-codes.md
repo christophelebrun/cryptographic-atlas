@@ -30,7 +30,7 @@ A message authentication code (MAC) lets parties sharing a secret key detect for
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A shared secret key lets parties detect forged or modified messages. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+When two parties share a secret, they need a cheap way to reject messages that were modified or forged in transit. A message authentication code (MAC) attaches an authenticity tag that only someone with the key should be able to produce.
 
 ## Mental model
 

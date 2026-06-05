@@ -33,7 +33,7 @@ Threshold cryptography distributes a cryptographic power across several parties 
 
 ## Problem it solves
 
-This page explains the problem behind the concept: A cryptographic power is split so a quorum is required to act. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Critical keys and signing powers are dangerous when controlled by one machine or one person. Threshold cryptography splits authority across participants so action requires a quorum, while making availability and collusion assumptions explicit.
 
 ## Mental model
 

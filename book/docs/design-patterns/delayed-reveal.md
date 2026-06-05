@@ -29,7 +29,7 @@ Delayed reveal fixes information at one time and discloses it later.
 
 ## Problem it solves
 
-This page explains the problem behind the concept: Fix information now and disclose it later. It separates the guarantee from the assumptions, missing guarantees, and composition risks that decide whether the idea is useful in a real system.
+Protocols sometimes need participants to commit to information before it is public, but reveal it only after a deadline, randomness event, or contest closes. Delayed reveal separates the time of choosing a value from the time of disclosing it.
 
 ## Mental model
 
