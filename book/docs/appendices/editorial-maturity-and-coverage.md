@@ -4,7 +4,7 @@ type: appendix
 level: not-applicable
 template: reference
 status: current
-last_reviewed: '2026-06-04'
+last_reviewed: '2026-06-05'
 difficulty: beginner
 maturity: not-applicable
 tags:
@@ -133,6 +133,21 @@ Remaining source work should focus on depth and freshness rather than breadth al
 - revisit fast-moving draft specifications on the review windows in `book/data/source-freshness.yml`;
 - keep source clusters topic-local so readers can distinguish foundational papers, standards, and deployed project documentation.
 
+## Current limitations and editorial priorities
+
+The atlas has a strong taxonomy and data model, but several product and editorial limitations keep it from reading like a finished web book:
+
+| Limitation | Why it matters | Direction |
+| --- | --- | --- |
+| The homepage renders every concept card at once. | A flat set of more than ninety dense cards is difficult to scan and gives new readers no obvious route through the material. | Add taxonomy filters, compact summaries, progressive disclosure, and curated entry points for common reader goals. |
+| Coverage is broader than it is deep. | Many pages are accurate, template-complete summaries but do not yet provide the worked examples, narrative progression, or design comparisons needed for durable understanding. | Develop a smaller set of flagship chapters with worked scenarios, deeper diagrams, and explicit comparison of competing approaches. |
+| Sources are usually collected under `Further reading` rather than attached to individual claims. | Readers cannot easily determine which source supports a specific technical, maturity, deployment, or performance claim. | Add claim-level footnotes or structured source IDs for nontrivial assertions. |
+| Review status compresses several different kinds of confidence into `current`. | Structural review, source-freshness review, and expert cryptographic review are not equivalent. A recent date can otherwise imply more assurance than the process provides. | Track these review dimensions separately and reserve any expert-reviewed label for named human review. |
+| Machine-oriented labels appear in reader-facing concept cards. | Values such as `public-verifiability` or inconsistent category capitalization make the interface feel database-first and reduce readability. | Add a presentation-label layer while retaining stable machine identifiers underneath. |
+| High-risk cautions are not consistently surfaced as visual warnings inside chapters. | Readers can miss setup, maturity, composability, or implementation warnings when they appear only in ordinary prose or card metadata. | Use warning callouts selectively for expert-only, research-stage, setup-sensitive, and easy-to-misuse concepts. |
+| The visual identity is functional but unfinished. | The layout is clean, but the placeholder logo and generic documentation styling do not yet give the atlas a distinctive editorial identity. | Replace placeholder branding after information architecture and chapter depth stabilize. |
+| Sidebar hierarchy has historically been flatter than the concept hierarchy. | A child page displayed beside its parent obscures dependency and specialization relationships, making a large book harder to navigate. | Use linked sidebar categories for direct parent-child relationships and routing overviews, while preserving taxonomy boundaries for cross-level dependencies. |
+
 ## Completed backlog items in this pass
 
 1. Promoted grouped coverage into standalone pages for elliptic curves, code-based assumptions, common reference strings, password hashing, key-committing encryption, blind signatures, VRFs, verifiable encryption, e-cash primitives, FRI, folding schemes, arithmetization, sumcheck, recursion, lookup arguments, anonymous tokens, blind-signature credentials, secure messaging, identity wallets, encrypted mempools, private ML analytics, key rotation, encrypt-then-prove, and threshold issuance.
@@ -150,22 +165,34 @@ Remaining source work should focus on depth and freshness rather than breadth al
 13. Promoted auditability, accountability, deniability, non-repudiation, availability, and censorship resistance into standalone security-goal pages with concept cards.
 14. Added implementation-specific references for halo2, gnark, arkworks, Circom, Zcash Foundation FROST, drand, OpenID4VC, EUDI ARF, AnonCreds, Shutter, OQS, Microsoft SEAL, OpenFHE, Concrete ML, MP-SPDZ, EMP, and FRESCO.
 15. Added per-page `source_review` notes and review windows to fast-moving pages that depend on draft standards, ecosystem specifications, proving stacks, PQ migration tooling, FHE/MPC libraries, or encrypted-mempool prototypes.
+16. Audited every sidebar entry and added linked parent-child categories where the relationship is direct or represented by a routing overview, without moving cross-level dependencies into the wrong taxonomy section.
 
 ## Remaining editorial backlog
 
 This is the authoritative maintenance backlog. Do not duplicate the active list in `TODO.md`.
 
-1. Add a formal JSON schema for `static/data/relationship-graph.json` if external tools begin consuming the graph snapshot.
-2. Add generated graph slices for common reader questions, such as "what breaks this guarantee?", "what does this scheme require?", and "which concepts use this primitive?".
-3. Continue expanding `book/data/instances.yml` selectively with additional deployed libraries, wallet profiles, proof-system backends, PQ migration profiles, and legacy schemes only when readers are likely to encounter them.
-4. Promote receipt-freeness, coercion resistance, fairness, or liveness into standalone pages if the atlas adds a larger voting, governance, or consensus-goals section.
-5. Add versioned audit-status notes for implementation stacks where audits, release trains, or API stability materially change deployment advice.
-6. Continue source-freshness reviews on the six-month windows and mark pages `needs-review` when draft standards or ecosystem profiles move.
+1. Replace the all-at-once homepage card grid with filtered, grouped, and progressively disclosed concept browsing.
+2. Add curated reading paths for common reader goals, such as evaluating a ZK system, designing a secure channel, comparing private-computation approaches, or reviewing a private-payment design.
+3. Develop 10 to 15 flagship chapters with worked examples, stronger narrative progression, more diagrams, and comparisons between plausible design choices.
+4. Add claim-level citations or structured source references for nontrivial technical, deployment, maturity, and performance claims.
+5. Separate structural review, source-freshness review, and expert cryptographic review in page metadata and reader-facing status labels.
+6. Normalize reader-facing labels and capitalization without changing stable concept-card IDs or relationship keys.
+7. Add visible warning callouts to expert-only, research-stage, trusted-setup-sensitive, composition-sensitive, and commonly misused topics.
+8. Replace the placeholder logo and refine the visual identity after the navigation and flagship chapter work stabilizes.
+9. Maintain sidebar parent-child nesting when a page has a direct conceptual parent or a routing overview, but do not move a concept across taxonomy levels merely because it depends on a concept in another section.
+10. Add a formal JSON schema for `static/data/relationship-graph.json` if external tools begin consuming the graph snapshot.
+11. Add generated graph slices for common reader questions, such as "what breaks this guarantee?", "what does this scheme require?", and "which concepts use this primitive?".
+12. Continue expanding `book/data/instances.yml` selectively with additional deployed libraries, wallet profiles, proof-system backends, PQ migration profiles, and legacy schemes only when readers are likely to encounter them.
+13. Promote receipt-freeness, coercion resistance, fairness, or liveness into standalone pages if the atlas adds a larger voting, governance, or consensus-goals section.
+14. Add versioned audit-status notes for implementation stacks where audits, release trains, or API stability materially change deployment advice.
+15. Continue source-freshness reviews on the six-month windows and mark pages `needs-review` when draft standards or ecosystem profiles move.
 
 ## Timestamped editorial changelog
 
 | Date | Change |
 | --- | --- |
+| 2026-06-05 | Added the current product and editorial limitations to the authoritative backlog, including discovery, chapter depth, claim-level sourcing, review semantics, reader-facing labels, warnings, and visual identity. |
+| 2026-06-05 | Reorganized the sidebar around direct parent-child relationships and routing overviews while preserving taxonomy boundaries and existing page URLs. |
 | 2026-06-04 | Added AI-generation disclosure to homepage, intro, footer, and PDF cover. |
 | 2026-06-04 | Added PDF table-of-contents page numbers and clickable concept-card navigation. |
 | 2026-06-04 | Added first-pass grouped coverage for missing security goals, assumptions, primitive engineering concepts, structured primitives, proof-system components, protocol families, systems, and operational design patterns. |
@@ -191,4 +218,4 @@ For fast-moving areas such as post-quantum cryptography, zero-knowledge proof sy
 
 ## Bottom line
 
-The taxonomy is sound. The atlas is now more mature as an educational map, the highest-priority gaps have standalone pages, and concrete instances plus relationship edges are machine-readable and generated into reader-facing views. The biggest remaining gap is deeper graph tooling, versioned implementation-audit metadata, and disciplined source freshness.
+The taxonomy is sound. The atlas is mature as an educational map, the highest-priority gaps have standalone pages, and concrete instances plus relationship edges are machine-readable and generated into reader-facing views. The biggest remaining work is turning that breadth into a guided web-book experience through better discovery, deeper flagship chapters, claim-level sourcing, clearer review semantics, and disciplined source freshness.
