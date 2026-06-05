@@ -26,7 +26,7 @@ Forward secrecy means later compromise of a long-term secret should not reveal p
 
 - Level: security goal.
 - Parent category: security goals.
-- Related concepts: [Secure Channels](/docs/protocols/secure-channels), [Key Encapsulation and Exchange](/docs/primitives/key-encapsulation-and-exchange), [Transcript Binding](/docs/design-patterns/transcript-binding), [Secure Messaging](/docs/case-studies/secure-messaging).
+- Related concepts: [Secure Channels](/docs/protocols/secure-channels), [Key Encapsulation and Exchange](/docs/primitives/key-encapsulation-and-exchange), [Transcript Binding](/docs/design-patterns/transcript-binding), [Secure Messaging](/docs/systems-and-applications/secure-messaging).
 
 ## Problem it solves
 
@@ -101,7 +101,7 @@ Widely deployed in modern secure-channel protocols, but details vary by suite, r
 ## Related concepts
 
 - [Secure Channels](/docs/protocols/secure-channels)
-- [Secure Messaging](/docs/case-studies/secure-messaging)
+- [Secure Messaging](/docs/systems-and-applications/secure-messaging)
 - [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration)
 
 ## Further reading

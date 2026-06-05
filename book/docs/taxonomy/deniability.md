@@ -26,7 +26,7 @@ Deniability means a transcript does not become convincing evidence to outsiders 
 
 - Level: security goal.
 - Parent category: security goals.
-- Related concepts: [Authenticity](/docs/taxonomy/authenticity), [Forward Secrecy](/docs/taxonomy/forward-secrecy), [Non-Repudiation](/docs/taxonomy/non-repudiation), [Secure Messaging](/docs/case-studies/secure-messaging).
+- Related concepts: [Authenticity](/docs/taxonomy/authenticity), [Forward Secrecy](/docs/taxonomy/forward-secrecy), [Non-Repudiation](/docs/taxonomy/non-repudiation), [Secure Messaging](/docs/systems-and-applications/secure-messaging).
 
 ## Problem it solves
 
@@ -101,7 +101,7 @@ Mature in secure messaging design, but difficult to preserve at the application 
 ## Related concepts
 
 - [Forward Secrecy](/docs/taxonomy/forward-secrecy)
-- [Secure Messaging](/docs/case-studies/secure-messaging)
+- [Secure Messaging](/docs/systems-and-applications/secure-messaging)
 - [Make Receipts Useless](/docs/design-patterns/make-receipts-useless)
 
 ## Further reading

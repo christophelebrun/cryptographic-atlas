@@ -146,7 +146,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Anonymous Airdrop",
     "category": "system",
     "level": "system",
-    "pageLink": "/docs/case-studies/anonymous-airdrop",
+    "pageLink": "/docs/systems-and-applications/anonymous-airdrop",
     "shortIntuition": "Eligible users claim once without publicly linking the claim to their original identity.",
     "maturity": "emerging",
     "securityGoals": [
@@ -783,7 +783,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Coercion-Resistant Voting",
     "category": "system",
     "level": "system",
-    "pageLink": "/docs/case-studies/coercion-resistant-voting",
+    "pageLink": "/docs/systems-and-applications/coercion-resistant-voting",
     "shortIntuition": "A voting design tries to prevent voters from proving how they voted to a coercer.",
     "maturity": "emerging",
     "securityGoals": [
@@ -1383,7 +1383,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Encrypted Mempools",
     "category": "Systems",
     "level": "system",
-    "pageLink": "/docs/case-studies/encrypted-mempools",
+    "pageLink": "/docs/systems-and-applications/encrypted-mempools",
     "shortIntuition": "Encrypt pending transactions until ordering or reveal rules reduce content-based front-running.",
     "maturity": "emerging",
     "securityGoals": [
@@ -1782,7 +1782,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Identity Wallets",
     "category": "Systems",
     "level": "system",
-    "pageLink": "/docs/case-studies/identity-wallets",
+    "pageLink": "/docs/systems-and-applications/identity-wallets",
     "shortIntuition": "Wallets store credentials and present claims with selective disclosure under issuer trust.",
     "maturity": "emerging",
     "securityGoals": [
@@ -2915,7 +2915,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Private DAO Voting",
     "category": "system",
     "level": "system",
-    "pageLink": "/docs/case-studies/private-dao-voting",
+    "pageLink": "/docs/systems-and-applications/private-dao-voting",
     "shortIntuition": "A governance vote combines anonymous eligibility, ballot secrecy, anti-double-vote checks, and verifiable tallying.",
     "maturity": "emerging",
     "securityGoals": [
@@ -3018,7 +3018,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Private Machine Learning Analytics",
     "category": "Systems",
     "level": "system",
-    "pageLink": "/docs/case-studies/private-machine-learning-analytics",
+    "pageLink": "/docs/systems-and-applications/private-machine-learning-analytics",
     "shortIntuition": "Private analytics combines aggregation, computation, and release controls so model or metric outputs reveal less about individuals.",
     "maturity": "emerging",
     "securityGoals": [
@@ -3070,7 +3070,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Private Payments",
     "category": "Systems",
     "level": "system",
-    "pageLink": "/docs/case-studies/private-payments",
+    "pageLink": "/docs/systems-and-applications/private-payments",
     "shortIntuition": "Transfer value while hiding selected transaction details under a stated ledger or issuer model.",
     "maturity": "emerging",
     "securityGoals": [
@@ -3599,7 +3599,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "Secure Messaging",
     "category": "Systems",
     "level": "system",
-    "pageLink": "/docs/case-studies/secure-messaging",
+    "pageLink": "/docs/systems-and-applications/secure-messaging",
     "shortIntuition": "Messaging systems combine channels, ratchets, identity keys, delivery, devices, and metadata policy.",
     "maturity": "deployed",
     "securityGoals": [
@@ -4345,7 +4345,7 @@ const conceptCards: ConceptCardData[] = [
     "name": "ZK Rollups",
     "category": "Systems",
     "level": "system",
-    "pageLink": "/docs/case-studies/zk-rollups",
+    "pageLink": "/docs/systems-and-applications/zk-rollups",
     "shortIntuition": "Validity proofs let verifiers check batches of state transitions cheaply.",
     "maturity": "emerging",
     "securityGoals": [

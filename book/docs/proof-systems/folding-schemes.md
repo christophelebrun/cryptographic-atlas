@@ -97,7 +97,7 @@ Research-stage to emerging. The area is fast-moving and should be reviewed frequ
 ## Related concepts
 
 - [Recursive Proofs](/docs/proof-systems/recursive-proofs)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 - [Transcript Binding](/docs/design-patterns/transcript-binding)
 
 ## Further reading

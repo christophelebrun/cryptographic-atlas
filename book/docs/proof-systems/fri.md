@@ -27,7 +27,7 @@ FRI proves that a committed function is close to a low-degree polynomial using r
 
 - Level: proof-system component.
 - Parent category: [Proof-System Components](/docs/proof-systems/proof-system-components).
-- Related concepts: [STARKs](/docs/proof-systems/snarks-starks-bulletproofs), [ZK Rollups](/docs/case-studies/zk-rollups), [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments).
+- Related concepts: [STARKs](/docs/proof-systems/snarks-starks-bulletproofs), [ZK Rollups](/docs/systems-and-applications/zk-rollups), [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments).
 
 ## Problem it solves
 
@@ -99,7 +99,7 @@ Deployed in STARK-style systems, but parameters and performance engineering are 
 
 - [Proof-System Components](/docs/proof-systems/proof-system-components)
 - [Arithmetization](/docs/proof-systems/arithmetization)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 
 ## Further reading
 

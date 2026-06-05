@@ -108,7 +108,7 @@ Widely deployed in mature protocols, but subtle implementation bugs remain commo
 - [Domain Separation](/docs/design-patterns/domain-separation)
 - [Secure Channels](/docs/protocols/secure-channels)
 - [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 
 ## Further reading
 

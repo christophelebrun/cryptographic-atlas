@@ -199,7 +199,7 @@ Confidence comes from public-verifiability, mathematical assumptions, transcript
 - [Recursive Proofs](/docs/proof-systems/recursive-proofs)
 - [Lookup Arguments](/docs/proof-systems/lookup-arguments)
 - [Advanced Structured Primitives](/docs/structured-primitives/advanced-structured-primitives)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 
 ## Further reading
 

@@ -27,7 +27,7 @@ Key-committing encryption makes it hard for one ciphertext to validate under mul
 
 - Level: basic primitive or scheme property.
 - Parent category: [Authenticated Encryption](/docs/primitives/authenticated-encryption).
-- Related concepts: [Secure Messaging](/docs/case-studies/secure-messaging), [Transcript Binding](/docs/design-patterns/transcript-binding).
+- Related concepts: [Secure Messaging](/docs/systems-and-applications/secure-messaging), [Transcript Binding](/docs/design-patterns/transcript-binding).
 
 ## Problem it solves
 
@@ -98,7 +98,7 @@ Emerging. The motivation is deployed in secure-messaging designs, but exact sche
 ## Related concepts
 
 - [Authenticated Encryption](/docs/primitives/authenticated-encryption)
-- [Secure Messaging](/docs/case-studies/secure-messaging)
+- [Secure Messaging](/docs/systems-and-applications/secure-messaging)
 - [Transcript Binding](/docs/design-patterns/transcript-binding)
 
 ## Further reading

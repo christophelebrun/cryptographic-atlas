@@ -26,7 +26,7 @@ Verifiability means a party can check that a claim, proof, transcript, tally, or
 
 - Level: security goal.
 - Parent category: security goals.
-- Related concepts: [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs), [Membership Proofs](/docs/proof-systems/membership-proofs), [ZK Rollups](/docs/case-studies/zk-rollups), [E-Voting](/docs/protocols/e-voting).
+- Related concepts: [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs), [Membership Proofs](/docs/proof-systems/membership-proofs), [ZK Rollups](/docs/systems-and-applications/zk-rollups), [E-Voting](/docs/protocols/e-voting).
 
 ## Problem it solves
 
@@ -105,7 +105,7 @@ Widely used, but maturity depends on the proof, log, or signature mechanism and 
 
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
 - [Transcript Binding](/docs/design-patterns/transcript-binding)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 
 ## Further reading
 

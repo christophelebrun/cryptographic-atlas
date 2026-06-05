@@ -103,7 +103,7 @@ Mature as a goal, but concrete deployment confidence varies widely by system and
 
 - [Anonymous Credentials](/docs/protocols/anonymous-credentials)
 - [Mixnets](/docs/protocols/mixnets)
-- [Private Payments](/docs/case-studies/private-payments)
+- [Private Payments](/docs/systems-and-applications/private-payments)
 
 ## Further reading
 

@@ -44,7 +44,7 @@ The goals above now have standalone pages where they are central to the atlas. U
 
 Receipt-freeness and coercion resistance remain grouped because they are usually system-level refinements of voting, credential, or governance designs. They should be promoted only if the atlas adds a larger section on coercion models.
 
-Fair ordering and liveness are also adjacent goals. They are currently covered through [Availability](/docs/taxonomy/availability), [Censorship Resistance](/docs/taxonomy/censorship-resistance), [Encrypted Mempools](/docs/case-studies/encrypted-mempools), and [Delayed Reveal](/docs/design-patterns/delayed-reveal).
+Fair ordering and liveness are also adjacent goals. They are currently covered through [Availability](/docs/taxonomy/availability), [Censorship Resistance](/docs/taxonomy/censorship-resistance), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), and [Delayed Reveal](/docs/design-patterns/delayed-reveal).
 
 ## Post-quantum posture
 

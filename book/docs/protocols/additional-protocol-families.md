@@ -33,7 +33,7 @@ This is a grouped overview. [Secure Channels](/docs/protocols/secure-channels), 
 | [Secure channels](/docs/protocols/secure-channels) | Establish authenticated, encrypted sessions | key exchange, signatures/PSKs, KDFs, AEAD | Metadata and endpoint compromise remain. |
 | [Anonymous tokens](/docs/protocols/anonymous-tokens) | Issue or redeem tokens without stable identity linkage | blind signatures, OPRFs, accumulators, rate limits | Token privacy depends on issuance, redemption, and transport metadata. |
 | [Blind-signature credentials](/docs/protocols/blind-signature-credentials) | Issue credentials using blind signatures | blind signatures, selective disclosure, issuer policy | Blind issuance does not solve revocation or misuse. |
-| [Private-payment protocols](/docs/case-studies/private-payments) | Transfer value while hiding payer, payee, amount, or linkage under a model | commitments, nullifiers, ZKPs, e-cash, ledgers | Ledger metadata and double-spend rules dominate. |
+| [Private-payment protocols](/docs/systems-and-applications/private-payments) | Transfer value while hiding payer, payee, amount, or linkage under a model | commitments, nullifiers, ZKPs, e-cash, ledgers | Ledger metadata and double-spend rules dominate. |
 
 ## Oblivious transfer
 

@@ -144,7 +144,7 @@ Cryptographic systems fail when guarantees are overstated, assumptions are hidde
 
 ## Next steps
 
-- Add more case studies.
+- Add more system and application case studies.
 - Add deeper assumption/substrate pages for newer or specialized assumptions.
 - Add generated rendering for comparison-matrix YAML.
-- Add more generated diagrams for case studies and lifecycle walkthroughs.
+- Add more generated diagrams for system case studies and lifecycle walkthroughs.

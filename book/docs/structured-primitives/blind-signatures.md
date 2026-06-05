@@ -27,7 +27,7 @@ A blind signature lets a signer authorize a message without seeing the exact mes
 
 - Level: structured primitive.
 - Parent category: [Digital Signatures](/docs/primitives/digital-signatures).
-- Related concepts: [Anonymous Tokens](/docs/protocols/anonymous-tokens), [Blind-Signature Credentials](/docs/protocols/blind-signature-credentials), [Private Payments](/docs/case-studies/private-payments).
+- Related concepts: [Anonymous Tokens](/docs/protocols/anonymous-tokens), [Blind-Signature Credentials](/docs/protocols/blind-signature-credentials), [Private Payments](/docs/systems-and-applications/private-payments).
 
 ## Problem it solves
 

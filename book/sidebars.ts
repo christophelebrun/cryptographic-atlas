@@ -215,6 +215,25 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Systems and Applications',
+      link: {
+        type: 'doc',
+        id: 'systems-and-applications/overview',
+      },
+      items: [
+        'systems-and-applications/private-payments',
+        'systems-and-applications/zk-rollups',
+        'systems-and-applications/secure-messaging',
+        'systems-and-applications/identity-wallets',
+        'systems-and-applications/encrypted-mempools',
+        'systems-and-applications/private-machine-learning-analytics',
+        'systems-and-applications/private-dao-voting',
+        'systems-and-applications/coercion-resistant-voting',
+        'systems-and-applications/anonymous-airdrop',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Design Patterns',
       items: [
         'design-patterns/overview',
@@ -240,32 +259,6 @@ const sidebars: SidebarsConfig = {
         'design-patterns/delayed-reveal',
         'design-patterns/reveal-only-a-function',
         'design-patterns/make-receipts-useless',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Case Studies',
-      items: [
-        'case-studies/overview',
-        {
-          type: 'category',
-          label: 'Additional Systems and Applications',
-          link: {
-            type: 'doc',
-            id: 'case-studies/additional-systems',
-          },
-          items: [
-            'case-studies/private-payments',
-            'case-studies/zk-rollups',
-            'case-studies/secure-messaging',
-            'case-studies/identity-wallets',
-            'case-studies/encrypted-mempools',
-            'case-studies/private-machine-learning-analytics',
-          ],
-        },
-        'case-studies/private-dao-voting',
-        'case-studies/coercion-resistant-voting',
-        'case-studies/anonymous-airdrop',
       ],
     },
     {

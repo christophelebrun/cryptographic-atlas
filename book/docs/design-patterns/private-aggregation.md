@@ -134,7 +134,7 @@ The pattern is mature, but concrete systems range from well deployed to experime
 - [Homomorphic encryption](/docs/structured-primitives/homomorphic-encryption)
 - [Secure aggregation](/docs/protocols/secure-aggregation)
 - [Private set intersection](/docs/protocols/private-set-intersection)
-- [Private DAO voting](/docs/case-studies/private-dao-voting)
+- [Private DAO voting](/docs/systems-and-applications/private-dao-voting)
 
 ## Further reading
 

@@ -26,7 +26,7 @@ E-cash primitives support issuing, transferring, and redeeming digital value whi
 ## Where it sits in the taxonomy
 
 - Level: structured primitive family.
-- Parent category: [Private Payments](/docs/case-studies/private-payments).
+- Parent category: [Private Payments](/docs/systems-and-applications/private-payments).
 - Related concepts: [Blind Signatures](/docs/structured-primitives/blind-signatures), [Nullifiers](/docs/protocols/nullifiers), [Commitments](/docs/primitives/commitments).
 
 ## Problem it solves
@@ -100,7 +100,7 @@ Emerging as a system family. Classical ideas are mature, but modern deployments 
 
 ## Related concepts
 
-- [Private Payments](/docs/case-studies/private-payments)
+- [Private Payments](/docs/systems-and-applications/private-payments)
 - [Blind Signatures](/docs/structured-primitives/blind-signatures)
 - [Anti-Double-Use Nullifiers](/docs/design-patterns/anti-double-use-nullifiers)
 

@@ -80,7 +80,7 @@ Confidence is mixed: public-verifiability for validity proofs, mathematical-assu
 - [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments)
 - [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs)
 - [Transcript Binding](/docs/design-patterns/transcript-binding)
-- [Private Payments](/docs/case-studies/private-payments)
+- [Private Payments](/docs/systems-and-applications/private-payments)
 
 ## Further reading
 

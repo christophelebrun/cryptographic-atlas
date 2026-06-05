@@ -92,7 +92,7 @@ Related: [MPC](/docs/protocols/mpc), [Secure aggregation](/docs/protocols/secure
 
 A public value used to detect repeated anonymous actions within a context.
 
-Related: [Nullifiers](/docs/protocols/nullifiers), [Anti-double-use nullifiers](/docs/design-patterns/anti-double-use-nullifiers), [Anonymous airdrop](/docs/case-studies/anonymous-airdrop).
+Related: [Nullifiers](/docs/protocols/nullifiers), [Anti-double-use nullifiers](/docs/design-patterns/anti-double-use-nullifiers), [Anonymous airdrop](/docs/systems-and-applications/anonymous-airdrop).
 
 ## Oblivious pseudorandom function
 
@@ -128,7 +128,7 @@ Related: [Random oracle model](/docs/assumptions/random-oracle-model), [Hash fun
 
 A property where a participant cannot create convincing evidence of how they acted.
 
-Related: [Security goals](/docs/taxonomy/security-goals), [Make receipts useless](/docs/design-patterns/make-receipts-useless), [Coercion-resistant voting](/docs/case-studies/coercion-resistant-voting).
+Related: [Security goals](/docs/taxonomy/security-goals), [Make receipts useless](/docs/design-patterns/make-receipts-useless), [Coercion-resistant voting](/docs/systems-and-applications/coercion-resistant-voting).
 
 ## Soundness
 

@@ -67,7 +67,7 @@ One taxonomy tension remains: some objects are both building blocks and interact
 | Structured primitives | [Advanced structured primitives](/docs/structured-primitives/advanced-structured-primitives) | Covers VRFs, blind signatures, polynomial/vector commitments, verifiable encryption, and e-cash primitives. |
 | Proof systems | [Proof-system components](/docs/proof-systems/proof-system-components) | Covers polynomial commitments, FRI, folding, recursive proofs, lookup arguments, sumcheck, and arithmetization. |
 | Protocols | [Additional protocol families](/docs/protocols/additional-protocol-families) | Covers oblivious transfer, PIR, PAKE, secure channels, anonymous tokens, blind-signature credentials, and private-payment protocols. |
-| Systems | [Additional systems and applications](/docs/case-studies/additional-systems) | Covers private payments, ZK rollups, secure messaging, identity wallets, encrypted mempools, and private ML analytics. |
+| Systems | [Systems and Applications Overview](/docs/systems-and-applications/overview) | Routes readers to private payments, ZK rollups, secure messaging, identity wallets, encrypted mempools, private ML analytics, voting systems, and anonymous airdrops. |
 | Design patterns | [Operational design patterns](/docs/design-patterns/operational-design-patterns) | Covers encrypt-then-prove, threshold issuance, privacy-preserving revocation, domain separation, transcript binding, and key rotation. |
 | Protocols | [Secure Channels](/docs/protocols/secure-channels) | Promotes TLS, HPKE, Noise, and Signal-style channel assumptions into standalone treatment. |
 | Protocols | [Oblivious Transfer](/docs/protocols/oblivious-transfer) | Separates a core MPC building block from the broader protocol-family overview. |
@@ -75,8 +75,8 @@ One taxonomy tension remains: some objects are both building blocks and interact
 | Protocols | [Password-Authenticated Key Exchange](/docs/protocols/password-authenticated-key-exchange) | Distinguishes PAKE from password hashing and ordinary secure channels. |
 | Structured primitives | [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments) | Pulls out a central proof-system and rollup dependency with setup and post-quantum caveats. |
 | Structured primitives | [Vector Commitments](/docs/structured-primitives/vector-commitments) | Gives indexed commitments and authenticated state roots a proper taxonomy location. |
-| Systems | [Private Payments](/docs/case-studies/private-payments) | Promotes note/nullifier, e-cash, wallet, and metadata risks into a full case study. |
-| Systems | [ZK Rollups](/docs/case-studies/zk-rollups) | Separates validity proofs from data availability, sequencing, and governance assumptions. |
+| Systems | [Private Payments](/docs/systems-and-applications/private-payments) | Promotes note/nullifier, e-cash, wallet, and metadata risks into a full case study. |
+| Systems | [ZK Rollups](/docs/systems-and-applications/zk-rollups) | Separates validity proofs from data availability, sequencing, and governance assumptions. |
 | Design patterns | [Domain Separation](/docs/design-patterns/domain-separation) | Makes context labeling explicit as a reusable implementation pattern. |
 | Design patterns | [Transcript Binding](/docs/design-patterns/transcript-binding) | Makes transcript completeness a standalone composition rule. |
 | Design patterns | [Privacy-Preserving Revocation](/docs/design-patterns/privacy-preserving-revocation) | Gives revocation a privacy-aware operational pattern instead of a footnote inside credentials. |
@@ -98,10 +98,10 @@ One taxonomy tension remains: some objects are both building blocks and interact
 | Proof systems | [Lookup Arguments](/docs/proof-systems/lookup-arguments) | Adds lookup tables, multiplicity, and table-versioning caveats. |
 | Protocols | [Anonymous Tokens](/docs/protocols/anonymous-tokens) | Adds issuance/redemption unlinkability and metadata boundaries. |
 | Protocols | [Blind-Signature Credentials](/docs/protocols/blind-signature-credentials) | Separates blind issuance from full anonymous credential guarantees. |
-| Systems | [Secure Messaging](/docs/case-studies/secure-messaging) | Adds a system page for channels, ratchets, devices, backups, and metadata. |
-| Systems | [Identity Wallets](/docs/case-studies/identity-wallets) | Adds a system page for credentials, selective disclosure, issuers, and revocation. |
-| Systems | [Encrypted Mempools](/docs/case-studies/encrypted-mempools) | Adds a system page for encrypted ordering, threshold release, and MEV boundaries. |
-| Systems | [Private Machine-Learning Analytics](/docs/case-studies/private-machine-learning-analytics) | Adds a system page for secure aggregation, MPC, HE, and differential privacy composition. |
+| Systems | [Secure Messaging](/docs/systems-and-applications/secure-messaging) | Adds a system page for channels, ratchets, devices, backups, and metadata. |
+| Systems | [Identity Wallets](/docs/systems-and-applications/identity-wallets) | Adds a system page for credentials, selective disclosure, issuers, and revocation. |
+| Systems | [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools) | Adds a system page for encrypted ordering, threshold release, and MEV boundaries. |
+| Systems | [Private Machine-Learning Analytics](/docs/systems-and-applications/private-machine-learning-analytics) | Adds a system page for secure aggregation, MPC, HE, and differential privacy composition. |
 | Design patterns | [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration) | Adds a standalone operational pattern for cryptographic agility and PQ migration. |
 | Design patterns | [Encrypt-then-prove](/docs/design-patterns/encrypt-then-prove) | Adds a standalone pattern for proving statements about encrypted data. |
 | Design patterns | [Threshold Issuance](/docs/design-patterns/threshold-issuance) | Adds a standalone pattern for distributed authorization and issuer quorum risks. |
@@ -167,6 +167,7 @@ The atlas has a strong taxonomy and data model, but several product and editoria
 15. Added per-page `source_review` notes and review windows to fast-moving pages that depend on draft standards, ecosystem specifications, proving stacks, PQ migration tooling, FHE/MPC libraries, or encrypted-mempool prototypes.
 16. Audited every sidebar entry and added linked parent-child categories where the relationship is direct or represented by a routing overview, without moving cross-level dependencies into the wrong taxonomy section.
 17. Promoted Security Goals to a top-level sidebar category so all eight primary taxonomy levels have consistent navigation placement.
+18. Renamed the Case Studies navigation level to Systems and Applications, moved it before Design Patterns to match the taxonomy, migrated its pages to natural `/docs/systems-and-applications/` routes, and removed the redundant additional-systems grouping.
 
 ## Remaining editorial backlog
 
@@ -192,6 +193,7 @@ This is the authoritative maintenance backlog. Do not duplicate the active list 
 
 | Date | Change |
 | --- | --- |
+| 2026-06-05 | Aligned the web-book navigation with the taxonomy by replacing Case Studies with Systems and Applications before Design Patterns and moving system pages to natural routes. |
 | 2026-06-05 | Promoted Security Goals from the Taxonomy orientation category to its own top-level sidebar category. |
 | 2026-06-05 | Added the current product and editorial limitations to the authoritative backlog, including discovery, chapter depth, claim-level sourcing, review semantics, reader-facing labels, warnings, and visual identity. |
 | 2026-06-05 | Reorganized the sidebar around direct parent-child relationships and routing overviews while preserving taxonomy boundaries and existing page URLs. |

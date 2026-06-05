@@ -108,7 +108,7 @@ Private DAO voting combines fast-moving privacy tooling with governance incentiv
 - [Nullifiers](/docs/protocols/nullifiers)
 - [Zero-knowledge proofs](/docs/proof-systems/zero-knowledge-proofs)
 - [Private aggregation](/docs/design-patterns/private-aggregation)
-- [Coercion-resistant voting](/docs/case-studies/coercion-resistant-voting)
+- [Coercion-resistant voting](/docs/systems-and-applications/coercion-resistant-voting)
 
 ## Further reading
 

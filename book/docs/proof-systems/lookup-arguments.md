@@ -27,7 +27,7 @@ Lookup arguments prove that witnessed values appear in an approved table.
 
 - Level: proof-system component.
 - Parent category: [Arithmetization](/docs/proof-systems/arithmetization).
-- Related concepts: [Range Proofs](/docs/proof-systems/range-proofs), [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments), [ZK Rollups](/docs/case-studies/zk-rollups).
+- Related concepts: [Range Proofs](/docs/proof-systems/range-proofs), [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments), [ZK Rollups](/docs/systems-and-applications/zk-rollups).
 
 ## Problem it solves
 

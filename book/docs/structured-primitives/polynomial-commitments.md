@@ -27,7 +27,7 @@ A polynomial commitment binds a prover to a polynomial while allowing short proo
 
 - Level: structured primitive.
 - Parent category: commitments and proof-system components.
-- Related concepts: [Commitments](/docs/primitives/commitments), [Vector Commitments](/docs/structured-primitives/vector-commitments), [Proof-System Components](/docs/proof-systems/proof-system-components), [ZK Rollups](/docs/case-studies/zk-rollups).
+- Related concepts: [Commitments](/docs/primitives/commitments), [Vector Commitments](/docs/structured-primitives/vector-commitments), [Proof-System Components](/docs/proof-systems/proof-system-components), [ZK Rollups](/docs/systems-and-applications/zk-rollups).
 
 ## Problem it solves
 
@@ -106,7 +106,7 @@ Mature but specialized. KZG is deployed in proof systems and data-availability c
 - [Commitments](/docs/primitives/commitments)
 - [Vector Commitments](/docs/structured-primitives/vector-commitments)
 - [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems/snarks-starks-bulletproofs)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 
 ## Further reading
 

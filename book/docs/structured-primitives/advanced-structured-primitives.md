@@ -180,7 +180,7 @@ Confidence varies: mathematical-assumption for core schemes, public-verifiabilit
 - [Verifiable Encryption](/docs/structured-primitives/verifiable-encryption)
 - [E-cash Primitives](/docs/structured-primitives/e-cash-primitives)
 - [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
-- [Private Payments](/docs/case-studies/private-payments)
+- [Private Payments](/docs/systems-and-applications/private-payments)
 - [Anonymous Tokens](/docs/protocols/anonymous-tokens)
 
 ## Further reading

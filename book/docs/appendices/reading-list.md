@@ -44,7 +44,7 @@ The content validator checks that every concept-card reference and concrete-inst
 
 - [Secure Channels](/docs/protocols/secure-channels#further-reading) links to TLS 1.3, HPKE, Noise, and Signal specifications.
 - [Polynomial Commitments](/docs/structured-primitives/polynomial-commitments#further-reading) links to KZG, FRI, and Halo references.
-- [Private Payments](/docs/case-studies/private-payments#further-reading) links to e-cash and Zerocash sources.
+- [Private Payments](/docs/systems-and-applications/private-payments#further-reading) links to e-cash and Zerocash sources.
 - [Privacy-Preserving Revocation](/docs/design-patterns/privacy-preserving-revocation#further-reading) links to credential and vector-commitment sources.
 
 ## Maintenance rule

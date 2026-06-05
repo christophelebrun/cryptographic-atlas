@@ -109,7 +109,7 @@ Emerging. Status lists are deployed in credential ecosystems, while stronger acc
 - [Anonymous Credentials](/docs/protocols/anonymous-credentials)
 - [Vector Commitments](/docs/structured-primitives/vector-commitments)
 - [Metadata Leakage](/docs/appendices/metadata-leakage)
-- [Privacy-Preserving Identity Wallets](/docs/case-studies/additional-systems#privacy-preserving-identity-wallets)
+- [Identity Wallets](/docs/systems-and-applications/identity-wallets)
 
 ## Further reading
 

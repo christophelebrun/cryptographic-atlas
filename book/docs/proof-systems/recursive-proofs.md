@@ -27,7 +27,7 @@ Recursive proofs verify one proof inside another proof so many checks can be com
 
 - Level: proof-system technique.
 - Parent category: [Proof-System Components](/docs/proof-systems/proof-system-components).
-- Related concepts: [Folding Schemes](/docs/proof-systems/folding-schemes), [ZK Rollups](/docs/case-studies/zk-rollups), [Transcript Binding](/docs/design-patterns/transcript-binding).
+- Related concepts: [Folding Schemes](/docs/proof-systems/folding-schemes), [ZK Rollups](/docs/systems-and-applications/zk-rollups), [Transcript Binding](/docs/design-patterns/transcript-binding).
 
 ## Problem it solves
 
@@ -100,7 +100,7 @@ Emerging. Recursion is deployed in some systems, but designs are specialized and
 ## Related concepts
 
 - [Folding Schemes](/docs/proof-systems/folding-schemes)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 - [Arithmetization](/docs/proof-systems/arithmetization)
 
 ## Further reading

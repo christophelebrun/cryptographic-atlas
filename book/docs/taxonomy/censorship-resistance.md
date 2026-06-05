@@ -26,7 +26,7 @@ Censorship resistance means valid actions cannot be selectively blocked beyond t
 
 - Level: security goal.
 - Parent category: security goals.
-- Related concepts: [Availability](/docs/taxonomy/availability), [Encrypted Mempools](/docs/case-studies/encrypted-mempools), [Private Payments](/docs/case-studies/private-payments), [Mixnets](/docs/protocols/mixnets).
+- Related concepts: [Availability](/docs/taxonomy/availability), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), [Private Payments](/docs/systems-and-applications/private-payments), [Mixnets](/docs/protocols/mixnets).
 
 ## Problem it solves
 
@@ -87,7 +87,7 @@ Confidence is mixed: it may depend on honest-majority consensus, non-collusion, 
 
 ## Composition patterns
 
-Censorship resistance often composes with [Availability](/docs/taxonomy/availability), [Delayed Reveal](/docs/design-patterns/delayed-reveal), [Encrypted Mempools](/docs/case-studies/encrypted-mempools), and public auditability.
+Censorship resistance often composes with [Availability](/docs/taxonomy/availability), [Delayed Reveal](/docs/design-patterns/delayed-reveal), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), and public auditability.
 
 ## Failure modes and anti-patterns
 
@@ -103,8 +103,8 @@ Emerging and system-specific. The goal is central in blockchains and messaging, 
 ## Related concepts
 
 - [Availability](/docs/taxonomy/availability)
-- [Encrypted Mempools](/docs/case-studies/encrypted-mempools)
-- [Private Payments](/docs/case-studies/private-payments)
+- [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools)
+- [Private Payments](/docs/systems-and-applications/private-payments)
 
 ## Further reading
 

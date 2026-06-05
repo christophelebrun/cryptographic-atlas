@@ -644,7 +644,7 @@ references:
     url: https://signal.org/docs/specifications/doubleratchet/
     used_by:
       - secure-channels
-      - additional-systems
+      - secure-messaging
       - concrete-instances
   - id: noise-framework
     title: The Noise Protocol Framework
@@ -836,7 +836,6 @@ references:
     doi: 10.1109/SP.2014.36
     used_by:
       - private-payments
-      - additional-systems
       - concrete-instances
   - id: w3c-vc-data-model-2
     title: Verifiable Credentials Data Model v2.0
@@ -847,7 +846,7 @@ references:
     url: https://www.w3.org/TR/vc-data-model/
     used_by:
       - privacy-preserving-revocation
-      - additional-systems
+      - identity-wallets
   - id: nist-sp-800-57
     title: Recommendation for Key Management
     authors:

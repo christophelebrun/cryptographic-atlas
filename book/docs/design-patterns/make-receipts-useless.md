@@ -25,7 +25,7 @@ This pattern tries to stop users from proving to a coercer how they acted.
 
 - Level: design-pattern
 - Parent category: design-pattern
-- Related concepts: [Coercion-Resistant Voting](/docs/case-studies/coercion-resistant-voting), [Electronic Voting](/docs/protocols/e-voting), [Mixnets](/docs/protocols/mixnets)
+- Related concepts: [Coercion-Resistant Voting](/docs/systems-and-applications/coercion-resistant-voting), [Electronic Voting](/docs/protocols/e-voting), [Mixnets](/docs/protocols/mixnets)
 
 ## Problem it solves
 
@@ -92,7 +92,7 @@ Confidence usually combines public verifiability for tally integrity with protoc
 - Receipt-freeness must include operational artifacts such as logs and screenshots.
 - Ballot secrecy alone is weaker than coercion resistance.
 
-Common adjacent concepts: [Coercion-Resistant Voting](/docs/case-studies/coercion-resistant-voting), [Electronic Voting](/docs/protocols/e-voting), [Mixnets](/docs/protocols/mixnets).
+Common adjacent concepts: [Coercion-Resistant Voting](/docs/systems-and-applications/coercion-resistant-voting), [Electronic Voting](/docs/protocols/e-voting), [Mixnets](/docs/protocols/mixnets).
 
 ## Failure modes and anti-patterns
 
@@ -107,11 +107,11 @@ Classified as emerging. This label describes the concept category, not a blanket
 
 ## Related concepts
 
-- [Coercion-Resistant Voting](/docs/case-studies/coercion-resistant-voting)
+- [Coercion-Resistant Voting](/docs/systems-and-applications/coercion-resistant-voting)
 - [Electronic Voting](/docs/protocols/e-voting)
 - [Mixnets](/docs/protocols/mixnets)
 
 ## Further reading
 
 - [Electronic voting](/docs/protocols/e-voting)
-- [Coercion-resistant voting](/docs/case-studies/coercion-resistant-voting)
+- [Coercion-resistant voting](/docs/systems-and-applications/coercion-resistant-voting)

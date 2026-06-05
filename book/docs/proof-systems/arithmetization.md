@@ -27,7 +27,7 @@ Arithmetization turns a computation into algebraic constraints that a proof syst
 
 - Level: proof-system representation.
 - Parent category: [Proof-System Components](/docs/proof-systems/proof-system-components).
-- Related concepts: [Lookup Arguments](/docs/proof-systems/lookup-arguments), [Sumcheck](/docs/proof-systems/sumcheck), [ZK Rollups](/docs/case-studies/zk-rollups).
+- Related concepts: [Lookup Arguments](/docs/proof-systems/lookup-arguments), [Sumcheck](/docs/proof-systems/sumcheck), [ZK Rollups](/docs/systems-and-applications/zk-rollups).
 
 ## Problem it solves
 
@@ -100,7 +100,7 @@ Mature as a concept, but implementation risk is high and domain-specific.
 ## Related concepts
 
 - [Lookup Arguments](/docs/proof-systems/lookup-arguments)
-- [ZK Rollups](/docs/case-studies/zk-rollups)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 - [Transcript Binding](/docs/design-patterns/transcript-binding)
 
 ## Further reading
