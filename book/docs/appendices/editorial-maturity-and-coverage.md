@@ -166,6 +166,7 @@ The atlas has a strong taxonomy and data model, but several product and editoria
 14. Added implementation-specific references for halo2, gnark, arkworks, Circom, Zcash Foundation FROST, drand, OpenID4VC, EUDI ARF, AnonCreds, Shutter, OQS, Microsoft SEAL, OpenFHE, Concrete ML, MP-SPDZ, EMP, and FRESCO.
 15. Added per-page `source_review` notes and review windows to fast-moving pages that depend on draft standards, ecosystem specifications, proving stacks, PQ migration tooling, FHE/MPC libraries, or encrypted-mempool prototypes.
 16. Audited every sidebar entry and added linked parent-child categories where the relationship is direct or represented by a routing overview, without moving cross-level dependencies into the wrong taxonomy section.
+17. Promoted Security Goals to a top-level sidebar category so all eight primary taxonomy levels have consistent navigation placement.
 
 ## Remaining editorial backlog
 
@@ -191,6 +192,7 @@ This is the authoritative maintenance backlog. Do not duplicate the active list 
 
 | Date | Change |
 | --- | --- |
+| 2026-06-05 | Promoted Security Goals from the Taxonomy orientation category to its own top-level sidebar category. |
 | 2026-06-05 | Added the current product and editorial limitations to the authoritative backlog, including discovery, chapter depth, claim-level sourcing, review semantics, reader-facing labels, warnings, and visual identity. |
 | 2026-06-05 | Reorganized the sidebar around direct parent-child relationships and routing overviews while preserving taxonomy boundaries and existing page URLs. |
 | 2026-06-04 | Added AI-generation disclosure to homepage, intro, footer, and PDF cover. |
