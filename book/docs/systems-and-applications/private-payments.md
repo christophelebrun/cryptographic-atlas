@@ -37,7 +37,7 @@ source_review:
 
 ## Overview
 
-Private-payment systems transfer value while hiding selected details such as payer, payee, amount, balance, or transaction linkage. No design hides everything: privacy depends on the ledger model, issuer model, wallet behavior, network layer, and metadata available to observers.
+Private-payment systems transfer value while hiding selected details such as payer, payee, amount, balance, or transaction linkage. No design hides everything: privacy depends on the ledger model, issuer model, wallet behavior, network layer, and metadata available to observers; this difference is visible across e-cash and shielded-ledger designs ([Chaum, Fiat, and Naor](https://doi.org/10.1007/0-387-34799-2_25), [Zerocash](https://doi.org/10.1109/SP.2014.36)).
 
 ![Private-payment note flow](/img/diagrams/private-payment-note-flow.svg)
 
@@ -76,7 +76,7 @@ Private-payment systems transfer value while hiding selected details such as pay
 
 ## Post-quantum posture
 
-Depends on the full stack. Many deployed private-payment systems use elliptic-curve commitments, pairings, or SNARKs that are quantum-vulnerable. Hash-based proof systems and symmetric components may be plausible, but signatures, commitments, note encryption, and ledger authentication must all be reviewed.
+Depends on the full stack. Many deployed private-payment systems use elliptic-curve commitments, pairings, or SNARKs that are quantum-vulnerable under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)). Hash-based proof systems and symmetric components may be plausible, but signatures, commitments, note encryption, and ledger authentication must all be reviewed ([STARKs](https://eprint.iacr.org/2018/046)).
 
 ## Confidence model
 
@@ -94,7 +94,7 @@ Confidence is mixed: public-verifiability for ledger rules and proofs, client-si
 
 ## Source-depth notes
 
-Private-payment source coverage should separate e-cash lineage, shielded-ledger protocol specifications, and metadata analysis. A deployed protocol specification can describe note and nullifier mechanics, but it does not by itself prove wallet, exchange, bridge, or network privacy.
+Private-payment source coverage should separate e-cash lineage, shielded-ledger protocol specifications, and metadata analysis. A deployed protocol specification can describe note and nullifier mechanics, but it does not by itself prove wallet, exchange, bridge, or network privacy ([Zcash Protocol Specification](https://zips.z.cash/protocol/protocol.pdf), [Metadata Leakage](/docs/appendices/metadata-leakage)).
 
 ## Related concepts
 

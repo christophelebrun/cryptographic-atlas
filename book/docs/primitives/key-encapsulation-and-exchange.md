@@ -65,11 +65,11 @@ A sender encapsulates to a recipient public key, both derive the same shared sec
 
 ## Assumptions
 
-The scheme-specific hardness assumption must hold, public keys or identities must be authenticated when authentication is required, and derived keys must be bound to the full transcript.
+The scheme-specific hardness assumption must hold, public keys or identities must be authenticated when authentication is required, and derived keys must be bound to the full transcript; TLS 1.3 is a standard example of transcript-bound key schedule design ([RFC 8446](https://www.rfc-editor.org/rfc/rfc8446)).
 
 ## Post-quantum posture
 
-Depends on the concrete mechanism. Diffie-Hellman and elliptic-curve Diffie-Hellman are quantum-vulnerable, while standardized post-quantum KEMs such as ML-KEM are designed for migration.
+Depends on the concrete mechanism. Diffie-Hellman and elliptic-curve Diffie-Hellman are quantum-vulnerable under Shor's algorithm for discrete logarithms ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)), while standardized post-quantum KEMs such as ML-KEM are designed for migration ([NIST FIPS 203](https://doi.org/10.6028/NIST.FIPS.203)).
 
 ## Confidence model
 
@@ -81,13 +81,13 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 
 | Mechanism | Family | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
-| X25519 | Elliptic-curve Diffie-Hellman | Modern key agreement in protocols and libraries | Quantum-vulnerable; usually simple and robust when used through established libraries. |
-| X448 | Elliptic-curve Diffie-Hellman | Higher-security-margin key agreement | Quantum-vulnerable; less widely deployed than X25519. |
+| X25519 | Elliptic-curve Diffie-Hellman | Modern key agreement in protocols and libraries | Quantum-vulnerable; usually simple and robust when used through established libraries ([RFC 7748](https://www.rfc-editor.org/rfc/rfc7748)). |
+| X448 | Elliptic-curve Diffie-Hellman | Higher-security-margin key agreement | Quantum-vulnerable; less widely deployed than X25519 ([RFC 7748](https://www.rfc-editor.org/rfc/rfc7748)). |
 | P-256 ECDH | Elliptic-curve Diffie-Hellman | TLS and standards-oriented environments | Quantum-vulnerable; point validation and library correctness matter. |
 | FFDHE | Finite-field Diffie-Hellman groups | Compatibility and standards profiles | Quantum-vulnerable; use reviewed safe-prime groups, not ad hoc parameters. |
-| ML-KEM | Module-lattice KEM | Post-quantum key encapsulation | Plausibly post-quantum; protocol designers must handle larger keys and ciphertexts. |
-| HQC | Code-based KEM selected for ongoing NIST standardization | Backup or alternative post-quantum KEM family | Selected by NIST in 2025 for future standardization; not a finalized FIPS standard as of this review. |
-| HPKE KEM suites | KEM plus KDF plus AEAD framework | Hybrid encryption and application protocols | HPKE is a composition framework; the selected KEM determines posture. |
+| ML-KEM | Module-lattice KEM | Post-quantum key encapsulation | Plausibly post-quantum; protocol designers must handle larger keys and ciphertexts ([NIST FIPS 203](https://doi.org/10.6028/NIST.FIPS.203)). |
+| HQC | Code-based KEM selected for ongoing NIST standardization | Backup or alternative post-quantum KEM family | Selected by NIST in 2025 for future standardization; not a finalized FIPS standard as of this review ([NIST HQC selection](https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption)). |
+| HPKE KEM suites | KEM plus KDF plus AEAD framework | Hybrid encryption and application protocols | HPKE is a composition framework; the selected KEM determines posture ([RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)). |
 | Hybrid classical/PQ exchange | Classical ECDH plus ML-KEM or similar | Migration period key establishment | Reduces single-assumption risk, but transcript binding and failure handling must be explicit. |
 
 ## Use cases
@@ -99,7 +99,7 @@ Confidence comes from the key-establishment assumption, authentication binding, 
 ## Composition patterns
 
 - Key exchange must feed a KDF and authenticated transcript.
-- Hybrid post-quantum migration must define combiner behavior.
+- Hybrid post-quantum migration must define combiner behavior and transcript binding, rather than just concatenating outputs informally.
 
 Common adjacent concepts: [Public-Key Encryption](/docs/primitives/public-key-encryption), [Key Derivation Functions](/docs/primitives/key-derivation-functions), [Lattices](/docs/assumptions/lattices).
 
@@ -111,7 +111,7 @@ Common adjacent concepts: [Public-Key Encryption](/docs/primitives/public-key-en
 
 ## Maturity and deployment
 
-Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+Classified as deployed. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk is expert-only because authentication, transcript binding, hybrid combiners, key derivation, and failure handling are protocol-level decisions ([RFC 8446](https://www.rfc-editor.org/rfc/rfc8446), [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)). Parameter sensitivity: high.
 
 ## Related concepts
 
@@ -123,4 +123,5 @@ Classified as deployed. This label describes the concept category, not a blanket
 
 - Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
 - NIST FIPS 203, [Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/pubs/fips/203/final).
+- RFC 9180, [Hybrid Public Key Encryption](https://www.rfc-editor.org/rfc/rfc9180).
 - NIST, [NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption](https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption).

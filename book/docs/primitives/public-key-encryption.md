@@ -64,11 +64,11 @@ A sender uses a recipient public key to encapsulate a fresh data-encryption key,
 
 ## Assumptions
 
-The scheme must meet the intended security notion, public keys must be authenticated, private keys must remain secret, and encryption must be used through a safe scheme or hybrid construction rather than raw textbook operations.
+The scheme must meet the intended security notion, public keys must be authenticated, private keys must remain secret, and encryption must be used through a safe scheme or hybrid construction rather than raw textbook operations; HPKE is one standardized framework for composing KEM, KDF, and AEAD choices ([RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)).
 
 ## Post-quantum posture
 
-Depends on the scheme. RSA and elliptic-curve public-key encryption or key agreement are quantum-vulnerable. Post-quantum key encapsulation mechanisms such as ML-KEM are designed for migration, but protocol integration still matters.
+Depends on the scheme. RSA and elliptic-curve public-key encryption or key agreement are quantum-vulnerable under Shor's algorithm for factoring and discrete logarithms ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)). Post-quantum key encapsulation mechanisms such as ML-KEM are designed for migration, but protocol integration still matters ([NIST FIPS 203](https://doi.org/10.6028/NIST.FIPS.203)).
 
 ## Confidence model
 
@@ -81,10 +81,10 @@ Confidence comes from key authenticity, correct encryption or encapsulation, sec
 | Scheme or suite | Typical role | Key differences and cautions |
 | --- | --- | --- |
 | RSA-OAEP | Legacy public-key encryption and hybrid encryption | Quantum-vulnerable; safe padding is mandatory and raw RSA is not encryption. |
-| HPKE | Standard hybrid public-key encryption framework | Composes KEM, KDF, and AEAD choices; security depends on authenticated public keys and mode selection. |
+| HPKE | Standard hybrid public-key encryption framework | Composes KEM, KDF, and AEAD choices; security depends on authenticated public keys and mode selection ([RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)). |
 | ECIES-style schemes | Hybrid encryption over elliptic-curve key agreement | Quantum-vulnerable and variant-heavy; interoperability and authentication details vary. |
 | Integrated encryption in protocols | TLS 1.3, Signal-style sessions, Noise patterns | Public-key operations establish keys; application data is protected with symmetric encryption. |
-| Post-quantum KEM-based hybrids | ML-KEM plus AEAD through a key schedule | Plausibly post-quantum at the KEM layer; ciphertext size, failure behavior, and authentication still matter. |
+| Post-quantum KEM-based hybrids | ML-KEM plus AEAD through a key schedule | Plausibly post-quantum at the KEM layer; ciphertext size, failure behavior, and authentication still matter ([NIST FIPS 203](https://doi.org/10.6028/NIST.FIPS.203)). |
 | Legacy RSA encryption | RSAES-PKCS1-v1_5 | Compatibility only; historically fragile against padding-oracle mistakes. |
 
 ## Use cases
@@ -121,3 +121,4 @@ Classified as deployed. This label describes the concept category, not a blanket
 
 - Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
 - NIST FIPS 203, [Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://csrc.nist.gov/pubs/fips/203/final).
+- RFC 9180, [Hybrid Public Key Encryption](https://www.rfc-editor.org/rfc/rfc9180).

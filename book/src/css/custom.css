@@ -195,6 +195,74 @@ html[data-theme='dark'] .atlasHero__mark {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.conceptGallery__sections {
+  display: grid;
+  gap: 2rem;
+}
+
+.conceptGallery__empty {
+  border: 1px dashed var(--atlas-line);
+  border-radius: 8px;
+  color: var(--atlas-muted);
+  margin: 0;
+  padding: 1rem;
+}
+
+.conceptSection {
+  border-top: 1px solid var(--atlas-line);
+  padding-top: 1.5rem;
+}
+
+.conceptSection__header {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.conceptSection__header h3,
+.conceptSection__header p {
+  margin: 0;
+}
+
+.conceptSection__header p {
+  color: var(--atlas-muted);
+  margin-top: 0.25rem;
+  max-width: 760px;
+}
+
+.conceptSection__header span {
+  background: #f3f4f6;
+  border-radius: 999px;
+  color: #374151;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  white-space: nowrap;
+}
+
+html[data-theme='dark'] .conceptSection__header span {
+  background: #233033;
+  color: #d7e5e3;
+}
+
+.conceptSection__toggle {
+  background: transparent;
+  border: 1px solid var(--atlas-line);
+  border-radius: 999px;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 0.45rem 0.85rem;
+}
+
+.conceptSection__toggle:hover,
+.conceptSection__toggle:focus-visible {
+  border-color: var(--ifm-color-primary);
+}
+
 .conceptCard__header {
   align-items: flex-start;
   display: flex;

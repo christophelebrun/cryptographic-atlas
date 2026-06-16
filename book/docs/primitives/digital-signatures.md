@@ -65,11 +65,11 @@ A package maintainer signs a release digest; users verify the signature against 
 
 ## Assumptions
 
-The signature scheme must resist forgery, the private key must remain secret, and verifiers must bind the public key to the right signer, protocol, message format, and domain.
+The signature scheme must resist forgery, the private key must remain secret, and verifiers must bind the public key to the right signer, protocol, message format, and domain; modern signature standards make the approved scheme and parameter choices explicit ([NIST FIPS 186-5](https://csrc.nist.gov/pubs/fips/186-5/final)).
 
 ## Post-quantum posture
 
-Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable, while finalized post-quantum signature standards such as ML-DSA and SLH-DSA are designed for post-quantum migration. Falcon/FN-DSA is selected for ongoing standardization, so its deployment status should be checked separately.
+Depends on the signature scheme. RSA, ECDSA, EdDSA, and Schnorr-style signatures are quantum-vulnerable under Shor's algorithm for factoring and discrete logarithms ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)), while finalized post-quantum signature standards such as ML-DSA and SLH-DSA are designed for post-quantum migration ([NIST FIPS 204](https://doi.org/10.6028/NIST.FIPS.204), [NIST FIPS 205](https://doi.org/10.6028/NIST.FIPS.205)). Falcon/FN-DSA is selected for ongoing standardization, so its deployment status should be checked separately ([NIST IR 8581](https://doi.org/10.6028/NIST.IR.8581)).
 
 ## Confidence model
 
@@ -81,14 +81,14 @@ Confidence comes from the signer controlling the private key, verifiers binding 
 
 | Scheme family | Examples | Common role | Post-quantum posture and cautions |
 | --- | --- | --- | --- |
-| EdDSA | Ed25519, Ed448 | General-purpose signatures where ecosystem support exists | Quantum-vulnerable; deterministic signing helps avoid random nonce failures, but context binding still matters. |
-| ECDSA | ECDSA P-256, ECDSA secp256k1 | TLS, certificates, blockchain transactions | Quantum-vulnerable; nonce reuse or biased nonces can expose the private key. |
+| EdDSA | Ed25519, Ed448 | General-purpose signatures where ecosystem support exists | Quantum-vulnerable; deterministic signing helps avoid random nonce failures, but context binding still matters ([RFC 8032](https://www.rfc-editor.org/rfc/rfc8032)). |
+| ECDSA | ECDSA P-256, ECDSA secp256k1 | TLS, certificates, blockchain transactions | Quantum-vulnerable; nonce reuse or biased nonces can expose the private key ([NIST FIPS 186-5](https://csrc.nist.gov/pubs/fips/186-5/final)). |
 | Schnorr-style signatures | BIP-340 Schnorr, protocol-specific Schnorr variants | Blockchains, multisignatures, zero-knowledge protocols | Quantum-vulnerable; batch verification and multisignature variants need careful domain separation. |
 | RSA-PSS | RSA Probabilistic Signature Scheme | Legacy public-key infrastructure and compatibility | Quantum-vulnerable; prefer PSS over older RSA PKCS #1 v1.5 signatures in new RSA designs. |
 | BLS signatures | BLS12-381 or BN254 deployments | Aggregatable signatures and threshold signing | Quantum-vulnerable and pairing-based; subgroup checks and domain separation are critical. |
-| ML-DSA | Module-lattice signature standard | Post-quantum migration | Plausibly post-quantum; larger keys and signatures affect protocol design. |
-| SLH-DSA | Stateless hash-based signature standard | Conservative post-quantum signatures | Plausibly post-quantum; signatures are large and performance differs sharply from elliptic-curve schemes. |
-| Falcon / FN-DSA | Compact lattice signature selected for ongoing NIST standardization | Future post-quantum option where smaller signatures matter | Not one of the three finalized 2024 FIPS standards; track FIPS 206 status before treating as finalized. |
+| ML-DSA | Module-lattice signature standard | Post-quantum migration | Plausibly post-quantum; larger keys and signatures affect protocol design ([NIST FIPS 204](https://doi.org/10.6028/NIST.FIPS.204)). |
+| SLH-DSA | Stateless hash-based signature standard | Conservative post-quantum signatures | Plausibly post-quantum; signatures are large and performance differs sharply from elliptic-curve schemes ([NIST FIPS 205](https://doi.org/10.6028/NIST.FIPS.205)). |
+| Falcon / FN-DSA | Compact lattice signature selected for ongoing NIST standardization | Future post-quantum option where smaller signatures matter | Not one of the three finalized 2024 FIPS standards; track FIPS 206 status before treating as finalized ([NIST IR 8581](https://doi.org/10.6028/NIST.IR.8581)). |
 | Legacy signatures | DSA, RSA PKCS #1 v1.5 signatures | Compatibility and verification of old artifacts | Keep as legacy context; do not present as a modern default. |
 
 ## Use cases
@@ -108,7 +108,7 @@ Common adjacent concepts: [Anonymous Credentials](/docs/protocols/anonymous-cred
 ## Failure modes and anti-patterns
 
 - Signing ambiguous encodings.
-- Reusing nonces in schemes where nonce uniqueness is required.
+- Reusing nonces in schemes where nonce uniqueness is required ([NIST FIPS 186-5](https://csrc.nist.gov/pubs/fips/186-5/final)).
 - Failing to bind signatures to domain, chain, or protocol context.
 
 ## Maturity and deployment
@@ -124,6 +124,8 @@ Classified as deployed. This label describes the concept category, not a blanket
 ## Further reading
 
 - Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- NIST FIPS 186-5, [Digital Signature Standard](https://csrc.nist.gov/pubs/fips/186-5/final).
+- RFC 8032, [Edwards-Curve Digital Signature Algorithm](https://www.rfc-editor.org/rfc/rfc8032).
 - NIST FIPS 204, [Module-Lattice-Based Digital Signature Standard](https://csrc.nist.gov/pubs/fips/204/final).
 - NIST FIPS 205, [Stateless Hash-Based Digital Signature Standard](https://csrc.nist.gov/pubs/fips/205/final).
 - NIST CSRC, [Post-Quantum Cryptography Project](https://csrc.nist.gov/Projects/post-quantum-cryptography).

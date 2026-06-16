@@ -42,7 +42,7 @@ Privacy-preserving revocation lets verifiers reject revoked credentials, keys, o
 
 ## Problem it solves
 
-Systems need a way to stop accepting compromised, expired, or abusive credentials. Naive online status checks can reveal every presentation to the issuer or status service.
+Systems need a way to stop accepting compromised, expired, or abusive credentials. Naive online status checks can reveal every presentation to the issuer or status service; credential status mechanisms are explicitly part of verifiable-credential ecosystems ([W3C VC Data Model 2.0](https://www.w3.org/TR/vc-data-model/), [W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/)).
 
 ![Privacy-preserving revocation](/img/diagrams/privacy-preserving-revocation.svg)
 
@@ -77,7 +77,7 @@ An issuer publishes a signed accumulator or status-list root. A holder presents 
 
 ## Post-quantum posture
 
-Depends on the construction. Hash-based status lists and Merkle proofs can be plausible with conservative hashes. Pairing, RSA, or elliptic-curve accumulators are quantum-vulnerable unless replaced by post-quantum alternatives.
+Depends on the construction. Hash-based status lists and Merkle proofs can be plausible with conservative hashes. Pairing, RSA, or elliptic-curve accumulators are quantum-vulnerable under Shor's algorithm unless replaced by post-quantum alternatives ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)).
 
 ## Confidence model
 
@@ -86,7 +86,7 @@ Confidence is mixed: trusted-issuer for revocation decisions, public-verifiabili
 ## Common constructions
 
 - Signed status lists.
-- Bitstring status lists.
+- Bitstring status lists ([W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/)).
 - Dynamic accumulators.
 - Merkle or sparse-Merkle revocation sets.
 - Zero-knowledge non-revocation proofs.
@@ -113,7 +113,7 @@ Privacy-preserving revocation is composed with issuer signatures, holder binding
 
 ## Maturity and deployment
 
-Emerging. Status lists are deployed in credential ecosystems, while stronger accumulator and zero-knowledge revocation designs are specialized and harder to operate.
+Emerging. Status lists are deployed in credential ecosystems ([W3C VC Data Model 2.0](https://www.w3.org/TR/vc-data-model/), [W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/)), while stronger accumulator and zero-knowledge revocation designs are specialized and harder to operate.
 
 ## Related concepts
 
@@ -125,6 +125,7 @@ Emerging. Status lists are deployed in credential ecosystems, while stronger acc
 ## Further reading
 
 - [W3C Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model/).
+- [W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/).
 - [Camenisch and Lysyanskaya, "An Efficient System for Non-transferable Anonymous Credentials"](https://doi.org/10.1007/3-540-44987-6_7).
 - [Catalano and Fiore, "Vector Commitments and Their Applications"](https://eprint.iacr.org/2011/495).
 - [RFC 9576: The Privacy Pass Architecture](https://www.rfc-editor.org/rfc/rfc9576).

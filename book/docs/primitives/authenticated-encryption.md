@@ -41,7 +41,7 @@ Authenticated encryption protects a message's confidentiality and lets the recei
 
 ## Problem it solves
 
-Many systems need both secrecy and tamper detection. Encrypting without authentication can allow an attacker to modify ciphertexts and learn from error behavior, while authenticating the plaintext separately can fail if the composition order, keys, or associated context are wrong.
+Many systems need both secrecy and tamper detection. Encrypting without authentication can allow an attacker to modify ciphertexts and learn from error behavior, while authenticating the plaintext separately can fail if the composition order, keys, or associated context are wrong; AEAD was standardized as a single interface for this combined goal in [RFC 5116](https://www.rfc-editor.org/rfc/rfc5116).
 
 Authenticated encryption gives applications a single interface for "encrypt this plaintext, authenticate this public context, and reject invalid ciphertexts."
 
@@ -80,7 +80,7 @@ The key must remain secret, nonces must satisfy the scheme's exact uniqueness or
 
 ## Post-quantum posture
 
-Plausible when instantiated with symmetric-key algorithms using appropriate key and tag lengths. Quantum search reduces effective brute-force margins, so parameter choices still matter. The surrounding key-establishment or signature layer may be quantum-vulnerable even if the authenticated-encryption algorithm is not.
+Plausible when instantiated with symmetric-key algorithms using appropriate key and tag lengths. Quantum search reduces effective brute-force margins, so parameter choices still matter ([Grover 1996](https://doi.org/10.1145/237814.237866)). The surrounding key-establishment or signature layer may be quantum-vulnerable even if the authenticated-encryption algorithm is not.
 
 ## Confidence model
 
@@ -90,8 +90,8 @@ Confidence comes from the symmetric-key assumption, correct nonce management, un
 
 | Construction | Typical use | Caution |
 | --- | --- | --- |
-| AES-GCM | Network protocols and hardware-accelerated platforms | Catastrophic nonce reuse under one key. |
-| ChaCha20-Poly1305 | Software-oriented secure channels | Nonce uniqueness is still required. |
+| AES-GCM | Network protocols and hardware-accelerated platforms | Catastrophic nonce reuse under one key; NIST specifies GCM requirements and nonce handling in [SP 800-38D](https://csrc.nist.gov/pubs/sp/800/38/d/final). |
+| ChaCha20-Poly1305 | Software-oriented secure channels | Nonce uniqueness is still required by the IETF construction in [RFC 8439](https://www.rfc-editor.org/rfc/rfc8439). |
 | XChaCha20-Poly1305 | Systems that want larger random nonces | Widely used, but not every protocol registry includes it. |
 | AES-GCM-SIV / AES-SIV | Misuse-resistant encryption | More forgiving of nonce mistakes, but still has limits and different performance. |
 | AES-CCM | Constrained and wireless protocols | Nonce formatting and length choices are easy to get wrong. |
@@ -119,7 +119,7 @@ Authenticated encryption is commonly fed by a [key derivation function](/docs/pr
 
 ## Maturity and deployment
 
-Widely deployed. Authenticated encryption with associated data (AEAD) is the default interface in modern secure-channel and application-message designs, but incorrect nonce handling remains a common implementation risk.
+Widely deployed. Authenticated encryption with associated data (AEAD) is the standard interface for modern combined confidentiality and integrity designs ([RFC 5116](https://www.rfc-editor.org/rfc/rfc5116)), but incorrect nonce handling remains a common implementation risk.
 
 ## Related concepts
 

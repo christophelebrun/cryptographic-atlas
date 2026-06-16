@@ -37,7 +37,7 @@ source_review:
 
 ## Overview
 
-Secure messaging systems protect message contents across asynchronous delivery, device changes, and compromise scenarios. They are systems, not just encrypted channels.
+Secure messaging systems protect message contents across asynchronous delivery, device changes, and compromise scenarios. They are systems, not just encrypted channels; X3DH and Double Ratchet cover one asynchronous messaging design family, while MLS standardizes group messaging key management ([Signal X3DH](https://signal.org/docs/specifications/x3dh/), [Signal Double Ratchet](https://signal.org/docs/specifications/doubleratchet/), [RFC 9420](https://www.rfc-editor.org/rfc/rfc9420)).
 
 ## Goals
 
@@ -69,7 +69,7 @@ Secure messaging systems protect message contents across asynchronous delivery, 
 
 ## Post-quantum posture
 
-Depends on identity keys, key agreement, signatures, and ratchet design. Many deployed systems still use classical elliptic-curve assumptions, though hybrid migration is possible.
+Depends on identity keys, key agreement, signatures, and ratchet design. Many deployed systems still use classical elliptic-curve assumptions that are quantum-vulnerable under Shor's algorithm, though hybrid migration is possible ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700), [NIST FIPS 203](https://doi.org/10.6028/NIST.FIPS.203)).
 
 ## Confidence model
 
@@ -94,3 +94,4 @@ Confidence is mixed: client-side-secret for device keys, mathematical assumption
 - [Signal X3DH](https://signal.org/docs/specifications/x3dh/).
 - [Signal Double Ratchet](https://signal.org/docs/specifications/doubleratchet/).
 - [RFC 9420: Messaging Layer Security](https://www.rfc-editor.org/rfc/rfc9420).
+- [NIST FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard](https://doi.org/10.6028/NIST.FIPS.203).

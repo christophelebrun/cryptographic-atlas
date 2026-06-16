@@ -42,7 +42,7 @@ Arithmetization turns a computation into algebraic constraints that a proof syst
 
 ## Problem it solves
 
-Proof systems do not verify source code directly. They verify constraints, traces, circuits, or polynomial identities. Arithmetization defines what statement is actually proven.
+Proof systems do not verify source code directly. They verify constraints, traces, circuits, or polynomial identities. Arithmetization defines what statement is actually proven; PLONK-style systems are one example of making this algebraic constraint layer explicit ([PLONK](https://eprint.iacr.org/2019/953)).
 
 ## Mental model
 
@@ -62,7 +62,7 @@ To prove `x * y = z`, the circuit introduces variables for `x`, `y`, and `z` and
 
 - Assurance that constraints match developer intent.
 - Privacy for public inputs.
-- Protection from underconstrained circuits.
+- Protection from underconstrained circuits; circuit tooling still requires explicit constraint review ([Circom documentation](https://docs.circom.io/)).
 - Soundness if encodings or range checks are missing.
 
 ## Assumptions
@@ -77,7 +77,7 @@ Not applicable to arithmetization itself. The posture comes from the proof syste
 
 ## Confidence model
 
-Confidence comes from public-verifiability, independent circuit review, test vectors, and constraints that exactly match the intended semantics.
+Confidence comes from public-verifiability, independent circuit review, test vectors, and constraints that exactly match the intended semantics; implementation documentation for circuit languages treats constraint generation and review as separate from writing source-level expressions ([Circom documentation](https://docs.circom.io/)).
 
 ## Common constructions
 
@@ -99,14 +99,14 @@ Arithmetization composes with polynomial commitments, lookup arguments, range ch
 
 ## Failure modes and anti-patterns
 
-- Underconstrained circuits.
+- Underconstrained circuits ([Circom documentation](https://docs.circom.io/)).
 - Missing range checks.
 - Incorrect public-input binding.
 - Proving a property that is too weak for the application.
 
 ## Maturity and deployment
 
-Mature as a concept, but implementation risk is high and domain-specific.
+Mature as a concept, but implementation risk is high and domain-specific because the proof only enforces the constraints actually generated, not the developer's informal intent ([Circom documentation](https://docs.circom.io/)).
 
 ## Related concepts
 
@@ -119,3 +119,4 @@ Mature as a concept, but implementation risk is high and domain-specific.
 - [PLONK](https://eprint.iacr.org/2019/953).
 - [Ben-Sasson et al., "Scalable, transparent, and post-quantum secure computational integrity"](https://eprint.iacr.org/2018/046).
 - [Goldwasser, Kalai, and Rothblum, "Delegating Computation"](https://doi.org/10.1145/1374376.1374421).
+- [Circom documentation](https://docs.circom.io/).

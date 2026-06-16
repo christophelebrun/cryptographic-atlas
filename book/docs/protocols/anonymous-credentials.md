@@ -67,7 +67,7 @@ The issuer gives a credential to a holder. Later, the holder proves selected cla
 
 ## Threat model
 
-Designs must consider issuer-verifier collusion, verifier tracking, credential sharing, and revocation leakage.
+Designs must consider issuer-verifier collusion, verifier tracking, credential sharing, and revocation leakage; credential-status mechanisms are part of the W3C credential model and can expose privacy-sensitive presentation behavior if composed poorly ([W3C VC Data Model 2.0](https://www.w3.org/TR/vc-data-model/), [W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/)).
 
 ## Protocol sketch
 
@@ -82,7 +82,7 @@ The issuer may be trusted to issue correctly. Some systems require non-collusion
 
 ## Post-quantum posture
 
-Depends on the credential signature scheme, presentation proof, accumulator, and revocation mechanism. The anonymous-credential pattern itself is not enough to determine post-quantum posture.
+Depends on the credential signature scheme, presentation proof, accumulator, and revocation mechanism. The anonymous-credential pattern itself is not enough to determine post-quantum posture; pairing-based credential signatures inherit quantum-vulnerable discrete-logarithm assumptions under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)).
 
 ## Confidence model
 
@@ -90,7 +90,7 @@ Confidence usually depends on a trusted issuer, holder-controlled secrets, verif
 
 ## Metadata leaks
 
-Timing, verifier identity, IP addresses, rare attributes, and revocation checks can identify the holder.
+Timing, verifier identity, IP addresses, rare attributes, and revocation checks can identify the holder ([Metadata Leakage](/docs/appendices/metadata-leakage), [W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/)).
 
 ## Failure modes
 
@@ -109,15 +109,15 @@ Timing, verifier identity, IP addresses, rare attributes, and revocation checks 
 
 | Scheme or family | Typical role | Key differences and cautions |
 | --- | --- | --- |
-| CL signatures / Idemix-style credentials | Anonymous credentials with selective disclosure | Mature academic lineage; issuer trust and revocation design are central. |
-| BBS+ signatures | Selective-disclosure credentials and unlinkable presentations | Pairing-based and quantum-vulnerable; useful for compact multi-message disclosure. |
-| SD-JWT / selective-disclosure verifiable credentials | Practical web credential ecosystems | Easier web integration, but not automatically unlinkable against issuer/verifier correlation. |
+| CL signatures / Idemix-style credentials | Anonymous credentials with selective disclosure | Mature academic lineage; issuer trust and revocation design are central ([Camenisch and Lysyanskaya](https://doi.org/10.1007/3-540-44987-6_7)). |
+| BBS+ signatures | Selective-disclosure credentials and unlinkable presentations | Pairing-based and quantum-vulnerable; useful for compact multi-message disclosure ([IETF BBS draft](https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/), [Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)). |
+| SD-JWT / selective-disclosure verifiable credentials | Practical web credential ecosystems | Easier web integration, but not automatically unlinkable against issuer/verifier correlation ([RFC 9901](https://www.rfc-editor.org/rfc/rfc9901)). |
 | ZK credential systems | Credentials proven inside a zero-knowledge proof | Can hide more metadata, but inherits proof-system assumptions and circuit correctness risk. |
 | Accumulator-based revocation | Private or semi-private status checks | Revocation can reintroduce linkability if freshness checks are not designed carefully. |
 
 ## Source-depth notes
 
-Credential pages should distinguish mature anonymous-credential schemes from web credential profiles that primarily provide issuer authenticity and selective disclosure. BBS-based W3C work is current but still draft-stage as of April 2026, while SD-JWT is standardized for selective disclosure and SD-JWT VC remains an active Internet-Draft.
+Credential pages should distinguish mature anonymous-credential schemes from web credential profiles that primarily provide issuer authenticity and selective disclosure. BBS-based W3C and IETF work should be checked against its current draft or recommendation status before making deployment claims ([W3C Data Integrity BBS Cryptosuites](https://www.w3.org/TR/vc-di-bbs/), [IETF BBS draft](https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/)), while SD-JWT is standardized for selective disclosure and SD-JWT VC status should be checked separately ([RFC 9901](https://www.rfc-editor.org/rfc/rfc9901), [SD-JWT VC draft](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/)).
 
 ## Where it is used
 

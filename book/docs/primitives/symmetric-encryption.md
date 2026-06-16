@@ -55,7 +55,7 @@ A backup tool encrypts a local archive with a secret key before uploading it to 
 - Confidentiality under the chosen attack model.
 - Efficient protection for bulk data when used through a safe mode or authenticated-encryption construction.
 
-For most new protocol designs, the safer interface is [authenticated encryption](/docs/primitives/authenticated-encryption), not bare encryption.
+For most new protocol designs, the safer interface is [authenticated encryption](/docs/primitives/authenticated-encryption), not bare encryption; the AEAD interface is standardized in [RFC 5116](https://www.rfc-editor.org/rfc/rfc5116).
 
 ## What it does not provide
 
@@ -69,7 +69,7 @@ The key must remain secret, nonces or initialization vectors must follow the sch
 
 ## Post-quantum posture
 
-Plausible with appropriate key sizes and conservative parameters. Quantum search affects security margins, so symmetric-key migration often increases key sizes rather than replacing the primitive family.
+Plausible with appropriate key sizes and conservative parameters. Quantum search affects security margins, so symmetric-key migration often increases key sizes rather than replacing the primitive family ([Grover 1996](https://doi.org/10.1145/237814.237866)).
 
 ## Confidence model
 
@@ -81,8 +81,8 @@ Confidence comes from secret-key control, public scrutiny of the algorithm, corr
 
 | Scheme or mode | Primitive family | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
-| AES-GCM | AES block cipher plus Galois/Counter Mode | Authenticated encryption for network protocols and storage | Very common and hardware-accelerated; nonce reuse is catastrophic. |
-| ChaCha20-Poly1305 | Stream cipher plus MAC | Authenticated encryption in software and mobile environments | Often faster without AES hardware; nonces must still be unique per key. |
+| AES-GCM | AES block cipher plus Galois/Counter Mode | Authenticated encryption for network protocols and storage | Very common and hardware-accelerated; nonce reuse is catastrophic under the GCM security requirements in [NIST SP 800-38D](https://csrc.nist.gov/pubs/sp/800/38/d/final). |
+| ChaCha20-Poly1305 | Stream cipher plus MAC | Authenticated encryption in software and mobile environments | Often faster without AES hardware; nonces must still be unique per key as specified in [RFC 8439](https://www.rfc-editor.org/rfc/rfc8439). |
 | XChaCha20-Poly1305 | Extended-nonce ChaCha20-Poly1305 variant | Applications that want random nonces with a larger nonce space | Useful engineering shape, but check ecosystem support and protocol compatibility. |
 | AES-GCM-SIV / AES-SIV | Misuse-resistant authenticated encryption | Systems where accidental nonce reuse is a realistic risk | More forgiving of nonce mistakes, but not a license to ignore nonce design. |
 | AES-CBC plus MAC | Legacy composition | Older protocols and compatibility layers | Only safe with correct encrypt-then-MAC composition and padding handling; avoid for new designs when AEAD is available. |
@@ -104,7 +104,7 @@ Common adjacent concepts: [Message Authentication Codes](/docs/primitives/messag
 ## Failure modes and anti-patterns
 
 - Reusing nonces in modes that require uniqueness.
-- Using encryption without authentication.
+- Using encryption without authentication, despite the AEAD interface in [RFC 5116](https://www.rfc-editor.org/rfc/rfc5116) being the safer default for active-attack settings.
 - Designing a custom mode around a block cipher or stream cipher.
 
 ## Maturity and deployment

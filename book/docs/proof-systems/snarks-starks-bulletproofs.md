@@ -71,15 +71,15 @@ A rollup may use a SNARK for small verifier cost, while a transparency-focused s
 
 ## Assumptions
 
-Assumptions are family-specific: pairing-based SNARKs often depend on elliptic-curve and setup assumptions, STARK-style systems typically depend on hash choices and transparent protocols, and Bulletproof-style systems usually depend on discrete-logarithm assumptions.
+Assumptions are family-specific: pairing-based SNARKs often depend on elliptic-curve and setup assumptions, STARK-style systems typically depend on hash choices and transparent protocols, and Bulletproof-style systems usually depend on discrete-logarithm assumptions ([Groth16](https://www.iacr.org/archive/eurocrypt2016/96650272/96650272.pdf), [STARKs](https://eprint.iacr.org/2018/046), [Bulletproofs](https://eprint.iacr.org/2017/1066)).
 
 ## Post-quantum posture
 
-Depends on the family and construction. Many deployed pairing-based SNARKs are quantum-vulnerable. STARK-style systems are often treated as plausibly post-quantum when instantiated with appropriate hash functions. Bulletproof-style systems are usually discrete-logarithm based and therefore quantum-vulnerable.
+Depends on the family and construction. Many deployed pairing-based SNARKs are quantum-vulnerable because pairing groups inherit discrete-logarithm vulnerability under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)). STARK-style systems are often treated as plausibly post-quantum when instantiated with appropriate hash functions ([Ben-Sasson et al. 2018](https://eprint.iacr.org/2018/046)). Bulletproof-style systems are usually discrete-logarithm based and therefore quantum-vulnerable ([Bulletproofs](https://eprint.iacr.org/2017/1066)).
 
 ## Confidence model
 
-Confidence comes from the proof-system assumptions, setup model, and statement design. Pairing-based SNARKs may require trusted or universal setup. STARK-style systems are usually transparent. Bulletproof-style systems avoid trusted setup but still rely on discrete-logarithm assumptions.
+Confidence comes from the proof-system assumptions, setup model, and statement design. Pairing-based SNARKs may require trusted or universal setup, including ceremony assumptions for setup parameters ([Bowe, Gabizon, and Miers 2017](https://eprint.iacr.org/2017/1050)). STARK-style systems are usually transparent. Bulletproof-style systems avoid trusted setup but still rely on discrete-logarithm assumptions.
 
 ## Common constructions
 
@@ -87,21 +87,21 @@ Confidence comes from the proof-system assumptions, setup model, and statement d
 
 | System or family | Category | Setup model | Common use | Main caution |
 | --- | --- | --- | --- | --- |
-| Groth16 | Pairing-based SNARK | Circuit-specific trusted setup | Very small proofs in deployed ZK systems | Setup and circuit specificity dominate confidence. |
-| PLONK-style systems | Polynomial-commitment SNARK | Often universal or updatable setup | General-purpose circuits and rollups | Exact assumptions depend on the commitment scheme and transcript design. |
+| Groth16 | Pairing-based SNARK | Circuit-specific trusted setup | Very small proofs in deployed ZK systems | Setup and circuit specificity dominate confidence ([Groth16](https://www.iacr.org/archive/eurocrypt2016/96650272/96650272.pdf)). |
+| PLONK-style systems | Polynomial-commitment SNARK | Often universal or updatable setup | General-purpose circuits and rollups | Exact assumptions depend on the commitment scheme and transcript design ([PLONK](https://eprint.iacr.org/2019/953)). |
 | Marlin / Sonic-style systems | Universal-setup SNARK family | Universal structured setup | General circuits with reusable setup | Setup is reusable but still a setup assumption. |
-| STARKs | Transparent proof system | Transparent | Scalable computation proofs | Larger proofs; hash and FRI parameters are security-critical. |
+| STARKs | Transparent proof system | Transparent | Scalable computation proofs | Larger proofs; hash and FRI parameters are security-critical ([STARKs](https://eprint.iacr.org/2018/046)). |
 | FRI / DEEP-FRI | Low-degree testing component | Transparent | STARK-style proof systems | It is a component, not the full application statement. |
-| Bulletproofs | Inner-product proof system | No trusted setup in common forms | Range proofs and confidential transactions | Discrete-logarithm based and quantum-vulnerable. |
+| Bulletproofs | Inner-product proof system | No trusted setup in common forms | Range proofs and confidential transactions | Discrete-logarithm based and quantum-vulnerable ([Bulletproofs](https://eprint.iacr.org/2017/1066)). |
 | Halo / Nova-style systems | Accumulation or folding families | Varies | Recursive and incremental proofs | Rapidly evolving; maturity is implementation-specific. |
 
 ### Comparison snapshot
 
 | Family | Common strengths | Common trade-offs |
 | --- | --- | --- |
-| SNARKs | Small proofs and fast verification | Some constructions need trusted setup or pairing assumptions |
-| STARKs | Transparent setup and hash-based assumptions | Larger proofs and heavier verification than many SNARKs |
-| Bulletproofs | No trusted setup and useful range proofs | Verification can be heavier for large statements |
+| SNARKs | Small proofs and fast verification | Some constructions need trusted setup or pairing assumptions; Groth16 is the canonical small-proof example ([Groth16](https://www.iacr.org/archive/eurocrypt2016/96650272/96650272.pdf)). |
+| STARKs | Transparent setup and hash-based assumptions | Larger proofs and heavier verification than many SNARKs ([STARKs](https://eprint.iacr.org/2018/046)). |
+| Bulletproofs | No trusted setup and useful range proofs | Verification can be heavier for large statements ([Bulletproofs](https://eprint.iacr.org/2017/1066)). |
 
 ## Use cases
 
@@ -125,7 +125,7 @@ Common adjacent concepts: [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowl
 
 ## Maturity and deployment
 
-Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk: expert-only. Parameter sensitivity: high.
+Classified as emerging. This label describes the concept category, not a blanket endorsement of every construction or implementation. Implementation risk is expert-only because production safety depends on concrete circuits, transcript design, parameters, serialization, and proving-stack behavior ([halo2 Book](https://zcash.github.io/halo2/), [gnark documentation](https://docs.gnark.consensys.io/), [Circom documentation](https://docs.circom.io/)). Parameter sensitivity: high.
 
 ## Source-depth notes
 

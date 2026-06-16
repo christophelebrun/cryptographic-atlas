@@ -40,7 +40,7 @@ A zero-knowledge proof lets one party prove that a statement is true without rev
 
 ## Problem it solves
 
-Zero-knowledge proofs (ZKPs) are useful when a verifier needs confidence in a claim but should not learn the private witness behind the claim.
+Zero-knowledge proofs (ZKPs) are useful when a verifier needs confidence in a claim but should not learn the private witness behind the claim; the classical formulation comes from Goldwasser, Micali, and Rackoff's knowledge-complexity work ([GMR 1985](https://doi.org/10.1137/0218012)).
 
 ![Zero-knowledge proof flow](/img/diagrams/zero-knowledge-proof-flow.svg)
 
@@ -93,15 +93,15 @@ A prover shows they know a credential signed by an issuer and that it contains a
 
 ## Assumptions
 
-Assumptions vary by proof system. Some systems require trusted setup, some rely on hash functions, some rely on elliptic curve assumptions, and some are designed around transparent setup.
+Assumptions vary by proof system. Some systems require trusted setup, some rely on hash functions, some rely on elliptic curve assumptions, and some are designed around transparent setup; these choices are visible in systems such as Groth16, STARKs, and Bulletproofs ([Groth16](https://eprint.iacr.org/2016/260), [STARKs](https://eprint.iacr.org/2018/046), [Bulletproofs](https://eprint.iacr.org/2017/1066)).
 
 ## Post-quantum posture
 
-Depends on the proof system. Hash-based transparent systems such as many STARK-style systems are commonly treated as plausibly post-quantum, while many pairing-based SNARKs and discrete-logarithm-based range proofs are quantum-vulnerable.
+Depends on the proof system. Hash-based transparent systems such as many STARK-style systems are commonly treated as plausibly post-quantum ([Ben-Sasson et al. 2018](https://eprint.iacr.org/2018/046)), while many pairing-based SNARKs and discrete-logarithm-based range proofs are quantum-vulnerable under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)).
 
 ## Confidence model
 
-Confidence comes from three layers: the proof-system assumptions, the correctness of the statement being proven, and the setup model. A proof can verify correctly while still proving the wrong statement for the application.
+Confidence comes from three layers: the proof-system assumptions, the correctness of the statement being proven, and the setup model. A proof can verify correctly while still proving the wrong statement for the application; circuit tooling documentation repeatedly treats constraint completeness as a separate engineering responsibility ([Circom documentation](https://docs.circom.io/)).
 
 ## Common constructions
 
@@ -110,10 +110,10 @@ Confidence comes from three layers: the proof-system assumptions, the correctnes
 | Family or scheme | Setup model | Typical role | Key differences and cautions |
 | --- | --- | --- | --- |
 | Sigma protocols | Often interactive or Fiat-Shamir transformed | Knowledge proofs and identification-style protocols | Simple building blocks; transcript binding controls non-interactive security. |
-| Groth16 | Circuit-specific trusted setup | Very small proofs and fast verification | Pairing-based and quantum-vulnerable; setup is tied to the circuit. |
-| PLONK-style systems | Often universal/updatable setup | General-purpose SNARK proving stacks | More flexible setup than Groth16-style systems, but assumptions and arithmetization choices vary. |
-| STARKs | Transparent setup | Scalable transparent proofs | Usually hash-based and plausibly post-quantum; proofs are larger than many SNARKs. |
-| Bulletproofs | No trusted setup in common forms | Range proofs and inner-product statements | Discrete-logarithm based and quantum-vulnerable; verification cost grows with statement size. |
+| Groth16 | Circuit-specific trusted setup | Very small proofs and fast verification | Pairing-based and quantum-vulnerable; setup is tied to the circuit ([Groth16](https://eprint.iacr.org/2016/260)). |
+| PLONK-style systems | Often universal/updatable setup | General-purpose SNARK proving stacks | More flexible setup than Groth16-style systems, but assumptions and arithmetization choices vary ([PLONK](https://eprint.iacr.org/2019/953)). |
+| STARKs | Transparent setup | Scalable transparent proofs | Usually hash-based and plausibly post-quantum; proofs are larger than many SNARKs ([STARKs](https://eprint.iacr.org/2018/046)). |
+| Bulletproofs | No trusted setup in common forms | Range proofs and inner-product statements | Discrete-logarithm based and quantum-vulnerable; verification cost grows with statement size ([Bulletproofs](https://eprint.iacr.org/2017/1066)). |
 | Folding and accumulation systems | Varies by construction | Recursive proofs and incremental verifiable computation | Maturity and assumptions are construction-specific; do not treat all folding schemes as interchangeable. |
 
 ### Family vs concrete proof systems
@@ -145,7 +145,7 @@ Common adjacent concepts: [SNARKs, STARKs, and Bulletproofs](/docs/proof-systems
 
 ## Maturity and deployment
 
-ZKPs are a mature field, but concrete systems vary from widely deployed to research-stage. Maturity must be evaluated per construction and implementation.
+ZKPs are a mature field, but concrete systems vary from widely deployed to research-stage. Maturity must be evaluated per construction and implementation, not inferred from the umbrella term "zero knowledge."
 
 ## Related concepts
 
@@ -158,3 +158,6 @@ ZKPs are a mature field, but concrete systems vary from widely deployed to resea
 - Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).
 - Ben-Sasson et al., [Scalable, transparent, and post-quantum secure computational integrity](https://eprint.iacr.org/2018/046).
 - Bünz et al., [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066).
+- Groth, [On the Size of Pairing-Based Non-interactive Arguments](https://eprint.iacr.org/2016/260).
+- Gabizon, Williamson, and Ciobotaru, [PLONK](https://eprint.iacr.org/2019/953).
+- iden3, [Circom documentation](https://docs.circom.io/).

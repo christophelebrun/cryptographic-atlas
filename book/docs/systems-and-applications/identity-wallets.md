@@ -37,7 +37,7 @@ source_review:
 
 ## Overview
 
-Identity wallets store credentials and present claims to verifiers, sometimes with selective disclosure or privacy-preserving proofs.
+Identity wallets store credentials and present claims to verifiers, sometimes with selective disclosure or privacy-preserving proofs; the W3C Verifiable Credentials data model standardizes the credential data model, not a complete privacy-preserving wallet system ([W3C VC Data Model 2.0](https://www.w3.org/TR/vc-data-model/)).
 
 ## Goals
 
@@ -71,7 +71,7 @@ Identity wallets store credentials and present claims to verifiers, sometimes wi
 
 ## Post-quantum posture
 
-Depends on credential signatures, holder binding, revocation commitments, and wallet secure storage. Many deployed credential stacks rely on classical signatures.
+Depends on credential signatures, holder binding, revocation commitments, and wallet secure storage. Many deployed credential stacks rely on classical signatures that are quantum-vulnerable under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)).
 
 ## Confidence model
 
@@ -80,13 +80,13 @@ Confidence comes from trusted issuers, holder-side secrets, verifier policy, wal
 ## Failure modes
 
 - Over-disclosure by wallet UX.
-- Revocation checks tracking holders.
+- Revocation checks tracking holders ([W3C Bitstring Status List v1.0](https://www.w3.org/TR/vc-bitstring-status-list/)).
 - Device compromise or credential export.
 - Issuer keys not rotated or revoked cleanly.
 
 ## Source-depth notes
 
-Identity-wallet source coverage should distinguish the credential data model, proof cryptosuites, and presentation profiles. W3C Data Integrity ECDSA and EdDSA are Recommendation-track credential signature profiles; W3C BBS is current but Candidate Recommendation draft-stage; SD-JWT is an IETF standard for selective disclosure, while SD-JWT VC remains an active Internet-Draft.
+Identity-wallet source coverage should distinguish the credential data model, proof cryptosuites, and presentation profiles. W3C Data Integrity ECDSA and EdDSA are credential signature profiles ([ECDSA Cryptosuites](https://www.w3.org/TR/vc-di-ecdsa/), [EdDSA Cryptosuites](https://www.w3.org/TR/vc-di-eddsa/)); BBS, SD-JWT, and SD-JWT VC deployment claims should be checked against their current standards status ([W3C BBS Cryptosuites](https://www.w3.org/TR/vc-di-bbs/), [RFC 9901](https://www.rfc-editor.org/rfc/rfc9901), [SD-JWT VC draft](https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/)).
 
 ## Related concepts
 

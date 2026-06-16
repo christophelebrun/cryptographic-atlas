@@ -32,7 +32,7 @@ confidence_model:
 
 ## Overview
 
-ZK rollups use succinct validity proofs to convince verifiers that a batch of state transitions was applied correctly. In many deployed systems, "ZK" means validity proof, not necessarily transaction privacy.
+ZK rollups use succinct validity proofs to convince verifiers that a batch of state transitions was applied correctly. In many deployed systems, "ZK" means validity proof, not necessarily transaction privacy; the privacy question depends on what is public input, witness data, and on-chain calldata rather than on the proof-family name alone ([Groth16](https://www.iacr.org/archive/eurocrypt2016/96650272/96650272.pdf), [STARKs](https://eprint.iacr.org/2018/046)).
 
 ![ZK-rollup data flow](/img/diagrams/zk-rollup-data-flow.svg)
 
@@ -70,7 +70,7 @@ ZK rollups use succinct validity proofs to convince verifiers that a batch of st
 
 ## Post-quantum posture
 
-Depends on the proof system and surrounding stack. Pairing-based SNARK rollups are quantum-vulnerable. STARK-style systems based on hashes and FRI are often treated as plausibly post-quantum with conservative parameters, but signatures, bridges, upgrade keys, and data-availability commitments may remain vulnerable.
+Depends on the proof system and surrounding stack. Pairing-based SNARK rollups are quantum-vulnerable because pairing groups inherit discrete-logarithm vulnerability under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)). STARK-style systems based on hashes and FRI are often treated as plausibly post-quantum with conservative parameters ([Ben-Sasson et al. 2018](https://eprint.iacr.org/2018/046)), but signatures, bridges, upgrade keys, and data-availability commitments may remain vulnerable.
 
 ## Confidence model
 
@@ -78,7 +78,7 @@ Confidence is mixed: public-verifiability for validity proofs, mathematical-assu
 
 ## Failure modes
 
-- Proving a transition relation that does not match intended application logic.
+- Proving a transition relation that does not match intended application logic; circuit constraints still require separate review from application source code ([Circom documentation](https://docs.circom.io/)).
 - Verifying a proof against the wrong verifier key or public inputs.
 - Data unavailable even though the validity proof verifies.
 - Centralized sequencer censorship.
@@ -99,3 +99,4 @@ Confidence is mixed: public-verifiability for validity proofs, mathematical-assu
 - [Kate, Zaverucha, and Goldberg, "Constant-Size Commitments to Polynomials and Their Applications"](https://doi.org/10.1007/978-3-642-17373-8_11).
 - [Groth, "On the Size of Pairing-Based Non-interactive Arguments"](https://www.iacr.org/archive/eurocrypt2016/96650272/96650272.pdf).
 - [Ben-Sasson et al., "Fast Reed-Solomon Interactive Oracle Proofs of Proximity"](https://eprint.iacr.org/2017/602).
+- [iden3, Circom documentation](https://docs.circom.io/).

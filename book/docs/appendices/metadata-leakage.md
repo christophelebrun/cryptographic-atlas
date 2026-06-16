@@ -43,9 +43,10 @@ Metadata leakage is information revealed outside the protected cryptographic pay
 
 ## How to use this appendix
 
-For every primitive, protocol, or system page, separate the cryptographic statement from the metadata statement. A zero-knowledge proof may hide a witness while the public inputs or transaction timing still identify the user.
+For every primitive, protocol, or system page, separate the cryptographic statement from the metadata statement. A zero-knowledge proof may hide a witness under the proof-system definition ([Goldwasser, Micali, and Rackoff](https://doi.org/10.1137/0218012)), while public inputs, timing, routes, and communication patterns can still identify the user; traffic-analysis risks were already central in early anonymity-system work ([Chaum 1981](https://doi.org/10.1145/358549.358563)).
 
 ## Further reading
 
 - Chaum, [Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms](https://doi.org/10.1145/358549.358563).
+- Goldwasser, Micali, and Rackoff, [The Knowledge Complexity of Interactive Proof Systems](https://doi.org/10.1137/0218012).
 - Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).

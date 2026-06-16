@@ -99,7 +99,7 @@ The usual model assumes an active network attacker. The attacker can observe and
 3. Each side derives handshake secrets from the key exchange and transcript.
 4. The authenticated party proves control of a private key, certificate chain, or pre-shared key.
 5. Both sides derive traffic keys and bind them to the transcript.
-6. Application data is encrypted with AEAD under monotonically managed nonces or sequence numbers.
+6. Application data is encrypted with AEAD under monotonically managed nonces or sequence numbers ([RFC 5116](https://www.rfc-editor.org/rfc/rfc5116)).
 
 ## Trust assumptions
 
@@ -110,7 +110,7 @@ The usual model assumes an active network attacker. The attacker can observe and
 
 ## Post-quantum posture
 
-Depends on the concrete suite. Classical TLS 1.3, Noise, X25519, ECDSA, EdDSA, and many Signal-style deployments rely on discrete-logarithm assumptions and are quantum-vulnerable. Symmetric encryption and KDF layers can be plausible with conservative parameters, but authentication and key establishment need post-quantum or hybrid migration.
+Depends on the concrete suite. Classical TLS 1.3, Noise, X25519, ECDSA, EdDSA, and many Signal-style deployments rely on discrete-logarithm assumptions and are quantum-vulnerable under Shor's algorithm ([Shor 1994](https://doi.org/10.1109/SFCS.1994.365700)). Symmetric encryption and KDF layers can be plausible with conservative parameters, but authentication and key establishment need post-quantum or hybrid migration; ML-KEM and ML-DSA are the relevant finalized NIST standards for those migration paths ([NIST FIPS 203](https://doi.org/10.6028/NIST.FIPS.203), [NIST FIPS 204](https://doi.org/10.6028/NIST.FIPS.204)).
 
 ## Confidence model
 
@@ -127,22 +127,22 @@ Confidence is mixed: mathematical-assumption for key exchange and authentication
 
 - Accepting a certificate or public key for the wrong identity.
 - Omitting algorithm choices or identities from the transcript.
-- Reusing nonces or sequence numbers under an AEAD key.
+- Reusing nonces or sequence numbers under an AEAD key ([RFC 5116](https://www.rfc-editor.org/rfc/rfc5116)).
 - Supporting downgrade to legacy versions or weak suites.
 - Storing session secrets too long.
-- Treating HPKE or raw Diffie-Hellman as a complete secure channel without authentication and replay handling.
+- Treating HPKE or raw Diffie-Hellman as a complete secure channel without authentication and replay handling; HPKE is an encryption framework, not a full transport protocol ([RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)).
 
 ## Variants
 
-- TLS 1.3 for web and service transport.
-- HPKE-based application encryption, often as a component rather than a full channel.
+- TLS 1.3 for web and service transport ([RFC 8446](https://www.rfc-editor.org/rfc/rfc8446)).
+- HPKE-based application encryption, often as a component rather than a full channel ([RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)).
 - Noise handshakes for explicitly selected peer-to-peer patterns.
-- Signal X3DH plus Double Ratchet for asynchronous secure messaging.
+- Signal X3DH plus Double Ratchet for asynchronous secure messaging ([X3DH](https://signal.org/docs/specifications/x3dh/), [Double Ratchet](https://signal.org/docs/specifications/doubleratchet/)).
 - Post-quantum or hybrid handshakes that combine classical and post-quantum key establishment.
 
 ## Source-depth notes
 
-Secure-channel source coverage should distinguish transport standards, application encryption components, and messaging protocols. TLS 1.3 is a complete channel protocol; HPKE is a building block for application encryption; MLS standardizes group messaging key management; Signal X3DH and Double Ratchet cover asynchronous messaging patterns. Post-quantum migration requires reviewing key establishment and authentication separately.
+Secure-channel source coverage should distinguish transport standards, application encryption components, and messaging protocols. TLS 1.3 is a complete channel protocol ([RFC 8446](https://www.rfc-editor.org/rfc/rfc8446)); HPKE is a building block for application encryption ([RFC 9180](https://www.rfc-editor.org/rfc/rfc9180)); MLS standardizes group messaging key management ([RFC 9420](https://www.rfc-editor.org/rfc/rfc9420)); Signal X3DH and Double Ratchet cover asynchronous messaging patterns ([X3DH](https://signal.org/docs/specifications/x3dh/), [Double Ratchet](https://signal.org/docs/specifications/doubleratchet/)). Post-quantum migration requires reviewing key establishment and authentication separately.
 
 ## Where it is used
 
@@ -155,6 +155,7 @@ Secure-channel source coverage should distinguish transport standards, applicati
 ## Further reading
 
 - [RFC 8446: The Transport Layer Security Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc8446).
+- [RFC 5116: An Interface and Algorithms for Authenticated Encryption](https://www.rfc-editor.org/rfc/rfc5116).
 - [RFC 9180: Hybrid Public Key Encryption](https://www.rfc-editor.org/rfc/rfc9180).
 - [RFC 9420: The Messaging Layer Security Protocol](https://www.rfc-editor.org/rfc/rfc9420).
 - [RFC 9750: The Messaging Layer Security Architecture](https://www.rfc-editor.org/rfc/rfc9750).

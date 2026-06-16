@@ -15,8 +15,71 @@ type FilterState = {
 };
 
 type FilterKey = keyof FilterState;
+type FilterOption = {
+  value: string;
+  label: string;
+  count: number;
+};
+type LevelSection = {
+  id: string;
+  levels: string[];
+  title: string;
+  description: string;
+};
 
 const allValue = 'all';
+const initialSectionLimit = 6;
+
+const levelSections: LevelSection[] = [
+  {
+    id: 'security-goals',
+    levels: ['security-goal'],
+    title: 'Security Goals',
+    description: 'Start with the property a system is trying to provide.',
+  },
+  {
+    id: 'assumptions-and-substrates',
+    levels: ['mathematical-assumption', 'assumption'],
+    title: 'Assumptions and Substrates',
+    description: 'Check the hardness, model, setup, and substrate assumptions underneath a construction.',
+  },
+  {
+    id: 'basic-primitives',
+    levels: ['basic-primitive'],
+    title: 'Basic Primitives',
+    description: 'Core building blocks such as encryption, signatures, commitments, and hashes.',
+  },
+  {
+    id: 'structured-primitives',
+    levels: ['structured-primitive'],
+    title: 'Structured Primitives',
+    description: 'Higher-level primitives that add structure, thresholds, homomorphism, or verifiability.',
+  },
+  {
+    id: 'proof-systems',
+    levels: ['proof-system'],
+    title: 'Proof Systems',
+    description: 'Proof families and components used to verify statements without redoing all the work.',
+  },
+  {
+    id: 'protocols',
+    levels: ['protocol'],
+    title: 'Protocols',
+    description: 'Interactive constructions where participants, messages, and threat models matter.',
+  },
+  {
+    id: 'systems-and-applications',
+    levels: ['system'],
+    title: 'Systems and Applications',
+    description: 'End-to-end compositions where product, network, wallet, governance, and metadata risks appear.',
+  },
+  {
+    id: 'design-patterns',
+    levels: ['design-pattern'],
+    title: 'Design Patterns',
+    description: 'Reusable composition patterns and operational moves that show up across systems.',
+  },
+];
 
 const initialFilters: FilterState = {
   query: '',
@@ -40,8 +103,32 @@ function normalized(value: unknown): string {
   return String(value ?? '').toLowerCase();
 }
 
-function uniqueValues(values: string[]): string[] {
-  return [...new Set(values.filter(Boolean).map(String))].sort((a, b) => humanize(a).localeCompare(humanize(b)));
+function optionValues(value: unknown): string[] {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item ?? '').trim()).filter(Boolean);
+  }
+  if (value instanceof Set) {
+    return Array.from(value).map((item) => String(item ?? '').trim()).filter(Boolean);
+  }
+  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+    const option = String(value).trim();
+    return option ? [option] : [];
+  }
+  return [];
+}
+
+function buildOptions<T>(cards: T[], getter: (card: T) => unknown): FilterOption[] {
+  const counts = new Map<string, number>();
+
+  for (const card of cards) {
+    for (const value of optionValues(getter(card))) {
+      counts.set(value, (counts.get(value) ?? 0) + 1);
+    }
+  }
+
+  return Array.from(counts.entries())
+    .map(([value, count]) => ({value, label: humanize(value), count}))
+    .sort((a, b) => a.label.localeCompare(b.label));
 }
 
 function reviewStatus(card: (typeof conceptCards)[number], dimension: 'structural' | 'sources' | 'expert'): string {
@@ -83,7 +170,7 @@ function SelectFilter({
   id: FilterKey;
   label: string;
   value: string;
-  options: string[];
+  options: FilterOption[];
   onChange: (id: FilterKey, value: string) => void;
 }): JSX.Element {
   return (
@@ -92,8 +179,8 @@ function SelectFilter({
       <select id={`concept-filter-${id}`} value={value} onChange={(event) => onChange(id, event.target.value)}>
         <option value={allValue}>All</option>
         {options.map((option) => (
-          <option key={option} value={option}>
-            {humanize(option)}
+          <option key={option.value} value={option.value}>
+            {option.label} ({option.count})
           </option>
         ))}
       </select>
@@ -103,17 +190,18 @@ function SelectFilter({
 
 export default function ConceptCardGallery(): JSX.Element {
   const [filters, setFilters] = useState<FilterState>(initialFilters);
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
   const filterOptions = useMemo(
     () => ({
-      category: uniqueValues(conceptCards.map((card) => card.category)),
-      level: uniqueValues(conceptCards.map((card) => card.level)),
-      maturity: uniqueValues(conceptCards.map((card) => card.maturity)),
-      postQuantumPosture: uniqueValues(conceptCards.map((card) => card.postQuantumPosture)),
-      implementationRisk: uniqueValues(conceptCards.map((card) => card.implementationRisk)),
-      structuralReview: uniqueValues(conceptCards.map((card) => reviewStatus(card, 'structural'))),
-      sourceReview: uniqueValues(conceptCards.map((card) => reviewStatus(card, 'sources'))),
-      expertReview: uniqueValues(conceptCards.map((card) => reviewStatus(card, 'expert'))),
+      category: buildOptions(conceptCards, (card) => card.category),
+      level: buildOptions(conceptCards, (card) => card.level),
+      maturity: buildOptions(conceptCards, (card) => card.maturity),
+      postQuantumPosture: buildOptions(conceptCards, (card) => card.postQuantumPosture),
+      implementationRisk: buildOptions(conceptCards, (card) => card.implementationRisk),
+      structuralReview: buildOptions(conceptCards, (card) => reviewStatus(card, 'structural')),
+      sourceReview: buildOptions(conceptCards, (card) => reviewStatus(card, 'sources')),
+      expertReview: buildOptions(conceptCards, (card) => reviewStatus(card, 'expert')),
     }),
     [],
   );
@@ -143,6 +231,19 @@ export default function ConceptCardGallery(): JSX.Element {
   const activeFilterCount = Object.entries(filters).filter(
     ([key, value]) => value !== initialFilters[key as FilterKey],
   ).length;
+  const groupedCards = useMemo(
+    () =>
+      levelSections
+        .map((section) => ({
+          ...section,
+          cards: filteredCards.filter((card) => section.levels.includes(card.level)),
+        }))
+        .filter((section) => section.cards.length > 0),
+    [filteredCards],
+  );
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections((current) => ({...current, [sectionId]: !current[sectionId]}));
+  };
 
   return (
     <section className="conceptGallery">
@@ -172,7 +273,13 @@ export default function ConceptCardGallery(): JSX.Element {
             options={filterOptions.category}
             onChange={updateFilter}
           />
-          <SelectFilter id="level" label="Level" value={filters.level} options={filterOptions.level} onChange={updateFilter} />
+          <SelectFilter
+            id="level"
+            label="Level"
+            value={filters.level}
+            options={filterOptions.level}
+            onChange={updateFilter}
+          />
           <SelectFilter
             id="maturity"
             label="Maturity"
@@ -224,11 +331,39 @@ export default function ConceptCardGallery(): JSX.Element {
             ) : null}
           </div>
         </div>
-        <div className="conceptGallery__grid">
-          {filteredCards.map((card) => (
-            <ConceptCard key={card.id} {...card} />
-          ))}
-        </div>
+        {groupedCards.length === 0 ? (
+          <p className="conceptGallery__empty">No concept cards match the current filters.</p>
+        ) : (
+          <div className="conceptGallery__sections">
+            {groupedCards.map((section) => {
+              const expanded = Boolean(expandedSections[section.id]);
+              const visibleCards = expanded ? section.cards : section.cards.slice(0, initialSectionLimit);
+              const hiddenCount = section.cards.length - visibleCards.length;
+
+              return (
+                <section className="conceptSection" key={section.id}>
+                  <div className="conceptSection__header">
+                    <div>
+                      <h3>{section.title}</h3>
+                      <p>{section.description}</p>
+                    </div>
+                    <span>{section.cards.length} cards</span>
+                  </div>
+                  <div className="conceptGallery__grid">
+                    {visibleCards.map((card) => (
+                      <ConceptCard key={card.id} {...card} />
+                    ))}
+                  </div>
+                  {hiddenCount > 0 || expanded ? (
+                    <button className="conceptSection__toggle" type="button" onClick={() => toggleSection(section.id)}>
+                      {expanded ? 'Show fewer' : `Show ${hiddenCount} more`}
+                    </button>
+                  ) : null}
+                </section>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );
