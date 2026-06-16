@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const Ajv = require('ajv/dist/2020');
+const {hasLabel, loadLabelRegistry} = require('./label-registry');
 
 const root = path.resolve(__dirname, '..');
 const docsDir = path.join(root, 'docs');
@@ -25,6 +26,7 @@ const validators = {
   instances: ajv.compile(loadJson(path.join(schemasDir, 'instances.schema.json'))),
   sourceFreshness: ajv.compile(loadJson(path.join(schemasDir, 'source-freshness.schema.json'))),
   diagram: ajv.compile(loadJson(path.join(schemasDir, 'diagram.schema.json'))),
+  labels: ajv.compile(loadJson(path.join(schemasDir, 'labels.schema.json'))),
 };
 
 const conceptCardAliases = {
@@ -160,11 +162,34 @@ const warnings = [];
 const majorDocCardIds = new Set();
 const docIds = new Set();
 const instanceIds = new Set();
+let labelRegistry = null;
 
 function validateObject(file, data, validate) {
   if (!validate(data)) {
     errors.push(`${relative(file)}: ${formatAjvErrors(validate)}`);
   }
+}
+
+function validateLabelValue(file, namespace, value, fieldName) {
+  if (value === undefined || value === null || !labelRegistry) return;
+  if (!hasLabel(labelRegistry, namespace, value)) {
+    errors.push(
+      `${relative(file)}: ${fieldName} "${String(value)}" has no reader label in data/labels.yml namespace "${namespace}"`,
+    );
+  }
+}
+
+const labelsFile = path.join(dataDir, 'labels.yml');
+if (fs.existsSync(labelsFile)) {
+  const labels = parseYaml(labelsFile);
+  validateObject(labelsFile, labels, validators.labels);
+  try {
+    labelRegistry = loadLabelRegistry(root);
+  } catch (error) {
+    errors.push(`${relative(labelsFile)}: ${error.message}`);
+  }
+} else {
+  errors.push('data/labels.yml: missing reader-facing label registry');
 }
 
 for (const file of walk(docsDir, (item) => item.endsWith('.md') || item.endsWith('.mdx'))) {
@@ -175,6 +200,15 @@ for (const file of walk(docsDir, (item) => item.endsWith('.md') || item.endsWith
   }
 
   validateObject(file, parsed.frontmatter, validators.doc);
+  validateLabelValue(file, 'doc_types', parsed.frontmatter.type, 'type');
+  validateLabelValue(file, 'levels', parsed.frontmatter.level, 'level');
+  validateLabelValue(file, 'review_statuses', parsed.frontmatter.status, 'status');
+  validateLabelValue(file, 'maturity', parsed.frontmatter.maturity, 'maturity');
+  validateLabelValue(file, 'post_quantum_postures', parsed.frontmatter.post_quantum_posture, 'post_quantum_posture');
+  validateLabelValue(file, 'confidence_models', parsed.frontmatter.confidence_model?.type, 'confidence_model.type');
+  validateLabelValue(file, 'review_statuses', parsed.frontmatter.review?.structural?.status, 'review.structural.status');
+  validateLabelValue(file, 'review_statuses', parsed.frontmatter.review?.sources?.status, 'review.sources.status');
+  validateLabelValue(file, 'review_statuses', parsed.frontmatter.review?.expert?.status, 'review.expert.status');
   if (parsed.frontmatter.review?.structural?.status !== parsed.frontmatter.status) {
     errors.push(
       `${relative(file)}: review.structural.status must match legacy status "${parsed.frontmatter.status}" until the legacy field is removed`,
@@ -216,6 +250,15 @@ const conceptCardReferences = [];
 for (const file of walk(path.join(dataDir, 'concept-cards'), (item) => item.endsWith('.yml'))) {
   const card = parseYaml(file);
   validateObject(file, card, validators.conceptCard);
+  validateLabelValue(file, 'categories', card.category, 'category');
+  validateLabelValue(file, 'levels', card.level, 'level');
+  validateLabelValue(file, 'maturity', card.maturity, 'maturity');
+  validateLabelValue(file, 'post_quantum_postures', card.post_quantum_posture, 'post_quantum_posture');
+  validateLabelValue(file, 'confidence_models', card.confidence_model?.type, 'confidence_model.type');
+  validateLabelValue(file, 'implementation_risks', card.implementation_risk, 'implementation_risk');
+  validateLabelValue(file, 'trusted_setup', card.requires_trusted_setup, 'requires_trusted_setup');
+  validateLabelValue(file, 'auditability', card.auditability, 'auditability');
+  validateLabelValue(file, 'parameter_sensitivity', card.parameter_sensitivity, 'parameter_sensitivity');
   if (conceptCardIds.has(card.id)) errors.push(`${relative(file)}: duplicate concept card id "${card.id}"`);
   conceptCardIds.add(card.id);
   for (const reference of card.references || []) {
@@ -278,6 +321,7 @@ if (fs.existsSync(instancesFile)) {
   for (const instance of instancesData.instances || []) {
     if (instanceIds.has(instance.id)) errors.push(`${relative(instancesFile)}: duplicate instance id "${instance.id}"`);
     instanceIds.add(instance.id);
+    validateLabelValue(instancesFile, 'levels', instance.taxonomy_level, `instance "${instance.id}" taxonomy_level`);
 
     for (const parent of instance.instance_of || []) {
       if (!conceptCardIds.has(parent)) {
@@ -305,6 +349,7 @@ if (fs.existsSync(relationshipsFile)) {
     relationshipIds.add(canonical);
   }
   for (const relationship of relationshipsData.relationships || []) {
+    validateLabelValue(relationshipsFile, 'relations', relationship.relation, `relationship "${relationship.source}" -> "${relationship.target}" relation`);
     if (!relationshipIds.has(relationship.source)) {
       errors.push(`${relative(relationshipsFile)}: relationship source "${relationship.source}" is not a known concept card, alias, instance, or document`);
     }

@@ -15,6 +15,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/accountability.yml"
     },
     {
@@ -23,6 +27,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "standard",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -31,6 +39,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/anonymity.yml"
     },
     {
@@ -39,6 +51,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "system",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/anonymous-airdrop.yml"
     },
     {
@@ -47,6 +63,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "protocol",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/anonymous-credential.yml"
     },
     {
@@ -55,6 +75,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "design-pattern",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/anonymous-membership.yml"
     },
     {
@@ -63,6 +87,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "design-pattern",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/anti-double-use-nullifiers.yml"
     },
     {
@@ -71,6 +99,10 @@
       "kind": "concept-card",
       "level": "proof-system",
       "category": "Proof systems",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "proof_systems",
+      "display_category": "Proof systems",
       "source": "data/concept-cards/arithmetization.yml"
     },
     {
@@ -79,6 +111,10 @@
       "kind": "instance",
       "level": "proof-system",
       "category": "protocol-suite",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -87,6 +123,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/auditability.yml"
     },
     {
@@ -95,6 +135,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "encryption",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "encryption",
+      "display_category": "Encryption",
       "source": "data/concept-cards/authenticated-encryption.yml"
     },
     {
@@ -103,6 +147,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/authenticity.yml"
     },
     {
@@ -111,6 +159,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/availability.yml"
     },
     {
@@ -119,6 +171,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "protocol-suite",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -127,6 +183,10 @@
       "kind": "instance",
       "level": "structured-primitive",
       "category": "scheme",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "scheme",
+      "display_category": "Scheme",
       "source": "data/instances.yml"
     },
     {
@@ -135,6 +195,10 @@
       "kind": "instance",
       "level": "mathematical-assumption",
       "category": "curve",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "curve",
+      "display_category": "Curve",
       "source": "data/instances.yml"
     },
     {
@@ -143,6 +207,10 @@
       "kind": "instance",
       "level": "mathematical-assumption",
       "category": "curve",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "curve",
+      "display_category": "Curve",
       "source": "data/instances.yml"
     },
     {
@@ -151,6 +219,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/censorship-resistance.yml"
     },
     {
@@ -159,6 +231,10 @@
       "kind": "instance",
       "level": "proof-system",
       "category": "protocol-suite",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -167,6 +243,10 @@
       "kind": "instance",
       "level": "structured-primitive",
       "category": "scheme",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "scheme",
+      "display_category": "Scheme",
       "source": "data/instances.yml"
     },
     {
@@ -175,6 +255,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "Assumptions and substrates",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "assumptions_and_substrates",
+      "display_category": "Assumptions and substrates",
       "source": "data/concept-cards/code-based-assumptions.yml"
     },
     {
@@ -183,6 +267,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "primitive",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "basic_primitives",
+      "display_category": "Basic primitives",
       "source": "data/concept-cards/commitments.yml"
     },
     {
@@ -191,6 +279,10 @@
       "kind": "instance",
       "level": "system",
       "category": "protocol-suite",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -199,6 +291,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/confidentiality.yml"
     },
     {
@@ -207,6 +303,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "design-pattern",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/delayed-reveal.yml"
     },
     {
@@ -215,6 +315,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/deniability.yml"
     },
     {
@@ -223,6 +327,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "standard",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -231,6 +339,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "authentication",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "authentication",
+      "display_category": "Authentication",
       "source": "data/concept-cards/digital-signature.yml"
     },
     {
@@ -239,6 +351,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "mathematical-assumption",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "mathematical_assumption",
+      "display_category": "Mathematical assumption",
       "source": "data/concept-cards/discrete-logarithm.yml"
     },
     {
@@ -247,6 +363,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "Design patterns",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/domain-separation.yml"
     },
     {
@@ -255,6 +375,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "system",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/e-voting.yml"
     },
     {
@@ -263,6 +387,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "protocol-suite",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -271,6 +399,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "Systems",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/encrypted-mempools.yml"
     },
     {
@@ -279,6 +411,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -287,6 +423,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "mathematical-assumption",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "mathematical_assumption",
+      "display_category": "Mathematical assumption",
       "source": "data/concept-cards/factoring-rsa.yml"
     },
     {
@@ -295,6 +435,10 @@
       "kind": "instance",
       "level": "system",
       "category": "protocol-suite",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -303,6 +447,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/forward-secrecy.yml"
     },
     {
@@ -311,6 +459,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "protocol-suite",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -319,6 +471,10 @@
       "kind": "instance",
       "level": "structured-primitive",
       "category": "protocol-suite",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -327,6 +483,10 @@
       "kind": "instance",
       "level": "proof-system",
       "category": "protocol-suite",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -335,6 +495,10 @@
       "kind": "instance",
       "level": "proof-system",
       "category": "scheme",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "scheme",
+      "display_category": "Scheme",
       "source": "data/instances.yml"
     },
     {
@@ -343,6 +507,10 @@
       "kind": "instance",
       "level": "proof-system",
       "category": "protocol-suite",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -351,6 +519,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "primitive",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "basic_primitives",
+      "display_category": "Basic primitives",
       "source": "data/concept-cards/hash-function.yml"
     },
     {
@@ -359,6 +531,10 @@
       "kind": "concept-card",
       "level": "structured-primitive",
       "category": "encryption",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "encryption",
+      "display_category": "Encryption",
       "source": "data/concept-cards/homomorphic-encryption.yml"
     },
     {
@@ -367,6 +543,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -375,6 +555,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -383,6 +567,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -391,6 +579,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "Systems",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/identity-wallets.yml"
     },
     {
@@ -399,6 +591,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/integrity.yml"
     },
     {
@@ -407,6 +603,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -415,6 +615,10 @@
       "kind": "instance",
       "level": "mathematical-assumption",
       "category": "curve",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "curve",
+      "display_category": "Curve",
       "source": "data/instances.yml"
     },
     {
@@ -423,6 +627,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "key-management",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "key_management",
+      "display_category": "Key management",
       "source": "data/concept-cards/key-encapsulation-and-exchange.yml"
     },
     {
@@ -431,6 +639,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "Design patterns",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/key-rotation-and-migration.yml"
     },
     {
@@ -439,6 +651,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "mathematical-substrate",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "mathematical_substrate",
+      "display_category": "Mathematical substrate",
       "source": "data/concept-cards/lattices.yml"
     },
     {
@@ -447,6 +663,10 @@
       "kind": "instance",
       "level": "system",
       "category": "protocol-suite",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -455,6 +675,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "design-pattern",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/make-receipts-useless.yml"
     },
     {
@@ -463,6 +687,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "protocol-suite",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -471,6 +699,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "algorithm",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "algorithm",
+      "display_category": "Algorithm",
       "source": "data/instances.yml"
     },
     {
@@ -479,6 +711,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "authentication",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "authentication",
+      "display_category": "Authentication",
       "source": "data/concept-cards/message-authentication-codes.yml"
     },
     {
@@ -487,6 +723,10 @@
       "kind": "page",
       "level": "not-applicable",
       "category": "appendix",
+      "level_id": "not_applicable",
+      "display_level": "Not applicable",
+      "category_id": "appendix",
+      "display_category": "Appendix",
       "source": "docs/appendices/metadata-leakage.md"
     },
     {
@@ -495,6 +735,10 @@
       "kind": "instance",
       "level": "structured-primitive",
       "category": "protocol-suite",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -503,6 +747,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "algorithm",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "algorithm",
+      "display_category": "Algorithm",
       "source": "data/instances.yml"
     },
     {
@@ -511,6 +759,10 @@
       "kind": "page",
       "level": "protocol",
       "category": "protocol",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol",
+      "display_category": "Protocol",
       "source": "docs/protocols/mixnets.md"
     },
     {
@@ -519,6 +771,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -527,6 +783,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -535,6 +795,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -543,6 +807,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -551,6 +819,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -559,6 +831,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -567,6 +843,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "protocol-suite",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -575,6 +855,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "protocol",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/mpc.yml"
     },
     {
@@ -583,6 +867,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/non-repudiation.yml"
     },
     {
@@ -591,6 +879,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "anti-double-use",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "anti_double_use",
+      "display_category": "Anti-double-use",
       "source": "data/concept-cards/nullifier.yml"
     },
     {
@@ -599,6 +891,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "protocol",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/oblivious-pseudorandom-functions.yml"
     },
     {
@@ -607,6 +903,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "Protocols",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/oblivious-transfer.yml"
     },
     {
@@ -615,6 +915,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -623,6 +927,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -631,6 +939,10 @@
       "kind": "instance",
       "level": "design-pattern",
       "category": "protocol-suite",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -639,6 +951,10 @@
       "kind": "instance",
       "level": "structured-primitive",
       "category": "protocol-suite",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -647,6 +963,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "mathematical-substrate",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "mathematical_substrate",
+      "display_category": "Mathematical substrate",
       "source": "data/concept-cards/pairings.yml"
     },
     {
@@ -655,6 +975,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "Protocols",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/password-authenticated-key-exchange.yml"
     },
     {
@@ -663,6 +987,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "scheme",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "scheme",
+      "display_category": "Scheme",
       "source": "data/instances.yml"
     },
     {
@@ -671,6 +999,10 @@
       "kind": "concept-card",
       "level": "structured-primitive",
       "category": "Structured primitives",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "structured_primitives",
+      "display_category": "Structured primitives",
       "source": "data/concept-cards/polynomial-commitments.yml"
     },
     {
@@ -679,6 +1011,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "algorithm",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "algorithm",
+      "display_category": "Algorithm",
       "source": "data/instances.yml"
     },
     {
@@ -687,6 +1023,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "Design patterns",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/privacy-preserving-revocation.yml"
     },
     {
@@ -695,6 +1035,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "design-pattern",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/private-aggregation.yml"
     },
     {
@@ -703,6 +1047,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "system",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/private-dao-voting.yml"
     },
     {
@@ -711,6 +1059,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "Protocols",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/private-information-retrieval.yml"
     },
     {
@@ -719,6 +1071,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "Systems",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/private-machine-learning-analytics.yml"
     },
     {
@@ -727,6 +1083,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "Systems",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/private-payments.yml"
     },
     {
@@ -735,6 +1095,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "protocol",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/private-set-intersection.yml"
     },
     {
@@ -743,6 +1107,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "encryption",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "encryption",
+      "display_category": "Encryption",
       "source": "data/concept-cards/public-key-encryption.yml"
     },
     {
@@ -751,6 +1119,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "proof-model",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "proof_model",
+      "display_category": "Proof model",
       "source": "data/concept-cards/random-oracle-model.yml"
     },
     {
@@ -759,6 +1131,10 @@
       "kind": "page",
       "level": "proof-system",
       "category": "primitive",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "primitive",
+      "display_category": "Primitive",
       "source": "docs/proof-systems/range-proofs.md"
     },
     {
@@ -767,6 +1143,10 @@
       "kind": "concept-card",
       "level": "proof-system",
       "category": "Proof systems",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "proof_systems",
+      "display_category": "Proof systems",
       "source": "data/concept-cards/recursive-proofs.yml"
     },
     {
@@ -775,6 +1155,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "algorithm",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "algorithm",
+      "display_category": "Algorithm",
       "source": "data/instances.yml"
     },
     {
@@ -783,6 +1167,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "scheme",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "scheme",
+      "display_category": "Scheme",
       "source": "data/instances.yml"
     },
     {
@@ -791,6 +1179,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -799,6 +1191,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "protocol",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/secure-aggregation.yml"
     },
     {
@@ -807,6 +1203,10 @@
       "kind": "concept-card",
       "level": "protocol",
       "category": "Protocols",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocols",
+      "display_category": "Protocols",
       "source": "data/concept-cards/secure-channels.yml"
     },
     {
@@ -815,6 +1215,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "algorithm",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "algorithm",
+      "display_category": "Algorithm",
       "source": "data/instances.yml"
     },
     {
@@ -823,6 +1227,10 @@
       "kind": "instance",
       "level": "system",
       "category": "protocol-suite",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -831,6 +1239,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -839,6 +1251,10 @@
       "kind": "instance",
       "level": "basic-primitive",
       "category": "parameter-family",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "parameter_family",
+      "display_category": "Parameter family",
       "source": "data/instances.yml"
     },
     {
@@ -847,6 +1263,10 @@
       "kind": "concept-card",
       "level": "proof-system",
       "category": "proof-system-family",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "proof_system_family",
+      "display_category": "Proof system family",
       "source": "data/concept-cards/snarks-starks-bulletproofs.yml"
     },
     {
@@ -855,6 +1275,10 @@
       "kind": "instance",
       "level": "protocol",
       "category": "protocol-suite",
+      "level_id": "protocol",
+      "display_level": "Protocol",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -863,6 +1287,10 @@
       "kind": "concept-card",
       "level": "basic-primitive",
       "category": "encryption",
+      "level_id": "basic_primitive",
+      "display_level": "Basic primitive",
+      "category_id": "encryption",
+      "display_category": "Encryption",
       "source": "data/concept-cards/symmetric-encryption.yml"
     },
     {
@@ -871,6 +1299,10 @@
       "kind": "instance",
       "level": "structured-primitive",
       "category": "scheme",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "scheme",
+      "display_category": "Scheme",
       "source": "data/instances.yml"
     },
     {
@@ -879,6 +1311,10 @@
       "kind": "concept-card",
       "level": "structured-primitive",
       "category": "threshold",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "threshold",
+      "display_category": "Threshold",
       "source": "data/concept-cards/threshold-cryptography.yml"
     },
     {
@@ -887,6 +1323,10 @@
       "kind": "concept-card",
       "level": "design-pattern",
       "category": "Design patterns",
+      "level_id": "design_pattern",
+      "display_level": "Design pattern",
+      "category_id": "design_patterns",
+      "display_category": "Design patterns",
       "source": "data/concept-cards/transcript-binding.yml"
     },
     {
@@ -895,6 +1335,10 @@
       "kind": "concept-card",
       "level": "mathematical-assumption",
       "category": "setup-assumption",
+      "level_id": "mathematical_assumption",
+      "display_level": "Mathematical assumption",
+      "category_id": "setup_assumption",
+      "display_category": "Setup assumption",
       "source": "data/concept-cards/trusted-setup.yml"
     },
     {
@@ -903,6 +1347,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/unlinkability.yml"
     },
     {
@@ -911,6 +1359,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -919,6 +1371,10 @@
       "kind": "instance",
       "level": "system",
       "category": "standard",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "standard",
+      "display_category": "Standard",
       "source": "data/instances.yml"
     },
     {
@@ -927,6 +1383,10 @@
       "kind": "concept-card",
       "level": "structured-primitive",
       "category": "Structured primitives",
+      "level_id": "structured_primitive",
+      "display_level": "Structured primitive",
+      "category_id": "structured_primitives",
+      "display_category": "Structured primitives",
       "source": "data/concept-cards/vector-commitments.yml"
     },
     {
@@ -935,6 +1395,10 @@
       "kind": "concept-card",
       "level": "security-goal",
       "category": "Security goals",
+      "level_id": "security_goal",
+      "display_level": "Security goal",
+      "category_id": "security_goals",
+      "display_category": "Security goals",
       "source": "data/concept-cards/verifiability.yml"
     },
     {
@@ -943,6 +1407,10 @@
       "kind": "instance",
       "level": "system",
       "category": "protocol-suite",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -951,6 +1419,10 @@
       "kind": "instance",
       "level": "system",
       "category": "protocol-suite",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "protocol_suite",
+      "display_category": "Protocol suite",
       "source": "data/instances.yml"
     },
     {
@@ -959,6 +1431,10 @@
       "kind": "concept-card",
       "level": "proof-system",
       "category": "proof-system",
+      "level_id": "proof_system",
+      "display_level": "Proof system",
+      "category_id": "proof_systems",
+      "display_category": "Proof systems",
       "source": "data/concept-cards/zero-knowledge-proof.yml"
     },
     {
@@ -967,6 +1443,10 @@
       "kind": "concept-card",
       "level": "system",
       "category": "Systems",
+      "level_id": "system",
+      "display_level": "System",
+      "category_id": "systems",
+      "display_category": "Systems",
       "source": "data/concept-cards/zk-rollups.yml"
     }
   ],

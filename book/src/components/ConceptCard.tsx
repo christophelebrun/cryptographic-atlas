@@ -12,21 +12,39 @@ export type ConceptCardData = {
   id: string;
   name: string;
   category: string;
+  categoryId: string;
+  categoryLabel: string;
   level: string;
+  levelId: string;
+  levelLabel: string;
   pageLink?: string;
   shortIntuition: string;
   maturity: Maturity;
+  maturityId: string;
+  maturityLabel: string;
   securityGoals: ConceptCardItem[];
   doesNotProvide: ConceptCardItem[];
   postQuantumPosture: string;
+  postQuantumPostureId: string;
+  postQuantumPostureLabel: string;
   postQuantumPostureLink?: string;
   confidenceModelType: string;
+  confidenceModelId: string;
+  confidenceModelLabel: string;
   confidenceModelLink?: string;
   implementationRisk: string;
+  implementationRiskId: string;
+  implementationRiskLabel: string;
   implementationRiskLink?: string;
   requiresTrustedSetup: boolean | string;
+  requiresTrustedSetupId: string;
+  requiresTrustedSetupLabel: string;
   auditability: string;
+  auditabilityId: string;
+  auditabilityLabel: string;
   parameterSensitivity: string;
+  parameterSensitivityId: string;
+  parameterSensitivityLabel: string;
   compositionRisks: ConceptCardItem[];
   metadataLeaks: ConceptCardItem[];
   review?: {
@@ -38,6 +56,8 @@ export type ConceptCardData = {
 
 export type ReviewDimension = {
   status: string;
+  statusId?: string;
+  statusLabel?: string;
   lastReviewed?: string | null;
   nextReviewDue?: string | null;
   reviewer?: string | null;
@@ -62,19 +82,25 @@ function humanize(value: string | boolean | null | undefined): string {
 export default function ConceptCard({
   name,
   category,
+  categoryLabel = category,
   level,
+  levelLabel = level,
   pageLink,
   shortIntuition,
   maturity,
   securityGoals,
   doesNotProvide,
   postQuantumPosture,
+  postQuantumPostureLabel = postQuantumPosture,
   postQuantumPostureLink,
   confidenceModelType,
+  confidenceModelLabel = confidenceModelType,
   confidenceModelLink,
   implementationRisk,
+  implementationRiskLabel = implementationRisk,
   implementationRiskLink,
   auditability,
+  auditabilityLabel = humanize(auditability),
   review,
   metadataLeaks,
 }: ConceptCardData): JSX.Element {
@@ -103,7 +129,7 @@ export default function ConceptCard({
         <div>
           <h3>{pageLink ? <Link to={pageLink}>{name}</Link> : name}</h3>
           <p>
-            {category} · {level}
+            {categoryLabel} · {levelLabel}
           </p>
         </div>
         <MaturityBadge maturity={maturity} />
@@ -114,9 +140,9 @@ export default function ConceptCard({
           <dt>PQ posture</dt>
           <dd>
             {postQuantumPostureLink ? (
-              <Link to={postQuantumPostureLink}>{postQuantumPosture}</Link>
+              <Link to={postQuantumPostureLink}>{postQuantumPostureLabel}</Link>
             ) : (
-              postQuantumPosture
+              postQuantumPostureLabel
             )}
           </dd>
         </div>
@@ -124,9 +150,9 @@ export default function ConceptCard({
           <dt>Confidence</dt>
           <dd>
             {confidenceModelLink ? (
-              <Link to={confidenceModelLink}>{confidenceModelType}</Link>
+              <Link to={confidenceModelLink}>{confidenceModelLabel}</Link>
             ) : (
-              confidenceModelType
+              confidenceModelLabel
             )}
           </dd>
         </div>
@@ -134,21 +160,22 @@ export default function ConceptCard({
           <dt>Implementation risk</dt>
           <dd>
             {implementationRiskLink ? (
-              <Link to={implementationRiskLink}>{implementationRisk}</Link>
+              <Link to={implementationRiskLink}>{implementationRiskLabel}</Link>
             ) : (
-              implementationRisk
+              implementationRiskLabel
             )}
           </dd>
         </div>
         <div>
           <dt>Auditability</dt>
-          <dd>{humanize(auditability)}</dd>
+          <dd>{auditabilityLabel}</dd>
         </div>
         <div>
           <dt>Review</dt>
           <dd>
-            Structural {humanize(review?.structural?.status)} · Sources {humanize(review?.sources?.status)} · Expert{' '}
-            {humanize(review?.expert?.status)}
+            Structural {review?.structural?.statusLabel ?? humanize(review?.structural?.status)} · Sources{' '}
+            {review?.sources?.statusLabel ?? humanize(review?.sources?.status)} · Expert{' '}
+            {review?.expert?.statusLabel ?? humanize(review?.expert?.status)}
           </dd>
         </div>
       </dl>

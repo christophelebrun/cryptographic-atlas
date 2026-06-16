@@ -1,6 +1,7 @@
 import React from 'react';
 import WarningBox from './WarningBox';
 import conceptCards from '../generated/conceptCards';
+import {canonicalLabelId, displayLabel} from '../utils/labels';
 
 type FrontMatter = {
   confidence_model?: {
@@ -115,13 +116,6 @@ const targetedWarningRules: RouteWarningRule[] = [
   },
 ];
 
-function humanize(value: string | boolean | null | undefined): string {
-  if (value === true) return 'required';
-  if (value === false) return 'not required';
-  if (value == null) return 'unknown';
-  return String(value).replace(/-/g, ' ');
-}
-
 function normalizeDocRoute(route: string): string {
   return route.split(/[?#]/)[0].replace(/\.html$/, '').replace(/\/$/, '');
 }
@@ -169,26 +163,31 @@ export default function DocumentRiskWarnings({
   const warnings = new Set<string>();
   const maturity = card?.maturity || frontMatter.maturity;
   const postQuantumPosture = card?.postQuantumPosture || frontMatter.post_quantum_posture;
+  const implementationRiskId = card?.implementationRiskId || canonicalLabelId('implementation_risks', card?.implementationRisk);
+  const auditabilityId = card?.auditabilityId || canonicalLabelId('auditability', card?.auditability);
+  const maturityLabel = card?.maturityLabel || displayLabel('maturity', maturity);
+  const postQuantumPostureId =
+    card?.postQuantumPostureId || canonicalLabelId('post_quantum_postures', postQuantumPosture);
 
-  if (card?.implementationRisk === 'expert-only' || card?.implementationRisk === 'high') {
+  if (implementationRiskId === 'expert_only' || implementationRiskId === 'high') {
     warnings.add(
-      `Implementation risk is ${humanize(card.implementationRisk)}; use this page as an evaluation aid, not as deployment guidance.`,
+      `Implementation risk is ${card?.implementationRiskLabel || displayLabel('implementation_risks', card?.implementationRisk)}; use this page as an evaluation aid, not as deployment guidance.`,
     );
   }
 
-  if (card?.auditability === 'requires-expert-review') {
+  if (auditabilityId === 'requires_expert_review') {
     warnings.add('Correct use requires expert cryptographic review of the concrete construction and its composition.');
   }
 
   if (maturity === 'research' || maturity === 'theoretical') {
-    warnings.add(`Maturity is ${humanize(maturity)}; do not treat the technique as production-ready without stronger evidence.`);
+    warnings.add(`Maturity is ${maturityLabel}; do not treat the technique as production-ready without stronger evidence.`);
   }
 
   if (setupDepends(card?.requiresTrustedSetup) || setupSensitive(frontMatter.confidence_model?.type)) {
     warnings.add('Security depends on setup, issuer, committee, timing, or non-collusion assumptions that must be stated and audited.');
   }
 
-  if (postQuantumPosture === 'vulnerable') {
+  if (postQuantumPostureId === 'vulnerable') {
     warnings.add('The common assumptions are quantum-vulnerable; do not present this as post-quantum safe.');
   }
 

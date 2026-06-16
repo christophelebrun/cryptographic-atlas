@@ -8,10 +8,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "accountability",
     "name": "Accountability",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/accountability",
     "shortIntuition": "Misbehavior can be attributed, challenged, or sanctioned under stated rules.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "accountability",
@@ -31,13 +37,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "permanent identity leakage",
@@ -58,18 +76,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -80,10 +104,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "accumulators-and-merkle-trees",
     "name": "Accumulators and Merkle Trees",
     "category": "authenticated-data-structure",
+    "categoryId": "authenticated_data_structure",
+    "categoryLabel": "Authenticated data structure",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/accumulators-and-merkle-trees",
     "shortIntuition": "A compact commitment to a collection supports membership and sometimes non-membership proofs.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "set-commitment",
@@ -109,13 +139,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "Set membership is not the same as eligibility policy."
@@ -139,18 +181,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -161,10 +209,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "anonymity",
     "name": "Anonymity",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/anonymity",
     "shortIntuition": "The actor should be hidden among a plausible set of actors.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "anonymity",
@@ -186,13 +240,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "small sets"
@@ -217,18 +283,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -239,10 +311,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "anonymous-airdrop",
     "name": "Anonymous Airdrop",
     "category": "system",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/anonymous-airdrop",
     "shortIntuition": "Eligible users claim once without publicly linking the claim to their original identity.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "anonymous-eligibility"
@@ -267,13 +345,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Blockchain funding metadata can deanonymize claimants."
@@ -299,18 +389,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -321,10 +417,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "anonymous-credential",
     "name": "Anonymous Credential",
     "category": "protocol",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/anonymous-credentials",
     "shortIntuition": "A holder proves selected attributes or authorization without revealing a stable identity.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "selective-disclosure"
@@ -351,13 +453,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-issuer",
+    "confidenceModelId": "trusted_issuer",
+    "confidenceModelLabel": "Trusted issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Rare attributes can identify holders."
@@ -383,18 +497,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -405,10 +525,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "anonymous-membership",
     "name": "Anonymous Membership",
     "category": "design-pattern",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/anonymous-membership",
     "shortIntuition": "Prove group membership without revealing which member you are.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "anonymity",
@@ -435,13 +561,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "Nullifiers or rate limits are needed to prevent repeated use.",
@@ -468,18 +606,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -490,10 +634,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "anonymous-tokens",
     "name": "Anonymous Tokens",
     "category": "Protocols",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/anonymous-tokens",
     "shortIntuition": "Tokens can be issued and redeemed with limited linkability between those phases.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "unlinkability",
@@ -514,13 +664,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-issuer",
+    "confidenceModelId": "trusted_issuer",
+    "confidenceModelLabel": "Trusted issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "small issuance batches"
@@ -542,18 +704,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -564,10 +732,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "anti-double-use-nullifiers",
     "name": "Anti-Double-Use Nullifiers",
     "category": "design-pattern",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/anti-double-use-nullifiers",
     "shortIntuition": "A public context-specific tag lets a system reject repeated anonymous actions.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "double-use-prevention"
@@ -592,13 +766,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "The nullifier must be bound to an eligibility proof.",
@@ -625,18 +811,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -647,10 +839,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "arithmetization",
     "name": "Arithmetization",
     "category": "Proof systems",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/arithmetization",
     "shortIntuition": "Translate computation into algebraic constraints that a proof system checks.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "statement precision"
@@ -669,13 +867,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "proving the wrong program"
@@ -696,18 +906,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -718,10 +934,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "auditability",
     "name": "Auditability",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/auditability",
     "shortIntuition": "Enough trustworthy evidence exists to review a process after it happens.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "auditability",
@@ -741,13 +963,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability or operational-audit",
+    "confidenceModelId": "public_verifiability_or_operational_audit",
+    "confidenceModelLabel": "Public verifiability or operational audit",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "over-collecting sensitive logs"
@@ -768,18 +1002,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -790,10 +1030,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "authenticated-encryption",
     "name": "Authenticated Encryption",
     "category": "encryption",
+    "categoryId": "encryption",
+    "categoryLabel": "Encryption",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/authenticated-encryption",
     "shortIntuition": "Encryption that also lets the receiver reject tampered ciphertexts and authenticate public context.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "confidentiality",
@@ -823,13 +1069,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Associated data must bind protocol, version, sender, recipient, and purpose where relevant."
@@ -854,18 +1112,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -876,10 +1140,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "authenticity",
     "name": "Authenticity",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/authenticity",
     "shortIntuition": "Data or actions should be bound to the expected actor, key, role, or authority.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "authenticity",
@@ -899,13 +1169,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "ambiguous signed bytes"
@@ -929,18 +1211,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -951,10 +1239,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "availability",
     "name": "Availability",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/availability",
     "shortIntuition": "The system can provide its intended service when honest users need it.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "availability",
@@ -975,13 +1269,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "shared operator dependencies"
@@ -1002,18 +1308,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1024,10 +1336,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "blind-signatures",
     "name": "Blind Signatures",
     "category": "Structured primitives",
+    "categoryId": "structured_primitives",
+    "categoryLabel": "Structured primitives",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/blind-signatures",
     "shortIntuition": "A signer authorizes a hidden message that can later be verified.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "blindness"
@@ -1046,13 +1364,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "redemption timing linkage",
@@ -1075,18 +1405,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1097,10 +1433,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "blind-signature-credentials",
     "name": "Blind-Signature Credentials",
     "category": "Protocols",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/blind-signature-credentials",
     "shortIntuition": "Blind issuance can authorize credentials without exposing the exact token being signed.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "blind issuance"
@@ -1120,13 +1462,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-issuer",
+    "confidenceModelId": "trusted_issuer",
+    "confidenceModelLabel": "Trusted issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "rare-attribute linkage"
@@ -1148,18 +1502,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1170,10 +1530,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "censorship-resistance",
     "name": "Censorship Resistance",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/censorship-resistance",
     "shortIntuition": "Valid actions cannot be selectively blocked beyond the system's stated tolerance.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "censorship-resistance",
@@ -1193,13 +1559,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "hidden sender or fee metadata still enabling censorship"
@@ -1224,18 +1602,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1246,10 +1630,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "code-based-assumptions",
     "name": "Code-Based Assumptions",
     "category": "Assumptions and substrates",
+    "categoryId": "assumptions_and_substrates",
+    "categoryLabel": "Assumptions and substrates",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/code-based-assumptions",
     "shortIntuition": "Security comes from the hardness of decoding noisy code data without hidden structure.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "post-quantum key establishment"
@@ -1267,13 +1657,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "treating candidate status as deployment maturity"
@@ -1294,18 +1696,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1316,10 +1724,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "coercion-resistant-voting",
     "name": "Coercion-Resistant Voting",
     "category": "system",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/coercion-resistant-voting",
     "shortIntuition": "A voting design tries to prevent voters from proving how they voted to a coercer.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "ballot-secrecy"
@@ -1344,13 +1758,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Coercion resistance is a whole-system property."
@@ -1374,18 +1800,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1396,10 +1828,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "commitments",
     "name": "Commitments",
     "category": "primitive",
+    "categoryId": "basic_primitives",
+    "categoryLabel": "Basic primitives",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/commitments",
     "shortIntuition": "A commitment locks in a hidden value so it can be opened later.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "hiding",
@@ -1423,13 +1861,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "Commitments need authentication when the committer identity matters.",
@@ -1455,18 +1905,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1477,10 +1933,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "common-reference-strings",
     "name": "Common Reference Strings",
     "category": "Assumptions and substrates",
+    "categoryId": "assumptions_and_substrates",
+    "categoryLabel": "Assumptions and substrates",
     "level": "assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/common-reference-strings",
     "shortIntuition": "Public setup data enables protocols but can introduce toxic-waste or parameter trust.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "shared verification parameters"
@@ -1498,13 +1960,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-setup",
+    "confidenceModelId": "trusted_setup",
+    "confidenceModelLabel": "Trusted setup",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "CRS not bound to proofs"
@@ -1524,18 +1998,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1546,10 +2026,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "confidentiality",
     "name": "Confidentiality",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/confidentiality",
     "shortIntuition": "Protected content should not be learned by unauthorized parties.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "confidentiality",
@@ -1571,13 +2057,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "encryption without authentication"
@@ -1603,18 +2101,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1625,10 +2129,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "delayed-reveal",
     "name": "Delayed Reveal",
     "category": "design-pattern",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/delayed-reveal",
     "shortIntuition": "Fix information now and disclose it later.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "temporal-binding",
@@ -1651,13 +2161,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "Delayed reveal needs deadlines and penalties."
@@ -1683,18 +2205,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1705,10 +2233,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "deniability",
     "name": "Deniability",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/deniability",
     "shortIntuition": "A transcript should not become convincing evidence to outsiders that a participant said or did something.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "deniability",
@@ -1728,13 +2262,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret and mixed",
+    "confidenceModelId": "client_side_secret_and_mixed",
+    "confidenceModelLabel": "Client-side secret and mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "adding non-repudiating signatures"
@@ -1758,18 +2304,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1780,10 +2332,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "digital-signature",
     "name": "Digital Signature",
     "category": "authentication",
+    "categoryId": "authentication",
+    "categoryLabel": "Authentication",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/digital-signatures",
     "shortIntuition": "A private key holder signs a message so verifiers can check its origin and integrity.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "authenticity",
@@ -1811,13 +2369,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Signatures must bind protocol, domain, and message encoding."
@@ -1841,18 +2411,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1863,10 +2439,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "discrete-logarithm",
     "name": "Discrete Logarithm",
     "category": "mathematical-assumption",
+    "categoryId": "mathematical_assumption",
+    "categoryLabel": "Mathematical assumption",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/discrete-logarithm",
     "shortIntuition": "Exponentiation in selected groups is easy, but recovering the exponent should be hard.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "one-wayness"
@@ -1888,13 +2470,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "vulnerable",
+    "postQuantumPostureId": "vulnerable",
+    "postQuantumPostureLabel": "Vulnerable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Discrete-logarithm systems need group validation and domain separation.",
@@ -1915,18 +2509,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -1937,10 +2537,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "domain-separation",
     "name": "Domain Separation",
     "category": "Design patterns",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/domain-separation",
     "shortIntuition": "Labels prevent cryptographic bytes from one context being valid in another.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "context binding",
@@ -1966,13 +2572,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "retrofitted labels without migration"
@@ -1999,18 +2617,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2021,10 +2645,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "e-cash-primitives",
     "name": "E-Cash Primitives",
     "category": "Structured primitives",
+    "categoryId": "structured_primitives",
+    "categoryLabel": "Structured primitives",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/e-cash-primitives",
     "shortIntuition": "Issuance, spending, and duplicate-use controls for digital value with privacy goals.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "issuer authenticity",
@@ -2048,13 +2678,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "linkable redemption"
@@ -2075,18 +2717,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2097,10 +2745,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "e-voting",
     "name": "Electronic Voting",
     "category": "system",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/protocols/e-voting",
     "shortIntuition": "Electronic voting systems collect, protect, tally, and audit votes under privacy and integrity constraints.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "eligibility"
@@ -2126,13 +2780,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Voting combines eligibility, privacy, tallying, usability, and auditability.",
@@ -2157,18 +2823,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2179,10 +2851,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "elliptic-curves",
     "name": "Elliptic Curves",
     "category": "Assumptions and substrates",
+    "categoryId": "assumptions_and_substrates",
+    "categoryLabel": "Assumptions and substrates",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/elliptic-curves",
     "shortIntuition": "Efficient finite groups for discrete-logarithm-based signatures, key exchange, and commitments.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "discrete-logarithm hardness",
@@ -2201,13 +2879,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "vulnerable",
+    "postQuantumPostureId": "vulnerable",
+    "postQuantumPostureLabel": "Vulnerable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "ambiguous encodings"
@@ -2228,18 +2918,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2250,10 +2946,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "encrypt-then-prove",
     "name": "Encrypt Then Prove",
     "category": "Design patterns",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/encrypt-then-prove",
     "shortIntuition": "A party encrypts data and proves in zero knowledge that the ciphertext encodes a valid hidden value.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "hidden validity"
@@ -2279,13 +2981,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "proving a different statement than applications verify"
@@ -2306,18 +3020,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2328,10 +3048,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "encrypted-mempools",
     "name": "Encrypted Mempools",
     "category": "Systems",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/encrypted-mempools",
     "shortIntuition": "Encrypt pending transactions until ordering or reveal rules reduce content-based front-running.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "pre-order confidentiality",
@@ -2351,13 +3077,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "reveal griefing"
@@ -2379,18 +3117,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2401,10 +3145,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "factoring-rsa",
     "name": "Factoring and RSA",
     "category": "mathematical-assumption",
+    "categoryId": "mathematical_assumption",
+    "categoryLabel": "Mathematical assumption",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/factoring-rsa",
     "shortIntuition": "RSA-style systems use arithmetic modulo a composite number whose factors are secret.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "trapdoor-one-wayness"
@@ -2426,13 +3176,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "vulnerable",
+    "postQuantumPostureId": "vulnerable",
+    "postQuantumPostureLabel": "Vulnerable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "RSA security depends heavily on padding and scheme design."
@@ -2453,18 +3215,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2475,10 +3243,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "folding-schemes",
     "name": "Folding Schemes",
     "category": "Proof systems",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/folding-schemes",
     "shortIntuition": "Fold many proof instances into a smaller accumulated claim.",
     "maturity": "research",
+    "maturityId": "research",
+    "maturityLabel": "Research",
     "securityGoals": [
       {
         "label": "incremental verification"
@@ -2496,13 +3270,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "research-stage claims"
@@ -2523,18 +3309,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2545,10 +3337,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "forward-secrecy",
     "name": "Forward Secrecy",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/forward-secrecy",
     "shortIntuition": "Later long-term key compromise should not reveal past session secrets.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "forward secrecy",
@@ -2568,13 +3366,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "resumption without clear policy"
@@ -2595,18 +3405,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2617,10 +3433,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "fri",
     "name": "FRI",
     "category": "Proof systems",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/fri",
     "shortIntuition": "A transparent low-degree proximity test used in STARK-style proof systems.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "low-degree soundness",
@@ -2640,13 +3462,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "bad arithmetization"
@@ -2668,18 +3502,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2690,10 +3530,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "functional-encryption",
     "name": "Functional Encryption",
     "category": "encryption",
+    "categoryId": "encryption",
+    "categoryLabel": "Encryption",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/functional-encryption",
     "shortIntuition": "Encryption where specialized keys reveal only approved functions of plaintext data.",
     "maturity": "research",
+    "maturityId": "research",
+    "maturityLabel": "Research",
     "securityGoals": [
       {
         "label": "controlled-disclosure"
@@ -2718,13 +3564,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-issuer",
+    "confidenceModelId": "trusted_issuer",
+    "confidenceModelLabel": "Trusted issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "The allowed function output may reveal more than intended.",
@@ -2753,18 +3611,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2775,10 +3639,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "hash-function",
     "name": "Hash Function",
     "category": "primitive",
+    "categoryId": "basic_primitives",
+    "categoryLabel": "Basic primitives",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/hash-functions",
     "shortIntuition": "A deterministic digest function designed to resist reversal and collisions.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "preimage-resistance"
@@ -2803,13 +3673,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "Hashes of small secrets can be brute-forced."
@@ -2831,18 +3713,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2853,10 +3741,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "homomorphic-commitments",
     "name": "Homomorphic Commitments",
     "category": "commitment",
+    "categoryId": "commitment",
+    "categoryLabel": "Commitment",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/homomorphic-commitments",
     "shortIntuition": "Commitments can be combined so their hidden values combine in a matching way.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "hiding",
@@ -2883,13 +3777,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Homomorphic arithmetic can wrap or cancel invalid values."
@@ -2910,18 +3816,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -2932,10 +3844,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "homomorphic-encryption",
     "name": "Homomorphic Encryption",
     "category": "encryption",
+    "categoryId": "encryption",
+    "categoryLabel": "Encryption",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/homomorphic-encryption",
     "shortIntuition": "Encryption that supports computation over ciphertexts.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "confidentiality",
@@ -2959,13 +3877,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Outputs can reveal sensitive input information.",
@@ -2996,18 +3926,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3018,10 +3954,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "identity-wallets",
     "name": "Identity Wallets",
     "category": "Systems",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/identity-wallets",
     "shortIntuition": "Wallets store credentials and present claims with selective disclosure under issuer trust.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "selective disclosure"
@@ -3041,13 +3983,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-issuer",
+    "confidenceModelId": "trusted_issuer",
+    "confidenceModelLabel": "Trusted issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "rare-attribute re-identification"
@@ -3069,18 +4023,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3091,10 +4051,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "integrity",
     "name": "Integrity",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/integrity",
     "shortIntuition": "Unauthorized changes should be detected.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "integrity",
@@ -3115,13 +4081,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "verifying only part of a message"
@@ -3143,18 +4121,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3165,10 +4149,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "key-derivation-functions",
     "name": "Key Derivation Functions",
     "category": "key-management",
+    "categoryId": "key_management",
+    "categoryLabel": "Key management",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/key-derivation-functions",
     "shortIntuition": "A KDF turns shared secret material into context-specific keys.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "key-separation"
@@ -3189,13 +4179,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret",
+    "confidenceModelId": "client_side_secret",
+    "confidenceModelLabel": "Client-side secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "locally-verifiable",
+    "auditabilityId": "locally_verifiable",
+    "auditabilityLabel": "Locally verifiable",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "KDF context must bind protocol transcripts and algorithm choices.",
@@ -3217,18 +4219,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3239,10 +4247,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "key-encapsulation-and-exchange",
     "name": "Key Encapsulation and Exchange",
     "category": "key-management",
+    "categoryId": "key_management",
+    "categoryLabel": "Key management",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/key-encapsulation-and-exchange",
     "shortIntuition": "Parties establish shared secret material over an insecure channel.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "shared-secret-establishment"
@@ -3267,13 +4281,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Key exchange must feed a KDF and authenticated transcript."
@@ -3297,18 +4323,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3319,10 +4351,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "key-rotation-and-migration",
     "name": "Key Rotation and Migration",
     "category": "Design patterns",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/key-rotation-and-migration",
     "shortIntuition": "Systems move from old keys or algorithms to new ones without losing authentication, availability, or rollback safety.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "compromise containment"
@@ -3343,13 +4381,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "operational-control",
+    "confidenceModelId": "operational_control",
+    "confidenceModelLabel": "Operational control",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "dual-stack periods extend the weakest accepted algorithm"
@@ -3370,18 +4420,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3392,10 +4448,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "key-committing-encryption",
     "name": "Key-Committing Encryption",
     "category": "Basic primitives",
+    "categoryId": "basic_primitives",
+    "categoryLabel": "Basic primitives",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/key-committing-encryption",
     "shortIntuition": "Ciphertexts should validate under one intended key context, not several plausible keys.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "key commitment",
@@ -3416,13 +4478,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "weakening deniability"
@@ -3444,18 +4518,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3466,10 +4546,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "lattices",
     "name": "Lattices",
     "category": "mathematical-substrate",
+    "categoryId": "mathematical_substrate",
+    "categoryLabel": "Mathematical substrate",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/lattices",
     "shortIntuition": "Lattice cryptography uses hard problems over high-dimensional noisy grids.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "post-quantum-hardness"
@@ -3491,13 +4577,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Lattice schemes have parameter and failure-mode details that protocols must preserve.",
@@ -3520,18 +4618,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3542,10 +4646,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "lookup-arguments",
     "name": "Lookup Arguments",
     "category": "Proof systems",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/lookup-arguments",
     "shortIntuition": "Prove witnessed values appear in an approved table.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "table membership"
@@ -3564,13 +4674,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "table-version mismatch"
@@ -3590,18 +4712,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3612,10 +4740,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "make-receipts-useless",
     "name": "Make Receipts Useless",
     "category": "design-pattern",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/make-receipts-useless",
     "shortIntuition": "Prevent users from producing convincing evidence of how they acted.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "receipt-freeness",
@@ -3643,13 +4777,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Receipt-freeness must include operational artifacts such as logs and screenshots.",
@@ -3675,18 +4821,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3697,10 +4849,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "membership-proofs",
     "name": "Membership Proofs",
     "category": "proof-system",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/membership-proofs",
     "shortIntuition": "A proof that an item belongs to a committed set.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "set-membership"
@@ -3726,13 +4884,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "Membership must be bound to the correct policy context.",
@@ -3758,18 +4928,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3780,10 +4956,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "message-authentication-codes",
     "name": "Message Authentication Codes",
     "category": "authentication",
+    "categoryId": "authentication",
+    "categoryLabel": "Authentication",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/message-authentication-codes",
     "shortIntuition": "A shared secret key lets parties detect forged or modified messages.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "integrity",
@@ -3811,13 +4993,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret",
+    "confidenceModelId": "client_side_secret",
+    "confidenceModelLabel": "Client-side secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "locally-verifiable",
+    "auditabilityId": "locally_verifiable",
+    "auditabilityLabel": "Locally verifiable",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "MAC keys should be separated by role and protocol."
@@ -3839,18 +5033,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3861,10 +5061,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "mixnet",
     "name": "Mixnet",
     "category": "protocol",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/mixnets",
     "shortIntuition": "A sequence of servers shuffles or transforms messages to break sender-recipient linkage.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "unlinkability",
@@ -3891,13 +5097,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "one-honest-party",
+    "confidenceModelId": "one_honest_party",
+    "confidenceModelLabel": "One honest party",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Mixnets need batching, cover traffic, or timing controls.",
@@ -3923,18 +5141,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -3945,10 +5169,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "mpc",
     "name": "Multi-Party Computation",
     "category": "protocol",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/mpc",
     "shortIntuition": "Several parties compute a function together without revealing their private inputs beyond the output.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "input-privacy",
@@ -3975,13 +5205,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "The function output can reveal private inputs.",
@@ -4006,18 +5248,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4028,10 +5276,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "non-repudiation",
     "name": "Non-Repudiation",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/non-repudiation",
     "shortIntuition": "Evidence is intended to make later denial of an action unconvincing under a stated process.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "non-repudiation",
@@ -4051,13 +5305,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "signing ambiguous bytes"
@@ -4081,18 +5347,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4103,10 +5375,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "nullifier",
     "name": "Nullifier",
     "category": "anti-double-use",
+    "categoryId": "anti_double_use",
+    "categoryLabel": "Anti-double-use",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/nullifiers",
     "shortIntuition": "A context-specific public tag that prevents repeated anonymous actions.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "double-use-prevention"
@@ -4131,13 +5409,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret",
+    "confidenceModelId": "client_side_secret",
+    "confidenceModelLabel": "Client-side secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "Reusing contexts can link actions.",
@@ -4171,18 +5461,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4193,10 +5489,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "oblivious-pseudorandom-functions",
     "name": "Oblivious Pseudorandom Functions",
     "category": "protocol",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/oblivious-pseudorandom-functions",
     "shortIntuition": "A client learns a keyed PRF output without revealing its input or learning the server key.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "client-input-privacy",
@@ -4224,13 +5526,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "OPRF outputs need context binding before they are used as tokens or keys.",
@@ -4256,18 +5570,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4278,10 +5598,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "oblivious-transfer",
     "name": "Oblivious Transfer",
     "category": "Protocols",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/oblivious-transfer",
     "shortIntuition": "A receiver learns one selected message while hiding the choice and not learning the others.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "receiver choice privacy",
@@ -4308,13 +5634,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "mismatched adversary model"
@@ -4342,18 +5680,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4364,10 +5708,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "pairings",
     "name": "Pairings",
     "category": "mathematical-substrate",
+    "categoryId": "mathematical_substrate",
+    "categoryLabel": "Mathematical substrate",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/pairings",
     "shortIntuition": "Pairings make selected exponent relationships publicly checkable across algebraic groups.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "compact-verification"
@@ -4389,13 +5739,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "vulnerable",
+    "postQuantumPostureId": "vulnerable",
+    "postQuantumPostureLabel": "Vulnerable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Pairing systems often inherit trusted setup and curve-selection risk.",
@@ -4417,18 +5779,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4439,10 +5807,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "password-hashing",
     "name": "Password Hashing",
     "category": "Basic primitives",
+    "categoryId": "basic_primitives",
+    "categoryLabel": "Basic primitives",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/password-hashing",
     "shortIntuition": "Salted and expensive verifiers slow offline guessing after password-database theft.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "offline guessing resistance"
@@ -4460,13 +5834,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret",
+    "confidenceModelId": "client_side_secret",
+    "confidenceModelLabel": "Client-side secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "weak reset flows"
@@ -4487,18 +5873,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4509,10 +5901,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "password-authenticated-key-exchange",
     "name": "Password-Authenticated Key Exchange",
     "category": "Protocols",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/password-authenticated-key-exchange",
     "shortIntuition": "PAKE derives a strong session key from a password without exposing transcripts to offline guessing.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "password authentication"
@@ -4537,13 +5935,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "treating password hashing as PAKE"
@@ -4571,18 +5981,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4593,10 +6009,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "pedersen-commitment",
     "name": "Pedersen Commitment",
     "category": "commitment",
+    "categoryId": "commitment",
+    "categoryLabel": "Commitment",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/primitives/pedersen-commitments",
     "shortIntuition": "A commitment scheme that hides a value while preserving additive structure.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "hiding",
@@ -4619,13 +6041,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "vulnerable",
+    "postQuantumPostureId": "vulnerable",
+    "postQuantumPostureLabel": "Vulnerable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "If the randomness is revealed, the committed value may be exposed."
@@ -4654,18 +6088,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4676,10 +6116,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "polynomial-commitments",
     "name": "Polynomial Commitments",
     "category": "Structured primitives",
+    "categoryId": "structured_primitives",
+    "categoryLabel": "Structured primitives",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/polynomial-commitments",
     "shortIntuition": "Commit to a polynomial and later prove selected evaluations compactly.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "binding",
@@ -4706,13 +6152,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "wrong public inputs",
@@ -4741,18 +6199,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4763,10 +6227,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "privacy-preserving-revocation",
     "name": "Privacy-Preserving Revocation",
     "category": "Design patterns",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/privacy-preserving-revocation",
     "shortIntuition": "Reject revoked credentials or tokens without turning status checks into tracking beacons.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "revocation correctness"
@@ -4792,13 +6262,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "status-list tracking"
@@ -4827,18 +6309,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4849,10 +6337,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "private-aggregation",
     "name": "Private Aggregation",
     "category": "design-pattern",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/private-aggregation",
     "shortIntuition": "Reveal a combined result while keeping individual inputs hidden.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "aggregate-disclosure"
@@ -4879,13 +6373,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Aggregates can leak individuals through repeated releases."
@@ -4911,18 +6417,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -4933,10 +6445,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "private-dao-voting",
     "name": "Private DAO Voting",
     "category": "system",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/private-dao-voting",
     "shortIntuition": "A governance vote combines anonymous eligibility, ballot secrecy, anti-double-vote checks, and verifiable tallying.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "anonymous-eligibility"
@@ -4960,13 +6478,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Public ledger metadata can defeat cryptographic privacy.",
@@ -4991,18 +6521,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5013,10 +6549,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "private-information-retrieval",
     "name": "Private Information Retrieval",
     "category": "Protocols",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/private-information-retrieval",
     "shortIntuition": "A client retrieves a database item while hiding which item was requested.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "query privacy",
@@ -5045,13 +6587,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "database freshness omitted"
@@ -5080,18 +6634,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5102,10 +6662,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "private-machine-learning-analytics",
     "name": "Private Machine Learning Analytics",
     "category": "Systems",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/private-machine-learning-analytics",
     "shortIntuition": "Private analytics combines aggregation, computation, and release controls so model or metric outputs reveal less about individuals.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "input privacy",
@@ -5132,13 +6698,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "cryptographic input privacy paired with leaky outputs",
@@ -5165,18 +6743,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5187,10 +6771,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "private-payments",
     "name": "Private Payments",
     "category": "Systems",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/private-payments",
     "shortIntuition": "Transfer value while hiding selected transaction details under a stated ledger or issuer model.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "transaction privacy",
@@ -5216,13 +6806,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "note/nullifier design mistakes",
@@ -5251,18 +6853,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5273,10 +6881,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "private-set-intersection",
     "name": "Private Set Intersection",
     "category": "protocol",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/private-set-intersection",
     "shortIntuition": "Parties learn the overlap between private sets without simply exchanging the full sets.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "input-privacy",
@@ -5304,13 +6918,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "The revealed intersection can still be sensitive."
@@ -5338,18 +6964,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5360,10 +6992,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "public-key-encryption",
     "name": "Public-Key Encryption",
     "category": "encryption",
+    "categoryId": "encryption",
+    "categoryLabel": "Encryption",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/public-key-encryption",
     "shortIntuition": "Anyone can encrypt to a public key, but only the private key holder can decrypt.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "confidentiality",
@@ -5386,13 +7024,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Encryption must be combined with authentication or proofs when validity matters."
@@ -5417,18 +7067,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5439,10 +7095,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "random-oracle-model",
     "name": "Random Oracle Model",
     "category": "proof-model",
+    "categoryId": "proof_model",
+    "categoryLabel": "Proof model",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/random-oracle-model",
     "shortIntuition": "A security proof model that treats a hash function as an ideal public random function.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "idealized-hash-modeling"
@@ -5464,13 +7126,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "Random-oracle-model proofs remain idealized.",
@@ -5493,18 +7167,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5515,10 +7195,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "randomness-and-nonces",
     "name": "Randomness and Nonces",
     "category": "implementation-substrate",
+    "categoryId": "implementation_substrate",
+    "categoryLabel": "Implementation substrate",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/randomness-and-nonces",
     "shortIntuition": "Fresh random or unique values keep many schemes from repeating dangerous internal state.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "unpredictability"
@@ -5540,13 +7226,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret",
+    "confidenceModelId": "client_side_secret",
+    "confidenceModelLabel": "Client-side secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Nonce rules differ by scheme and cannot be guessed."
@@ -5567,18 +7265,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5589,10 +7293,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "range-proof",
     "name": "Range Proof",
     "category": "proof-system",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/range-proofs",
     "shortIntuition": "A proof that a hidden value lies inside a public interval.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "value-validity"
@@ -5619,13 +7329,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "The proved interval must match the application policy."
@@ -5650,18 +7372,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5672,10 +7400,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "recursive-proofs",
     "name": "Recursive Proofs",
     "category": "Proof systems",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/recursive-proofs",
     "shortIntuition": "Verify proofs inside later proofs to compress a history of checks.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "proof aggregation"
@@ -5694,13 +7428,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "stale verifier keys"
@@ -5721,18 +7467,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5743,10 +7495,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "reveal-only-a-function",
     "name": "Reveal Only a Function",
     "category": "design-pattern",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/reveal-only-a-function",
     "shortIntuition": "Expose a computed result while hiding the underlying inputs.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "controlled-disclosure"
@@ -5772,13 +7530,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "Repeated function outputs can reconstruct inputs.",
@@ -5804,18 +7574,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5826,10 +7602,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "secret-sharing",
     "name": "Secret Sharing",
     "category": "threshold",
+    "categoryId": "threshold",
+    "categoryLabel": "Threshold",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/secret-sharing",
     "shortIntuition": "A secret is split into shares so only an authorized subset can reconstruct it.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "confidentiality-below-threshold",
@@ -5851,13 +7633,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "t-of-n-threshold",
+    "confidenceModelId": "t_of_n_threshold",
+    "confidenceModelLabel": "t-of-n threshold",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "implementationRiskId": "medium",
+    "implementationRiskLabel": "Medium",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "Share custody is an operational security problem."
@@ -5877,18 +7671,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5899,10 +7699,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "secure-aggregation",
     "name": "Secure Aggregation",
     "category": "protocol",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/secure-aggregation",
     "shortIntuition": "Many clients contribute values while the server learns only an aggregate.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "input-privacy",
@@ -5928,13 +7734,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "honest-majority",
+    "confidenceModelId": "honest_majority",
+    "confidenceModelLabel": "Honest majority",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Aggregates can reveal individuals in small groups."
@@ -5959,18 +7777,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -5981,10 +7805,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "secure-channels",
     "name": "Secure Channels",
     "category": "Protocols",
+    "categoryId": "protocols",
+    "categoryLabel": "Protocols",
     "level": "protocol",
+    "levelId": "protocol",
+    "levelLabel": "Protocol",
     "pageLink": "/docs/protocols/secure-channels",
     "shortIntuition": "Authenticated encrypted sessions bind key exchange, identities, transcript, and traffic protection.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "confidentiality",
@@ -6015,13 +7845,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "downgrade negotiation"
@@ -6049,18 +7891,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6071,10 +7919,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "secure-messaging",
     "name": "Secure Messaging",
     "category": "Systems",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/secure-messaging",
     "shortIntuition": "Messaging systems combine channels, ratchets, identity keys, delivery, devices, and metadata policy.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "message confidentiality",
@@ -6098,13 +7952,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "multi-device sync weakening guarantees"
@@ -6125,18 +7991,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6147,10 +8019,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "snarks-starks-bulletproofs",
     "name": "SNARKs, STARKs, and Bulletproofs",
     "category": "proof-system-family",
+    "categoryId": "proof_system_family",
+    "categoryLabel": "Proof system family",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/snarks-starks-bulletproofs",
     "shortIntuition": "Proof-system families that trade setup, proof size, verifier cost, and assumptions differently.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "succinct-verification"
@@ -6177,13 +8055,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Proof-family choice changes the whole confidence model.",
@@ -6211,18 +8101,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6233,10 +8129,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "sumcheck",
     "name": "Sumcheck",
     "category": "Proof systems",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/sumcheck",
     "shortIntuition": "Prove a large polynomial sum using smaller randomized polynomial checks.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "sum soundness",
@@ -6257,13 +8159,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "weak Fiat-Shamir transformation"
@@ -6285,18 +8199,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6307,10 +8227,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "symmetric-encryption",
     "name": "Symmetric Encryption",
     "category": "encryption",
+    "categoryId": "encryption",
+    "categoryLabel": "Encryption",
     "level": "basic-primitive",
+    "levelId": "basic_primitive",
+    "levelLabel": "Basic primitive",
     "pageLink": "/docs/primitives/symmetric-encryption",
     "shortIntuition": "One shared secret key encrypts and decrypts data.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "confidentiality",
@@ -6333,13 +8259,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "plausible",
+    "postQuantumPostureId": "plausible",
+    "postQuantumPostureLabel": "Plausible",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "client-side-secret",
+    "confidenceModelId": "client_side_secret",
+    "confidenceModelLabel": "Client-side secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "Symmetric encryption often needs authenticated encryption.",
@@ -6366,18 +8304,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6388,10 +8332,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "threshold-cryptography",
     "name": "Threshold Cryptography",
     "category": "threshold",
+    "categoryId": "threshold",
+    "categoryLabel": "Threshold",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/threshold-cryptography",
     "shortIntuition": "A cryptographic power is split so a quorum is required to act.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "distributed-control"
@@ -6416,13 +8366,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "t-of-n-threshold",
+    "confidenceModelId": "t_of_n_threshold",
+    "confidenceModelLabel": "t-of-n threshold",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Threshold cryptography shifts trust into custody and governance."
@@ -6446,18 +8408,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": "2026-12-04",
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6468,10 +8436,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "threshold-issuance",
     "name": "Threshold Issuance",
     "category": "Design patterns",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/threshold-issuance",
     "shortIntuition": "Multiple issuers jointly authorize a token or credential so no single issuer can mint alone.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "distributed authorization"
@@ -6495,13 +8469,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "t-of-n-threshold",
+    "confidenceModelId": "t_of_n_threshold",
+    "confidenceModelLabel": "t-of-n threshold",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "unbound partial signatures"
@@ -6523,18 +8509,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6545,10 +8537,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "timelock-and-vdfs",
     "name": "Timelock and VDFs",
     "category": "delay",
+    "categoryId": "delay",
+    "categoryLabel": "Delay",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/timelock-and-vdfs",
     "shortIntuition": "Outputs depend on sequential computation time and can often be verified quickly.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "sequential-delay"
@@ -6571,13 +8569,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "external-timing",
+    "confidenceModelId": "external_timing",
+    "confidenceModelLabel": "External timing",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Delay assumptions must match real adversary hardware."
@@ -6601,18 +8611,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6623,10 +8639,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "transcript-binding",
     "name": "Transcript Binding",
     "category": "Design patterns",
+    "categoryId": "design_patterns",
+    "categoryLabel": "Design patterns",
     "level": "design-pattern",
+    "levelId": "design_pattern",
+    "levelLabel": "Design pattern",
     "pageLink": "/docs/design-patterns/transcript-binding",
     "shortIntuition": "Outputs are derived from the complete protocol transcript they are meant to authenticate.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "downgrade resistance"
@@ -6652,13 +8674,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "requires-expert-review",
+    "auditabilityId": "requires_expert_review",
+    "auditabilityLabel": "Requires expert review",
     "parameterSensitivity": "medium",
+    "parameterSensitivityId": "medium",
+    "parameterSensitivityLabel": "Medium",
     "compositionRisks": [
       {
         "label": "unknown-key-share attacks"
@@ -6686,18 +8720,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6708,10 +8748,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "trusted-setup",
     "name": "Trusted Setup",
     "category": "setup-assumption",
+    "categoryId": "setup_assumption",
+    "categoryLabel": "Setup assumption",
     "level": "mathematical-assumption",
+    "levelId": "mathematical_assumption",
+    "levelLabel": "Mathematical assumption",
     "pageLink": "/docs/assumptions/trusted-setup",
     "shortIntuition": "Public parameters are generated in a process whose hidden trapdoor must not survive.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "efficient-public-verification"
@@ -6732,13 +8778,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "trusted-setup",
+    "confidenceModelId": "trusted_setup",
+    "confidenceModelLabel": "Trusted setup",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": true,
+    "requiresTrustedSetupId": "required",
+    "requiresTrustedSetupLabel": "Required",
     "auditability": "requires-operational-audit",
+    "auditabilityId": "requires_operational_audit",
+    "auditabilityLabel": "Requires operational audit",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Setup assumptions can dominate the whole proof-system confidence model.",
@@ -6759,18 +8817,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6781,10 +8845,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "unlinkability",
     "name": "Unlinkability",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/unlinkability",
     "shortIntuition": "Observers should not tell that two actions came from the same subject.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "unlinkability",
@@ -6804,13 +8874,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "reused nullifier contexts",
@@ -6836,18 +8918,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6858,10 +8946,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "vector-commitments",
     "name": "Vector Commitments",
     "category": "Structured primitives",
+    "categoryId": "structured_primitives",
+    "categoryLabel": "Structured primitives",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/vector-commitments",
     "shortIntuition": "Commit to an indexed list and prove claims about selected positions.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "binding",
@@ -6887,13 +8981,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "scheme-dependent",
+    "parameterSensitivityId": "scheme_dependent",
+    "parameterSensitivityLabel": "Scheme-dependent",
     "compositionRisks": [
       {
         "label": "stale-root attacks"
@@ -6920,18 +9026,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -6942,10 +9054,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "verifiability",
     "name": "Verifiability",
     "category": "Security goals",
+    "categoryId": "security_goals",
+    "categoryLabel": "Security goals",
     "level": "security-goal",
+    "levelId": "security_goal",
+    "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/verifiability",
     "shortIntuition": "A party can check that a claim, proof, transcript, tally, or state transition satisfies stated rules.",
     "maturity": "not-applicable",
+    "maturityId": "not_applicable",
+    "maturityLabel": "Not applicable",
     "securityGoals": [
       {
         "label": "verifiability",
@@ -6965,13 +9083,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "not-applicable",
+    "postQuantumPostureId": "not_applicable",
+    "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "public-verifiability",
+    "confidenceModelId": "public_verifiability",
+    "confidenceModelLabel": "Public verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "implementationRiskId": "not_applicable",
+    "implementationRiskLabel": "Not applicable",
     "requiresTrustedSetup": "not-applicable",
+    "requiresTrustedSetupId": "not_applicable",
+    "requiresTrustedSetupLabel": "Not applicable",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "not-applicable",
+    "parameterSensitivityId": "not_applicable",
+    "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
         "label": "public inputs leaking data",
@@ -6996,18 +9126,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -7018,10 +9154,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "vdf",
     "name": "Verifiable Delay Function",
     "category": "delay",
+    "categoryId": "delay",
+    "categoryLabel": "Delay",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/timelock-and-vdfs",
     "shortIntuition": "A function that takes sequential time to compute but is fast to verify.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "sequential-delay"
@@ -7044,13 +9186,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "external-timing",
+    "confidenceModelId": "external_timing",
+    "confidenceModelLabel": "External timing",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "Specialized hardware can change delay assumptions."
@@ -7077,18 +9231,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -7099,10 +9259,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "verifiable-encryption",
     "name": "Verifiable Encryption",
     "category": "Structured primitives",
+    "categoryId": "structured_primitives",
+    "categoryLabel": "Structured primitives",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/verifiable-encryption",
     "shortIntuition": "Encrypt a value and prove that the hidden plaintext satisfies a statement.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "plaintext confidentiality",
@@ -7122,13 +9288,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "weak statement design"
@@ -7150,18 +9328,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -7172,10 +9356,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "verifiable-random-functions",
     "name": "Verifiable Random Functions",
     "category": "Structured primitives",
+    "categoryId": "structured_primitives",
+    "categoryLabel": "Structured primitives",
     "level": "structured-primitive",
+    "levelId": "structured_primitive",
+    "levelLabel": "Structured primitive",
     "pageLink": "/docs/structured-primitives/verifiable-random-functions",
     "shortIntuition": "A secret key produces pseudorandom output with a public proof of correct evaluation.",
     "maturity": "deployed",
+    "maturityId": "deployed",
+    "maturityLabel": "Deployed",
     "securityGoals": [
       {
         "label": "pseudorandomness"
@@ -7194,13 +9384,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "vulnerable",
+    "postQuantumPostureId": "vulnerable",
+    "postQuantumPostureLabel": "Vulnerable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mathematical-assumption",
+    "confidenceModelId": "mathematical_assumption",
+    "confidenceModelLabel": "Mathematical assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "implementationRiskId": "high",
+    "implementationRiskLabel": "High",
     "requiresTrustedSetup": false,
+    "requiresTrustedSetupId": "not_required",
+    "requiresTrustedSetupLabel": "Not required",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "missing domain separation"
@@ -7222,18 +9424,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -7244,10 +9452,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "zero-knowledge-proof",
     "name": "Zero-Knowledge Proof",
     "category": "proof-system",
+    "categoryId": "proof_systems",
+    "categoryLabel": "Proof systems",
     "level": "proof-system",
+    "levelId": "proof_system",
+    "levelLabel": "Proof system",
     "pageLink": "/docs/proof-systems/zero-knowledge-proofs",
     "shortIntuition": "A proof that a statement is true without revealing the private witness.",
     "maturity": "mature",
+    "maturityId": "mature",
+    "maturityLabel": "Mature",
     "securityGoals": [
       {
         "label": "completeness",
@@ -7279,13 +9493,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "varies",
+    "requiresTrustedSetupId": "varies",
+    "requiresTrustedSetupLabel": "Varies",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "A proof can be valid for a statement that is too weak for the protocol."
@@ -7315,18 +9541,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null
@@ -7337,10 +9569,16 @@ const conceptCards: ConceptCardData[] = [
     "id": "zk-rollups",
     "name": "ZK Rollups",
     "category": "Systems",
+    "categoryId": "systems",
+    "categoryLabel": "Systems",
     "level": "system",
+    "levelId": "system",
+    "levelLabel": "System",
     "pageLink": "/docs/systems-and-applications/zk-rollups",
     "shortIntuition": "Validity proofs let verifiers check batches of state transitions cheaply.",
     "maturity": "emerging",
+    "maturityId": "emerging",
+    "maturityLabel": "Emerging",
     "securityGoals": [
       {
         "label": "validity"
@@ -7365,13 +9603,25 @@ const conceptCards: ConceptCardData[] = [
       }
     ],
     "postQuantumPosture": "depends",
+    "postQuantumPostureId": "depends",
+    "postQuantumPostureLabel": "Depends",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
     "confidenceModelType": "mixed",
+    "confidenceModelId": "mixed",
+    "confidenceModelLabel": "Mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "implementationRiskId": "expert_only",
+    "implementationRiskLabel": "Expert-only",
     "requiresTrustedSetup": "depends",
+    "requiresTrustedSetupId": "depends",
+    "requiresTrustedSetupLabel": "Depends",
     "auditability": "publicly-verifiable",
+    "auditabilityId": "publicly_verifiable",
+    "auditabilityLabel": "Publicly verifiable",
     "parameterSensitivity": "high",
+    "parameterSensitivityId": "high",
+    "parameterSensitivityLabel": "High",
     "compositionRisks": [
       {
         "label": "bridge bypass"
@@ -7398,18 +9648,24 @@ const conceptCards: ConceptCardData[] = [
     "review": {
       "structural": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "sources": {
         "status": "current",
+        "statusId": "current",
+        "statusLabel": "Current",
         "lastReviewed": "2026-06-04",
         "nextReviewDue": null,
         "reviewer": null
       },
       "expert": {
         "status": "not-reviewed",
+        "statusId": "not_reviewed",
+        "statusLabel": "Not reviewed",
         "lastReviewed": null,
         "nextReviewDue": null,
         "reviewer": null

@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
+const {canonicalLabelId, displayLabel, loadLabelRegistry} = require('./label-registry');
 
 const root = path.resolve(__dirname, '..');
 const dataDir = path.join(root, 'data');
@@ -12,6 +13,7 @@ const relationshipsFile = path.join(dataDir, 'relationships.yml');
 const instancesFile = path.join(dataDir, 'instances.yml');
 const markdownOutputFile = path.join(root, 'docs', 'appendices', 'generated-relationship-graph.md');
 const jsonOutputFile = path.join(root, 'static', 'data', 'relationship-graph.json');
+const labelRegistry = loadLabelRegistry(root);
 
 function walk(dir, predicate) {
   if (!fs.existsSync(dir)) return [];
@@ -41,12 +43,16 @@ function escapeCell(value) {
 }
 
 function relationLabel(relation) {
-  const labels = {
-    'breaks-if-missing': 'breaks if missing',
-    'breaks-if-misused': 'breaks if misused',
-    'unsafe-instance-of': 'unsafe instance of',
+  return displayLabel(labelRegistry, 'relations', relation);
+}
+
+function labeledNodeFields(levelNamespace, level, categoryNamespace, category) {
+  return {
+    level_id: canonicalLabelId(labelRegistry, levelNamespace, level),
+    display_level: displayLabel(labelRegistry, levelNamespace, level),
+    category_id: canonicalLabelId(labelRegistry, categoryNamespace, category),
+    display_category: displayLabel(labelRegistry, categoryNamespace, category),
   };
-  return labels[relation] || relation.replace(/-/g, ' ');
 }
 
 function loadNodes() {
@@ -60,6 +66,7 @@ function loadNodes() {
       kind: 'concept-card',
       level: card.level,
       category: card.category,
+      ...labeledNodeFields('levels', card.level, 'categories', card.category),
       source: path.relative(root, file),
     });
   }
@@ -72,6 +79,7 @@ function loadNodes() {
       kind: 'instance',
       level: instance.taxonomy_level,
       category: instance.kind,
+      ...labeledNodeFields('levels', instance.taxonomy_level, 'categories', instance.kind),
       source: 'data/instances.yml',
     });
   }
@@ -86,6 +94,7 @@ function loadNodes() {
         kind: 'page',
         level: frontmatter.level || 'not-applicable',
         category: frontmatter.type || 'page',
+        ...labeledNodeFields('levels', frontmatter.level || 'not-applicable', 'doc_types', frontmatter.type || 'page'),
         source: path.relative(root, file),
       });
     }

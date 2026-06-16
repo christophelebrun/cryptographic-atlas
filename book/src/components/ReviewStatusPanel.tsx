@@ -1,4 +1,5 @@
 import React from 'react';
+import {displayLabel} from '../utils/labels';
 
 type ReviewDimension = {
   status?: string;
@@ -15,7 +16,7 @@ export type ReviewMetadata = {
 
 function humanize(value: string | null | undefined): string {
   if (!value) return 'Unknown';
-  return value.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+  return displayLabel('review_statuses', value);
 }
 
 function dateLabel(value: string | null | undefined): string {

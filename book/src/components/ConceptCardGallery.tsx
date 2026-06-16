@@ -1,6 +1,7 @@
 import React, {useMemo, useState} from 'react';
 import ConceptCard from './ConceptCard';
 import conceptCards from '../generated/conceptCards';
+import {canonicalLabelId, displayLabel} from '../utils/labels';
 
 type FilterState = {
   query: string;
@@ -20,6 +21,10 @@ type FilterOption = {
   label: string;
   count: number;
 };
+type OptionInput = {
+  value: string;
+  label: string;
+};
 type LevelSection = {
   id: string;
   levels: string[];
@@ -33,31 +38,31 @@ const initialSectionLimit = 6;
 const levelSections: LevelSection[] = [
   {
     id: 'security-goals',
-    levels: ['security-goal'],
+    levels: ['security_goal'],
     title: 'Security Goals',
     description: 'Start with the property a system is trying to provide.',
   },
   {
     id: 'assumptions-and-substrates',
-    levels: ['mathematical-assumption', 'assumption'],
+    levels: ['mathematical_assumption'],
     title: 'Assumptions and Substrates',
     description: 'Check the hardness, model, setup, and substrate assumptions underneath a construction.',
   },
   {
     id: 'basic-primitives',
-    levels: ['basic-primitive'],
+    levels: ['basic_primitive'],
     title: 'Basic Primitives',
     description: 'Core building blocks such as encryption, signatures, commitments, and hashes.',
   },
   {
     id: 'structured-primitives',
-    levels: ['structured-primitive'],
+    levels: ['structured_primitive'],
     title: 'Structured Primitives',
     description: 'Higher-level primitives that add structure, thresholds, homomorphism, or verifiability.',
   },
   {
     id: 'proof-systems',
-    levels: ['proof-system'],
+    levels: ['proof_system'],
     title: 'Proof Systems',
     description: 'Proof families and components used to verify statements without redoing all the work.',
   },
@@ -75,7 +80,7 @@ const levelSections: LevelSection[] = [
   },
   {
     id: 'design-patterns',
-    levels: ['design-pattern'],
+    levels: ['design_pattern'],
     title: 'Design Patterns',
     description: 'Reusable composition patterns and operational moves that show up across systems.',
   },
@@ -93,46 +98,40 @@ const initialFilters: FilterState = {
   expertReview: allValue,
 };
 
-function humanize(value: unknown): string {
-  return String(value ?? 'unknown')
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (char) => char.toUpperCase());
-}
-
 function normalized(value: unknown): string {
   return String(value ?? '').toLowerCase();
 }
 
-function optionValues(value: unknown): string[] {
-  if (Array.isArray(value)) {
-    return value.map((item) => String(item ?? '').trim()).filter(Boolean);
-  }
-  if (value instanceof Set) {
-    return Array.from(value).map((item) => String(item ?? '').trim()).filter(Boolean);
-  }
-  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-    const option = String(value).trim();
-    return option ? [option] : [];
-  }
-  return [];
+function optionInputs(value: OptionInput | OptionInput[] | null | undefined): OptionInput[] {
+  if (!value) return [];
+  return (Array.isArray(value) ? value : [value]).filter((option) => option.value && option.label);
 }
 
-function buildOptions<T>(cards: T[], getter: (card: T) => unknown): FilterOption[] {
-  const counts = new Map<string, number>();
+function buildOptions<T>(cards: T[], getter: (card: T) => OptionInput | OptionInput[]): FilterOption[] {
+  const options = new Map<string, FilterOption>();
 
   for (const card of cards) {
-    for (const value of optionValues(getter(card))) {
-      counts.set(value, (counts.get(value) ?? 0) + 1);
+    for (const option of optionInputs(getter(card))) {
+      const current = options.get(option.value);
+      if (current) current.count += 1;
+      else options.set(option.value, {...option, count: 1});
     }
   }
 
-  return Array.from(counts.entries())
-    .map(([value, count]) => ({value, label: humanize(value), count}))
-    .sort((a, b) => a.label.localeCompare(b.label));
+  return Array.from(options.values()).sort((a, b) => a.label.localeCompare(b.label));
 }
 
 function reviewStatus(card: (typeof conceptCards)[number], dimension: 'structural' | 'sources' | 'expert'): string {
   return card.review?.[dimension]?.status ?? 'unknown';
+}
+
+function reviewStatusId(card: (typeof conceptCards)[number], dimension: 'structural' | 'sources' | 'expert'): string {
+  return card.review?.[dimension]?.statusId ?? canonicalLabelId('review_statuses', reviewStatus(card, dimension));
+}
+
+function reviewStatusLabel(card: (typeof conceptCards)[number], dimension: 'structural' | 'sources' | 'expert'): string {
+  const status = reviewStatus(card, dimension);
+  return card.review?.[dimension]?.statusLabel ?? displayLabel('review_statuses', status);
 }
 
 function matchesFilter(actual: string, expected: string): boolean {
@@ -143,14 +142,22 @@ function cardHaystack(card: (typeof conceptCards)[number]): string {
   return [
     card.name,
     card.category,
+    card.categoryLabel,
     card.level,
+    card.levelLabel,
     card.shortIntuition,
     card.maturity,
+    card.maturityLabel,
     card.postQuantumPosture,
+    card.postQuantumPostureLabel,
     card.confidenceModelType,
+    card.confidenceModelLabel,
     card.implementationRisk,
+    card.implementationRiskLabel,
     card.auditability,
+    card.auditabilityLabel,
     card.parameterSensitivity,
+    card.parameterSensitivityLabel,
     ...card.securityGoals.map((item) => item.label),
     ...card.doesNotProvide.map((item) => item.label),
     ...card.compositionRisks.map((item) => item.label),
@@ -194,14 +201,29 @@ export default function ConceptCardGallery(): JSX.Element {
 
   const filterOptions = useMemo(
     () => ({
-      category: buildOptions(conceptCards, (card) => card.category),
-      level: buildOptions(conceptCards, (card) => card.level),
-      maturity: buildOptions(conceptCards, (card) => card.maturity),
-      postQuantumPosture: buildOptions(conceptCards, (card) => card.postQuantumPosture),
-      implementationRisk: buildOptions(conceptCards, (card) => card.implementationRisk),
-      structuralReview: buildOptions(conceptCards, (card) => reviewStatus(card, 'structural')),
-      sourceReview: buildOptions(conceptCards, (card) => reviewStatus(card, 'sources')),
-      expertReview: buildOptions(conceptCards, (card) => reviewStatus(card, 'expert')),
+      category: buildOptions(conceptCards, (card) => ({value: card.categoryId, label: card.categoryLabel})),
+      level: buildOptions(conceptCards, (card) => ({value: card.levelId, label: card.levelLabel})),
+      maturity: buildOptions(conceptCards, (card) => ({value: card.maturityId, label: card.maturityLabel})),
+      postQuantumPosture: buildOptions(conceptCards, (card) => ({
+        value: card.postQuantumPostureId,
+        label: card.postQuantumPostureLabel,
+      })),
+      implementationRisk: buildOptions(conceptCards, (card) => ({
+        value: card.implementationRiskId,
+        label: card.implementationRiskLabel,
+      })),
+      structuralReview: buildOptions(conceptCards, (card) => ({
+        value: reviewStatusId(card, 'structural'),
+        label: reviewStatusLabel(card, 'structural'),
+      })),
+      sourceReview: buildOptions(conceptCards, (card) => ({
+        value: reviewStatusId(card, 'sources'),
+        label: reviewStatusLabel(card, 'sources'),
+      })),
+      expertReview: buildOptions(conceptCards, (card) => ({
+        value: reviewStatusId(card, 'expert'),
+        label: reviewStatusLabel(card, 'expert'),
+      })),
     }),
     [],
   );
@@ -211,14 +233,14 @@ export default function ConceptCardGallery(): JSX.Element {
 
     return conceptCards.filter((card) => {
       if (query && !cardHaystack(card).includes(query)) return false;
-      if (!matchesFilter(card.category, filters.category)) return false;
-      if (!matchesFilter(card.level, filters.level)) return false;
-      if (!matchesFilter(card.maturity, filters.maturity)) return false;
-      if (!matchesFilter(card.postQuantumPosture, filters.postQuantumPosture)) return false;
-      if (!matchesFilter(card.implementationRisk, filters.implementationRisk)) return false;
-      if (!matchesFilter(reviewStatus(card, 'structural'), filters.structuralReview)) return false;
-      if (!matchesFilter(reviewStatus(card, 'sources'), filters.sourceReview)) return false;
-      if (!matchesFilter(reviewStatus(card, 'expert'), filters.expertReview)) return false;
+      if (!matchesFilter(card.categoryId, filters.category)) return false;
+      if (!matchesFilter(card.levelId, filters.level)) return false;
+      if (!matchesFilter(card.maturityId, filters.maturity)) return false;
+      if (!matchesFilter(card.postQuantumPostureId, filters.postQuantumPosture)) return false;
+      if (!matchesFilter(card.implementationRiskId, filters.implementationRisk)) return false;
+      if (!matchesFilter(reviewStatusId(card, 'structural'), filters.structuralReview)) return false;
+      if (!matchesFilter(reviewStatusId(card, 'sources'), filters.sourceReview)) return false;
+      if (!matchesFilter(reviewStatusId(card, 'expert'), filters.expertReview)) return false;
       return true;
     });
   }, [filters]);
@@ -236,7 +258,7 @@ export default function ConceptCardGallery(): JSX.Element {
       levelSections
         .map((section) => ({
           ...section,
-          cards: filteredCards.filter((card) => section.levels.includes(card.level)),
+          cards: filteredCards.filter((card) => section.levels.includes(card.levelId)),
         }))
         .filter((section) => section.cards.length > 0),
     [filteredCards],
