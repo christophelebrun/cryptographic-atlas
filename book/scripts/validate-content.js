@@ -175,6 +175,14 @@ for (const file of walk(docsDir, (item) => item.endsWith('.md') || item.endsWith
   }
 
   validateObject(file, parsed.frontmatter, validators.doc);
+  if (parsed.frontmatter.review?.structural?.status !== parsed.frontmatter.status) {
+    errors.push(
+      `${relative(file)}: review.structural.status must match legacy status "${parsed.frontmatter.status}" until the legacy field is removed`,
+    );
+  }
+  if (parsed.frontmatter.review?.expert?.status === 'reviewed' && !parsed.frontmatter.review.expert.reviewer) {
+    errors.push(`${relative(file)}: expert-reviewed pages must name the reviewer in review.expert.reviewer`);
+  }
 
   const pageHeadings = headings(parsed.body);
   const template = parsed.frontmatter.template;

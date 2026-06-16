@@ -24,7 +24,23 @@ export type ConceptCardData = {
   confidenceModelLink?: string;
   implementationRisk: string;
   implementationRiskLink?: string;
+  requiresTrustedSetup: boolean | string;
+  auditability: string;
+  parameterSensitivity: string;
+  compositionRisks: ConceptCardItem[];
   metadataLeaks: ConceptCardItem[];
+  review?: {
+    structural?: ReviewDimension;
+    sources?: ReviewDimension;
+    expert?: ReviewDimension;
+  };
+};
+
+export type ReviewDimension = {
+  status: string;
+  lastReviewed?: string | null;
+  nextReviewDue?: string | null;
+  reviewer?: string | null;
 };
 
 function LinkedItem({item}: {item: ConceptCardItem}): JSX.Element {
@@ -34,6 +50,13 @@ function LinkedItem({item}: {item: ConceptCardItem}): JSX.Element {
 
 function isInteractiveTarget(target: EventTarget | null): boolean {
   return target instanceof HTMLElement && Boolean(target.closest('a, button, input, select, textarea'));
+}
+
+function humanize(value: string | boolean | null | undefined): string {
+  if (value === true) return 'yes';
+  if (value === false) return 'no';
+  if (value == null) return 'unknown';
+  return String(value).replace(/-/g, ' ');
 }
 
 export default function ConceptCard({
@@ -51,6 +74,8 @@ export default function ConceptCard({
   confidenceModelLink,
   implementationRisk,
   implementationRiskLink,
+  auditability,
+  review,
   metadataLeaks,
 }: ConceptCardData): JSX.Element {
   const resolvedPageLink = useBaseUrl(pageLink ?? '/');
@@ -113,6 +138,17 @@ export default function ConceptCard({
             ) : (
               implementationRisk
             )}
+          </dd>
+        </div>
+        <div>
+          <dt>Auditability</dt>
+          <dd>{humanize(auditability)}</dd>
+        </div>
+        <div>
+          <dt>Review</dt>
+          <dd>
+            Structural {humanize(review?.structural?.status)} · Sources {humanize(review?.sources?.status)} · Expert{' '}
+            {humanize(review?.expert?.status)}
           </dd>
         </div>
       </dl>

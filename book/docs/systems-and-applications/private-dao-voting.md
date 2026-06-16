@@ -5,6 +5,17 @@ level: system
 template: case-study
 status: current
 last_reviewed: '2026-06-04'
+review:
+  structural:
+    status: current
+    last_reviewed: '2026-06-04'
+  sources:
+    status: current
+    last_reviewed: '2026-06-04'
+  expert:
+    status: not-reviewed
+    last_reviewed: null
+    reviewer: null
 difficulty: intermediate
 maturity: emerging
 tags:
@@ -15,6 +26,8 @@ post_quantum_posture: depends
 confidence_model:
   type: mixed
 ---
+
+import WarningBox from '@site/src/components/WarningBox';
 
 # Private DAO Voting
 
@@ -90,9 +103,9 @@ Ballot secrecy is not the same as coercion resistance. A voter may be pressured 
 
 ## Maturity warning
 
-:::warning
+<WarningBox>
 Private DAO voting combines fast-moving privacy tooling with governance incentives and public ledgers. Treat this as a design map, not an implementation recommendation.
-:::
+</WarningBox>
 
 ## Failure modes
 

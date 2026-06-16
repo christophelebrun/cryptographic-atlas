@@ -5,6 +5,17 @@ level: not-applicable
 template: reference
 status: current
 last_reviewed: '2026-06-04'
+review:
+  structural:
+    status: current
+    last_reviewed: '2026-06-04'
+  sources:
+    status: current
+    last_reviewed: '2026-06-04'
+  expert:
+    status: not-reviewed
+    last_reviewed: null
+    reviewer: null
 difficulty: intermediate
 maturity: not-applicable
 tags:

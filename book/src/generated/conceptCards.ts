@@ -35,6 +35,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "permanent identity leakage",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "no appeal path for key compromise"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "accountable role"
@@ -42,7 +54,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "dispute evidence"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "accumulators-and-merkle-trees",
@@ -81,6 +113,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "Set membership is not the same as eligibility policy."
+      },
+      {
+        "label": "Dynamic updates need a freshness story."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "set-size",
@@ -92,7 +135,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "proof-path"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "anonymity",
@@ -127,6 +190,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "small sets"
+      },
+      {
+        "label": "issuer-verifier collusion"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -139,7 +213,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "network path"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "anonymous-airdrop",
@@ -177,6 +271,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Blockchain funding metadata can deanonymize claimants."
+      },
+      {
+        "label": "Nullifiers require eligibility proofs and domain separation.",
+        "href": "/docs/glossary#nullifier"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "gas-funding",
@@ -189,7 +295,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "withdrawal-patterns"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "anonymous-credential",
@@ -229,6 +355,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Rare attributes can identify holders."
+      },
+      {
+        "label": "Issuer-verifier collusion can weaken privacy.",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "verifier-identity",
@@ -241,7 +379,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "revocation-checks"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "anonymous-membership",
@@ -281,6 +439,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "Nullifiers or rate limits are needed to prevent repeated use.",
+        "href": "/docs/glossary#nullifier"
+      },
+      {
+        "label": "Rare attributes or small groups can deanonymize members."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "group-size",
@@ -294,7 +464,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "verifier-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "anonymous-tokens",
@@ -328,6 +518,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "small issuance batches"
+      },
+      {
+        "label": "device identifiers"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -337,7 +538,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "redemption context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "anti-double-use-nullifiers",
@@ -375,6 +596,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "The nullifier must be bound to an eligibility proof.",
+        "href": "/docs/glossary#nullifier"
+      },
+      {
+        "label": "Context reuse can link actions across systems.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "action-timing",
@@ -387,7 +621,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "context-identifier",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "arithmetization",
@@ -419,6 +673,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "proving the wrong program"
+      },
+      {
+        "label": "encoding mismatch"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public inputs",
@@ -427,7 +692,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "circuit shape"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "auditability",
@@ -460,6 +745,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability or operational-audit",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "over-collecting sensitive logs"
+      },
+      {
+        "label": "auditor dependence on the audited party"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "audit trail"
@@ -468,7 +764,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "reviewer access patterns",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "authenticated-encryption",
@@ -511,6 +827,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Associated data must bind protocol, version, sender, recipient, and purpose where relevant."
+      },
+      {
+        "label": "Nonce misuse can be catastrophic for common AEAD schemes."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "ciphertext-size",
@@ -523,7 +850,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "message-timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "authenticity",
@@ -556,6 +903,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "ambiguous signed bytes"
+      },
+      {
+        "label": "missing revocation policy"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "identity",
@@ -567,7 +925,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "credential type"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "availability",
@@ -601,6 +979,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "shared operator dependencies"
+      },
+      {
+        "label": "status checks that fail closed without policy"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "outage patterns"
@@ -609,7 +998,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "retry timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "blind-signatures",
@@ -641,6 +1050,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "redemption timing linkage",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "no rate limits"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "issuance timing",
@@ -650,7 +1071,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "redemption context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "blind-signature-credentials",
@@ -683,6 +1124,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "rare-attribute linkage"
+      },
+      {
+        "label": "metadata linking issuance to presentation"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "presentation timing",
@@ -692,7 +1144,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "verifier identity",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "censorship-resistance",
@@ -725,6 +1197,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "hidden sender or fee metadata still enabling censorship"
+      },
+      {
+        "label": "fallback route too slow or expensive"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "submission timing",
@@ -737,7 +1220,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "fee or size information",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "code-based-assumptions",
@@ -768,6 +1271,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "treating candidate status as deployment maturity"
+      },
+      {
+        "label": "ignoring side channels"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "algorithm choice"
@@ -776,7 +1290,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "public key size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "coercion-resistant-voting",
@@ -814,6 +1348,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Coercion resistance is a whole-system property."
+      },
+      {
+        "label": "Small groups and public discussion can reveal intent."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -825,7 +1370,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "small-group-results"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "commitments",
@@ -862,6 +1427,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "Commitments need authentication when the committer identity matters.",
+        "href": "/docs/glossary#commitment"
+      },
+      {
+        "label": "Hidden values often need validity proofs before use."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "commitment-time",
@@ -874,7 +1451,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "public-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "common-reference-strings",
@@ -905,6 +1502,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-setup",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "CRS not bound to proofs"
+      },
+      {
+        "label": "hidden setup assumptions"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "setup version"
@@ -912,7 +1520,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "circuit identifier"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "confidentiality",
@@ -947,6 +1575,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "encryption without authentication"
+      },
+      {
+        "label": "endpoint compromise"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "size",
@@ -960,7 +1599,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "endpoint identity",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "delayed-reveal",
@@ -996,6 +1655,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "Delayed reveal needs deadlines and penalties."
+      },
+      {
+        "label": "VDFs and timelocks add timing assumptions, not trusted wall-clock time.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "commitment-time",
@@ -1008,7 +1679,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "participant-identity",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "deniability",
@@ -1041,6 +1732,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret and mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "adding non-repudiating signatures"
+      },
+      {
+        "label": "retaining plaintext backups"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "contact graph"
@@ -1052,7 +1754,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "device logs"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "digital-signature",
@@ -1093,6 +1815,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Signatures must bind protocol, domain, and message encoding."
+      },
+      {
+        "label": "Legal non-repudiation depends on operational key control."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "signer-public-key"
@@ -1104,7 +1837,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "message-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "discrete-logarithm",
@@ -1139,6 +1892,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Discrete-logarithm systems need group validation and domain separation.",
+        "href": "/docs/glossary#discrete-logarithm"
+      },
+      {
+        "label": "Nonce misuse can expose private keys in signature schemes."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-keys"
@@ -1146,7 +1911,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "group-parameters"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "domain-separation",
@@ -1185,6 +1970,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "retrofitted labels without migration"
+      },
+      {
+        "label": "UI text not matching signed bytes"
+      },
+      {
+        "label": "concatenation ambiguity"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public labels"
@@ -1196,7 +1995,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "application context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "e-cash-primitives",
@@ -1233,6 +2052,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "linkable redemption"
+      },
+      {
+        "label": "weak serial-number design"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -1241,7 +2071,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "amount patterns"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "e-voting",
@@ -1280,6 +2130,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Voting combines eligibility, privacy, tallying, usability, and auditability.",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "Ballot secrecy is not the same as receipt-freeness.",
+        "href": "/docs/glossary#receipt-freeness"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "check-in-time"
@@ -1290,7 +2153,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "small-precinct-tallies"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "elliptic-curves",
@@ -1322,6 +2205,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "ambiguous encodings"
+      },
+      {
+        "label": "missing transcript binding",
+        "href": "/docs/glossary#binding"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public keys"
@@ -1329,7 +2224,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "curve suite choices"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "encrypt-then-prove",
@@ -1368,6 +2283,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "proving a different statement than applications verify"
+      },
+      {
+        "label": "malleable ciphertexts accepted as equivalent"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "proof submission timing",
@@ -1376,7 +2302,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "recipient public key"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "encrypted-mempools",
@@ -1409,6 +2355,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "reveal griefing"
+      },
+      {
+        "label": "timing metadata",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "sender network path"
@@ -1417,7 +2375,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "transaction size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "factoring-rsa",
@@ -1452,6 +2430,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "RSA security depends heavily on padding and scheme design."
+      },
+      {
+        "label": "Accumulator and VDF uses rely on additional assumptions."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-modulus"
@@ -1460,7 +2449,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "key-identity",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "folding-schemes",
@@ -1491,6 +2500,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "research-stage claims"
+      },
+      {
+        "label": "transcript ambiguity"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "computation shape"
@@ -1499,7 +2519,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "public inputs",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "forward-secrecy",
@@ -1532,6 +2572,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "resumption without clear policy"
+      },
+      {
+        "label": "classical key exchange under harvest-now-decrypt-later risk"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "connection timing",
@@ -1540,7 +2591,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "endpoint identities"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "fri",
@@ -1573,6 +2644,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "bad arithmetization"
+      },
+      {
+        "label": "weak Fiat-Shamir transform"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public inputs",
@@ -1582,7 +2664,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "proof size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "functional-encryption",
@@ -1620,6 +2722,22 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "The allowed function output may reveal more than intended.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Repeated function queries can leak inputs."
+      },
+      {
+        "label": "Key authority trust can dominate the privacy model.",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "function-outputs",
@@ -1631,7 +2749,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "key-issuance-events"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "hash-function",
@@ -1669,6 +2807,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "Hashes of small secrets can be brute-forced."
+      },
+      {
+        "label": "Reusing the same hash input format across contexts can create ambiguity.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "input-length"
@@ -1677,7 +2827,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "public-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "homomorphic-commitments",
@@ -1717,6 +2887,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Homomorphic arithmetic can wrap or cancel invalid values."
+      },
+      {
+        "label": "Range proofs or validity proofs are usually needed."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "operation-context",
@@ -1725,7 +2906,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "opening-patterns"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "homomorphic-encryption",
@@ -1762,6 +2963,22 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Outputs can reveal sensitive input information.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Malicious inputs may require zero-knowledge validity proofs.",
+        "href": "/docs/glossary#zero-knowledge"
+      },
+      {
+        "label": "Incorrect parameters can break correctness or security."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "access-patterns",
@@ -1775,7 +2992,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "participant-timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "identity-wallets",
@@ -1808,6 +3045,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-issuer",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "rare-attribute re-identification"
+      },
+      {
+        "label": "issuer-verifier collusion"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "presentation timing",
@@ -1817,7 +3065,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "verifier identity",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "integrity",
@@ -1851,6 +3119,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "verifying only part of a message"
+      },
+      {
+        "label": "parsing before verification"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public verification context",
@@ -1860,7 +3139,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "message size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "key-derivation-functions",
@@ -1894,6 +3193,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": false,
+    "auditability": "locally-verifiable",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "KDF context must bind protocol transcripts and algorithm choices.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Passwords need password-hashing schemes, not only fast KDFs."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-salt"
@@ -1902,7 +3213,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "context-labels",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "key-encapsulation-and-exchange",
@@ -1940,6 +3271,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Key exchange must feed a KDF and authenticated transcript."
+      },
+      {
+        "label": "Hybrid post-quantum migration must define combiner behavior."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "peer-identities"
@@ -1951,7 +3293,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "algorithm-choices"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "key-rotation-and-migration",
@@ -1985,6 +3347,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "operational-control",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "dual-stack periods extend the weakest accepted algorithm"
+      },
+      {
+        "label": "old signatures may need archival validation rules"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "version support"
@@ -1993,7 +3366,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "migration timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "key-committing-encryption",
@@ -2027,6 +3420,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "weakening deniability"
+      },
+      {
+        "label": "treating key commitment as attribution",
+        "href": "/docs/glossary#commitment"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "key identifier"
@@ -2035,7 +3440,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "report timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "lattices",
@@ -2070,6 +3495,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Lattice schemes have parameter and failure-mode details that protocols must preserve.",
+        "href": "/docs/glossary#lattice"
+      },
+      {
+        "label": "Migration designs still need authentication and transcript binding.",
+        "href": "/docs/glossary#binding"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-parameters"
@@ -2078,7 +3516,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "ciphertext-size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "lookup-arguments",
@@ -2110,6 +3568,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "table-version mismatch"
+      },
+      {
+        "label": "lookup value leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public table"
@@ -2117,7 +3586,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "lookup pattern"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "make-receipts-useless",
@@ -2158,6 +3647,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Receipt-freeness must include operational artifacts such as logs and screenshots.",
+        "href": "/docs/glossary#receipt-freeness"
+      },
+      {
+        "label": "Ballot secrecy alone is weaker than coercion resistance."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -2170,7 +3671,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "recovery-events"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "membership-proofs",
@@ -2209,6 +3730,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "Membership must be bound to the correct policy context.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Proof paths or public inputs can reveal the member.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "set-root"
@@ -2220,7 +3754,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "query-timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "message-authentication-codes",
@@ -2261,6 +3815,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": false,
+    "auditability": "locally-verifiable",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "MAC keys should be separated by role and protocol."
+      },
+      {
+        "label": "A MAC is not a digital signature."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "message-size",
@@ -2270,7 +3835,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "sender-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "mixnet",
@@ -2310,6 +3895,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "one-honest-party",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Mixnets need batching, cover traffic, or timing controls.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Verification protects shuffle correctness, not all metadata."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -2322,7 +3919,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "batch-membership"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "mpc",
@@ -2362,6 +3979,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "The function output can reveal private inputs.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Participation and abort metadata can be sensitive.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "participant-set"
@@ -2372,7 +4002,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "aborts"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "non-repudiation",
@@ -2405,6 +4055,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "signing ambiguous bytes"
+      },
+      {
+        "label": "using non-repudiating signatures in deniable protocols"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "signer identity or role",
@@ -2416,7 +4077,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "certificate chain"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "nullifier",
@@ -2454,6 +4135,23 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "Reusing contexts can link actions.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Nullifiers must be paired with eligibility proofs.",
+        "href": "/docs/glossary#nullifier"
+      },
+      {
+        "label": "Timing and transaction metadata can deanonymize users.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -2469,7 +4167,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "reused-contexts",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "oblivious-pseudorandom-functions",
@@ -2510,6 +4228,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "OPRF outputs need context binding before they are used as tokens or keys.",
+        "href": "/docs/glossary#binding"
+      },
+      {
+        "label": "Low-entropy inputs need application-level rate limits or hardening."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "request-timing",
@@ -2522,7 +4252,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "request-volume"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "oblivious-transfer",
@@ -2562,6 +4312,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "mismatched adversary model"
+      },
+      {
+        "label": "unauthenticated transport"
+      },
+      {
+        "label": "reused setup material"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "interaction timing",
@@ -2574,7 +4338,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "abort behavior"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "pairings",
@@ -2609,6 +4393,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Pairing systems often inherit trusted setup and curve-selection risk.",
+        "href": "/docs/glossary#pairing"
+      },
+      {
+        "label": "Succinctness can hide a complex confidence model.",
+        "href": "/docs/glossary#confidence-model"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-parameters"
@@ -2616,7 +4413,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "proof-system-family"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "password-hashing",
@@ -2647,6 +4464,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "weak reset flows"
+      },
+      {
+        "label": "parameters never upgraded"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "account existence"
@@ -2655,7 +4483,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "login timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "password-authenticated-key-exchange",
@@ -2693,6 +4541,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "treating password hashing as PAKE"
+      },
+      {
+        "label": "missing identity binding",
+        "href": "/docs/glossary#binding"
+      },
+      {
+        "label": "weak reset flows"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "account identifier"
@@ -2704,7 +4567,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "failure behavior"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "pedersen-commitment",
@@ -2740,6 +4623,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "If the randomness is revealed, the committed value may be exposed."
+      },
+      {
+        "label": "If the discrete logarithm relation between generators is known, binding can fail.",
+        "href": "/docs/glossary#binding"
+      },
+      {
+        "label": "Homomorphic structure can allow invalid values unless range constraints are added."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "opening-timing",
@@ -2752,7 +4650,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "reused-randomness"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "polynomial-commitments",
@@ -2792,6 +4710,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "wrong public inputs",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "domain mismatch"
+      },
+      {
+        "label": "setup assumptions hidden by abstraction"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "proof timing",
@@ -2804,7 +4737,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "evaluation points"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "privacy-preserving-revocation",
@@ -2843,6 +4796,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "status-list tracking"
+      },
+      {
+        "label": "stable revocation identifiers"
+      },
+      {
+        "label": "witness-update logs",
+        "href": "/docs/glossary#witness"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "status version"
@@ -2855,7 +4823,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "presentation timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "private-aggregation",
@@ -2895,6 +4883,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Aggregates can leak individuals through repeated releases."
+      },
+      {
+        "label": "Validity proofs or range checks may be required."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "participation",
@@ -2908,7 +4907,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "output-value",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "private-dao-voting",
@@ -2945,6 +4964,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Public ledger metadata can defeat cryptographic privacy.",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "Governance incentives and coercion can dominate cryptographic design."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "wallet-funding"
@@ -2956,7 +4987,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "small-voter-groups"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "private-information-retrieval",
@@ -2998,6 +5049,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "database freshness omitted"
+      },
+      {
+        "label": "access-pattern leakage outside PIR"
+      },
+      {
+        "label": "query result revealing the request"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -3011,7 +5076,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "response size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "private-machine-learning-analytics",
@@ -3051,6 +5136,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "cryptographic input privacy paired with leaky outputs",
+        "href": "/docs/taxonomy/security-goals"
+      },
+      {
+        "label": "privacy budgets reset across products",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "participation",
@@ -3063,7 +5161,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "query timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "private-payments",
@@ -3102,6 +5220,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "note/nullifier design mistakes",
+        "href": "/docs/glossary#nullifier"
+      },
+      {
+        "label": "exchange metadata linkage"
+      },
+      {
+        "label": "trusted issuer abuse"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "timing",
@@ -3114,7 +5247,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "network metadata",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "private-set-intersection",
@@ -3155,6 +5308,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "The revealed intersection can still be sensitive."
+      },
+      {
+        "label": "Repeated PSI runs can leak through differencing attacks."
+      },
+      {
+        "label": "Normalization choices can create false matches or missed matches."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "set-size",
@@ -3167,7 +5334,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "abort-patterns"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "public-key-encryption",
@@ -3203,6 +5390,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Encryption must be combined with authentication or proofs when validity matters."
+      },
+      {
+        "label": "Hybrid constructions need correct key encapsulation and data encapsulation."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "recipient-key"
@@ -3215,7 +5413,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "transmission-timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "random-oracle-model",
@@ -3250,6 +5468,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "Random-oracle-model proofs remain idealized.",
+        "href": "/docs/glossary#random-oracle-model"
+      },
+      {
+        "label": "Reusing the same hash role without labels can break assumptions."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-inputs",
@@ -3259,7 +5489,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "query-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "randomness-and-nonces",
@@ -3294,6 +5544,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Nonce rules differ by scheme and cannot be guessed."
+      },
+      {
+        "label": "Randomness failures can break otherwise sound primitives."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "nonce-values"
@@ -3302,7 +5563,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "generation-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "range-proof",
@@ -3342,6 +5623,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "The proved interval must match the application policy."
+      },
+      {
+        "label": "Arithmetic domains and overflows must be explicit."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-bound"
@@ -3354,7 +5646,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "submission-timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "recursive-proofs",
@@ -3386,6 +5698,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "stale verifier keys"
+      },
+      {
+        "label": "omitted public inputs",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "proof chain length"
@@ -3393,7 +5717,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "public state roots"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "reveal-only-a-function",
@@ -3432,6 +5776,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "Repeated function outputs can reconstruct inputs.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Access control must govern who can ask which function."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "queried-function"
@@ -3444,7 +5800,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "query-timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "secret-sharing",
@@ -3479,6 +5855,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "t-of-n-threshold",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "medium",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "Share custody is an operational security problem."
+      },
+      {
+        "label": "Threshold choices encode governance assumptions."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "shareholder-identities"
@@ -3486,7 +5873,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "reconstruction-events"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "secure-aggregation",
@@ -3525,6 +5932,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "honest-majority",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Aggregates can reveal individuals in small groups."
+      },
+      {
+        "label": "Repeated aggregates can enable differencing attacks."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "participation",
@@ -3537,7 +5955,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "secure-channels",
@@ -3581,6 +6019,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "downgrade negotiation"
+      },
+      {
+        "label": "using HPKE as a complete channel without authentication"
+      },
+      {
+        "label": "omitting channel binding to the application",
+        "href": "/docs/glossary#binding"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "endpoint addresses"
@@ -3592,7 +6045,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "traffic volume"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "secure-messaging",
@@ -3629,6 +6102,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "multi-device sync weakening guarantees"
+      },
+      {
+        "label": "ignored key-change warnings"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "contact graph"
@@ -3637,7 +6121,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "snarks-starks-bulletproofs",
@@ -3677,6 +6181,19 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Proof-family choice changes the whole confidence model.",
+        "href": "/docs/glossary#confidence-model"
+      },
+      {
+        "label": "Public inputs can reveal identity or linkage.",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-inputs",
@@ -3690,7 +6207,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "verification-context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "sumcheck",
@@ -3724,6 +6261,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "weak Fiat-Shamir transformation"
+      },
+      {
+        "label": "unbound witness values",
+        "href": "/docs/glossary#witness"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public relation"
@@ -3732,7 +6281,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "transcript size",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "symmetric-encryption",
@@ -3768,6 +6337,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "client-side-secret",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "Symmetric encryption often needs authenticated encryption.",
+        "href": "/docs/glossary#authenticated-encryption"
+      },
+      {
+        "label": "Key establishment must be handled separately."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "ciphertext-size",
@@ -3781,7 +6362,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "threshold-cryptography",
@@ -3819,6 +6420,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "t-of-n-threshold",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Threshold cryptography shifts trust into custody and governance."
+      },
+      {
+        "label": "Liveness and confidentiality thresholds may differ.",
+        "href": "/docs/taxonomy/security-goals"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "signer-or-trustee-set"
@@ -3829,7 +6442,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "recovery-events"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": "2026-12-04",
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "threshold-issuance",
@@ -3866,6 +6499,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "t-of-n-threshold",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "unbound partial signatures"
+      },
+      {
+        "label": "availability loss when too few issuers respond"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "issuer participation",
@@ -3875,7 +6519,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "issuance timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "timelock-and-vdfs",
@@ -3911,6 +6575,17 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "external-timing",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Delay assumptions must match real adversary hardware."
+      },
+      {
+        "label": "Verification does not prove the surrounding protocol goal."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "start-time"
@@ -3922,7 +6597,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "participant-availability"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "transcript-binding",
@@ -3961,6 +6656,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "requires-expert-review",
+    "parameterSensitivity": "medium",
+    "compositionRisks": [
+      {
+        "label": "unknown-key-share attacks"
+      },
+      {
+        "label": "proof statement substitution"
+      },
+      {
+        "label": "downgrade negotiation"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public inputs",
@@ -3973,7 +6682,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "transcript timing",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "trusted-setup",
@@ -4007,6 +6736,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "trusted-setup",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": true,
+    "auditability": "requires-operational-audit",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Setup assumptions can dominate the whole proof-system confidence model.",
+        "href": "/docs/glossary#confidence-model"
+      },
+      {
+        "label": "Universal and circuit-specific setup have different reuse risks."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "setup-participants"
@@ -4014,7 +6755,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "parameter-scope"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "unlinkability",
@@ -4047,6 +6808,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "not-applicable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "reused nullifier contexts",
+        "href": "/docs/glossary#nullifier"
+      },
+      {
+        "label": "unique redemption patterns"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "issuance timing",
@@ -4059,7 +6832,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "device identifiers"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "vector-commitments",
@@ -4098,6 +6891,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "scheme-dependent",
+    "compositionRisks": [
+      {
+        "label": "stale-root attacks"
+      },
+      {
+        "label": "path or index leakage"
+      },
+      {
+        "label": "witness update failures",
+        "href": "/docs/glossary#witness"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "queried index"
@@ -4108,7 +6916,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "root version"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "verifiability",
@@ -4141,6 +6969,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "public-verifiability",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
+    "requiresTrustedSetup": "not-applicable",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "not-applicable",
+    "compositionRisks": [
+      {
+        "label": "public inputs leaking data",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "controlled verifier infrastructure"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public statement"
@@ -4152,7 +6992,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "audit trail"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "vdf",
@@ -4188,6 +7048,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "external-timing",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "Specialized hardware can change delay assumptions."
+      },
+      {
+        "label": "Delay does not prevent denial of service."
+      },
+      {
+        "label": "Verification only checks the computation, not the surrounding protocol goal."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "start-time"
@@ -4199,7 +7073,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "participant-availability"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "verifiable-encryption",
@@ -4232,6 +7126,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "weak statement design"
+      },
+      {
+        "label": "missing recipient binding",
+        "href": "/docs/glossary#binding"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "ciphertext size",
@@ -4240,7 +7146,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "recipient"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "verifiable-random-functions",
@@ -4272,6 +7198,18 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mathematical-assumption",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "high",
+    "requiresTrustedSetup": false,
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "missing domain separation"
+      },
+      {
+        "label": "withholding unfavorable outputs",
+        "href": "/docs/appendices/metadata-leakage"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public key"
@@ -4280,7 +7218,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "input context",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "zero-knowledge-proof",
@@ -4325,6 +7283,21 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "varies",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "A proof can be valid for a statement that is too weak for the protocol."
+      },
+      {
+        "label": "Public inputs can reveal identity or linkage.",
+        "href": "/docs/appendices/metadata-leakage"
+      },
+      {
+        "label": "Setup assumptions vary significantly across proof systems."
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "public-inputs",
@@ -4338,7 +7311,27 @@ const conceptCards: ConceptCardData[] = [
         "label": "network-metadata",
         "href": "/docs/appendices/metadata-leakage"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   },
   {
     "id": "zk-rollups",
@@ -4376,6 +7369,20 @@ const conceptCards: ConceptCardData[] = [
     "confidenceModelType": "mixed",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "expert-only",
+    "requiresTrustedSetup": "depends",
+    "auditability": "publicly-verifiable",
+    "parameterSensitivity": "high",
+    "compositionRisks": [
+      {
+        "label": "bridge bypass"
+      },
+      {
+        "label": "upgrade-key control"
+      },
+      {
+        "label": "prover centralization"
+      }
+    ],
     "metadataLeaks": [
       {
         "label": "batch timing",
@@ -4387,7 +7394,27 @@ const conceptCards: ConceptCardData[] = [
       {
         "label": "sequencer behavior"
       }
-    ]
+    ],
+    "review": {
+      "structural": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "sources": {
+        "status": "current",
+        "lastReviewed": "2026-06-04",
+        "nextReviewDue": null,
+        "reviewer": null
+      },
+      "expert": {
+        "status": "not-reviewed",
+        "lastReviewed": null,
+        "nextReviewDue": null,
+        "reviewer": null
+      }
+    }
   }
 ];
 

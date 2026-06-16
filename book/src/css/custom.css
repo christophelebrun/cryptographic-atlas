@@ -134,6 +134,61 @@ html[data-theme='dark'] .atlasHero__mark {
   color: var(--atlas-muted);
 }
 
+.conceptFilters {
+  border: 1px solid var(--atlas-line);
+  border-radius: 10px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.conceptFilters__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.conceptFilters__field--search {
+  grid-column: 1 / -1;
+}
+
+.conceptFilters__field span {
+  color: var(--atlas-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.conceptFilters input,
+.conceptFilters select {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--atlas-line);
+  border-radius: 6px;
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  padding: 0.55rem 0.65rem;
+}
+
+.conceptFilters__summary {
+  align-items: center;
+  color: var(--atlas-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  grid-column: 1 / -1;
+}
+
+.conceptFilters__summary button {
+  background: transparent;
+  border: 1px solid var(--atlas-line);
+  border-radius: 999px;
+  color: var(--ifm-color-primary);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+}
+
 .conceptGallery__grid {
   display: grid;
   gap: 1rem;
@@ -232,6 +287,89 @@ html[data-theme='dark'] .atlasHero__mark {
   border-radius: 4px;
   margin: 1.25rem 0;
   padding: 1rem;
+}
+
+.warningBox__list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.warningBox__list li + li {
+  margin-top: 0.35rem;
+}
+
+.reviewStatusPanel {
+  border: 1px solid var(--atlas-line);
+  border-radius: 8px;
+  margin: 1.25rem 0;
+  padding: 1rem;
+}
+
+.reviewStatusPanel h2 {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+.reviewStatusPanel dl {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin: 0;
+}
+
+.reviewStatusPanel__item {
+  min-width: 0;
+}
+
+.reviewStatusPanel__item dt {
+  color: var(--atlas-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.reviewStatusPanel__item dd {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.2rem 0 0;
+}
+
+.reviewStatusPanel__badge {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  justify-self: start;
+  padding: 0.2rem 0.55rem;
+}
+
+.reviewStatusPanel__badge--current,
+.reviewStatusPanel__badge--reviewed {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.reviewStatusPanel__badge--needs-review,
+.reviewStatusPanel__badge--not-reviewed {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.reviewStatusPanel__badge--outdated,
+.reviewStatusPanel__badge--draft {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.reviewStatusPanel__badge--not-applicable,
+.reviewStatusPanel__badge--unknown {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.reviewStatusPanel__meta {
+  color: var(--atlas-muted);
+  font-size: 0.84rem;
 }
 
 .katex-display {

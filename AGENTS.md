@@ -276,6 +276,18 @@ Add a frontmatter field:
 ```yaml
 last_reviewed: YYYY-MM-DD
 status: current | needs-review | outdated | draft
+review:
+  structural:
+    status: current | needs-review | outdated | draft | not-applicable
+    last_reviewed: YYYY-MM-DD
+  sources:
+    status: current | needs-review | outdated | draft | not-applicable
+    last_reviewed: YYYY-MM-DD
+    next_review_due: YYYY-MM-DD
+  expert:
+    status: reviewed | not-reviewed | needs-review | not-applicable
+    last_reviewed: YYYY-MM-DD | null
+    reviewer: name | null
 ```
 
 ## Frontmatter schema
@@ -290,6 +302,17 @@ level:
 template: concept | protocol | case-study | overview | reference | glossary
 status: draft
 last_reviewed:
+review:
+  structural:
+    status: draft
+    last_reviewed:
+  sources:
+    status: needs-review
+    last_reviewed:
+  expert:
+    status: not-reviewed
+    last_reviewed: null
+    reviewer: null
 difficulty: beginner | intermediate | advanced
 maturity: deployed | mature | emerging | research | theoretical | not-applicable
 tags:

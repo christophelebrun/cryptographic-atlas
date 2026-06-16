@@ -5,6 +5,17 @@ level: system
 template: overview
 status: current
 last_reviewed: '2026-06-05'
+review:
+  structural:
+    status: current
+    last_reviewed: '2026-06-05'
+  sources:
+    status: current
+    last_reviewed: '2026-06-05'
+  expert:
+    status: not-reviewed
+    last_reviewed: null
+    reviewer: null
 difficulty: beginner
 maturity: not-applicable
 tags:

@@ -5,6 +5,17 @@ level: system
 template: case-study
 status: current
 last_reviewed: '2026-06-04'
+review:
+  structural:
+    status: current
+    last_reviewed: '2026-06-04'
+  sources:
+    status: current
+    last_reviewed: '2026-06-04'
+  expert:
+    status: not-reviewed
+    last_reviewed: null
+    reviewer: null
 difficulty: advanced
 maturity: emerging
 tags:
@@ -14,6 +25,8 @@ post_quantum_posture: depends
 confidence_model:
   type: mixed
 ---
+
+import WarningBox from '@site/src/components/WarningBox';
 
 # Coercion-Resistant Voting
 
@@ -66,7 +79,9 @@ Confidence usually combines public verifiability, threshold trustees, trusted el
 
 ## Maturity warning
 
+<WarningBox>
 Coercion resistance is a demanding system property. Treat any simple claim of coercion resistance with skepticism unless the threat model is precise.
+</WarningBox>
 
 ## Failure modes
 

@@ -8,6 +8,7 @@ const root = path.resolve(__dirname, '..');
 const cardsDir = path.join(root, 'data', 'concept-cards');
 const docsDir = path.join(root, 'docs');
 const outputFile = path.join(root, 'src', 'generated', 'conceptCards.ts');
+const docFrontmatterByRoute = new Map();
 
 const manualDocLinks = {
   'anonymous-credential': '/docs/protocols/anonymous-credentials',
@@ -94,6 +95,7 @@ function buildDocLinks() {
     const route = docRoute(file);
     const parsed = parseMarkdown(file);
     const basename = path.basename(file, path.extname(file));
+    docFrontmatterByRoute.set(route, parsed.frontmatter);
 
     addLink(links, basename, route);
     addLink(links, singularSlug(slug(basename)), route);
@@ -153,13 +155,58 @@ function linkedItems(values) {
   });
 }
 
+function dateString(value) {
+  if (!value) return null;
+  if (typeof value === 'string') return value;
+  if (value instanceof Date) return value.toISOString().slice(0, 10);
+  return String(value);
+}
+
+function normalizeReviewDimension(dimension, fallbackStatus, fallbackDate) {
+  if (!dimension) {
+    return {
+      status: fallbackStatus,
+      lastReviewed: fallbackDate,
+    };
+  }
+
+  return {
+    status: dimension.status || fallbackStatus,
+    lastReviewed: dateString(dimension.last_reviewed) || fallbackDate,
+    nextReviewDue: dateString(dimension.next_review_due),
+    reviewer: dimension.reviewer || null,
+  };
+}
+
+function reviewForPage(pageLink) {
+  const frontmatter = docFrontmatterByRoute.get(pageLink);
+  if (!frontmatter) {
+    return {
+      structural: {status: 'unknown', lastReviewed: null},
+      sources: {status: 'unknown', lastReviewed: null},
+      expert: {status: 'unknown', lastReviewed: null, reviewer: null},
+    };
+  }
+
+  const fallbackStatus = frontmatter.status || 'needs-review';
+  const fallbackDate = dateString(frontmatter.last_reviewed);
+
+  return {
+    structural: normalizeReviewDimension(frontmatter.review?.structural, fallbackStatus, fallbackDate),
+    sources: normalizeReviewDimension(frontmatter.review?.sources, fallbackStatus, fallbackDate),
+    expert: normalizeReviewDimension(frontmatter.review?.expert, 'not-reviewed', null),
+  };
+}
+
 function toCamelCard(card) {
+  const pageLink = linkForLabel(card.id);
+
   return {
     id: card.id,
     name: card.name,
     category: card.category,
     level: card.level,
-    pageLink: linkForLabel(card.id),
+    pageLink,
     shortIntuition: card.short_intuition,
     maturity: card.maturity,
     securityGoals: linkedItems(card.security_goals),
@@ -169,7 +216,12 @@ function toCamelCard(card) {
     confidenceModelType: card.confidence_model.type,
     confidenceModelLink: '/docs/appendices/confidence-models',
     implementationRisk: card.implementation_risk,
+    requiresTrustedSetup: card.requires_trusted_setup,
+    auditability: card.auditability,
+    parameterSensitivity: card.parameter_sensitivity,
+    compositionRisks: linkedItems(card.composition_risks),
     metadataLeaks: linkedItems(card.metadata_leaks),
+    review: reviewForPage(pageLink),
   };
 }
 
