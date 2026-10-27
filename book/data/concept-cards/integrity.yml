@@ -8,6 +8,7 @@ security_goals:
 assumptions:
   - verifier checks the full protected data
   - verification parameters are authentic
+  - expected digests or roots are obtained authentically
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -27,6 +28,7 @@ does_not_provide:
   - confidentiality
   - authenticity by itself
   - semantic correctness
+  - freshness or replay protection by itself
 composition_risks:
   - verifying only part of a message
   - parsing before verification
@@ -47,3 +49,5 @@ related:
 references:
   - boneh-shoup-applied-cryptography
   - rfc5116-aead
+  - rfc9162-certificate-transparency
+  - nist-pqc-project

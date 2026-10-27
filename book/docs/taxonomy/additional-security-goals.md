@@ -3,16 +3,17 @@ title: Additional Security Goals
 type: taxonomy
 level: security-goal
 template: overview
-status: needs-review
+status: current
 coverage_depth: routing-overview
-last_reviewed: '2026-06-04'
+last_reviewed: '2026-10-27'
 review:
   structural:
-    status: needs-review
-    last_reviewed: '2026-06-04'
+    status: current
+    last_reviewed: '2026-10-27'
   sources:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
+    next_review_due: '2027-04-27'
   expert:
     status: not-reviewed
     last_reviewed: null
@@ -30,61 +31,66 @@ confidence_model:
 
 # Additional Security Goals
 
-Security goals describe what a system is trying to achieve before any primitive or protocol is selected. This page now routes to standalone high-value goals and keeps grouped coverage for adjacent goals.
+Some goals become clearer when you ask what happens beyond an ordinary honest-user interaction: a voter cooperates with a coercer, a protocol stops making progress, or an operator changes transaction order. These remain **security goals (taxonomy level 1)**, even when evaluated for an entire system. The examples below are conceptual, not deployable protocol sketches.
 
-## Goal matrix
+## Receipt-freeness
 
-| Goal | One-sentence intuition | Usually sits at | What it does not provide |
-| --- | --- | --- | --- |
-| [Verifiability](/docs/taxonomy/verifiability) | A party can check that a statement, tally, proof, or transcript satisfies stated rules. | proof system, protocol, system | Truth of off-chain facts or good user intent. |
-| [Auditability](/docs/taxonomy/auditability) | Enough evidence exists for later review of a process or decision. | protocol, system, governance layer | Privacy by itself; logs can create new leaks. |
-| [Accountability](/docs/taxonomy/accountability) | Misbehavior can be attributed or sanctioned under stated rules. | protocol, system | Public identity disclosure or automatic enforcement. |
-| [Forward secrecy](/docs/taxonomy/forward-secrecy) | Later compromise of long-term keys does not expose past session secrets. | protocol | Protection if session secrets were recorded or compromised at the time. |
-| [Deniability](/docs/taxonomy/deniability) | A transcript does not convince outsiders that a participant said or did something. | protocol, system | Public verifiability or legal non-repudiation. |
-| [Non-Repudiation](/docs/taxonomy/non-repudiation) | Evidence is intended to make later denial of an action unconvincing. | protocol, system, legal process | Deniability or proof of human intent. |
-| [Availability](/docs/taxonomy/availability) | Honest users can use the system when needed. | protocol, system, operations | Confidentiality or censorship resistance by itself. |
-| [Censorship Resistance](/docs/taxonomy/censorship-resistance) | Valid actions cannot be selectively blocked beyond the stated model. | protocol, system, network | Payload privacy or fair ordering by itself. |
-| Receipt-freeness | A user cannot prove how they acted to a coercer. | voting, credential, or governance system | Usability, availability, or full coercion resistance. |
-| Coercion resistance | A system remains safe when users are pressured outside the protocol. | voting and governance systems | Protection against every social or legal pressure. |
+**Intuition:** a voter should not be able to give a buyer or coercer convincing evidence of their vote, within the election's model. Ballot secrecy hides the choice from an observer; receipt-freeness also addresses a voter who tries to demonstrate that choice. [Benaloh and Tuinstra][receipt].
 
-## Standalone routes
+**Minimal example:** encrypting a vote hides its contents. But if the voter can disclose the encryption randomness and prove which plaintext produced the posted ciphertext, that ciphertext may serve as a receipt. Publishing encrypted ballots is therefore not enough by itself. [Benaloh and Tuinstra][receipt].
 
-The goals above now have standalone pages where they are central to the atlas. Use this page for quick comparison and for adjacent goals that are still better handled inside system pages.
+**Assumptions and limits:** the protocol must specify what private interactions and secrets a voter can expose. A receipt-free design does not necessarily stop forced abstention, credential surrender, or continuous observation. Those belong in a stronger coercion model. [Benaloh and Tuinstra][receipt]; [Juels, Catalano, and Jakobsson][coercion].
 
-## Adjacent grouped goals
+## Coercion resistance
 
-Receipt-freeness and coercion resistance remain grouped because they are usually system-level refinements of voting, credential, or governance designs. They should be promoted only if the atlas adds a larger section on coercion models.
+**Intuition:** a voter should have a strategy to cast a vote reflecting their own choice while making compliance with a coercer's demands indistinguishable from resistance, under a specified adversary model. The model must define what the coercer can observe and demand. [Juels, Catalano, and Jakobsson][coercion].
 
-Fair ordering and liveness are also adjacent goals. They are currently covered through [Availability](/docs/taxonomy/availability), [Censorship Resistance](/docs/taxonomy/censorship-resistance), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), and [Delayed Reveal](/docs/design-patterns/delayed-reveal).
+In the Juels-Catalano-Jakobsson model, demands can include voting a particular way, abstaining, or surrendering credentials. Its construction relies on an anonymous channel for voting and a protected registration interaction; these assumptions are part of the result, not incidental conveniences. This is a research construction and model, not a general guarantee for remote voting systems. [Juels, Catalano, and Jakobsson][coercion].
+
+| Goal | Question it addresses | What remains outside the claim |
+| --- | --- | --- |
+| Ballot secrecy | Can an observer learn the vote? | A willing voter may reveal evidence. |
+| Receipt-freeness | Can the voter convincingly demonstrate the vote? | Other forms of coercion may remain. |
+| Coercion resistance | Can the voter resist the modeled coercer's strategy? | Attacks excluded by that model remain. |
+
+The distinction follows [Benaloh and Tuinstra][receipt] and [Juels, Catalano, and Jakobsson][coercion]. Comparisons of strength require compatible definitions and assumptions; avoid treating these labels as universal guarantees.
+
+:::warning Remote voting needs system-level scrutiny
+Neither encryption nor a zero-knowledge proof (ZKP) alone supplies receipt-freeness or coercion resistance. Registration, devices, private opportunities to act, publication rules, and the coercer's observations can determine whether the design meets its model. Implementation requires specialist evaluation. [Benaloh and Tuinstra][receipt]; [Juels, Catalano, and Jakobsson][coercion].
+:::
+
+Read [E-Voting](/docs/protocols/e-voting), [Coercion-Resistant Voting](/docs/systems-and-applications/coercion-resistant-voting), and [Make Receipts Useless](/docs/design-patterns/make-receipts-useless) for the surrounding protocols and patterns.
+
+## Liveness and fair ordering
+
+**Liveness** asks whether a protocol eventually makes required progress under its network and fault assumptions. It does not automatically supply a useful deadline. [Castro and Liskov, §§2-3][pbft]. See [Availability](/docs/taxonomy/availability).
+
+**Fair ordering** requires an explicit rule about relative order: for example, what observations count as evidence that one transaction arrived first. Hiding payloads before ordering can reduce some information advantages; it does not itself prove a fair order or guaranteed inclusion. [Daian et al.][flash]; [EIP-7805, Core Properties][focil]. See [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools) and [Censorship Resistance](/docs/taxonomy/censorship-resistance).
 
 ## Post-quantum posture
 
-Not applicable to the goals themselves. Each goal inherits posture from the concrete primitives, protocols, authentication layers, and storage mechanisms used to realize it.
+**Not applicable to the goals.** Their implementations depend on encryption, credentials, proofs, authentication, and operational assumptions. NIST's post-quantum standards address particular primitives; they do not establish coercion resistance or fair ordering. [NIST post-quantum project][pqc]; [Juels, Catalano, and Jakobsson][coercion].
+
+## Confidence model and maturity
+
+**Depends on the system:** a voting construction may need trusted registration, a protected channel, and an honest-party or non-collusion assumption. A live distributed protocol needs its own fault and timing model. The cited coercion-resistant construction is research work; the cited FOCIL mechanism is a draft proposal as checked on **27 October 2026**. [Juels, Catalano, and Jakobsson][coercion]; [Castro and Liskov][pbft]; [EIP-7805][focil].
 
 ## Related concepts
 
-- [Security Goals](/docs/taxonomy/security-goals)
-- [Confidentiality](/docs/taxonomy/confidentiality)
-- [Integrity](/docs/taxonomy/integrity)
-- [Authenticity](/docs/taxonomy/authenticity)
-- [Anonymity](/docs/taxonomy/anonymity)
-- [Unlinkability](/docs/taxonomy/unlinkability)
-- [Forward Secrecy](/docs/taxonomy/forward-secrecy)
-- [Verifiability](/docs/taxonomy/verifiability)
-- [Auditability](/docs/taxonomy/auditability)
-- [Accountability](/docs/taxonomy/accountability)
-- [Deniability](/docs/taxonomy/deniability)
-- [Non-Repudiation](/docs/taxonomy/non-repudiation)
-- [Availability](/docs/taxonomy/availability)
-- [Censorship Resistance](/docs/taxonomy/censorship-resistance)
-- [Digital Signatures](/docs/primitives/digital-signatures)
-- [Zero-Knowledge Proofs](/docs/proof-systems/zero-knowledge-proofs)
-- [Secure Channels](/docs/protocols/secure-channels)
-- [Metadata Leakage](/docs/appendices/metadata-leakage)
+- [Security Goals](/docs/taxonomy/security-goals) - the chapter's main comparison tables.
+- [Deniability](/docs/taxonomy/deniability) - limits on transferable conversational evidence.
+- [Verifiability](/docs/taxonomy/verifiability), [Auditability](/docs/taxonomy/auditability), and [Accountability](/docs/taxonomy/accountability) - checking results, reviewing records, and attributing violations.
 
 ## Further reading
 
-- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).
-- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
-- Benaloh, [Verifiable Secret-Ballot Elections](https://www.microsoft.com/en-us/research/publication/verifiable-secret-ballot-elections/).
-- Signal, [The Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet/).
+- [Benaloh and Tuinstra, Receipt-Free Secret-Ballot Elections][receipt] (STOC 1994) - the foundational receipt-freeness problem.
+- [Juels, Catalano, and Jakobsson, Coercion-Resistant Electronic Elections][coercion] (WPES 2005) - stronger coercion demands and explicit channel assumptions.
+- [Castro and Liskov, Practical Byzantine Fault Tolerance][pbft] (OSDI 1999) - progress versus safety under a fault model.
+- [Daian et al., Flash Boys 2.0][flash] - ordering incentives and attacks.
+
+[receipt]: https://www.microsoft.com/en-us/research/publication/receipt-free-secret-ballot-elections/
+[coercion]: https://www.iris.unict.it/handle/20.500.11769/113010
+[pbft]: https://www.usenix.org/legacy/publications/library/proceedings/osdi99/full_papers/castro/castro_html/castro.html
+[flash]: https://arxiv.org/abs/1904.05234
+[focil]: https://eips.ethereum.org/EIPS/eip-7805
+[pqc]: https://csrc.nist.gov/projects/post-quantum-cryptography

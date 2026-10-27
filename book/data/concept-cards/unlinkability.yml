@@ -2,12 +2,13 @@ id: unlinkability
 name: Unlinkability
 category: Security goals
 level: security-goal
-short_intuition: Observers should not tell that two actions came from the same subject.
+short_intuition: Limit what an observer learns about whether specified actions, items, or identities are related.
 security_goals:
   - unlinkability
 assumptions:
   - presentations are randomized or blinded
   - metadata is not stable across actions
+  - public parameters are consistent and the stated collusion model holds
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -30,6 +31,7 @@ does_not_provide:
 composition_risks:
   - reused nullifier contexts
   - unique redemption patterns
+  - treating a nullifier as unlinkability rather than deliberate scoped linkability
 metadata_leaks:
   - issuance timing
   - redemption timing
@@ -46,5 +48,9 @@ related:
   - anonymous-tokens
   - blind-signatures
 references:
+  - pfitzmann-hansen-privacy-terminology
   - rfc9576-privacy-pass
   - chaum-blind-signatures
+  - camenisch-lysyanskaya-credentials
+  - zerocash
+  - nist-pqc-project

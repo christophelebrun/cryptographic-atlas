@@ -8,6 +8,7 @@ security_goals:
 assumptions:
   - enough independent parties or paths remain reachable
   - recovery procedures match the failure model
+  - the protocol tolerates the stated faults and participating parties cooperate
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -31,6 +32,7 @@ does_not_provide:
 composition_risks:
   - shared operator dependencies
   - status checks that fail closed without policy
+  - a signing threshold is attainable but a selected signer aborts
 metadata_leaks:
   - outage patterns
   - retry timing
@@ -48,5 +50,8 @@ related:
   - censorship-resistance
   - key-rotation-and-migration
 references:
-  - canetti-uc
-  - rfc9420-mls
+  - rfc4949-security-glossary
+  - castro-liskov-pbft
+  - rfc9591-frost
+  - rfc9162-certificate-transparency
+  - nist-pqc-project

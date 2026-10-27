@@ -8,6 +8,7 @@ security_goals:
 assumptions:
   - ephemeral secrets are fresh
   - old session secrets are erased
+  - the chosen protocol mode provides the claimed protection
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -15,8 +16,8 @@ confidence_model:
   type: depends
   threshold: null
   breaks_if:
-    - ephemeral keys are reused
-    - session secrets are logged
+    - relevant past traffic secrets are retained or compromised
+    - the exchange derives past traffic keys from the compromised long-term secret
   setup:
     - key schedule and erasure policy
 typical_uses:
@@ -27,8 +28,9 @@ does_not_provide:
   - endpoint compromise protection during the session
   - metadata privacy
   - post-quantum security by itself
+  - post-compromise recovery by itself
 composition_risks:
-  - resumption without clear policy
+  - PSK-only exchange or 0-RTT early data lacks the intended forward secrecy
   - classical key exchange under harvest-now-decrypt-later risk
 metadata_leaks:
   - connection timing
@@ -47,3 +49,5 @@ related:
 references:
   - rfc8446-tls13
   - signal-double-ratchet
+  - nist-fips-203
+  - nist-pqc-project

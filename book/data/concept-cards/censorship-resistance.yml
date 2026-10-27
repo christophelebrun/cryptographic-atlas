@@ -6,8 +6,8 @@ short_intuition: Valid actions cannot be selectively blocked beyond the system's
 security_goals:
   - censorship-resistance
 assumptions:
-  - at least one inclusion path is honest, available, or accountable
-  - users can reach the inclusion path
+  - sufficient inclusion participants are honest and reachable
+  - the network and underlying consensus meet their liveness assumptions
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -15,8 +15,8 @@ confidence_model:
   type: mixed
   threshold: null
   breaks_if:
-    - all inclusion paths collude or fail
-    - valid submissions cannot be distinguished from invalid ones
+    - all usable inclusion paths are blocked or controlled
+    - the enforcement mechanism or underlying consensus stops making progress
   setup:
     - inclusion rules
     - fallback path
@@ -28,8 +28,9 @@ does_not_provide:
   - payload privacy
   - fair ordering by itself
   - protection from every denial-of-service attack
+  - inclusion merely because exclusion is detectable
 composition_risks:
-  - hidden sender or fee metadata still enabling censorship
+  - visible sender, fee, or timing metadata still enables selection
   - fallback route too slow or expensive
 metadata_leaks:
   - submission timing
@@ -48,5 +49,7 @@ related:
   - encrypted-mempools
   - private-payments
 references:
-  - flash-boys-2
+  - eip-7805-focil
   - eip-7547-inclusion-lists
+  - flash-boys-2
+  - nist-pqc-project

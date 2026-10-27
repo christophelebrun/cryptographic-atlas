@@ -13,6 +13,12 @@ references:
       - proof-systems
       - structured-primitives
       - assumptions
+      - confidentiality
+      - integrity
+      - verifiability
+      - non-repudiation
+      - security-goals
+      - authenticity
   - id: diffie-hellman-new-directions
     title: New Directions in Cryptography
     authors:
@@ -63,6 +69,8 @@ references:
     used_by:
       - zero-knowledge-proof
       - proof-systems
+      - verifiability
+      - security-goals
   - id: pedersen-commitments
     title: Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing
     authors:
@@ -107,6 +115,7 @@ references:
     used_by:
       - mixnets
       - anonymous-credentials
+      - anonymity
   - id: camenisch-lysyanskaya-credentials
     title: An Efficient System for Non-transferable Anonymous Credentials with Optional Anonymity Revocation
     authors:
@@ -119,6 +128,10 @@ references:
     used_by:
       - anonymous-credentials
       - anonymous-membership
+      - authenticity
+      - anonymity
+      - unlinkability
+      - security-goals
   - id: bonawitz-secure-aggregation
     title: Practical Secure Aggregation for Privacy-Preserving Machine Learning
     authors:
@@ -246,6 +259,8 @@ references:
     used_by:
       - public-key-encryption
       - post-quantum-posture
+      - confidentiality
+      - forward-secrecy
   - id: nist-fips-204
     title: Module-Lattice-Based Digital Signature Standard
     authors:
@@ -279,6 +294,21 @@ references:
       - post-quantum-posture
       - digital-signatures
       - key-encapsulation-and-exchange
+      - confidentiality
+      - integrity
+      - authenticity
+      - anonymity
+      - unlinkability
+      - forward-secrecy
+      - verifiability
+      - auditability
+      - accountability
+      - deniability
+      - non-repudiation
+      - availability
+      - censorship-resistance
+      - security-goals
+      - additional-security-goals
   - id: nist-hqc-selection
     title: NIST Selects HQC as Fifth Algorithm for Post-Quantum Encryption
     authors:
@@ -388,6 +418,9 @@ references:
     used_by:
       - authenticated-encryption
       - symmetric-encryption
+      - confidentiality
+      - integrity
+      - security-goals
   - id: rogaway-aead
     title: Authenticated-Encryption with Associated-Data
     authors:
@@ -496,6 +529,9 @@ references:
     used_by:
       - digital-signature
       - concrete-instances
+      - authenticity
+      - accountability
+      - non-repudiation
   - id: rfc5869-hkdf
     title: HMAC-based Extract-and-Expand Key Derivation Function
     authors:
@@ -544,6 +580,10 @@ references:
       - transcript-binding
       - domain-separation
       - concrete-instances
+      - confidentiality
+      - authenticity
+      - forward-secrecy
+      - security-goals
   - id: rfc8452-aes-gcm-siv
     title: AES-GCM-SIV; Nonce Misuse-Resistant Authenticated Encryption
     authors:
@@ -625,6 +665,8 @@ references:
       - anonymous-tokens
       - privacy-preserving-revocation
       - concrete-instances
+      - anonymity
+      - unlinkability
   - id: signal-x3dh
     title: The X3DH Key Agreement Protocol
     authors:
@@ -638,14 +680,20 @@ references:
   - id: signal-double-ratchet
     title: The Double Ratchet Algorithm
     authors:
-      - Signal Messenger
-    year: 2016
+      - Trevor Perrin
+      - Moxie Marlinspike
+      - Rolfe Schmidt
+    year: 2025
     source_type: official-docs
     url: https://signal.org/docs/specifications/doubleratchet/
     used_by:
       - secure-channels
       - secure-messaging
       - concrete-instances
+      - forward-secrecy
+    notes: >-
+      Revision 4 dated 2025-11-04, checked 2026-10-27; includes Sparse Post-Quantum Ratchet and Triple Ratchet
+      variants.
   - id: noise-framework
     title: The Noise Protocol Framework
     authors:
@@ -783,6 +831,7 @@ references:
       - advanced-structured-primitives
       - private-payments
       - concrete-instances
+      - unlinkability
   - id: micali-rabin-vadhan-vrf
     title: Verifiable Random Functions
     authors:
@@ -837,6 +886,7 @@ references:
     used_by:
       - private-payments
       - concrete-instances
+      - unlinkability
   - id: w3c-vc-data-model-2
     title: Verifiable Credentials Data Model v2.0
     authors:
@@ -975,6 +1025,8 @@ references:
       - threshold-cryptography
       - threshold-issuance
       - concrete-instances
+      - accountability
+      - availability
   - id: rfc9420-mls
     title: The Messaging Layer Security Protocol
     authors:
@@ -1002,7 +1054,9 @@ references:
       - privacy-preserving-revocation
       - identity-wallets
   - id: flash-boys-2
-    title: Flash Boys 2.0; Frontrunning in Decentralized Exchanges, Miner Extractable Value, and Consensus Instability
+    title: >-
+      Flash Boys 2.0; Frontrunning in Decentralized Exchanges, Miner Extractable Value, and Consensus
+      Instability
     authors:
       - Philip Daian
       - Steven Goldfeder
@@ -1018,6 +1072,7 @@ references:
     doi: 10.1109/SP40000.2020.00040
     used_by:
       - encrypted-mempools
+      - censorship-resistance
   - id: dwork-differential-privacy
     title: Calibrating Noise to Sensitivity in Private Data Analysis
     authors:
@@ -1775,7 +1830,190 @@ references:
     year: 2023
     source_type: official-docs
     url: https://eips.ethereum.org/EIPS/eip-7547
-    notes: Draft Ethereum inclusion-list proposal; use for censorship-resistance design context, not as deployed Ethereum behavior.
+    notes: >-
+      Stagnant as checked on 2026-10-27; historical inclusion-list proposal, not evidence of deployed Ethereum
+      behavior.
     used_by:
       - censorship-resistance
       - encrypted-mempools
+  - id: rfc4949-security-glossary
+    title: Internet Security Glossary, Version 2
+    authors:
+      - Robert W. Shirey
+    year: 2007
+    source_type: official-docs
+    url: https://www.rfc-editor.org/rfc/rfc4949
+    notes: Informational glossary; use its stated definitions and distinguish deprecated usages.
+    used_by:
+      - authenticity
+      - non-repudiation
+      - availability
+      - security-goals
+  - id: rfc9525-service-identity
+    title: Service Identity in TLS
+    authors:
+      - Peter Saint-Andre
+      - Rich Salz
+    year: 2023
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc9525
+    notes: Supersedes RFC 6125.
+    used_by:
+      - authenticity
+  - id: pfitzmann-hansen-privacy-terminology
+    title: A Terminology for Talking about Privacy by Data Minimization, v0.34
+    authors:
+      - Andreas Pfitzmann
+      - Marit Hansen
+    year: 2010
+    source_type: survey
+    url: https://dud.inf.tu-dresden.de/literatur/Anon_Terminology_v0.34.pdf
+    notes: Version dated 10 August 2010; definitions of anonymity, unlinkability, and pseudonymity.
+    used_by:
+      - anonymity
+      - unlinkability
+      - security-goals
+  - id: rfc9162-certificate-transparency
+    title: Certificate Transparency Version 2.0
+    authors:
+      - Ben Laurie
+      - Eran Messeri
+      - Rob Stradling
+    year: 2021
+    source_type: official-docs
+    url: https://www.rfc-editor.org/rfc/rfc9162
+    notes: >-
+      Experimental RFC; cited for log proof and monitoring mechanisms, not as a claim that every deployed log
+      uses version 2.
+    used_by:
+      - integrity
+      - verifiability
+      - auditability
+      - accountability
+      - availability
+  - id: nist-sp-800-92-log-management
+    title: Guide to Computer Security Log Management
+    authors:
+      - Karen Kent
+      - Murugiah Souppaya
+    year: 2006
+    source_type: standard
+    url: https://csrc.nist.gov/pubs/sp/800/92/final
+    notes: Final foundational log-management guidance; event coverage, access, retention, and review.
+    used_by:
+      - auditability
+      - security-goals
+  - id: rfc3161-time-stamp
+    title: Internet X.509 Public Key Infrastructure Time-Stamp Protocol (TSP)
+    authors:
+      - Carlisle Adams
+      - Pat Cain
+      - Denis Pinkas
+      - Robert Zuccherato
+    year: 2001
+    source_type: standard
+    url: https://www.rfc-editor.org/rfc/rfc3161
+    notes: Timestamp assertions and authority assumptions; updated by RFC 5816.
+    used_by:
+      - auditability
+      - non-repudiation
+  - id: peerreview-accountability
+    title: PeerReview; Practical Accountability for Distributed Systems
+    authors:
+      - Andreas Haeberlen
+      - Petr Kuznetsov
+      - Peter Druschel
+    year: 2007
+    source_type: paper
+    url: https://peerreview.mpi-sws.org/
+    notes: >-
+      Author-maintained project page with the SOSP 2007 paper, correct-witness assumptions, and
+      observable-fault model.
+    used_by:
+      - accountability
+  - id: borisov-goldberg-brewer-otr
+    title: Off-the-Record Communication, or, Why Not To Use PGP
+    authors:
+      - Nikita Borisov
+      - Ian Goldberg
+      - Eric Brewer
+    year: 2004
+    source_type: paper
+    url: https://otr.cypherpunks.ca/otr-wpes.pdf
+    notes: WPES 2004; distinction between local authentication and transferable evidence.
+    used_by:
+      - deniability
+      - non-repudiation
+      - security-goals
+  - id: di-raimondo-deniable-authentication
+    title: Deniable Authentication and Key Exchange
+    authors:
+      - Mario Di Raimondo
+      - Rosario Gennaro
+      - Hugo Krawczyk
+    year: 2006
+    source_type: paper
+    url: https://www.iris.unict.it/handle/20.500.11769/96372
+    notes: >-
+      CCS 2006; DOI 10.1145/1180405.1180454. Author institution record and abstract distinguish full and
+      partial deniability.
+    used_by:
+      - deniability
+  - id: benaloh-tuinstra-receipt-free
+    title: Receipt-Free Secret-Ballot Elections
+    authors:
+      - Josh Benaloh
+      - Dwight Tuinstra
+    year: 1994
+    source_type: paper
+    url: https://www.microsoft.com/en-us/research/publication/receipt-free-secret-ballot-elections/
+    notes: STOC 1994; receipt-freeness is distinct from ballot secrecy and stronger coercion models.
+    used_by:
+      - deniability
+      - additional-security-goals
+  - id: juels-catalano-jakobsson-coercion
+    title: Coercion-Resistant Electronic Elections
+    authors:
+      - Ari Juels
+      - Dario Catalano
+      - Markus Jakobsson
+    year: 2005
+    source_type: paper
+    url: https://www.iris.unict.it/handle/20.500.11769/113010
+    notes: >-
+      WPES 2005; author institution record specifies coercion demands, anonymous voting channel, and protected
+      registration.
+    used_by:
+      - additional-security-goals
+  - id: castro-liskov-pbft
+    title: Practical Byzantine Fault Tolerance
+    authors:
+      - Miguel Castro
+      - Barbara Liskov
+    year: 1999
+    source_type: paper
+    url: >-
+      https://www.usenix.org/legacy/publications/library/proceedings/osdi99/full_papers/castro/castro_html/castro.html
+    notes: OSDI 1999; read sections 2 and 3 for independent-failure, network, safety, and liveness assumptions.
+    used_by:
+      - availability
+      - additional-security-goals
+  - id: eip-7805-focil
+    title: EIP-7805; Fork-choice enforced Inclusion Lists (FOCIL)
+    authors:
+      - Thomas Thiery
+      - Francesco D'Amato
+      - Julian Ma
+      - Barnabé Monnot
+      - Terence Tsao
+      - Jacob Kaufmann
+      - Jihoon Song
+    year: 2024
+    source_type: official-docs
+    url: https://eips.ethereum.org/EIPS/eip-7805
+    notes: >-
+      Draft as checked on 2026-10-27; a proposed conditional inclusion mechanism, not a statement of deployed
+      Ethereum behavior.
+    used_by:
+      - censorship-resistance
+      - additional-security-goals

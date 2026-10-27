@@ -14,7 +14,7 @@ const conceptCards: ConceptCardData[] = [
     "levelId": "security_goal",
     "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/accountability",
-    "shortIntuition": "Misbehavior can be attributed, challenged, or sanctioned under stated rules.",
+    "shortIntuition": "Attribute a defined violation to a participant using assessable evidence, with protection against framing.",
     "maturity": "not-applicable",
     "maturityId": "not_applicable",
     "maturityLabel": "Not applicable",
@@ -34,6 +34,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "proof that a human controlled a key"
+      },
+      {
+        "label": "individual signer attribution from a final threshold signature alone"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -78,7 +81,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -86,8 +89,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -264,7 +267,7 @@ const conceptCards: ConceptCardData[] = [
         "label": "small sets"
       },
       {
-        "label": "issuer-verifier collusion"
+        "label": "collusion beyond the chosen protocol model"
       }
     ],
     "metadataLeaks": [
@@ -285,7 +288,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -293,8 +296,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -988,6 +991,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "auditor dependence on the audited party"
+      },
+      {
+        "label": "uncompared log views hide equivocation"
       }
     ],
     "metadataLeaks": [
@@ -1004,7 +1010,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -1012,8 +1018,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -1146,7 +1152,7 @@ const conceptCards: ConceptCardData[] = [
     "levelId": "security_goal",
     "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/authenticity",
-    "shortIntuition": "Data or actions should be bound to the expected actor, key, role, or authority.",
+    "shortIntuition": "Data or a peer corresponds to the expected origin; authorization is a separate decision.",
     "maturity": "not-applicable",
     "maturityId": "not_applicable",
     "maturityLabel": "Not applicable",
@@ -1166,6 +1172,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "human intent"
+      },
+      {
+        "label": "authorization by itself"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -1213,7 +1222,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -1221,8 +1230,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -1294,6 +1303,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "status checks that fail closed without policy"
+      },
+      {
+        "label": "a signing threshold is attainable but a selected signer aborts"
       }
     ],
     "metadataLeaks": [
@@ -1310,7 +1322,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -1318,8 +1330,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -1556,6 +1568,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "protection from every denial-of-service attack"
+      },
+      {
+        "label": "inclusion merely because exclusion is detectable"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -1580,7 +1595,8 @@ const conceptCards: ConceptCardData[] = [
     "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
-        "label": "hidden sender or fee metadata still enabling censorship"
+        "label": "visible sender, fee, or timing metadata still enables selection",
+        "href": "/docs/appendices/metadata-leakage"
       },
       {
         "label": "fallback route too slow or expensive"
@@ -1604,7 +1620,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -1612,8 +1628,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -2103,7 +2119,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -2111,8 +2127,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -2258,7 +2274,7 @@ const conceptCards: ConceptCardData[] = [
         "label": "protection from screenshots"
       },
       {
-        "label": "public auditability"
+        "label": "public proof of message authorship"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -2287,6 +2303,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "retaining plaintext backups"
+      },
+      {
+        "label": "assuming key evolution alone establishes deniability"
       }
     ],
     "metadataLeaks": [
@@ -2306,7 +2325,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -2314,8 +2333,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -3363,6 +3382,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "post-quantum security by itself"
+      },
+      {
+        "label": "post-compromise recovery by itself"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -3387,7 +3409,7 @@ const conceptCards: ConceptCardData[] = [
     "parameterSensitivityLabel": "Not applicable",
     "compositionRisks": [
       {
-        "label": "resumption without clear policy"
+        "label": "PSK-only exchange or 0-RTT early data lacks the intended forward secrecy"
       },
       {
         "label": "classical key exchange under harvest-now-decrypt-later risk"
@@ -3407,7 +3429,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -3415,8 +3437,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -4078,6 +4100,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "semantic correctness"
+      },
+      {
+        "label": "freshness or replay protection by itself"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -4123,7 +4148,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -4131,8 +4156,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -5302,6 +5327,9 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "legal effect without process"
+      },
+      {
+        "label": "proof of receipt from an origin signature alone"
       }
     ],
     "postQuantumPosture": "not-applicable",
@@ -5349,7 +5377,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -5357,8 +5385,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -8851,7 +8879,7 @@ const conceptCards: ConceptCardData[] = [
     "levelId": "security_goal",
     "levelLabel": "Security goal",
     "pageLink": "/docs/taxonomy/unlinkability",
-    "shortIntuition": "Observers should not tell that two actions came from the same subject.",
+    "shortIntuition": "Limit what an observer learns about whether specified actions, items, or identities are related.",
     "maturity": "not-applicable",
     "maturityId": "not_applicable",
     "maturityLabel": "Not applicable",
@@ -8900,6 +8928,10 @@ const conceptCards: ConceptCardData[] = [
       },
       {
         "label": "unique redemption patterns"
+      },
+      {
+        "label": "treating a nullifier as unlinkability rather than deliberate scoped linkability",
+        "href": "/docs/glossary#nullifier"
       }
     ],
     "metadataLeaks": [
@@ -8920,7 +8952,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -8928,8 +8960,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {
@@ -9086,9 +9118,9 @@ const conceptCards: ConceptCardData[] = [
     "postQuantumPostureId": "not_applicable",
     "postQuantumPostureLabel": "Not applicable",
     "postQuantumPostureLink": "/docs/appendices/post-quantum-posture",
-    "confidenceModelType": "public-verifiability",
-    "confidenceModelId": "public_verifiability",
-    "confidenceModelLabel": "Public verifiability",
+    "confidenceModelType": "depends",
+    "confidenceModelId": "depends",
+    "confidenceModelLabel": "Depends",
     "confidenceModelLink": "/docs/appendices/confidence-models",
     "implementationRisk": "not-applicable",
     "implementationRiskId": "not_applicable",
@@ -9096,9 +9128,9 @@ const conceptCards: ConceptCardData[] = [
     "requiresTrustedSetup": "not-applicable",
     "requiresTrustedSetupId": "not_applicable",
     "requiresTrustedSetupLabel": "Not applicable",
-    "auditability": "publicly-verifiable",
-    "auditabilityId": "publicly_verifiable",
-    "auditabilityLabel": "Publicly verifiable",
+    "auditability": "not-applicable",
+    "auditabilityId": "not_applicable",
+    "auditabilityLabel": "Not applicable",
     "parameterSensitivity": "not-applicable",
     "parameterSensitivityId": "not_applicable",
     "parameterSensitivityLabel": "Not applicable",
@@ -9128,7 +9160,7 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
+        "lastReviewed": "2026-10-27",
         "nextReviewDue": null,
         "reviewer": null
       },
@@ -9136,8 +9168,8 @@ const conceptCards: ConceptCardData[] = [
         "status": "current",
         "statusId": "current",
         "statusLabel": "Current",
-        "lastReviewed": "2026-06-04",
-        "nextReviewDue": null,
+        "lastReviewed": "2026-10-27",
+        "nextReviewDue": "2027-04-27",
         "reviewer": null
       },
       "expert": {

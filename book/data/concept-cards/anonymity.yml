@@ -6,7 +6,7 @@ short_intuition: The actor should be hidden among a plausible set of actors.
 security_goals:
   - anonymity
 assumptions:
-  - anonymity set is large enough
+  - enough candidates remain plausible under the observer model
   - metadata does not identify the actor
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
@@ -29,7 +29,7 @@ does_not_provide:
   - network anonymity by default
 composition_risks:
   - small sets
-  - issuer-verifier collusion
+  - collusion beyond the chosen protocol model
 metadata_leaks:
   - timing
   - group size
@@ -46,5 +46,8 @@ related:
   - anonymous-credential
   - mixnet
 references:
+  - pfitzmann-hansen-privacy-terminology
   - chaum-mixnets
   - camenisch-lysyanskaya-credentials
+  - rfc9576-privacy-pass
+  - nist-pqc-project

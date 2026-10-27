@@ -5,14 +5,15 @@ level: security-goal
 template: concept
 status: current
 coverage_depth: standalone
-last_reviewed: '2026-06-04'
+last_reviewed: '2026-10-27'
 review:
   structural:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
   sources:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
+    next_review_due: '2027-04-27'
   expert:
     status: not-reviewed
     last_reviewed: null
@@ -31,85 +32,72 @@ confidence_model:
 
 ## One-sentence intuition
 
-Censorship resistance means valid actions cannot be selectively blocked beyond the system's stated tolerance.
+Censorship resistance limits an adversary's ability to selectively prevent a valid submission from reaching its intended destination or being included, under stated network and operator assumptions. Inclusion-list designs illustrate this system-level goal. [EIP-7805][focil].
 
 ## Where it sits in the taxonomy
 
-- Level: security goal.
-- Parent category: security goals.
-- Related concepts: [Availability](/docs/taxonomy/availability), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), [Private Payments](/docs/systems-and-applications/private-payments), [Mixnets](/docs/protocols/mixnets).
+- Level: security goal (level 1), applied to protocols and systems.
+- Parent category: [Security Goals](/docs/taxonomy/security-goals).
+- Related concepts: [Availability](/docs/taxonomy/availability), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), [Delayed Reveal](/docs/design-patterns/delayed-reveal).
 
 ## Problem it solves
 
-Censorship resistance addresses selective exclusion. A system may be available in general while still preventing particular users, transactions, messages, or votes from being included.
+A service can work for most users while one operator blocks Alice. Censorship resistance asks what Alice can do then: reach another operator, use an enforced inclusion path, or obtain evidence of exclusion. **Detecting censorship and overcoming it are separate guarantees.** [EIP-7805, Motivation and Security Considerations][focil].
 
 ## Mental model
 
-Censorship resistance is an inclusion path with adversarial operators. The user needs at least one route that the censor cannot block without exceeding the model's failure threshold or being detected.
+Think of a delivery service with an adversarial gatekeeper. Another entrance helps only if Alice can reach it and the operator controlling final delivery cannot simply ignore it.
 
 ## Minimal example
 
-A blockchain inclusion-list design lets a proposer commit to transactions that the next proposer must include if they remain valid. This is an attempt to reduce selective exclusion by making censorship visible or protocol-invalid.
+In the **draft** Fork-choice enforced Inclusion Lists (FOCIL) proposal, a validator committee distributes transaction inclusion lists. Attesters check whether a proposed block satisfies their stored lists before voting for it. Conditions still include propagation deadlines, transaction validity, and available block capacity. This illustrates a proposed mechanism, not a claim about deployed Ethereum behavior. Status checked **27 October 2026**. [EIP-7805, Specification and Security Considerations][focil].
 
 ## Security properties
 
-- Valid submissions have a defined path to inclusion.
-- The adversary's ability to exclude users is bounded or detectable.
-- Fallback paths exist when ordinary relays, sequencers, or operators censor.
-- Inclusion rules are clear enough to verify.
+A concrete claim should state the valid submissions covered, the maximum exclusion delay if any, tolerated censor control, network conditions, and the enforced consequence of exclusion. FOCIL's conditions demonstrate why “every valid transaction is immediately included” would be too strong. [EIP-7805, Rationale and Security Considerations][focil].
 
 ## What it does not provide
 
-- Payload privacy by itself.
-- Fast confirmation under every network attack.
-- Protection against all denial-of-service attacks.
-- Fair ordering unless ordering rules are also specified.
+- Payload confidentiality, sender anonymity, or fair transaction ordering.
+- Inclusion of invalid submissions or submissions outside fee and capacity rules.
+- Progress when an adversary can indefinitely block every usable network path.
+- Inclusion merely because refusal can later be proved.
+
+FOCIL deliberately leaves transaction placement within a block unconstrained and uses conditional inclusion rules. [EIP-7805, Core Properties][focil].
 
 ## Assumptions
 
-- At least one inclusion path is honest, available, or publicly accountable.
-- The network can propagate submissions to that path.
-- Protocol rules distinguish invalid submissions from censored valid submissions.
-- Users can afford the fallback route's latency and cost.
+Users must reach the required participants before relevant deadlines. Enough participants must follow the inclusion rules, and the underlying consensus must remain live. An “honest or accountable” operator is not enough by itself: accountability needs an effective enforcement or alternative delivery path. [EIP-7805, Consensus Liveness and Core Properties][focil].
 
 ## Post-quantum posture
 
-Not applicable to the goal itself. Censorship resistance inherits posture from signatures, channels, commitments, threshold encryption, and consensus mechanisms used in the system.
+**Not applicable to the goal.** A concrete design depends on authentication, consensus, and any encryption it uses. Quantum-resistant payload encryption alone does not protect a consensus system whose authentication can be forged. [EIP-7805, validation rules][focil]; [NIST post-quantum project][pqc].
 
 ## Confidence model
 
-Confidence is mixed: it may depend on honest-majority consensus, non-collusion, public-verifiability, external timing, or economic incentives.
+**Mixed:** reachable honest participants, consensus fault thresholds, and external timing conditions may all matter. FOCIL describes a one-honest-member inclusion-list assumption alongside consensus and propagation requirements; that is not one honest participant for the entire system. [EIP-7805, Core Properties and Consensus Liveness][focil].
 
 ## Common constructions
 
-- Inclusion lists.
-- Public mempools and alternative relays.
-- Encrypted mempools with delayed reveal.
-- Mixnets and private submission channels.
-- Fraud proofs or public censorship evidence.
+Alternative submission routes and enforced inclusion lists address access or inclusion. Encrypted submissions address what an operator can inspect before ordering; visible sender, fee, or timing can still enable selection. Encryption and fairness therefore need separate arguments. [EIP-7805][focil]; [Daian et al., Flash Boys 2.0][flash].
 
 ## Use cases
 
-- Blockchain transaction inclusion.
-- Private payments.
-- Governance and voting.
-- Messaging systems under hostile routing.
-- Rollup sequencer fallback.
+Blockchain transaction admission and sequencer bypass are representative requirements. For any fallback, specify the actual path, delay, fee, and party that must process it; the label “decentralized” is insufficient. [EIP-7805, Motivation][focil].
 
 ## Composition patterns
 
-Censorship resistance often composes with [Availability](/docs/taxonomy/availability), [Delayed Reveal](/docs/design-patterns/delayed-reveal), [Encrypted Mempools](/docs/systems-and-applications/encrypted-mempools), and public auditability.
+Combine with [Availability](/docs/taxonomy/availability), a stated ordering policy, and [Auditability](/docs/taxonomy/auditability) where exclusion evidence is feasible. Content secrecy can reduce some selection opportunities while adding decryption availability requirements. [Flash Boys 2.0][flash]; [EIP-7805, Security Considerations][focil].
 
 ## Failure modes and anti-patterns
 
-- Calling a system censorship-resistant because many parties exist, without analyzing collusion or routing.
-- Hiding transaction contents while leaving sender, fee, or timing enough to censor.
-- No fallback when the preferred relay or sequencer refuses service.
-- Inclusion rules that are impossible for users to verify.
+:::warning A proposal is not a deployed guarantee
+As checked on **27 October 2026**, EIP-7805 is marked **Draft** and the older EIP-7547 is marked **Stagnant**. Do not cite either as evidence that a live network enforces its rules. Also distinguish intentional exclusion from delay, invalidity, or capacity limits before claiming proof of censorship. [EIP-7805][focil]; [EIP-7547][older].
+:::
 
 ## Maturity and deployment
 
-Emerging and system-specific. The goal is central in blockchains and messaging, but concrete mechanisms vary in maturity.
+**System-specific; emerging mechanisms:** the inclusion-list proposals cited here are not final specifications. Assess a particular network's deployed rules, assumptions, and reachable fallback paths separately. [EIP-7805][focil]; [EIP-7547][older].
 
 ## Related concepts
 
@@ -119,5 +107,11 @@ Emerging and system-specific. The goal is central in blockchains and messaging, 
 
 ## Further reading
 
-- Daian et al., [Flash Boys 2.0](https://arxiv.org/abs/1904.05234).
-- Ethereum Improvement Proposals, [EIP-7547: Inclusion lists](https://eips.ethereum.org/EIPS/eip-7547).
+- [EIP-7805: Fork-choice enforced Inclusion Lists][focil] - draft mechanism; read its conditional inclusion and liveness assumptions.
+- [EIP-7547: Inclusion lists][older] - stagnant earlier proposal, retained as historical context.
+- [Daian et al., Flash Boys 2.0][flash] (IEEE S&P 2020; preprint 2019) - transaction ordering and extraction incentives, not a proof of inclusion guarantees.
+
+[focil]: https://eips.ethereum.org/EIPS/eip-7805
+[older]: https://eips.ethereum.org/EIPS/eip-7547
+[flash]: https://arxiv.org/abs/1904.05234
+[pqc]: https://csrc.nist.gov/projects/post-quantum-cryptography

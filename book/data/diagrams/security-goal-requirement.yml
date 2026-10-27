@@ -1,0 +1,69 @@
+id: security-goal-requirement
+title: From a goal to a scoped guarantee
+description: A channel hides content under stated assumptions; metadata can remain visible. See RFC 8446, Appendix E.
+layout:
+  width: 1000
+  height: 500
+  columns: 3
+  rows: 2
+  margin: 40
+  top: 112
+  column_gap: 40
+  row_gap: 90
+  node_width: 280
+  node_height: 110
+  mermaid_direction: LR
+outputs:
+  svg: static/img/diagrams/security-goal-requirement.svg
+  mermaid: static/diagrams/security-goal-requirement.mmd
+nodes:
+  - id: goal
+    label: Goal
+    detail: Hide message contents
+    kind: goal
+    column: 1
+    row: 1
+  - id: protocol
+    label: Protocol
+    detail: Authenticated encrypted channel
+    kind: protocol
+    column: 2
+    row: 1
+  - id: guarantee
+    label: Scoped guarantee
+    detail: Protected application data in transit
+    kind: output
+    column: 3
+    row: 1
+  - id: observer
+    label: Threat model
+    detail: Passive network observer
+    kind: actor
+    column: 1
+    row: 2
+  - id: assumptions
+    label: Assumptions
+    detail: Authentic keys, uncompromised endpoints
+    kind: assumption
+    column: 2
+    row: 2
+  - id: leakage
+    label: Remaining leakage
+    detail: Connection addresses, timing, sizes
+    kind: metadata
+    column: 3
+    row: 2
+edges:
+  - from: goal
+    to: protocol
+  - from: protocol
+    to: guarantee
+  - from: observer
+    to: goal
+    kind: dependency
+  - from: assumptions
+    to: protocol
+    kind: dependency
+  - from: guarantee
+    to: leakage
+    kind: warning

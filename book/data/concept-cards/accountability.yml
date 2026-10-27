@@ -2,12 +2,13 @@ id: accountability
 name: Accountability
 category: Security goals
 level: security-goal
-short_intuition: Misbehavior can be attributed, challenged, or sanctioned under stated rules.
+short_intuition: Attribute a defined violation to a participant using assessable evidence, with protection against framing.
 security_goals:
   - accountability
 assumptions:
   - actions bind to accountable roles or keys
   - dispute process accepts the evidence model
+  - violations and false-accusation defenses are defined
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -16,7 +17,7 @@ confidence_model:
   threshold: null
   breaks_if:
     - key-role binding is wrong
-    - no enforcement or appeal process exists
+    - required evidence or correct witnesses are unavailable
   setup:
     - role registry
     - evidence and dispute process
@@ -28,6 +29,7 @@ does_not_provide:
   - public identity by default
   - automatic punishment
   - proof that a human controlled a key
+  - individual signer attribution from a final threshold signature alone
 composition_risks:
   - permanent identity leakage
   - no appeal path for key compromise
@@ -47,5 +49,8 @@ related:
   - auditability
   - non-repudiation
 references:
-  - canetti-uc
-  - boneh-shoup-applied-cryptography
+  - peerreview-accountability
+  - rfc9162-certificate-transparency
+  - rfc9591-frost
+  - nist-fips-186-5
+  - nist-pqc-project

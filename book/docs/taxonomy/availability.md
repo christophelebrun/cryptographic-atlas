@@ -5,14 +5,15 @@ level: security-goal
 template: concept
 status: current
 coverage_depth: standalone
-last_reviewed: '2026-06-04'
+last_reviewed: '2026-10-27'
 review:
   structural:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
   sources:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
+    next_review_due: '2027-04-27'
   expert:
     status: not-reviewed
     last_reviewed: null
@@ -31,93 +32,88 @@ confidence_model:
 
 ## One-sentence intuition
 
-Availability means the system can provide its intended service when honest users need it.
+Availability means authorized users can obtain the intended service when required, within the system's stated performance and failure limits. [RFC 4949, availability][glossary].
 
 ## Where it sits in the taxonomy
 
-- Level: security goal.
-- Parent category: security goals.
-- Related concepts: [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography), [Secure Channels](/docs/protocols/secure-channels), [Censorship Resistance](/docs/taxonomy/censorship-resistance), [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration).
+- Level: security goal (level 1), usually evaluated for a system.
+- Parent category: [Security Goals](/docs/taxonomy/security-goals).
+- Related concepts: [Censorship Resistance](/docs/taxonomy/censorship-resistance), [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography), [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration).
 
 ## Problem it solves
 
-Availability addresses denial of service, unavailable keys, stalled committees, missing data, and operational failure. Many cryptographic systems preserve confidentiality or integrity while still failing users because the service cannot respond.
+A system can keep secrets and reject forged messages while still refusing every useful request. Availability addresses service failure, including lost keys, unreachable participants, stalled processing, and resource exhaustion. State what must complete and within what time; “online” is too vague. [RFC 4949, availability and denial of service][glossary].
 
 ## Mental model
 
-Availability is enough working paths. A threshold, replica set, data-availability layer, or recovery plan is useful only if enough independent parts remain reachable and authorized.
+Think of a building with several working entrances. Several doors do not help if they all depend on the same failed access controller. Likewise, counting servers does not establish independent failure tolerance. [Castro and Liskov, §2][model].
 
 ## Minimal example
 
-A threshold-signing wallet uses a 3-of-5 committee. It remains available if two signers are offline, but fails if three are offline, compromised, censored, or stuck behind the same provider outage.
+A 3-of-5 signing service needs three cooperating signers for an operation. If two are offline and the other three follow the protocol, the threshold is still attainable. If three are offline, it is not. This arithmetic is a necessary condition, not a guarantee of completion: a chosen signer can withhold a response and abort a FROST signing attempt. Retrying and selecting participants are additional system responsibilities. [RFC 9591, §§5 and 7][frost].
 
 ## Security properties
 
-- Honest users can complete the intended workflow within the required time.
-- The system tolerates the stated number of failures or unavailable parties.
-- Recovery paths exist for key loss, rotation, or partial outage.
-- Availability assumptions are explicit rather than hidden behind "decentralized" language.
+Define availability relative to a workload, timing requirement, and fault model. In distributed protocols, **liveness** means the required progress eventually occurs under stated conditions; it is distinct from a safety claim such as “no conflicting result is accepted.” Byzantine-fault-tolerant replication illustrates that these properties need separate network assumptions. [RFC 4949][glossary]; [Castro and Liskov, §§2-3][pbft].
 
 ## What it does not provide
 
-- Confidentiality, integrity, or privacy by itself.
-- Protection against every denial-of-service attack.
-- Censorship resistance unless inclusion paths are also addressed.
-- Correctness if an unavailable component later returns bad data.
+- Confidentiality or integrity of responses.
+- Progress during every network partition or unlimited denial-of-service attack.
+- Selective-inclusion guarantees merely because a service is generally reachable.
+- Recoverability of data merely because a commitment or proof exists.
+
+A proof can check data that is supplied without ensuring it will be supplied. Separate availability requirements from verification requirements. [RFC 4949][glossary]; [RFC 9162, §§2 and 11][ct].
 
 ## Assumptions
 
-- Quorum, replication, network, and storage assumptions match the deployment.
-- Operators, committees, or clients are sufficiently independent.
-- Recovery procedures are tested.
-- Users know what happens during partial failure.
+Specify reachable participants, tolerated faults, network conditions, capacity, and recovery dependencies. Independence matters: separate machines may share administrators, credentials, software bugs, or a provider outage. A threshold number does not capture all these dependencies. [Castro and Liskov, §2][model]; [RFC 9591, §7][frost].
 
 ## Post-quantum posture
 
-Not applicable to the goal itself. Availability inherits posture from the protocols, signatures, encryption, and migration systems that keep service paths usable.
+**Not applicable to the goal.** Quantum-vulnerable authentication can undermine a concrete service, but adopting post-quantum primitives does not solve overload, key loss, or correlated outages. Evaluate both cryptographic and operational dependencies. [NIST post-quantum project][pqc]; [RFC 4949][glossary].
 
 ## Confidence model
 
-Confidence is usually mixed: threshold assumptions, honest-majority or t-of-n models, operational controls, network availability, and client recovery all matter.
+**Mixed:** a t-of-n-threshold may describe a signing requirement; a consensus protocol may have a different honest-party threshold and timing model. State the threshold for each operation and how many participants must be reachable and cooperative, not just uncompromised. [RFC 9591][frost]; [Castro and Liskov][model].
 
 ## Common constructions
 
-- Replication and failover.
-- Threshold signatures or decryption.
-- Data availability sampling and erasure coding.
-- Key backup and recovery.
-- Rate limiting and denial-of-service controls.
+Replication, protocol-specific fault tolerance, recovery procedures, and redundant access paths can support availability. Threshold signing distributes key control, but can add a participation dependency; it does not automatically improve uptime. [Castro and Liskov][model]; [RFC 9591, §7][frost].
 
 ## Use cases
 
-- Secure messaging delivery.
-- Wallet recovery.
-- Threshold custody.
-- Rollup data availability.
-- Revocation and status-check systems.
+Threshold custody and replicated services need explicit completion and recovery requirements. A website health check is insufficient if users cannot retrieve required data or obtain the necessary signatures. [RFC 4949][glossary]; [RFC 9591][frost].
 
 ## Composition patterns
 
-Availability often composes with [Censorship Resistance](/docs/taxonomy/censorship-resistance), [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration), and operational monitoring.
+Evaluate [Censorship Resistance](/docs/taxonomy/censorship-resistance) for particular users, and [Verifiability](/docs/taxonomy/verifiability) for returned results. Design recovery alongside confidentiality: making a secret easier to recover changes who may gain access to it. [RFC 4949][glossary]; [RFC 9591, §7][frost].
 
 ## Failure modes and anti-patterns
 
-- A threshold committee whose members share the same cloud, jurisdiction, or operator.
-- Revocation or status checks that fail closed without a plan.
-- Data that is committed but not actually retrievable.
-- Recovery keys that are never tested.
+:::warning Count shared dependencies as well as participants
+A committee can meet its nominal size and still fail together. A reachable signer can also refuse to cooperate. Test the actual completion and recovery paths against the fault model; do not treat replication or a signature threshold as a standalone availability guarantee. [Castro and Liskov, §2][model]; [RFC 9591, §7][frost].
+:::
 
 ## Maturity and deployment
 
-Widely deployed as an operational security goal, but strongly system-specific.
+**Widely deployed techniques:** replication and operational recovery. Byzantine fault tolerance and threshold-signing services require more specialized assumptions. Their guarantees must be taken from the chosen protocol, not generalized from a replica count. [Castro and Liskov][pbft]; [RFC 9591][frost].
 
 ## Related concepts
 
-- [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography)
 - [Censorship Resistance](/docs/taxonomy/censorship-resistance)
-- [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration)
+- [Threshold Cryptography](/docs/structured-primitives/threshold-cryptography)
+- [ZK Rollups](/docs/systems-and-applications/zk-rollups)
 
 ## Further reading
 
-- Canetti, [Universally Composable Security; A New Paradigm for Cryptographic Protocols](https://eprint.iacr.org/2000/067).
-- RFC 9420, [The Messaging Layer Security Protocol](https://www.rfc-editor.org/rfc/rfc9420).
+- [RFC 4949][glossary] - availability and denial-of-service terminology.
+- [Castro and Liskov, Practical Byzantine Fault Tolerance][pbft] (OSDI 1999), §§2-3 - network and failure assumptions, safety, and liveness.
+- [RFC 9591: FROST][frost], §7 - participation, aborts, and operational responsibilities.
+
+[glossary]: https://www.rfc-editor.org/rfc/rfc4949
+[model]: https://www.usenix.org/legacy/publications/library/proceedings/osdi99/full_papers/castro/castro_html/node2.html
+[pbft]: https://www.usenix.org/legacy/publications/library/proceedings/osdi99/full_papers/castro/castro_html/castro.html
+[frost]: https://www.rfc-editor.org/rfc/rfc9591
+[ct]: https://www.rfc-editor.org/rfc/rfc9162
+[pqc]: https://csrc.nist.gov/projects/post-quantum-cryptography

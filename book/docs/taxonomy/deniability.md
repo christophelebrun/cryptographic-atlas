@@ -5,14 +5,15 @@ level: security-goal
 template: concept
 status: current
 coverage_depth: standalone
-last_reviewed: '2026-06-04'
+last_reviewed: '2026-10-27'
 review:
   structural:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
   sources:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
+    next_review_due: '2027-04-27'
   expert:
     status: not-reviewed
     last_reviewed: null
@@ -31,91 +32,86 @@ confidence_model:
 
 ## One-sentence intuition
 
-Deniability means a transcript does not become convincing evidence to outsiders that a participant said or did something.
+Deniability aims to let participants authenticate a conversation without giving them a transcript that cryptographically proves the other's statements to outsiders. [Borisov, Goldberg, and Brewer][otr].
 
 ## Where it sits in the taxonomy
 
-- Level: security goal.
-- Parent category: security goals.
-- Related concepts: [Authenticity](/docs/taxonomy/authenticity), [Forward Secrecy](/docs/taxonomy/forward-secrecy), [Non-Repudiation](/docs/taxonomy/non-repudiation), [Secure Messaging](/docs/systems-and-applications/secure-messaging).
+- Level: security goal (level 1), usually evaluated for a protocol.
+- Parent category: [Security Goals](/docs/taxonomy/security-goals).
+- Related concepts: [Authenticity](/docs/taxonomy/authenticity), [Non-Repudiation](/docs/taxonomy/non-repudiation), [Secure Messaging](/docs/systems-and-applications/secure-messaging).
 
 ## Problem it solves
 
-Deniability addresses durable evidence risk. Some systems need participants to authenticate each other locally without creating transcripts that can later convince employers, courts, platforms, or adversaries.
+Alice wants assurance that she is talking to Bob, but does not want their exchange to create portable cryptographic evidence of every statement. Local authentication and third-party proof are different requirements. Off-the-Record (OTR) communication was designed around this distinction. [Borisov, Goldberg, and Brewer][otr].
 
 ## Mental model
 
-Deniability is local trust without a portable receipt. A participant can know who they are talking to, but the transcript is not meant to prove that fact to outsiders.
+Think of a conversation without a transferable signed receipt. The other participant may believe what happened, but the protocol transcript alone should not uniquely prove it to someone else.
 
 ## Minimal example
 
-A secure messaging protocol authenticates messages with symmetric keys derived inside a session. A recipient can trust messages during the conversation, but cannot later prove to an outsider that only the sender could have produced the transcript.
+Alice and Bob share a secret message authentication code (MAC) key established within a suitable authenticated protocol. Bob checks a tag during the conversation. Because Bob also knows the MAC key, the tag alone cannot prove to an outsider that only Alice could have created it. This illustrates the distinction; a shared MAC alone is not a complete deniable messaging protocol. [Borisov, Goldberg, and Brewer][otr].
 
 ## Security properties
 
-- Participants can authenticate messages locally.
-- Outsiders cannot reliably distinguish a real transcript from one a participant could have simulated.
-- Long-term public evidence is minimized.
-- Key evolution can reduce the value of later compromise.
+A deniability definition specifies who can simulate plausible evidence and which adversary should be unable to distinguish it from a real exchange. Hiding message authorship after the fact, hiding participation, and resisting an adversary who cooperates during the session are different goals. The informal claim “deniable chat” does not settle all of them. [Borisov, Goldberg, and Brewer][otr]; [Di Raimondo, Gennaro, and Krawczyk][deniable].
 
 ## What it does not provide
 
-- Anonymity.
-- Protection against screenshots, endpoint compromise, or human disclosure.
-- Public auditability.
-- Legal non-repudiation.
+- Secrecy from the recipient.
+- Prevention of screenshots, recordings, or witness testimony.
+- Sender anonymity or concealment of contact metadata.
+- A guarantee about how people or a legal process will assess evidence.
+
+The cryptographic goal concerns the transferability of protocol evidence, not the impossibility of disclosure or belief. [Borisov, Goldberg, and Brewer][otr].
 
 ## Assumptions
 
-- Authentication is designed for local verification rather than public proof.
-- Session keys and transcripts are handled according to the protocol.
-- Server logs, backups, and clients do not add independent evidence that defeats the goal.
-- Users understand that deniability is not secrecy from their counterparty.
+The whole authentication protocol must support the intended deniability definition. Public signatures, server records, or device artifacts may add evidence beyond the modeled transcript. State whether the attacker acts during the exchange or only receives records afterward. [Di Raimondo, Gennaro, and Krawczyk][deniable]; [Borisov, Goldberg, and Brewer][otr].
 
 ## Post-quantum posture
 
-Not applicable to the goal itself. Deniability inherits posture from the key exchange, ratchet, authentication, and storage mechanisms used.
+**Not applicable to the goal.** Check the exact authenticated key exchange and its deniability argument against the modeled quantum attacker. A post-quantum key exchange or a new ratchet does not automatically establish deniability for the complete protocol. [Di Raimondo, Gennaro, and Krawczyk][deniable]; [NIST post-quantum project][pqc].
 
 ## Confidence model
 
-Confidence is usually mixed: local authentication, client-side secrets, key erasure, and metadata controls all matter.
+**Mixed:** the protocol's authentication and simulation properties, endpoint behavior, and the scope of available evidence all matter. Erasing old keys can help [Forward Secrecy](/docs/taxonomy/forward-secrecy), but forward secrecy alone does not imply deniability. [Borisov, Goldberg, and Brewer][otr].
 
 ## Common constructions
 
-- Symmetric message authentication.
-- Deniable authenticated key exchange.
-- Double-ratchet style key evolution.
-- Avoidance of long-term digital signatures on message content.
+Deniable authenticated key exchange, symmetric message authentication, and protocol-specific disclosure of obsolete authentication keys appear in OTR-style designs. Avoiding public signatures on message content can help, but is not a complete proof of deniability. [Borisov, Goldberg, and Brewer][otr]; [Di Raimondo, Gennaro, and Krawczyk][deniable].
 
 ## Use cases
 
-- Secure messaging.
-- Off-the-record negotiation.
-- Coercion-resistant voting patterns.
-- Systems where receipts would enable pressure or retaliation.
+Private conversations and off-the-record negotiations may want local authentication without permanent transferable receipts. A system whose purpose is public evidence has a different requirement. [Borisov, Goldberg, and Brewer][otr].
 
 ## Composition patterns
 
-Deniability often composes with [Forward Secrecy](/docs/taxonomy/forward-secrecy), [Confidentiality](/docs/taxonomy/confidentiality), [Metadata Leakage](/docs/appendices/metadata-leakage), and receipt-freeness patterns.
+Combine deniable authentication with [Confidentiality](/docs/taxonomy/confidentiality) and forward secrecy. Treat [receipt-freeness](/docs/taxonomy/additional-security-goals#receipt-freeness) as a separate voting goal: a deniable chat transcript alone does not stop vote buying or credential surrender. [Borisov, Goldberg, and Brewer][otr]; [Benaloh and Tuinstra][receipt].
 
 ## Failure modes and anti-patterns
 
-- Using digital signatures where deniable authentication is required.
-- Publishing transcripts, receipts, or server logs that create external evidence.
-- Treating deniability as protection against endpoint compromise.
-- Confusing deniability with anonymity.
+:::warning A ratchet is not a deniability certificate
+Key evolution addresses compromise over time. Deniability also depends on authentication, transcripts, and the adversary model. Adding an externally verifiable signature to each message can create precisely the evidence the application wanted to avoid. [Borisov, Goldberg, and Brewer][otr]; [Di Raimondo, Gennaro, and Krawczyk][deniable].
+:::
 
 ## Maturity and deployment
 
-Mature in secure messaging design, but difficult to preserve at the application and operations layers.
+**Mature but specialized:** deniable messaging and key-exchange constructions have an established literature. Stronger adversary models and application-level evidence still need protocol-specific expert analysis; an educational sketch is not deployment guidance. [Borisov, Goldberg, and Brewer][otr]; [Di Raimondo, Gennaro, and Krawczyk][deniable].
 
 ## Related concepts
 
+- [Non-Repudiation](/docs/taxonomy/non-repudiation)
 - [Forward Secrecy](/docs/taxonomy/forward-secrecy)
-- [Secure Messaging](/docs/systems-and-applications/secure-messaging)
 - [Make Receipts Useless](/docs/design-patterns/make-receipts-useless)
 
 ## Further reading
 
-- Signal, [The Double Ratchet Algorithm](https://signal.org/docs/specifications/doubleratchet/).
-- Katz and Lindell, [Introduction to Modern Cryptography](https://www.cs.umd.edu/~jkatz/imc.html).
+- [Borisov, Goldberg, and Brewer, Off-the-Record Communication, or, Why Not To Use PGP][otr] (WPES 2004) - intuition and design trade-offs.
+- [Di Raimondo, Gennaro, and Krawczyk, Deniable Authentication and Key Exchange][deniable] (CCS 2006) - formal deniability models.
+- [Benaloh and Tuinstra, Receipt-Free Secret-Ballot Elections][receipt] (STOC 1994) - the related voting requirement.
+
+[otr]: https://otr.cypherpunks.ca/otr-wpes.pdf
+[deniable]: https://www.iris.unict.it/handle/20.500.11769/96372
+[receipt]: https://www.microsoft.com/en-us/research/publication/receipt-free-secret-ballot-elections/
+[pqc]: https://csrc.nist.gov/projects/post-quantum-cryptography

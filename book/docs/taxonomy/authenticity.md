@@ -5,14 +5,15 @@ level: security-goal
 template: concept
 status: current
 coverage_depth: standalone
-last_reviewed: '2026-06-04'
+last_reviewed: '2026-10-27'
 review:
   structural:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
   sources:
     status: current
-    last_reviewed: '2026-06-04'
+    last_reviewed: '2026-10-27'
+    next_review_due: '2027-04-27'
   expert:
     status: not-reviewed
     last_reviewed: null
@@ -31,91 +32,90 @@ confidence_model:
 
 ## One-sentence intuition
 
-Authenticity means data or actions are bound to the expected actor, key, role, or authority.
+Authenticity gives you evidence that data or a peer corresponds to the origin you expected. [RFC 4949, authentication entries][glossary].
 
 ## Where it sits in the taxonomy
 
-- Level: security goal.
-- Parent category: security goals.
-- Related concepts: [Digital Signatures](/docs/primitives/digital-signatures), [Message Authentication Codes](/docs/primitives/message-authentication-codes), [Secure Channels](/docs/protocols/secure-channels), [Anonymous Credentials](/docs/protocols/anonymous-credentials).
+- Level: security goal (level 1).
+- Parent category: [Security Goals](/docs/taxonomy/security-goals).
+- Related concepts: [Integrity](/docs/taxonomy/integrity), [Digital Signatures](/docs/primitives/digital-signatures), [Anonymous Credentials](/docs/protocols/anonymous-credentials).
 
 ## Problem it solves
 
-Authenticity addresses impersonation and misbinding: a system needs to know whether a message, key, credential, proof, or action came from the intended authority or participant.
+A message can be perfectly intact and still come from an impostor. Authentication establishes an origin or peer under a trust model. **Authorization** is the separate decision about what that party may do. Recognizing a key does not automatically grant it permission. [RFC 4949, authentication and authorization][glossary].
 
 ## Mental model
 
-Authenticity is a checked origin label. The label is useful only if the key, credential, or trust anchor behind it is itself authentic.
+Think of checking a badge against a trusted directory. A badge with a convincing design is not enough; the issuer, holder, and purpose must match what you intended to check.
 
 ## Minimal example
 
-A TLS server signs or otherwise authenticates the handshake. The client accepts the channel only if the certificate chain and hostname match the server it intended to contact.
+In a certificate-authenticated TLS 1.3 connection, the server proves possession of a certificate's private key. The client must validate the certificate and match the service identity to the site it meant to contact. A valid certificate for a different site is insufficient. TLS also supports pre-shared-key authentication, which has a different trust model. [RFC 8446, §§2 and 4.4][tls]; [RFC 9525][identity].
 
 ## Security properties
 
-- Messages or actions are tied to an authorized key, role, or issuer.
-- Unknown-key-share and key-misbinding attacks are rejected when transcript binding is correct.
-- The verifier can distinguish authorized origin from unauthenticated data.
+Distinguish **data-origin authentication** (“which key or party produced this data?”) from **peer authentication** (“who is participating in this session?”). Peer authentication needs freshness and session context; an old signed message alone does not establish a live peer. [RFC 4949][glossary]; [RFC 8446, Appendix E.1][tls].
 
 ## What it does not provide
 
-- Confidentiality.
-- Truth of the signed statement.
-- Human intent or non-compromise of the signing key.
-- Privacy unless the authentication mechanism is privacy-preserving.
+- Confidentiality or anonymity by default.
+- Truth of a signed statement.
+- Proof that a key holder is authorized for a particular operation.
+- Proof of human intent, or that a device has not been compromised.
+
+A signature verifies against a key and message; identity, authorization, and key custody require additional evidence and policy. [FIPS 186-5][dss]; [RFC 4949][glossary].
 
 ## Assumptions
 
-- Verification keys, trust anchors, issuer keys, or shared keys are authentic.
-- The authenticated statement includes the intended context.
-- Key compromise, delegation, and revocation are handled by policy.
+Obtain authentic verification keys or shared secrets, check the intended identity, and bind the protocol context to the authenticated data. Define how keys become trusted, how delegation works, and how compromise or revocation changes acceptance. [RFC 8446, §4.4][tls]; [RFC 9525][identity].
 
 ## Post-quantum posture
 
-Not applicable to the goal itself. Classical RSA, finite-field, and elliptic-curve authentication schemes are quantum-vulnerable; post-quantum authenticity depends on the concrete signature or MAC construction.
+**Not applicable to the goal.** RSA and elliptic-curve signatures face quantum attacks. NIST's standardized post-quantum alternatives include ML-DSA and SLH-DSA. A deployment also needs compatible certificates, protocols, and trust anchors. [NIST post-quantum project][pqc].
 
 ## Confidence model
 
-Confidence depends on public-verifiability, shared-key secrecy, trusted issuers, client-side secrets, and operational key-management controls.
+**Public-verifiability + trusted-issuer** for certificate-based signatures; **client-side-secret** for shared-key authentication. Key pinning uses a different initial trust path. In every case, ask who established the key-to-party binding. [Boneh and Shoup][book]; [RFC 9525][identity].
 
 ## Common constructions
 
-- Digital signatures and certificate chains.
-- MACs in symmetric protocols.
-- Authenticated key exchange.
-- Anonymous credentials and selective-disclosure presentations.
+Digital signatures and MACs are primitives; authenticated key exchange and certificate validation belong to protocols. Anonymous credential protocols can authenticate an attribute or eligibility without revealing a civil identity. [Boneh and Shoup][book]; [Camenisch and Lysyanskaya][credentials].
 
 ## Use cases
 
-- Server authentication.
-- Software signing.
-- Credential issuance.
-- Governance authorization.
-- Protocol participant authentication.
+Authenticating websites, verifying release artifacts, and accepting issuer-backed credentials all require the verifier to know which authority it intended to trust. [RFC 8446][tls]; [FIPS 186-5][dss]; [Camenisch and Lysyanskaya][credentials].
 
 ## Composition patterns
 
-Authenticity usually needs [Integrity](/docs/taxonomy/integrity), [Transcript Binding](/docs/design-patterns/transcript-binding), revocation policy, and key rotation.
+Pair authentication with [Integrity](/docs/taxonomy/integrity), [Transcript Binding](/docs/design-patterns/transcript-binding), and application authorization. Include the operation and audience in the authenticated context so that evidence for one purpose is not accepted for another. [RFC 8446, §4.4.3][tls]; [Boneh and Shoup][book].
 
 ## Failure modes and anti-patterns
 
-- Signing ambiguous or incomplete bytes.
-- Accepting a key for the wrong identity.
-- Treating possession of a key as proof of human intent.
-- Ignoring issuer revocation or key rotation.
+:::warning A valid signature can answer the wrong question
+Accepting any valid key, skipping service-identity checks, or verifying bytes that omit the recipient can authenticate the wrong party or action. A stolen authorized key can also produce valid evidence. Authentication must include identity, context, and compromise handling. [RFC 9525][identity]; [FIPS 186-5][dss].
+:::
 
 ## Maturity and deployment
 
-Widely deployed, but the trust model varies sharply across PKI, pinned keys, shared keys, and issuer-based systems.
+**Widely deployed mechanisms:** signatures, MACs, and authenticated TLS. The trust model and key lifecycle still determine what an application may infer. [Boneh and Shoup][book]; [RFC 8446][tls].
 
 ## Related concepts
 
-- [Digital Signatures](/docs/primitives/digital-signatures)
 - [Secure Channels](/docs/protocols/secure-channels)
-- [Anonymous Credentials](/docs/protocols/anonymous-credentials)
+- [Non-Repudiation](/docs/taxonomy/non-repudiation)
+- [Key Rotation and Migration](/docs/design-patterns/key-rotation-and-migration)
 
 ## Further reading
 
-- RFC 8446, [The Transport Layer Security Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc8446).
-- NIST FIPS 186-5, [Digital Signature Standard](https://csrc.nist.gov/pubs/fips/186-5/final).
-- Boneh and Shoup, [A Graduate Course in Applied Cryptography](https://toc.cryptobook.us/).
+- [RFC 4949][glossary] - authentication versus authorization.
+- [RFC 8446][tls], §4.4 - TLS authentication.
+- [RFC 9525: Service Identity in TLS][identity] - matching the intended service; supersedes RFC 6125.
+- [FIPS 186-5: Digital Signature Standard][dss] - signature capabilities and limits.
+
+[glossary]: https://www.rfc-editor.org/rfc/rfc4949
+[tls]: https://www.rfc-editor.org/rfc/rfc8446
+[identity]: https://www.rfc-editor.org/rfc/rfc9525
+[dss]: https://csrc.nist.gov/pubs/fips/186-5/final
+[pqc]: https://csrc.nist.gov/projects/post-quantum-cryptography
+[book]: https://toc.cryptobook.us/
+[credentials]: https://cs.brown.edu/people/alysyans/papers/cl01a.pdf

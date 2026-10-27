@@ -210,3 +210,58 @@ clusters:
       - shutter-docs
       - shutter-api-docs
     notes: Ethereum encrypted-mempool designs are draft-stage and should be reviewed before presenting as deployed guarantees.
+  - id: security-goals
+    name: Security goals and realization boundaries
+    review_window_months: 6
+    last_reviewed: '2026-10-27'
+    next_review_due: '2027-04-27'
+    topics:
+      - security-goals
+      - confidentiality
+      - integrity
+      - authenticity
+      - anonymity
+      - unlinkability
+      - forward-secrecy
+      - verifiability
+      - auditability
+      - accountability
+      - deniability
+      - non-repudiation
+      - availability
+      - censorship-resistance
+      - additional-security-goals
+    reference_ids:
+      - boneh-shoup-applied-cryptography
+      - rfc5116-aead
+      - rfc8446-tls13
+      - nist-fips-203
+      - nist-pqc-project
+      - rfc9162-certificate-transparency
+      - rfc4949-security-glossary
+      - rfc9525-service-identity
+      - nist-fips-186-5
+      - camenisch-lysyanskaya-credentials
+      - pfitzmann-hansen-privacy-terminology
+      - chaum-mixnets
+      - rfc9576-privacy-pass
+      - chaum-blind-signatures
+      - zerocash
+      - signal-double-ratchet
+      - goldwasser-micali-rackoff-zk
+      - nist-sp-800-92-log-management
+      - rfc3161-time-stamp
+      - peerreview-accountability
+      - rfc9591-frost
+      - borisov-goldberg-brewer-otr
+      - di-raimondo-deniable-authentication
+      - benaloh-tuinstra-receipt-free
+      - castro-liskov-pbft
+      - eip-7805-focil
+      - eip-7547-inclusion-lists
+      - flash-boys-2
+      - juels-catalano-jakobsson-coercion
+    notes: >-
+      All chapter pages source-checked on 2026-10-27; expert review remains not-reviewed. Recheck PQ
+      standards, Signal specification revisions, and inclusion-list proposal status; definitions retain
+      foundational sources.

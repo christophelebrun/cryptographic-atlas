@@ -12,7 +12,7 @@ requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
 confidence_model:
-  type: public-verifiability
+  type: depends
   threshold: null
   breaks_if:
     - wrong statement is verified
@@ -35,7 +35,7 @@ metadata_leaks:
   - verification timing
   - audit trail
 implementation_risk: not-applicable
-auditability: publicly-verifiable
+auditability: not-applicable
 parameter_sensitivity: not-applicable
 revocation_story: Not applicable to the goal; concrete verifier keys and logs may need rotation or revocation.
 operational_failure_modes:
@@ -47,4 +47,6 @@ related:
   - zk-rollups
 references:
   - goldwasser-micali-rackoff-zk
-  - benaloh-secret-ballot
+  - boneh-shoup-applied-cryptography
+  - rfc9162-certificate-transparency
+  - nist-pqc-project

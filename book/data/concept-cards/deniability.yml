@@ -27,10 +27,11 @@ typical_uses:
 does_not_provide:
   - anonymity
   - protection from screenshots
-  - public auditability
+  - public proof of message authorship
 composition_risks:
   - adding non-repudiating signatures
   - retaining plaintext backups
+  - assuming key evolution alone establishes deniability
 metadata_leaks:
   - contact graph
   - delivery timing
@@ -40,13 +41,15 @@ auditability: not-applicable
 parameter_sensitivity: not-applicable
 revocation_story: Not applicable to the goal; concrete messaging keys and devices need rotation and compromise recovery.
 operational_failure_modes:
-  - public transcript publication
-  - endpoint compromise
+  - publicly verifiable signatures on message content
+  - independent device or server evidence outside the transcript model
 maturity: not-applicable
 related:
   - forward-secrecy
   - secure-messaging
   - non-repudiation
 references:
-  - signal-double-ratchet
-  - katz-lindell-modern-cryptography
+  - borisov-goldberg-brewer-otr
+  - di-raimondo-deniable-authentication
+  - benaloh-tuinstra-receipt-free
+  - nist-pqc-project

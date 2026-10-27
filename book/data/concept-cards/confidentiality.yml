@@ -48,3 +48,6 @@ related:
 references:
   - boneh-shoup-applied-cryptography
   - rfc5116-aead
+  - rfc8446-tls13
+  - nist-fips-203
+  - nist-pqc-project

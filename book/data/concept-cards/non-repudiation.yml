@@ -30,6 +30,7 @@ does_not_provide:
   - proof of human intent
   - deniability
   - legal effect without process
+  - proof of receipt from an origin signature alone
 composition_risks:
   - signing ambiguous bytes
   - using non-repudiating signatures in deniable protocols
@@ -51,5 +52,9 @@ related:
   - accountability
   - deniability
 references:
+  - rfc4949-security-glossary
   - nist-fips-186-5
+  - rfc3161-time-stamp
   - boneh-shoup-applied-cryptography
+  - borisov-goldberg-brewer-otr
+  - nist-pqc-project

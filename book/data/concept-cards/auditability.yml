@@ -8,6 +8,7 @@ security_goals:
 assumptions:
   - audit scope is explicit
   - evidence is integrity-protected
+  - evidence is available to sufficiently independent reviewers
 requires_trusted_setup: not-applicable
 post_quantum: not-applicable
 post_quantum_posture: not-applicable
@@ -31,6 +32,7 @@ does_not_provide:
 composition_risks:
   - over-collecting sensitive logs
   - auditor dependence on the audited party
+  - uncompared log views hide equivocation
 metadata_leaks:
   - audit trail
   - reviewer access patterns
@@ -48,5 +50,7 @@ related:
   - accountability
   - integrity
 references:
-  - benaloh-secret-ballot
-  - canetti-uc
+  - nist-sp-800-92-log-management
+  - rfc9162-certificate-transparency
+  - rfc3161-time-stamp
+  - nist-pqc-project

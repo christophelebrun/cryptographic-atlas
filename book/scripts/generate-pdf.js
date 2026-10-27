@@ -380,6 +380,18 @@ function renderPrintHtml(docs, tocPageNumbers = null) {
       font-size: 12.5pt;
     }
 
+    .markdown h1,
+    .markdown h2,
+    .markdown h3 {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .markdown .theme-admonition {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
     .markdown a {
       color: #0f5f8c;
       text-decoration: none;
